@@ -544,7 +544,7 @@
 * **Axis 조합:** C+A+I+E+P (+외부: Situation Recognition in Computer Vision)
 * **경로:** strategy (STR-A3; Strategy A(Technology Transfer): Computer Vision의 situation recognition(visual semantic role labeling))
 * **근거 논문 ID:** 10.1109/cvpr.2016.597; 10.1109/cvpr46437.2021.00554; 10.1038/s41467-024-44870-7; 10.1016/j.neubiorev.2022.104977; 10.1038/s41597-025-04803-5
-* **선행 판정:** not found(Stage 4 감사): Marras 2025(행동 feature 중 Agent & Object, 영화 fMRI encoding), Thornton & Tamir 2024, Mohammadi 2023이 가깝다
+* **선행 판정:** partially(Stage 4 카드 검토에서 정정): 감사는 not found였으나 card_review_B가 Frankland & Greene 2015(doi:10.1073/pnas.1421236112, 문장 자극에서 lmSTC가 '누가 누구에게'를 부호화하고 그에 의존하는 정서 관련 amygdala 반응을 예측)를 찾았다. 남는 부분: 자연 영상의 사건 의미역 구조와 Emo-FilM appraisal 평정. Marras 2025, Thornton & Tamir 2024, Mohammadi 2023도 가깝다
 * **overlap:** EmoBrain(구 EmoViS 범위): 정서 대 의미 내용 분리 겹침
 
 방향만 유지한 조합: RND-03(amygdala encoding의 해석 가능한 feature 귀속)

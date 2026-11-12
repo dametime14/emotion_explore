@@ -838,7 +838,7 @@ PRIOR_AUDIT = {
     "STR-E1": "partially(Stage 4 카드 작성 중 정정): 감사는 not found였으나 systems-neuro가 Wainstein 2025(doi:10.7554/eLife.93191, 지각 과제에서 동공 각성 상승 때 뇌 상태 속도가 최대)와 Munn 2021(doi:10.1038/s41467-021-26268-x, 휴지기 각성계와 뇌 동역학)을 찾았다. 개념은 이미 제안되었다. 남는 부분: 수동 영화 시청의 정서 각성(Wainstein 저자들은 과제와 무관한 시청에는 일반화되지 않을 것으로 예측), 같은 참가자 생리, 위치 대 속도 대 Ke 2025 연결 모형의 직접 비교",
     "LIT-44": "partially, done에 가까움(Stage 4 감사): St-Laurent 2015(짧은 영상 회상의 재활성이 vividness 예측), Barker 2022, Bainbridge & Rissman 2018(자극 기억성 대 주관 기억의 신경 해리)",
     "LIT-47": "partially(Stage 4 감사): Chen 2017(회상 패턴의 체계적 재구성), Favila 2022(기억 반응의 다른 공간 튜닝), Spens & Burgess 2024(이론). 남는 부분: cue 생성 영상 encoding 예측을 재구성 가설의 계산 대리로 쓰고 정서와 시각 부분공간을 비교",
-    "STR-A3": "not found(Stage 4 감사): Marras 2025(행동 feature 중 Agent & Object, 영화 fMRI encoding), Thornton & Tamir 2024, Mohammadi 2023이 가깝다",
+    "STR-A3": "partially(Stage 4 카드 검토에서 정정): 감사는 not found였으나 card_review_B가 Frankland & Greene 2015(doi:10.1073/pnas.1421236112, 문장 자극에서 lmSTC가 '누가 누구에게'를 부호화하고 그에 의존하는 정서 관련 amygdala 반응을 예측)를 찾았다. 남는 부분: 자연 영상의 사건 의미역 구조와 Emo-FilM appraisal 평정. Marras 2025, Thornton & Tamir 2024, Mohammadi 2023도 가깝다",
     "LIT-09": "partially(Stage 4 감사): Nguyen 2026이 영화 fMRI에서 오차형 대 불확실성형 사건 경계의 해리를 보고, Mohammadi 2023, Garrido 2025",
     "LIT-10": "partially(Stage 4 감사): Pichon 2015, Gaviria 2021(정서 영화 뒤 휴지기 상태 이월), Qiao-Tasserit 2017. 남는 부분: 수 초 단위 클립 간 이월을 무작위 연쇄에서 영역별 HRF 보정 후 정서 대 시각 부분공간으로",
 }
