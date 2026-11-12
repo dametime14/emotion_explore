@@ -53,3 +53,13 @@
 | `outputs/evaluation/` | 독립 채점 2종과 대조(`scores_*`), 평가 노트, 선행연구 중복 감사, 선정, 카드 검토 2종, 최종 인용 검증 |
 | `outputs/agents/<이름>/` | 에이전트별 Round 1~4 산출물과 literature.jsonl |
 | `outputs/agent_registry.md` | 실행한 에이전트 ID(이 세션 안에서만 유효) |
+
+## 재탐색 라운드 (Stage 4 이후)
+
+| 파일 | 내용 |
+|---|---|
+| `outputs/revision/plan.md` | 사용자 지시, 새 평가 기준 2개, 에이전트 배정 |
+| `outputs/revision/candidates.md` | 후보 28개와 한 줄 질문 |
+| `outputs/revision/scores_reconciled.md` | 두 독립 채점의 대조와 조정 |
+| `outputs/revision/prior_overlap_audit.md` | 상위 7개 묶음 선행연구 중복 감사 |
+| `outputs/revision/selection.md` | 선정 규칙, 상위 5개 묶음(A~E), 예비 후보, 사용자 방향에 대한 정정 |

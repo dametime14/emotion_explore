@@ -406,3 +406,42 @@ Stage 3는 10개 연구 에이전트의 Round 2(교차 교환), 제안 응답, R
 | 핵심 기준 | **AI를 써서 Affective Neuroscience에 주는 임팩트와 contribution**(AI 분야로 돌려주는 기여가 아님). Coordinator가 처음에 "AI 쪽 기여"로 잘못 읽었고, 사용자가 정정했다 |
 | 원하던 방향 | D1 brain-like model, D2 vision decoding 모델(MindEye2, Brain-IT 등) + emotion head. D3 멀티모달(양식 간 전이, 공통 성분, 공유 공간)은 우선순위가 아니며 한 달 안 가능성이 관건 |
 | 진행 | 출발점 10개로 질문 탐색과 평가를 다시 한다. 평가 기준에 "AI-enabled Affective Neuroscience Contribution"과 "1-month Feasibility"를 추가한다. 계획: `outputs/revision/plan.md` |
+
+## 재탐색 라운드 (Stage 4 이후, 사용자 지시)
+
+* 상태: **완료, 사용자 선택 대기.** 질문 카드는 사용자가 묶음을 고른 뒤에 쓴다(`outputs/revision/plan.md` 3절 4번).
+* 계획: `outputs/revision/plan.md`. 평가 기준 11개(P6 9개 + AI-enabled Affective Neuroscience Contribution + 1-month Feasibility).
+
+### 실행 방식 (사실 기록)
+
+1. 탐색: Stage 2 Round 1의 에이전트 인스턴스 7개를 재개했다(`outputs/agent_registry.md` 재탐색 절). 각자 `revision_round.md`를 썼다.
+2. 후보 정리: Coordinator가 28개로 정리했다(`outputs/revision/candidates.md`). 같은 내용 3쌍을 묶었다.
+3. 채점: Coordinator(`scores_coordinator.csv`)와 새 adversarial-reviewer(`scores_reviewer.csv`, Coordinator 점수 미열람)가 따로 채점했다.
+4. 대조: 308쌍 중 97%가 1점 이내였다. 2점 이상 차이 10쌍은 양쪽 근거를 읽고 조정했다(`adjustments.csv`, `scores_reconciled.md`). 대부분 Coordinator가 관대했던 쪽이다.
+5. 선정 규칙: 선행 감사 결과를 보기 전에 `selection.md` 1절로 커밋했다.
+6. 선행 감사: 같은 reviewer가 상위 7개 묶음을 감사했다(`prior_overlap_audit.md`). 결과는 done 0, partially 4, not found 3이다. Coordinator가 핵심 인용 9건을 Crossref, PubMed, arXiv로 다시 확인했다.
+7. 네트워크: NeurIPS 2026 TRIBE v2 평가 논문을 확인하려고 환경 허용 목록에 neurips.cc, api.openreview.net, api2.openreview.net, jov.arvojournals.org를 추가했다. 사용자가 Stage 1에서 논문 사이트 허용을 승인한 범위 안이다. 공식 페이지에서 서지와 초록을 확인했다. OpenReview 본문과 J Vis 초록은 사이트 쪽 로그인 또는 브라우저 확인 때문에 열지 못했고, 우회하지 않았다.
+
+### 결과 (`outputs/revision/selection.md`)
+
+| 묶음 | 한 줄 질문 | 방향 | 최종 점수 | 선행 |
+|---|---|---|---|---|
+| A (C-16 + C-20 + C-05) | AI가 정서를 직접 배워야만 뇌의 정서 반응과 닮아질까, 아니면 세상을 보는 것만으로도 충분할까? | D1 | 42.0 | partially |
+| B (C-02 + C-01 + C-04, RQ-44와 합침) | 같은 장면을 떠올릴 때 뇌가 그리는 장면은 볼 때보다 더 감정적일까, 덜 감정적일까? | D2 | 40.5 | 핵심 not found |
+| C (C-08) | 한눈에 알 수 없는 정서일수록 뇌의 더 깊은 곳에서 표상될까? | D1 | 39.5 | not found |
+| D (C-19 주, C-18 대안) | 정서 단어를 배우지 못한 AI는 장면의 정서를 뇌와 다르게 볼까? | D1 | 39.0 / 39.5 | not found / partially |
+| E (C-11) | 보고 듣는 것만으로는 예측되지 않는 정서 반응은 뇌의 어디에 남고, 정서의 어떤 측면과 함께 움직일까? | in-silico 뇌 | 39.0 | partially |
+
+* 예비: C-27(D3), C-21(비지도), C-12, C-14.
+
+### 이번 라운드에서 바로잡은 것
+
+* 사용자가 말한 D2 그대로의 판(공개 decoder + emotion head, C-01)은 '뇌가 더한 정서'와 '자극 모델이 놓친 정보'를 가르지 못한다. 그래서 자극을 고정한 회상 대 지각 비교의 측정 장치로 바꿨다(B).
+* 원 제안자가 '선행 없음'으로 둔 6개 중 3개가 partially로 바뀌었다(C-16 묶음, C-18, C-27). 원 제안 검색에서 2024~2026 선행(Gao 2025, Soderberg 2026, Conwell 2024 arXiv, Muller-Rodriguez 2024)이 빠졌기 때문이다.
+* Stage 4 카드 RQ-60의 MMAudio 라이선스를 '미확인'에서 '코드 MIT, checkpoint CC BY-NC 4.0'으로 고쳤다.
+
+### 사용자 확인 필요 (재탐색 이후)
+
+36. **묶음 선택.** A~E 중 어느 것으로 카드를 쓸지 골라 주세요. 한 사람이 4주에 할 수 있는 조합은 A + C(D1), B 단독(D2), E 단독(소리 있는 자료) 중 하나로 봅니다(`selection.md` 6절).
+37. **B를 고르면:** Mind captioning 보유본의 전처리 형식(30번 항목)이 decoder 학습에 직접 필요합니다.
+38. **D를 고르면:** Affection 자료(arXiv:2210.01946)를 이미 갖고 있거나 쓸 수 있는지 알려 주세요. 안 되면 C-18(공개 COCO)로 바꿉니다.

@@ -55,6 +55,21 @@ Stage 3에서 SendMessage로 같은 에이전트를 재개할 때 쓰는 ID 목�
 | adversarial-reviewer (카드 검토 묶음 B) | aa91a97af3b14b90e | `outputs/evaluation/card_review_B.md` |
 | adversarial-reviewer (최종 인용 검증, 새 인스턴스) | a0f758bf975ed612c | `outputs/evaluation/final_citation_check.md` |
 
+## 재탐색 라운드 (2026-11-12, Stage 4 이후 사용자 지시)
+
+탐색은 Stage 2 Round 1의 같은 인스턴스 7개를 SendMessage로 재개해 수행했다. 평가는 새 adversarial-reviewer 인스턴스가 Coordinator 점수를 보지 않고 채점했고, 같은 인스턴스가 이어서 선행연구 중복 감사를 했다.
+
+| 역할 | agent ID | 산출물 |
+|---|---|---|
+| vision-decoding (D2 주담당, 출발점 RQ-53) | ac253b97bb080c9b1 | `outputs/agents/vision-decoding/revision_round.md` |
+| encoding-foundation (출발점 RQ-51) | a1e352d659ed60d8c | `outputs/agents/encoding-foundation/revision_round.md` |
+| brain-inspired (D1 주담당, 출발점 RQ-54, 56) | a33e66f5a273664cb | `outputs/agents/brain-inspired/revision_round.md` |
+| frontier-ai (출발점 RQ-55, 19) | aab100cf89288f887 | `outputs/agents/frontier-ai/revision_round.md` |
+| geometry-info (출발점 RQ-04) | ae216f8ca9181b4e7 | `outputs/agents/geometry-info/revision_round.md` |
+| emotion-theory (출발점 RQ-22, 12) | a85c474967cad849e | `outputs/agents/emotion-theory/revision_round.md` |
+| multimodal-dynamics (D3, 출발점 RQ-05) | ab3f5d7c66dfe0bff | `outputs/agents/multimodal-dynamics/revision_round.md` |
+| adversarial-reviewer (독립 채점, Coordinator 점수 미열람. 이어서 선행연구 중복 감사) | a6168bf8e2364c8ad | `outputs/revision/scores_reviewer.csv`, `reviewer_notes.md`, `prior_overlap_audit.md` |
+
 ## Stage 1 (참고, general-purpose 에이전트가 정의 파일을 읽고 수행)
 
 | 역할 | agent ID | 산출물 |
