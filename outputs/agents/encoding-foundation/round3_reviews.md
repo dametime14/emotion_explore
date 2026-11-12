@@ -69,7 +69,7 @@
 * **검색:** PubMed `(carry-over OR carryover OR spillover OR lingering OR inertia) AND (emotion OR emotional OR affective) AND fMRI AND (film OR movie OR clips OR video)`(2010~), 2026-11-12.
 * **결과:** 분 단위 이월에는 선행이 있다.
   * Pichon et al. 2015(doi:10.1093/scan/nsu044, 초록): 정서 영화 클립 중 편도체 누적 반응이 이후 공포 얼굴에 대한 편도체 반응 변화를 예측했다. 부정은 증가, 긍정은 감소였다. 제안자의 인용 목록에 없던 논문이다.
-  * Gaviria et al. 2021(doi:10.1002/hbm.25277)과 2021(doi:10.1016/j.neuroimage.2021.118377): 영화 후 휴지기 CAP 이월.
+  * Gaviria et al. 2021 두 편(doi:10.1002/hbm.25277, doi:10.1016/j.neuroimage.2021.118377): 영화 후 휴지기 CAP 이월.
   * Borchardt et al. 2018(doi:10.1093/cercor/bhx290): 슬픈 영화 후 FC 이월.
   * Tambini et al. 2017(doi:10.1038/nn.4468): 정서 상태의 기억 부호화 이월.
   * 초 단위 클립 간 이월을 HRF 잔여와 분리해 측정하고, 두 시간척도를 하나의 이완 모형으로 적합한 연구는 찾지 못했다.
