@@ -124,7 +124,7 @@ Horikawa (2025, Science Advances, doi:10.1126/sciadv.adw1464) Mind captioning �
 | **BrainDiVE** (arXiv:2306.03089, NeurIPS 2023) | NSD | encoder gradient | diffusion guided 합성 | GitHub aluo-x/BrainDiVE [검색] | 편도체, 섬엽, vmPFC encoder에 연결하면 정서 영역 선호 이미지 합성. in-silico 결과 |
 | **EmoSet 학습 분류기** (arXiv:2307.07961, ICCV 2023) | 330만 장(11.8만 인간 주석) | 이미지 | 정서 범주 + 속성(밝기, 채도, 장면, 물체, 표정, 행동) | 데이터셋 공개 여부 본문에서 확인 못함 | C&K와 겹치지 않는 평가기 후보. 주석은 평정자 판단(P/N 수준) |
 | **EmoGen** (arXiv:2401.04608, CVPR 2024) | EmoSet | 정서 범주 | CLIP 공간에 정렬한 정서 공간으로 T2I | 미확인 | counterfactual 정서 latent 생성, 정서 방향 정의에 사용. 내용만 다루고 색, 스타일은 제외 [본문 Limitations] |
-| **CLIP / OpenCLIP** (arXiv:2103.00020) | 웹 4억 쌍 | 이미지, 텍스트 | 대조 학습 embedding | 공개 [초록 수준 지식] | 대부분 재구성 모델의 목표 공간. C&K GIF나 COCO가 학습에 포함됐는지 확인 불가(오염 가능성) |
+| **CLIP / OpenCLIP** (arXiv:2103.00020) | 웹 4억 쌍 | 이미지, 텍스트 | 대조 학습 embedding | 가중치가 공개된 것으로 알려져 있으나 이번 라운드에서 배포 경로와 라이선스는 확인하지 않음 | 대부분 재구성 모델의 목표 공간. C&K GIF나 COCO가 학습에 포함됐는지 확인 불가(오염 가능성) |
 
 ### 2.3 데이터셋별 이식 체크리스트
 
@@ -206,7 +206,7 @@ Horikawa (2025, Science Advances, doi:10.1126/sciadv.adw1464) Mind captioning �
 
 * **Original Finding:** NSD 재구성의 상당 부분은 학습-테스트 의미 군집 중복과 output dimension collapse로 생긴 분류와 환각이다(doi:10.1016/j.neunet.2025.107515, 2.2.1, 3 Discussion 첫째 단락). 계층 feature 공간을 거치면 학습하지 않은 물체 범주를 zero-shot 식별할 수 있다(doi:10.1038/ncomms15037, Discussion 첫째 단락).
 * **Unresolved Question:** Shirakawa는 분할 재설계를 권고했다(3 Discussion 다섯째 단락, 3.1.1). Westlin 2025는 개인 BOLD 군집이 규범 범주와 거의 대응하지 않았고 이론 간 직접 비교가 필요하다고 했다(arXiv:2507.00320, Discussion 셋째, 여섯째 단락). 정서 decoding이 범주 분류인지 조합적 표상인지 가리는 검증은 없다.
-* **Technological Development:** 정서 공간을 CLIP 공간에 정렬하는 방법(arXiv:2401.04608, 3절 방법, Limitations), 연속 34차원 정서 벡터 해독(arXiv:2605.16739, 3.1).
+* **Technological Development:** 정서 공간을 CLIP 공간에 정렬하는 방법(arXiv:2401.04608, Abstract, Limitations), 연속 34차원 정서 벡터 해독(arXiv:2605.16739, 3.1).
 * **New Dataset / Model Combination:** Horikawa(+ MindCaptioning). 분할: C&K 우세 범주 군집 단위와 원본 영상 단위로 묶은 leave-one-emotion-cluster-out. 해독 목표: (a) 34차원 규범 profile, (b) 범주 이름과 정의 문장의 텍스트 embedding, (c) 14 affective dimension. 시각-의미 통제로 중립 캡션 embedding을 함께 해독.
 * **New Research Question:** 학습에서 완전히 뺀 정서 범주의 클립을, 다른 범주로 학습한 decoder가 연속 정서 공간이나 언어 공간을 통해 식별할 수 있는가. 영역별로 어떤 표상은 조합적으로 일반화하고 어떤 표상은 군집 분류에 머무는가.
 * **해석 범위:** zero-shot 성공은 연속 공간 안에서 범주가 공유 성분으로 위치한다는 증거, 범주 내 정확도는 높고 zero-shot은 실패하면 군집 특이 부호화 또는 표본 군집 인공물의 증거다. 어느 쪽도 특정 정서 이론을 단독으로 판정하지는 않으며 "분석 가정 민감도 시험"으로 보고한다.
@@ -216,7 +216,7 @@ Horikawa (2025, Science Advances, doi:10.1126/sciadv.adw1464) Mind captioning �
 
 * **Original Finding:** 합성 fMRI로 ROI-optimal 이미지를 만들 수 있다(doi:10.1038/s41598-023-42891-8, Results "ROI-optimal stimuli"; arXiv:2403.11207, Appendix A.14). EmoNet feature 기반 편도체 하위영역 encoding model로 하위영역별 합성 자극이 저수준 속성에서 구분된다(doi:10.1523/JNEUROSCI.1436-24.2025, Results, Discussion 여섯째 단락).
 * **Unresolved Question:** 편도체 모델은 영화 한 편으로 학습되어 정서 범위가 제한되고 다른 자극으로의 일반화가 필요하다(doi:10.1523/JNEUROSCI.1436-24.2025, Discussion 여덟째 단락). 합성 이미지의 실제 검증과 새 ROI 적용은 미래 과제다(arXiv:2306.03089, Limitations and Future Work). 스키마 adversarial 이미지의 인간 경험 효과도 미평가다(doi:10.1126/sciadv.aaw4358, Discussion 여덟째 단락). 덜 알려진 영역의 ROI-optimal 탐색이 권고되었다(doi:10.1016/j.neunet.2025.107515, 3 Discussion 둘째 단락).
-* **Technological Development:** encoder gradient로 diffusion을 유도하는 BrainDiVE(arXiv:2306.03089, 방법).
+* **Technological Development:** encoder gradient로 diffusion을 유도하는 BrainDiVE(arXiv:2306.03089, Abstract, Conclusion).
 * **New Dataset / Model Combination:** Horikawa 2,181클립으로 편도체 하위영역, 섬엽, vmPFC, OFC voxel encoding model 학습(feature는 C&K 비노출 모델 사용). noise ceiling은 MindCaptioning 72클립 반복으로 추정. BrainDiVE로 영역별 선호 이미지 합성. 평가: 소규모 온라인 규범 평정(신규 수집), EmoSet 평가기, 저수준 속성(색, 공간주파수). NSD 학습 encoder로 교차 예측.
 * **New Research Question:** 정서 유발 영상으로 학습한 편도체, 섬엽, vmPFC encoding model이 선호하는 합성 이미지는 인간 규범 정서 공간에서 영역마다 어디에 놓이는가. 그 선호는 저수준 속성으로 환원되는가, 의미 범주로 환원되는가, 둘 다 아닌가. 학습 자극 집합(영화 한 편 vs C&K 2,181클립)에 따라 선호가 바뀌는가.
 * **해석 범위:** in-silico 예측이다. 모델 선호가 곧 영역 기능은 아니며, 확증에는 합성 자극에 대한 새 fMRI가 필요하다(CLAUDE.md 6절 in-silico vs observed). 3T에서 편도체 encoding 정확도가 낮을 수 있다.
@@ -226,7 +226,7 @@ Horikawa (2025, Science Advances, doi:10.1126/sciadv.adw1464) Mind captioning �
 
 * **Original Finding:** 공유 자극 없이도 피험자별 선형 사상으로 공유 latent에 정렬할 수 있다(arXiv:2403.11207, 2.1). 새 피험자 적응을 voxel embedding만으로 할 수 있다(arXiv:2510.25976, 5.3).
 * **Unresolved Question:** 개인별 BOLD 구조는 같은 클립을 봐도 고유하며 개인 자기보고가 필요하다(arXiv:2507.00320, Discussion 둘째, 여덟째 단락). EmoMind의 개인 차이 해석은 본인 보고 없이 이루어졌다(arXiv:2605.16739, 5 Discussion 첫째 단락). MIRAGE도 개인 고유 imagery는 해독한다고 주장하지 않는다(arXiv:2605.17198, 3.2).
-* **Technological Development:** 공유-개인 사상 구조(arXiv:2403.11207; arXiv:2510.25976), 피험자 불변 표상 학습(arXiv:2404.07850, 3절 방법).
+* **Technological Development:** 공유-개인 사상 구조(arXiv:2403.11207; arXiv:2510.25976), 피험자 불변 표상 학습(arXiv:2404.07850, Abstract).
 * **New Dataset / Model Combination:** Horikawa 5명 + MindCaptioning 6명(같은 2,180클립)으로 공유 정서 latent 학습. Spacetop alignvideo(모든 참가자가 같은 영상, 본인 7차원 평정)에서 공유 latent에 정렬 후 개인 잔차 계산. 규범 대리는 해당 참가자를 뺀 나머지 참가자 평균.
 * **New Research Question:** 공유 latent로 설명되지 않는 개인 잔차 성분이 그 참가자의 본인 평정이 집단 평균에서 벗어나는 정도를 예측하는가. 즉 공유 성분은 규범 정서(N), 개인 성분은 경험 정서(X)의 신경 대응물로 기능하는가.
 * **반증 조건:** 개인 잔차가 본인 평정 편차를 예측하지 못하고(영상 단위 순열 검정), 공유 성분만으로 본인 평정 예측이 포화되면 "개인 경험 성분" 가설 기각.

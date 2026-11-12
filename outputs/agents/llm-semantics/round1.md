@@ -78,7 +78,7 @@
 * overlap: EmoViS (affective brain geometry의 sensory-semantic 기원)
 
 ### P3. 맥락 의존 정서와 신체 기반 정서에서의 모델 실패가 뇌에서 무엇에 대응하는가
-* 내용: MLLM은 단일 프레임으로 정서가 정해지는 비디오(아기, 동물, 공포 장면)에서는 잘 맞고, 맥락 반전이 있는 비디오와 '두근거림' 같은 신체 정서에서 실패한다(Asanuma2025 Results와 Discussion 넷째 단락). GPT-4V는 추론적, 추상적 사회 특징에서 일치도가 낮다(SantavirtaV2025 Discussion). Gemini 특징은 insula를 거의 설명하지 못한다(LiM2026 Conclusions). 이 "모델 실패 집합"이 뇌의 어떤 표상(내수용, 맥락 통합)과 대응하는지 검증된 적이 없다.
+* 내용: MLLM은 단일 프레임으로 정서가 정해지는 비디오(아기, 동물, 공포 장면)에서는 잘 맞고, 맥락 반전이 있는 비디오와 '두근거림' 같은 신체 정서에서 실패한다(Asanuma2025 Results의 'Well-estimated and Poorly-estimated Videos'와 Discussion 후반 'In addition to contextual cues' 단락). GPT-4V는 추론적, 추상적 사회 특징에서 일치도가 낮다(SantavirtaV2025 Discussion). Gemini 특징은 insula를 거의 설명하지 못한다(LiM2026 Conclusions). 이 "모델 실패 집합"이 뇌의 어떤 표상(내수용, 맥락 통합)과 대응하는지 검증된 적이 없다.
 * 근거: doi:10.1038/s41598-025-14961-6, doi:10.1162/imag.a.134, doi:10.1162/imag.a.1300, arXiv:2605.16739, doi:10.1038/s41562-025-02203-8
 
 ### P4. 상황의 시간적, 인과적 구조를 담는 정서 표상
@@ -116,7 +116,7 @@
 | M9 | 정서 특화 MLLM (AffectGPT, Emotion-LLaMA) | 코드 공개, 가중치 공개 여부는 모델별 확인 필요 | 오디오+비디오+텍스트 / 개방 어휘 정서 기술, 범주 | 정서 instruction tuning | AffectGPT의 MER-Caption 데이터 CC BY-NC 4.0(논문에서 확인), 모델 라이선스 미확인 | 인물 표정과 음성 기반 portrayed emotion 주석기 후보. 관객 경험 정서와 다른 범주로 표기 |
 | M10 | LLM 사건 분할과 예측 신호 (prompt 기반 사건 경계, 토큰 surprisal, 서사 예측 분포) | 공개 LLM으로 재현 가능 | 텍스트 / 경계, surprisal, 예측 분포 | 다음 토큰 예측 | 모델에 따름 | Michelmann2025는 GPT-3 경계가 개별 인간보다 합의에 가깝다고 보고. Antony 2021(doi:10.1016/j.neuron.2020.10.029)의 belief-inconsistent surprise를 서사로 옮기는 데 사용 |
 
-**모델 선택 원칙(제안).** 재현성과 내부 표상 접근을 위해 공개 가중치 모델을 주력으로 쓰고, 폐쇄 모델은 "사람 일치도 상한 참고"로만 쓴다. 이유: Strachan 2024(doi:10.1038/s41562-024-01882-z, Discussion 마지막 단락)와 Xu2025(Discussion 다섯째 단락)가 폐쇄 모델의 불투명성을 과학적 한계로 명시했고, Strachan 2024는 출력 행동(performance)과 내부 능력(competence)이 다를 수 있음을 보였다.
+**모델 선택 원칙(제안).** 재현성과 내부 표상 접근을 위해 공개 가중치 모델을 주력으로 쓰고, 폐쇄 모델은 "사람 일치도 상한 참고"로만 쓴다. 이유: Strachan 2024(doi:10.1038/s41562-024-01882-z, Discussion 마지막 단락)와 Xu2025(Discussion 여섯째 단락)가 폐쇄 모델의 불투명성을 과학적 한계로 명시했고, Strachan 2024는 출력 행동(performance)과 내부 능력(competence)이 다를 수 있음을 보였다.
 
 ---
 
@@ -237,8 +237,8 @@
 
 ### Chain 4. 신체 잔차: MLLM이 놓치는 정서는 생리와 insula에 있는가
 
-* **Original Finding:** MLLM은 '두근거림' 같은 신체 기반 정서와 맥락 의존 비디오에서 실패한다 [doi:10.1038/s41598-025-14961-6, Discussion 넷째 단락(arXiv v2)]. Gemini 영화 특징은 insula, 체성감각, 이상피질을 거의 설명하지 못한다 [doi:10.1162/imag.a.1300, Conclusions]. 언어 단독 학습은 감각운동 차원을 회복하지 못한다 [doi:10.1038/s41562-025-02203-8, Discussion 첫째~셋째 단락].
-* **Unresolved Question:** 저자는 내수용 신호 통합 또는 정서-장면 연합 데이터 미세조정을 제안했다 [doi:10.1038/s41598-025-14961-6, Discussion 넷째, 다섯째 단락]. 합성 뇌가 클립 간 정서 구조를 잃는 이유로 내수용, 맥락, 개인 특이 신호를 지목했다 [arXiv:2605.16739, Discussion 첫째 단락]. 모델이 놓친 부분이 실제 신체 신호와 대응하는지는 검증되지 않았다.
+* **Original Finding:** MLLM은 '두근거림' 같은 신체 기반 정서와 맥락 의존 비디오에서 실패한다 [doi:10.1038/s41598-025-14961-6, Discussion 후반 'In addition to contextual cues' 단락(arXiv v2)]. Gemini 영화 특징은 insula, 체성감각, 이상피질을 거의 설명하지 못한다 [doi:10.1162/imag.a.1300, Conclusions]. 언어 단독 학습은 감각운동 차원을 회복하지 못한다 [doi:10.1038/s41562-025-02203-8, Discussion 첫째~셋째 단락].
+* **Unresolved Question:** 저자는 내수용 신호 통합 또는 정서-장면 연합 데이터 미세조정을 제안했다 [doi:10.1038/s41598-025-14961-6, Discussion 후반 'In addition to contextual cues' 단락과 'However, another possibility' 단락]. 합성 뇌가 클립 간 정서 구조를 잃는 이유로 내수용, 맥락, 개인 특이 신호를 지목했다 [arXiv:2605.16739, Discussion 첫째 단락]. 모델이 놓친 부분이 실제 신체 신호와 대응하는지는 검증되지 않았다.
 * **Technological Development:** MLLM의 시간 연속 주석과 그 검증 방식 [arXiv:2502.04379, Limitations], 평정자별 원자료로 만드는 라벨 noise 귀무분포.
 * **New Dataset / Model Combination:** Emo-FilM 50항목 1 Hz [Human-norm](Physiology 5, Motor expression 5, Feeling 7 등 CPM 성분) + 같은 50항목의 MLLM 1 Hz 추정 [AI-est] + fMRI 참가자의 PPG, 호흡, EDA(1000 Hz) + fMRI.
 * **New Research Question:** "Emo-FilM에서 MLLM과 인간 규범 평정의 일치도가 가장 낮은 CPM 성분은 Physiology와 Motor expression인가, 그리고 인간 평정에서 MLLM 예측을 뺀 잔차 시계열이 평정자 split 간 잔차(라벨 noise 귀무분포)보다 fMRI 참가자의 심박, EDA, insula와 뇌간 BOLD를 더 잘 예측하는가?"
@@ -265,7 +265,7 @@
 * **Original Finding:** MLLM triplet embedding이 정서 네트워크를 잘 예측했으나 자극과 모델의 서구 문화 편향을 저자가 한계로 들었다 [arXiv:2509.24298, Limitations 둘째 단락]. GWOT는 상관이 놓치는 구조 차이를 드러낸다 [doi:10.1038/s41598-024-65604-1, Discussion 첫째 단락]. 정서 의미는 언어 계통마다 다르고 valence, 활성화만 보편이다 [doi:10.1126/science.aaw8160, abstract].
 * **Unresolved Question:** 교차문화 데이터에서 정서 기하의 문화 불변/특이 성분을 구분해야 한다 [arXiv:2509.24298, Limitations 셋째 단락]. 언어, 문화 요인의 영향 검토 [doi:10.1038/s41598-024-65604-1, Discussion 셋째 단락].
 * **Technological Development:** 다국어 LLM/MLLM, GWOT(M6), triplet embedding(M5).
-* **New Dataset / Model Combination:** Horikawa fMRI(참가자 언어는 Stage 1 미확인. 같은 비디오 계열의 mind captioning 참가자는 일본어 모국어 화자 [doi:10.1126/sciadv.adw1464, Discussion 셋째 단락]) + 같은 MLLM을 일본어 prompt와 일본어 정서 어휘로 쓴 embedding [AI-est] vs 영어 prompt와 Cowen & Keltner 어휘 embedding [AI-est] + 미국 평정자 [Human-norm].
+* **New Dataset / Model Combination:** Horikawa fMRI(참가자 언어는 Stage 1 미확인. 같은 비디오 계열의 mind captioning 참가자는 일본어 모국어 화자 [doi:10.1126/sciadv.adw1464, Discussion 넷째 단락]) + 같은 MLLM을 일본어 prompt와 일본어 정서 어휘로 쓴 embedding [AI-est] vs 영어 prompt와 Cowen & Keltner 어휘 embedding [AI-est] + 미국 평정자 [Human-norm].
 * **New Research Question:** "같은 Horikawa 비디오에 대해 일본어로 정서를 판단하게 한 MLLM 표상과 영어로 판단하게 한 표상 중 어느 쪽이 참가자 뇌 RSM과 항목 수준(GW 매칭률)에서 더 정렬되며, 그 차이는 valence와 arousal을 회귀한 잔여 구조에서 나타나는가?"
 * **검증 논리:** 차이가 없거나 valence/arousal에만 있으면 보편 구조 가설, 잔여 구조에서 일본어 쪽이 우세하면 언어 특이 정서 의미가 뇌 표상과 맞물린다는 구성주의적 해석이 지지된다. 모델의 언어별 능력 차이를 통제하려고 정서 무관 과제(장면 기술 embedding의 뇌 정렬)에서의 언어 간 차이를 기준선으로 뺀다.
 * **위험:** 참가자 언어 미확인이면 질문 자체가 성립하지 않는다(선결 조건). 5명뿐이라 참가자 수준 일반화 불가, 효과 크기 추정 중심. 번역 인공물.
@@ -274,7 +274,7 @@
 
 ### Chain 7. 맥락만 본 정서 vs 인물만 본 정서: 생성 마스킹으로 만든 in-silico 회귀자
 
-* **Original Finding:** 인물을 가려도 맥락만으로 정서를 정확히 추적하며 맥락은 얼굴, 몸과 별개로 기여한다 [doi:10.1073/pnas.1812250116, Discussion 첫째 단락]. MLLM은 맥락 해석이 필요한 비디오에서 표면 특징에 의존해 실패한다 [doi:10.1038/s41598-025-14961-6, Results 'Well-estimated and Poorly-estimated Videos'와 Discussion 셋째 단락]. 같은 얼굴이 맥락에 따라 다른 신경 반응을 낸다 [doi:10.1093/scan/nsl014, abstract].
+* **Original Finding:** 인물을 가려도 맥락만으로 정서를 정확히 추적하며 맥락은 얼굴, 몸과 별개로 기여한다 [doi:10.1073/pnas.1812250116, Discussion 첫째 단락]. MLLM은 맥락 해석이 필요한 비디오에서 표면 특징에 의존해 실패한다 [doi:10.1038/s41598-025-14961-6, Results 'Well-estimated and Poorly-estimated Videos'와 Discussion 'On the other hand, MLLMs struggled' 단락]. 같은 얼굴이 맥락에 따라 다른 신경 반응을 낸다 [doi:10.1093/scan/nsl014, abstract].
 * **Unresolved Question:** 맥락이 시뮬레이션으로 쓰이는지 정신 상태 추론으로 쓰이는지 구분되지 않았다 [doi:10.1073/pnas.1812250116, Discussion 둘째 단락].
 * **Technological Development:** 비디오 분할과 inpainting 생성 모델, MLLM 정서 추정, in-silico encoding.
 * **New Dataset / Model Combination:** Horikawa 클립과 Emo-FilM 장면에 대해 (a) 원본, (b) 인물 제거(맥락만), (c) 배경 제거(인물만) 입력의 MLLM 정서 추정 [AI-est 3종] + 소표본 인간 검증(ChenWhitney2019 절차를 따른 맥락만 평정 [Attrib-human], 수집 필요) + 기존 fMRI.
@@ -310,7 +310,7 @@
 | Narrative Progression / S7 | 불가 (클립 독립) | 가능 (대사는 ASR 필요) | 최적 (텍스트, 오디오) | 불가 |
 | S1 Attribution-Experience | [Human-norm]만 | [Human-norm] + 부분 [Self] | [Self] + [Attrib-human] 같은 참가자 | 100장 [Self 추정] |
 | S3 Description Residual | 최적 (정서 배제 캡션, 확보 필요) | 가능 (캡션 생성 필요) | 가능 | 적합 (COCO 캡션, 정서는 [AI-est]) |
-| S6 Cultural Semantics | 후보 (평정자와 참가자 문화 불일치 가능성) | 스위스 참가자(평정 언어 확인 필요) | 미국 참가자 | 제한 |
+| S6 Cultural Semantics | 후보 (평정자와 참가자 문화 불일치 가능성) | 참가자 언어, 문화 배경 미확인 | 참가자 언어, 문화 배경 미확인 | 제한 |
 
 ---
 

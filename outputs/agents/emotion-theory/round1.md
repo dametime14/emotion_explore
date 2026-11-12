@@ -128,7 +128,10 @@ CIFAR-10H처럼 판단 분포를 목표로 학습한다 (arXiv:1908.07086). Hori
 Emo-FilM은 영화 14편이라 영화 수준 confound와 정서가 공선적일 수 있다 (Stage 1 4.2절). 영화를 확률효과로 두면 정서 효과의 일반화 검정이 50~200% 부풀려지는 문제를 줄일 수 있다 (10.12688/wellcomeopenres.10298.2).
 
 **T7. (역방향) 정서 이론 → AI 평가: MLLM이 '묘사된 정서'와 '유발될 정서'를 구분하는가 (Affective → AI).**
-Cowen & Keltner 8째 단락의 보고 3요소 구분과 HOT-2(신호 출처 monitoring)를 MLLM 평가 기준으로 쓴다. 같은 비디오에 "인물이 느끼는 정서", "보통 사람이 느낄 정서", "이 장면이 문화적으로 일으켜야 할 정서"를 따로 묻고, 세 답의 차이가 인간 felt/perceived 차이(10.1162/imag_a_00517의 공유 분산 36%)와 같은 구조인지 본다. AI 추정 라벨을 쓰는 모든 질문의 전처리 검증 단계로도 쓸 수 있다.
+Cowen & Keltner 8째 단락의 보고 3요소 구분과 HOT-2(신호 출처 monitoring)를 MLLM 평가 기준으로 쓴다. 같은 비디오에 "인물이 느끼는 정서", "보통 사람이 느낄 정서", "이 장면이 문화적으로 일으켜야 할 정서"를 따로 묻고, 세 답의 차이가 인간 felt/perceived 차이(10.1162/imag_a_00517의 공유 분산 36%)와 같은 구조인지 본다. AI 추정 라벨을 쓰는 모든 질문의 전처리 검증 단계로도 쓸 수 있다. 여기에 LLM 자기 확신도 보정(arXiv:2207.05221)을 더해, AI 라벨의 확신도가 인간 평정자 불일치(라벨 불확실성)와 대응하는지 점검한다. 대응하지 않으면 AI 라벨의 확신은 정서 모호성 정보가 아니다.
+
+**T8. LLM 내부 appraisal 방향 → appraisal 연속 평정과 뇌 (LLM interpretability → Affective).**
+LLM 중간층에서 appraisal 개념 방향을 찾아 조작하면 출력 정서가 예측 가능하게 바뀐다 (arXiv:2502.05489, 9~10절) [본문]. 같은 방향을 Emo-FilM 대사 전사본에 적용해 얻은 시계열을 Emo-FilM appraisal 평정(Predictable, Controlled, Urgency 등)과 뇌 반응에 정렬할 수 있다. 단 LLM은 서술에서 정서를 추론하는 "인식" 모델이므로 결과는 경험 질문이 아니라 appraisal 인식 질문으로만 해석한다. G1 필요(보유, 전사본 생성 필요).
 
 ---
 
@@ -157,7 +160,7 @@ Plank는 라벨 변동을 잡음이 아닌 실재 변동으로 보자고 하고 
 |---|---|---|---|---|
 | S1 | **Rank-resolved (spectral) reliability:** 신뢰 공유 분산을 rank별로 추정하고 스펙트럼 지수, 꺾임점, 피험자 간 공유 정도를 정서 이론 검정에 쓴다 | Q (K와 교차) | 불필요 | arXiv:2409.06843, arXiv:2505.12653, 10.1073/pnas.1702247114 |
 | S2 | **Rating target x Rater taxonomy:** 라벨을 대상(portrayed / perceived affective quality / felt)과 주체(참가자 본인 / peer 합의 / 별도 평정자 규범 / AI 추정)의 격자로 표기하고, 격자 칸 간 뇌 설명력 차이를 연구 대상으로 삼는다 | A와 Q 공동 | 불필요. 단 모든 RQ에 필수 태그로 붙이자고 제안 | 10.1073/pnas.1702247114 Discussion 8째 단락, 10.1162/imag_a_00517, 10.1016/j.isci.2020.101060 Limitations |
-| S3 | **Introspective access and emotion report (metacognitive layer):** 정서 보고의 privileged access, 보고 확신도와 재평정 일관성, 정서 schema와 언어의 역할, 보고 행위가 경험에 주는 영향 | A | **독립 Axis 후보.** A(구성 개념), N(계산), R(AI 자기보고)에 걸쳐 있고 외부 분야 Artificial Consciousness and Metacognition의 핵심이다. 가칭 "Axis U: Metacognition & Introspective Report". Coordinator 판단 요청 | 10.1073/pnas.1619316114, arXiv:2410.13787, arXiv:2506.05068, 10.1093/nc/nix007, 10.1016/j.biopsycho.2014.11.004 |
+| S3 | **Introspective access and emotion report (metacognitive layer):** 정서 보고의 privileged access, 보고 확신도와 재평정 일관성, 정서 schema와 언어의 역할, 보고 행위가 경험에 주는 영향 | A | **독립 Axis 후보.** A(구성 개념), N(계산), R(AI 자기보고)에 걸쳐 있고 외부 분야 Artificial Consciousness and Metacognition의 핵심이다. 가칭 "Axis U: Metacognition & Introspective Report". Coordinator 판단 요청 | 10.1073/pnas.1619316114, 10.1016/j.tics.2019.06.009 (HOT를 confidence와 동일시하지 말 것), arXiv:2410.13787, arXiv:2506.05068, 10.1093/nc/nix007, 10.1016/j.biopsycho.2014.11.004 |
 | S4 | **Disagreement-as-signal:** 평정자 불일치를 자극 모호성, 개인 특이 반응, 측정 잡음으로 분해하는 신경 검정 | Q | 불필요 | arXiv:1908.07086, 10.1162/tacl_a_00449, arXiv:2211.02570 |
 | S5 | **Validity of unsupervised structure:** 비지도 군집과 차원을 '분산'이 아니라 '신뢰 분산'에서 구하고, nuisance(session, run) 대응을 필수 보고 | Q (T와 교차) | 불필요 | arXiv:2507.00320, 10.1038/s41598-020-77117-8 Discussion 2째 단락 |
 | S6 | **Affective quality space:** 주관적 유사성과 신경 판별성의 대응, smoothness | A (K와 교차) | 불필요 | 10.1016/j.tics.2024.06.007, arXiv:2308.08708, 10.1038/s41586-019-1346-5 |
@@ -194,7 +197,7 @@ Plank는 라벨 변동을 잡음이 아닌 실재 변동으로 보자고 하고 
 
 * **Original Finding:** 보고 신뢰도와 고차 영역 표상에 대한 HOT 해석 (10.1073/pnas.1702247114, Discussion 7째 단락). 정서는 GNC의 고차 표상 (10.1073/pnas.1619316114, HOTEC 절). 주관 공포 decoder(외측/배내측 PFC)와 생리 decoder(편도체, 섬엽, vmPFC)의 분리 (10.1038/s41380-019-0520-3, Discussion 1째 단락).
 * **Unresolved Question:** 주관 보고가 생리의 후기 readout인가 (10.1038/s41380-019-0520-3, Discussion 2째 단락). 고차 영역이 수십 종 정서를 어떻게 부호화하는가 (10.1073/pnas.1702247114, Discussion 7째 단락 마지막 문장). 주관 공포는 분산 표상이라 고차 영역 단독 설명이 약함 (10.1038/s41467-021-26977-3, Discussion 3~4째 단락). PFC decoding은 지각 후 사고일 수 있음 (10.1016/j.tics.2024.05.004).
-* **Technological Development:** 고차원 시청각-의미 feature로 1차 내용을 통제하는 variance partitioning(구체 모델 선택은 다른 에이전트 담당 영역), 시각 정서 schema 기준선(EmoNet, 10.1126/sciadv.aaw4358), 측정 생리 회귀.
+* **Technological Development:** 고차원 시청각-의미 feature로 1차 내용을 통제하는 variance partitioning. 선례는 Horikawa의 정서/시각/의미 encoding 비교(10.1016/j.isci.2020.101060, Results "Disentangling Emotional, Visual Object, and Semantic Feature Encoding" 절)이며 당시 feature는 시각 1000차원과 의미 73차원이었다. 최신 모델 선택은 다른 에이전트 담당 영역이다. 시각 정서 schema 기준선으로 EmoNet(10.1126/sciadv.aaw4358, Discussion 1~2째 단락: 정서 정보가 시각 특징에 내재)을 쓰되 Horikawa에는 쓰지 않는다. 측정 생리는 회귀자로 넣는다.
 * **New Dataset / Model Combination:** Emo-FilM. 같은 시간축에 (1) 시청각-의미 feature, (2) fMRI 참가자 본인의 측정 생리(PPG, EDA, 호흡), (3) 평정자의 보고 Physiology 항목, (4) Appraisal 항목, (5) Feeling 항목, (6) discrete 항목. 영역별로 (5)의 고유 설명 분산을 (1)+(2) 통제 후 추정하고 (4)와 비교.
 * **New Research Question:** "시청각-의미 feature와 참가자 측정 생리를 모두 통제한 뒤 남는 '보고된 느낌(Feeling)' 고유 설명 분산은 PFC와 TPJ에 집중되는가(HOT 정합), 섬엽과 편도체에 남는가(1차 이론 정합), 아니면 넓게 분산되는가(분산 표상 정합)? 그리고 이 분포는 인지 평가(Appraisal) 항목의 분포와 다른가?"
 * **반증 조건:** Feeling 고유 분산이 PFC/TPJ에 없고 섬엽, 체성감각에만 있으면 HOT의 관찰적 예측은 지지되지 않는다. PFC에 있더라도 Appraisal 분포와 같다면 '느낌'이 아니라 '평가 개념화'를 본 것일 수 있다(Block 비판).
@@ -227,7 +230,7 @@ Plank는 라벨 변동을 잡음이 아닌 실재 변동으로 보자고 하고 
 
 * **Original Finding:** gradient가 혼합 정서를 설명할 수 있다 (10.1073/pnas.1702247114, Discussion 4째 단락 마지막 문장). 범주 판단의 56%는 1개, 27%는 2개, 11%는 3개 범주 선택 (같은 논문 Methods "Estimating Significance" 절). 섬엽은 단일 valence에만, ACC/vmPFC는 혼합에도 일관된 signature (10.1093/cercor/bhae122, 초록).
 * **Unresolved Question:** 혼합 상태의 신경 패턴이 구성 범주 패턴의 가중합으로 예측되는가, 영역마다 다른가.
-* **Technological Development:** 범주별 encoding 가중치의 가산성 검정(순수 자극으로 학습, 혼합 자극에서 선형 결합 예측과 상호작용 항 비교), 분포 라벨.
+* **Technological Development:** 범주 점수 기반 voxel-wise encoding(10.1016/j.isci.2020.101060, Results "Encoding Models Predicting Brain Activity from Emotional Scores" 절)을 가산성 검정으로 바꾼다: 단일 범주 우세 자극으로 학습하고 혼합 자극에서 선형 결합 예측과 상호작용 항 모델을 비교한다. 목표 라벨은 argmax가 아니라 선택 비율 분포를 쓴다(arXiv:1908.07086, Discussion 1째 단락).
 * **New Dataset / Model Combination:** Horikawa 비디오를 선택 비율로 '단일 범주 우세'와 '두 범주 동시 유의'로 나눔. Emo-FilM에서 같은 평정자 안의 동시 상승(예: Happiness와 Sad)을 평정자별 원자료로 확인(평정자당 6항목 배정 제약 있음).
 * **New Research Question:** "단일 정서 비디오로 학습한 선형 encoding 모델은 혼합 정서 비디오의 반응을 영역별로 얼마나 예측하며, 비가산성(예측 실패)은 섬엽과 편도체 같은 영역과 vmPFC와 ACC 같은 영역 중 어디에 집중되는가?"
 * **반증 조건:** 모든 영역에서 선형 결합이 혼합 반응을 ceiling 수준으로 예측하면 '혼합 정서 고유 상태' 가설은 지지되지 않는다.
@@ -271,7 +274,7 @@ Plank는 라벨 변동을 잡음이 아닌 실재 변동으로 보자고 하고 
 
 * **추가:** "Rank-resolved / Spectral Reliability" (S1), "Disagreement-as-signal" (S4), "Validity of Unsupervised Structure" (S5), "Disattenuation for Brain-Behavior and Brain-AI Comparison" (C4, Du 2025 비판), "Stimulus Sampling and Generalization" (random stimulus model, 2-factor CV), "Rater Population Mismatch" (Horikawa 평정자 미국 MTurk vs fMRI 참가자 일본, Saarimäki 핀란드 여성 평정자).
 * **병합:** "Hierarchical Bayesian Models"는 "Psychometric Measurement Models"의 방법으로 병합한다(구성 개념이 아니라 추정 기법).
-* **명확화:** "Neural Noise Ceilings"를 두 종류로 나눈다. (a) 반복 기반 ceiling(NSD, Lage-Castellanos 방식), (b) 피험자 간 공유 성분 ceiling(Horikawa, Emo-FilM, ISC 또는 cross-decomposition). (b)는 개인 특이 정서 신호를 잡음으로 분류하므로 정서 영역에서는 상한이 아니라 공유 성분의 상한이다 (10.1126/sciadv.abf7129).
+* **명확화:** "Neural Noise Ceilings"를 두 종류로 나눈다. (a) 반복 기반 ceiling(NSD, 10.1371/journal.pcbi.1006397 방식), (b) 피험자 간 공유 성분 ceiling(Horikawa, Emo-FilM, ISC 10.1093/scan/nsz037 또는 cross-decomposition arXiv:2409.06843). (b)는 개인 특이 정서 신호를 잡음으로 분류하므로 정서 영역에서는 상한이 아니라 공유 성분의 상한이다 (10.1126/sciadv.abf7129).
 
 ### 7.3 데이터셋별 Axis Q 사전 점검 항목 (다른 에이전트 제안 검토 시 사용)
 
