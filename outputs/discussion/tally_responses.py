@@ -2,8 +2,10 @@
 """Stage 3: tally Round 2 responses (수용/수정/반박) and mentions per proposal.
 
 Response source : section "받은 제안에 대한 응답" of outputs/agents/*/round2.md
-Mention source  : every outputs/agents/*/round2.md and round3_reviews.md, counting
-                  occurrences of a proposal ID outside the sender's own file.
+Mention source  : every outputs/agents/*/round2.md, counting occurrences of a proposal ID outside
+                  the sender's own file. (첫 실행은 round3_reviews.md까지 세어 Round 3 배정 제안이 평균 약 1.1점을
+                  더 받았다. adversarial-reviewer 지적으로 지시문 기준 "Round 2에서"에 맞게 정정. 첫 실행 재현:
+                  TALLY_INCLUDE_R3=1)
 Top-10 rule (prompts/stage3 2절 3번 "가장 많이 수용되거나 언급된"):
     score = (#수용) + (#수정) * 0.5 + (#distinct files mentioning, excluding sender) * 0.5
 Output: outputs/discussion/responses_tally.csv, outputs/discussion/top10_for_review.md
@@ -41,7 +43,9 @@ def main():
                 seen.add((pid, agent))
                 verdicts[pid].append((agent, VERDICT[v.group(1)]))
     mentions = collections.defaultdict(set)
-    files = glob.glob(os.path.join(ROOT, "outputs/agents/*/round2.md")) + glob.glob(os.path.join(ROOT, "outputs/agents/*/round3_reviews.md"))
+    files = glob.glob(os.path.join(ROOT, "outputs/agents/*/round2.md"))
+    if os.environ.get("TALLY_INCLUDE_R3") == "1":  # 첫 실행(정정 전) 재현용
+        files += glob.glob(os.path.join(ROOT, "outputs/agents/*/round3_reviews.md"))
     for path in files:
         agent = path.split(os.sep)[-2]
         text = open(path, encoding="utf-8").read()

@@ -1,7 +1,7 @@
 # 기각한 조합과 사유
 
 * 생성: `python3 -I outputs/combinations/build_matrix.py` (조합 원자료는 스크립트 안에 있다)
-* 기각 20개(문헌 경로 2, 무작위 경로 16, 전략 경로 2). 그 밖에 Round 4 에이전트가 기각한 미논의 Axis 쌍 10개를 3절에 옮겼다.
+* 기각 22개(문헌 경로 3, 무작위 경로 16, 전략 경로 3). 그 밖에 Round 4 에이전트가 기각한 미논의 Axis 쌍 10개를 3절에 옮겼다.
 * 다른 조합으로 통합한 경우(질문은 되지만 같은 질문)는 기각이 아니라 kept(방향만 유지)로 matrix.csv의 note에 적었다.
 
 ## 1. 문헌 경로
@@ -9,6 +9,7 @@
 | 조합 | 출처 | Axis | 내용 | 기각 사유 |
 |---|---|---|---|---|
 | LIT-25 | SN-P5 | E+W+Q+A | Mind captioning 반복에서 amygdala 반응의 반복 비정상성 | 유형 규칙은 충족(Construct, Neural, Inference)하나 외부 분야 Axis(I, J, K, L, R 또는 외부 분야)가 없다. 독립 질문보다는 LIT-10, LIT-12의 nuisance 모형(반복 번호 x 규범 arousal)으로 흡수 |
+| LIT-54 | GI-P6, LS-P6(언어 특이 판본) | K+A+C+U+O | 일본어 화자 뇌 공간에서 일본어 범주 분할이 영어 분할보다 IB 효율적인가 | adversarial-reviewer 상위 10개 검토 9.3절: 영어 화자 뇌 코호트가 없고(Horikawa 2020 참가자 언어 미확인, 같은 교토 연구실 획득), 한 뇌 공간에서 두 명명 체계를 비교하면 일본어 우위가 언어 일치 때문인지 명명 수집 절차, 범주 수, 평정자 집단 차이 때문인지 구분되지 않는다. Round 2에서 반박되었어야 할 주장. 언어 무관 판본은 LIT-18로 유지 |
 | LIT-35 | FA-P8 | T+R+Q+S | 해석 도구(SAE, 정서 vector)의 검증 기준 | 유형 2개(Structure, Inference)뿐이라 조합 규칙 미충족. 질문이 아니라 검증 기준이므로 minimum-validation 태그와 adversarial-reviewer V1~V12에 반영 |
 
 ## 2. 무작위 경로 (seed 20261113)
@@ -36,6 +37,7 @@
 
 | 조합 | 출처 | Axis | 내용 | 기각 사유 |
 |---|---|---|---|---|
+| STR-A1 | Strategy A(Technology Transfer): 통계학의 prediction-powered inference | U+Q+I+F+A | Spacetop 본인 평정 결측을 MLLM 평정으로 보충하고 PPI로 보정 | adversarial-reviewer 상위 10개 검토로 전제가 무너져 기각: (1) MLLM 평정은 같은 영상 안에서 사람마다 같아 사람 수준 편차에 정보가 없고, TRIBE와 짝지으면 가짜 연결(r 약 +0.36)을 만든다. (2) 결측은 시행/런 단위 전부-또는-없음 구조로 값 의존 결측 증거가 없어 보완의 이득이 작다. 영상 수준 질문에서 AI 라벨 활용은 LIT-15, LIT-46이 다룬다 |
 | STR-A2 | Strategy A: 정서 분류 foundation model의 fMRI 정서 decoding 전이 | A+F+I+S | foundation model 전이로 정서 decoding 정확도 향상 | Novelty Constraint: '새로운 모델로 emotion classification accuracy를 높인다'에 해당. 과학적 질문 없음 |
 | STR-B2 | Strategy B: 뇌에서 정서 영상 재구성 | A+G+L+F | decoding을 생성으로 뒤집어 정서 영상을 재구성 | 재구성 품질 개선은 Novelty Constraint 대상이고, 생성기 prior가 정서를 중립화하거나 주입하는 confound(VD-P4, LIT-29)가 해석을 막는다 |
 
