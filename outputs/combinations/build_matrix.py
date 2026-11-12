@@ -876,6 +876,14 @@ def main():
             T += ["", "방향만 유지한 조합: " + "; ".join(f"{c['combo_id']}({c['scientific_construct']})" for c in dirs)]
         T.append("")
     open(os.path.join(ROOT, "outputs/combinations/rq_table.md"), "w", encoding="utf-8").write("\n".join(T) + "\n")
+    # embed the tables into Deliverable G between markers (narrative parts are written by hand)
+    land = os.path.join(ROOT, "outputs/rq_landscape.md")
+    if os.path.exists(land):
+        txt = open(land, encoding="utf-8").read()
+        a, b = "<!-- RQ_TABLE_START -->", "<!-- RQ_TABLE_END -->"
+        if a in txt and b in txt:
+            txt = txt.split(a)[0] + a + "\n\n" + "\n".join(T) + "\n" + b + txt.split(b)[1]
+            open(land, "w", encoding="utf-8").write(txt)
 
     # checks
     ov_c = collections.Counter()
