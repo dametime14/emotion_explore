@@ -71,7 +71,7 @@
 | 3 | RQ-15 | AI의 정서를 잴 때, 속을 들여다보는 것과 물어보는 것 중 무엇이 사람 뇌와 더 닮았을까? | Horikawa 2020 + Mind captioning | not found | RQ-17 참고 | frontier-ai (FA-P6) |
 | 4 | RQ-01 | 뇌의 정서 '범주' 구조는 다른 사람, 다른 그룹에서도 다시 나타날까? | Horikawa 2020 + Mind captioning | partially | V11 재현 | geometry-info (GI-P1) |
 | 5 | RQ-03 | 뇌의 정서 지도는 정서 때문에 생길까, 그냥 영상이 다양해서 생길까? | Horikawa 2020 + Mind captioning | not found | RQ-13, RQ-01 0단계 | geometry-info (GI-R4-1) |
-| 6 | RQ-33 | 같은 장면도 앞에 무엇을 봤느냐에 따라 다르게 느껴질까? | Mind captioning | partially | RQ-26 HRF 단계, RQ-51 | multimodal-dynamics (전략 G. 가장 가까운 문헌 기원 MD-P1) |
+| 6 | RQ-33 | 같은 장면도 앞에 무엇을 봤느냐에 따라 뇌가 그 장면의 정서를 다르게 표현할까? | Mind captioning | partially | RQ-26 HRF 단계, RQ-51 | multimodal-dynamics (전략 G. 가장 가까운 문헌 기원 MD-P1) |
 | 7 | RQ-60 | 소리 없는 영상을 볼 때 뇌는 '들릴 법한 소리'를 떠올리고, 그 소리가 정서를 실을까? | Horikawa 2020 + Mind captioning | partially | | multimodal-dynamics (무작위 경로, 멀티모달 담당) |
 | 8 | RQ-32 | 흥분(각성)은 뇌 상태의 '위치'일까, 뇌 상태가 바뀌는 '속도'일까? | Emo-FilM | not found | | systems-neuro (전략 E, arousal과 자율신경 담당) |
 | 9 | RQ-44 | 떠올린 정서는 원래 장면의 흔적일까, 줄거리를 바탕으로 다시 만든 것일까? | Mind captioning | partially | RQ-08(캡션 encoding 공유) | emotion-theory (ET-R4-4, 공동 FA-R4-1) |
@@ -122,3 +122,4 @@
   * 남는 새 부분: 수동 영화 시청 중의 정서 각성, 같은 참가자 생리, 위치 대 속도 대 Ke 2025 모형의 직접 비교.
   * RQ-32는 상위 5개와 Pilot이 아니므로 선정은 바뀌지 않는다. Novelty 점수(최종 4.0)는 과대 판정일 가능성이 있어 기록만 남기고, 점수표는 고치지 않았다.
   * 독립 감사도 놓친 선행이 카드 작성 단계에서 나왔다. 그래서 not found 판정 3개(RQ-03, 15, 14)도 확정이 아니다(final_synthesis의 미확인 사항).
+* **RQ-33 한 줄 질문 수정:** "다르게 느껴질까"를 "뇌가 그 장면의 정서를 다르게 표현할까"로 바꿨다(multimodal-dynamics 카드). Mind captioning 참가자는 자기 정서를 평정하지 않아 '느낌'을 잴 수 없기 때문이다. 경험된 정서 대 표상된 정서를 구분하라는 CLAUDE.md 6절 Safeguard에 맞춘 정정이다.

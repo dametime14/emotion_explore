@@ -1,10 +1,10 @@
 # Literature Statistics (Deliverable C)
 
 * 생성: `python3 -I outputs/literature/merge.py` (자동 생성 파일, 직접 고치지 말 것)
-* 입력 레코드: 694개 (파싱 오류 0개), 입력 파일: `outputs/agents/*/literature*.jsonl`
-* 원자료 기준 verified 표기: 682개, 미검증(search_index 등): 12개
-* 중복 제거 후 고유 논문: **507편**
-* **verified 고유 논문: 502편** (식별자 경로 doi.org / crossref / pubmed / arxiv / openreview / publisher로 확인된 것만)
+* 입력 레코드: 698개 (파싱 오류 0개), 입력 파일: `outputs/agents/*/literature*.jsonl`
+* 원자료 기준 verified 표기: 686개, 미검증(search_index 등): 12개
+* 중복 제거 후 고유 논문: **509편**
+* **verified 고유 논문: 504편** (식별자 경로 doi.org / crossref / pubmed / arxiv / openreview / publisher로 확인된 것만)
 * 미검증 고유 논문: 5편 (verified 집계에서 제외, DB에는 `verified=False`로 남김)
 
 ## Axis별 verified 논문 수 (한 논문이 여러 Axis에 속할 수 있음)
@@ -18,13 +18,13 @@
 | E | 148 | 148 |
 | F | 73 | 74 |
 | G | 50 | 51 |
-| H | 81 | 85 |
-| I | 107 | 109 |
+| H | 82 | 86 |
+| I | 108 | 110 |
 | J | 53 | 54 |
-| K | 98 | 99 |
+| K | 99 | 100 |
 | L | 56 | 57 |
 | M | 63 | 63 |
-| N | 115 | 116 |
+| N | 117 | 118 |
 | O | 89 | 89 |
 | P | 47 | 48 |
 | Q | 94 | 94 |
@@ -33,7 +33,7 @@
 | T | 72 | 73 |
 | U | 13 | 13 |
 | V | 16 | 16 |
-| W | 28 | 28 |
+| W | 30 | 30 |
 
 ## 연도 분포 (verified)
 
@@ -57,11 +57,11 @@
 | 2017 | 26 |
 | 2018 | 16 |
 | 2019 | 28 |
-| 2020 | 29 |
+| 2020 | 30 |
 | 2021 | 32 |
 | 2022 | 33 |
 | 2023 | 60 |
-| 2024 | 65 |
+| 2024 | 66 |
 | 2025 | 95 |
 | 2026 | 66 |
 
@@ -69,7 +69,7 @@
 
 | discussion_read | 편수 |
 |---|---|
-| full_text | 228 |
+| full_text | 230 |
 | abstract_only | 216 |
 | search_summary | 16 |
 | no | 42 |
@@ -83,10 +83,10 @@
 | adversarial-reviewer | 63 |
 | frontier-ai | 62 |
 | llm-semantics | 58 |
+| emotion-theory | 56 |
 | generative-counterfactual | 55 |
 | dataset-auditor | 54 |
 | geometry-info | 54 |
-| emotion-theory | 52 |
 | systems-neuro | 52 |
 | encoding-foundation | 49 |
 | vision-decoding | 38 |
@@ -102,10 +102,10 @@
 | frontier-ai | 62 |
 | llm-semantics | 59 |
 | dataset-auditor | 57 |
+| emotion-theory | 56 |
 | generative-counterfactual | 55 |
 | geometry-info | 54 |
 | systems-neuro | 53 |
-| emotion-theory | 52 |
 | encoding-foundation | 50 |
 | vision-decoding | 38 |
 | coordinator | 7 |
@@ -114,6 +114,6 @@
 
 | already_done | 편수 |
 |---|---|
-| no | 391 |
-| partially | 278 |
+| no | 393 |
+| partially | 282 |
 | yes | 11 |

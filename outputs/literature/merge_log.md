@@ -2,7 +2,7 @@
 
 * parse errors: 0
 
-* duplicate groups merged: 106
+* duplicate groups merged: 107
 
 * 10.1016/j.isci.2020.101060 (adversarial-reviewer) | doi:10.1016/j.isci.2020.101060 (brain-inspired) | 10.1016/j.isci.2020.101060 (dataset-auditor) | 10.1016/j.isci.2020.101060 (emotion-theory) | doi:10.1016/j.isci.2020.101060 (encoding-foundation) | 10.1016/j.isci.2020.101060 (generative-counterfactual) | doi:10.1016/j.isci.2020.101060 (geometry-info) | doi:10.1016/j.isci.2020.101060 (systems-neuro)
 * arXiv:2507.00320 (adversarial-reviewer) | arXiv:2507.00320 (dataset-auditor) | arXiv:2507.00320 (emotion-theory) | arXiv:2507.00320 (geometry-info) | arXiv:2507.00320 (llm-semantics) | arXiv:2507.00320 (systems-neuro) | arXiv:2507.00320 (vision-decoding)
@@ -79,6 +79,8 @@
 * 10.1523/JNEUROSCI.3022-16.2016 (emotion-theory) | doi:10.1523/JNEUROSCI.3022-16.2016 (vision-decoding)
 * 10.1016/j.cub.2024.09.062 (emotion-theory) | doi:10.1016/j.cub.2024.09.062 (vision-decoding)
 * 10.1038/s41562-023-01799-z (emotion-theory) | doi:10.1038/s41562-023-01799-z (frontier-ai)
+* 10.1523/ENEURO.0146-26.2026 (emotion-theory) | doi:10.1523/ENEURO.0146-26.2026 (frontier-ai)
+* 10.1126/sciadv.adw1464 (emotion-theory) | doi:10.1126/sciadv.adw1464 (encoding-foundation) | doi:10.1126/sciadv.adw1464 (llm-semantics) | 10.1126/sciadv.adw1464 (multimodal-dynamics) | doi:10.1126/sciadv.adw1464 (systems-neuro) | doi:10.1126/sciadv.adw1464 (vision-decoding)
 * arXiv:2605.04326 (encoding-foundation) | arXiv:2605.04326 (generative-counterfactual)
 * arXiv:2507.22229 (encoding-foundation) | arXiv:2507.22229 (generative-counterfactual) | arXiv:2507.22229 (multimodal-dynamics)
 * arXiv:2409.19407 (encoding-foundation) | arXiv:2409.19407 (systems-neuro)
@@ -87,7 +89,6 @@
 * doi:10.1038/s41562-025-02252-z (encoding-foundation) | 10.1038/s41562-025-02252-z (generative-counterfactual)
 * doi:10.1126/sciadv.adk6840 (encoding-foundation) | 10.1126/sciadv.adk6840 (multimodal-dynamics)
 * doi:10.7554/eLife.56601 (encoding-foundation) | doi:10.7554/eLife.56601 (geometry-info)
-* doi:10.1126/sciadv.adw1464 (encoding-foundation) | doi:10.1126/sciadv.adw1464 (llm-semantics) | 10.1126/sciadv.adw1464 (multimodal-dynamics) | doi:10.1126/sciadv.adw1464 (systems-neuro) | doi:10.1126/sciadv.adw1464 (vision-decoding)
 * doi:10.1093/cercor/bhx290 (encoding-foundation) | 10.1093/cercor/bhx290 (multimodal-dynamics) | doi:10.1093/cercor/bhx290 (systems-neuro)
 * arXiv:2506.09985 (frontier-ai) | arXiv:2506.09985 (generative-counterfactual) | arXiv:2506.09985 (multimodal-dynamics)
 * arXiv:2405.07987 (frontier-ai) | arXiv:2405.07987 (geometry-info) | arXiv:2405.07987 (llm-semantics)
