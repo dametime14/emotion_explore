@@ -16,7 +16,7 @@ Stage 1 보고서로 소리 유무와 시간 해상도를 확인했다. 사용�
 
 | | Horikawa (1순위) | Emo-FilM | Spacetop (alignvideo 중심) |
 |---|---|---|---|
-| 소리 | **무음** [Stage 1] | **있음**: 오디오 포함 in-ear plug 제시, 대사는 영어로 보임 [Stage 1: dataset_EmoFilM.md 1.6절] | **있음**: HED에 Auditory-presentation 표기 [Stage 1: dataset_Spacetop.md 1.2절] |
+| 소리 | **무음** [Stage 1] | **있음**: 오디오 포함 in-ear plug 제시, 대사는 영어로 보임 [Stage 1: dataset_EmoFilM.md 2.1절 Stimulus Metadata] | **있음**: HED에 Auditory-presentation 표기 [Stage 1: dataset_Spacetop.md 'G1 과제별 상세' 표] |
 | 시간 구조 | 10 s 블록이 71.6%, 8 s 미만 비디오는 반복 재생, 블록마다 2 s 휴지, 런당 36블록, **5명 동일 순서**, 공개 전처리본은 4 s shift 후 블록 평균 [Stage 1] | 영화 14편(6.7~17.1분), TR 1.3 s, 영화당 1회 시청 [Stage 1] | 영상 49편(20 s~5분 39초), TR 0.46 s [Stage 1] |
 | 정서 라벨 시간 해상도 | 비디오당 1개 값 | **1 Hz 연속** consensus(항목 x 영화당 3~4명) | 영상 종료 후 1회 |
 | 평정 주체 | 별도 평정자(규범) | 별도 평정자(규범). 평정자는 같은 영화를 최대 6번 봄. fMRI 참가자는 부분 회고 평정(영화당 5항목, 영화 길이의 약 20%) | **fMRI 참가자 본인**, 약 51% 결측, 평정 구간이 영상 끝 HRF와 겹침 |
@@ -55,7 +55,7 @@ Stage 1 보고서로 소리 유무와 시간 해상도를 확인했다. 사용�
 * **정서 항목별 고유 시간 척도와 뇌 영역의 시간 수용창(temporal receptive window)을 체계적으로 대응시킨 연구는 없다.**
 
 ### U5. 순간 경험과 회고 평가, 그리고 '누구의 정서인가'
-* 연속 즐거움의 최고점이 사후 전체 미적 평가와 강하게 상관했지만(R=0.69) 연속-요약 관계(peak vs peak-end)는 미결로 남았다(Belfi 2019, 10.1016/j.neuroimage.2018.12.017 [본문 Discussion 'Felt pleasure' 절 4번째 단락]).
+* 연속 즐거움의 최고점이 사후 전체 미적 평가와 강하게 상관했지만(R=0.69) 연속-요약 관계(peak vs peak-end)는 미결로 남았다(Belfi 2019, 10.1016/j.neuroimage.2018.12.017 [본문 Discussion 'Felt pleasure' 절 5번째 단락]).
 * 동영상에서는 순간 즐거움의 관찰자 간 일치도는 높고 사후 평가의 일치도는 낮았다(Isik & Vessel 2021, 10.3389/fnhum.2021.676032 [본문 Discussion]).
 * 연속 평정과 fMRI가 다른 사람이라 개인 특이적 경험을 설명하지 못한다(Lettieri 2024 [본문 Limitations], Saarimäki 2025 [본문 Limitations], Ke 2025 10.1371/journal.pcbi.1012994 [본문 Discussion]).
 * Emo-FilM(1 Hz, 별도 평정자)과 Spacetop(사후 1회, 본인)은 이 문제의 양 끝에 있다.
@@ -185,8 +185,8 @@ Stage 1 보고서로 소리 유무와 시간 해상도를 확인했다. 사용�
 * 겹침: overlap: Emo-FilM 연구 (시간 정보의 뇌 기여 분석과 일부 겹침).
 
 ### Chain 5. 연속 경험에서 회고 평가로: Emo-FilM과 Spacetop 잇기
-* **Original Finding**: 연속 즐거움 최고점이 사후 미적 평가와 강하게 상관(10.1016/j.neuroimage.2018.12.017, Discussion 'Felt pleasure' 절 3번째 단락). 영상에서 순간 즐거움 일치도는 높고 사후 평가 일치도는 낮음(10.3389/fnhum.2021.676032, Discussion 'Interestingly' 단락). 회고 평가의 지속시간 무시(10.1037/0022-3514.65.1.45, 본문 미열람).
-* **Unresolved Question**: 연속-요약 관계(peak vs peak-end vs 평균)는 추가 연구 필요(10.1016/j.neuroimage.2018.12.017, Discussion 'Felt pleasure' 절 4번째 단락). 그 신경 기반은 미확인.
+* **Original Finding**: 연속 즐거움 최고점이 사후 미적 평가와 강하게 상관(10.1016/j.neuroimage.2018.12.017, Discussion 'Felt pleasure' 절 2번째 단락). 영상에서 순간 즐거움 일치도는 높고 사후 평가 일치도는 낮음(10.3389/fnhum.2021.676032, Discussion 'Interestingly' 단락). 회고 평가의 지속시간 무시(10.1037/0022-3514.65.1.45, 본문 미열람).
+* **Unresolved Question**: 연속-요약 관계(peak vs peak-end vs 평균)는 추가 연구 필요(10.1016/j.neuroimage.2018.12.017, Discussion 'Felt pleasure' 절 5번째 단락). 그 신경 기반은 미확인.
 * **Technological Development**: Emo-FilM 1 Hz human consensus로 시간축이 검증된 AI 연속 정서 추정(Qwen2.5-Omni 등), 정서 경계 검출(Chain 2), 영상 종료 시점 신경 반응 분석.
 * **New Dataset / Model Combination**: Emo-FilM(연속 consensus + fMRI 참가자 회고 평정) → 통합 규칙 학습. Spacetop alignvideo(참가자 본인 사후 7차원) → AI 추정 궤적에 규칙 적용, 영상 종료 직후 BOLD와 연결.
 * **New Research Question**: "사후 정서 평가는 순간 정서 궤적의 어떤 요약(peak, end, 평균, 정서 경계 가중)으로 결정되며 그 규칙은 정서마다 다른가(예: 슬픔은 end, 공포는 peak)? 영상 종료 직후 hippocampus와 vmPFC 반응은 궤적 요약을 반영하며, 그 반응이 참가자 본인의 사후 평정 편차를 예측하는가?"

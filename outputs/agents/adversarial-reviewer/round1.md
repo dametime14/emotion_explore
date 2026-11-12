@@ -76,7 +76,7 @@
 
 ### U6. 정서 naturalistic fMRI 고유의 leakage와 작은 일반화 단위
 
-* **문제.** Kapoor & Narayanan 2023의 분류에 비추면 정서 fMRI에는 같은 원본에서 잘린 클립(L1.4, L3.2: Horikawa 중복 표시 15개, 동일 원본 여부 미확인), 영화 내 시간 자기상관(L3.2), 라벨 기반 voxel 선택(L1.3), 사전학습 데이터 오염(NSD/COCO, 공개 연구 자극을 본 LLM)이 있다. leakage 영향은 효과가 약하고 표본이 작을수록 크다(Rosenblatt 2024, Discussion 5~7째 단락). Emo-FilM leave-one-film-out의 독립 단위는 영화 14편이라 오차 막대가 크다(Varoquaux 2018).
+* **문제.** Kapoor & Narayanan 2023의 분류에 비추면 정서 fMRI에는 같은 원본에서 잘린 클립(L1.4, L3.2: Horikawa 중복 표시 15개, 동일 원본 여부 미확인), 영화 내 시간 자기상관(L3.2), 라벨 기반 voxel 선택(L1.3), 사전학습 데이터 오염(NSD/COCO, 공개 연구 자극을 본 LLM)이 있다. leakage 영향은 효과가 약하고 표본이 작을수록 크다(Rosenblatt 2024, Discussion 6~7째 단락). Emo-FilM leave-one-film-out의 독립 단위는 영화 14편이라 오차 막대가 크다(Varoquaux 2018).
 * **근거 ID:** doi:10.1016/j.patter.2023.100804, doi:10.1038/s41467-024-46150-w, doi:10.1016/j.neuroimage.2017.06.061, doi:10.1126/sciadv.adk3452
 
 ### U7. 피험자 5명과 자극 2,181개에서 무엇을 모집단으로 일반화할 수 있는가
@@ -207,7 +207,7 @@ LLM 정서 판단이 평균 관찰자 판단에 가깝다는 결과(Tak & Gratch
 ### D1. 범주 결론과 재현 실패를 가르는 분석 선택의 지도 (Horikawa multiverse)
 
 * **Original Finding.** 정서 범주가 차원보다 뇌 반응을 더 설명하고, 비지도 군집이 범주와 연관된다 [doi:10.1016/j.isci.2020.101060, Discussion 1째, 4째 단락].
-* **Unresolved Question.** 같은 데이터의 최소 가정 재분석은 피험자별 군집 11~14개, 평정과 거의 무관한 군집을 보고하고 "이론 대 이론 비교와 multiverse 분석"을 요구한다 [arXiv:2507.00320, Discussion 4째 단락]. 그러나 그 군집은 세션 NMI 0.188로 정서 평정 NMI 0.0141보다 세션 구조와 더 관련되며, 자극 구동 분산 검증이 없다 [arXiv:2507.00320, Results 'Run and Session Ordering'; 검토자 판단].
+* **Unresolved Question.** 같은 데이터의 최소 가정 재분석은 피험자별 군집 11~14개, 평정과 거의 무관한 군집을 보고하고 "이론 대 이론 비교와 multiverse 분석"을 요구한다 [arXiv:2507.00320, Discussion 'Future studies should thus investigate...' 단락]. 그러나 그 군집은 세션 NMI 0.188로 정서 평정 NMI 0.0141보다 세션 구조와 더 관련되며, 자극 구동 분산 검증이 없다 [arXiv:2507.00320, Results 'Run and Session Ordering'; 검토자 판단].
 * **Technological Development.** specification curve와 결합 추론 [doi:10.1038/s41562-020-0912-z, 초록], guided multiverse의 능동 탐색 [doi:10.1038/s41467-022-31347-8, Discussion 마지막 단락], 여러 파이프라인 분석 권고 [doi:10.1038/s41586-020-2314-9, Discussion 3째 단락], ISC 기반 feature 선택 [doi:10.1093/scan/nsz037, 'Interpreting ISC results'], prevalence 추론 [doi:10.7554/eLife.62461, Discussion 1~2째 단락].
 * **New Dataset / Model Combination.** Horikawa raw BIDS(ds002425, CC0) + 공개 전처리본. 선택 축: (1) voxel 선택: 없음 / 라벨 기반(nested CV 내부) / **라벨 비의존 leave-one-subject-out ISC**(같은 비디오에 대한 다른 4명 반응과의 상관으로 선택하므로 라벨과 해당 피험자 모두에 비의존), (2) 평정: 이진화 평균 / 연속 평균, (3) 군집: k-means K 고정 / GMM BIC / 군집 없음(encoding만), (4) 공간: native / MNI, (5) smoothing, (6) 단일 trial 추정: LSA / LSS / GLMsingle, (7) 클립 길이, 반복 재생 횟수 nuisance 포함 여부. 결과 지표: 범주 대 차원 encoding 우위, chance 보정 지표(AMI) + permutation null, 피험자 간 군집 대응, 세션 대응(통제 지표), prevalence.
 * **New Research Question.** "Horikawa 데이터에서 '범주형, 고차원' 결론과 '개인 특이, 평정 무관' 결론은 분석 선택 공간의 어느 축에서 갈리며, 피험자 간 재현되는 자극 구동 분산만 남기면 어느 구조가 유지되는가?"
@@ -218,7 +218,7 @@ LLM 정서 판단이 평균 관찰자 판단에 가깝다는 결과(Tak & Gratch
 
 * **Original Finding.** 정서 모델이 VGG 시각 객체 모델과 73개 의미 모델보다 IPL, TE, DLPFC, DMPFC, VMPFC, OFC에서 예측이 높다 [doi:10.1016/j.isci.2020.101060, Results 'Disentangling...'; 세 모델 개별 적합 비교임을 본문 확인]. MLLM 정서 embedding이 인간 평정 embedding보다 TPJ, IPL, 고위 시각피질, MST에서 뇌와 더 정렬한다 [arXiv:2509.24298, Results 'Bridging the behavior-neural gap...'].
 * **Unresolved Question.** 라벨이 참가자 보고가 아니고 1인칭/3인칭이 섞인다 [doi:10.1016/j.isci.2020.101060, Limitations 1~2째 단락]. 측정 오차가 있는 공변량을 통제한 증분 타당도는 구성개념 수준 잠재변수 접근 없이는 위양성 위험이 크고 표본이 클수록 커진다 [doi:10.1371/journal.pone.0152719, Discussion 2~3째 단락]. 이미지 내용만으로 정서 범주 예측이 가능하다 [doi:10.1126/sciadv.aaw4358, 초록].
-* **Technological Development.** banded ridge와 product measure [doi:10.1016/j.neuroimage.2022.119728, 2.5~2.7절, 5절], 단일 지표 SEM 신뢰도 가정 분석 [doi:10.1371/journal.pone.0152719, Discussion 2째 단락], 2024~2026년 비디오, VLM feature(원본 비디오 보유로 추출 가능).
+* **Technological Development.** banded ridge와 product measure [doi:10.1016/j.neuroimage.2022.119728, 2.5~2.7절, 5절], 단일 지표 SEM 신뢰도 가정 분석 [doi:10.1371/journal.pone.0152719, Discussion 3째 단락], 2024~2026년 비디오, VLM feature(원본 비디오 보유로 추출 가능).
 * **New Dataset / Model Combination.** Horikawa: 내용 지표를 VGG(원 논문), CLIP 계열, 비디오 자기지도 모델, 캡션 embedding, 원 73개 의미 feature로 점차 늘려 가며 정서 범주 공간의 고유 기여를 banded ridge로 추정. 평정자별 자료가 없으므로 라벨 신뢰도는 가정 범위로 sweep. Emo-FilM: 평정자별 원자료로 라벨 신뢰도를 직접 추정해 같은 분석을 반복하고, I5(prompt ablation) embedding을 추가 지표로.
 * **New Research Question.** "시각-의미 내용을 여러 지표의 잠재 구성개념으로 통제하고 각 feature 공간의 신뢰도를 반영하면, 정서 범주의 고유 설명 분산은 내용 지표 수에 따라 0으로 수렴하는가, 아니면 특정 영역(예: vmPFC, IPL)에서 0보다 큰 plateau를 유지하는가?"
 * **반증 기준.** 지표를 늘릴수록 고유 분산이 단조 감소해 0의 신뢰구간에 들어가면 그 영역의 정서 특이 주장은 지지되지 않는다. 모든 합리적 신뢰도 가정에서 plateau가 남는 영역만 '정서 고유'로 보고한다. 이 결과는 어느 쪽이든 정서 표상 대 내용 표상(CLAUDE.md 6절) 논쟁에 직접 답한다.
@@ -227,7 +227,7 @@ LLM 정서 판단이 평균 관찰자 판단에 가깝다는 결과(Tak & Gratch
 ### D3. 정서 '지도' 모델의 식별 가능성: TEM은 대안과 구별되는가
 
 * **Original Finding.** hippocampus가 TEM layer p를, vmPFC가 대규모 layer g를 상대적으로 잘 decoding하며, TEM p를 통제하면 범주 평정 decoding이 줄어든다(Δz = 0.0042) [doi:10.1038/s41467-025-68240-z, Results 'Structural abstraction...' 및 Fig. 5 설명].
-* **Unresolved Question.** 저자는 TEM이 유일한 hippocampus 모델이 아니며 RL 모델이 더 잘 예측하는지 검토해야 한다고 쓴다. 2차원(valence, arousal)만 썼다는 한계도 명시한다 [doi:10.1038/s41467-025-68240-z, Discussion 9째 단락 'Several limitations...']. 검토자 추가: TEM 입력이 평정 궤적이므로 TEM decoding은 같은 궤적의 임의 비선형 확장으로도 나올 수 있다. 절대 효과가 매우 작고 noise ceiling이 없다.
+* **Unresolved Question.** 저자는 TEM이 유일한 hippocampus 모델이 아니며 RL 모델이 더 잘 예측하는지 검토해야 한다고 쓴다. 2차원(valence, arousal)만 썼다는 한계도 명시한다 [doi:10.1038/s41467-025-68240-z, Discussion 8째 단락 'Several limitations...']. 검토자 추가: TEM 입력이 평정 궤적이므로 TEM decoding은 같은 궤적의 임의 비선형 확장으로도 나올 수 있다. 절대 효과가 매우 작고 noise ceiling이 없다.
 * **Technological Development.** ground truth 기반 식별 가능성 점검 [arXiv:2302.06677, 5. Discussion 'Glass half empty'], representational generality와 matched baseline 논리 [doi:10.1162/nol_a_00087, Discussion 1~2째 단락], 유연 모델 교차검증과 조건 bootstrap [doi:10.7554/eLife.82566, Discussion 'Generalizing...'], 소표본 CV 오차 막대 [doi:10.1016/j.neuroimage.2017.06.061, 초록].
 * **New Dataset / Model Combination.** Emo-FilM 30명(v1.0.2 이후), 50개 항목 중 appraisal 포함. 후보 모델: TEM, 이산화한 정서 상태의 successor representation, TD value 모델, 같은 궤적의 random-feature 확장(동일 차원, 동일 입력), 다중 시간척도 평활. 1단계: 실제 궤적과 실측 잡음으로 각 모델에서 BOLD를 생성해 식별 혼동 행렬 계산. 2단계: 실제 데이터에서 영화 단위 bootstrap으로 비교.
 * **New Research Question.** "Emo-FilM의 hippocampal-prefrontal 신호는 TEM의 구조 추상화에 특이적인가, 아니면 같은 평정 궤적의 matched-complexity 비선형 확장이나 RL 계열 모델과 통계적으로 구별되지 않는가? 그리고 영화 14편 규모에서 이 구별은 원리적으로 가능한가?"
@@ -236,7 +236,7 @@ LLM 정서 판단이 평균 관찰자 판단에 가깝다는 결과(Tak & Gratch
 
 ### D4. AI 정서 라벨의 하류 추론 보정과 관점 검정
 
-* **Original Finding.** GPT-4V 사회 지각 주석으로 만든 stimulus model이 인간 주석 기반과 매우 비슷한 뇌 네트워크를 드러낸다 [doi:10.1162/IMAG.a.134, 초록]. GPT-4는 저자 자기평가보다 평균 독자 판단에 더 가깝다 [arXiv:2408.13718, IV General Discussion 2~4째 단락].
+* **Original Finding.** GPT-4V 사회 지각 주석으로 만든 stimulus model이 인간 주석 기반과 매우 비슷한 뇌 네트워크를 드러낸다 [doi:10.1162/IMAG.a.134, 초록]. GPT-4는 저자 자기평가보다 평균 독자 판단에 더 가깝다 [arXiv:2408.13718, IV General Discussion 3째, 6째 단락].
 * **Unresolved Question.** 인간 불일치가 높으면 대체 검정 통과가 어렵고 주관 과제에는 대안 방법이 필요하다 [arXiv:2501.10970, 7 Limitations 'High disagreement', Appendix D.4]. gold 표본의 최적 추출이 미해결이다 [arXiv:2306.04746, Future Work]. Spacetop 영상 내 시간축 AI 주석은 인간 검증 경로가 없다(Stage 1 보고서 5.3 #3).
 * **Technological Development.** PPI [doi:10.1126/science.adi6000, 1.1절], DSL [arXiv:2306.04746, 4절], alt-test [arXiv:2501.10970, 3절].
 * **New Dataset / Model Combination.** (a) Emo-FilM: MLLM 1 Hz 50항목 평정 + 평정자별 원자료로 항목별 alt-test. (b) NSD: VLM 정서 라벨 전체 + 새로 뽑은 무작위 이미지의 인간 평정(설계 확률 기록) → voxel별 회귀계수 naive 대 PPI. (c) Spacetop: AI 라벨이 본인 보고보다 규범 평정(새로 수집 시)에 더 가까운지 검정.

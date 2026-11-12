@@ -175,7 +175,7 @@ Plank는 라벨 변동을 잡음이 아닌 실재 변동으로 보자고 하고 
 
 * **Original Finding:** 평정 SH-CCA로 24~26개 신뢰 차원 (10.1073/pnas.1702247114, Results "Evidence for 27 Distinct Varieties" 절, Discussion 3째 단락). 같은 자극 fMRI에서 범주 모델이 차원 모델보다 우세, 정서 표상은 transmodal 영역 (10.1016/j.isci.2020.101060, Discussion 1, 4째 단락).
 * **Unresolved Question:** 뇌가 구분하는 정서 종류의 수 (10.1073/pnas.1702247114, Discussion 6째 단락 마지막 문장). 반복 제시가 없어 설명되지 않은 체계적 분산 추정 불가 (10.1016/j.isci.2020.101060, Discussion 6째 단락). 평정-뇌 CCA 차원 수가 피험자마다 18~36으로 흔들림 (10.1016/j.neuroimage.2020.117258, 초록).
-* **Technological Development:** 피험자 간 cross-decomposition으로 반복 없이 rank별 신뢰 공유 분산 추정, 시각피질 power-law 발견. 원저자는 "덜 풍부한 자극에서도 같은지, 고차 영역에서 차원성이 달라지는지"를 미해결로 남김 (arXiv:2409.06843, 4.1절 4째 단락). rank 범위별 개인차 (arXiv:2505.12653, Discussion 1~3째 단락).
+* **Technological Development:** 피험자 간 cross-decomposition으로 반복 없이 rank별 신뢰 공유 분산 추정, 시각피질 power-law 발견. 원저자는 "덜 풍부한 자극에서도 같은지, 고차 영역에서 차원성이 달라지는지"를 미해결로 남김 (arXiv:2409.06843, 4.1절 3째 단락). rank 범위별 개인차 (arXiv:2505.12653, Discussion 1~3째 단락).
 * **New Dataset / Model Combination:** Horikawa 5명, 피험자 쌍 10개 cross-decomposition. ROI: 초기/고차 시각피질, DMN과 transmodal, 피질하(HCP360 + 피질하 ROI는 공개 전처리본에 있음). 공유 차원 각각을 34범주, 14차원, 공개 시각 1000차원과 의미 73차원 feature로 설명하고, G1 보유분으로 최신 video/MLLM feature도 추가. Emo-FilM(소리 있는 영화)에서 재현.
 * **New Research Question:** "정서 관련 transmodal 영역에서 피험자 간 신뢰 공유 신경 차원의 스펙트럼은 시각피질처럼 scale-free인가, 특정 rank에서 꺾이는가? 그리고 공유 차원 중 시각-의미 feature로는 설명되지 않고 정서 평정으로만 설명되는 차원은 몇 개인가?"
 * **반증 조건:** transmodal 스펙트럼이 시각피질과 같은 지수의 power-law이고 정서 고유 차원이 0~수 개라면 "고차원 범주 정서 표상"은 시각-의미 표상의 재기술일 가능성이 커진다. 정서 고유 차원이 20개 안팎이고 그 근처에서 스펙트럼이 꺾이면 Semantic Space Theory를 지지한다.
