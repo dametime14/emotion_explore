@@ -25,7 +25,7 @@ brain-inspired → frontier-ai. Emo-FilM과 Horikawa 2020 + Mind captioning에�
 * 검색 경로: arxiv.org/search "action tendency fMRI"(0건), "action readiness emotion"(2건, 무관), "latent action fMRI"(0건), "component process model fMRI"(49건, 정서 component 경쟁 검정 없음), "affordance emotion fMRI"(0건). WebSearch "fMRI emotion category versus action tendency motivation component naturalistic film banded ridge encoding component process model"(Marras 2025, McMahon 2023 외 직접 해당 없음).
 
 **(2) 단순한 모델 적용에 불과한가? 판정: 부분적으로 그렇다.**
-banded ridge 분산 분할은 표준 도구이고, 새로움은 질문(범주 대 행동 경향의 경쟁)에 있다. latent action band는 단순 적용 위험이 크다. LAPA는 로봇과 사람 조작 비디오로 학습되었고, 원 논문이 latent action이 카메라 움직임도 포착한다고 적었다(arXiv:2410.11758, brain-inspired 기록). 영화에서는 카메라 운동과 편집 컷이 지배할 가능성이 높아, 이 band는 "행동 affordance"가 아니라 "화면 운동"을 측정할 수 있다.
+banded ridge 분산 분할은 표준 도구이고, 새로움은 질문(범주 대 행동 경향의 경쟁)에 있다. latent action band는 단순 적용 위험이 크다. LAPA는 로봇과 사람 조작 비디오로 학습되었고, 원 논문이 latent action이 카메라 움직임도 포착한다고 적었다(arXiv:2410.11758, frontier-ai 기록). 영화에서는 카메라 운동과 편집 컷이 지배할 가능성이 높아, 이 band는 "행동 affordance"가 아니라 "화면 운동"을 측정할 수 있다.
 
 **(3) 실제로 Neuroscience Question을 해결하는가? 판정: 질문은 중요하나 이 설계로는 부분적으로만.**
 Horikawa 2020의 "(or affordances)" 해석을 시험한다는 점에서 질문 자체는 정서 이론(기능주의적 action readiness 대 범주적 느낌)에 직결된다. 그러나 banded ridge의 고유 분산은 "어느 feature 공간이 예측에 추가 기여하는가"를 말할 뿐 "그 영역이 무엇을 표상하는가"를 말하지 않는다(feature fallacy, doi:10.1016/j.conb.2019.04.002). 또 "대체된다"는 표현은 인과적 대체처럼 읽히지만 R0의 통계적 분할이다.

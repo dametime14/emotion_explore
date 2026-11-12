@@ -6,6 +6,7 @@
 * 읽은 파일: 다른 10개 에이전트의 `round1.md`(emotion-theory, vision-decoding, encoding-foundation, multimodal-dynamics, frontier-ai, geometry-info, systems-neuro, llm-semantics, brain-inspired, adversarial-reviewer). 각 파일의 0, 1, 3, 4절은 전부, 6절은 chain별 New Research Question과 필요한 단계만 읽었다. `outputs/axis_encyclopedia.md` 0절과 2절, `outputs/STAGE_STATUS.md`의 사용자 결정 기록. encoding-foundation의 `literature.jsonl` 일부 항목(arXiv:2610.13558, 2605.13904, 2604.23865, 2607.01400, 2607.16292, 2604.04025, 2609.15685), `outputs/literature/literature_db.csv`의 ID 열.
 * 바뀐 전제: 사용 가능한 데이터셋 5개(Horikawa 2020, Emo-FilM, Spacetop, NSD, Mind captioning ds005191). 새 독립 Axis U, V, W 채택. evidence-level(R0~R4)이 모든 질문의 필수 태그.
 * 새로 확인해 `literature.jsonl`에 추가한 논문 6편(총 51편): arXiv:2610.13558(ROI-ReFT, 본문), arXiv:2608.06231(EmoWorld, 본문), arXiv:2609.02616(AffectDelta, 초록), doi:10.1016/j.neuroimage.2019.116216(Katsyri 2020, 초록), arXiv:2509.21381(초록), doi:10.1038/nn1057(Vuilleumier 2003, 초록). arXiv 논문은 export.arxiv.org API가 이번 세션 중 429와 시간 초과를 반환해 arxiv.org abs 페이지 메타데이터로 확인했다.
+* (3절 응답과 Round 3 검토 단계 추가) 논문 4편을 더 추가했다(총 55편): doi:10.1097/EDE.0b013e3181d61eeb(음성 대조, 초록), doi:10.7326/M16-2607(E-value, 초록), doi:10.1038/s43587-022-00341-6(Baez-Lugo 2023, 초록), doi:10.1016/j.neuroimage.2025.121439(Marras 2025, Crossref로 존재 확인, 내용은 검색 요약 수준).
 * 태그 표기: 각 제안에 `label-provenance`, `evidence-level`, `insilico-vs-observed`, `G1`을 단다. 라벨 출처 약칭은 llm-semantics 표기를 따른다: [Human-norm] 별도 평정자 규범, [Self] fMRI 참가자 본인, [Attrib-human] 타인 정서 귀속 판단, [AI-est] 모델 추정.
 
 ---
