@@ -1,0 +1,309 @@
+cand_id,criterion,coordinator,reviewer,diff,final,status
+C-01,Novelty,4.0,3.0,-1.0,3.5,mean
+C-01,Neuroscientific Importance,4.0,2.0,-2.0,3.0,adjusted
+C-01,AI / Modeling Contribution,4.0,3.0,-1.0,3.5,mean
+C-01,Dataset Feasibility,4.0,3.0,-1.0,3.5,mean
+C-01,Methodological Rigor,3.0,2.0,-1.0,2.5,mean
+C-01,Falsifiability,4.0,3.0,-1.0,3.5,mean
+C-01,Interpretability,4.0,2.0,-2.0,2.0,adjusted
+C-01,Generalizability,3.0,3.0,0.0,3.0,mean
+C-01,Feasibility,3.0,3.0,0.0,3.0,mean
+C-01,AI-enabled Affective Neuroscience Contribution,5.0,3.0,-2.0,4.0,adjusted
+C-01,1-month Feasibility,3.0,3.0,0.0,3.0,mean
+C-02,Novelty,4.0,4.0,0.0,4.0,mean
+C-02,Neuroscientific Importance,5.0,3.0,-2.0,4.0,adjusted
+C-02,AI / Modeling Contribution,4.0,4.0,0.0,4.0,mean
+C-02,Dataset Feasibility,4.0,3.0,-1.0,3.5,mean
+C-02,Methodological Rigor,3.0,3.0,0.0,3.0,mean
+C-02,Falsifiability,4.0,4.0,0.0,4.0,mean
+C-02,Interpretability,4.0,3.0,-1.0,3.5,mean
+C-02,Generalizability,3.0,3.0,0.0,3.0,mean
+C-02,Feasibility,3.0,4.0,1.0,3.5,mean
+C-02,AI-enabled Affective Neuroscience Contribution,5.0,4.0,-1.0,4.5,mean
+C-02,1-month Feasibility,3.0,4.0,1.0,3.5,mean
+C-03,Novelty,4.0,3.0,-1.0,3.5,mean
+C-03,Neuroscientific Importance,4.0,3.0,-1.0,3.5,mean
+C-03,AI / Modeling Contribution,4.0,3.0,-1.0,3.5,mean
+C-03,Dataset Feasibility,3.0,3.0,0.0,3.0,mean
+C-03,Methodological Rigor,3.0,2.0,-1.0,2.5,mean
+C-03,Falsifiability,3.0,3.0,0.0,3.0,mean
+C-03,Interpretability,3.0,2.0,-1.0,2.5,mean
+C-03,Generalizability,3.0,3.0,0.0,3.0,mean
+C-03,Feasibility,3.0,3.0,0.0,3.0,mean
+C-03,AI-enabled Affective Neuroscience Contribution,4.0,3.0,-1.0,3.5,mean
+C-03,1-month Feasibility,3.0,2.0,-1.0,2.5,mean
+C-04,Novelty,3.0,3.0,0.0,3.0,mean
+C-04,Neuroscientific Importance,3.0,3.0,0.0,3.0,mean
+C-04,AI / Modeling Contribution,4.0,3.0,-1.0,3.5,mean
+C-04,Dataset Feasibility,4.0,4.0,0.0,4.0,mean
+C-04,Methodological Rigor,3.0,2.0,-1.0,2.5,mean
+C-04,Falsifiability,4.0,3.0,-1.0,3.5,mean
+C-04,Interpretability,3.0,3.0,0.0,3.0,mean
+C-04,Generalizability,2.0,3.0,1.0,2.5,mean
+C-04,Feasibility,4.0,4.0,0.0,4.0,mean
+C-04,AI-enabled Affective Neuroscience Contribution,4.0,3.0,-1.0,3.5,mean
+C-04,1-month Feasibility,4.0,4.0,0.0,4.0,mean
+C-05,Novelty,4.0,3.0,-1.0,3.5,mean
+C-05,Neuroscientific Importance,4.0,3.0,-1.0,3.5,mean
+C-05,AI / Modeling Contribution,5.0,4.0,-1.0,4.5,mean
+C-05,Dataset Feasibility,4.0,3.0,-1.0,3.5,mean
+C-05,Methodological Rigor,3.0,2.0,-1.0,2.5,mean
+C-05,Falsifiability,3.0,3.0,0.0,3.0,mean
+C-05,Interpretability,3.0,2.0,-1.0,2.5,mean
+C-05,Generalizability,3.0,3.0,0.0,3.0,mean
+C-05,Feasibility,3.0,4.0,1.0,3.5,mean
+C-05,AI-enabled Affective Neuroscience Contribution,4.0,3.0,-1.0,3.5,mean
+C-05,1-month Feasibility,3.0,4.0,1.0,3.5,mean
+C-06,Novelty,3.0,3.0,0.0,3.0,mean
+C-06,Neuroscientific Importance,4.0,2.0,-2.0,3.0,adjusted
+C-06,AI / Modeling Contribution,5.0,3.0,-2.0,4.0,adjusted
+C-06,Dataset Feasibility,3.0,3.0,0.0,3.0,mean
+C-06,Methodological Rigor,3.0,3.0,0.0,3.0,mean
+C-06,Falsifiability,4.0,3.0,-1.0,3.5,mean
+C-06,Interpretability,3.0,2.0,-1.0,2.5,mean
+C-06,Generalizability,3.0,3.0,0.0,3.0,mean
+C-06,Feasibility,3.0,3.0,0.0,3.0,mean
+C-06,AI-enabled Affective Neuroscience Contribution,4.0,3.0,-1.0,3.5,mean
+C-06,1-month Feasibility,3.0,3.0,0.0,3.0,mean
+C-07,Novelty,4.0,3.0,-1.0,3.5,mean
+C-07,Neuroscientific Importance,4.0,3.0,-1.0,3.5,mean
+C-07,AI / Modeling Contribution,4.0,4.0,0.0,4.0,mean
+C-07,Dataset Feasibility,2.0,2.0,0.0,2.0,mean
+C-07,Methodological Rigor,3.0,2.0,-1.0,2.5,mean
+C-07,Falsifiability,3.0,3.0,0.0,3.0,mean
+C-07,Interpretability,3.0,3.0,0.0,3.0,mean
+C-07,Generalizability,3.0,2.0,-1.0,2.5,mean
+C-07,Feasibility,3.0,4.0,1.0,3.5,mean
+C-07,AI-enabled Affective Neuroscience Contribution,4.0,3.0,-1.0,3.5,mean
+C-07,1-month Feasibility,3.0,3.0,0.0,3.0,mean
+C-08,Novelty,4.0,4.0,0.0,4.0,mean
+C-08,Neuroscientific Importance,3.0,3.0,0.0,3.0,mean
+C-08,AI / Modeling Contribution,4.0,4.0,0.0,4.0,mean
+C-08,Dataset Feasibility,4.0,4.0,0.0,4.0,mean
+C-08,Methodological Rigor,3.0,3.0,0.0,3.0,mean
+C-08,Falsifiability,3.0,4.0,1.0,3.5,mean
+C-08,Interpretability,3.0,3.0,0.0,3.0,mean
+C-08,Generalizability,3.0,3.0,0.0,3.0,mean
+C-08,Feasibility,4.0,4.0,0.0,4.0,mean
+C-08,AI-enabled Affective Neuroscience Contribution,4.0,4.0,0.0,4.0,mean
+C-08,1-month Feasibility,4.0,4.0,0.0,4.0,mean
+C-09,Novelty,4.0,4.0,0.0,4.0,mean
+C-09,Neuroscientific Importance,4.0,3.0,-1.0,3.5,mean
+C-09,AI / Modeling Contribution,5.0,4.0,-1.0,4.5,mean
+C-09,Dataset Feasibility,3.0,2.0,-1.0,2.5,mean
+C-09,Methodological Rigor,3.0,2.0,-1.0,2.5,mean
+C-09,Falsifiability,3.0,3.0,0.0,3.0,mean
+C-09,Interpretability,3.0,3.0,0.0,3.0,mean
+C-09,Generalizability,3.0,2.0,-1.0,2.5,mean
+C-09,Feasibility,2.0,3.0,1.0,2.5,mean
+C-09,AI-enabled Affective Neuroscience Contribution,4.0,4.0,0.0,4.0,mean
+C-09,1-month Feasibility,2.0,2.0,0.0,2.0,mean
+C-10,Novelty,4.0,4.0,0.0,4.0,mean
+C-10,Neuroscientific Importance,3.0,3.0,0.0,3.0,mean
+C-10,AI / Modeling Contribution,4.0,4.0,0.0,4.0,mean
+C-10,Dataset Feasibility,2.0,2.0,0.0,2.0,mean
+C-10,Methodological Rigor,2.0,2.0,0.0,2.0,mean
+C-10,Falsifiability,2.0,3.0,1.0,2.5,mean
+C-10,Interpretability,2.0,2.0,0.0,2.0,mean
+C-10,Generalizability,2.0,2.0,0.0,2.0,mean
+C-10,Feasibility,3.0,3.0,0.0,3.0,mean
+C-10,AI-enabled Affective Neuroscience Contribution,3.0,3.0,0.0,3.0,mean
+C-10,1-month Feasibility,3.0,2.0,-1.0,2.5,mean
+C-11,Novelty,3.0,3.0,0.0,3.0,mean
+C-11,Neuroscientific Importance,4.0,4.0,0.0,4.0,mean
+C-11,AI / Modeling Contribution,4.0,4.0,0.0,4.0,mean
+C-11,Dataset Feasibility,4.0,4.0,0.0,4.0,mean
+C-11,Methodological Rigor,3.0,3.0,0.0,3.0,mean
+C-11,Falsifiability,3.0,4.0,1.0,3.5,mean
+C-11,Interpretability,3.0,3.0,0.0,3.0,mean
+C-11,Generalizability,3.0,4.0,1.0,3.5,mean
+C-11,Feasibility,3.0,4.0,1.0,3.5,mean
+C-11,AI-enabled Affective Neuroscience Contribution,4.0,4.0,0.0,4.0,mean
+C-11,1-month Feasibility,3.0,4.0,1.0,3.5,mean
+C-12,Novelty,4.0,4.0,0.0,4.0,mean
+C-12,Neuroscientific Importance,4.0,4.0,0.0,4.0,mean
+C-12,AI / Modeling Contribution,5.0,5.0,0.0,5.0,mean
+C-12,Dataset Feasibility,3.0,3.0,0.0,3.0,mean
+C-12,Methodological Rigor,3.0,2.0,-1.0,2.5,mean
+C-12,Falsifiability,4.0,4.0,0.0,4.0,mean
+C-12,Interpretability,3.0,3.0,0.0,3.0,mean
+C-12,Generalizability,3.0,3.0,0.0,3.0,mean
+C-12,Feasibility,3.0,2.0,-1.0,2.5,mean
+C-12,AI-enabled Affective Neuroscience Contribution,5.0,4.0,-1.0,4.5,mean
+C-12,1-month Feasibility,3.0,2.0,-1.0,2.5,mean
+C-13,Novelty,4.0,4.0,0.0,4.0,mean
+C-13,Neuroscientific Importance,4.0,3.0,-1.0,3.5,mean
+C-13,AI / Modeling Contribution,4.0,4.0,0.0,4.0,mean
+C-13,Dataset Feasibility,3.0,4.0,1.0,3.5,mean
+C-13,Methodological Rigor,2.0,2.0,0.0,2.0,mean
+C-13,Falsifiability,3.0,4.0,1.0,3.5,mean
+C-13,Interpretability,3.0,2.0,-1.0,2.5,mean
+C-13,Generalizability,3.0,3.0,0.0,3.0,mean
+C-13,Feasibility,3.0,4.0,1.0,3.5,mean
+C-13,AI-enabled Affective Neuroscience Contribution,4.0,4.0,0.0,4.0,mean
+C-13,1-month Feasibility,3.0,3.0,0.0,3.0,mean
+C-14,Novelty,3.0,3.0,0.0,3.0,mean
+C-14,Neuroscientific Importance,3.0,3.0,0.0,3.0,mean
+C-14,AI / Modeling Contribution,4.0,4.0,0.0,4.0,mean
+C-14,Dataset Feasibility,4.0,3.0,-1.0,3.5,mean
+C-14,Methodological Rigor,3.0,3.0,0.0,3.0,mean
+C-14,Falsifiability,3.0,4.0,1.0,3.5,mean
+C-14,Interpretability,3.0,3.0,0.0,3.0,mean
+C-14,Generalizability,3.0,4.0,1.0,3.5,mean
+C-14,Feasibility,4.0,4.0,0.0,4.0,mean
+C-14,AI-enabled Affective Neuroscience Contribution,4.0,3.0,-1.0,3.5,mean
+C-14,1-month Feasibility,4.0,4.0,0.0,4.0,mean
+C-15,Novelty,4.0,3.0,-1.0,3.5,mean
+C-15,Neuroscientific Importance,3.0,3.0,0.0,3.0,mean
+C-15,AI / Modeling Contribution,4.0,4.0,0.0,4.0,mean
+C-15,Dataset Feasibility,3.0,3.0,0.0,3.0,mean
+C-15,Methodological Rigor,2.0,3.0,1.0,2.5,mean
+C-15,Falsifiability,3.0,4.0,1.0,3.5,mean
+C-15,Interpretability,2.0,3.0,1.0,2.5,mean
+C-15,Generalizability,3.0,3.0,0.0,3.0,mean
+C-15,Feasibility,3.0,3.0,0.0,3.0,mean
+C-15,AI-enabled Affective Neuroscience Contribution,3.0,3.0,0.0,3.0,mean
+C-15,1-month Feasibility,3.0,3.0,0.0,3.0,mean
+C-16,Novelty,4.0,3.0,-1.0,3.5,mean
+C-16,Neuroscientific Importance,4.0,3.0,-1.0,3.5,mean
+C-16,AI / Modeling Contribution,5.0,4.0,-1.0,4.5,mean
+C-16,Dataset Feasibility,4.0,4.0,0.0,4.0,mean
+C-16,Methodological Rigor,4.0,3.0,-1.0,3.5,mean
+C-16,Falsifiability,4.0,4.0,0.0,4.0,mean
+C-16,Interpretability,4.0,3.0,-1.0,3.5,mean
+C-16,Generalizability,3.0,3.0,0.0,3.0,mean
+C-16,Feasibility,4.0,4.0,0.0,4.0,mean
+C-16,AI-enabled Affective Neuroscience Contribution,5.0,4.0,-1.0,4.5,mean
+C-16,1-month Feasibility,4.0,4.0,0.0,4.0,mean
+C-17,Novelty,4.0,3.0,-1.0,3.5,mean
+C-17,Neuroscientific Importance,3.0,2.0,-1.0,2.5,mean
+C-17,AI / Modeling Contribution,4.0,3.0,-1.0,3.5,mean
+C-17,Dataset Feasibility,4.0,3.0,-1.0,3.5,mean
+C-17,Methodological Rigor,3.0,3.0,0.0,3.0,mean
+C-17,Falsifiability,3.0,3.0,0.0,3.0,mean
+C-17,Interpretability,3.0,2.0,-1.0,2.5,mean
+C-17,Generalizability,3.0,3.0,0.0,3.0,mean
+C-17,Feasibility,4.0,5.0,1.0,4.5,mean
+C-17,AI-enabled Affective Neuroscience Contribution,4.0,2.0,-2.0,3.0,adjusted
+C-17,1-month Feasibility,4.0,4.0,0.0,4.0,mean
+C-18,Novelty,4.0,4.0,0.0,4.0,mean
+C-18,Neuroscientific Importance,4.0,3.0,-1.0,3.5,mean
+C-18,AI / Modeling Contribution,5.0,4.0,-1.0,4.5,mean
+C-18,Dataset Feasibility,4.0,3.0,-1.0,3.5,mean
+C-18,Methodological Rigor,3.0,3.0,0.0,3.0,mean
+C-18,Falsifiability,4.0,4.0,0.0,4.0,mean
+C-18,Interpretability,4.0,3.0,-1.0,3.5,mean
+C-18,Generalizability,3.0,3.0,0.0,3.0,mean
+C-18,Feasibility,3.0,3.0,0.0,3.0,mean
+C-18,AI-enabled Affective Neuroscience Contribution,5.0,4.0,-1.0,4.5,mean
+C-18,1-month Feasibility,3.0,3.0,0.0,3.0,mean
+C-19,Novelty,4.0,4.0,0.0,4.0,mean
+C-19,Neuroscientific Importance,4.0,4.0,0.0,4.0,mean
+C-19,AI / Modeling Contribution,5.0,4.0,-1.0,4.5,mean
+C-19,Dataset Feasibility,3.0,2.0,-1.0,2.5,mean
+C-19,Methodological Rigor,3.0,3.0,0.0,3.0,mean
+C-19,Falsifiability,4.0,4.0,0.0,4.0,mean
+C-19,Interpretability,4.0,3.0,-1.0,3.5,mean
+C-19,Generalizability,3.0,3.0,0.0,3.0,mean
+C-19,Feasibility,3.0,3.0,0.0,3.0,mean
+C-19,AI-enabled Affective Neuroscience Contribution,5.0,4.0,-1.0,4.5,mean
+C-19,1-month Feasibility,3.0,3.0,0.0,3.0,mean
+C-20,Novelty,3.0,3.0,0.0,3.0,mean
+C-20,Neuroscientific Importance,3.0,3.0,0.0,3.0,mean
+C-20,AI / Modeling Contribution,4.0,3.0,-1.0,3.5,mean
+C-20,Dataset Feasibility,4.0,4.0,0.0,4.0,mean
+C-20,Methodological Rigor,3.0,3.0,0.0,3.0,mean
+C-20,Falsifiability,3.0,4.0,1.0,3.5,mean
+C-20,Interpretability,3.0,3.0,0.0,3.0,mean
+C-20,Generalizability,3.0,3.0,0.0,3.0,mean
+C-20,Feasibility,4.0,5.0,1.0,4.5,mean
+C-20,AI-enabled Affective Neuroscience Contribution,3.0,3.0,0.0,3.0,mean
+C-20,1-month Feasibility,4.0,5.0,1.0,4.5,mean
+C-21,Novelty,4.0,3.0,-1.0,3.5,mean
+C-21,Neuroscientific Importance,4.0,3.0,-1.0,3.5,mean
+C-21,AI / Modeling Contribution,4.0,4.0,0.0,4.0,mean
+C-21,Dataset Feasibility,4.0,3.0,-1.0,3.5,mean
+C-21,Methodological Rigor,3.0,3.0,0.0,3.0,mean
+C-21,Falsifiability,4.0,4.0,0.0,4.0,mean
+C-21,Interpretability,4.0,3.0,-1.0,3.5,mean
+C-21,Generalizability,3.0,3.0,0.0,3.0,mean
+C-21,Feasibility,3.0,3.0,0.0,3.0,mean
+C-21,AI-enabled Affective Neuroscience Contribution,4.0,4.0,0.0,4.0,mean
+C-21,1-month Feasibility,3.0,3.0,0.0,3.0,mean
+C-22,Novelty,3.0,3.0,0.0,3.0,mean
+C-22,Neuroscientific Importance,4.0,3.0,-1.0,3.5,mean
+C-22,AI / Modeling Contribution,3.0,3.0,0.0,3.0,mean
+C-22,Dataset Feasibility,3.0,2.0,-1.0,2.5,mean
+C-22,Methodological Rigor,3.0,3.0,0.0,3.0,mean
+C-22,Falsifiability,3.0,4.0,1.0,3.5,mean
+C-22,Interpretability,3.0,3.0,0.0,3.0,mean
+C-22,Generalizability,2.0,3.0,1.0,2.5,mean
+C-22,Feasibility,4.0,4.0,0.0,4.0,mean
+C-22,AI-enabled Affective Neuroscience Contribution,3.0,3.0,0.0,3.0,mean
+C-22,1-month Feasibility,4.0,4.0,0.0,4.0,mean
+C-23,Novelty,3.0,3.0,0.0,3.0,mean
+C-23,Neuroscientific Importance,4.0,3.0,-1.0,3.5,mean
+C-23,AI / Modeling Contribution,4.0,3.0,-1.0,3.5,mean
+C-23,Dataset Feasibility,3.0,3.0,0.0,3.0,mean
+C-23,Methodological Rigor,3.0,3.0,0.0,3.0,mean
+C-23,Falsifiability,3.0,3.0,0.0,3.0,mean
+C-23,Interpretability,3.0,3.0,0.0,3.0,mean
+C-23,Generalizability,3.0,4.0,1.0,3.5,mean
+C-23,Feasibility,4.0,4.0,0.0,4.0,mean
+C-23,AI-enabled Affective Neuroscience Contribution,4.0,3.0,-1.0,3.5,mean
+C-23,1-month Feasibility,4.0,4.0,0.0,4.0,mean
+C-24,Novelty,4.0,3.0,-1.0,3.5,mean
+C-24,Neuroscientific Importance,5.0,2.0,-3.0,2.0,adjusted
+C-24,AI / Modeling Contribution,5.0,3.0,-2.0,3.0,adjusted
+C-24,Dataset Feasibility,4.0,4.0,0.0,4.0,mean
+C-24,Methodological Rigor,2.0,2.0,0.0,2.0,mean
+C-24,Falsifiability,3.0,3.0,0.0,3.0,mean
+C-24,Interpretability,3.0,2.0,-1.0,2.5,mean
+C-24,Generalizability,3.0,3.0,0.0,3.0,mean
+C-24,Feasibility,3.0,4.0,1.0,3.5,mean
+C-24,AI-enabled Affective Neuroscience Contribution,5.0,3.0,-2.0,3.0,adjusted
+C-24,1-month Feasibility,3.0,4.0,1.0,3.5,mean
+C-25,Novelty,4.0,4.0,0.0,4.0,mean
+C-25,Neuroscientific Importance,4.0,4.0,0.0,4.0,mean
+C-25,AI / Modeling Contribution,4.0,3.0,-1.0,3.5,mean
+C-25,Dataset Feasibility,3.0,2.0,-1.0,2.5,mean
+C-25,Methodological Rigor,3.0,2.0,-1.0,2.5,mean
+C-25,Falsifiability,4.0,4.0,0.0,4.0,mean
+C-25,Interpretability,3.0,3.0,0.0,3.0,mean
+C-25,Generalizability,2.0,2.0,0.0,2.0,mean
+C-25,Feasibility,3.0,3.0,0.0,3.0,mean
+C-25,AI-enabled Affective Neuroscience Contribution,4.0,3.0,-1.0,3.5,mean
+C-25,1-month Feasibility,3.0,3.0,0.0,3.0,mean
+C-26,Novelty,3.0,3.0,0.0,3.0,mean
+C-26,Neuroscientific Importance,3.0,3.0,0.0,3.0,mean
+C-26,AI / Modeling Contribution,4.0,3.0,-1.0,3.5,mean
+C-26,Dataset Feasibility,2.0,3.0,1.0,2.5,mean
+C-26,Methodological Rigor,2.0,2.0,0.0,2.0,mean
+C-26,Falsifiability,3.0,4.0,1.0,3.5,mean
+C-26,Interpretability,3.0,3.0,0.0,3.0,mean
+C-26,Generalizability,2.0,2.0,0.0,2.0,mean
+C-26,Feasibility,4.0,4.0,0.0,4.0,mean
+C-26,AI-enabled Affective Neuroscience Contribution,3.0,3.0,0.0,3.0,mean
+C-26,1-month Feasibility,3.0,4.0,1.0,3.5,mean
+C-27,Novelty,3.0,4.0,1.0,3.5,mean
+C-27,Neuroscientific Importance,4.0,3.0,-1.0,3.5,mean
+C-27,AI / Modeling Contribution,4.0,4.0,0.0,4.0,mean
+C-27,Dataset Feasibility,4.0,3.0,-1.0,3.5,mean
+C-27,Methodological Rigor,3.0,2.0,-1.0,2.5,mean
+C-27,Falsifiability,4.0,4.0,0.0,4.0,mean
+C-27,Interpretability,3.0,3.0,0.0,3.0,mean
+C-27,Generalizability,3.0,3.0,0.0,3.0,mean
+C-27,Feasibility,4.0,4.0,0.0,4.0,mean
+C-27,AI-enabled Affective Neuroscience Contribution,4.0,4.0,0.0,4.0,mean
+C-27,1-month Feasibility,4.0,3.0,-1.0,3.5,mean
+C-28,Novelty,3.0,3.0,0.0,3.0,mean
+C-28,Neuroscientific Importance,4.0,3.0,-1.0,3.5,mean
+C-28,AI / Modeling Contribution,4.0,4.0,0.0,4.0,mean
+C-28,Dataset Feasibility,3.0,2.0,-1.0,2.5,mean
+C-28,Methodological Rigor,2.0,2.0,0.0,2.0,mean
+C-28,Falsifiability,3.0,3.0,0.0,3.0,mean
+C-28,Interpretability,2.0,2.0,0.0,2.0,mean
+C-28,Generalizability,4.0,4.0,0.0,4.0,mean
+C-28,Feasibility,2.0,2.0,0.0,2.0,mean
+C-28,AI-enabled Affective Neuroscience Contribution,4.0,3.0,-1.0,3.5,mean
+C-28,1-month Feasibility,2.0,2.0,0.0,2.0,mean
