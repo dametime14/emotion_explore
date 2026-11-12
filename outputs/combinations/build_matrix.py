@@ -87,7 +87,7 @@ K("LIT-01", L, "GI-P1, ET-P1, ET-P4, SN-P7, VD-P2; Round 3 GI-P1 검토; 상위 
   "0단계: Horikawa 원 경로와 Westlin 원 경로로 원 수치를 먼저 재현(V11). 34범주 비율 평정을 이산 라벨로 바꿀 때 달성 가능한 AMI 상한을 합성 자료로 추정(ET-P4 추가 검토). Horikawa는 5명이 같은 순서라 세션과 클립 묶음이 겹치므로, 순서가 독립인 Mind captioning으로 두 효과를 가른다. 개인 군집의 세션 간 재현(H-idio)을 주 경로로 두고 AMI와 교차검증 R²를 함께 보고. 1단계: 정렬 학습 자극과 스펙트럼 평가 자극을 분리하고 site 안과 site 간 피험자 쌍의 공유 스펙트럼에서 재현되는 rank 대역을 추정. 쌍 의존성은 피험자 단위 재표집과 유병률로. 그 대역 안에서 범주 혼합 모형과 연속 잠재 모형의 held-out 우도 비교. 시선 예측 band를 공유 쪽과 개인 쪽 모두에 넣고(두 코호트 모두 자유 시청), 노출 수 층화, 이월 성분, 입력 경로 x 전역 신호 처리 multiverse",
   "정서 신경 공간의 차원 수와 범주성 논쟁을 같은 자극의 독립 코호트로 판정하고, 결론이 분석 선택에 얼마나 의존하는지 보고한다",
   "10.1016/j.isci.2020.101060; arXiv:2507.00320; arXiv:2409.06843; arXiv:2505.12653; 10.1126/sciadv.adw1464",
-  "EmoViS: Horikawa 2020 정서 기하와 같은 데이터, 대상 / EmoBrain: 34차원 정서 profile 사용",
+  "EmoBrain(구 EmoViS 범위 포함): Horikawa 2020 정서 기하와 같은 데이터, 대상, 34차원 정서 profile 사용",
   "partially: EmoMind(arXiv:2605.16739)가 두 코호트를 결합했으나 공유 스펙트럼 비교는 없음(Round 3 검토, adversarial-reviewer 상위 10개 검토)",
   "manifold 시각화가 아니라 경쟁 가설(범주 vs 연속)의 판정 규칙과 독립 코호트 재현을 둔다",
   note="adversarial-reviewer 상위 10개 검토: 수정, 우선순위 높음. 증거 수준은 R0이라 '판정'이 아니라 '어느 해석과 맞는가'로 보고. 코호트 내 쌍은 순서뿐 아니라 장비, 전처리, 세션 구조를 함께 공유")
@@ -111,7 +111,7 @@ K("LIT-03", L, "LS-P1, VD-P3; Round 3 LS-P1 검토", "C+F+H+U+I", "", "K2",
   "0단계: Horikawa 2020의 정서 대 시각 객체 대 73차원 의미 모형 비교를 재현(V11). 캡션 20개 split-half로 공변량 신뢰도를 추정해 보정한 교차 적합 잔차화와 역방향 분할을 함께 보고. band 차원을 맞춘 판(PCA 동수)을 주 산출물로(34차원 평정 대 고차원 embedding 비대칭). 원본 영상 단위 근접 중복은 같은 fold로. 저수준 feature 양성 대조, 잔차 voxel의 rank별 공유 스펙트럼과 controversial 쌍. AI 재작성 캡션 단계는 주 결론에서 분리",
   "'정서 표상'이 장면 기술 의미로 환원되는지를 측정 오차를 고려해 판정한다",
   "10.1126/sciadv.adw1464; 10.1038/s42256-025-01072-0; arXiv:2509.24298; 10.1371/journal.pone.0152719; 10.1016/j.isci.2020.101060; 10.1038/s41467-024-49073-8",
-  "EmoViS: 정서 기하의 sensory-semantic 기원 분석과 직접 겹침",
+  "EmoBrain(구 EmoViS 범위): 정서 기하의 sensory-semantic 기원 분석과 직접 겹침",
   "partially: Horikawa 2020의 73개 의미 항목 비교, Abdel-Ghaffar 2024(의미-정서 공동 tuning, 상위 10개 검토가 찾음), Du 2025",
   "단순 encoding 비교가 아니라 공변량 측정 오차와 과통제의 맞교환을 명시",
   note="adversarial-reviewer 상위 10개 검토: 수정, 우선순위 높음. 결론은 '비언어적 정서'가 아니라 '언어 기술로 회복되지 않는 규범 정서 공변'으로 표현. Mind captioning 보유본의 캡션 파일 포함 여부 확인 필요")
@@ -123,7 +123,7 @@ K("LIT-04", L, "GC-P2, GC-P3, FA-P2; Round 3 GC-P2 검토", "C+L+P+F+U", "", "K2
   "사전 등록 일치표('둘 다 음성'과 '판정 불가' 칸 포함): 세 방법이 모두 양성일 때만 '정서 고유 신호'로 주장. 저수준 통계를 맞춘 편집과 비정서 지각 편집을 대조로. 순환 방지: voxel 정의는 Mind captioning, encoder 학습은 Horikawa처럼 코호트를 나누고, 편집기는 평가 encoder와 독립, 평가는 encoder 여럿(Horikawa 학습, TRIBE v2, NSD 학습). 결론 수준은 셋이 일치해도 R1(관찰 + in-silico), 실제 뇌의 정서 특이 반응 주장은 R3 필요",
   "서로 다른 가정에 기대는 방법의 불일치 패턴으로 어느 가정이 깨졌는지 진단한다",
   "10.1371/journal.pone.0152719; 10.1073/pnas.1912334117; arXiv:2610.13558; arXiv:2512.00557; 10.1126/sciadv.adw1464",
-  "EmoViS: 정서 vs sensory-semantic 내용 분리 겹침",
+  "EmoBrain(구 EmoViS 범위): 정서 vs sensory-semantic 내용 분리 겹침",
   "partially(제안자 인식보다 넓게): Zhan 2026(arXiv:2610.13558)이 TRIBE v2로 정서 편집 400쌍을 분석해 편집기 표상이 정서 영역보다 시각 영역 예측과 더 대응한다고 보고(R1 팔의 부분 선행, adversarial-reviewer 상위 10개 검토). Cao 2024, Mobbs 2006",
   "두 방법은 같은 관찰 데이터와 겹치는 feature 공간을 써 실패 방식이 완전히 독립이 아님(adversarial-reviewer 응답). 이견 기록",
   note="LIT-03 결과 뒤의 2단계로 둔다(adversarial-reviewer 상위 10개 검토: 수정)")
@@ -198,17 +198,17 @@ K("LIT-10", L, "MD-P1, GI-P3, SN-P2; Round 3 MD-P1 검토", "D+K+E+P+Q", "Comple
   "partially: Pichon 2015, Tambini 2017(Round 3 검토)",
   "1성분 vs 2성분 이완 모형 이견 기록(multimodal-dynamics vs geometry-info)")
 K("LIT-11", L, "EF-P7, MD-P3, GC-P4, MD-P4; Round 3 EF-P7 검토", "M+F+H+L+S", "", "K9",
-  "소리를 지운 in-silico 입력은 실제 무음 시청을 재현하는가: 같은 클립을 무음으로 본 두 코호트의 관찰 반응과 TRIBE v2의 무음, 유음 예측을 비교하면 정서 기하는 어느 예측에 가깝고, Emo-FilM에서 음악, 대사 stem 제거가 바꾸는 정서 항목은 관찰 분할의 고유 설명량과 일치하는가?",
+  "Emo-FilM에서 음악, 대사 stem을 지운 in-silico 예측(TRIBE v2)이 바꾸는 정서 항목과 영역은, 관찰 데이터에서 소리 feature가 고유하게 설명하는 정서 항목과 영역과 일치하는가?",
   "소리(음악, 대사)의 정서 기여와 in-silico 감각 박탈의 타당성",
   "modality dropout(in-silico 감각 박탈), 3-stem 분리 counterfactual",
   "TRIBE v2, 음원 분리 모델", "청각피질, STS, vmPFC, amygdala",
-  f"{H20}+{MC}(같은 자극 관찰 무음), {EF}(소리 있음)",
-  "같은 자극의 관찰 대 in-silico 비교를 1차로, 정서 기하는 의미를 제거한 뒤 정의. 화면 기술 텍스트 입력 조건 추가, 관찰-관찰 전이 대조",
-  "in-silico 감각 박탈이 관찰과 맞는지(모델 타당성)와 소리 의존 정서 항목을 함께 밝힌다",
+  f"{EF}(소리 있음, 주)",
+  "같은 3-stem 분리로 (a) 관찰 variance partitioning의 stem별 고유 설명량(R0)과 (b) stem 제거 시 TRIBE v2 예측 변화량(R1)을 정서 항목별, 영역별로 계산해 일치도를 본다. 정서 기하는 의미를 제거한 뒤 정의. 화면 기술 텍스트 입력 조건 추가. 해석은 LIT-05 관문 통과 영역에서만",
+  "in-silico 감각 박탈이 관찰 분할과 같은 정서 항목을 가리키는지(모델 타당성)와 소리 의존 정서 항목을 함께 밝힌다",
   "10.1126/sciadv.adk6840; arXiv:2605.04326; arXiv:2110.09958; 10.1016/j.isci.2020.101060",
   "Emo-FilM 연구: 사전학습 멀티모달 encoder로 Emo-FilM의 양식 기여 분석과 겹침",
   "partially: Lettieri 2024(같은 영화의 판본 비교)(Round 3 검토)",
-  note="Cowen & Keltner 원 클립의 오디오 보유 여부 미확인(유음 예측 조건의 전제). LIT-05 관문 통과 영역에서만 해석")
+  note="사용자 확인(2026-11-12): 보유한 Cowen & Keltner 클립 2,185개는 모두 무음이다. 그래서 같은 클립의 관찰 무음 대 in-silico 유음/무음 비교(원 EF-P7 1차 설계)는 불가능해 삭제하고 Emo-FilM 안의 R0 대 R1 일치도로 축소했다. 무음 클립의 소리 질문은 RQ-60(암시된 소리)이 맡는다")
 K("LIT-12", L, "ET-P6, VD-P6, EF-P2, BI-P6, SN-P5(일부); Round 3 ET-P6 검토", "W+A+G+K+Q",
   "Memory and Mental Imagery", "K7",
   "Mind captioning 회상 시행에서 정서 부분공간의 재활성은 시각, 의미 부분공간의 재활성과 별개로 그 시행의 vividness 보고를 예측하는가(cue가 함축하는 정서 통제 후)?",
@@ -355,7 +355,7 @@ K("LIT-30", L, "EF-P6, FA-P2", "A+F+H+R+P+S", "", "K2",
   "두 판으로 나눈다(adversarial-reviewer EF-P6 응답). D6a 모델 검증: Horikawa 클립 일부로 encoder를 학습하고 학습에 쓰지 않은 클립 중에서만 영역별 구동/억제 클립을 모델마다 사전 등록, Horikawa 미사용 피험자와 MC에서 검증. D6b 코호트 간 재현: Horikawa 관찰 반응으로 고른 클립을 MC에서 검증. 모델 간 승패(controversial 쌍), 클립 길이와 반복 재생 횟수 nuisance",
   "관찰 데이터 안에서 가능한 가장 강한 형태의 예측 검증(코호트 간 전향 선택)",
   "10.1073/pnas.1912334117; 10.1038/s41562-023-01783-7; 10.1126/sciadv.adw1464; 10.1016/j.isci.2020.101060; arXiv:2604.07729",
-  "EmoViS: 정서 대 시각-의미 모델 비교 겹침", "partially: 언어망 구동/억제 선택(Tuckute 2024)",
+  "EmoBrain(구 EmoViS 범위): 정서 대 시각-의미 모델 비교 겹침", "partially: 언어망 구동/억제 선택(Tuckute 2024)",
   "정확도가 아니라 사전 등록된 전향 선택의 성공률로 평가")
 K("LIT-31", L, "GC-P7; 무작위 RND-03 수렴", "L+G+E+H+B", "", "K2",
   "정서 유발 영상으로 학습한 amygdala encoder가 가장 선호하는 합성 자극은 얼굴, 표정 같은 의미 범주로 환원되는가, 그리고 FFA, EBA, PPA 예측을 고정한 제약 아래에서도 amygdala 예측을 움직이는 편집이 남는가?",
@@ -375,7 +375,7 @@ K("LIT-32", L, "GC-P6", "C+L+I+E+P", "", "K2",
   "자연 쌍(드문 칸)과 편집 쌍에서 ROI별 RSA의 상황/정서 회귀 계수를 비교해 편집 고유 효과를 분리",
   "정서 표상과 상황 의미 표상의 해리를 공선성 없이 검정한다",
   "arXiv:2604.13466; 10.1093/scan/nsl014; 10.1371/journal.pone.0308295; arXiv:2512.00557",
-  "EmoViS: 정서 vs 의미 분리 겹침", "partially: 모델 쪽 판별 검정(Peiris 2026), Kuleshov fMRI(Mobbs 2006, Cao 2024)")
+  "EmoBrain(구 EmoViS 범위): 정서 vs 의미 분리 겹침", "partially: 모델 쪽 판별 검정(Peiris 2026), Kuleshov fMRI(Mobbs 2006, Cao 2024)")
 K("LIT-33", L, "FA-P1", "R+H+F+S+T", "", "K9", None,
   "in-silico 뇌가 잃는 개념", "안정 SAE(RA-SAE), 다모델 공유 사전(USAE)", "TRIBE v2, V-JEPA 2 feature", "전뇌", f"{MC}",
   "", "", "arXiv:2502.12892; arXiv:2605.04326", NO, "",
@@ -401,7 +401,7 @@ K("LIT-36", L, "GI-R4-1", "B+K+E+Q", "Complex Systems (power-law 스펙트럼 �
   "클립 수를 맞춘 2x2 부분집합에서 영역별 공유 스펙트럼 지수를 추정하고 시각 조작과 정서 조작 중 어느 쪽에 민감한지 비교",
   "정서 영역의 기하가 자극 통계의 반영인지 정서 고유 부호인지 구분하는 관찰 설계",
   "10.1038/s41586-019-1346-5; arXiv:2409.06843; arXiv:2505.12653; 10.1126/sciadv.adw1464; 10.1016/j.isci.2020.101060",
-  "EmoViS: Horikawa 정서 기하의 sensory-semantic 기원과 직접 겹침", "no(geometry-info Round 4 검색, 2026-11-12)",
+  "EmoBrain(구 EmoViS 범위): Horikawa 정서 기하의 sensory-semantic 기원과 직접 겹침", "no(geometry-info Round 4 검색, 2026-11-12)",
   "같은 데이터의 부분집합 조작으로 기하의 원인을 시험하는 새 검증 논리")
 K("LIT-37", L, "GI-R4-2", "K+P+B+E", "계량경제학의 OT 인과 매칭", "K2",
   "자연 클립 라이브러리에서 정서와 시각, 의미 내용은 어느 정서 쌍에서 분리 가능한가: unbalanced optimal transport로 내용이 맞는 클립만 짝지을 때 짝을 못 찾는 비율은 정서 쌍마다 얼마이고, 짝지은 쌍에서도 transmodal 영역의 정서 차이가 남는가?",
@@ -411,7 +411,7 @@ K("LIT-37", L, "GI-R4-2", "K+P+B+E", "계량경제학의 OT 인과 매칭", "K2"
   "정서 범주 쌍마다 매칭률과 매칭된 쌍의 신경 차이를 보고. 매칭률이 낮은 쌍의 결론은 '이 데이터로 식별 불가'로 표시",
   "어떤 정서 구분이 이 데이터로 원리상 검정 가능한지 지도를 만들어 다른 질문의 해석 범위를 정한다",
   "arXiv:2112.04398; arXiv:2503.07811; 10.1371/journal.pone.0152719; 10.1073/pnas.1912334117",
-  "EmoViS: 정서 기하와 sensory-semantic 내용의 분리 문제 겹침", "no(geometry-info Round 4 검색)")
+  "EmoBrain(구 EmoViS 범위): 정서 기하와 sensory-semantic 내용의 분리 문제 겹침", "no(geometry-info Round 4 검색)")
 K("LIT-38", L, "GI-R4-3", "V+K+E+A", "", "K6",
   "동기 방향(맞서기 대 멈추기)은 valence와 독립된 추상 축인가: 같은 valence 안에서 학습한 동기 방향 decoder가 다른 valence로 일반화되는가(교차 조건 일반화)?",
   "동기 방향과 valence의 독립성", "cross-condition generalization(CCGP, Bernardi 2020)",
@@ -667,7 +667,7 @@ K("STR-A3", S, "Strategy A(Technology Transfer): Computer Vision의 situation re
   "사건-의미역 feature, 물체/장면 feature, 캡션 embedding의 variance partitioning(차원 맞춤). 의미역 중 행위자와 피행위자 역할이 appraisal 평정과 뇌 반응의 고유 분산을 설명하는지. 의미역 추출은 AI 생성 feature로 표기",
   "appraisal 이론의 핵심 변수(행위 주체, 원인)를 자극에서 계산 가능한 구조로 바꿔 정서 대 의미 분리를 한 단계 세분한다",
   "10.1109/cvpr.2016.597; 10.1109/cvpr46437.2021.00554; 10.1038/s41467-024-44870-7; 10.1016/j.neubiorev.2022.104977; 10.1038/s41597-025-04803-5",
-  "EmoViS: 정서 대 의미 내용 분리 겹침", "미확인: Stage 4에서 확인",
+  "EmoBrain(구 EmoViS 범위): 정서 대 의미 내용 분리 겹침", "미확인: Stage 4에서 확인",
   note="Strategy A의 첫 시도(STR-A1, PPI)가 기각되어 새로 적용. 관찰 데이터라 P는 인과가 아니라 경쟁 모형 비교 수준(R0)")
 X("STR-A2", S, "Strategy A: 정서 분류 foundation model의 fMRI 정서 decoding 전이", "A+F+I+S", "",
   "foundation model 전이로 정서 decoding 정확도 향상",
@@ -745,7 +745,7 @@ K("STR-H2", S, "Strategy H(Reverse Inspiration, AI -> 뇌): mechanistic interpre
   "신뢰 부분공간에서 학습한 사전의 원자 수가 신뢰 차원 수를 넘는지, 원자-범주 대응이 범주 빈도에 따라 달라지는지, 재학습 간 원자 일치율",
   "Horikawa(많은 범주)와 Westlin(적은 차원)을 함께 설명할 수 있는 제3의 가설을 검정 가능한 형태로 만든다",
   "arXiv:2209.10652; arXiv:2502.12892; 10.1016/j.isci.2020.101060; arXiv:2507.00320",
-  "EmoViS: Horikawa 정서 기하 대상 겹침(방법은 다름)", "미확인: Stage 4에서 확인",
+  "EmoBrain(구 EmoViS 범위): Horikawa 정서 기하 대상 겹침(방법은 다름)", "미확인: Stage 4에서 확인",
   "AI 해석 연구의 개념을 정서 차원 논쟁의 판정 가설로 옮김",
   note="voxel 패턴의 superposition은 신경 단위 superposition의 거시 유비다")
 
@@ -904,7 +904,7 @@ def main():
     # checks
     ov_c = collections.Counter()
     for c in rqs:
-        for p in ("EmoBrain", "EmoViS", "Emo-FilM 연구"):
+        for p in ("EmoBrain", "구 EmoViS", "Emo-FilM 연구"):
             if p in c["overlap"]:
                 ov_c[p] += 1
     C = ["# matrix 점검 결과", "", "* 생성: `python3 -I outputs/combinations/build_matrix.py`", "",

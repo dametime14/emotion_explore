@@ -297,3 +297,15 @@ Stage 3는 10개 연구 에이전트의 Round 2(교차 교환), 제안 응답, R
 26. **우선순위 의견.** adversarial-reviewer는 GI-P1 + LS-P1(RQ-01, RQ-08) 묶음을 1순위로 권했다. 다음은 평정만 쓰는 저비용 관문(RQ-24 0단계, RQ-39)이다. 사용자가 군집이나 데이터셋에 선호가 있으면(예: Horikawa 1순위 유지) Stage 4 평가 가중치에 반영한다.
 27. **계산 자원과 환경 정보(Stage 1의 1, 3~6번, 보류 중).** Stage 4의 Pilot Study Plan에는 GPU, 저장 공간, 모델 checkpoint 접근 정보가 필요하다. TRIBE v2, V-JEPA 2, video MLLM 실행이 해당한다. 정보가 없으면 Pilot은 "자원 미확인"으로 표시한다.
 28. Stage 2 이후 보류 항목 18~22(EmoPathway 출처, already_done 일괄 재검색, 추가 네트워크 허용, Emo-FilM 판본)는 그대로 보류 중이다.
+
+### 2026-11-12 (사용자 답변, Stage 3 이후)
+
+| 항목 | 결정과 처리 |
+|---|---|
+| 23 Stage 4 진행 | **진행 지시.** Stage 4 시작 |
+| 24 `existing_projects.md` | **EmoViS는 EmoBrain으로 흡수되었고, 나머지 요약은 현재 상태와 맞다.** `reference/existing_projects.md`에 확인 표시를 달았다(파일이 사용자 확인을 요청한 부분만 고침). matrix.csv의 겹침 표시를 "EmoBrain(구 EmoViS 범위)"로 바꿨다. 겹침이 있는 질문은 EmoBrain 14개, Emo-FilM 연구 11개다 |
+| 25(a) Mind captioning 캡션 | **보유.** 클립별 정서 배제 캡션 20개. RQ-08, 09, 44, 45의 데이터 전제 충족 |
+| 25(b) Cowen & Keltner 오디오 | **보유 클립 2,185개 모두 무음.** RQ-52의 "같은 클립 관찰 무음 대 in-silico 유음" 설계는 불가능해 Emo-FilM 안의 R0 대 R1 일치도로 축소했다. 원 영상에 소리가 있었는지는 원문으로 따로 확인 중이다(`outputs/stage1/horikawa_factcheck_stage4.md`) |
+| 25(c) 두 코호트 피험자 중복 | **겹치지 않음(사용자 확인).** RQ-01의 독립 코호트 전제 충족 |
+| 25(d) Spacetop 판본 | **공개판 ds005256과 같을 것(사용자 추정).** adversarial-reviewer의 결측 구조 계산을 보유본에도 적용 가능한 것으로 둔다. 판본 차이가 발견되면 다시 계산 |
+| 25(e) Horikawa 2020 참가자 모국어 | 사용자: "참가자는 일본인". Stage 1 보고서는 "미확인(촬영은 일본)"이었다. 사용자 지적에 따라 원문을 다시 확인 중이다(`outputs/stage1/horikawa_factcheck_stage4.md`) |

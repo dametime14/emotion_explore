@@ -4,12 +4,12 @@
 
 여기 적힌 프로젝트의 방향, 가설, 방법을 따르거나 우선하지 않는다. 겹치는 질문도 버리지 않고, `overlap: <프로젝트명>`과 겹치는 부분을 한 줄로 표시만 한다.
 
-[사용자 확인 필요: 아래 요약이 현재 상태와 맞는지 확인하고 고쳐 주세요.]
+[사용자 확인 완료(2026-11-12, Stage 3 이후 채팅): EmoViS는 EmoBrain으로 흡수되었다. 겹침 표시는 EmoBrain 하나로 하고, 옛 EmoViS 범위와 겹치면 "EmoBrain(구 EmoViS 범위)"로 적는다. 나머지 요약은 현재 상태와 맞다.]
 
 ## EmoBrain
 Cross-subject fMRI emotion decoding 프로젝트. 34차원 정서 profile을 목표로 하며, V-JEPA2와 multimodal teacher-student distillation을 사용한다.
 
-## EmoViS
+## EmoViS (EmoBrain으로 흡수됨, 2026-11-12 사용자 확인)
 Affective brain geometry의 sensory-semantic 기원을 조사하는 프로젝트. Horikawa 2020 데이터셋을 사용한다.
 
 ## Emo-FilM 연구
