@@ -5,6 +5,12 @@
 * 대상 논문: Morgenroth E, Moia S, Vilaclara L, Fournier R, Muszynski M, Ploumitsakou M, Almató-Bellavista M, Vuilleumier P, Van De Ville D. (2025) Emo-FilM: A multimodal dataset for affective neuroscience using naturalistic stimuli. *Scientific Data* 12:684. [doi:10.1038/s41597-025-04803-5](https://doi.org/10.1038/s41597-025-04803-5), PMID 40268934, [PMC12019557](https://pmc.ncbi.nlm.nih.gov/articles/PMC12019557/). Preprint: [doi:10.1101/2024.02.26.582043](https://doi.org/10.1101/2024.02.26.582043)
 * 우리 환경의 데이터 경로: **미확인** (`reference/datasets_and_resources.md` 1절이 비어 있음)
 
+> **Coordinator 주석 (Stage 1 검증 반영, `outputs/agents/adversarial-reviewer/stage1_audit.md`)**
+> * E8 (이견 채택): 검증 에이전트가 절단 정보 후보 파일 `code/FilmInfo.txt`, `code/BBL_experiment_Movies_without_credits_exp_files.xlsx`의 git-annex 위치 기록을 확인한 결과 두 파일 모두 OpenNeuro 공개 S3 원격에 존재로 기록되어 있다(내용은 미열람). 논문도 영화가 연구자에게 쉽게 이용 가능하다고 서술한다. 그래서 통합 보고서와 `gate_decision.md`는 G1을 "공개 재료로 재구성 가능성 높음(확인 필요), 실패 시 저자 요청"으로 표기한다. 아래 Gate 표의 원래 판정("요청 필요, 조건부 재구성 가능")은 감사 당시 판단으로 남긴다.
+> * E11: S07은 raw가 처음부터 있었고 영화 3편 전처리본만 v1.0.2 이전에 결측이었다.
+> * 문헌 기록: `literature_EmoFilM.jsonl`의 arXiv:2509.24298과 topology preprint는 `verified_by: "search_index"`로 재표기했고, arXiv:2509.24298 저자 표기를 완전하게 고쳤다.
+> * Cross-dataset 판정은 `dataset_intelligence_report.md` 3절의 단계형 판정이 7절을 대체한다(7절의 Spacetop "부분 결합 가능"은 라벨 수준에서 수준 2에 해당).
+
 ## 0. 검증 방법과 한계 (먼저 읽을 것)
 
 | 확인 경로 | 무엇을 확인했나 | 상태 |

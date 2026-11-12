@@ -5,6 +5,13 @@
 * 원 논문: Allen EJ, St-Yves G, Wu Y, ... Naselaris T, Kay K (2022). A massive 7T fMRI dataset to bridge cognitive neuroscience and artificial intelligence. *Nature Neuroscience* 25(1):116-126. doi:[10.1038/s41593-021-00962-x](https://doi.org/10.1038/s41593-021-00962-x), PMID [34916659](https://pubmed.ncbi.nlm.nih.gov/34916659/) (온라인 게재 2021-12-16). Preprint: bioRxiv doi:[10.1101/2021.02.22.432340](https://doi.org/10.1101/2021.02.22.432340)
 * 우리 환경의 데이터 경로: **미확인** (`reference/datasets_and_resources.md` 1절이 비어 있음)
 
+> **Coordinator 주석 (Stage 1 검증 반영, `outputs/agents/adversarial-reviewer/stage1_audit.md`)**
+> * N5 (이견 병기): 검색 색인의 AWS Registry 항목은 S3 버킷을 무계정(`--no-sign-request`)으로 안내하면서 Data Manual 접근에 DAA 양식을 요구한다. 그래서 통합 보고서와 `gate_decision.md`는 G1을 "약관 동의 절차 필요(요청 범주, 승인 심사 여부 미확인)"로 표기한다. 감사 판정과 검증 의견 모두 검색 수준 근거라 Terms 원문 확인이 필요하다.
+> * N4: nsdmeadows 평정 주체가 NSD 참가자라는 근거는 Khosla 2022의 "subject-averaged" 표현과 검색 요약이다. 지시문(felt vs perceived) 미확인이므로 "본인 보고"는 잠정 분류다.
+> * X1: NSD에는 별도 평정자의 규범 평정이 없다. 8절 2번의 "규범 평정" 비교는 shared 이미지에 대한 신규 규범 평정 수집이 전제다.
+> * L3: 6절 표의 "일상 장면의 정서 평정은 객체 표상으로 대부분 예측됨"은 과장이다. 2.4절 (d)의 표현처럼 "객체 인식 모델(AlexNet)이 정서 특화 모델(EmoNet)보다 20개 범주 정서 판단을 더 잘 예측했다(20-way 분류 정확도 기준, 절대 설명량은 크지 않음)"로 읽는다.
+> * 문헌 기록: `literature_NSD.jsonl`에서 WebSearch 색인으로만 확인한 11편(arXiv 7, bioRxiv 2, AAAI 1, VSS 초록 1)을 `verified_by: "search_index"`로 재표기했고, 검색 요약만 본 항목은 `discussion_read: "search_summary"`로 바꿨다.
+
 ## Gate 판정
 
 | Gate | 판정 (공개 경로 기준) | 우리 환경 보유 여부 | 핵심 근거 |
@@ -196,7 +203,7 @@
 | Emotion experienced vs portrayed | 스캔 중 정서 경험 측정이 없다. 모든 73k 규모 정서 분석은 "자극 속성" 수준이다 | 2.3절 |
 | Human vs model annotation | 73k 규모 라벨은 AI 추정뿐. 인간 검증은 100장 | Sadeghi 2024 |
 | 참가자 보고 vs 규범 평정 | nsdmeadows는 참가자 평정이지만 스캔 후, 비교 배치 방식이라 척도가 상대적이다. 지시문 미확인 | [B] |
-| Emotion vs visual/semantic content | 일상 장면의 정서 평정은 객체 표상으로 대부분 예측됨 (Gao 2025). OTC는 animacy와 affect를 함께 부호화 (Abdel-Ghaffar et al. 2024). 정서 축이 의미 축의 재표현일 가능성 | [A] |
+| Emotion vs visual/semantic content | 일상 장면에서 객체 인식 모델(AlexNet)이 정서 특화 모델(EmoNet)보다 20개 범주 정서 판단을 더 잘 예측함 (Gao 2025, 20-way 분류 정확도 기준, 절대 설명량은 크지 않음). OTC는 animacy와 affect를 함께 부호화 (Abdel-Ghaffar et al. 2024). 정서 축이 의미 축의 재표현일 가능성 | [A] |
 | 범위 제한 | 이미지가 대체로 중립 (Sadeghi 2024) | [A] |
 | Repeated stimulus confound | 각 이미지가 수 세션에 걸쳐 3회 제시되며 과제가 old/new 판단. 반복 억제, 친숙도, novelty 반응이 arousal 성격의 신호와 섞인다. Abdel-Ghaffar 2024는 amygdala처럼 novelty에 민감한 영역은 반복 제시 기반 voxel-wise 모델 적합이 어렵다고 지적 | [A] |
 | HRF와 autocorrelation | 4 s 간격 rapid design. GLMsingle이 인접 trial 상관을 줄이지만 완전 제거는 아님 | Prince 2022 [A] |

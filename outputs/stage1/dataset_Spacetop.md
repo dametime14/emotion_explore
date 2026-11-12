@@ -6,6 +6,13 @@
 * 전처리 데이터: OpenNeuro ds007070 v1.0.3 (2026-04-06), "fMRIPrep Derivatives for SpaceTop", [doi:10.18112/openneuro.ds007070.v1.0.3](https://doi.org/10.18112/openneuro.ds007070.v1.0.3)
 * 우리 환경의 데이터 경로: **미확인** (`reference/datasets_and_resources.md` 1절이 비어 있음)
 
+> **Coordinator 주석 (Stage 1 검증 반영, `outputs/agents/adversarial-reviewer/stage1_audit.md`)**
+> * 핵심 수치(S1~S9)는 검증 에이전트가 독립 재계산으로 확인했다. G1 공개 판정은 alignvideo mp4 49개 기준으로 확인되었고 다른 과제의 annex 파일은 점검하지 않았다.
+> * S10: 아래 2.2절의 "split-half 0.94~0.99"는 영상당 약 51명 집단 평균의 신뢰도이며, Emo-FilM의 평정자 쌍별 agreement(0.38/0.39)와 다른 지표다. 개인 수준 비교값은 "개인 대 나머지 집단 상관 중앙값 0.46~0.77"이다.
+> * 8절 3번 (AI 연속 annotation): 영상별 평정(49개 점)은 영상 단위 집계값만 검증할 수 있고 영상 안 시간축 타당성은 검증하지 못한다. 시간축 타당성은 Emo-FilM 1 Hz consensus로 먼저 검증하고, Spacetop의 시간축 결과는 "미검증 AI 추정 시계열"로 표기한다.
+> * 2.1절의 "참가자의 타인 지각/추론 판단" 구분은 통합 보고서 3.2절 표에 별도 열로 반영했다.
+> * 문헌 기록: `literature_Spacetop.jsonl`의 arXiv:2606.09770은 `verified_by: "search_index"`로 재표기했다. 검증 에이전트 검색에서는 이 논문의 Spacetop 사용을 확인하지 못했다.
+
 ## 확인 경로와 한계 (먼저 읽을 것)
 
 | 경로 | 무엇을 확인했나 | 상태 |

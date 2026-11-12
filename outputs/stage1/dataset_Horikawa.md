@@ -5,6 +5,15 @@
 * 대상 논문: Horikawa, Cowen, Keltner, Kamitani (2020). The Neural Representation of Visually Evoked Emotion Is High-Dimensional, Categorical, and Distributed across Transmodal Brain Regions. iScience 23(5):101060. [doi:10.1016/j.isci.2020.101060](https://doi.org/10.1016/j.isci.2020.101060), PMID 32353765, [PMC7191651](https://pmc.ncbi.nlm.nih.gov/articles/PMC7191651/)
 * 우리 환경의 데이터 경로: **미확인** (`reference/datasets_and_resources.md` 1절이 비어 있음)
 
+> **Coordinator 주석 (Stage 1 검증 반영, `outputs/agents/adversarial-reviewer/stage1_audit.md`)**
+> * H1: 2020-04-24 OpenNeuro 공개는 독립 확인됨. 단 figshare 공개일은 직접 확인하지 못했으므로 "figshare에 2020년부터"는 "figshare(2023년 논문이 인용, 공개일 미확인)"로 읽는다.
+> * H6: "내용 중복 15쌍"은 코드가 중복으로 표시해 제외한 label index 15개이며, 쌍 구조와 중복 대상은 코드로 확인되지 않는다.
+> * H7: 원 논문 본문은 2,181 unique videos, abstract는 "all 2,185 videos"로 논문 내부에서도 수치가 다르다.
+> * H10: 비디오 요청 승인 전 임시 경로 후보로 Cowen & Keltner (2017) abstract가 밝힌 공개 비디오 라이브러리와 interactive map이 있다(형식, 이용 조건 미확인).
+> * H11: Westlin et al. (2025)은 arXiv preprint이며 본문 미열람이다. "원래 매핑 재현 안 됨"은 재현 실패 보고(초록 기준)이고 반대 증거로 확정된 것이 아니다. 아래 5절, 6절, 8.3절, 8.4절의 Westlin 관련 서술은 이 기준으로 읽는다.
+> * 문헌 기록: `literature_Horikawa.jsonl`의 검색 색인 확인 항목 5편은 `verified_by: "search_index"`로 재표기했다.
+> * Cross-dataset 판정은 `dataset_intelligence_report.md` 3절의 단계형 판정이 7절을 대체한다.
+
 ## 검증 수준 표기
 
 | 표기 | 뜻 |
@@ -265,7 +274,7 @@
 | Kiyokawa, Hayashi. Sci Rep 14:20992. [doi:10.1038/s41598-024-71690-y](https://doi.org/10.1038/s41598-024-71690-y) | 2024 | 본문 확인 | 얼굴, 언어, CLIP 정서 표상 vs 360 영역 뇌 RSM. visio-linguistic 표상이 가장 넓게 일치 |
 | Afrasiyabi et al. arXiv:2410.00047 | 2024 | 검색 요약 | 같은 Cowen & Keltner 비디오로 3명 추가 촬영, 정서 라벨 기반 심상 decoding. 추가 데이터 공개 여부 미확인 |
 | Shariatpanahi et al. arXiv:2503.13981 | 2025 | 검색 요약. "5명, 2,185 비디오" 서술로 Horikawa 데이터 추정 | controllability 관점 |
-| Westlin, Singh, Erdogmus, Stratis, Barrett. arXiv:2507.00320, PMID 41019207 | 2025 | abstract | constructionist 재분석. 원래 매핑 재현 안 됨, 개인 간 변동 큼 |
+| Westlin, Singh, Erdogmus, Stratis, Barrett. arXiv:2507.00320, PMID 41019207 | 2025 | abstract (preprint, 본문 미열람) | constructionist 관점의 최소 가정 재분석. 원 논문의 범주-뇌 대응을 관찰하지 못했고 개인 간 변동이 크다고 보고(초록 기준, 재현 실패 보고이며 반대 증거로 확정된 것은 아님) |
 | Asanuma et al. Sci Rep 15:32175. [doi:10.1038/s41598-025-14961-6](https://doi.org/10.1038/s41598-025-14961-6) | 2025 | 본문 확인 (fMRI 아님, 같은 자극과 평정) | MLLM 정서 추정이 범주 수준 구조와는 일치, 개별 비디오 수준은 제한적 |
 | Fu et al. EmoGrowth. ICML 2025, PMLR 267:17746-17763 | 2025 | 공개 코드 설정에 dataset "iScience", 27 class (Horikawa로 추정) | incremental multi-label 정서 decoding |
 | Du, Lu, Huang, Sun, Zhou, Qin, He. arXiv:2509.24298 | 2025 | 검색 요약 ("five subjects", 2,180 clips) | MLLM odd-one-out embedding이 인간 평정보다 뇌 정서 네트워크를 더 잘 예측 |
