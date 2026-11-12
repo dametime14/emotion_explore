@@ -57,6 +57,7 @@
   4. 자기(self) 표상이 필수다(no self, no emotion). 타인 고통에 대한 정서는 공감적 자기 관련으로 설명한다.
   5. 정서는 무의식일 수 없고, 자신이 느끼는 정서에 대해 틀릴 수 없다(1인칭 권위).
 * 연구 질문 목록은 SI Appendix Box 10에 있다고 본문이 밝히지만 pnas.org 차단으로 **미열람**이다.
+* (Stage 2 재점검 반영) 주장 3(schema와 언어가 경험을 분화시킨다)의 선행 수행 여부를 다시 검색했다. 정서 단어의 유무가 정서 경험/지각의 신경 활성 분포를 바꾼다는 메타분석(10.1093/scan/nsw121)과 정서 단어 정보가 전두, 정중선, 감각운동 영역에 분산 표상된다는 RSA 연구(10.1093/scan/nsae043)가 있어 "partially"로 바꿨다(초록 확인). 개인의 경험 분화 정도와 신경 패턴 구분성을 직접 연결한 연구는 여전히 찾지 못했다.
 
 ---
 
@@ -85,6 +86,11 @@ gradient가 혼합 정서를 설명할 수 있다는 제안 (10.1073/pnas.170224
 
 **U8. 정서의 주관적 유사성 구조(quality space)는 어느 영역의 신경 판별성으로 구현되는가.**
 quality space 가설은 주관적 유사성이 신경 활성 유사성으로 설명된다고 보고 (10.1016/j.tics.2024.06.007) [초록], HOT 지표 HOT-4는 sparse하고 smooth한 부호가 quality space를 만든다고 본다 (arXiv:2308.08708, 2.3.3절) [본문]. 집단 부호의 power-law 스펙트럼은 smoothness 제약과 연결된다 (10.1038/s41586-019-1346-5) [초록]. 정서에 대한 경험적 검정은 검색 범위 내 미발견(철학 논문만 검색됨).
+
+(Stage 2 재점검 반영)
+* U1 보강: Gauthaman 2024(출판본 PLOS Computational Biology 21:e1013714, doi:10.1371/journal.pcbi.1013714) 4.2절 본문을 직접 읽어 확인했다. 저자들은 스펙트럼이 데이터 크기에 따라 제한 없이 늘어나므로 "차원성을 단일 스칼라 값으로 정량화하지 말아야 한다"고 명시하고, 비선형 방법이면 더 낮은 차원의 다양체가 나올 수 있다는 한계도 적었다. U1의 해석("27개냐 아니냐"는 잘못 설정된 질문일 수 있음)은 유지하되, 비선형 차원 추정을 대안 분석으로 함께 두어야 한다.
+* U3 보강: 같은 연구 계열이 타인 표정으로 유발한 공감적 공포 signature와 장면으로 유발한 주관 공포 signature를 따로 만들고 동적 자극 독립 코호트로 검증했다(10.1016/j.bpsc.2025.11.011, 초록). 인식(타인 정서)과 경험(자기 정서)을 signature 수준에서 분리한 사례로 U3의 근거에 추가한다.
+* U5 정정: Horikawa 2020은 이미 34범주 선택 비율을 범주별 연속 목표로 decoding했다(Results "Neural Decoding Analysis to Predict Emotion Scores" 절 재확인). 따라서 "분포 라벨 사용" 자체는 새롭지 않다. 남은 공백은 범주 간 분포 전체(엔트로피, 평정자 불일치)를 뇌 분석의 목표나 평가 지표로 쓰는 것이다.
 
 ---
 
@@ -117,6 +123,7 @@ cross-decomposition은 반복 없이 두 피험자만 있어도 rank별 신뢰 �
 
 **T3. Computer vision의 human uncertainty 라벨 → 자극별 정서 모호성 (CV → Affective).**
 CIFAR-10H처럼 판단 분포를 목표로 학습한다 (arXiv:1908.07086). Horikawa 34범주 선택 비율은 이미 분포 라벨이다. 평정 엔트로피와 뇌 decoder 예측 엔트로피의 대응을 볼 수 있다. G1 불필요.
+(Stage 2 재점검 반영) Horikawa 2020이 이미 범주별 선택 비율을 연속 목표로 decoding했으므로, 이 아이디어에서 이전되는 새 요소는 "분포 목표 학습"이 아니라 "평정 불확실성(엔트로피)을 뇌 분석의 평가 축으로 쓰는 것"이다.
 
 **T4. LLM introspection의 privileged access 검정 → 인간 정서 보고 (AI → Affective).**
 "M1이 자기 행동을 M1 행동으로 학습한 M2보다 잘 예측하면 introspection" (arXiv:2410.13787). 인간판: 본인 정서 보고가 peer 합의, 규범, AI 추정보다 본인 뇌 반응의 고유 분산을 더 설명하는가. LeDoux & Brown의 1인칭 권위 주장 (10.1073/pnas.1619316114)을 신경 수준에서 검정 가능한 형태로 바꾼다. 단 이 검정은 보고와 뇌의 인과적 연결(introspection)만 다루며 경험의 존재(phenomenal)는 다루지 않는다 (arXiv:2506.05068).
@@ -139,6 +146,7 @@ LLM 중간층에서 appraisal 개념 방향을 찾아 조작하면 출력 정서
 
 **X1. Scale-free 스펙트럼과 "정서는 몇 종인가" 논쟁.**
 시각피질 신뢰 공유 분산은 거의 4자릿수 차원에 걸친 power-law다 (arXiv:2409.06843). 정서 영역도 그렇다면 27(10.1073/pnas.1702247114), 25(10.1016/j.neuroimage.2020.117258), 11~14(arXiv:2507.00320), 8(10.1162/imag_a_00517)이라는 서로 다른 숫자는 **데이터 크기와 방법이 정한 절단점**일 뿐이다. 반대로 정서 관련 영역에서 스펙트럼이 특정 rank에서 꺾인다면, 그것이 "유한한 정서 종류"의 첫 신경 증거가 된다. 범주 대 차원 논쟁을 스펙트럼 지수와 꺾임점의 문제로 바꾼다.
+(Stage 2 재점검 반영) Gauthaman 4.2절 본문 확인: 저자들도 "차원성을 단일 스칼라로 정량화하지 말라"고 명시했고, power law 대신 lognormal이나 지수 절단 power law도 데이터와 맞을 수 있으며 비선형 기술은 더 낮은 차원을 줄 수 있다고 적었다. 따라서 "꺾임점이 유한 정서 종류의 증거"라는 해석은 지수 절단 분포와의 모형 비교와 비선형 차원 추정을 함께 거쳐야 한다.
 
 **X2. Quality space(HOT-4) = Cowen & Keltner gradient = Stringer smoothness.**
 세 분야가 같은 대상을 다른 말로 부른다. 의식 과학은 "sparse, smooth 부호가 quality space를 만든다" (arXiv:2308.08708), 시스템 신경과학은 "스펙트럼이 1/n보다 느리게 감쇠하면 부호가 매끄럽지 않다" (10.1038/s41586-019-1346-5), 정서 과학은 "범주가 연속 gradient로 연결된다" (10.1073/pnas.1702247114). 정서의 gradient가 신경 부호의 smoothness로 구현되는 영역을 찾으면, 그곳이 정서 quality space의 후보다.
@@ -181,6 +189,7 @@ Plank는 라벨 변동을 잡음이 아닌 실재 변동으로 보자고 하고 
 * **반증 조건:** transmodal 스펙트럼이 시각피질과 같은 지수의 power-law이고 정서 고유 차원이 0~수 개라면 "고차원 범주 정서 표상"은 시각-의미 표상의 재기술일 가능성이 커진다. 정서 고유 차원이 20개 안팎이고 그 근처에서 스펙트럼이 꺾이면 Semantic Space Theory를 지지한다.
 * **주의:** 공유 차원만 센다(개인 특이 정서 신호는 제외됨, 10.1126/sciadv.abf7129). 5명이라 피험자 일반화는 약하다. 블록의 약 72%가 10 s 블록 평균이라 비디오 길이 차이 공변량 필요(Stage 1 4.1절).
 * **기존 수행:** no (검색 범위 내). **G1:** 기본 분석 불필요, 최신 모델 feature는 필요(보유). **overlap: EmoViS** (affective brain geometry의 sensory-semantic 기원과 부분 겹침, 단 이 질문의 핵심은 평정 독립 신뢰 스펙트럼).
+* (Stage 2 재점검 반영) 2026-11-12 WebSearch('power-law covariance spectrum ... higher-order cortex association cortex ...')로 재검색했고 정서, transmodal 영역 적용은 여전히 찾지 못해 "no"를 유지한다. 다만 Han & Bonner(arXiv:2505.12653)가 영화 자극에서 후두정, 대상회 고차 의미 영역까지 수백 차원의 신뢰 표상을 보였으므로 "시각피질 밖 확장" 자체는 부분적으로 수행되었다. Gauthaman 4.2절의 한계(선형 방법만 사용)에 따라 비선형 차원 추정을 대안 분석으로 추가한다.
 
 ### C2. 이론 의존 관찰의 화해: 신뢰 부분공간에서의 비지도 구조
 
@@ -192,6 +201,7 @@ Plank는 라벨 변동을 잡음이 아닌 실재 변동으로 보자고 하고 
 * **반증 조건:** (c)에서도 평정 대응이 낮고 개인 군집이 session 분할 간 재현되며 nuisance와 무관하면 constructionist 해석(개인 특이 구조)이 강화된다. (c)에서 평정 대응이 회복되고 (a)의 개인 군집이 nuisance와 대응하면 Westlin 결과는 측정 산물이다. 둘 다 아니면 "공유 구조는 범주적, 개인 구조는 별도로 신뢰 가능"이라는 혼합 결론.
 * **주의:** 이 질문은 정서 경험의 구조가 아니라 **규범 평정과 대응하는 신경 구조의 측정 타당성**을 다룬다. 결과는 exploratory로 표시하고 분석 경로를 사전 등록할 것을 권한다.
 * **기존 수행:** no (검색 범위 내). **G1:** 불필요. **overlap:** 없음 (EmoViS와 데이터만 공유).
+* (Stage 2 재점검 반영) Round 1에서는 multiverse 선행 수행을 따로 검색하지 않았다. 2026-11-12 WebSearch('multiverse analysis emotion categories fMRI decoding analytic choices typological versus constructionist reanalysis 2024 2025 2026')로 확인했고 Horikawa 데이터의 multiverse 또는 specification-curve 분석은 찾지 못해 "no"를 유지한다.
 
 ### C3. HOT의 관찰 수준 검정: 1차 내용 통제 후 남는 보고 정서 정보의 위치
 
@@ -203,6 +213,7 @@ Plank는 라벨 변동을 잡음이 아닌 실재 변동으로 보자고 하고 
 * **반증 조건:** Feeling 고유 분산이 PFC/TPJ에 없고 섬엽, 체성감각에만 있으면 HOT의 관찰적 예측은 지지되지 않는다. PFC에 있더라도 Appraisal 분포와 같다면 '느낌'이 아니라 '평가 개념화'를 본 것일 수 있다(Block 비판).
 * **주의:** 보고는 별도 평정자 consensus이며 참가자 본인 느낌이 아니다. 관찰 데이터로 HOT와 constructionist를 판별할 수 없다. 결과는 "정서 경험의 위치"가 아니라 "1차 내용 밖에 있는 보고 정서 정보의 위치"로만 서술한다. 영화 14편이라 영화를 확률효과로 둔다.
 * **기존 수행:** no (검색 범위 내). **G1:** 필요(보유, 단 보유 파일이 크레딧 절단 연구 판본인지 미확인). **overlap: Emo-FilM 연구** (사전학습 멀티모달 encoding으로 정서 맥락 기여 분석과 방법 일부 겹침).
+* (Stage 2 재점검 반영) 판정을 "no"에서 **"partially"**로 바꾼다. Round 1의 HOT 실증 검색은 HOT 직접 검정만 찾았고 성분 모델 fMRI는 찾지 않았다. 재검색(2026-11-12, 'Emo-FilM appraisal component process model fMRI ...')에서 Mohammadi, Van De Ville, Vuilleumier 2023(10.1093/cercor/bhad093)이 영화 클립의 32개 CPM 성분 평정으로 정서를 기능 과정(valuation appraisal, hedonic experience, novelty, goal-relevance, approach/avoidance, social concerns)으로 분해하고 각 과정의 뇌 네트워크를 식별했다(초록 확인). 따라서 "성분별 뇌 네트워크" 자체는 수행되었다. C3에서 남는 새로운 부분은 (1) 고차원 시청각-의미 feature와 참가자 측정 생리를 통제한 뒤의 Feeling 고유 분산, (2) Feeling과 Appraisal의 영역 분포 비교를 HOT 예측의 판별 검정으로 쓰는 것이다. 같은 연구진의 행동 수준 후속(10.1037/emo0001619, Emotion 2026)도 Emo-FilM 계열 연속 주석에서 valence와 self-relevance appraisal에 따른 정서 위계를 보고했다. 또 Zhou 2021 재확인 결과 원 논문 한계 단락(Discussion 8째)은 정지 이미지만 썼다는 점을 들었으므로, C3가 쓰는 "분산 표상" 근거는 정지 이미지 기반이라는 단서를 붙인다.
 
 ### C4. Privileged access 검정: 본인 보고, peer 합의, 규범, AI 추정의 고유 설명력
 
@@ -225,6 +236,7 @@ Plank는 라벨 변동을 잡음이 아닌 실재 변동으로 보자고 하고 
 * **반증 조건:** 정서 강도와 시각 복잡도를 통제하면 (a)와 (b) 모두 사라질 때, 평정 불일치는 뇌 수준 대응이 없는 보고 단계 잡음으로 본다.
 * **주의:** 강도가 낮은 비디오는 신경 신호가 약해 엔트로피가 오른다. 강도와 평정자 수를 공변량으로 둔다. 별도 평정자 불일치와 fMRI 피험자 신경 변동은 다른 사람들의 것이다.
 * **기존 수행:** no (검색 범위 내). **G1:** 불필요. **overlap:** 없음.
+* (Stage 2 재점검 반영) Horikawa 2020은 이미 34범주 선택 비율을 범주별 연속 목표로 decoding했다(Results "Neural Decoding Analysis to Predict Emotion Scores" 절, 비율과 예측값의 Pearson r로 평가). Technological Development 단계의 "분포 decoder"는 범주별 비율 회귀를 넘어서, 범주 간 분포 전체를 한 번에 예측하고 그 엔트로피를 평정자 엔트로피와 비교하는 부분만 새롭다. 질문의 핵심(불일치의 신경 분해)과 판정 "no"는 유지한다(Round 1 WebSearch 'rater disagreement emotion stimuli predicts neural response variability ...' 근거).
 
 ### C6. 혼합 정서: 선형 중첩인가 창발 상태인가
 
@@ -236,6 +248,7 @@ Plank는 라벨 변동을 잡음이 아닌 실재 변동으로 보자고 하고 
 * **반증 조건:** 모든 영역에서 선형 결합이 혼합 반응을 ceiling 수준으로 예측하면 '혼합 정서 고유 상태' 가설은 지지되지 않는다.
 * **주의:** Horikawa의 다중 선택은 '한 사람이 동시에 느낌'과 '평정자 간 분산'을 구분하지 못한다(평정자 개인 자료 비공개). 이것은 규범 평정의 혼합이지 참가자 경험의 혼합이 아니다.
 * **기존 수행:** partially (10.1093/cercor/bhae122: 일관성 수준. 가산성 encoding 검정은 미발견). **G1:** 불필요. **overlap: EmoBrain** (34차원 정서 profile decoding을 쓰는 경우 일부).
+* (Stage 2 재점검 반영) Technological Development 단계의 "argmax가 아니라 선택 비율 분포를 쓴다"는 Horikawa 2020이 이미 범주 점수(선택 비율)를 연속 목표로 썼으므로 새 요소가 아니다. 새 요소는 단일 우세와 혼합 자극을 나눈 가산성 검정뿐이다.
 
 ### C7. 정서 quality space의 위치
 
@@ -316,3 +329,16 @@ Plank는 라벨 변동을 잡음이 아닌 실재 변동으로 보자고 하고 
 * **수치 불일치 기록:** Horikawa 고유 비디오 수가 문헌마다 다르다. Horikawa 본문 2,181, Du 2025는 16개 중복 제거 후 2,180, Westlin 2025는 제시 2,196을 그대로 분석, Cowen & Keltner 라이브러리 2,185. Stage 1은 중복 표시 label index 15개를 기록했다. 분석 시 중복 처리 규칙을 통일해야 한다.
 * **"already_done" 판정 범위:** 각 판정은 이번 세션의 WebSearch, PubMed, arXiv 검색 범위 내 판단이다. 특히 C1(정서 영역 cross-decomposition), C4(본인 보고 고유 분산), C5(평정 불일치와 신경 변동)의 "no"는 Round 3 검토 때 재검색을 권한다.
 * **preprint:** Westlin 2025, Du 2025, Gauthaman 2024, Han & Bonner 2025, Binder 2024, Comsa & Shanahan 2025, Butlin 2023은 arXiv 판으로 확인했으며 동료 심사 여부는 확인하지 않았다(Tak 2025는 arXiv comment에 ACL 2025 camera-ready로 표기, Peterson 2019는 ICCV 2019, Plank 2022는 EMNLP 2022로 표기).
+
+### 10.1 Stage 2 재점검 기록 (2026-11-12, Coordinator 요청, 근거 `outputs/literature/verification_sample.md`의 지적 사항을 위임 메시지로 전달받음)
+
+* **범위:** `literature.jsonl`의 discussion_read = full_text 18편 전체. 각 기록에서 (1) limitations가 실제 Limitations/Discussion 한계 단락에서 왔는지, (2) already_done "no"가 실제 검색에 근거하는지 점검했다. 바꾼 기록에는 `recheck_note`, 검색으로 "no"를 유지하거나 바꾼 항목에는 `search_scope`(검색 경로와 날짜)를 달았다. 수정 전 파일은 scratchpad에 백업했다.
+* **검증 표본 지적 항목(Zhou 2021) 직접 확인 결과:** PMC 본문(Round 1에서 받아 둔 사본)을 다시 읽어 Discussion을 10개 단락으로 재계수했다. 실제 한계는 8째(정지 이미지만 사용, SVR 단일 기법, 편도체 인과성 판단 불가)와 9째(사전등록 없음, 조건화 위협 decoder와 패러다임 불일치) 단락이었다. 검증자 지적이 맞아 limitations를 교체했다. 검증자가 근거로 든 10.1016/j.bpsc.2022.09.008은 Crossref와 PubMed 초록으로 직접 확인했다(같은 연구진의 losartan 약물 fMRI가 과정 특이적 signature로 주관 공포의 신경 발현 감소를 보고, 초록에 VIFS 이름은 없음). 그래서 "signature를 개입 평가에 활용" 방향을 yes로 바꿨다. 한계 단락에서 나온 방향 2개를 추가했다(동적 자극: partially, 10.1016/j.bpsc.2025.11.011; 패러다임 정합 재검증: no, 검색 경로 기록).
+* **판정이 바뀐 항목 (no → partially/yes):** Zhou 2021 개입 평가(yes), Horikawa 2020 꿈/자발 정서 일반화(partially: 10.1073/pnas.2401959121, 10.3389/fnimg.2022.825105), LeDoux & Brown schema/언어(partially: 10.1093/scan/nsw121, 10.1093/scan/nsae043), Ma & Kragel 다른 appraisal 차원(partially: 10.1093/cercor/bhad093, 10.1037/emo0001619), Saarimäki voxel 수준 hyperalignment(partially: 10.1016/j.neuroimage.2020.116618), Du 2025 문화 간 검증(partially: arXiv:2601.13024), Gauthaman 고차 영역 차원성(partially: arXiv:2505.12653). 이 중 검색하지 않고 적었던 것이 분명한 기록은 Zhou 2021과 Horikawa 2020의 "no (검색하지 않음)" 2건이다. 나머지는 Round 1의 넓은 검색에 기대어 "검색 범위 내"라고 적었지만 해당 방향을 겨냥한 검색은 하지 않았던 것들이다.
+* **검색 후 "no" 유지(검색 경로 기록):** Horikawa noise ceiling 대체 추정, Westlin multiverse, Du 인간 triplet과 생성 최소쌍 fMRI, Ma & Kragel 공유 vs ad hoc와 RL 모델, Taschereau-Dumouchel 온라인/오프라인 평정 비교, Han & Bonner 2건, Gauthaman 자극 풍부도, Butlin 정서 reality monitoring, LeDoux 1인칭 권위, Zhou 패러다임 정합, Kragel EmoNet 다감각 확장.
+* **limitations 출처 정정:** Kragel 2019(평가자 지적만 있던 것을 원문 Discussion 8째 한계 단락으로 교체, 평가자 지적은 분리 표시), Gauthaman 2024(소제목 기준 요약을 4.2절 본문 기반으로 교체), LeDoux & Brown 2017, Cowen 2019 PSPI, Butlin 2023(원문 한계 절이 없거나 미열람이라 "[평가자 서술]"로 표시), Azari 2020(별도 한계 절이 없음을 명시, Discussion 2째 단락의 대안 설명임을 표시), Cowen & Keltner 2017(단락별 출처 명시).
+* **서술 정정:** Peterson 2019 기록과 round1.md T3, C5, C6에서 "분포 라벨 decoding이 새롭다"는 취지를 정정했다. Horikawa 2020이 이미 범주별 선택 비율을 연속 목표로 decoding했다.
+* **서지 보완:** Gauthaman 2024의 출판본(PLOS Computational Biology 21:e1013714, doi:10.1371/journal.pcbi.1013714, Crossref 확인)을 citation에 추가했다. 출판본 본문은 읽지 않았고 arXiv v3 본문을 근거로 한다.
+* **재점검에서 새로 쓴 근거 문헌(literature.jsonl에 독립 항목으로 추가하지 않고 already_done 근거로만 사용):** 10.1016/j.bpsc.2022.09.008, 10.1016/j.bpsc.2025.11.011, 10.1073/pnas.2401959121, 10.3389/fnimg.2022.825105, 10.1093/scan/nsw121, 10.1093/scan/nsae043, 10.1093/cercor/bhad093, 10.1037/emo0001619, 10.1016/j.neuroimage.2020.116618 (이상 Crossref 확인 + PubMed 초록), arXiv:2407.14314, arXiv:2601.13024, arXiv:2510.01502 (arXiv API 확인, 초록 일부). 10.64898/2026.09.26.754452(bioRxiv)는 Crossref로 존재만 확인했다.
+* **chain 결론 변화:** C3은 no에서 partially로 바뀌었다(성분별 뇌 네트워크는 수행됨, 1차 내용 통제 후 Feeling 고유 분산과 HOT 판별 검정은 미수행). C1, C2, C4, C5, C7, C8의 "no"는 재검색 후 유지했다. C5, C6의 기술 단계 서술 일부를 정정했다. 질문 자체를 철회한 chain은 없다.
+* **접근 제약 준수:** nature.com 403, PMC 웹 reCAPTCHA, Semantic Scholar 429는 우회하지 않았다(Zhou 본문은 Round 1에서 받아 둔 사본을 다시 읽었다). 다른 에이전트 폴더는 읽지 않았다.
