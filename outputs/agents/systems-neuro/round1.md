@@ -205,6 +205,7 @@
 * **판정 기준:** 지지: 부정, 고각성 구간 이후 잔여 dwell 증가 + 영화 분할 간 개인 내 신뢰도 양호. 반증: 잔여 dwell이 HRF와 자기상관 null 분포와 구분되지 않음.
 * **Safeguards:** HRF 지연과 평활이 인공 관성을 만든다(HRF 명시 모델링과 시계열 대리 null 필수). leave-one-film-out. Emo-FilM 30명, 특성 상관은 확증 불가(doi:10.1038/s41586-022-04492-9). 반대 관점으로 doi:10.1038/s41593-022-01110-9(본문 미열람, Round 2 전 확인 필요). 정서 궤적은 별도 평정자 규범값.
 * G1: 불필요. already_done: no (정서 주석과 결합한 자극 유발 landscape 관성은 미발견. 영화 landscape 자체는 Liu 2025 preprint가 partially). overlap: Emo-FilM 연구 (데이터셋 겹침).
+* (Round 2 정정, 2026-11-12) already_done을 **partially**로 낮춘다. Borchardt 2018(doi:10.1093/cercor/bhx290, 초록)이 슬픈 영화 후 CEN 노드 FC의 정서가 특이적 이월과 HRV 감소를 보고했다. 영화 '중' 상태 전이의 관성과 개인 내 안정성은 여전히 미발견. 검색 경로는 round2.md 6절.
 
 ### Chain 6. transmodal 정서 위치와 시간 척도의 교락 (Horikawa x Emo-FilM)
 
