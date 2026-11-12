@@ -1,0 +1,29 @@
+# Agent Registry
+
+Stage 3에서 SendMessage로 같은 에이전트를 재개할 때 쓰는 ID 목록이다. ID는 **이 Claude Code 세션 안에서만** 유효하다. 세션이 바뀌면 재개할 수 없으므로, 같은 이름의 에이전트를 새로 실행하고 "먼저 `outputs/agents/<이름>/` 안의 자기 이전 산출물을 읽을 것"을 위임 메시지에 넣는다(`prompts/stage3_discussion_combination.md` 0절).
+
+## Stage 2 Round 1 (2026-11-12, 커스텀 에이전트 타입으로 실행)
+
+| 에이전트 | agent ID | 담당 | 산출물 |
+|---|---|---|---|
+| emotion-theory | a85c474967cad849e | A, Q / Artificial Consciousness and Metacognition | `outputs/agents/emotion-theory/` |
+| vision-decoding | ac253b97bb080c9b1 | B, G / Memory and Mental Imagery | `outputs/agents/vision-decoding/` |
+| encoding-foundation | a1e352d659ed60d8c | F, H, S | `outputs/agents/encoding-foundation/` |
+| multimodal-dynamics | ab3f5d7c66dfe0bff | D, M / Neuroaesthetics | `outputs/agents/multimodal-dynamics/` |
+| frontier-ai | aab100cf89288f887 | I, J, R | `outputs/agents/frontier-ai/` |
+| geometry-info | ae216f8ca9181b4e7 | K, O / Information-theoretic Neuroscience, Complex Systems | `outputs/agents/geometry-info/` |
+| systems-neuro | a9168d8399dafca1e | E / Computational Psychiatry | `outputs/agents/systems-neuro/` |
+| generative-counterfactual | ac45217287ea07230 | L, P | `outputs/agents/generative-counterfactual/` |
+| llm-semantics | a4281de3bd21cf1c3 | C / Social and Collective Behavior, Human-AI Representation Differences | `outputs/agents/llm-semantics/` |
+| brain-inspired | a33e66f5a273664cb | N / RL, Embodied, Ecological, Active Perception, Computational Ethology | `outputs/agents/brain-inspired/` |
+| adversarial-reviewer (Round 1, Axis T 문헌) | a60f877c6ca18a5c0 | T | `outputs/agents/adversarial-reviewer/` |
+
+## Stage 1 (참고, general-purpose 에이전트가 정의 파일을 읽고 수행)
+
+| 역할 | agent ID | 산출물 |
+|---|---|---|
+| dataset-auditor (Horikawa) | abd7d0ed9ea164848 | `outputs/stage1/dataset_Horikawa.md` |
+| dataset-auditor (Emo-FilM) | afde86f079676036f | `outputs/stage1/dataset_EmoFilM.md` |
+| dataset-auditor (Spacetop) | afa356234d5b13c0c | `outputs/stage1/dataset_Spacetop.md` |
+| dataset-auditor (NSD) | a49d484778e473def | `outputs/stage1/dataset_NSD.md` |
+| adversarial-reviewer (Stage 1 사실 검증) | a5b3ba325b0b0801e | `outputs/agents/adversarial-reviewer/stage1_audit.md` |
