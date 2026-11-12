@@ -458,3 +458,13 @@ Stage 3는 10개 연구 에이전트의 Round 2(교차 교환), 제안 응답, R
 | 전체 | A, C, D가 비슷하다. AI 주석 encoding 연구가 계속 나온다(Huang 2026) | 동의. Coordinator의 'AI 사용이 드물다' 전제를 이 장르에 대해 정정 |
 
 * 기록: `outputs/revision/feedback_round2.md`. 확인 질문 3개(팀원 TRIBE 범위, brain-like model의 뜻, imagery 범위)에 대한 답을 기다린다.
+
+### 2026-11-12 (사용자 답변, 확인 질문 3개)
+
+| 질문 | 답 | 반영 |
+|---|---|---|
+| 팀원 TRIBE 작업 | E와 비슷하다. TRIBE에 emotion head 등을 다는 작업 | E(C-11) 제외. C-12와 TRIBE 관련 부분은 overlap 표시 |
+| brain-like model | (a) 구조(되먹임, 지형, 피질과 피질하 두 경로) + (c) brain-tuning | R1 정의 |
+| imagery 범위 | MC 정도. 회상이다 | R2는 MC 회상만 |
+
+* 다음 작업: R1(뇌를 닮은 정서 모델), R2(떠올린 장면의 정서적 의미), R3(뇌가 스스로 나눈 축의 해석) 설계를 P7 카드로 발전시킨다. 지시서는 `outputs/revision/design_brief.md`.
