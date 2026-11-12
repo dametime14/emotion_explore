@@ -2,7 +2,7 @@
 
 * parse errors: 0
 
-* duplicate groups merged: 105
+* duplicate groups merged: 106
 
 * 10.1016/j.isci.2020.101060 (adversarial-reviewer) | doi:10.1016/j.isci.2020.101060 (brain-inspired) | 10.1016/j.isci.2020.101060 (dataset-auditor) | 10.1016/j.isci.2020.101060 (emotion-theory) | doi:10.1016/j.isci.2020.101060 (encoding-foundation) | 10.1016/j.isci.2020.101060 (generative-counterfactual) | doi:10.1016/j.isci.2020.101060 (geometry-info) | doi:10.1016/j.isci.2020.101060 (systems-neuro)
 * arXiv:2507.00320 (adversarial-reviewer) | arXiv:2507.00320 (dataset-auditor) | arXiv:2507.00320 (emotion-theory) | arXiv:2507.00320 (geometry-info) | arXiv:2507.00320 (llm-semantics) | arXiv:2507.00320 (systems-neuro) | arXiv:2507.00320 (vision-decoding)
@@ -20,7 +20,7 @@
 * 10.1073/pnas.1912334117 (adversarial-reviewer) | 10.1073/pnas.1912334117 (generative-counterfactual)
 * 10.1038/s41562-023-01783-7 (adversarial-reviewer) | 10.1038/s41562-023-01783-7 (generative-counterfactual)
 * 10.1093/scan/nsz037 (adversarial-reviewer) | 10.1093/scan/nsz037 (emotion-theory) | doi:10.1093/scan/nsz037 (systems-neuro)
-* 10.1016/j.isci.2023.107571 (adversarial-reviewer) | 10.1016/j.isci.2023.107571 (dataset-auditor) | doi:10.1016/j.isci.2023.107571 (geometry-info) | doi:10.1016/j.isci.2023.107571 (systems-neuro)
+* 10.1016/j.isci.2023.107571 (adversarial-reviewer) | 10.1016/j.isci.2023.107571 (dataset-auditor) | doi:10.1016/j.isci.2023.107571 (geometry-info) | doi:10.1016/j.isci.2023.107571 (llm-semantics) | doi:10.1016/j.isci.2023.107571 (systems-neuro)
 * arXiv:2605.16739 (adversarial-reviewer) | arXiv:2605.16739 (dataset-auditor) | arXiv:2605.16739 (encoding-foundation) | arXiv:2605.16739 (generative-counterfactual) | arXiv:2605.16739 (llm-semantics) | arXiv:2605.16739 (vision-decoding)
 * 10.1016/j.neuroimage.2020.117258 (adversarial-reviewer) | 10.1016/j.neuroimage.2020.117258 (emotion-theory) | doi:10.1016/j.neuroimage.2020.117258 (encoding-foundation) | doi:10.1016/j.neuroimage.2020.117258 (geometry-info)
 * 10.1038/s41467-021-25409-6 (adversarial-reviewer) | doi:10.1038/s41467-021-25409-6 (encoding-foundation) | 10.1038/s41467-021-25409-6 (generative-counterfactual)
@@ -49,6 +49,7 @@
 * doi:10.1073/pnas.2109889118 (brain-inspired) | doi:10.1073/pnas.2109889118 (geometry-info)
 * doi:10.1126/sciadv.ade6049 (brain-inspired) | doi:10.1126/sciadv.ade6049 (geometry-info)
 * title:evaluating-tribe-v2-beyond-its-original-benchmarks (brain-inspired) | neurips2026:159782 (encoding-foundation)
+* arXiv:2412.15322 (coordinator) | arXiv:2412.15322 (multimodal-dynamics)
 * 10.1371/journal.pbio.3003795 (dataset-auditor) | doi:10.1371/journal.pbio.3003795 (geometry-info)
 * 10.1002/hbm.70617 (dataset-auditor) | doi:10.1002/hbm.70617 (systems-neuro)
 * 10.1162/IMAG.a.1400 (dataset-auditor) | 10.1162/IMAG.a.1400 (multimodal-dynamics)

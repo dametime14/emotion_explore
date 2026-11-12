@@ -835,7 +835,7 @@ PRIOR_AUDIT = {
     "LIT-36": "not found(Stage 4 감사): Stringer 2019(마우스 이론과 실험), Gauthaman 2024(인간 fMRI 스펙트럼)가 가장 가깝다",
     "STR-G1": "partially(Stage 4 감사): 행동 serial dependence(Van der Burg 2021, Ortega 2023), 신경 맥락 효과(Mobbs 2006, Cao 2024, Pichon 2015). 선행이 예측하는 동화 방향이 HRF 잔여의 가짜 효과 방향과 같으므로, 영역별 HRF로 예측한 동화를 넘는 초과분을 주 검정으로 둔다",
     "RND-30": "partially(Stage 4 감사): Meyer 2010이 소리를 암시하는 무음 영상의 청각피질 내용 특이 활동을 이미 보였다. 남는 부분: V2A 생성 모델의 암시 소리 표상이 시각 조건 embedding 이상으로 청각피질을 설명하는지, 그 성분이 정서를 싣는지",
-    "STR-E1": "not found(Stage 4 감사): Ke 2025(동적 FC로 arousal 예측), van der Meer 2020(뇌 상태 동역학과 생리), Nguyen 2026(사건 경계 패턴 이동)이 가깝다. Ke 2025 모형을 경쟁 기준선으로",
+    "STR-E1": "partially(Stage 4 카드 작성 중 정정): 감사는 not found였으나 systems-neuro가 Wainstein 2025(doi:10.7554/eLife.93191, 지각 과제에서 동공 각성 상승 때 뇌 상태 속도가 최대)와 Munn 2021(doi:10.1038/s41467-021-26268-x, 휴지기 각성계와 뇌 동역학)을 찾았다. 개념은 이미 제안되었다. 남는 부분: 수동 영화 시청의 정서 각성(Wainstein 저자들은 과제와 무관한 시청에는 일반화되지 않을 것으로 예측), 같은 참가자 생리, 위치 대 속도 대 Ke 2025 연결 모형의 직접 비교",
     "LIT-44": "partially, done에 가까움(Stage 4 감사): St-Laurent 2015(짧은 영상 회상의 재활성이 vividness 예측), Barker 2022, Bainbridge & Rissman 2018(자극 기억성 대 주관 기억의 신경 해리)",
     "LIT-47": "partially(Stage 4 감사): Chen 2017(회상 패턴의 체계적 재구성), Favila 2022(기억 반응의 다른 공간 튜닝), Spens & Burgess 2024(이론). 남는 부분: cue 생성 영상 encoding 예측을 재구성 가설의 계산 대리로 쓰고 정서와 시각 부분공간을 비교",
     "STR-A3": "not found(Stage 4 감사): Marras 2025(행동 feature 중 Agent & Object, 영화 fMRI encoding), Thornton & Tamir 2024, Mohammadi 2023이 가깝다",
