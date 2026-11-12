@@ -11,6 +11,7 @@
 > * X1: NSD에는 별도 평정자의 규범 평정이 없다. 8절 2번의 "규범 평정" 비교는 shared 이미지에 대한 신규 규범 평정 수집이 전제다.
 > * L3: 6절 표의 "일상 장면의 정서 평정은 객체 표상으로 대부분 예측됨"은 과장이다. 2.4절 (d)의 표현처럼 "객체 인식 모델(AlexNet)이 정서 특화 모델(EmoNet)보다 20개 범주 정서 판단을 더 잘 예측했다(20-way 분류 정확도 기준, 절대 설명량은 크지 않음)"로 읽는다.
 > * 문헌 기록: `literature_NSD.jsonl`에서 WebSearch 색인으로만 확인한 11편(arXiv 7, bioRxiv 2, AAAI 1, VSS 초록 1)을 `verified_by: "search_index"`로 재표기했고, 검색 요약만 본 항목은 `discussion_read: "search_summary"`로 바꿨다.
+> * Stage 2 재점검(같은 감사 에이전트, 네트워크 허용 후): 위 11편은 arXiv API(8편)와 Crossref(3편)로 존재를 직접 확인해 verified로 되돌렸다. 부록 A와 B의 "VSS 2025 초록, DOI 없음"은 사실과 다르며 DOI는 10.1167/jov.25.9.1989다. already_done "미확인" 15개는 모두 재검색해 partially 8, no 7로 판정했다.
 
 ## Gate 판정
 
