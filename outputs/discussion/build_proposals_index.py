@@ -19,7 +19,7 @@ PREFIX = {"ET": "emotion-theory", "VD": "vision-decoding", "EF": "encoding-found
           "SN": "systems-neuro", "GC": "generative-counterfactual", "LS": "llm-semantics",
           "BI": "brain-inspired", "AR": "adversarial-reviewer"}
 ID_RE = re.compile(r"(10\.\d{4,9}/[^\s,;\]\)]+|arXiv:\d{4}\.\d{4,5}|pmlr[:\-][\w\-]+)", re.I)
-FIELDS = {"to": r"받는 에이전트", "content": r"제안 내용", "axes": r"관련 Axis",
+FIELDS = {"to": r"받는 에이전트", "content": r"제안(?: 내용)?", "axes": r"관련 Axis",
           "evidence": r"근거(?: 논문)?(?: ID)?", "datasets": r"가능한 데이터셋",
           "objection": r"예상되는 반론"}
 
@@ -52,7 +52,13 @@ def main():
             nxt = re.search(r"(?m)^#{2,4}\s", text[start:])
             block = text[start:start + nxt.start()] if nxt else text[start:]
             to_raw = field(block, FIELDS["to"])
-            main_to = to_raw.split("(")[0]
+            arrow = re.match(r"\s*(?:→|->)\s*([^:(]+)(?:\(([^)]*)\))?\s*:?\s*(.*)$", title)
+            if arrow:
+                main_to = arrow.group(1)
+                to_raw = to_raw or (arrow.group(1) + (f" (참조: {arrow.group(2)})" if arrow.group(2) else ""))
+                title = arrow.group(3).strip()
+            else:
+                main_to = to_raw.split("(")[0]
             recv = receivers(main_to) or receivers(to_raw)
             ev = field(block, FIELDS["evidence"])
             rows.append({
