@@ -397,3 +397,12 @@ Stage 3는 10개 연구 에이전트의 Round 2(교차 교환), 제안 응답, R
 33. Mind captioning 촬영 범위에 눈알이 포함되는지 알려 주세요. DeepMReye 시선 추정이 가능한지가 여기에 달려 있습니다.
 34. Horikawa 2020 Transparent Methods(보충자료)의 피험자 기술을 확인해 주세요. 지금은 사용자 확인으로만 "일본인"을 두었습니다.
 35. Stage 2 이후 보류 항목 18~22는 그대로입니다.
+
+### 2026-11-12 (사용자 답변, Stage 4 이후)
+
+| 항목 | 결정 |
+|---|---|
+| Stage 4 결과 평가 | K1, K2, K3, K4, K5, K6, K7, K8, K10은 부적합하거나 지금 할 것이 아니다. K9 방향은 맞지만 설계가 얕다. 출발점 10개: RQ-04, 05, 12, 19, 22, 51, 53, 54, 55, 56 |
+| 핵심 기준 | **AI를 써서 Affective Neuroscience에 주는 임팩트와 contribution**(AI 분야로 돌려주는 기여가 아님). Coordinator가 처음에 "AI 쪽 기여"로 잘못 읽었고, 사용자가 정정했다 |
+| 원하던 방향 | D1 brain-like model, D2 vision decoding 모델(MindEye2, Brain-IT 등) + emotion head. D3 멀티모달(양식 간 전이, 공통 성분, 공유 공간)은 우선순위가 아니며 한 달 안 가능성이 관건 |
+| 진행 | 출발점 10개로 질문 탐색과 평가를 다시 한다. 평가 기준에 "AI-enabled Affective Neuroscience Contribution"과 "1-month Feasibility"를 추가한다. 계획: `outputs/revision/plan.md` |
