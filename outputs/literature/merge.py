@@ -73,6 +73,12 @@ def extract_keys(rec):
             m = ARXIV_RE.search(val) or ARXIV_BARE_RE.match(val.strip())
             if m:
                 arx = m.group(1)
+    if not arx:
+        # published versions sometimes cite their preprint inside the citation text,
+        # e.g. "... similarly to humans (arXiv:2301.10297)"
+        m = re.search(r"arxiv[:\s]*(\d{4}\.\d{4,5})", str(rec.get("citation") or ""), re.I)
+        if m:
+            arx = m.group(1)
     return doi, arx
 
 

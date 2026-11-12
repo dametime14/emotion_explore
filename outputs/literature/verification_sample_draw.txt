@@ -1,0 +1,26 @@
+seed=20261112 pool=327 sample=25
+1	arxiv:2606.06345	encoding-foundation	full_text	Benchetrit Y, Careil M, Dahan S, Banville H, d'Ascoli S, King J-R (2026). Boosting Brain-t
+2	doi:10.1098/rstb.2016.0007	brain-inspired	no	Seth AK, Friston KJ, 2016, Active interoceptive inference and the emotional brain
+3	arxiv:2605.23035	frontier-ai	abstract_only	Guo D, Wu J, Yiu SM, 2026, Sparse Autoencoders Map Brain-LLM Alignment onto Cortical Seman
+4	doi:10.1038/s41567-022-01852-0	geometry-info	abstract_only	Santoro A, Battiston F, Petri G, Amico E, 2023, Higher-order organization of multivariate 
+5	doi:10.1016/j.cub.2015.06.009	emotion-theory; llm-semantics	full_text	Skerry AE, Saxe R, 2015, Neural Representations of Emotion Are Organized around Abstract E
+6	doi:10.64898/2025.11.30.691450	systems-neuro	abstract_only	Liu Q, Sun L, Zhao X et al., 2025, Energy Landscape Analysis Reveals Thalamic Modulation o
+7	arxiv:2502.04379	llm-semantics	full_text	Melhart D, Barthet M, Yannakakis GN, 2025, Can Large Language Models Capture Video Game En
+8	doi:10.1016/j.cell.2020.10.024	brain-inspired	no	Whittington JCR, Muller TH, Mark S, Chen G, Barry C, Burgess N, Behrens TEJ, 2020, The Tol
+9	doi:10.1038/s42003-023-04546-2	dataset-auditor	abstract_only	Jain N, Wang A, Henderson MM, Lin R, Prince JS, Tarr MJ, Wehbe L, 2023, Selectivity for fo
+10	doi:10.1038/s41467-021-26977-3	emotion-theory	full_text	Zhou F, Zhao W, Qi Z, Geng Y, Yao S, Kendrick KM, Wager TD, Becker B (2021). A distributed
+11	arxiv:2602.07570	frontier-ai; multimodal-dynamics	full_text	Jindal P, Khandelwal A, Gupta M, Raju BS, et al., 2026, How does longer temporal context e
+12	doi:10.1073/pnas.2500815122	brain-inspired	abstract_only	Lin W, Xu J, Zhang X, Dolan RJ, 2025, Habenula-ventral tegmental area functional coupling 
+13	doi:10.1140/epjds/s13688-016-0093-1	multimodal-dynamics	abstract_only	Reagan AJ, Mitchell L, Kiley D, Danforth CM, Dodds PS (2016). The emotional arcs of storie
+14	arxiv:2605.29850	encoding-foundation	full_text	Gokce A, AlKhamissi B, Schrimpf M (2026). MIRAGE: Adaptive Multimodal Gating for Whole-Bra
+15	arxiv:2610.22706	encoding-foundation	abstract_only	Huang Y, et al. (2026). Brain-Aligned Multimodal LLMs for Social and Emotional Understandi
+16	doi:10.1093/scan/nsaf099	systems-neuro	abstract_only	Kirk PA, Qamar P, Lentz J et al., 2026, Linking subjective experience of anxiety to brain 
+17	doi:10.1038/s41598-025-14961-6	dataset-auditor; geometry-info; llm-semantics	full_text	Asanuma H, Koide-Majima N, Nakamura K, Horii T, Nishimoto S, Oizumi M, 2025, Correspondenc
+18	doi:10.1038/s42003-023-05440-7	generative-counterfactual	full_text	Gu Z, Jamison K, Sabuncu MR, Kuceyeski A (2023). Human brain responses are modulated when 
+19	arxiv:2206.09398	geometry-info	full_text	Thual A, Tran H, Zemskova T, Courty N, Flamary R, Dehaene S, Thirion B, 2022, Aligning ind
+20	doi:10.1109/embc58623.2025.11254034	dataset-auditor	abstract_only	David F, Chan M, Morgenroth E, Vuilleumier P, Van De Ville D, 2025, Deep Neural Encoder-De
+21	doi:10.1016/j.neuron.2024.04.018	brain-inspired	full_text	Margalit E, Lee H, Finzi D, DiCarlo JJ, Grill-Spector K, Yamins DLK, 2024, A unifying fram
+22	arxiv:2407.09450	multimodal-dynamics	full_text	Fountas Z, Benfeghoul MA, Oomerjee A, Christopoulou F, Lampouras G, Bou-Ammar H, Wang J (2
+23	doi:10.1126/sciadv.abf7129	emotion-theory; encoding-foundation; geometry-info; multimodal-dynamics; systems-neuro	full_text	Chang LJ, Jolly E, Cheong JH, Rapuano KM, Greenstein N, Chen PHA, Manning JR (2021). Endog
+24	arxiv:2502.11831	frontier-ai	full_text	Garrido Q, Ballas N, Assran M, Bardes A, et al., 2025, Intuitive physics understanding eme
+25	doi:10.1038/nn.4650	brain-inspired; geometry-info	abstract_only	Stachenfeld KL, Botvinick MM, Gershman SJ, 2017, The hippocampus as a predictive map
