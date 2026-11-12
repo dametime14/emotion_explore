@@ -10,7 +10,7 @@
 
 ## 1. Core Research Question
 
-* **(a) 한 줄 질문:** 정서 모델이 "이 영상이 이 뇌 영역을 움직일 것"이라고 미리 고르면, 처음 보는 사람에게서도 맞을까? 그리고 그 선택은 장면 내용만 보는 모델의 선택보다 더 잘 맞을까?
+* **(a) 한 줄 질문:** 정서 모델이 "이 영상이 이 뇌 영역을 움직일 것"이라고 미리 고르면, 처음 보는 사람에게서도 맞을까, 그리고 장면 내용만 보는 모델이 고른 것보다 더 잘 맞을까?
 * **(b) 검증 가능한 세부 질문:** Horikawa 2020 피험자 일부와 클립 일부로만 학습한 정서 encoder와 시각-의미 encoder가 정서 관련 영역(amygdala, 앞쪽 insula, vmPFC/OFC, TPJ)에 대해 서로 다른 클립을 "가장 강하게 움직일 것"으로 고를 때(controversial 클립), 선택 목록과 분석 코드를 봉인한 뒤 측정한 학습 미사용 Horikawa 피험자와 Mind captioning 6명의 실제 반응은 어느 encoder의 선택을 따르는가?
 
 ---
@@ -39,7 +39,7 @@
   * adversarial-reviewer Round 1 D6(의사 전향 검증), encoding-foundation Round 1 I2와 I6(controversial selection, 고처리량 선택성 검정).
 * **가져온 분야:**
   * 시각과 언어 NeuroAI의 neural control과 controversial stimuli(Golan 2020, Ratan Murty 2021, Tuckute 2024, Gifford 2025).
-  * 메타과학의 분석 유연성(forking paths)과 사전 등록(Botvinik-Nezer 2020, Simonsohn 2020).
+  * 메타과학의 분석 유연성(forking paths)과 사전 등록(Botvinik-Nezer 2020, doi:10.1038/s41586-020-2314-9; Simonsohn 2020, doi:10.1038/s41562-020-0912-z, DB 초록 수준).
   * ML 평가의 누수(leakage) 분류(Kapoor & Narayanan 2023).
 
 ---
