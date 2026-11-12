@@ -2,7 +2,7 @@
 
 * parse errors: 0
 
-* duplicate groups merged: 107
+* duplicate groups merged: 109
 
 * 10.1016/j.isci.2020.101060 (adversarial-reviewer) | doi:10.1016/j.isci.2020.101060 (brain-inspired) | 10.1016/j.isci.2020.101060 (dataset-auditor) | 10.1016/j.isci.2020.101060 (emotion-theory) | doi:10.1016/j.isci.2020.101060 (encoding-foundation) | 10.1016/j.isci.2020.101060 (generative-counterfactual) | doi:10.1016/j.isci.2020.101060 (geometry-info) | doi:10.1016/j.isci.2020.101060 (systems-neuro)
 * arXiv:2507.00320 (adversarial-reviewer) | arXiv:2507.00320 (dataset-auditor) | arXiv:2507.00320 (emotion-theory) | arXiv:2507.00320 (geometry-info) | arXiv:2507.00320 (llm-semantics) | arXiv:2507.00320 (systems-neuro) | arXiv:2507.00320 (vision-decoding)
@@ -50,6 +50,7 @@
 * doi:10.1126/sciadv.ade6049 (brain-inspired) | doi:10.1126/sciadv.ade6049 (geometry-info)
 * title:evaluating-tribe-v2-beyond-its-original-benchmarks (brain-inspired) | neurips2026:159782 (encoding-foundation)
 * arXiv:2412.15322 (coordinator) | arXiv:2412.15322 (multimodal-dynamics)
+* 10.1073/pnas.1421236112 (coordinator) | doi:10.1073/pnas.1421236112 (llm-semantics)
 * 10.1371/journal.pbio.3003795 (dataset-auditor) | doi:10.1371/journal.pbio.3003795 (geometry-info)
 * 10.1002/hbm.70617 (dataset-auditor) | doi:10.1002/hbm.70617 (systems-neuro)
 * 10.1162/IMAG.a.1400 (dataset-auditor) | 10.1162/IMAG.a.1400 (multimodal-dynamics)
@@ -104,6 +105,7 @@
 * doi:10.1038/s41586-022-04492-9 (geometry-info) | doi:10.1038/s41586-022-04492-9 (systems-neuro)
 * doi:10.1126/science.aaw8160 (geometry-info) | doi:10.1126/science.aaw8160 (llm-semantics)
 * doi:10.1016/j.neuron.2017.06.041 (geometry-info) | 10.1016/j.neuron.2017.06.041 (multimodal-dynamics)
+* doi:10.1038/s41593-021-00947-w (geometry-info) | doi:10.1038/s41593-021-00947-w (llm-semantics)
 * doi:10.3758/s13428-024-02569-z (llm-semantics) | arXiv:2301.10297 (multimodal-dynamics)
 * doi:10.1162/imag.a.1300 (llm-semantics) | 10.1162/imag.a.1300 (multimodal-dynamics)
 * arXiv:2606.07707 (llm-semantics) | arXiv:2606.07707 (multimodal-dynamics)

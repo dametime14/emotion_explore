@@ -1,8 +1,8 @@
 # Literature Statistics (Deliverable C)
 
 * 생성: `python3 -I outputs/literature/merge.py` (자동 생성 파일, 직접 고치지 말 것)
-* 입력 레코드: 705개 (파싱 오류 0개), 입력 파일: `outputs/agents/*/literature*.jsonl`
-* 원자료 기준 verified 표기: 693개, 미검증(search_index 등): 12개
+* 입력 레코드: 707개 (파싱 오류 0개), 입력 파일: `outputs/agents/*/literature*.jsonl`
+* 원자료 기준 verified 표기: 695개, 미검증(search_index 등): 12개
 * 중복 제거 후 고유 논문: **516편**
 * **verified 고유 논문: 511편** (식별자 경로 doi.org / crossref / pubmed / arxiv / openreview / publisher로 확인된 것만)
 * 미검증 고유 논문: 5편 (verified 집계에서 제외, DB에는 `verified=False`로 남김)
@@ -16,17 +16,17 @@
 | C | 79 | 80 |
 | D | 115 | 115 |
 | E | 150 | 150 |
-| F | 73 | 74 |
+| F | 75 | 76 |
 | G | 50 | 51 |
 | H | 82 | 86 |
 | I | 108 | 110 |
 | J | 53 | 54 |
-| K | 103 | 104 |
+| K | 104 | 105 |
 | L | 56 | 57 |
 | M | 63 | 63 |
 | N | 117 | 118 |
 | O | 90 | 90 |
-| P | 47 | 48 |
+| P | 48 | 49 |
 | Q | 100 | 100 |
 | R | 50 | 50 |
 | S | 57 | 59 |
@@ -83,7 +83,7 @@
 | adversarial-reviewer | 63 |
 | frontier-ai | 62 |
 | geometry-info | 60 |
-| llm-semantics | 58 |
+| llm-semantics | 60 |
 | emotion-theory | 56 |
 | generative-counterfactual | 55 |
 | dataset-auditor | 54 |
@@ -100,8 +100,8 @@
 | multimodal-dynamics | 71 |
 | adversarial-reviewer | 63 |
 | frontier-ai | 62 |
+| llm-semantics | 61 |
 | geometry-info | 60 |
-| llm-semantics | 59 |
 | dataset-auditor | 57 |
 | emotion-theory | 56 |
 | generative-counterfactual | 55 |

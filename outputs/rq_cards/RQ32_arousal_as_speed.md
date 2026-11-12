@@ -1,16 +1,18 @@
-# RQ-32. 흥분(각성)은 뇌 상태의 '위치'일까, 뇌 상태가 바뀌는 '속도'일까?
+# RQ-32. 흥분(각성)은 뇌 활동의 '세기'로 나타날까, 뇌 활동 패턴이 바뀌는 '빠르기'로 나타날까?
 
 * 작성: systems-neuro (Axis E Neural Targets, arousal과 자율신경 담당). 기준일 2026-11-12
 * 조합: matrix STR-E1, 전략 경로 E(Dynamics and Geometry: 정서를 위치가 아니라 궤적으로). 군집 K5. Shortlist 8번
 * 직접 읽은 파일: CLAUDE.md 4~7절, `reference/protocols.md` P7, `outputs/evaluation/selection.md`, `outputs/rq_landscape.md` 4절 RQ-32 블록과 용어 풀이, `outputs/combinations/matrix.csv` STR-E1 행, `outputs/evaluation/prior_overlap_audit.md` RQ-32 절, `outputs/evaluation/reviewer_notes.md`(RQ-32 언급 부분, 4.4절), `outputs/discussion/round3_summary.md`와 `outputs/discussion_record.md`(생리 관련 이견 D3), `outputs/stage1/dataset_EmoFilM.md`, `dataset_Spacetop.md`, `dataset_Horikawa.md`, `horikawa_factcheck_stage4.md`, `outputs/STAGE_STATUS.md` "사용자 답변, Stage 3 이후" 표
 * 표기: [본문] 본문을 직접 읽음, [초록] 초록만 읽음, [DB] 다른 에이전트가 literature_db에 남긴 기록에 기댐
+* 개정(2026-11-12): `outputs/evaluation/card_review_B.md` 1절, 2.2절과 `card_review_A.md` 1절을 반영했다. 판정 '수정 후 유지', 필수 1건. 반영 내역은 맨 끝 '검토 반영 기록'에 있다. 1절 (a) 한 줄 질문은 검토 선택 7에 따라 rq_landscape의 원 문장("뇌 상태의 '위치'일까, 뇌 상태가 바뀌는 '속도'일까?")을 쉬운 말로 다듬었다.
 
 ---
 
 ## 1. Core Research Question
 
-* **(a) 한 줄 질문:** 흥분(각성)은 뇌 상태의 '위치'일까, 뇌 상태가 바뀌는 '속도'일까?
-* **(b) 검증 가능한 세부 질문:** 영화를 보는 동안 각성 평정이 높은 순간에, 뇌 활동 패턴이 짧은 간격 사이에 바뀌는 정도(속도)는 그 순간의 활동 크기(위치)와 동적 연결 기준선보다 각성을 더 잘 따라가며, 이 관계는 장면 전환, 사건 경계, 머리 움직임, 몸 전체의 자율신경 신호를 통제한 뒤에도 남는가?
+* **(a) 한 줄 질문:** 흥분(각성)은 뇌 활동의 '세기'로 나타날까, 뇌 활동 패턴이 바뀌는 '빠르기'로 나타날까?
+* **(b) 검증 가능한 세부 질문:** 영화를 보는 동안 정서가(좋음, 나쁨)를 통제한 각성 평정이 높은 순간에, 뇌 활동 패턴이 짧은 간격 사이에 바뀌는 정도(속도)는 그 순간의 활동 크기(위치)와 동적 연결 기준선보다 각성을 더 잘 따라가며, 이 관계는 장면 전환, 장면 의미 변화, 사건 경계, 머리 움직임, 몸 전체의 자율신경 신호를 통제한 뒤에도, 그리고 긍정적 흥분 장면에서도 같은 방향으로 남는가?
+* **용어:** 이 카드에서 '위치'는 그 순간 뇌 활동의 세기(영역 평균 활동, 또는 패턴을 각성 축에 놓은 값)이고, '속도'는 몇 초 사이에 뇌 활동 패턴이 바뀐 정도다.
 
 ---
 
@@ -18,7 +20,8 @@
 
 * **지금의 관행:** 각성은 보통 '어디에 얼마나 큰 활동이 있는가'로 다룬다. 예를 들어 특정 영역의 활동 크기나, 뇌 패턴을 각성 축에 투영한 값이다. 이것이 '위치' 관점이다.
 * **다른 가능성:** 각성계(locus coeruleus 같은 뇌간 신경조절 체계)는 피질 전체의 반응 민감도(gain)를 바꾼다. 그러면 뇌 상태의 지형(energy landscape: 상태가 머물기 쉬운 곳과 어려운 곳의 지도)이 평평해지고, 뇌 상태가 더 빨리 바뀐다는 계산 이론이 있다. 이 관점에서 각성은 '어디에 있는가'가 아니라 '얼마나 빨리 움직이는가'다.
-  * 근거: 휴지기 LC와 basal forebrain 활동이 저차원 energy landscape 변화와 시간적으로 묶여 있다(Munn 2021, doi:10.1038/s41467-021-26268-x [초록]). 지각 전환 과제에서 동공 각성이 커질 때 저차원 뇌 상태 속도(velocity)가 최고에 이르고 landscape가 평평해졌다(Wainstein 2025, doi:10.7554/eLife.93191 [본문 Discussion 1, 5째 단락]).
+  * 근거: 휴지기 LC와 basal forebrain 활동이 저차원 energy landscape와 이동파에 시간적으로 묶여 있다(Munn 2021, doi:10.1038/s41467-021-26268-x [초록]). '그래서 전이가 빨라진다'는 초록에 직접 없는 이 카드의 해석이다. 지각 전환 과제에서는 전환 시점에, 별도의 동공 집단에서 동공이 커지고 별도의 fMRI 집단에서 저차원 뇌 상태 속도(velocity)가 최고에 이르며 landscape가 평평해졌다(Wainstein 2025, doi:10.7554/eLife.93191 [본문 Discussion 1, 5째 단락과 한계 단락]. 검토 B가 Methods로 확인한 인원은 동공 35명, fMRI 17명).
+  * 주의: Wainstein 2025는 같은 사람에서 각성과 속도가 함께 변한 증거가 아니다. 둘 다 '지각 내용이 바뀌는 시점'에 정렬된 결과다. 따라서 이 선행은 '속도 = 내용 전환'의 증거이기도 하다. 이 카드는 그래서 사건 경계(A2)와 정서 변화율(A7)을 1차 통제로 둔다(8.3절).
 * **지식의 공백:**
   1. 위 근거는 과제나 휴지기의 신경조절(동공) 각성이다. **영화가 불러일으키는 정서 각성**에 같은 원리가 있는지는 검정된 적이 없다.
   2. Wainstein 2025 저자들은 오히려 **과제와 무관한 자극에서는 이 관계가 일반화되지 않을 것**이라고 예측했다(Discussion 3째 단락). 수동 영화 시청은 바로 그 조건이므로 이 예측을 직접 시험할 수 있다.
@@ -49,8 +52,8 @@
 | 1 | Ke J et al. (2025) PLoS Comput Biol 21:e1012994, doi:10.1371/journal.pcbi.1012994 | [본문] | **가장 가까운 선행(감사).** 45초 창 동적 연결로 순간 arousal을 예측했고, 다른 영화와 다른 참가자로 일반화했다. valence는 실패. 학습 데이터는 Sherlock과 Friday Night Lights, 일반화 검증은 Hitchcock 영화 1편과 BBC 드라마 1편이며 **Emo-FilM은 쓰지 않았다**(본문 확인, 누수 없음). 학습 가중치를 공개했다(Discussion 3째 단락). 정서 arousal과 자율, 깨어 있음 arousal의 관계는 미해결로 남겼다(Discussion 9째 단락). 이 카드의 **경쟁 기준선** |
 | 2 | van der Meer JN et al. (2020) Nat Commun 11:5004, doi:10.1038/s41467-020-18717-w | [초록] | **가장 가까운 선행(감사).** 영화 시청은 휴지기의 두 상태 왕복을 영화 장면에 시간 정렬된 여러 상태의 연쇄로 바꾸며, 상태 발현이 생리 상태와 몰입 평정과 공변했다. 상태 '발현'은 다뤘지만 상태 '속도'와 정서 각성 평정의 맞대기는 없다 |
 | 3 | Nguyen TT et al. (2026) eLife, doi:10.7554/eLife.107955 | [DB, 초록 기록] | **가장 가까운 선행(감사).** 사건 경계 앞뒤로 측두, 두정 패턴 이동과 안정화가 일어난다. 사건 경계가 '속도'를 만드는 교란이므로 통제 변수의 근거 |
-| 4 | Wainstein G et al. (2025) eLife 13:RP93191, doi:10.7554/eLife.93191 | [본문 Discussion] | **감사 이후 새로 찾은 개념 선행.** 지각 전환 시점에 동공 각성이 커지고 fMRI 저차원 뇌 상태 속도가 최고에 이르며 energy landscape가 평평해졌다. 동공과 fMRI는 다른 참가자였고, 저자들은 과제 무관 자극에서는 일반화되지 않을 것이라 예측했다 |
-| 5 | Munn BR et al. (2021) Nat Commun 12:6016, doi:10.1038/s41467-021-26268-x | [초록] | 휴지기 LC, basal forebrain burst가 저차원 energy landscape와 이동파에 시간 고정되어 있다. '각성 → gain → 빠른 전이' 이론의 인간 fMRI 근거 |
+| 4 | Wainstein G et al. (2025) eLife 13:RP93191, doi:10.7554/eLife.93191 | [본문 Discussion] | **감사 이후 새로 찾은 개념 선행(검토 B가 원문 대조로 확인).** 지각 전환 시점에, 별도 동공 집단에서 동공이 커지고 별도 fMRI 집단에서 저차원 뇌 상태 속도가 최고에 이르며 energy landscape가 평평해졌다. 각성과 속도의 직접 공변이 아니라 둘 다 내용 전환에 정렬된 결과다. 저자들은 과제 무관 자극에서는 일반화되지 않을 것이라 예측했다 |
+| 5 | Munn BR et al. (2021) Nat Commun 12:6016, doi:10.1038/s41467-021-26268-x | [초록] | 휴지기 LC, basal forebrain burst가 저차원 energy landscape와 이동파에 시간 고정되어 있다. '각성 → gain → landscape 변화' 이론의 인간 fMRI 근거. '빠른 전이'는 초록에 직접 없는 이 카드의 해석 |
 | 6 | Bolt T et al. (2025) Nat Neurosci 28:1327-1335, doi:10.1038/s41593-025-01945-y | [본문 Discussion] | 전역 fMRI 신호는 심박, 호흡량 증가와 PPG 진폭 감소(말초 혈관 수축)와 정해진 순서로 공변하는 교감 각성 반응이다. 감각운동 피질에서 먼저 나타나는 공간 구조를 가진다. 속도 지표의 핵심 교란 |
 | 7 | Bhattacharyya K et al. (2026) bioRxiv, doi:10.64898/2026.06.08.730730 | [초록, preprint] | 정서, 자율(동공), 깨어 있음(EEG) arousal의 동적 연결 판독이 서로 교차 일반화했다. 각성의 세 종류를 나눠 검정해야 한다는 근거 |
 | 8 | Kong X, Li S, Gong G (2026) eLife 15:RP110294, doi:10.7554/eLife.110294 | [초록] | 7T와 동공 동시 측정에서 각성은 연결을 7개 community로 구조화했고 이 구조가 영화 시청 중에도 보존되었다. 동적 연결 판독이 자율 각성을 담을 수 있다는 근거 |
@@ -59,23 +62,26 @@
 | 11 | Young CB et al. (2017) J Neurosci 37:281-290, doi:10.1523/JNEUROSCI.1759-16.2016 | [초록] | 영화 중 심박이 높을수록 salience network 내부 응집이 커졌다. 심박과 network 동역학의 결합 선례 |
 | 12 | Madsen J, Parra LC (2022) PNAS Nexus 1:pgac020, doi:10.1093/pnasnexus/pgac020 | [초록] | 영상 시청 중 심박이 참가자 사이에 동기화된다. 생리 신호를 '자극에 묶인 성분'과 '개인 성분'으로 나눌 근거 |
 | 13 | Lee K et al. (2022) NeuroImage 258:119364, doi:10.1016/j.neuroimage.2022.119364 | [초록] | 동공 각성이 network 통합에 전뇌적 영향을 주며, 전역 신호 회귀 선택에 따라 결론이 바뀔 수 있다. 전역 신호 처리를 분석 분기로 둘 근거 |
+| 14 | Chang LJ et al. (2021) Sci Adv 7(17):eabf7129, doi:10.1126/sciadv.abf7129 | [본문] | **가까운 선행(검토 B 권장 4로 추가).** TV 드라마 시청 중 vmPFC 공간 패턴을 HMM(숨은 상태 모형)으로 이산 상태로 나눴다. 상태는 개인마다 다른 시점에 나타났지만 정서 반응이 강한 장면에서 사람 사이에 동기화되었고, 정서 관련 평정(별도 표본)과 맞물렸다. 저자들은 vmPFC가 연속적으로 흘러가는지 상태로 뛰어 넘는지 구분하지 못했고 hybrid 모형을 제안했다(Discussion 4째 단락). 이 카드와의 차이: 이산 상태 전이, vmPFC 한 영역, 정서가 쪽 대 연속 속도, 전뇌, 각성 쪽 |
+| 15 | Tian Y et al. (2020) Nat Neurosci 23:1421-1432, doi:10.1038/s41593-020-00711-6 | [초록] | 피질하를 연결 gradient로 나눈 영역 지도(Tian 피질하 parcel). 피질하 parcel을 정서 라벨과 독립적으로 정의하는 근거 |
 
 ---
 
 ## 5. Novelty
 
-* **감사 판정:** not found(`prior_overlap_audit.md`). arousal을 TR 사이 패턴 변화 속도로 정의하고 위치(평균 활성)와 경쟁시키는 검정은 찾지 못했다.
+* **선행 판정: partially.** 감사(`prior_overlap_audit.md`)는 not found였다. 카드 작성 중 Wainstein 2025와 Munn 2021을 찾았고, 검토 B가 두 논문의 주장이 원문과 맞음을 확인해 partially로 고쳤다(`card_review_B.md` 0, 2.2절). arousal을 TR 사이 패턴 변화 속도로 정의하고 위치와 경쟁시키는 정서 연구는 여전히 찾지 못했다.
 * **카드 작성 중 추가 검색(2026-11-12):**
   * PubMed: `(arousal OR pupil OR "heart rate") AND fMRI AND ("state transition" OR "speed" OR "velocity" OR "rate of change" OR "temporal derivative") AND ("brain state" OR "neural trajectory" OR "dynamic functional connectivity")`, 2015~, 15건. 관련: Wainstein 2025, Lee 2022.
   * WebSearch: `arousal speed of brain state transitions fMRI pupil "dynamic functional connectivity speed" OR "state transition rate" arousal naturalistic`. 관련: Kong 2026(eLife), 동공 고각성 집단의 빠른 상태 전이를 보고한 ISMRM 2025 학회 초록(식별자 확인 못 함, 근거로 쓰지 않음).
-  * **판정 갱신 제안: not found → partially(개념 선행).** '신경조절 각성과 뇌 상태 속도의 결합'은 과제와 휴지기에서 이미 제안되고 일부 검증되었다(Wainstein 2025, Munn 2021).
+  * **판정: partially(개념 선행).** '신경조절 각성과 뇌 상태 속도의 결합'은 과제와 휴지기에서 이미 제안되고 일부 검증되었다(Wainstein 2025, Munn 2021). 정서 장면에서의 vmPFC 상태 전이는 Chang 2021이 다뤘다.
 * **남는 새 부분(이것만 새로움으로 주장한다):**
   1. 대상이 **정서 각성**(영화에 대한 각성 평정)이다. 기존은 동공으로 잰 신경조절 각성이었다.
   2. 조건이 **과제 없는 자연 시청**이다. Wainstein 2025가 '일반화되지 않을 것'이라 예측한 조건을 직접 시험한다.
-  3. **같은 참가자의 생리(EDA, 심박, 호흡)**가 있다. Wainstein 2025는 동공과 fMRI가 다른 참가자였다.
+  3. **같은 참가자의 생리(EDA, 심박, 호흡)**가 있다. Wainstein 2025는 동공과 fMRI가 다른 참가자였고, 둘 다 지각 전환 시점에 정렬된 결과였다.
   4. **위치, 속도, 동적 연결(Ke 2025)을 같은 데이터, 같은 평활 조건에서 맞댄다.**
-  5. 속도를 만드는 비정서 원인(장면 전환, 사건 경계, 머리 움직임, 전신 자율신경 성분, 신호 크기)을 하나씩 분리한다.
-* **새로움으로 주장하지 않는 것:** 동적 연결로 영화 arousal을 예측하는 것(Ke 2025), 영화 중 뇌 상태가 생리와 공변하는 것(van der Meer 2020), 사건 경계에서 패턴이 이동하는 것(Nguyen 2026), 각성과 상태 속도의 결합이라는 개념 자체(Wainstein 2025, Munn 2021).
+  5. 속도를 만드는 비정서 원인(장면 전환, 장면 의미 변화, 사건 경계, 정서 변화율, 머리 움직임, 전신 자율신경 성분, 신호 크기)을 하나씩 분리한다.
+  6. Chang 2021의 **이산 상태 전이(HMM, vmPFC 한 영역, 정서 반응 쪽)**와 달리 **연속 속도(전뇌, 각성 쪽)**를 정의하고, 정서가를 통제해 '각성'과 '부정 긴장'을 가른다.
+* **새로움으로 주장하지 않는 것:** 동적 연결로 영화 arousal을 예측하는 것(Ke 2025), 영화 중 뇌 상태가 생리와 공변하는 것(van der Meer 2020), 사건 경계에서 패턴이 이동하는 것(Nguyen 2026), 정서 장면에서 vmPFC 상태가 사람 사이에 동기화되는 것(Chang 2021), 각성과 상태 속도의 결합이라는 개념 자체(Wainstein 2025, Munn 2021).
 
 ---
 
