@@ -1,6 +1,6 @@
-# Deliverable E (초안): Cross-Disciplinary Opportunity Map
+# Deliverable E: Cross-Disciplinary Opportunity Map (Stage 3 갱신본)
 
-* 작성: Coordinator (Stage 2 초안). Stage 3에서 Round 2~4와 조합 결과를 반영해 갱신한다.
+* 작성: Coordinator. 1~4절은 Stage 2 초안이고, 5절이 Stage 3 갱신이다. Round 2~4, adversarial-reviewer 상위 10개 검토, P5 조합 결과(`outputs/rq_landscape.md`, `outputs/combinations/matrix.csv`)를 반영했다.
 * 기준일: 2026-11-12
 * 입력: 11개 에이전트 round1.md 3절(다른 분야 아이디어)과 6절(chain), `outputs/literature/literature_db.csv`
 * 행마다 출처 에이전트와 아이디어 번호를 [에이전트 번호]로 단다. 상세 설계, 반증 조건, 주의 사항은 해당 에이전트 round1.md에 있다.
@@ -157,3 +157,105 @@ Novelty는 Round 1 에이전트들의 자체 검색 범위 안에서만 유효�
 
 * 인용 표본 검증(`outputs/literature/verification_sample.md`)에서 already_done "no" 판정 20개 중 5개(25%)가 실제로는 선행 수행된 것으로 드러났다. 이 표의 Novelty H도 같은 수준의 과대 판정 위험이 있다고 보고, Stage 3 Round 3와 Stage 4에서 행마다 다시 확인한다.
 * 재점검으로 판정이 바뀐 행: 56(H에서 M). emotion-theory chain C3(HOT 관찰 검정)도 doi:10.1093/cercor/bhad093 때문에 partially로 바뀌었다(`outputs/agents/emotion-theory/round1.md` 10.1절). brain-inspired Chain 1~3의 새로움 서술도 범위를 좁혔다(`outputs/agents/brain-inspired/round1.md`의 "(Stage 2 재점검 반영)" 메모).
+
+
+---
+
+## 5. Stage 3 갱신: Round 2~4와 조합 결과 반영
+
+### 5.1 Stage 2 행이 Stage 3에서 어떻게 쓰였는가
+
+* 표의 RQ 번호는 `outputs/rq_landscape.md` 기준이다.
+* "판정 변화"는 Round 3 검토와 상위 10개 검토로 Novelty나 Feasibility가 바뀐 경우만 적었다.
+
+| 행 | 수입 기술 | Stage 3에서 쓰인 곳 | 판정 변화와 이유 |
+|---|---|---|---|
+| 1 | Prediction-powered inference | STR-A1로 시도했으나 기각 | **사람 수준 질문에는 부적합.** AI 라벨이 영상 안에서 상수라 사람 편차에 정보가 없다(상위 10개 검토 2.2절). 항목, 영상 수준 지도에만 유효 |
+| 2, 54 | alt-test, 연속 주석 일치도 | RQ-17 | 변화 없음. AI 라벨을 쓰는 다른 질문의 관문 역할 추가 |
+| 3 | perspectivism | RQ-18, RQ-22 | 변화 없음 |
+| 4, 6, 8 | random stimulus model, leakage 분류, anti-collapse 분할 | 모든 질문의 검증 인프라, LIT-34(방향만 유지) | EF-P4(행 6 계열)는 연구 질문에서 검증 인프라로 재구성(추가 검토) |
+| 5, 9, 52 | multiverse, 공유 스펙트럼, GW 정렬 | RQ-01, RQ-03, RQ-19, RQ-51 | Novelty H에서 M. EmoMind가 두 코호트를 이미 결합했다. V11(원 결과 재현)이 0단계로 추가 |
+| 7 | 식별 가능성 시뮬레이션 | RQ-24, RQ-26 | 변화 없음 |
+| 10, 13 | controversial selection, drive/suppress | RQ-09, RQ-10, RQ-04 | Feasibility 조건 추가. 자극 보류 없이는 모델 검증이 아니다(adversarial-reviewer Round 2) |
+| 11, 33 | affective metamer, counterfactual invariance | RQ-09에 흡수. K+L 단독 질문은 Round 4에서 기각 | encoder 위 R1뿐이고 in-silico 관문(RQ-51) 미통과 |
+| 12 | relational neural control | RQ-11 | 변화 없음 |
+| 14 | 추상화 기하(CCGP) | RQ-05, RQ-35 | 변화 없음 |
+| 16, 41 | line attractor, rSLDS | RQ-26 | 단일 τ에서 2성분 모형으로 수정(geometry-info) |
+| 17 | successor representation | RQ-24 | **수학 정정.** SR(T')는 방향성 null이 아니다. 시간 역전 사슬 T̃와 결합 빈도 순 흐름으로(상위 10개 검토 3.1절) |
+| 19, 20 | sim-to-real gap, matched-control audit | RQ-51(관문) | 백본 대비 차이를 과학적 질문으로 재정의 |
+| 21, 57, 42 | V-JEPA 2 surprise, active inference arousal, EM-LLM 경계 | RQ-25 | 지속 vs 재호출은 분리(emotion-theory) |
+| 22 | 정서 무관 정렬 운반 | RQ-53 | 변화 없음 |
+| 23 | USAE, 안정 SAE | LIT-33(방향만 유지), RQ-07의 sparse dictionary | 변화 없음 |
+| 24 | 표상 가설 판별 검정 | RQ-12 | 변화 없음 |
+| 26, 56, 60 | latent action, affordance, pose ethogram | RQ-34, RQ-40, RQ-36, RQ-38 | **동기 정정.** Horikawa의 affordance는 정서 affordance였다(상위 10개 검토 F2). Motivation 항목의 측정 타당성(RQ-39)을 관문으로. LAPA는 카메라 운동을 잡는다 |
+| 27 | brain-tuning | RQ-56 | 변화 없음(Policzer 2025가 부분 선행) |
+| 29 | block-identifiable multi-view | RQ-18 | 피험자 대신 라벨 출처를 view로 쓰는 판본으로 바뀜(Round 4 두 에이전트 독립 수렴) |
+| 30 | self vs cross-prediction | RQ-43, RQ-21 | RQ-21의 privileged access 해석은 기준선 동치성 때문에 약해짐. 가장 가까운 선행 Woo 2017(SIIPS1)이 빠져 있었음 |
+| 32 | 의미 고정 최소 편집 | RQ-09, RQ-12 | Novelty H에서 M. Zhan 2026(arXiv:2610.13558)이 TRIBE v2로 편집 400쌍을 분석했다 |
+| 35, 44 | 3-stem 분리, modality dropout | RQ-52, RQ-37 | Novelty H에서 M. Lettieri 2024가 같은 영화의 판본 비교를 했다 |
+| 37 | normative modeling | RQ-21(A*) | 사람과 영상 양방향 중심화로 재구성 |
+| 39 | MPathI | RQ-49 | 관문을 Mind captioning 반복 신뢰도로. 효과 크기가 작다(Kragel 2021, 0.055) |
+| 40, 62, 48 | 전역 신호 생리학, 항상성 RL, time-warped RSA | RQ-48, RQ-50, RQ-32 | 생리를 nuisance로 볼지 매개로 볼지 이견(discussion_record D3) |
+| 43 | DSA | RQ-28, RQ-31 | 변화 없음 |
+| 45, 53 | 서사 arc, 믿음 일치/불일치 놀람 | RQ-58 | 변화 없음 |
+| 47 | 음악 정보이론 기대 | RQ-25, RQ-58에 부분 반영 | 변화 없음 |
+| 49 | 문맥 길이 sweep | RQ-27 | 변화 없음 |
+| 50 | silicon rater | LIT-48(방향만 유지) | 뇌 연결이 약해 라벨 생성 단계로 흡수 |
+| 51 | VidSitu, 관계 그래프 | RQ-14(전략 A로 채택) | 변화 없음 |
+| 58 | 다중 과제 최적화와 창발 | RQ-54 | EmoNet 대신 EmoSet(leakage 회피) |
+| 61 | 예측 saliency | 모든 질문의 공통 nuisance | Horikawa 2020도 자유 시청임을 원문으로 확인해 두 코호트 모두에 적용 |
+| 63 | IB 명명 효율 | RQ-02 | **언어 특이 가설 기각**(LIT-54). 언어 무관 판본만 탐색적 |
+| 64 | unbalanced GW | RQ-13(OT positivity)과 방법 공유 | 변화 없음 |
+| 65 | prior-vs-evidence 분해 | LIT-29(방향만 유지) | 방법 인프라로 범위 축소 |
+
+**Stage 3 조합에 쓰이지 않은 행:** 15(grid 부호), 18(functional barcode), 28(appraisal probe와 steering), 31(quality space), 34(interchange intervention), 36(neuroadaptive BO, 신규 수집), 38(energy landscape), 46(미적 하이라이트), 55(distributional TD), 59(connectome-constrained). 버린 것은 아니다. 조합 규칙과 데이터 조건 안에서 다른 질문보다 앞서는 형태를 만들지 못했다. Stage 4에서 다시 볼 후보다.
+
+### 5.2 Stage 3에서 새로 들어온 수입 기술
+
+* Round 2~4와 전략 경로에서 처음 등장한 기술이다.
+* Novelty는 Round 4 에이전트의 검색 범위 기준이라 Stage 4 감사가 필요하다.
+* Feasibility는 1절과 같은 기준이다.
+
+| # | Source field | Imported concept or method | 정서 신경과학 질문 | Dataset | Evidence | Novelty | Feasibility | 출처 |
+|---|---|---|---|---|---|---|---|---|
+| 66 | 계량경제학 | unbalanced OT 인과 매칭, positivity 진단 | 어떤 정서 쌍이 내용과 분리 가능한가 | Horikawa, Mind captioning | arXiv:2112.04398, arXiv:2503.07811 | H | H | RQ-13 [GI-R4-2] |
+| 67 | 시스템 신경과학, 통계물리 | 자극 앙상블 차원과 power-law 스펙트럼 | 정서 기하는 자극 분포의 반영인가 | Horikawa, Mind captioning | doi:10.1038/s41586-019-1346-5 | H | H | RQ-03 [GI-R4-1] |
+| 68 | 운동 신경과학 | output-null subspace | 수동 시청 중 행동 준비 활동의 형식 | Spacetop | doi:10.1038/nn.3643 | H | M (voxel 수준 유비) | RQ-36 [BI-R4-1] |
+| 69 | 음악 인지 | groove | 사운드트랙이 운반하는 행동 경향 | Emo-FilM | doi:10.1037/a0024208 | H | H | RQ-37 [BI-R4-2] |
+| 70 | 강화학습 | prioritized replay(gain, need) | 정서 기억 재활성의 우선순위 | Mind captioning | doi:10.1038/s41593-018-0232-z | H | H | RQ-42 [BI-R4-4] |
+| 71 | 심리측정 | multitrait-multimethod 행렬 | Axis V 측정 타당성(인간, AI, 뇌) | Emo-FilM | doi:10.1037/h0046016 | H | H | RQ-39 [ET-R4-2] |
+| 72 | 인지 신경과학 | 이미지 기억성 | vividness는 내성인가 기억성인가 | Mind captioning | doi:10.1038/s41598-018-26467-5, arXiv:2410.13787 | M | H | RQ-43 [ET-R4-1] |
+| 73 | 기억의 생성 모델, 텍스트-비디오 생성 | 기억 구성 생성 모델, cue 기반 생성 영상 | 회상 정서는 흔적인가 재구성인가 | Mind captioning | doi:10.1038/s41562-023-01799-z, arXiv:2503.20314 | H | M (생성 계산량) | RQ-44 [ET-R4-4, FA-R4-1] |
+| 74 | 문화 진화 | 전달 사슬(serial reproduction) | 집단 전달 편향과 개인 회상 편향 | Mind captioning | doi:10.1073/pnas.2313790120 | H | M (인간 사슬은 신규 행동 수집) | RQ-46 [LS-R4-3] |
+| 75 | 내재 동기 RL | empowerment | 통제 가능성 appraisal의 자극 계산 | Emo-FilM | arXiv:1310.1863 | H | M (계산 방법 검증 필요) | RQ-40 [FA-R4-2] |
+| 76 | 시각 과학 | perceptual straightening | 정서 영역의 시간 기하, 곡률 깨짐과 놀람 | Spacetop, Emo-FilM | doi:10.1038/s41593-019-0377-4 | H | H | RQ-30, RQ-31 [FA-R4-4, RND-14] |
+| 77 | Mechanistic interpretability | superposition | 범주 수가 신뢰 차원 수보다 많은가 | Horikawa, Mind captioning | arXiv:2209.10652 | H | H | RQ-07 [STR-H2] |
+| 78 | 정보이론 신경과학 | 부분 정보 분해(PID) | 정서 정보의 시너지 대 중복 | Horikawa, Mind captioning | doi:10.1038/s41593-022-01070-0 | H | H | RQ-06 [STR-D1] |
+| 79 | 생성 AI | video-to-audio 생성 | 무음 클립의 암시된 소리와 정서 | Horikawa, Mind captioning | arXiv:2412.15322, doi:10.1038/nn.2533 | H | H | RQ-60 [RND-30] |
+| 80 | 비평형 통계물리 | 순 확률 흐름, 엔트로피 생산, 시간 역전 사슬 | 정서 상태 흐름의 비가역성 | Emo-FilM | doi:10.1073/pnas.2109889118 | M | H | RQ-24 [GI-P2 정정] |
+| 81 | 통계학(통증 신경과학의 SIIPS 논리) | 사람과 자극 양방향 중심화, 사람 유병률 | 자극 너머 본인 보고를 예측하는 뇌 편차 | Spacetop | doi:10.1038/ncomms14211, doi:10.7554/eLife.62461 | M | M (유효 표본 40~57명) | RQ-21 [A*] |
+| 82 | 영화 편집 연구 | Kuleshov 효과 | 자연 순서 변이로 본 맥락 의존 정서 해석 | Mind captioning | doi:10.1093/scan/nsl014, doi:10.1371/journal.pone.0308295 | M | H | RQ-33 [STR-G1] |
+
+### 5.3 역방향 (Affective Neuroscience → 다른 분야) 추가
+
+| # | Target field | Exported asset | 내용 | Potential dataset | Evidence | Novelty | Feasibility | 출처 |
+|---|---|---|---|---|---|---|---|---|
+| R9 | 다중 주석자 ML | 라벨 출처를 view로 둔 식별 가능한 분해 | 평정자 집단, 본인, AI 주석의 공통 성분과 출처 고유 성분을 뇌 반응으로 검증하는 벤치마크 | Emo-FilM, Spacetop | arXiv:2303.09166, arXiv:2509.24298 | H | H | RQ-18 |
+| R10 | 생성 모델 평가 | 정서 편집의 시각 대 정서 영역 대응 진단 | 편집기가 정서를 바꾸는지 저수준 통계를 바꾸는지 뇌 encoder로 판정(Zhan 2026 확장) | Horikawa, Mind captioning | arXiv:2610.13558 | M | H | RQ-09 |
+| R11 | Video SSL 평가 | 정서 기반 straightening 시험 | 모델 궤적이 정서적 사건에서 굽는지로 표상의 시간 예측성을 평가 | Spacetop, Emo-FilM | doi:10.1038/s41593-019-0377-4 | H | H | RQ-30 |
+
+### 5.4 Stage 3에서 드러난 지형의 변화
+
+1. **Novelty 하향이 체계적으로 일어났다.**
+   * Round 3 검토 15개 모두에서 원 제안이 놓친 선행이 나왔다.
+   * 상위 10개 검토는 그 검토자들도 놓친 선행을 찾았다. Woo 2017, Abdel-Ghaffar 2024, Zhan 2026, Li 2025다.
+   * 1절의 Novelty H 판정에는 Stage 2에서 이미 지적한 수준(already_done 거짓 "no" 25%)보다 큰 과대 판정 위험이 있다고 본다.
+2. **Feasibility는 오히려 올라간 경우가 많다.** Mind captioning 사용 승인으로 다음이 가능해졌다.
+   * 같은 자극 두 번째 코호트
+   * 반복 신뢰도
+   * 의사 무작위 순서
+   * 정서 배제 캡션
+   * 회상과 vividness
+   그래서 Stage 2에서 M이던 여러 행(행 9, 19, 30 등)이 H 조건을 갖췄다.
+3. **수입 기술보다 "관문" 기술의 가치가 커졌다.** OT positivity(66), MTMM(71), 비평형 추정(80), 양방향 중심화(81)는 그 자체로 정서 질문이라기보다, 다른 질문의 해석 가능성을 정하는 도구다. rq_landscape.md 3.1절의 관문 목록과 겹친다.
+
