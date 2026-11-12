@@ -74,7 +74,7 @@
 * 10.1126/sciadv.abf7129 (emotion-theory) | doi:10.1126/sciadv.abf7129 (encoding-foundation) | doi:10.1126/sciadv.abf7129 (geometry-info) | 10.1126/sciadv.abf7129 (multimodal-dynamics) | doi:10.1126/sciadv.abf7129 (systems-neuro)
 * 10.1093/cercor/bhae122 (emotion-theory) | 10.1093/cercor/bhae122 (multimodal-dynamics)
 * 10.1016/j.cub.2015.06.009 (emotion-theory) | doi:10.1016/j.cub.2015.06.009 (llm-semantics)
-* arXiv:2409.06843 (emotion-theory) | arXiv:2409.06843 (geometry-info)
+* arXiv:2409.06843 (emotion-theory) | arXiv:2409.06843 (geometry-info) | doi:10.1371/journal.pcbi.1013714 (geometry-info)
 * 10.1038/s41586-019-1346-5 (emotion-theory) | doi:10.1038/s41586-019-1346-5 (geometry-info)
 * arXiv:2502.05489 (emotion-theory) | arXiv:2502.05489 (frontier-ai) | arXiv:2502.05489 (llm-semantics)
 * 10.1523/JNEUROSCI.3022-16.2016 (emotion-theory) | doi:10.1523/JNEUROSCI.3022-16.2016 (vision-decoding)
