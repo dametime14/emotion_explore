@@ -26,6 +26,16 @@ Stage 3에서 SendMessage로 같은 에이전트를 재개할 때 쓰는 ID 목�
 
 재점검은 위 표의 brain-inspired, emotion-theory 인스턴스와 Stage 1의 dataset-auditor (NSD) 인스턴스를 SendMessage로 재개해 수행했다.
 
+## Stage 3 (2026-11-12)
+
+* 10개 연구 에이전트는 위 Stage 2 Round 1의 같은 ID를 SendMessage로 재개해 Round 2 제안, 받은 제안 응답, Round 3 검토를 수행했다.
+* Round 4는 frontier-ai, brain-inspired, geometry-info, llm-semantics, emotion-theory를 같은 방식으로 재개해 수행했다.
+* adversarial-reviewer의 Round 2 응답(EF-P6, FA-P8, SN-P7, GC-P3, LS-P5와 검증 요건 v2)은 Round 1 인스턴스(a60f877c6ca18a5c0)를 재개해 받았다.
+
+| 역할 | agent ID | 산출물 |
+|---|---|---|
+| adversarial-reviewer (상위 10개 독립 검토, 새 인스턴스. 선정 정정 후 ET-P4, EF-P4 추가 검토도 같은 인스턴스를 재개) | ad1b525711dd544aa | `outputs/agents/adversarial-reviewer/round3_top10_review.md`, `round3_top10_addendum.md` |
+
 ## Stage 1 (참고, general-purpose 에이전트가 정의 파일을 읽고 수행)
 
 | 역할 | agent ID | 산출물 |

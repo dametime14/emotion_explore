@@ -172,3 +172,128 @@ Stage 3는 10개 연구 에이전트의 Round 2(교차 교환), 제안 응답, R
 |---|---|
 | 16 Horikawa 2025 Mind captioning (OpenNeuro ds005191) | **사용 가능. 사용자가 이미 보유하고 전처리까지 완료.** 사용 가능 데이터셋은 5개(Horikawa 2020, Emo-FilM, Spacetop, NSD, Mind captioning)로 늘어남. 이에 따라 chain VD-R2(회상 정서 재활성), LS-Chain1, VD-R6(정서 배제 캡션)과 Axis W의 데이터 조건이 충족됨. 저장소에 실제로 들어 있는 파일(반복 클립, 회상 과제, vividness, 캡션)의 세부는 미확인 |
 | 17 새 Axis U~Y | 설명 후 사용자 답변 "일단 진행해"(선택지 미지정). Coordinator 권장안 적용: **U, V, W 독립 Axis 채택, X는 R의 Sub-axis, Y는 A의 Sub-axis**. 사용자가 다른 안을 고르면 수정. Stage 3 시작 지시로 봄 |
+
+---
+
+## Stage 3: Agent Discussion & Combinatorial Question Generation
+
+* 상태: **완료** (2026-11-12). Stage 4는 사용자 확인 전까지 시작하지 않는다.
+* 산출물: Deliverable F, G, E(갱신본)
+
+| 파일 | 내용 |
+|---|---|
+| `outputs/discussion_record.md` | **Deliverable F.** Round 2~4의 제안과 비판, 수정된 주장, 최종 합의 6개, 남은 이견 14개(D1~D14), 과정에 대한 비판적 기록 |
+| `outputs/rq_landscape.md` | **Deliverable G.** 연구 질문 60개, 군집 10개, 관문 9개와 공유 파이프라인, 경쟁 설명, 질문별 Axis 조합, 경로, 근거 ID, 데이터셋, 선행 판정, overlap |
+| `outputs/opportunity_map.md` | **Deliverable E 갱신본.** 5절 추가: Stage 2 행 65개의 Stage 3 사용처와 판정 변화, 새 수입 기술 17행(66~82), 역방향 3행(R9~R11) |
+| `outputs/combinations/matrix.csv` | 조합 96개(문헌 54, 무작위 30, 전략 12). P5 형식 13열 + 출처, 외부 분야, 군집, RQ ID, 선행 판정, Novelty 점검, note |
+| `outputs/combinations/rejected.md` | 기각 22개와 사유, Round 4에서 에이전트가 기각한 Axis 쌍 10종, Novelty Constraint 적용 목록 |
+| `outputs/combinations/build_matrix.py` | 조합 원자료와 점검 스크립트. matrix.csv, rejected.md, rq_table.md, matrix_checks.md를 만들고 rq_landscape.md 4절의 표를 다시 쓴다 |
+| `outputs/combinations/matrix_checks.md` | 조합 규칙(유형 3개 이상, 외부 Axis), 근거 ID verified 여부, 제안 매핑 누락, 무작위 판정 누락, 전략 A~H 적용 점검. 위반 0 |
+| `outputs/combinations/random_combos.csv`, `random_combos.py` | 무작위 조합 30개(시드 20261113) |
+| `outputs/combinations/discussed_pairs.md`, `discussed_sets.csv` | Round 1~3에서 논의된 Axis 조합, 미논의 이종 쌍 23개(Round 4 입력) |
+| `outputs/discussion/proposals_index.md`, `.csv` | Round 2 제안 76개 색인 |
+| `outputs/discussion/responses_tally.csv`, `top10_for_review.md` | 응답 집계(수용 51, 수정 45, 반박 0)와 상위 10개(정정판) |
+| `outputs/discussion/round3_assignment.md`, `.csv` | Round 3 검토 배정(시드 20261114)과 선정 이유 |
+| `outputs/discussion/round3_summary.md` | Round 3 검토 요약, 새 데이터 사실, 남은 이견, 상위 10개 독립 검토와 선정 정정 |
+| `outputs/agents/<이름>/round2.md`, `round3_reviews.md`, `round4.md` | 에이전트별 원 산출물 |
+| `outputs/agents/adversarial-reviewer/round3_top10_review.md`, `round3_top10_addendum.md` | 상위 10개(+2개) 독립 검토 |
+| `outputs/agents/coordinator/literature.jsonl` | Coordinator가 조합 근거로 새로 식별자 확인한 7편(Crossref, arXiv) |
+
+### 실행 방식 (사실 기록)
+* Round 2, 응답, Round 3, Round 4는 Stage 2의 같은 에이전트를 SendMessage로 재개해 실제 독립 에이전트로 수행했다(`outputs/agent_registry.md`). 상위 10개 검토는 새 adversarial-reviewer 인스턴스가 수행했다.
+* Round 4는 5개 에이전트(frontier-ai, brain-inspired, geometry-info, llm-semantics, emotion-theory)가 미논의 이종 쌍 23개에서만 출발해 제안 20개를 냈다.
+* P5 조합은 Coordinator가 직접 수행했다. 조합 원자료를 스크립트에 데이터로 적어 재생성할 수 있게 했다.
+* 문헌 DB는 Round 3~4 추가분과 Coordinator 확인분을 합쳐 고유 483편, verified 478편이 되었다(`python3 -I outputs/literature/merge.py`).
+* **Coordinator 오류와 정정:**
+  1. Round 3 첫 배정에서 공동 제안자를 검토자로 넣었다. 고쳐 다시 배정했다.
+  2. 응답 집계 스크립트가 표, 굵은 글씨, 제목 형식 응답을 놓쳤다. 줄 단위 파싱으로 고쳤다.
+  3. 상위 10개 선정 점수에 Round 3 검토 파일의 언급까지 셌다. 지시문 기준("Round 2에서")과 어긋났고, adversarial-reviewer가 지적했다. Round 2만 세도록 고쳤고, 빠졌던 ET-P4와 EF-P4를 추가 검토했다.
+
+### 결과 수치
+* **Broad Research Directions 74개, Distinct Research Questions 60개**(최소 기준 40개, 30개 충족).
+  * 경로별 질문 수: 문헌 45, 무작위 6, 전략 9.
+  * 방향만 유지한 조합은 14개다.
+* **군집 10개:**
+
+| 군집 | 질문 수 |
+|---|---|
+| K1 정서 공간 구조 | 7 |
+| K2 정서 대 내용 분리 | 7 |
+| K3 라벨 출처와 관점 | 6 |
+| K4 본인 경험과 개인차 | 3 |
+| K5 시간 역학 | 10 |
+| K6 행동 경향 | 7 |
+| K7 기억과 회상 | 7 |
+| K8 몸과 피질하 | 3 |
+| K9 in-silico 충실도 | 6 |
+| K10 소리와 서사 | 4 |
+
+* **기각 22개:**
+  * 경로별: 문헌 3, 무작위 16, 전략 3.
+  * 주된 사유: 중복, Mind captioning 6명으로 개인차 추론 불가, 순환 라벨, Novelty Constraint.
+* **근거 논문 ID 119개, 모두 verified.**
+* **질문별 선행 판정:** partially 41, no 10, 미확인 9.
+* **overlap 표시:** EmoViS 9, Emo-FilM 연구 11, EmoBrain 6.
+* **질문이 쓰는 데이터셋:** Horikawa 2020 36, Mind captioning 33, Emo-FilM 31, Spacetop 16, NSD 5.
+
+### Stage 3의 주요 발견 (요약)
+1. **관문 연구가 먼저다.** 질문 다수의 해석 가능성이 저비용 관문 9개에 달려 있다. 관문 목록은 rq_landscape.md 3.1절에 있다.
+   * in-silico 충실도(RQ-51)
+   * 원 결과 재현과 신뢰 공유 부분공간(RQ-01 0단계)
+   * Axis V 측정 타당성(RQ-39)
+   * 정서 쌍별 positivity(RQ-13)
+   * MLLM 항목별 대체 가능성(RQ-17)
+   * Spacetop 결측과 검정력(RQ-21 0단계)
+   * 순 흐름(RQ-24 0단계)
+   * 피질하 신호(RQ-49)
+   * 기술 잔차(RQ-08 0단계)
+2. **Mind captioning이 핵심 자원이 되었다.** 다음을 함께 제공한다.
+   * 같은 자극의 두 번째 코호트
+   * 반복 신뢰도
+   * 테스트 run의 의사 무작위 순서(R3-internal 후보)
+   * 정서 배제 인간 캡션
+   * 유일한 시행 단위 내성 보고
+3. **상위 10개 독립 검토가 Round 2~3에서 수용된 오류 4건을 잡았다.**
+   * 개인 잔차 묶음의 기준선 동치성. 가짜 r 약 +0.36이 시뮬레이션으로 확인되었다.
+   * 방향성 묶음의 수학 오류 두 건(π 가중, 시간 역전 사슬).
+   * Horikawa 2020 "affordances"의 오독. 이 오독은 Stage 2 axis_encyclopedia V 행까지 퍼졌고, 정정 주석을 달았다.
+4. **Novelty가 체계적으로 하향되었다.** Round 3 검토 15개 모두에서 원 제안이 놓친 선행이 나왔다. 상위 10개 검토는 검토자들도 놓친 선행 4편을 더 찾았다(Woo 2017, Abdel-Ghaffar 2024, Zhan 2026, Li 2025).
+5. **독립 수렴이 있었다.**
+   * Round 4에서 두 에이전트씩 같은 설계에 도달한 경우가 2건이다.
+     * 라벨 출처를 multi-view의 view로 둔다(RQ-18).
+     * 회상을 생성적 재구성으로 본다(RQ-44).
+   * 무작위 경로가 문헌 경로와 같은 질문에 도달한 경우가 4건이다.
+
+### 주요 미해결 이견 (상세는 discussion_record.md 6절)
+* **D3 생리의 지위:** nuisance인가 매개인가(systems-neuro 대 vision-decoding). RQ-48의 해석 규칙이 아직 합의되지 않았다.
+* **D7 Spacetop 개인 잔차 묶음의 우선순위:** 다섯 에이전트가 수렴한 Round 2 점수 1위 주제다. 그러나 adversarial-reviewer는 유효 표본 40~57명과 기준선 문제 때문에 뒤로 미뤄야 한다고 본다.
+* **D2 통계 통제와 설계 통제 삼각 검증의 독립성:** generative-counterfactual 대 adversarial-reviewer.
+* **D9 Axis V의 근거:** 측정 타당성이 먼저라는 입장(emotion-theory, adversarial-reviewer)이 있다. 근거 정정에 brain-inspired가 동의했는지는 아직 확인되지 않았다.
+* **D14 Round 2 합의(반박 0)의 성격:** 질 때문인가, 동의 편향 때문인가. adversarial-reviewer는 동의 편향 쪽으로 판단했다.
+* **D10~D12 Axis 처리:**
+  * signal-feasibility를 태그로 둘지 독립 Axis로 둘지.
+  * Recognition vs Experience를 어떻게 처리할지.
+  * X, Y를 Sub-axis로 둔 결정.
+  * 셋 모두 Stage 2부터 이어진 이견이다.
+
+### 미확인 사항
+* Stage 3에서 새로 생긴 데이터 확인 항목은 rq_landscape.md 7절에 있다.
+* Round 4 제안의 선행 판정은 대부분 에이전트 한 명의 WebSearch 범위다.
+* 질문별 "no"(10개)와 "미확인"(9개) 판정은 Stage 4 선행연구 중복 감사가 필요하다.
+
+## 사용자 확인 필요 (Stage 4 시작 전)
+
+### 꼭 필요한 것
+23. **Stage 4 진행 지시.** Stage 4는 질문 평가, Shortlist 10개, High-priority 5개, Pilot 3개를 만든다.
+24. **`reference/existing_projects.md` 확인(Stage 1의 13번, 보류 중).** Stage 3에서 질문 26개에 overlap을 표시했다(EmoViS 9, Emo-FilM 연구 11, EmoBrain 6). 프로젝트 요약이 현재와 다르면 overlap 표시가 틀린다. Stage 4 평가 전에 확인이 필요하다.
+25. **데이터 보유 상태 확인.** 각 항목이 영향을 주는 질문을 괄호에 적었다.
+    * (a) Mind captioning 보유본에 클립별 정서 배제 인간 캡션(20개)이 있는가(RQ-08, 09, 44, 45의 전제)
+    * (b) Cowen & Keltner 원 클립의 오디오가 있는가(RQ-52)
+    * (c) Horikawa 2020과 Mind captioning 피험자가 겹치는지 아는가(RQ-01)
+    * (d) 보유한 Spacetop이 OpenNeuro ds005256 공개판과 같은 판본인가(RQ-21의 결측 구조 계산 근거)
+    * (e) Horikawa 2020 참가자의 모국어를 아는가(RQ-02)
+
+### 있으면 좋은 것
+26. **우선순위 의견.** adversarial-reviewer는 GI-P1 + LS-P1(RQ-01, RQ-08) 묶음을 1순위로 권했다. 다음은 평정만 쓰는 저비용 관문(RQ-24 0단계, RQ-39)이다. 사용자가 군집이나 데이터셋에 선호가 있으면(예: Horikawa 1순위 유지) Stage 4 평가 가중치에 반영한다.
+27. **계산 자원과 환경 정보(Stage 1의 1, 3~6번, 보류 중).** Stage 4의 Pilot Study Plan에는 GPU, 저장 공간, 모델 checkpoint 접근 정보가 필요하다. TRIBE v2, V-JEPA 2, video MLLM 실행이 해당한다. 정보가 없으면 Pilot은 "자원 미확인"으로 표시한다.
+28. Stage 2 이후 보류 항목 18~22(EmoPathway 출처, already_done 일괄 재검색, 추가 네트워크 허용, Emo-FilM 판본)는 그대로 보류 중이다.
