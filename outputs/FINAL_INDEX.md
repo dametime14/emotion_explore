@@ -63,3 +63,7 @@
 | `outputs/revision/scores_reconciled.md` | 두 독립 채점의 대조와 조정 |
 | `outputs/revision/prior_overlap_audit.md` | 상위 7개 묶음 선행연구 중복 감사 |
 | `outputs/revision/selection.md` | 선정 규칙, 상위 5개 묶음(A~E), 예비 후보, 사용자 방향에 대한 정정 |
+| `outputs/revision/feedback_round2.md` | 선정 결과에 대한 사용자 피드백과 답(A, C, D 통합 근거, B 주장 범위, C-21 해석 절차) |
+| `outputs/revision/design_brief.md` | R1~R3 설계 지시서(사용자 결정, 공통 규칙) |
+| `outputs/revision/cards/` | **R1 뇌를 닮은 정서 모델, R2 떠올린 장면의 정서 이동, R3 뇌가 스스로 나눈 축의 해석** 카드(P7 + 검토 반영 기록) |
+| `outputs/revision/card_review.md`, `card_theory_review.md`, `card_revision_orders.md` | 카드의 두 독립 검토와 통합 수정 지시 |

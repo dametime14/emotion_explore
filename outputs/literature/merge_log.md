@@ -2,7 +2,7 @@
 
 * parse errors: 0
 
-* duplicate groups merged: 153
+* duplicate groups merged: 166
 
 * 10.1016/j.isci.2020.101060 (adversarial-reviewer) | doi:10.1016/j.isci.2020.101060 (brain-inspired) | 10.1016/j.isci.2020.101060 (dataset-auditor) | 10.1016/j.isci.2020.101060 (emotion-theory) | doi:10.1016/j.isci.2020.101060 (encoding-foundation) | 10.1016/j.isci.2020.101060 (generative-counterfactual) | doi:10.1016/j.isci.2020.101060 (geometry-info) | doi:10.1016/j.isci.2020.101060 (systems-neuro)
 * arXiv:2507.00320 (adversarial-reviewer) | arXiv:2507.00320 (dataset-auditor) | arXiv:2507.00320 (emotion-theory) | arXiv:2507.00320 (geometry-info) | arXiv:2507.00320 (llm-semantics) | arXiv:2507.00320 (systems-neuro) | arXiv:2507.00320 (vision-decoding)
@@ -19,6 +19,7 @@
 * 10.1038/s41593-023-01442-0 (adversarial-reviewer) | 10.1038/s41593-023-01442-0 (generative-counterfactual)
 * 10.1073/pnas.1912334117 (adversarial-reviewer) | 10.1073/pnas.1912334117 (generative-counterfactual)
 * 10.1038/s41562-023-01783-7 (adversarial-reviewer) | 10.1038/s41562-023-01783-7 (generative-counterfactual)
+* 10.1371/journal.pone.0152719 (adversarial-reviewer) | doi:10.1371/journal.pone.0152719 (brain-inspired)
 * 10.1093/scan/nsz037 (adversarial-reviewer) | 10.1093/scan/nsz037 (emotion-theory) | doi:10.1093/scan/nsz037 (systems-neuro)
 * 10.1016/j.isci.2023.107571 (adversarial-reviewer) | 10.1016/j.isci.2023.107571 (dataset-auditor) | doi:10.1016/j.isci.2023.107571 (geometry-info) | doi:10.1016/j.isci.2023.107571 (llm-semantics) | doi:10.1016/j.isci.2023.107571 (systems-neuro)
 * arXiv:2605.16739 (adversarial-reviewer) | arXiv:2605.16739 (dataset-auditor) | arXiv:2605.16739 (encoding-foundation) | arXiv:2605.16739 (generative-counterfactual) | arXiv:2605.16739 (llm-semantics) | arXiv:2605.16739 (vision-decoding)
@@ -48,7 +49,7 @@
 * doi:10.1523/JNEUROSCI.1277-22.2023 (adversarial-reviewer) | doi:10.1523/JNEUROSCI.1277-22.2023 (frontier-ai)
 * doi:10.1016/j.neuron.2021.06.001 (adversarial-reviewer) | doi:10.1016/j.neuron.2021.06.001 (brain-inspired) | doi:10.1016/j.neuron.2021.06.001 (systems-neuro)
 * arXiv:2511.07988 (adversarial-reviewer) | arXiv:2511.07988 (frontier-ai)
-* arXiv:2509.21384 (adversarial-reviewer) | arXiv:2509.21384 (frontier-ai)
+* arXiv:2509.21384 (adversarial-reviewer) | arXiv:2509.21384 (brain-inspired) | arXiv:2509.21384 (frontier-ai)
 * doi:10.1101/2025.02.19.638854 (adversarial-reviewer) | doi:10.1101/2025.02.19.638854 (brain-inspired) | 10.1038/s42003-025-08145-1 (dataset-auditor)
 * doi:10.1093/scan/nsag028 (adversarial-reviewer) | doi:10.1093/scan/nsag028 (brain-inspired)
 * doi:10.1177/0956797619836093 (adversarial-reviewer) | 10.1177/0956797619836093 (emotion-theory) | doi:10.1177/0956797619836093 (vision-decoding)
@@ -65,7 +66,13 @@
 * doi:10.1037/emo0001619 (adversarial-reviewer) | doi:10.1037/emo0001619 (brain-inspired) | 10.1037/emo0001619 (dataset-auditor)
 * doi:10.1002/hbm.70617 (adversarial-reviewer) | 10.1002/hbm.70617 (dataset-auditor) | doi:10.1002/hbm.70617 (systems-neuro)
 * arXiv:2605.07761 (adversarial-reviewer) | arXiv:2605.07761 (brain-inspired)
+* arXiv:2604.21780 (adversarial-reviewer) | arXiv:2604.21780 (brain-inspired)
+* arXiv:2605.20127 (adversarial-reviewer) | arXiv:2605.20127 (brain-inspired)
+* arXiv:2605.30556 (adversarial-reviewer) | arXiv:2605.30556 (brain-inspired)
+* doi:10.1126/sciadv.adj3906 (adversarial-reviewer) | 10.1126/sciadv.adj3906 (vision-decoding)
+* doi:10.1016/j.neunet.2023.11.024 (adversarial-reviewer) | 10.1016/j.neunet.2023.11.024 (vision-decoding)
 * arXiv:2604.15374 (adversarial-reviewer) | arXiv:2604.15374 (vision-decoding)
+* arXiv:2405.16714 (adversarial-reviewer) | arXiv:2405.16714 (geometry-info)
 * doi:10.1126/sciadv.abf7129 (adversarial-reviewer) | 10.1126/sciadv.abf7129 (emotion-theory) | doi:10.1126/sciadv.abf7129 (encoding-foundation) | doi:10.1126/sciadv.abf7129 (geometry-info) | 10.1126/sciadv.abf7129 (multimodal-dynamics) | doi:10.1126/sciadv.abf7129 (systems-neuro)
 * arXiv:2407.10414 (adversarial-reviewer) | arXiv:2407.10414 (brain-inspired)
 * arXiv:2312.00236 (adversarial-reviewer) | arXiv:2312.00236 (brain-inspired)
@@ -81,6 +88,11 @@
 * doi:10.1073/pnas.2109889118 (brain-inspired) | doi:10.1073/pnas.2109889118 (geometry-info)
 * doi:10.1126/sciadv.ade6049 (brain-inspired) | doi:10.1126/sciadv.ade6049 (geometry-info)
 * doi:10.1038/s41583-023-00705-w (brain-inspired) | 10.1038/s41583-023-00705-w (coordinator)
+* doi:10.1016/j.tics.2019.07.003 (brain-inspired) | 10.1016/j.tics.2019.07.003 (emotion-theory)
+* doi:10.1007/s42761-023-00191-4 (brain-inspired) | 10.1007/s42761-023-00191-4 (vision-decoding)
+* doi:10.1038/s41598-024-71690-y (brain-inspired) | 10.1038/s41598-024-71690-y (dataset-auditor) | doi:10.1038/s41598-024-71690-y (llm-semantics)
+* doi:10.1038/s41593-021-00962-x (brain-inspired) | 10.1038/s41593-021-00962-x (dataset-auditor)
+* doi:10.1080/02699930902928969 (brain-inspired) | doi:10.1080/02699930902928969 (frontier-ai)
 * arXiv:2412.15322 (coordinator) | arXiv:2412.15322 (multimodal-dynamics)
 * 10.1073/pnas.1421236112 (coordinator) | doi:10.1073/pnas.1421236112 (llm-semantics)
 * 10.1016/j.neuron.2012.10.014 (coordinator) | doi:10.1016/j.neuron.2012.10.014 (geometry-info)
@@ -92,7 +104,6 @@
 * 10.64898/2026.09.26.754452 (dataset-auditor) | doi:10.64898/2026.09.26.754452 (geometry-info) | doi:10.64898/2026.09.26.754452 (systems-neuro)
 * 10.1073/pnas.1702247114 (dataset-auditor) | 10.1073/pnas.1702247114 (emotion-theory) | doi:10.1073/pnas.1702247114 (geometry-info)
 * 10.1109/TNNLS.2022.3217767 (dataset-auditor) | arXiv:2211.02629 (frontier-ai)
-* 10.1038/s41598-024-71690-y (dataset-auditor) | doi:10.1038/s41598-024-71690-y (llm-semantics)
 * arXiv:2410.00047 (dataset-auditor) | arXiv:2410.00047 (llm-semantics) | arXiv:2410.00047 (vision-decoding)
 * 10.1038/s41598-025-14961-6 (dataset-auditor) | doi:10.1038/s41598-025-14961-6 (geometry-info) | doi:10.1038/s41598-025-14961-6 (llm-semantics)
 * arXiv:2503.13981 (dataset-auditor) | arXiv:2503.13981 (geometry-info)
@@ -155,5 +166,7 @@
 * doi:10.1162/imag.a.1300 (llm-semantics) | 10.1162/imag.a.1300 (multimodal-dynamics)
 * doi:10.1093/cercor/bhv086 (llm-semantics) | doi:10.1093/cercor/bhv086 (vision-decoding)
 * doi:10.1038/nn.4468 (llm-semantics) | 10.1038/nn.4468 (multimodal-dynamics) | doi:10.1038/nn.4468 (systems-neuro)
+* doi:10.1038/s41467-023-41648-1 (llm-semantics) | 10.1038/s41467-023-41648-1 (vision-decoding)
 * 10.1093/scan/nsab112 (multimodal-dynamics) | doi:10.1093/scan/nsab112 (systems-neuro)
 * 10.1093/pnasnexus/pgac020 (multimodal-dynamics) | doi:10.1093/pnasnexus/pgac020 (systems-neuro) | doi:10.1093/pnasnexus/pgac020 (vision-decoding)
+* 10.1016/j.neuroimage.2003.11.029 (multimodal-dynamics) | 10.1016/j.neuroimage.2003.11.029 (vision-decoding)

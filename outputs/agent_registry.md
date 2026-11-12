@@ -70,6 +70,16 @@ Stage 3에서 SendMessage로 같은 에이전트를 재개할 때 쓰는 ID 목�
 | multimodal-dynamics (D3, 출발점 RQ-05) | ab3f5d7c66dfe0bff | `outputs/agents/multimodal-dynamics/revision_round.md` |
 | adversarial-reviewer (독립 채점, Coordinator 점수 미열람. 이어서 선행연구 중복 감사) | a6168bf8e2364c8ad | `outputs/revision/scores_reviewer.csv`, `reviewer_notes.md`, `prior_overlap_audit.md` |
 
+### 재탐색 설계 카드 (같은 인스턴스 재개)
+
+| 역할 | agent ID | 산출물 |
+|---|---|---|
+| brain-inspired (R1 작성, 수정) | a33e66f5a273664cb | `outputs/revision/cards/R1_brainlike_emotion_model.md` |
+| vision-decoding (R2 작성, 수정) | ac253b97bb080c9b1 | `outputs/revision/cards/R2_recall_affective_shift.md` |
+| geometry-info (R3 작성, 수정) | ae216f8ca9181b4e7 | `outputs/revision/cards/R3_brain_axes_interpretation.md` |
+| adversarial-reviewer (카드 적대적 검토) | a6168bf8e2364c8ad | `outputs/revision/card_review.md` |
+| emotion-theory (카드 이론 검토) | a85c474967cad849e | `outputs/revision/card_theory_review.md` |
+
 ## Stage 1 (참고, general-purpose 에이전트가 정의 파일을 읽고 수행)
 
 | 역할 | agent ID | 산출물 |
