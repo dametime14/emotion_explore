@@ -1,7 +1,7 @@
 # Round 2 제안 목록 (proposals_index)
 
 * 생성: `python3 -I outputs/discussion/build_proposals_index.py` (각 에이전트 round2.md 2절에서 추출)
-* 제안 수: 67개. 전체 서술, 예상 반론, 선행 확인은 각 round2.md 해당 제안 절에 있다.
+* 제안 수: 76개. 전체 서술, 예상 반론, 선행 확인은 각 round2.md 해당 제안 절에 있다.
 
 | 제안 ID | 보낸 에이전트 | 받는 에이전트 | 요약 | 관련 Axis | 근거 논문 |
 |---|---|---|---|---|---|
@@ -58,6 +58,15 @@
 | SN-P5 | systems-neuro | vision-decoding | 너희 쪽 Mind captioning 지각 반복과 회상 분석을 우리 쪽 amygdala 반복 비정상성 가설로 확장할 수 있다. 1. 지각 테스트(72클립 x 5회)에서 amygdala 반응을 '반복 번호 x 규범 a... | E, W, Q, A | 10.1126/sciadv.adw1464, 10.1038/s41467-024-49073-8, 10.1523/JNEUROSCI.1436-24.2025, 10.1016/j.neuroimage.2021.118617, 10.1038/s41597-026-07065-x |
 | SN-P6 | systems-neuro | llm-semantics | 너희 쪽 신체 잔차 검정을 우리 쪽 신경/전신 분리와 '보고 생리 vs 측정 생리' 정렬로 강화할 수 있다. 1. 잔차가 insula, 뇌간 BOLD를 예측하는지는 raw BOLD와 생리 회귀 BOLD 둘 다에서 본... | C, E, A, U | 10.1038/s41598-025-14961-6, 10.1162/imag.a.1300, 10.1038/s41593-025-01945-y, 10.1038/s41562-017-0069, 10.1093/scan/nsag050 |
 | SN-P7 | systems-neuro | emotion-theory; adversarial-reviewer | [통합 제안] | T, Q, E, O | arXiv:2507.00320, 10.1016/j.isci.2020.101060, 10.1038/s41593-025-01945-y, 10.1126/sciadv.abf7129, 10.1126/sciadv.adw1464 |
+| GC-P1 | generative-counterfactual | encoding-foundation | "in silico 정서 기하 충실도"를 하나의 관문 연구로 합치고, 편집 자극을 분포 밖 시험 세트로 제공 | H, L, S, T, U | arXiv:2605.04326, arXiv:2605.16739, 10.1126/sciadv.adw1464, arXiv:2302.06677, arXiv:2607.01400, arXiv:2610.13558 |
+| GC-P2 | generative-counterfactual | llm-semantics | 기술 잔차(통계 통제)와 의미 고정 편집(설계 통제)을 같은 voxel에서 맞대기 | C, L, P, U | 10.1126/sciadv.adw1464, 10.1038/s42256-025-01072-0, 10.1093/scan/nsl014, arXiv:2408.13718, arXiv:2610.13558, arXiv:2608.06231 |
+| GC-P3 | generative-counterfactual | adversarial-reviewer | 통계 통제와 설계 통제의 사전 등록 삼각 검증, affective metamer 통합, PPI 기반 manipulation check | T, P, L, Q, U | 10.1371/journal.pone.0152719, 10.1016/j.neuroimage.2022.119728, 10.1038/s41593-023-01442-0, 10.1126/science.adi6000, arXiv:2501.10970, arXiv:2302.06677 |
+| GC-P4 | generative-counterfactual | multimodal-dynamics | 소리 분해의 관찰 분할(R0)을 stem counterfactual(R1)로 확장하고 실제 판본 조작으로 surrogate를 검증 | M, D, L, B, P | 10.1126/sciadv.adk6840, arXiv:2110.09958, arXiv:2509.21381, arXiv:2605.04326, 10.7554/eLife.64972, arXiv:2604.04025 |
+| GC-P5 | generative-counterfactual | systems-neuro | 자연 영상의 공간주파수 counterfactual과 AI다움 보정 곡선 | E, B, L, P, Q | 10.1016/j.neuron.2021.06.001, 10.1038/nn1057, 10.1038/s41467-024-49073-8, 10.1016/j.neuroimage.2019.116216, arXiv:2512.00557, 10.1038/s41597-026-07065-x |
+| GC-P6 | generative-counterfactual | frontier-ai | 정서 대 상황 판별 검정의 빈 칸을 편집으로 채우고, 정서 기대 위반 쌍을 생성 | I, R, C, L, D | arXiv:2604.13466, arXiv:2502.11831, arXiv:2608.06231, arXiv:2609.34742, 10.1093/scan/nsl014, arXiv:2506.09985 |
+| GC-P7 | generative-counterfactual | vision-decoding | 정서 영역 선호 자극 합성(R4)과 범주 고정 amygdala 제어(내 CH2)를 합치고, prior-vs-evidence 분해를 생성 쪽에도 적용 | G, L, E, H | arXiv:2512.00557, 10.1523/JNEUROSCI.1436-24.2025, 10.1038/s41562-025-02252-z, arXiv:2609.27729, 10.1126/sciadv.adw1464, arXiv:2605.13904 |
+| GC-P8 | generative-counterfactual | brain-inspired | 정서 범주는 같고 행동 경향만 다른 자극을 편집으로 만들어 Axis V 경쟁 검정 | V, L, E, B | 10.1073/pnas.2414005122, 10.1016/j.isci.2020.101060, arXiv:2410.11758, arXiv:2608.06231, 10.1016/j.tics.2019.12.016 |
+| GC-P9 | generative-counterfactual | emotion-theory | privileged access 검정(C4)과 내 CH5를 통합하고, HOT 관찰 검정(C3)의 전제를 편집으로 먼저 확인 | A(Introspective Access Sub-axis), U, O, ... | 10.1073/pnas.1619316114, arXiv:2410.13787, 10.1126/sciadv.abf7129, arXiv:2605.04326, arXiv:2408.13718 |
 | LS-P1 | llm-semantics | vision-decoding | 너희 쪽 R6(정서 배제 인간 캡션을 통제한 뒤 남는 정서 분산) 을 우리 쪽 Chain 1(기술 잔차)과 L1/L2 분해로 하나의 설계로 합쳐 확장할 수 있다. 구체적으로 세 가지를 더한다. 1. 캡션의 정서 누출... | C(S3 Description Residual), B, F, H, U, ... | 10.1126/sciadv.adw1464, 10.1038/s42256-025-01072-0, arXiv:2509.24298, arXiv:2609.34742, 10.1371/journal.pone.0152719 |
 | LS-P2 | llm-semantics | encoding-foundation | 너희 쪽 Chain 3(Group 예측 잔차와 개인 정서 경험) 을 우리 쪽 "평균 관찰자 기준점" 행동 잔차로 확장해, 다섯 에이전트가 따로 낸 같은 설계를 하나로 합칠 수 있다. 통합 설계는 두 잔차의 정렬이다. | O, U, H, A(Introspective Access Sub-axis... | arXiv:2605.04326, arXiv:2607.01400, 10.1126/sciadv.abf7129, arXiv:2408.13718, arXiv:2402.01908, arXiv:2501.10970 |
 | LS-P3 | llm-semantics | multimodal-dynamics | 너희 쪽 Chain 3(소리가 만드는 정서)의 (b) "vmPFC 정서 decoding은 대사 언어 feature를 빼도 남는가" 를 우리 쪽 대사 의미의 2층 분해(L1 어휘 내용 vs L2 추론된 정신 상태 의미... | M, C(S7), D, E | 10.1126/sciadv.adk6840, 10.1111/cogs.13343, 10.1016/j.neuron.2020.10.029, arXiv:2502.05489, arXiv:2309.01660 |
@@ -77,14 +86,14 @@
 
 | 받는 에이전트 | 받은 제안 수 |
 |---|---|
-| emotion-theory | 6 |
-| vision-decoding | 6 |
-| encoding-foundation | 8 |
-| multimodal-dynamics | 6 |
-| frontier-ai | 7 |
+| emotion-theory | 7 |
+| vision-decoding | 7 |
+| encoding-foundation | 9 |
+| multimodal-dynamics | 7 |
+| frontier-ai | 8 |
 | geometry-info | 7 |
-| systems-neuro | 7 |
+| systems-neuro | 8 |
 | generative-counterfactual | 4 |
-| llm-semantics | 6 |
-| brain-inspired | 7 |
-| adversarial-reviewer | 4 |
+| llm-semantics | 7 |
+| brain-inspired | 8 |
+| adversarial-reviewer | 5 |

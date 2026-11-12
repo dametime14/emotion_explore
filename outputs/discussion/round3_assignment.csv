@@ -1,0 +1,16 @@
+proposal_id,from,to,reviewer_1,reviewer_2
+GI-P1,geometry-info,emotion-theory,vision-decoding,multimodal-dynamics
+GI-P5,geometry-info,vision-decoding,systems-neuro,brain-inspired
+LS-P1,llm-semantics,vision-decoding,frontier-ai,geometry-info
+GC-P2,generative-counterfactual,llm-semantics,systems-neuro,emotion-theory
+EF-P1,encoding-foundation,generative-counterfactual,systems-neuro,geometry-info
+BI-P1,brain-inspired,geometry-info,multimodal-dynamics,frontier-ai
+BI-P2,brain-inspired,frontier-ai,generative-counterfactual,encoding-foundation
+SN-P1,systems-neuro,encoding-foundation,multimodal-dynamics,vision-decoding
+FA-P3,frontier-ai,multimodal-dynamics,llm-semantics,emotion-theory
+MD-P1,multimodal-dynamics,geometry-info,generative-counterfactual,encoding-foundation
+EF-P7,encoding-foundation,multimodal-dynamics,llm-semantics,brain-inspired
+ET-P6,emotion-theory,vision-decoding,llm-semantics,frontier-ai
+FA-P6,frontier-ai,llm-semantics,generative-counterfactual,vision-decoding
+SN-P3,systems-neuro,brain-inspired,geometry-info,encoding-foundation
+VD-P4,vision-decoding,generative-counterfactual,emotion-theory,brain-inspired

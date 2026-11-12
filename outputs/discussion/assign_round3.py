@@ -3,7 +3,8 @@
 
 Each of the 10 research agents reviews exactly 3 proposals made by OTHER agents.
 Each selected proposal gets 2 reviewers from different fields. Reviewers are
-neither the sender nor a named receiver (the receiver already responds to it).
+neither the sender, a named receiver, nor an agent referenced in the receiver line
+(co-proposers of a merged design).
 The 15 proposals are chosen by the Coordinator (SELECTED, with reasons in
 outputs/discussion/round3_assignment.md); the reviewer draw is random with a fixed seed.
 
@@ -37,6 +38,7 @@ def main():
         rng.shuffle(order)
         for p in order:
             banned = {p["from"]} | set(filter(None, p["to"].split("; ")))
+            banned |= {a for a in AGENTS if a in p.get("to_raw", "")}  # 참조로 언급된 에이전트(설계 공동 제안자)도 제외
             cands = [a for a in AGENTS if a not in banned and load[a] < 3]
             rng.shuffle(cands)
             cands.sort(key=lambda a: load[a])
