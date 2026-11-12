@@ -67,6 +67,7 @@
 | "Evaluating TRIBE v2 Beyond Its Original Benchmarks: From Functional Localizers to Naturalistic Emotion", NeurIPS 2026 | 식별자 없음. neurips.cc/virtual/2026/159782 | WebSearch 결과만(사이트 차단). **verified 아님** | C-11 | **partially(미검증).** 자연 영화에서 TRIBE v2의 모델-뇌 대응이 정서 범주마다 크게 다르고 일부 정서 영역에서 선택적 실패가 있다고 요약된다. 어느 자료를 썼는지 확인 못 했다. Emo-FilM이면 C-11의 1단계(정서 영역 잔차가 큰가)와 겹친다 |
 | Liu et al. 2025 VCA, bioRxiv | doi:10.1101/2025.10.20.683439 | Crossref 초록 | C-05 | 초록에 시각 망으로 가는 되먹임 언급이 없다. ViT + 편도체 모사 모듈, IAPS 평정과 편도체 fMRI 정렬. brain-inspired의 미확인 사항 4번을 초록 수준에서 해소(되먹임 없음으로 보임). 같은 그룹(Ding, Keil, Fang)이 VSS 2025, Leem 2026까지 같은 주제를 연속으로 다뤄 C-05는 선점 위험이 크다 |
 
+* 후속 갱신(같은 날, `prior_overlap_audit.md` 3절): VSS 2025 포스터는 Crossref로 doi:10.1167/jov.25.9.1989(Chen, Keil, Ding)를 확인해 존재와 저자가 verified가 되었다(내용은 여전히 검색 요약). Conwell 2023 workshop의 내용은 arXiv:2410.23603으로 대체했다. NeurIPS 2026 TRIBE v2 평가는 미검증 그대로다.
 * 이전 판정의 갱신: frontier-ai와 geometry-info는 C-16 선행을 "no"로 두었으나, 행동 평정과 복측 시각 뇌 각각에 대한 통제 비교는 이미 있다(위 두 Conwell). 정서 영상 fMRI의 정서 관련 분산에 대한 통제 비교는 이번 검색에서도 찾지 못했다.
 * 직접 선행을 찾지 못한 후보(검색 범위 안): C-02(복원 오차의 정서 방향), C-08, C-09(지형 모델의 정서 지도), C-12, C-13, C-18, C-19, C-24(이론 병목 모델과 fMRI). Stage 4 이후 'not found' 판정이 뒤집힌 사례(RQ-32, RQ-14)가 있었으므로 모두 잠정이다.
 
