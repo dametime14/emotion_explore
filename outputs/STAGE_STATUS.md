@@ -305,7 +305,7 @@ Stage 3는 10개 연구 에이전트의 Round 2(교차 교환), 제안 응답, R
 | 23 Stage 4 진행 | **진행 지시.** Stage 4 시작 |
 | 24 `existing_projects.md` | **EmoViS는 EmoBrain으로 흡수되었고, 나머지 요약은 현재 상태와 맞다.** `reference/existing_projects.md`에 확인 표시를 달았다(파일이 사용자 확인을 요청한 부분만 고침). matrix.csv의 겹침 표시를 "EmoBrain(구 EmoViS 범위)"로 바꿨다. 겹침이 있는 질문은 EmoBrain 14개, Emo-FilM 연구 11개다 |
 | 25(a) Mind captioning 캡션 | **보유.** 클립별 정서 배제 캡션 20개. RQ-08, 09, 44, 45의 데이터 전제 충족 |
-| 25(b) Cowen & Keltner 오디오 | **보유 클립 2,185개 모두 무음.** RQ-52의 "같은 클립 관찰 무음 대 in-silico 유음" 설계는 불가능해 Emo-FilM 안의 R0 대 R1 일치도로 축소했다. 원 영상에 소리가 있었는지는 원문으로 따로 확인 중이다(`outputs/stage1/horikawa_factcheck_stage4.md`) |
-| 25(c) 두 코호트 피험자 중복 | **겹치지 않음(사용자 확인).** RQ-01의 독립 코호트 전제 충족 |
+| 25(b) Cowen & Keltner 오디오 | **보유 클립 2,185개 모두 무음.** RQ-52의 "같은 클립 관찰 무음 대 in-silico 유음" 설계는 불가능해 Emo-FilM 안의 R0 대 R1 일치도로 축소했다. 원문 재확인: 평정자와 fMRI 참가자가 소리 없이 봤다는 점은 Horikawa 2020 본문("with no sound"), Mind captioning 본문("presented ... without sound"), Asanuma 2025가 일치한다. 원 영상에 소리가 있었는지는 Du 2023("removed")과 Asanuma 2025("containing no audio")가 엇갈리고, C&K 2017 Methods/SI는 열지 못했다. 어느 쪽이든 사용 가능한 판본은 무음이다 |
+| 25(c) 두 코호트 피험자 중복 | **겹치지 않음(사용자 확인).** Mind captioning 본문에는 중복 여부 언급이 없다(장소, 스캐너, 윤리위원회는 다름: 도쿄대 3T Prisma, NTT). 사용자 확인을 근거로 RQ-01의 독립 코호트 전제를 충족한 것으로 둔다 |
 | 25(d) Spacetop 판본 | **공개판 ds005256과 같을 것(사용자 추정).** adversarial-reviewer의 결측 구조 계산을 보유본에도 적용 가능한 것으로 둔다. 판본 차이가 발견되면 다시 계산 |
-| 25(e) Horikawa 2020 참가자 모국어 | 사용자: "참가자는 일본인". Stage 1 보고서는 "미확인(촬영은 일본)"이었다. 사용자 지적에 따라 원문을 다시 확인 중이다(`outputs/stage1/horikawa_factcheck_stage4.md`) |
+| 25(e) Horikawa 2020 참가자 모국어 | 사용자: "참가자는 일본인". 원문 재확인 결과(`outputs/stage1/horikawa_factcheck_stage4.md`): 열람 가능한 Horikawa 2020 본문과 같은 데이터를 쓴 Du 2023의 피험자 기술("Five healthy subjects ... ATR 윤리위원회 승인")에 국적이나 모국어 기재가 없다. Transparent Methods 보충자료는 PMC 웹 차단으로 열지 못했다. **사용자 확인을 따라 일본인으로 둔다(원문 미기재).** 결과: 두 코호트 모두 일본어 화자라 영어 화자 대조 코호트가 없다. 그래서 LIT-54(언어 특이 가설) 기각 사유가 확정된다 |

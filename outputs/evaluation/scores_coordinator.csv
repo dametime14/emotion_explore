@@ -1,0 +1,541 @@
+rq_id,criterion,score,reason
+RQ-01,Novelty,3,EmoMind가 두 코호트를 이미 결합했고 cross-decomposition은 시각 영역 방법이다. 새로운 것은 코호트 내 쌍과 코호트 간 쌍의 대비와 혼합 대 연속 모형 판정
+RQ-01,Neuroscientific Importance,5,기본정서 대 구성주의 논쟁의 핵심 증거(Horikawa 2020 대 Westlin 2025)를 같은 자극 독립 코호트로 다시 본다
+RQ-01,AI / Modeling Contribution,2,"모델은 시선, 시각 공변량 정도. 질문의 중심은 통계 분해"
+RQ-01,Dataset Feasibility,5,"Horikawa 2020 + Mind captioning 같은 2,180개 클립, 피험자 비중복(사용자 확인), MC 전처리 완료. 둘 다 보유"
+RQ-01,Methodological Rigor,4,"V11 재현, 정렬과 평가 자극 분리, 쌍 의존성 재표집, 시선 band. 다만 TR 2 s 대 1 s, 전처리 차이가 남는다"
+RQ-01,Falsifiability,4,혼합 대 연속 잠재 모형의 held-out 우도 비교가 사전 지정 가능
+RQ-01,Interpretability,3,스펙트럼만으로 범주성을 판정할 수 없어 해석이 모형 비교에 의존(R0)
+RQ-01,Generalizability,3,"같은 C&K 자극 안에서의 재현. Emo-FilM, Spacetop은 자극이 달라 직접 재현 불가"
+RQ-01,Feasibility,4,11명 raw 재전처리는 크지만 표준 파이프라인으로 가능
+RQ-02,Novelty,3,"IB 명명 효율은 색, 친족어에서 수행. 신경 공간 위의 정서 범주 적용은 미확인"
+RQ-02,Neuroscientific Importance,3,범주 체계 효율은 흥미롭지만 탐색적
+RQ-02,AI / Modeling Contribution,2,text encoder는 보조
+RQ-02,Dataset Feasibility,4,RQ-01의 공유 공간이 전제. 두 코호트 보유
+RQ-02,Methodological Rigor,2,"신경 공간을 의미 공간으로 두는 가정, 범주 수와 무작위 분할 기준선 설계에 결과가 민감"
+RQ-02,Falsifiability,3,무작위 분할보다 IB 경계에 가깝지 않으면 반증
+RQ-02,Interpretability,2,신경 공간 위 IB 효율의 의미가 명확하지 않다
+RQ-02,Generalizability,2,C&K 범주 체계와 이 자극에 묶임
+RQ-02,Feasibility,4,RQ-01 산출물 위의 계산
+RQ-03,Novelty,4,자극 앙상블 조작으로 정서 기하의 원인을 묻는 선행은 Round 4 검색에서 없음
+RQ-03,Neuroscientific Importance,4,정서 기하 주장 전반의 대안 설명(자극 통계)을 직접 시험
+RQ-03,AI / Modeling Contribution,2,DNN은 시각 다양성 정의에만 쓰임
+RQ-03,Dataset Feasibility,4,"2,180개 클립에서 2x2 부분집합 구성 가능. 부분집합이 작아지면 스펙트럼 추정이 불안정"
+RQ-03,Methodological Rigor,3,다양성 지표 정의와 부분집합 크기에 따른 추정 편향을 맞춰야 한다
+RQ-03,Falsifiability,4,어느 조작에 지수가 반응하는지로 명확히 갈린다
+RQ-03,Interpretability,4,결과가 바로 '정서 고유 부호 대 자극 반영'으로 읽힌다
+RQ-03,Generalizability,3,Emo-FilM은 영화 수가 적어 같은 조작이 어렵다
+RQ-03,Feasibility,4,RQ-01 파이프라인 재사용
+RQ-04,Novelty,4,뇌 우선 분류 체계를 정서에 적용한 사례는 찾지 못함(구동/억제 선택은 언어망)
+RQ-04,Neuroscientific Importance,4,라벨 우선 연구의 순환을 끊는 분류 체계 후보
+RQ-04,AI / Modeling Contribution,3,"자극 선택과 생성, MLLM 명명"
+RQ-04,Dataset Feasibility,3,선택은 기존 데이터로 가능하나 사람 명명은 신규 행동 평정이 필요
+RQ-04,Methodological Rigor,3,"명명의 주관성, 선택에 쓴 데이터와 성분 정의의 순환을 막아야 한다"
+RQ-04,Falsifiability,2,기술적 탐색이라 반증 조건이 약하다(기존 범주와 같으면 무엇을 반증하는가)
+RQ-04,Interpretability,3,명명 결과의 해석이 평정자에 의존
+RQ-04,Generalizability,3,다른 데이터셋 성분에도 같은 절차 적용 가능
+RQ-04,Feasibility,3,신규 평정 비용
+RQ-05,Novelty,3,양식 일반 정서 부호 연구(Skerry & Saxe 2014 등) 있음. 개인 내 텍스트/오디오/영상 CCGP는 부분적으로 새로움
+RQ-05,Neuroscientific Importance,4,양식을 넘는 정서 추상화의 범위
+RQ-05,AI / Modeling Contribution,1,AI 기여 거의 없음
+RQ-05,Dataset Feasibility,3,"Spacetop narratives(텍스트 4편, 오디오 4편)와 alignvideo가 같은 참가자. 이야기-양식 배정 균형화 미확인, valence 합성 지표 필요. Horikawa에서는 불가"
+RQ-05,Methodological Rigor,3,"양식 간 자극 길이, 내용 차이를 저수준 회귀로만 통제"
+RQ-05,Falsifiability,4,교차 일반화가 우연 수준이면 반증
+RQ-05,Interpretability,4,CCGP 결과는 해석이 명확
+RQ-05,Generalizability,3,Spacetop 안에서만 가능
+RQ-05,Feasibility,4,표준 decoding
+RQ-06,Novelty,4,정서 정보의 시너지 분해 선행은 미확인
+RQ-06,Neuroscientific Importance,3,분산 표상 주장을 정량화하지만 해석 논쟁이 크다
+RQ-06,AI / Modeling Contribution,2,모델 기여 작음
+RQ-06,Dataset Feasibility,4,Horikawa 2020 + MC 블록 수준 샘플로 계산 가능
+RQ-06,Methodological Rigor,2,"PID 추정기 선택, 블록 수 대비 차원, 다중비교에 결과가 민감"
+RQ-06,Falsifiability,3,시너지 비율이 시각 범주와 같으면 반증
+RQ-06,Interpretability,2,synergy의 신경 의미가 논쟁적
+RQ-06,Generalizability,3,Emo-FilM으로 확장 가능
+RQ-06,Feasibility,4,계산 가능
+RQ-07,Novelty,4,superposition을 정서 차원 논쟁에 옮긴 사례 미확인
+RQ-07,Neuroscientific Importance,4,많은 범주와 적은 차원을 함께 설명할 제3의 가설
+RQ-07,AI / Modeling Contribution,4,해석 연구의 개념과 sparse dictionary 방법
+RQ-07,Dataset Feasibility,4,RQ-01 신뢰 부분공간 위에서 가능
+RQ-07,Methodological Rigor,2,voxel 수준 superposition은 거시 유비이고 사전 학습이 불안정하며 잡음도 원자 수를 늘린다
+RQ-07,Falsifiability,3,범주 빈도와 전용 차원 관계로 반증 가능하지만 대안 설명(잡음)이 같은 패턴을 낼 수 있다
+RQ-07,Interpretability,2,결과를 신경 수준 superposition으로 읽기 어렵다
+RQ-07,Generalizability,3,Emo-FilM 50항목에 같은 분석 가능
+RQ-07,Feasibility,4,계산 가능
+RQ-08,Novelty,3,"Horikawa 2020의 의미 항목 비교, Abdel-Ghaffar 2024, Du 2025가 가깝다. 인간 정서 배제 캡션 20개로 측정 오차를 보정하는 설계가 새로움"
+RQ-08,Neuroscientific Importance,5,'정서 표상'이 장면 기술 의미로 환원되는가는 Horikawa 결론의 가장 약한 고리
+RQ-08,AI / Modeling Contribution,3,text encoder를 의미 측정 도구로 쓰고 측정 오차를 모형화
+RQ-08,Dataset Feasibility,5,"MC 캡션 보유(사용자 확인), Horikawa 2020 재현, 같은 자극"
+RQ-08,Methodological Rigor,5,"split-half 보정, 교차 적합, 역방향 분할, 차원 맞춤, 원본 영상 누수 통제"
+RQ-08,Falsifiability,4,보정 후 정서 고유 분산이 사라지면 반증
+RQ-08,Interpretability,4,'언어 기술로 회복되지 않는 규범 정서 공변'으로 해석 범위가 정해져 있다
+RQ-08,Generalizability,3,Emo-FilM은 인간 캡션이 없어 AI 캡션으로만 확장
+RQ-08,Feasibility,5,기존 데이터와 공개 text encoder로 바로 가능
+RQ-09,Novelty,3,Zhan 2026이 TRIBE v2로 편집 400쌍을 분석(R1 팔 부분 선행)
+RQ-09,Neuroscientific Importance,4,정서 대 의미 분리의 방법 간 삼각 검증
+RQ-09,AI / Modeling Contribution,4,생성 편집과 다중 encoder
+RQ-09,Dataset Feasibility,3,"통계 팔은 Horikawa + MC로 가능, 편집 팔은 in-silico(R1)이고 R2는 신규 평정 필요"
+RQ-09,Methodological Rigor,4,"코호트 분리, 독립 편집기, 다중 encoder로 순환 방지. 편집의 저수준 변화는 남는다"
+RQ-09,Falsifiability,4,사전 등록 일치표
+RQ-09,Interpretability,3,불일치 패턴의 해석이 복잡
+RQ-09,Generalizability,3,"다른 편집기, encoder로 확장"
+RQ-09,Feasibility,2,비디오 편집과 다중 encoder 계산량이 크다
+RQ-10,Novelty,4,모델이 고른 자극의 코호트 간 전향 검증을 정서에 적용한 사례 없음(언어망 선행)
+RQ-10,Neuroscientific Importance,4,정서 encoder가 실제 정서 영역을 예측하는지의 가장 강한 관찰 검정
+RQ-10,AI / Modeling Contribution,3,모델 간 controversial 선택
+RQ-10,Dataset Feasibility,5,"Horikawa 2020(선택) -> MC(검증), 같은 2,180개 풀, 피험자 비중복"
+RQ-10,Methodological Rigor,4,"클립 보류, 사전 등록, 분석자 노출 기록. EmoMind가 MC를 분석한 사실이 노출 위험"
+RQ-10,Falsifiability,5,선택 집합 차이가 없으면 반증
+RQ-10,Interpretability,4,성공률로 해석 명확
+RQ-10,Generalizability,3,같은 자극 풀 안의 검증
+RQ-10,Feasibility,4,encoder 학습과 선택은 가벼움
+RQ-11,Novelty,3,NeuroVolve가 amygdala 선호 자극을 합성(표정 얼굴)
+RQ-11,Neuroscientific Importance,3,amygdala 선택성의 환원 여부
+RQ-11,AI / Modeling Contribution,4,다중 영역 제약 생성
+RQ-11,Dataset Feasibility,3,Horikawa encoder 학습 가능하나 amygdala 신호 신뢰도가 낮고 결론은 R1
+RQ-11,Methodological Rigor,3,"AI다움 통제, 범주 영역 고정"
+RQ-11,Falsifiability,3,제약 아래 효과 유무로 반증
+RQ-11,Interpretability,3,R1이라 실제 뇌 결론으로 옮기기 어렵다
+RQ-11,Generalizability,2,새 fMRI 없이는 확증 불가
+RQ-11,Feasibility,3,생성 최적화 계산량
+RQ-12,Novelty,3,"모델 쪽 판별 검정(Peiris 2026), Kuleshov fMRI 선행"
+RQ-12,Neuroscientific Importance,4,정서 대 상황 의미 해리
+RQ-12,AI / Modeling Contribution,4,편집과 MLLM 상황 기술
+RQ-12,Dataset Feasibility,3,"자연 쌍은 Horikawa, Emo-FilM에서 드물고 편집 쌍은 R1"
+RQ-12,Methodological Rigor,3,편집이 저수준 통계를 바꾼다
+RQ-12,Falsifiability,3,ROI가 어느 유사도를 따르는지로 판정
+RQ-12,Interpretability,3,자연 쌍과 편집 쌍 결과가 다르면 해석 복잡
+RQ-12,Generalizability,3,다른 데이터셋 적용 가능
+RQ-12,Feasibility,2,편집 생성 비용
+RQ-13,Novelty,4,OT positivity 진단을 정서 자극에 적용한 사례 없음
+RQ-13,Neuroscientific Importance,3,어떤 정서 구분이 원리상 검정 가능한지 정하는 진단(방법 쪽 기여가 크다)
+RQ-13,AI / Modeling Contribution,2,embedding은 매칭 공간
+RQ-13,Dataset Feasibility,5,"Horikawa + MC 2,180개 클립에서 바로 가능"
+RQ-13,Methodological Rigor,4,매칭 공간 선택에 민감도 분석 필요
+RQ-13,Falsifiability,3,진단 연구라 가설 반증보다 해석 범위 지정
+RQ-13,Interpretability,4,매칭률은 해석이 명확
+RQ-13,Generalizability,4,"Emo-FilM, NSD에도 같은 진단 적용"
+RQ-13,Feasibility,5,계산 가벼움
+RQ-14,Novelty,4,visual semantic role labeling을 appraisal과 뇌에 연결한 사례 미확인
+RQ-14,Neuroscientific Importance,4,"appraisal 이론의 행위 주체, 원인 변수를 자극 계산으로"
+RQ-14,AI / Modeling Contribution,4,CV situation recognition 이전
+RQ-14,Dataset Feasibility,3,Emo-FilM Agent appraisal 1 Hz 평정 있음. 영화 전체에 VidSitu 모델 품질은 미확인. Horikawa는 정적 판본만
+RQ-14,Methodological Rigor,3,"의미역 feature와 캡션 embedding의 공선성, AI 생성 feature"
+RQ-14,Falsifiability,4,고유 설명량이 없으면 반증
+RQ-14,Interpretability,4,의미역별 결과는 해석 가능
+RQ-14,Generalizability,3,Spacetop 영상에도 적용 가능
+RQ-14,Feasibility,3,모델 실행과 품질 검증 필요
+RQ-15,Novelty,3,출력 기반 embedding과 뇌 비교(Du 2025) 있음. 같은 forward pass 내부 대 출력 비교가 새로움
+RQ-15,Neuroscientific Importance,3,주로 AI 라벨 측정 방식의 타당성
+RQ-15,AI / Modeling Contribution,5,모델 내부 표상 자체가 연구 대상
+RQ-15,Dataset Feasibility,4,"Horikawa + MC, 공개 VLM"
+RQ-15,Methodological Rigor,4,"matched-complexity null, 시각 이중 통제"
+RQ-15,Falsifiability,4,두 측정 차이가 없으면 반증
+RQ-15,Interpretability,3,기계 1차 상태와 보고의 구분은 개념적으로 논쟁적
+RQ-15,Generalizability,4,"다른 데이터셋, 모델에 적용 가능"
+RQ-15,Feasibility,4,VLM 추론 비용은 중간
+RQ-16,Novelty,3,지각 대 추론 정서 공통 부호(Skerry & Saxe 2014) 있음
+RQ-16,Neuroscientific Importance,4,정서 표상의 주체 결속
+RQ-16,AI / Modeling Contribution,3,LLM 관점 무차별 기준선
+RQ-16,Dataset Feasibility,3,"Spacetop 세 과제가 같은 참가자. 과제마다 자극 길이, 양식, 평정 척도가 달라 비교가 거칠다. Horikawa에서는 불가"
+RQ-16,Methodological Rigor,3,과제 차이 교란
+RQ-16,Falsifiability,4,교차 decoding으로 반증 가능
+RQ-16,Interpretability,3,일반화 차이의 원인이 관점인지 과제 차이인지 섞인다
+RQ-16,Generalizability,3,Spacetop 안에서만
+RQ-16,Feasibility,4,표준 분석
+RQ-17,Novelty,3,alt-test는 있음. Emo-FilM 50항목별 대체 가능성과 뇌 지도 비교가 새로움
+RQ-17,Neuroscientific Importance,3,AI 라벨 사용 범위를 정하는 기반
+RQ-17,AI / Modeling Contribution,4,MLLM 평정자의 관점 조작
+RQ-17,Dataset Feasibility,5,Emo-FilM 평정자별 1 Hz 원자료 공개
+RQ-17,Methodological Rigor,4,alt-test 최소 조건 충족
+RQ-17,Falsifiability,4,항목별 판정이 명확
+RQ-17,Interpretability,4,결과가 바로 사용 지침이 된다
+RQ-17,Generalizability,4,다른 평정 데이터에 적용 가능
+RQ-17,Feasibility,3,영화 전체를 1 Hz 창으로 MLLM 평정하는 비용
+RQ-18,Novelty,4,라벨 출처를 view로 둔 식별 가능 분해의 뇌 지도는 없음(Round 4 두 에이전트 수렴)
+RQ-18,Neuroscientific Importance,4,각 라벨 출처가 뇌의 무엇을 반영하는지
+RQ-18,AI / Modeling Contribution,4,식별 가능한 multi-view 학습
+RQ-18,Dataset Feasibility,4,"Emo-FilM 평정자와 MLLM, Spacetop 본인 보고"
+RQ-18,Methodological Rigor,3,"식별 가능성 가정이 데이터에서 성립하는지 불확실, view 수가 적다"
+RQ-18,Falsifiability,3,예측(인간 고유 잔차는 insula)이 있으나 대안 설명이 많다
+RQ-18,Interpretability,3,성분 해석이 모형 가정에 의존
+RQ-18,Generalizability,3,데이터셋마다 출처 구성이 다름
+RQ-18,Feasibility,4,계산 가능
+RQ-19,Novelty,3,전체 RSA 비교는 있음. rank 대역별 출처 비교는 미확인
+RQ-19,Neuroscientific Importance,3,AI 라벨의 신경 해상도 한계
+RQ-19,AI / Modeling Contribution,3,MLLM 추정 평정
+RQ-19,Dataset Feasibility,5,Horikawa + MC 바로 가능
+RQ-19,Methodological Rigor,4,RQ-01 신뢰 대역 위에서 계산
+RQ-19,Falsifiability,4,대역별 하락 곡선 비교로 반증 가능
+RQ-19,Interpretability,4,해석 명확
+RQ-19,Generalizability,3,같은 자극 안
+RQ-19,Feasibility,5,가벼움
+RQ-20,Novelty,3,전이 비대칭은 Ke 2025가 보고
+RQ-20,Neuroscientific Importance,4,데이터셋 간 불일치의 원인
+RQ-20,AI / Modeling Contribution,3,encoder를 다리로 사용
+RQ-20,Dataset Feasibility,3,"공유 자극이 없고 라벨 공간이 34, 50, 7차원으로 달라 대응 규칙이 필요"
+RQ-20,Methodological Rigor,2,자극 차이와 라벨 출처 차이가 데이터셋 단위로 함께 바뀌어 분리하기 어렵다
+RQ-20,Falsifiability,3,축별 전이 예측 가능
+RQ-20,Interpretability,2,실패 원인 분해가 데이터셋 3개로는 약하다
+RQ-20,Generalizability,4,여러 데이터셋을 직접 다룬다
+RQ-20,Feasibility,3,대응 규칙 설계 비용
+RQ-21,Novelty,3,"Woo 2017(SIIPS1), Li 2025, Chen 2020이 가깝다. 같은 사람의 본인 보고로 정서 영상에서 검정하는 것은 새로움"
+RQ-21,Neuroscientific Importance,5,본인 경험 보고가 자극 너머 뇌 정보를 반영하는가
+RQ-21,AI / Modeling Contribution,2,A* 이후 AI 기준선은 주 분석에서 빠짐
+RQ-21,Dataset Feasibility,3,"Spacetop 유효 표본 40~57명, 결측이 시행 단위로 몰림. Horikawa에는 본인 보고 없음"
+RQ-21,Methodological Rigor,4,"양방향 중심화, 유병률, 검정력 시뮬레이션 관문"
+RQ-21,Falsifiability,4,관계가 없으면 반증
+RQ-21,Interpretability,3,약한 형태로만 해석('자극과 평균 관찰자로 설명되지 않는가')
+RQ-21,Generalizability,3,Emo-FilM 사후 평정으로 부분 재현
+RQ-21,Feasibility,4,표준 위계 모형
+RQ-22,Novelty,3,혼합 정서 fMRI(Vaccaro 2024) 있음. 평정 불일치의 시간 고정 성분과 연결은 새로움
+RQ-22,Neuroscientific Importance,4,혼합 정서의 신경 형식
+RQ-22,AI / Modeling Contribution,1,AI 기여 없음
+RQ-22,Dataset Feasibility,4,Emo-FilM 평정자별 원자료. 평정자와 fMRI 참가자가 다른 사람
+RQ-22,Methodological Rigor,3,불일치가 평정자 잡음일 가능성
+RQ-22,Falsifiability,3,중첩 대 별도 상태 모형 비교
+RQ-22,Interpretability,3,불일치를 자극 모호성으로 읽는 가정
+RQ-22,Generalizability,2,Emo-FilM 전용
+RQ-22,Feasibility,4,가능
+RQ-23,Novelty,3,peak-end 행동 연구 많음. 뇌 느린 상태와 연결은 부분적으로 새로움
+RQ-23,Neuroscientific Importance,3,회고 보고의 생성 규칙
+RQ-23,AI / Modeling Contribution,1,AI 기여 없음
+RQ-23,Dataset Feasibility,3,"Emo-FilM 영화 14편, 참가자 사후 평정 일부. 사람당 자료점이 적다"
+RQ-23,Methodological Rigor,2,요약 규칙 후보 간 공선성
+RQ-23,Falsifiability,3,규칙 간 비교 가능
+RQ-23,Interpretability,3,해석 가능
+RQ-23,Generalizability,3,Spacetop 사후 평정으로 확장
+RQ-23,Feasibility,4,가능
+RQ-24,Novelty,3,"Li 2024, Ekman 2023이 방향성 SR을 다른 영역에서 수행"
+RQ-24,Neuroscientific Importance,4,정서 지도가 미래를 향해 조직되는가
+RQ-24,AI / Modeling Contribution,2,모델 기여 작음
+RQ-24,Dataset Feasibility,3,1 Hz consensus는 경험된 전이가 아니고 영화 14편
+RQ-24,Methodological Rigor,4,"수학 정정 후 시간 역전 null, 식별 가능성 시뮬레이션"
+RQ-24,Falsifiability,4,전향 예측 우위가 없으면 반증
+RQ-24,Interpretability,3,평정 지연과 HRF 지연 대안이 남는다
+RQ-24,Generalizability,2,Emo-FilM 전용
+RQ-24,Feasibility,4,0단계는 평정만으로 저비용
+RQ-25,Novelty,3,world model surprise와 뇌 정렬 연구 증가. appraisal 유형별 분리가 새로움
+RQ-25,Neuroscientific Importance,4,정서적 놀람의 예측 수준
+RQ-25,AI / Modeling Contribution,5,V-JEPA 2 predictor 신호가 연구 질문의 핵심
+RQ-25,Dataset Feasibility,4,"Emo-FilM Suddenly, Predictable appraisal 1 Hz"
+RQ-25,Methodological Rigor,3,"surprise가 컷, 운동과 공선. TRIBE 공변량으로 일부 통제"
+RQ-25,Falsifiability,4,신호 종류별 분리가 없으면 반증
+RQ-25,Interpretability,3,모델 surprise의 의미 해석
+RQ-25,Generalizability,3,Spacetop으로 부분 확장
+RQ-25,Feasibility,3,영화 14편 전체 모델 추론
+RQ-26,Novelty,3,"Pichon 2015, Tambini 2017이 정서 지속을 보고. 데이터셋 내부 무작위 순서와 부분공간 대조가 새로움"
+RQ-26,Neuroscientific Importance,4,정서 관성의 HRF와 구분되는 증거
+RQ-26,AI / Modeling Contribution,2,모델 기여 작음
+RQ-26,Dataset Feasibility,5,"MC 테스트 run 의사 무작위 순서, 보유와 전처리 완료. 전처리본이 시계열인지 블록 평균인지는 확인 필요"
+RQ-26,Methodological Rigor,4,"부분공간 대조가 HRF 통제, τ 식별 가능성 시뮬레이션"
+RQ-26,Falsifiability,4,정서 부분공간 감쇠가 시각보다 느리지 않으면 반증
+RQ-26,Interpretability,4,해석 명확(R3-internal 후보)
+RQ-26,Generalizability,3,"Horikawa 고정 순서, Emo-FilM washout으로 보조"
+RQ-26,Feasibility,5,가벼움
+RQ-27,Novelty,3,MLLM 단일 프레임 한계는 보고됨
+RQ-27,Neuroscientific Importance,3,정서 정보의 시간 통합 위치
+RQ-27,AI / Modeling Contribution,3,MLLM으로 클립 분류
+RQ-27,Dataset Feasibility,4,Horikawa + MC 가능
+RQ-27,Methodological Rigor,3,클립 유형 정의가 AI 라벨에 의존
+RQ-27,Falsifiability,3,영역 차이가 없으면 반증
+RQ-27,Interpretability,3,해석 가능
+RQ-27,Generalizability,3,Emo-FilM에 문맥 길이 sweep으로 확장
+RQ-27,Feasibility,4,가능
+RQ-28,Novelty,4,DSA를 영화 정서 fMRI에 적용한 사례 없음
+RQ-28,Neuroscientific Importance,3,정서 표상의 보존 단위가 흐름인가
+RQ-28,AI / Modeling Contribution,2,모델 기여 작음
+RQ-28,Dataset Feasibility,3,"Emo-FilM 영화 14편, 영화별 길이가 짧아 동역학 추정이 불안정"
+RQ-28,Methodological Rigor,3,자극 구동 대리 궤적 대조
+RQ-28,Falsifiability,3,DSA 거리가 Procrustes보다 작지 않으면 반증
+RQ-28,Interpretability,3,흐름 보존의 의미 해석
+RQ-28,Generalizability,4,데이터셋 간 비교로 확장 가능
+RQ-28,Feasibility,4,가능
+RQ-29,Novelty,3,Thornton 2019가 통제 과제에서 같은 논리
+RQ-29,Neuroscientific Importance,3,정서 전이 지식의 일반성
+RQ-29,AI / Modeling Contribution,3,LLM 전이 사전확률
+RQ-29,Dataset Feasibility,3,Emo-FilM 보류 영화
+RQ-29,Methodological Rigor,3,상태 정의에 민감
+RQ-29,Falsifiability,4,언어 사전확률이 무작위보다 낫지 않으면 반증
+RQ-29,Interpretability,3,해석 가능
+RQ-29,Generalizability,4,다른 영화로 일반화
+RQ-29,Feasibility,4,가능
+RQ-30,Novelty,4,곡률 깨짐을 정서적 놀람에 연결한 사례 없음
+RQ-30,Neuroscientific Importance,3,모델 무관 놀람 지표
+RQ-30,AI / Modeling Contribution,4,video SSL 궤적 기하
+RQ-30,Dataset Feasibility,3,Spacetop 짧은 TR이 유리하나 연속 정서 평정이 없다. Emo-FilM은 Suddenly 평정 있음
+RQ-30,Methodological Rigor,3,"컷, AR 구조, 사건 경계 통제"
+RQ-30,Falsifiability,3,예측력이 없으면 반증
+RQ-30,Interpretability,3,곡률 의미 해석
+RQ-30,Generalizability,3,두 데이터셋
+RQ-30,Feasibility,4,가능
+RQ-31,Novelty,4,인간 fMRI 정서 영역 straightening 선행 미확인
+RQ-31,Neuroscientific Importance,3,정서 영역의 시간 재부호화
+RQ-31,AI / Modeling Contribution,3,encoder 궤적 비교
+RQ-31,Dataset Feasibility,3,"Spacetop, Emo-FilM"
+RQ-31,Methodological Rigor,2,HRF 평활과 잡음이 곡률을 크게 바꾼다
+RQ-31,Falsifiability,3,영역 간 곡률 차이가 없으면 반증
+RQ-31,Interpretability,3,해석 가능
+RQ-31,Generalizability,3,다른 데이터셋 가능
+RQ-31,Feasibility,4,가능
+RQ-32,Novelty,4,arousal을 상태 변화 속도로 정의한 검정은 미확인
+RQ-32,Neuroscientific Importance,4,arousal의 동역학적 정의
+RQ-32,AI / Modeling Contribution,1,AI 기여 없음
+RQ-32,Dataset Feasibility,4,Emo-FilM arousal 1 Hz와 참가자 EDA
+RQ-32,Methodological Rigor,3,"속도가 사건 경계, 움직임과 공선"
+RQ-32,Falsifiability,4,속도가 활성보다 낫지 않으면 반증
+RQ-32,Interpretability,4,해석 명확
+RQ-32,Generalizability,4,"Spacetop, Horikawa로 확장 가능"
+RQ-32,Feasibility,5,가벼움
+RQ-33,Novelty,4,Kuleshov 효과를 자연 영상의 실제 순서 변이로 검정한 사례 없음
+RQ-33,Neuroscientific Importance,4,맥락에 따른 정서 해석
+RQ-33,AI / Modeling Contribution,3,in-silico 재현 비교
+RQ-33,Dataset Feasibility,4,MC 반복 노출(최대 11회)마다 직전 클립이 다름. 클립별 직전 클립 정서 범위 확인 필요
+RQ-33,Methodological Rigor,3,"HRF 겹침, 반복 억제 교란"
+RQ-33,Falsifiability,4,동화/대비 부호가 0이면 반증
+RQ-33,Interpretability,4,해석 명확
+RQ-33,Generalizability,2,MC 전용
+RQ-33,Feasibility,4,가능
+RQ-34,Novelty,3,"Thornton & Tamir 2024, Morgenroth 2026"
+RQ-34,Neuroscientific Importance,4,정서 범주 대 행동 경향
+RQ-34,AI / Modeling Contribution,3,latent action
+RQ-34,Dataset Feasibility,3,"Emo-FilM Motivation 항목 신뢰도 0.21~0.60, RQ-39 관문 전"
+RQ-34,Methodological Rigor,3,"공선성, 카메라 운동"
+RQ-34,Falsifiability,3,분리 불가가 가장 가능성 높은 결과
+RQ-34,Interpretability,3,해석 가능
+RQ-34,Generalizability,2,행동 경향 라벨이 Emo-FilM에만
+RQ-34,Feasibility,4,가능
+RQ-35,Novelty,3,과제 기반 단변량 분리(Berkman & Lieberman 2010)
+RQ-35,Neuroscientific Importance,4,동기 방향의 독립성
+RQ-35,AI / Modeling Contribution,1,AI 기여 없음
+RQ-35,Dataset Feasibility,3,"Emo-FilM Motivation 평정, 0단계 관문"
+RQ-35,Methodological Rigor,3,평정 공선성
+RQ-35,Falsifiability,4,교차 일반화로 반증
+RQ-35,Interpretability,4,해석 명확
+RQ-35,Generalizability,2,Emo-FilM 전용
+RQ-35,Feasibility,5,가벼움
+RQ-36,Novelty,4,null space 개념의 정서 적용 없음
+RQ-36,Neuroscientific Importance,3,행동 준비의 형식
+RQ-36,AI / Modeling Contribution,1,AI 기여 없음
+RQ-36,Dataset Feasibility,2,Spacetop 다른 과제 trackball 응답으로 실행 부분공간을 추정해야 하고 HRF 겹침
+RQ-36,Methodological Rigor,2,voxel 부분공간은 신경 집단 부분공간이 아니다
+RQ-36,Falsifiability,3,직교 성분이 정서 강도와 무관하면 반증
+RQ-36,Interpretability,2,거시 유비라 해석이 약하다
+RQ-36,Generalizability,2,Spacetop 전용
+RQ-36,Feasibility,4,가능
+RQ-37,Novelty,4,영화 사운드트랙 groove와 행동 경향 연결 없음
+RQ-37,Neuroscientific Importance,3,소리가 운반하는 행동 경향
+RQ-37,AI / Modeling Contribution,3,오디오 표상
+RQ-37,Dataset Feasibility,3,Emo-FilM. Horikawa 무음 대조는 탐색적
+RQ-37,Methodological Rigor,3,groove와 음악 정서 공선
+RQ-37,Falsifiability,4,variance partitioning으로 반증
+RQ-37,Interpretability,3,해석 가능
+RQ-37,Generalizability,2,Emo-FilM 전용
+RQ-37,Feasibility,4,가능
+RQ-38,Novelty,3,게임 플레이 fMRI 행동 모형 정렬(Oota 2026)
+RQ-38,Neuroscientific Importance,3,행동 추론 목표와 정서
+RQ-38,AI / Modeling Contribution,5,목표만 바꾼 모델 비교
+RQ-38,Dataset Feasibility,3,V-JEPA 2-AC는 로봇 데이터 학습이라 영화 적용 타당성 미확인
+RQ-38,Methodological Rigor,3,같은 encoder 위 비교
+RQ-38,Falsifiability,4,이득이 없으면 반증
+RQ-38,Interpretability,3,해석 가능
+RQ-38,Generalizability,3,데이터셋 교차 검증
+RQ-38,Feasibility,3,모델 실행
+RQ-39,Novelty,4,"Axis V 측정 타당성을 인간, AI, 뇌로 MTMM 검증한 사례 없음"
+RQ-39,Neuroscientific Importance,3,측정 관문
+RQ-39,AI / Modeling Contribution,3,AI를 하나의 방법으로
+RQ-39,Dataset Feasibility,5,Emo-FilM 바로 가능
+RQ-39,Methodological Rigor,4,MTMM 표준
+RQ-39,Falsifiability,5,수렴/변별 실패 기준 명확
+RQ-39,Interpretability,4,해석 명확
+RQ-39,Generalizability,2,Emo-FilM 전용
+RQ-39,Feasibility,5,가벼움
+RQ-40,Novelty,4,empowerment를 정서 appraisal에 연결한 사례 없음
+RQ-40,Neuroscientific Importance,3,통제 가능성 appraisal의 자극 계산
+RQ-40,AI / Modeling Contribution,5,내재 동기 개념의 이전
+RQ-40,Dataset Feasibility,3,Emo-FilM. latent action model로 영화 empowerment 추정의 타당성 미검증
+RQ-40,Methodological Rigor,2,추정량 자체가 검증되지 않았다
+RQ-40,Falsifiability,3,예측력 없으면 반증
+RQ-40,Interpretability,3,해석 가능
+RQ-40,Generalizability,2,Emo-FilM 전용
+RQ-40,Feasibility,2,empowerment 추정 계산과 방법 개발
+RQ-41,Novelty,3,Saarimäki 2016(지각에서 심상으로 정서 decoding 일반화)
+RQ-41,Neuroscientific Importance,4,회상된 정서와 내성 보고
+RQ-41,AI / Modeling Contribution,3,지각 decoder와 성분 분해
+RQ-41,Dataset Feasibility,4,"MC 회상과 vividness 보유. 6명, vividness 3~4점 편중"
+RQ-41,Methodological Rigor,4,"cue 함축 정서와 의미 해독 통제, 서수 모형"
+RQ-41,Falsifiability,4,vividness 예측이 없으면 반증
+RQ-41,Interpretability,4,해석 명확
+RQ-41,Generalizability,2,MC 전용
+RQ-41,Feasibility,4,가능
+RQ-42,Novelty,4,우선순위 재생 이론의 정서 회상 적용 없음
+RQ-42,Neuroscientific Importance,3,정서 기억 재활성의 계산 원리
+RQ-42,AI / Modeling Contribution,2,모델 기여 작음
+RQ-42,Dataset Feasibility,3,"MC. gain 대리 변수(놀람, 가치 변화)가 직접 측정되지 않았다"
+RQ-42,Methodological Rigor,2,대리 변수 타당성
+RQ-42,Falsifiability,3,각성보다 낫지 않으면 반증
+RQ-42,Interpretability,3,해석 가능
+RQ-42,Generalizability,2,MC 전용
+RQ-42,Feasibility,4,가능
+RQ-43,Novelty,4,vividness를 기억성과 내성으로 분해한 사례 미확인
+RQ-43,Neuroscientific Importance,4,내성 보고의 출처
+RQ-43,AI / Modeling Contribution,2,LLM introspection 설계 논리 차용
+RQ-43,Dataset Feasibility,4,"MC 반복 회상, 클립별 vividness"
+RQ-43,Methodological Rigor,4,item 안/item 간 분해가 깔끔
+RQ-43,Falsifiability,4,item 안 성분이 재활성과 무관하면 반증
+RQ-43,Interpretability,4,해석 명확
+RQ-43,Generalizability,2,MC 전용
+RQ-43,Feasibility,5,가벼움
+RQ-44,Novelty,4,회상의 생성적 재구성을 정서 부분공간에서 검정한 사례 없음(Round 4 두 에이전트 수렴)
+RQ-44,Neuroscientific Importance,5,schema 설명(LeDoux & Brown) 대 NEVER를 회상 데이터로 맞대기
+RQ-44,AI / Modeling Contribution,4,캡션 기반 encoding과 cue 생성 영상
+RQ-44,Dataset Feasibility,4,MC 회상과 캡션 보유. 생성 영상은 R1
+RQ-44,Methodological Rigor,3,예측원마다 신뢰도가 달라 비교가 기울 수 있다
+RQ-44,Falsifiability,4,원 클립 예측이 우세하면 재구성 가설 반증
+RQ-44,Interpretability,4,해석 명확
+RQ-44,Generalizability,2,MC 전용
+RQ-44,Feasibility,3,비디오 생성 계산량
+RQ-45,Novelty,4,기계 재현 지수와 뇌 회상 재현 비교 없음
+RQ-45,Neuroscientific Importance,3,회상 정서의 언어 병목
+RQ-45,AI / Modeling Contribution,4,모델 내부 정서 방향
+RQ-45,Dataset Feasibility,4,MC
+RQ-45,Methodological Rigor,3,클립 수 72개로 상관 추정
+RQ-45,Falsifiability,3,상관이 없으면 반증
+RQ-45,Interpretability,3,해석이 모델 표상 가정에 의존
+RQ-45,Generalizability,2,MC 전용
+RQ-45,Feasibility,4,가능
+RQ-46,Novelty,4,전달 사슬과 개인 회상 연결 없음
+RQ-46,Neuroscientific Importance,3,집단과 개인 기억 편향
+RQ-46,AI / Modeling Contribution,3,LLM 전달 사슬
+RQ-46,Dataset Feasibility,3,"인간 사슬은 신규 수집, LLM 사슬만 바로 가능"
+RQ-46,Methodological Rigor,2,LLM 사슬이 인간 집단 편향을 대표하는지
+RQ-46,Falsifiability,3,상관이 없으면 반증
+RQ-46,Interpretability,2,해석 단계가 길다
+RQ-46,Generalizability,2,MC 전용
+RQ-46,Feasibility,3,신규 수집 비용
+RQ-47,Novelty,3,NSD-Imagery의 심상 decoding 모델 비교
+RQ-47,Neuroscientific Importance,3,회상의 표상 형식
+RQ-47,AI / Modeling Contribution,4,학습 목표별 공간
+RQ-47,Dataset Feasibility,4,MC
+RQ-47,Methodological Rigor,3,목표별 모델의 다른 차이 통제
+RQ-47,Falsifiability,3,이동이 없으면 반증
+RQ-47,Interpretability,3,해석 가능
+RQ-47,Generalizability,2,MC 전용
+RQ-47,Feasibility,4,가능
+RQ-48,Novelty,3,"전역 자율신경 결합(Bolt 2025)은 보고, limbic encoding 잔차 분해는 없음"
+RQ-48,Neuroscientific Importance,4,encoder의 limbic 실패 원인
+RQ-48,AI / Modeling Contribution,3,"TRIBE v2, MLLM 기준선"
+RQ-48,Dataset Feasibility,4,Emo-FilM 참가자 생리 공개
+RQ-48,Methodological Rigor,3,생리의 지위(매개 대 교란) 미합의
+RQ-48,Falsifiability,3,4원 분할 결과의 반증 조건이 약하다
+RQ-48,Interpretability,3,해석 규칙 미합의
+RQ-48,Generalizability,3,Spacetop 생리는 미공개
+RQ-48,Feasibility,3,생리 전처리와 분할
+RQ-49,Novelty,2,Kragel 2021 등 피질하 경로 연구가 있다
+RQ-49,Neuroscientific Importance,4,피질하 정서 경로
+RQ-49,AI / Modeling Contribution,2,모델 기여 작음
+RQ-49,Dataset Feasibility,2,"3T에서 작은 핵, 효과 작음(0.055). MC TE 30 ms"
+RQ-49,Methodological Rigor,4,내장 양성/음성 대조 관문
+RQ-49,Falsifiability,4,관문 실패 자체가 결과
+RQ-49,Interpretability,3,해석 가능
+RQ-49,Generalizability,3,"Spacetop, MC, Horikawa"
+RQ-49,Feasibility,4,가능
+RQ-50,Novelty,3,"Ke 2025, Zaffina 2026이 전이 비대칭만 보고"
+RQ-50,Neuroscientific Importance,4,arousal과 valence의 표상 차이
+RQ-50,AI / Modeling Contribution,1,AI 기여 없음
+RQ-50,Dataset Feasibility,4,"Emo-FilM 주, Horikawa + MC 보조"
+RQ-50,Methodological Rigor,3,전역 성분과 arousal 공선
+RQ-50,Falsifiability,4,rank 대역 차이가 없으면 반증
+RQ-50,Interpretability,4,해석 명확
+RQ-50,Generalizability,4,여러 데이터셋
+RQ-50,Feasibility,5,가벼움
+RQ-51,Novelty,3,"EmoMind RSA, NeurIPS 2026 TRIBE v2 평가(검색 색인)"
+RQ-51,Neuroscientific Importance,3,in-silico 결과의 해석 범위(관문)
+RQ-51,AI / Modeling Contribution,4,백본 대비 뇌 투영 충실도
+RQ-51,Dataset Feasibility,5,"MC 반복 ceiling, Horikawa, Emo-FilM"
+RQ-51,Methodological Rigor,4,"관찰 신뢰도 정규화, LOO 인간 기준선"
+RQ-51,Falsifiability,4,사전 결정 규칙
+RQ-51,Interpretability,4,해석 명확
+RQ-51,Generalizability,4,여러 데이터셋
+RQ-51,Feasibility,4,TRIBE v2 추론
+RQ-52,Novelty,2,Lettieri 2024 등 양식 기여 연구가 있다
+RQ-52,Neuroscientific Importance,3,소리 의존 정서 항목
+RQ-52,AI / Modeling Contribution,3,in-silico stem 제거
+RQ-52,Dataset Feasibility,4,Emo-FilM. Horikawa와 MC는 무음이라 쓰지 않는다(사용자 확인)
+RQ-52,Methodological Rigor,3,"stem 분리 품질, R0와 R1 비교의 가정"
+RQ-52,Falsifiability,3,일치하지 않으면 모델 타당성 문제
+RQ-52,Interpretability,3,해석 가능
+RQ-52,Generalizability,2,Emo-FilM 전용
+RQ-52,Feasibility,3,분리와 추론
+RQ-53,Novelty,3,모델 사이 정렬 운반(Xing 2026)
+RQ-53,Neuroscientific Importance,3,정서 기하의 정렬 차원
+RQ-53,AI / Modeling Contribution,3,정렬 방법
+RQ-53,Dataset Feasibility,4,Horikawa + MC site 간 쌍
+RQ-53,Methodological Rigor,3,저정서 클립 정의가 규범 평정에 의존
+RQ-53,Falsifiability,4,운반 여부로 반증
+RQ-53,Interpretability,3,해석 가능
+RQ-53,Generalizability,3,확장 가능
+RQ-53,Feasibility,4,가능
+RQ-54,Novelty,3,EmoNet(Kragel 2019)
+RQ-54,Neuroscientific Importance,4,정서 하위체계의 계산적 기원
+RQ-54,AI / Modeling Contribution,4,과제 최적화 모델
+RQ-54,Dataset Feasibility,4,"EmoSet 공개, Horikawa, MC, NSD로 평가. EmoNet은 leakage라 제외"
+RQ-54,Methodological Rigor,3,EmoSet 라벨 품질과 사전학습 오염
+RQ-54,Falsifiability,3,고유 설명량이 없으면 반증
+RQ-54,Interpretability,3,해석 가능
+RQ-54,Generalizability,4,여러 데이터셋
+RQ-54,Feasibility,3,모델 학습 필요
+RQ-55,Novelty,3,모델 비교 연구 많음. 목표만 바꾼 통제 비교는 드묾
+RQ-55,Neuroscientific Importance,3,학습 압력과 정서 구조
+RQ-55,AI / Modeling Contribution,4,목표 통제
+RQ-55,Dataset Feasibility,3,구조와 데이터가 같은 공개 checkpoint 조합이 없을 수 있다
+RQ-55,Methodological Rigor,3,checkpoint 차이 통제 한계
+RQ-55,Falsifiability,3,차이가 없으면 반증
+RQ-55,Interpretability,3,해석 가능
+RQ-55,Generalizability,3,확장 가능
+RQ-55,Feasibility,3,모델 확보
+RQ-56,Novelty,3,사회 인지 brain-tuning(Policzer 2025)
+RQ-56,Neuroscientific Importance,3,뇌 정서 표상의 정보 가치
+RQ-56,AI / Modeling Contribution,5,뇌를 학습 목표로
+RQ-56,Dataset Feasibility,3,학습 데이터가 11명 규모
+RQ-56,Methodological Rigor,3,"과적합, 라벨 미세조정 대조"
+RQ-56,Falsifiability,4,정렬 이득이 없으면 반증
+RQ-56,Interpretability,3,해석 가능
+RQ-56,Generalizability,3,평가 데이터셋 여럿
+RQ-56,Feasibility,2,미세조정 계산량
+RQ-57,Novelty,3,양식별 기여(Lettieri 2024)
+RQ-57,Neuroscientific Importance,3,대사 정서의 층
+RQ-57,AI / Modeling Contribution,3,ASR + LLM
+RQ-57,Dataset Feasibility,3,Emo-FilM 대사 분량이 영화마다 다르고 전사 없음
+RQ-57,Methodological Rigor,3,어휘와 추론 feature 공선
+RQ-57,Falsifiability,3,decoding 변화로 반증
+RQ-57,Interpretability,3,해석 가능
+RQ-57,Generalizability,2,"Emo-FilM, Spacetop narratives"
+RQ-57,Feasibility,4,가능
+RQ-58,Novelty,3,서사 surprise와 사건 경계 연구
+RQ-58,Neuroscientific Importance,3,서사 예측의 시간 척도
+RQ-58,AI / Modeling Contribution,4,LLM 예측 분포
+RQ-58,Dataset Feasibility,3,"Spacetop narratives 8편, clip 단위 평정"
+RQ-58,Methodological Rigor,3,두 예측오차 공선
+RQ-58,Falsifiability,3,고유 설명량으로 반증
+RQ-58,Interpretability,3,해석 가능
+RQ-58,Generalizability,2,Spacetop 전용
+RQ-58,Feasibility,4,가능
+RQ-59,Novelty,4,양식 상충과 평정 불일치 연결 없음
+RQ-59,Neuroscientific Importance,3,불일치의 한 원인
+RQ-59,AI / Modeling Contribution,3,encoder 양식 귀속
+RQ-59,Dataset Feasibility,4,Emo-FilM 평정자별 원자료
+RQ-59,Methodological Rigor,2,attribution의 타당성이 검증되지 않았다
+RQ-59,Falsifiability,3,상관이 없으면 반증
+RQ-59,Interpretability,2,해석 단계가 길다
+RQ-59,Generalizability,2,Emo-FilM 전용
+RQ-59,Feasibility,4,가능
+RQ-60,Novelty,3,소리 암시 무음 영상의 청각피질 활동(Meyer 2010). 정서와 연결은 새로움
+RQ-60,Neuroscientific Importance,3,무음 정서 처리의 다중감각 예측
+RQ-60,AI / Modeling Contribution,4,video-to-audio 생성 feature
+RQ-60,Dataset Feasibility,5,"Horikawa + MC 클립 모두 무음(사용자 확인), 같은 자극 두 코호트"
+RQ-60,Methodological Rigor,3,생성 소리 feature가 시각 feature와 공선
+RQ-60,Falsifiability,4,고유 설명량이 없으면 반증
+RQ-60,Interpretability,3,생성 소리가 뇌의 암시 소리를 대표하는가
+RQ-60,Generalizability,2,무음 자극 데이터셋에 한정
+RQ-60,Feasibility,4,생성 계산은 중간
