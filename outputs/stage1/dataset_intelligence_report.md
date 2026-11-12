@@ -81,6 +81,8 @@
 | 연속 시간 평정 | Emo-FilM (1 Hz, 50항목) | 없음 | 없음 |
 | 자극/trial 단위 평정 | Horikawa (34 + 14) | Spacetop alignvideo (7차원), Spacetop narratives, Emo-FilM 사후 클립 회고 평정 (부분), NSD nsdmeadows (100장, 지시문 미확인이라 이 칸 배치는 잠정) | Spacetop faces (표정 강도), Spacetop shortvideo (인물 mentalizing) |
 
+> **Stage 2 정정 (emotion-theory Round 1, `outputs/agents/emotion-theory/round1.md` C4):** Spacetop에서는 같은 영상에 대한 **다른 fMRI 참가자들의 본인 평정 평균(peer 합의)** 을 만들 수 있다. 이는 별도 평정자 패널의 규범 평정은 아니지만, "본인 보고 vs 타인 평균"을 한 데이터셋 안에서 비교할 수 있게 한다. 아래 문단의 "Emo-FilM뿐"은 "별도 평정자 규범" 기준의 서술이며, peer 합의까지 포함하면 Spacetop도 해당한다.
+
 "규범 평정 vs 본인 보고가 뇌 반응을 얼마나 다르게 설명하는가"라는 질문을 **현재 공개 자료만으로 한 데이터셋 안에서** 직접 다룰 수 있는 곳은 **Emo-FilM뿐**이다. 그마저 본인 보고가 스캔 후 클립 재시청 회고 평정이고, 항목×영화당 3~4명, 영화 길이의 약 20%만 덮어 참가자 개인 수준 비교가 어렵다. **NSD에는 별도 평정자의 규범 평정이 없다**(dataset_NSD.md 2.3절). NSD에서 이 질문을 다루려면 shared 이미지에 규범 평정을 새로 수집해야 하고, 현재 자료로는 "본인 보고 vs AI 추정"만 비교할 수 있다. Spacetop도 영상에 규범 평정을 새로 모으면 같은 비교가 가능해진다.
 
 ### 3.3 공통 결합 경로 (라벨을 직접 합치지 않는 방법)
