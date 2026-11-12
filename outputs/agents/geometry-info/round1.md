@@ -38,8 +38,8 @@
 
 | # | 남은 공백 | 출처 | 우리 쪽 연결 |
 |---|---|---|---|
-| R1 | valence-arousal 외 차원(effort, certainty, situational control)의 지도 구조 | Nat Commun Discussion 9째 단락 [본문] | Emo-FilM appraisal 항목(Predictable, Controlled, Urgency 등) 사용. Zaffina 2026이 50항목 전체를 썼으나 지도 형식 검증은 아님(partially) |
-| R2 | TEM 외 RL 계열 모형 비교 | Nat Commun Discussion 9째 단락 [본문] | Chain C2 (successor representation) |
+| R1 | valence-arousal 외 차원(effort, certainty, situational control)의 지도 구조 | Nat Commun Discussion 8째 단락 [본문] | Emo-FilM appraisal 항목(Predictable, Controlled, Urgency 등) 사용. Zaffina 2026이 50항목 전체를 썼으나 지도 형식 검증은 아님(partially) |
+| R2 | TEM 외 RL 계열 모형 비교 | Nat Commun Discussion 8째 단락 [본문] | Chain C2 (successor representation) |
 | R3 | 정서 개념이 공유 통계 규칙인가, 개인 경험으로 구성된 ad hoc 범주인가 | Nat Commun Discussion 2째 단락 [본문] | Chain C1, C3, C8 |
 | R4 | graph형과 map형 표상의 관계 | Nat Commun Discussion 6째 단락 [본문] | Chain C2 (전이 그래프 기반 SR vs 연속 지도) |
 | R5 | 개인 특이적 grid-like code, 개인 affect dynamics가 hexagonal 변조 개인차를 낳는지 | PLOS Biol Discussion 3째 단락 [본문] | 0.2절, Chain C2, C4 |
@@ -58,7 +58,7 @@
 
 | 데이터셋 | 피험자 / 1인당 자료 | 라벨 주체 | 가능한 개인차 질문 | 불가능하거나 약한 질문 | 통계 단위와 주의 |
 |---|---|---|---|---|---|
-| **Horikawa** | 5명 / 2,181 고유 자극, 61 run, 반복 없음, 같은 순서 | 별도 평정자 집단 평균 | (1) 피험자별 정서 기하와 차원 스펙트럼. (2) 피험자 쌍(10쌍) 사이 cross-decomposition으로 rank별 공유 vs 고유 분산. (3) 개인 고유 편차가 **독립 자극 절반에서 재현되는가**(Westlin의 "구조화된 개인 변동" 주장의 직접 검정). (4) leave-one-subject-out 정렬 일반화. (5) 각 피험자를 독립 반복(N-of-1 replication)으로 보는 분석 | 형질, 인구학, 문화 효과(5명, 여 1명). 개인 경험과 뇌의 연결(본인 보고 없음). 개인 noise ceiling(반복 없음) | 결과는 피험자별로 보고. "5명 중 몇 명에서 재현"을 1차 지표로. 같은 순서라 순서 효과가 개인 간 공유 분산에 섞이므로 run/session 회귀와 자극 순서 permutation 필요 |
+| **Horikawa** | 5명 / 2,181 고유 자극, 61 run, 반복 없음, 같은 순서 | 별도 평정자 집단 평균 | (1) 피험자별 정서 기하와 차원 스펙트럼. (2) 피험자 쌍(10쌍) 사이 cross-decomposition으로 rank별 공유 vs 고유 분산. (3) 개인 고유 편차가 **독립 자극 절반에서 재현되는가**(Westlin의 "구조화된 개인 변동" 주장의 직접 검정). (4) leave-one-subject-out 정렬 일반화. (5) 각 피험자를 독립 반복(N-of-1 replication)으로 보는 분석 | 형질, 인구학, 문화 효과(5명, 여 1명). 개인 경험과 뇌의 연결(본인 보고 없음). 개인 noise ceiling(반복 없음) | 결과는 피험자별로 보고. "5명 중 몇 명에서 재현"을 1차 지표로. 같은 순서라 순서 효과가 개인 간 공유 분산에 섞이므로 run/session 회귀와 자극 순서 permutation 필요. Du 2023도 5명과 자극-반응 쌍 부족을 한계로 명시(doi:10.1016/j.isci.2023.107571, Limitations of the study 4째 단락 [본문]) |
 | **NSD** | 8명 / 약 10,000장, 3회 반복 | 정서 라벨 사실상 없음(100장 본인 평정) | 개인 내 반복 기반 신뢰도와 차원 스펙트럼(Gauthaman 2024 방식이 이미 시각 피질에 적용). 정서 관련 질문은 다른 데이터셋에서 얻은 정서 부분공간을 투사하는 형태만 | 정서 개인차 직접 검정 | AI 추정 라벨은 "AI 추정"으로 분리 표기 |
 | **Emo-FilM** | 30명 / 14편 약 2.7시간, 연속 시계열, 영화 전후 90초 washout | 별도 평정자 1 Hz consensus + 참가자 부분 사후 평정 + **참가자 본인 PPG, 호흡, EDA** + 질문지 | (1) 개인별 동역학(시점, 속도, 이완 시간상수)과 **같은 사람 생리**의 결합(개인 내 brain-body 결합). (2) 개인별 시간상수의 영화 간 신뢰도(형질성). (3) 공유 지도 + 개인별 통과 시점 모형 비교 | 질문지 형질과의 상관은 30명이라 탐색적. 개인 정서 경험 연속 보고 없음 | 영화 14편이라 영화 수준 confound. leave-one-film-out과 subject-level 분할을 동시에 |
 | **Spacetop** | 논문 N=101(저장소 117명, 41 run 전부 61명) / 다과제 약 5.4시간, 같은 영상 같은 순서 | **참가자 본인 사후 평정**(alignvideo 7차원, 응답 약 51% 결측) | (1) 개인 정서 기하의 분포와 템플릿 대비 편차. (2) IS-RSA: 개인 쌍의 뇌 기하 유사도 vs 자기 평정 유사도. (3) **과제 간 개인 기하 일관성**(영상 경험, 얼굴 지각, 이야기, 통증): 개인 기하가 형질처럼 안정한가. (4) 자기 평정 구조로 개인 신경 기하 예측(Brooks 2019 방식) | 질문지 형질 연관(공개본에 설문 없음). 100명도 BWAS에는 작음. 영상 내 시간 동역학(평정이 영상 끝 1회) | 쌍별 분석은 Mantel식 피험자 단위 permutation. 결측으로 유효 N 감소. functional alignment 템플릿은 시험 피험자를 빼고 만들고 자극도 분할(피험자, 자극 누수 방지) |
@@ -166,7 +166,7 @@ Kriegeskorte & Wei 2021은 표상 기하가 Fisher information과 이상 관찰�
 fMRI 설계에서 보통 버리는 영화 전후 고정점 구간이 정서 동역학의 자연 실험이 된다. 근거: doi:10.1016/j.cell.2022.11.027, doi:10.1038/s41586-024-07915-x, doi:10.1016/j.neuroimage.2021.118377.
 
 **U3. 추상화 기하(CCGP) × 기본정서이론 대 구성주의 논쟁.**
-이론 논쟁을 "어떤 변수가 어떤 영역에서 추상 형식인가"라는 측정 가능한 기하 예측으로 바꾼다. Westlin 2025가 요구한 "귀무가설이 아닌 대안 이론과의 비교"[본문 Discussion 5째 단락]를 구체화한다. 근거: doi:10.1016/j.cell.2020.09.031, arXiv:2507.00320, doi:10.1016/j.isci.2020.101060.
+이론 논쟁을 "어떤 변수가 어떤 영역에서 추상 형식인가"라는 측정 가능한 기하 예측으로 바꾼다. Westlin 2025가 요구한 "귀무가설이 아닌 대안 이론과의 비교"[본문 Discussion 6째 단락]를 구체화한다. 근거: doi:10.1016/j.cell.2020.09.031, arXiv:2507.00320, doi:10.1016/j.isci.2020.101060.
 
 **U4. 불균형 최적 수송의 "질량 소멸" × 정서 개인 특이성.**
 개인 특이성을 "공통 공간으로 옮겨지지 않는 표상의 양"으로 정의하면, Westlin(개인 특이)과 Horikawa(공유)의 주장을 같은 척도의 서로 다른 값으로 비교할 수 있다. 근거: arXiv:2206.09398, doi:10.1038/s41598-025-14961-6.
@@ -197,7 +197,7 @@ Ma & Kragel은 love, satisfaction, guilt가 전측 hippocampus에서 더 잘 dec
 
 ### C1. 정서 반응의 rank 분해 공유 스펙트럼 (Horikawa 우선)
 
-* **Original Finding:** Horikawa 2020은 정서 표상이 고차원, 범주적이며 개인 간 일관적이라 보고(doi:10.1016/j.isci.2020.101060, Discussion 1~3째 단락 [본문]). Westlin 2025는 최소 가정 분석에서 개인 고유 군집 11~14개, 평정과 NMI 약 0.014, 개인 간 군집 중첩 7.3%를 보고하고 multiverse 분석을 요구(arXiv:2507.00320, Results; Discussion 5째 단락 [본문]).
+* **Original Finding:** Horikawa 2020은 정서 표상이 고차원, 범주적이며 개인 간 일관적이라 보고(doi:10.1016/j.isci.2020.101060, Discussion 1~2째, 4째 단락 [본문]). Westlin 2025는 최소 가정 분석에서 개인 고유 군집 11~14개, 평정과 NMI 약 0.014, 개인 간 군집 중첩 7.3%를 보고하고 multiverse 분석을 요구(arXiv:2507.00320, Results; Discussion 6째 단락 [본문]).
 * **Unresolved Question:** 두 결론은 서로 다른 rank 대역을 본 결과인가? 개인 고유 변동은 재현 가능한 구조인가 잡음인가(Westlin의 Rand 0.85는 재초기화 안정성)? Horikawa 원 저자도 개인차 변수를 넣으면 더 강건한 표상을 찾을 수 있다고 함(Limitations of the Study 1째 단락 [본문]).
 * **Technological Development:** Gauthaman 2024의 개인 간 cross-decomposition과 hyperalignment가 고rank 공유를 드러내고 RSA는 소수 차원에만 민감함을 보임. 고rank의 개인 특이 분산이 의미 있는 개인차인지 향후 과제로 남김(arXiv:2409.06843, 3.4절 마지막 단락, 4 Discussion [본문]).
 * **New Dataset / Model Combination:** Horikawa 5명 x 2,181 공유 자극(반복 없어도 개인 간 잡음은 독립이라 교차공분산이 편향되지 않음) + 자극 교차분할(hyperalignment 학습 자극과 스펙트럼 평가 자극 분리) + figshare 34범주, 14차원, semantic 73, vision 1000 feature로 rank 대역별 variance partitioning. 대조: NSD 공유 이미지의 시각 피질 스펙트럼.
@@ -208,7 +208,7 @@ Ma & Kragel은 love, satisfaction, guilt가 전측 hippocampus에서 더 잘 dec
 
 ### C2. 정적 유사성 지도 vs 경험된 전이 지도 (Emo-FilM)
 
-* **Original Finding:** Ma & Kragel 2026: hippocampus-vmPFC의 지도형 표상이 사건 전이의 통계 규칙 학습에서 나올 수 있다(doi:10.1038/s41467-025-68240-z, Discussion 6째 단락 [본문]). 그러나 TEM은 균등 무작위 보행으로 학습(Methods [본문]). RL 모형 비교를 향후 과제로 제시(Discussion 9째 단락). PLOS Biol: 전이 통계 개인차가 hexagonal 변조 개인차를 낳을 것(doi:10.1371/journal.pbio.3003795, Discussion 3째 단락 [본문]).
+* **Original Finding:** Ma & Kragel 2026: hippocampus-vmPFC의 지도형 표상이 사건 전이의 통계 규칙 학습에서 나올 수 있다(doi:10.1038/s41467-025-68240-z, Discussion 6째 단락 [본문]). 그러나 TEM은 균등 무작위 보행으로 학습(Methods [본문]). RL 모형 비교를 향후 과제로 제시(Discussion 8째 단락). PLOS Biol: 전이 통계 개인차가 hexagonal 변조 개인차를 낳을 것(doi:10.1371/journal.pbio.3003795, Discussion 3째 단락 [본문]).
 * **Unresolved Question:** 뇌의 정서 지도는 정서 간 정적 동시발생 유사성을 반영하는가, 실제로 경험되는 전이 구조를 반영하는가? 둘은 다르다는 행동 증거가 있음(doi:10.1073/pnas.1616056114 [초록]).
 * **Technological Development:** Successor representation(doi:10.1038/nn.4650 [초록])은 전이 행렬 T와 할인율 γ로 예측 지도를 정의하고 grid cell을 그 저차원 기저로 본다. 다중 γ로 시간척도별 지도를 만들 수 있다.
 * **New Dataset / Model Combination:** Emo-FilM consensus 1 Hz 50항목에서 영화별 경험 전이 행렬을 leave-one-film-out으로 추정 → SR(γ 여러 값) 기반 RDM, 정적 상관 기반 RDM(Ma & Kragel 방식), TEM(실제 전이로 재학습) RDM을 hippocampus 전후, vmPFC의 교차검증 신경 RDM과 경쟁 비교. Horikawa의 고정 순서 클립 전이는 생태적 전이 구조가 없는 음성 대조.
@@ -219,7 +219,7 @@ Ma & Kragel은 love, satisfaction, guilt가 전측 hippocampus에서 더 잘 dec
 
 ### C3. valence 비전이의 원인 판별: 개인 특이성 vs 맥락 의존 (Spacetop + Emo-FilM)
 
-* **Original Finding:** Ke 2025: arousal 일반화, valence 실패. 원인 후보로 별도 표본 평정의 비대표성, 패턴 형식, 맥락 의존을 들고 같은 참가자 평정이 필요하다고 씀(doi:10.1371/journal.pcbi.1012994, Discussion 'In contrast to emotional arousal' 단락, 공개 데이터셋 한계 단락 [본문]). Zaffina 2026: valence 비전이에도 상대 기하는 보존, 풍부성과 휴대성의 분리, 집단 평균의 한계(doi:10.64898/2026.09.26.754452, Discussion 9째 단락, 한계 단락 [본문]).
+* **Original Finding:** Ke 2025: arousal 일반화, valence 실패. 원인 후보로 별도 표본 평정의 비대표성, 패턴 형식, 맥락 의존을 들고 같은 참가자 평정이 필요하다고 씀(doi:10.1371/journal.pcbi.1012994, Discussion 'In contrast to emotional arousal' 단락, 공개 데이터셋 한계 단락 [본문]). Zaffina 2026: valence 비전이에도 상대 기하는 보존, 풍부성과 휴대성의 분리, 집단 평균의 한계(doi:10.64898/2026.09.26.754452, Discussion 4째 단락, 5째 단락(한계) [본문]).
 * **Unresolved Question:** valence 전이 실패는 (i) 라벨 주체 불일치, (ii) 개인별 기하 차이, (iii) 맥락마다 바뀌는 좌표 사상 중 무엇 때문인가?
 * **Technological Development:** 개인 표상 기하를 허용하는 warp hyperalignment/INT(doi:10.1162/imag_a_00032, Discussion [본문]), 점 대응 없이 관계 구조를 맞추는 GW(doi:10.1038/s41598-025-14961-6 [본문]).
 * **New Dataset / Model Combination:** Spacetop alignvideo(참가자 본인 평정, 49 영상, 같은 순서)와 Emo-FilM(Good/Bad consensus, 참가자 부분 사후 평정)에서 네 모형 비교: (a) 집단 라벨 + 해부 정렬, (b) 자기 라벨 + 해부 정렬(Spacetop만), (c) 집단 라벨 + INT 개인화, (d) GW로 정렬한 관계 기하의 보존만 평가. Spacetop에는 valence 문항이 없어 happy, warm and tender 대 sad, afraid, disgusted의 대비를 파생 지표로 쓴다(파생 라벨임을 명시).
@@ -230,7 +230,7 @@ Ma & Kragel은 love, satisfaction, guilt가 전측 hippocampus에서 더 잘 dec
 
 ### C4. 공유 지도, 개인별 통과: vmPFC의 시공간 개인차 (Emo-FilM)
 
-* **Original Finding:** Chang 2021: 정렬 후에도 vmPFC는 개인 특이적, 공유 상태는 있으나 발현 시점이 다름. 같은 상태 수 가정의 한계와 hybrid(연속+이산) 모형 필요(doi:10.1126/sciadv.abf7129, Discussion 4째 단락, 한계 단락 [본문]). Du 2023: vmPFC 정렬에는 잠재 상태 기반 접근 필요(doi:10.1016/j.isci.2023.107571, Limitations of the study 3째 단락 [본문]).
+* **Original Finding:** Chang 2021: 정렬 후에도 vmPFC는 개인 특이적, 공유 상태는 있으나 발현 시점이 다름. 같은 상태 수 가정의 한계와 hybrid(연속+이산) 모형 필요(doi:10.1126/sciadv.abf7129, Discussion 4째 단락, 한계 단락 [본문]). Du 2023: vmPFC 정렬에는 잠재 상태 기반 접근 필요(doi:10.1016/j.isci.2023.107571, Limitations of the study 2째 단락 [본문]).
 * **Unresolved Question:** Ma & Kragel의 vmPFC 2D 궤적 decoding이 약한 것(r 약 0.1)은 사람마다 같은 지도를 다른 시점과 속도로 지나기 때문인가?
 * **Technological Development:** rSLDS(Vinograd 2024에서 사용, doi:10.1038/s41586-024-07915-x [본문]), Hyper-HMM의 시공간 동시 정렬과 그 한계(같은 선형 상태 순서 가정, NeurIPS 2023, 5절 [본문]), CEBRA의 개인 간 consistency(doi:10.1038/s41586-023-06031-6 [초록]).
 * **New Dataset / Model Combination:** Emo-FilM 30명 vmPFC. 다른 영화로 학습한 SRM 공통 공간에서 (i) 공유 지도 + 공유 시점, (ii) 공유 지도 + 개인별 time-warp, (iii) 개인별 지도의 세 모형을 보류 영화 우도와 consensus 평정 decoding으로 비교. 개인 내 기준: **같은 참가자의 EDA, PPG**에서 얻은 각성 반응 시점.
@@ -252,7 +252,7 @@ Ma & Kragel은 love, satisfaction, guilt가 전측 hippocampus에서 더 잘 dec
 
 ### C6. 고차 위상의 정서 정보: 시너지인가 차원 폭인가 (Emo-FilM)
 
-* **Original Finding:** Zaffina 2026: scaffold가 50항목 프로파일을 가장 잘 예측하나 이점은 "상호작용 차수가 아니라 표상 공간의 폭"이라고 해석, 위반 삼각형은 단일 모드로 붕괴, 참가자 수준 scaffold 불안정, 집단 평균 사용(doi:10.64898/2026.09.26.754452, Discussion 2~3째 단락, Methods [본문]).
+* **Original Finding:** Zaffina 2026: scaffold가 50항목 프로파일을 가장 잘 예측하나 이점은 "상호작용 차수가 아니라 표상 공간의 폭"이라고 해석, 위반 삼각형은 단일 모드로 붕괴, 참가자 수준 scaffold 불안정, 집단 평균 사용(doi:10.64898/2026.09.26.754452, Discussion 2째 단락, Methods [본문]).
 * **Unresolved Question:** 고차 표현이 담는 정서 정보는 개별 영역이나 쌍에 없는 시너지 정보인가, 단지 많은 약한 모드에 퍼진 정보인가? 개인 수준에서 측정 가능한가?
 * **Technological Development:** PID/ΦID(doi:10.1038/s41593-022-01070-0 [초록])로 시너지를 직접 정량. SRM 공통 공간에서 개인 잡음을 줄인 뒤 위상 추정.
 * **New Dataset / Model Combination:** Emo-FilM 119 영역 시계열. (a) scaffold와 같은 유효 차원으로 맞춘 pairwise edge 무작위 투영 대조, (b) 영역 쌍의 정서 평정 시계열에 대한 시너지 지도, (c) SRM 잡음 제거 후 개인별 scaffold의 영화 분할 신뢰도.
@@ -263,7 +263,7 @@ Ma & Kragel은 love, satisfaction, guilt가 전측 hippocampus에서 더 잘 dec
 
 ### C7. 정서 범주 체계의 정보 병목 효율 (Horikawa)
 
-* **Original Finding:** Zaslavsky 2018: 색 이름 체계가 IB 최적에 가깝고 원리가 다른 의미 영역에도 적용될 수 있다(doi:10.1073/pnas.1800521115 [초록]). Cowen & Keltner 2017: 27개 신뢰 가능 범주와 연속 gradient(doi:10.1073/pnas.1702247114 [초록]). Horikawa 2020은 범주가 차원보다 뇌 분산을 더 설명하나 그와 같은 정보를 가진 충분한 appraisal 집합이 있을 수 있다고 Discussion에서 단서를 둠(Discussion 3째 단락 [본문]).
+* **Original Finding:** Zaslavsky 2018: 색 이름 체계가 IB 최적에 가깝고 원리가 다른 의미 영역에도 적용될 수 있다(doi:10.1073/pnas.1800521115 [초록]). Cowen & Keltner 2017: 27개 신뢰 가능 범주와 연속 gradient(doi:10.1073/pnas.1702247114 [초록]). Horikawa 2020은 범주가 차원보다 뇌 분산을 더 설명하나 그와 같은 정보를 가진 충분한 appraisal 집합이 있을 수 있다고 Discussion에서 단서를 둠(Discussion 4째 단락 [본문]).
 * **Unresolved Question:** 정서 범주의 "올바른 수"는 경험적으로 정할 수 있는가, 아니면 압축과 정확도 사이 선택인가?
 * **Technological Development:** IB 경계 계산, C1에서 얻은 공유 정서 부분공간을 의미 공간으로 사용.
 * **New Dataset / Model Combination:** Horikawa 2,181 자극. 의미 분포를 (a) 34+14 평정 공간, (b) 개인 간 공유 신경 정서 부분공간으로 각각 정의하고, 기본 6, 13(Emo-FilM 이산 항목과 이름 대응되는 부분), 27, 34, valence-arousal 사분면, 데이터 기반 k-군집 체계를 IB 평면에 배치.
