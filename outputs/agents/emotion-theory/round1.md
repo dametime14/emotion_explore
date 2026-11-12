@@ -66,7 +66,7 @@
 같은 계열 연구가 서로 다른 수를 보고한다: 평정 SH-CCA 24~26 (10.1073/pnas.1702247114), 평정-BOLD CCA 약 25(피험자별 18~36, 10.1016/j.neuroimage.2020.117258), 참가자별 GMM 군집 11~14 (arXiv:2507.00320), 영화 정서 8개 주요 차원 (10.1162/imag_a_00517). [해석] 이 수들은 서로 다른 것을 센다. SH-CCA는 선형 신뢰 차원 수, GMM은 이산 군집 수, CCA는 평정 공간에 묶인 차원 수다. 시각피질에서는 신뢰 공유 분산이 scale-free power-law로 분포해 "차원 수"가 데이터 크기에만 제한된다는 결과가 있다 (arXiv:2409.06843, 4절 Discussion). 정서 영역에서도 그렇다면 "27개냐 아니냐" 논쟁 자체가 잘못 설정된 질문일 수 있다.
 
 **U2. 정서 라벨의 주체와 대상이 바뀌면 뇌 설명력은 얼마나 달라지는가 (본인 보고 vs 동료 합의 vs 별도 평정자 규범 vs AI 추정).**
-Horikawa Limitations 1째 단락은 라벨이 fMRI 참가자 보고가 아님을 한계로 들었고 (10.1016/j.isci.2020.101060), Westlin Discussion 6째 단락은 개인 수준 평정 부재를 결정적 한계로 들었다 (arXiv:2507.00320). Du 2025는 MLLM 임베딩이 인간 평정 임베딩보다 뇌 RSA에서 우세하다고 했지만 인간 기준은 평정에서 시뮬레이션한 것이고 우세 영역에 MST와 고차 시각피질이 포함된다 (arXiv:2509.24298, Results와 Limitations) [본문]. [해석] 측정 잡음(비디오당 9~17명 평정)과 시각-의미 내용 공유를 통제하지 않으면 "AI가 인간 보고보다 뇌의 정서 기하에 가깝다"는 결론은 "AI가 뇌의 시각-의미 기하에 가깝다"와 구분되지 않는다.
+Horikawa Limitations 1째 단락은 라벨이 fMRI 참가자 보고가 아님을 한계로 들었고 (10.1016/j.isci.2020.101060), Westlin Discussion 8째(마지막) 단락은 개인 수준 평정 부재를 결정적 한계로 들었다 (arXiv:2507.00320). Du 2025는 MLLM 임베딩이 인간 평정 임베딩보다 뇌 RSA에서 우세하다고 했지만 인간 기준은 평정에서 시뮬레이션한 것이고 우세 영역에 MST와 고차 시각피질이 포함된다 (arXiv:2509.24298, Results와 Limitations) [본문]. [해석] 측정 잡음(비디오당 9~17명 평정)과 시각-의미 내용 공유를 통제하지 않으면 "AI가 인간 보고보다 뇌의 정서 기하에 가깝다"는 결론은 "AI가 뇌의 시각-의미 기하에 가깝다"와 구분되지 않는다.
 
 **U3. 정서 인식(지각, 귀속)과 정서 경험(느낌)의 신경 표상은 어디서 갈라지는가.**
 Horikawa의 정서 우세 영역(IPL, VMPFC)이 ToM 네트워크와 겹쳐 1인칭/3인칭이 섞일 수 있다 (10.1016/j.isci.2020.101060, Limitations 2째 단락). 타인 정서 귀속은 mentalizing 영역의 추상 사건 특징으로 표상된다 (10.1016/j.cub.2015.06.009) [초록]. felt는 perceived보다 TPJ, PFC, 시상, 소뇌를 더 동원하고 같은 범주 perceived-felt 공유 분산은 평균 36%다 (10.1162/imag_a_00517, 4.4절) [본문]. 그러나 두 연구 모두 별도 평정자 보고라 참가자 본인 경험은 아니다.
@@ -185,7 +185,7 @@ Plank는 라벨 변동을 잡음이 아닌 실재 변동으로 보자고 하고 
 ### C2. 이론 의존 관찰의 화해: 신뢰 부분공간에서의 비지도 구조
 
 * **Original Finding:** UMAP에서 범주 군집과 gradient (10.1016/j.isci.2020.101060, Results "Distribution of Brain Activity Patterns" 절, Discussion 4째 단락). 반대로 참가자별 GMM 군집 11~14개, 참가자 간 trial 겹침 평균 7.3%, 규범 평정과 NMI < 0.02 (arXiv:2507.00320, Results, Discussion 2~3째 단락).
-* **Unresolved Question:** 차이가 이론 차이인가 측정 선택 차이인가. Westlin은 multiverse 분석을 제안 (arXiv:2507.00320, Discussion 4째 단락). Azari 2020은 정서 신호가 다른 출처 신호보다 작으면 비지도 군집이 부수 특징을 따른다고 스스로 인정 (10.1038/s41598-020-77117-8, Discussion 2째 단락) [본문]. [해석] Westlin 표에서 군집과 session의 NMI는 0.188, run은 0.172로, 정서 평정 NMI(평균 0.014)보다 한 자릿수 크다. 저자는 이를 "낮다"고 해석했지만, PCA를 분산 95% 기준으로 고른 전뇌 성분이 session 수준 nuisance를 담았을 가능성을 배제하지 못한다(탐색적 관찰, NMI는 라벨 수에 따라 편향되므로 정식 비교 필요).
+* **Unresolved Question:** 차이가 이론 차이인가 측정 선택 차이인가. Westlin은 multiverse 분석을 제안 (arXiv:2507.00320, Discussion 6째 단락). Azari 2020은 정서 신호가 다른 출처 신호보다 작으면 비지도 군집이 부수 특징을 따른다고 스스로 인정 (10.1038/s41598-020-77117-8, Discussion 2째 단락) [본문]. [해석] Westlin 표에서 군집과 session의 NMI는 0.188, run은 0.172로, 정서 평정 NMI(평균 0.014)보다 한 자릿수 크다. 저자는 이를 "낮다"고 해석했지만, PCA를 분산 95% 기준으로 고른 전뇌 성분이 session 수준 nuisance를 담았을 가능성을 배제하지 못한다(탐색적 관찰, NMI는 라벨 수에 따라 편향되므로 정식 비교 필요).
 * **Technological Development:** 피험자 간 신뢰 부분공간 추출(cross-decomposition, hyperalignment; arXiv:2409.06843), single-trial 재추정(10.7554/eLife.77599), 자극 확률효과(10.12688/wellcomeopenres.10298.2), 2-factor 교차검증(10.7554/eLife.82566).
 * **New Dataset / Model Combination:** Horikawa raw BIDS. 같은 군집 알고리즘을 세 입력 경로에 적용하는 multiverse: (a) Westlin식 분산 기준 PCA, (b) Horikawa식 평정 기반 voxel 선택, (c) 평정을 쓰지 않는 피험자 간 신뢰 부분공간. 각 경로에서 군집-평정 NMI, 군집-session/run NMI, 피험자 내 session 분할 간 군집 재현성, 피험자 간 군집 대응을 보고.
 * **New Research Question:** "평정 정보를 쓰지 않되 피험자 간 신뢰 가능한 신경 부분공간으로 입력을 제한하면, Horikawa 정서 비디오 반응의 비지도 구조는 규범 정서 범주와 대응하는가? 그리고 Westlin이 보고한 개인 특이 군집은 피험자 내 session 간 재현되는 신뢰 가능한 개인차인가, session/run nuisance 구조인가?"
@@ -206,7 +206,7 @@ Plank는 라벨 변동을 잡음이 아닌 실재 변동으로 보자고 하고 
 
 ### C4. Privileged access 검정: 본인 보고, peer 합의, 규범, AI 추정의 고유 설명력
 
-* **Original Finding:** 라벨이 참가자 보고가 아님 (10.1016/j.isci.2020.101060, Limitations 1째 단락). 개인 수준 평정이 없어 개인 군집을 설명하지 못함 (arXiv:2507.00320, Discussion 6째 단락). MLLM 임베딩이 인간 평정보다 뇌 RSA에서 우세 (arXiv:2509.24298, Results "Bridging" 절, Discussion "Bridging the behavior-neural gap" 단락), 단 인간 기준은 평정 시뮬레이션 (같은 논문 Limitations 2째 단락). 자기 정서에 대해 틀릴 수 없다 (10.1073/pnas.1619316114, HOTEC 절).
+* **Original Finding:** 라벨이 참가자 보고가 아님 (10.1016/j.isci.2020.101060, Limitations 1째 단락). 개인 수준 평정이 없어 개인 군집을 설명하지 못함 (arXiv:2507.00320, Discussion 8째 단락). MLLM 임베딩이 인간 평정보다 뇌 RSA에서 우세 (arXiv:2509.24298, Results "Bridging" 절, Discussion "Bridging the behavior-neural gap" 단락), 단 인간 기준은 평정 시뮬레이션 (같은 논문 Limitations 2째 단락). 자기 정서에 대해 틀릴 수 없다 (10.1073/pnas.1619316114, HOTEC 절).
 * **Unresolved Question:** 본인 보고는 타인 보고가 갖지 못한 본인 뇌 정보를 담는가. AI의 우세는 측정 잡음 차이인가 시각-의미 공유인가.
 * **Technological Development:** self- vs cross-prediction 설계 (arXiv:2410.13787). 설명 가능 분산과 신뢰도 보정 논리 (10.1177/1529100619850176, "Toward a Future Science" 절). 2-factor bootstrap (10.7554/eLife.82566).
 * **New Dataset / Model Combination:** **Spacetop alignvideo**: 같은 영상 49개를 다수 참가자가 보고 본인 7차원 평정을 남김(Stage 1 4.3절). 각 참가자에 대해 (a) 본인 평정, (b) **leave-one-subject-out peer 평균**(같은 영상을 본 다른 fMRI 참가자들의 본인 보고 평균), (c) MLLM 추정 평정, (d) 시청각-의미 feature. Emo-FilM에서는 consensus vs 참가자 사후 클립 평정(부분)으로 보조 검정, Horikawa에서는 규범 vs MLLM만(본인 없음).
@@ -250,8 +250,8 @@ Plank는 라벨 변동을 잡음이 아닌 실재 변동으로 보자고 하고 
 
 ### C8. 개인 특이 고차 rank 신경 성분과 본인 정서 보고의 편차
 
-* **Original Finding:** 인구통계와 성격은 보고 분산의 작은 부분 (10.1073/pnas.1702247114, Discussion 9째 단락, 그림 S6). 같은 비디오에도 참가자별 뇌 군집이 다름 (arXiv:2507.00320, Discussion 2, 5째 단락). vmPFC 개인 특이 상태 (10.1126/sciadv.abf7129, Discussion 1, 5째 단락).
-* **Unresolved Question:** 누가 누구와 비슷하게 경험하는지를 구조화하는 요인 (arXiv:2507.00320, Discussion 5째 단락). 개인 정서 보고의 편차는 신경 개인차의 어느 rank 범위에 있는가.
+* **Original Finding:** 인구통계와 성격은 보고 분산의 작은 부분 (10.1073/pnas.1702247114, Discussion 9째 단락, 그림 S6). 같은 비디오에도 참가자별 뇌 군집이 다름 (arXiv:2507.00320, Discussion 2, 7째 단락). vmPFC 개인 특이 상태 (10.1126/sciadv.abf7129, Discussion 1, 5째 단락).
+* **Unresolved Question:** 누가 누구와 비슷하게 경험하는지를 구조화하는 요인 (arXiv:2507.00320, Discussion 7째 단락). 개인 정서 보고의 편차는 신경 개인차의 어느 rank 범위에 있는가.
 * **Technological Development:** rank 범위별 신뢰 가능한 개인차와 행동 예측 (arXiv:2505.12653, Discussion 1~3째 단락; 원저자는 특정 차원 범위가 자극의 해석 가능한 특징에 대응하는지를 미래 과제로 둠, Discussion 4째 단락).
 * **New Dataset / Model Combination:** Spacetop alignvideo 다수 참가자. 참가자 쌍마다 rank 범위별 신경 유사성과 본인 7차원 평정 프로파일의 유사성(peer 평균 대비 편차)을 IS-RSA로 연결.
 * **New Research Question:** "같은 영상을 본 참가자들 중 본인 정서 보고가 서로 비슷한 쌍은 어느 신경 rank 범위에서 서로 비슷한가? 정서 보고 유사성은 저차 고분산 성분(공유된 시각-의미 반응)이 아니라 고차 저분산 성분에 실려 있는가?"
