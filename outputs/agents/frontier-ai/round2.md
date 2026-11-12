@@ -42,7 +42,7 @@
 * 가져와서 바꾸는 것: SAE 개념 encoding(CH5)과 정서 vector 운반(CH6)은 새 분석이라 위양성 위험을 모른다. TRIBE v2 합성 반응에 알려진 정서 패턴을 정해진 SNR로 심고 우리 pipeline이 그것을 개념 수준에서 회복하는지, 시각-의미 공선성 아래에서 거짓 개념을 만드는지 먼저 시험한다(FA-P1, FA-P8).
 
 ### IM5. 결론 수준 사다리와 "예측은 개입이 아니다" (generative-counterfactual)
-* 출처: generative-counterfactual round1 0절, 4절 C1. 논문 arXiv:2609.27729 (Rothermel 2026), arXiv:2605.16468 [literature_db 기준 verified 여부 미대조, 본문 인용만].
+* 출처: generative-counterfactual round1 0절, 4절 C1. 논문 arXiv:2609.27729 (Rothermel 2026), arXiv:2605.16468 (Grosbard 2026, 모델 내 인과와 뇌에 대한 결론을 구분).
 * 가져와서 바꾸는 것: Round 1의 steering, LLM appraisal 조작(CH4), 정서 vector 운반(CH6)은 모두 **R1**이다. 관찰 fMRI와의 결합은 R0다. 각 제안에 evidence-level을 붙이고, 새 fMRI 없이 R0의 해석력을 높이는 방법으로 **생성 대신 선택(selection)**을 우선한다(Tuckute et al. doi:10.1038/s41562-023-01783-7의 선택 기반 구동을 정서에 옮김, FA-P2).
 
 ### IM6. 전역 신호의 자율신경 성분 (systems-neuro)
@@ -68,7 +68,7 @@
 * **예상되는 반론:** (a) TRIBE v2 공개 checkpoint는 평균 피험자, 피질만 예측하므로 편도체 등은 비교 불가(encoding-foundation 핵심 메시지 1). (b) SAE 개념의 이름은 사람이나 MLLM이 붙인 해석이며, 개념 수준 차이가 "정서"인지는 별도 검정이 필요. (c) TRIBE v2와 V-JEPA 2의 비상업 라이선스 가능성(E2). (d) Mind captioning 반복 클립은 72개뿐이라 개념 수가 많으면 과적합.
 * **label-provenance:** 주 분석 대상은 라벨 없는 뇌 반응(실측 vs in-silico). 개념 해석에 Cowen & Keltner 34/14 평정을 쓸 때는 [별도 평정자 규범, 대상 felt를 평균한 규범]
 * **evidence-level:** R0(실측) + R1(in-silico). insilico-vs-observed: 혼합. G1: 필요(보유)
-* **선행 검색:** WebSearch "sparse autoencoder concepts brain encoding model TRIBE emotion amygdala fMRI 2026" → TRIBE와 SAE 결합 연구 없음, Zeng & Gallant(언어, doi:10.52202/085713-3208) 발견. arXiv API(Round 1) `abs:"sparse autoencoder" AND abs:fMRI` → SAE-BrainMap(arXiv:2506.11123), Lepori 2026(arXiv:2606.06857), Guo 2026(arXiv:2605.23035): 모두 정적 이미지나 언어. **판정: partially**(SAE encoding 자체는 수행됨, in-silico vs 실측의 개념 수준 비교와 정서는 미발견)
+* **선행 검색:** WebSearch "sparse autoencoder concepts brain encoding model TRIBE emotion amygdala fMRI 2026" → TRIBE와 SAE 결합 연구 없음, Zeng & Gallant(언어, doi:10.52202/085713-3208) 발견. arXiv API(Round 1) `abs:"sparse autoencoder" AND abs:fMRI` → SAE-BrainMap(arXiv:2506.11123), Lepori 2026(arXiv:2606.06857), Guo 2026(arXiv:2605.23035): 모두 정적 이미지나 언어. 시각피질 mechanistic encoding의 counterfactual 편집은 Grosbard 2026(arXiv:2605.16468, literature_db verified)이 수행. **판정: partially**(SAE encoding 자체는 수행됨, in-silico vs 실측의 개념 수준 비교와 정서는 미발견)
 * overlap: EmoViS (Horikawa 정서 기하의 sensory-semantic 기원, 방향 인접)
 
 ### FA-P2 → generative-counterfactual: 생성 대신 선택, 의미 고정 정서 대비 쌍
@@ -111,7 +111,7 @@
 * **예상되는 반론:** (a) Spacetop 세 과제는 자극 종류가 달라 과제 차이가 관점 차이와 섞인다. (b) alignvideo 평정 약 51% 결측과 평정 구간의 HRF 중첩. (c) 모델 정서 vector는 텍스트 이야기에서 추출했으므로 비디오에 쓰려면 VLM 판(arXiv:2609.34742 방식)이 필요하고 그 자체가 AI 추정이다. (d) 잔차가 self-tagging이 아니라 개인 시각 처리 차이일 수 있다(vision-decoding L2 논리).
 * **label-provenance:** 자기 경험 [참가자 본인, felt], 귀속 [참가자 본인, portrayed/perceived], 모델 vector [AI 추정, 내부 표상]
 * **evidence-level:** R0. G1: 필요(보유)
-* **선행 검색:** WebSearch "LLM internal emotion representation probing versus verbal emotion ratings predict human brain fMRI"(이번) → 관점 결속을 모델 기준선으로 쓴 연구 없음. emotion-theory는 동일 계열의 공감 공포 vs 주관 공포 signature 분리(doi:10.1016/j.bpsc.2025.11.011, 초록)를 U3 보강으로 기록. **판정: partially (인식 vs 경험 signature 분리는 선행, 관점 무차별 모델 기준선은 미발견)**
+* **선행 검색:** WebSearch "LLM internal emotion representation probing versus verbal emotion ratings predict human brain fMRI"(이번) → 관점 결속을 모델 기준선으로 쓴 연구 없음. emotion-theory는 동일 계열의 공감 공포 vs 주관 공포 signature 분리(doi:10.1016/j.bpsc.2025.11.011, 초록)를 U3 보강으로 기록[emotion-theory 기록, literature_db 개별 행 없음, 내가 확인하지 않음]. **판정: partially (인식 vs 경험 signature 분리는 선행, 관점 무차별 모델 기준선은 미발견)**
 
 ### FA-P6 → llm-semantics: 내부 표상 읽기 vs 출력 묻기 (L2 층의 두 측정)
 * **제안 내용:** 너희 쪽 **세 층 분해(L1 기술 / L2 귀속 / L3 경험)와 Chain 1(정서 배제 기술의 잔차)**을 우리 쪽 **모델 내부 정서 표상(probe 투영)과 모델 출력(평정, odd-one-out)의 비교**로 확장할 수 있다. 같은 open VLM에서 (a) 정서를 묻고 답한 출력(Du 2025식 출력 기반 embedding), (b) 답하기 전 hidden state를 정서 vector에 투영한 값을 만들고, Mind captioning 인간 중립 캡션 embedding(L1)을 통제한 뒤 어느 쪽이 뇌 분산을 더 설명하는지, 어느 쪽이 "과도하게 범주적"인지(arXiv:2508.05880) 비교한다. LLM에서는 내부 probe가 zero-shot 출력보다 정서 정보가 많다는 보고가 있다(arXiv:2510.04064, 초록).
@@ -213,7 +213,7 @@ Video(Horikawa 무음, Emo-FilM과 Spacetop 시청각)와 Image(NSD)는 가능�
 * MIRAGE(arXiv:2605.29850) 표 3의 V-JEPA 2 라이선스 표기를 PDF로 직접 확인했다.
 
 ### 미확인
-* arXiv:2605.16468(Grosbard)은 generative-counterfactual 인용으로만 보았고 DB 대조를 하지 않았다(IM5에 [미대조] 표기).
+* doi:10.1016/j.bpsc.2025.11.011은 emotion-theory round1의 인용으로만 보았고 DB에 개별 행이 없다(FA-P5 선행 검색에 표기).
 * Zeng & Gallant 본문(bioRxiv 429), arXiv:2510.04064, arXiv:2510.22042 본문(초록만).
 * NeuroLang 2026 포스터(LLM 정서 vector와 MEG)는 [search_index], 서지 미확인.
 * HF 모델 카드의 V-JEPA 2, V-JEPA 2.1 가중치 라이선스, brain-tuned V-JEPA 2.1 체크포인트(RAntonello)는 [search_index], huggingface.co 차단.
