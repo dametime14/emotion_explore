@@ -107,15 +107,15 @@
 |---|---|---|
 | 1. 회상 표상의 정서 방향 이동(핵심) | PubMed `(recall OR retrieval OR remembered) AND (emotion* OR valence OR arousal) AND (decod* OR "pattern similarity" OR reinstatement) AND (exaggerat* OR distort* OR bias* OR "shift") AND fMRI`, 2018~ | 0건 |
 | | PubMed `(memory OR recall) AND emotion* AND (distortion OR exaggerat* OR "memory bias") AND (neural representation OR representational OR multivariate)`, 2020~ | 5건, 모두 무관(의미 처리, 청각 등) |
-| | WebSearch "recalled versus perceived video fMRI decoder emotional content shift memory representation more or less emotional than perception 2024 2025 2026" | Park & Kim 2025(fNIRS, 공유 여부), Curko 2026, Bainbridge & Baker 2022(doi:10.1038/s41467-022-34075-1, 일상 기억 영상, 정서 아님). 방향 이동 연구 없음 |
+| | WebSearch "recalled versus perceived video fMRI decoder emotional content shift memory representation more or less emotional than perception 2024 2025 2026" | Park & Kim 2025(fNIRS, 공유 여부), Curko 2026, Bainbridge & Baker 2022(doi:10.1038/s41467-022-34075-1 [Crossref], 일상 기억 영상의 내측 두정 지형, 정서 아님). 방향 이동 연구 없음 |
 | | WebSearch "memories fade remembered visual salience emotional images reconstruction memory distortion vividness neural 2024 2025" | Cooper 2019(행동), Todd 2013. 신경 수준 방향 검정 없음 |
 | 2. 정서 없는 decoder + 고정 emotion head를 지각과 회상에 같이 적용 | WebSearch "MindEye2 OR Brain-IT pretrained fMRI decoder latent emotion probe valence Natural Scenes Dataset transfer to emotional videos 2025 2026"(재탐색 라운드) | 정서 probe 적용 연구 없음 |
 | | WebSearch "brain decoding text from recalled memory emotion sentiment of decoded descriptions mind captioning recall affect 2025 2026" | Mind captioning, EmoMind. 회상의 정서 함량 비교 없음 |
-| 3. SNR을 맞춘 합성 회상 null | WebSearch "mental imagery decoding lower signal-to-noise simulate degraded perception noise-matched control shrinkage decoded features imagery versus perception fMRI 2024 2025" | NSD-Imagery, MIRAGE, Spera 2026(arXiv:2604.15374, 존재만 검색 확인)이 낮은 SNR을 지적. 지각을 회상 SNR로 낮춘 null은 찾지 못함 |
+| 3. SNR을 맞춘 합성 회상 null | WebSearch "mental imagery decoding lower signal-to-noise simulate degraded perception noise-matched control shrinkage decoded features imagery versus perception fMRI 2024 2025" | NSD-Imagery, MIRAGE, Spera et al. 2026(arXiv:2604.15374 [arXiv 서지], 심상 decoding의 피험자 간 정렬)이 낮은 SNR을 지적. 지각을 회상 SNR로 낮춘 null은 찾지 못함 |
 | | prior_overlap_audit 2.1절의 Chen, Keil, Ding 2025 | 자극 구동 합성 반응 null은 이미 있음. **null 방법 자체는 새롭다고 주장하지 않는다** |
 | 4. 텍스트 공간의 회상 정서 함량 | PubMed `(brain-to-text OR "language decoding" OR "semantic decoding" OR captioning) AND (recall OR imagery OR imagined) AND (emotion* OR affective OR sentiment)`, 2020~ | 1건(EEG 음성 심상 BCI, 무관) |
 | | WebSearch(구성 요소 2의 두 번째 질의) | 같은 결과 |
-| 5. 반복 회차에 따른 정서 회상 표상 변화 | PubMed `(repeated retrieval OR repeated recall OR retrieval practice) AND (emotion* OR negative) AND (representation* OR reinstatement OR pattern*) AND fMRI`, 2019~ | 2건: Bradley 2022(정서가 무관 반복 억제), Liu 2020(doi:10.1016/j.neuroimage.2020.117213, 비정서 반복 인출) |
+| 5. 반복 회차에 따른 정서 회상 표상 변화 | PubMed `(repeated retrieval OR repeated recall OR retrieval practice) AND (emotion* OR negative) AND (representation* OR reinstatement OR pattern*) AND fMRI`, 2019~ | 2건: Bradley 2022(정서가 무관 반복 억제), Liu, Kohn, Fernández 2020(doi:10.1016/j.neuroimage.2020.117213 [Crossref], 공고화 뒤 기억 표상 변화, 정서 없음) |
 | | prior_overlap_audit 2.1절 Krenz 2025 | 지각 반복에서 정서 장면 패턴 안정성 |
 | 6. vividness와 정서 재활성 | WebSearch "vividness ratings emotional memory recall neural reactivation strength emotion-specific fMRI trial-by-trial 2024 2025 2026" | St-Laurent 2015(비정서), Todd 2013. 2024~2026 정서 특이 시행 수준 연구 없음 |
 | | PubMed `vividness AND imagery AND (neural overlap OR perception) AND decoding AND fMRI`, 2015~ (Round 2) | Dijkstra 2017, Cabbai 2024, Koenig-Robert 2019. 모두 비정서 |
@@ -192,7 +192,7 @@
 |---|---|---|---|
 | **G0 자료 형식** | 보유 MC 전처리본이 원 저자 figshare 형식(학습 2,108, 지각 [72 x 5], 회상 [72 x 5], 4 s shift 블록 평균, run z-score)과 같은지, 연속 시계열이 있는지, 단서 캡션 번호를 얻을 수 있는지 | 반복이 평균되지 않은 형식 확보 | 반복이 평균된 형식뿐이면 반복 회차 분석(A4)과 합성 null의 잡음 표본화가 불가능하다. raw 재처리로 가고, 4주 일정이 1~2주 밀린다 |
 | G1 양성 대조 | 지각 학습 decoder로 시험 지각 클립 식별(72개 중) | 6명 중 5명 이상에서 우연 이상 | 특징 공간이나 voxel 선택을 바꾼다 |
-| G2 회상 신호 | 회상 클립 식별(72개 중)과 회상 5회의 split-half 신뢰도 | 원 논문 수준(능숙한 피험자 약 40%/100개)에 가까운 클립 식별, 신뢰도 > 0 | 해당 피험자 제외(유병률 보고에 반영). 3명 미만 남으면 질문 보류 |
+| G2 회상 신호 | 회상 클립 식별(72개 중)과 회상 5회의 split-half 신뢰도 | 회상 클립 식별이 피험자 안 순열 null 대비 우연 이상이고 원 논문이 보고한 피험자별 경향(능숙한 피험자에서 더 높음)과 어긋나지 않음, 신뢰도 > 0. 원 논문의 수치는 이 카드에서 다시 확인하지 않았다 | 해당 피험자 제외(유병률 보고에 반영). 3명 미만 남으면 질문 보류 |
 | G3 정서 자 점검 | 자극 특징에 head를 적용했을 때 시험 72클립의 규범 정서 예측이 우연 이상, 지각 해독 벡터에서도 우연 이상 | 둘 다 통과 | head나 특징 공간 교체 |
 | G4 회복 시뮬레이션 | 실측 잡음 위에 알려진 Δ(+, 0, -)를 심고 두 방향 편향을 함께 넣어 Δ가 되찾아지는지 | 판정 가능한 최소 효과 크기 산출 | 판정 불가 구역을 넓혀 보고 |
 
