@@ -1,0 +1,900 @@
+#!/usr/bin/env python3
+"""Stage 3 P5: combinatorial research question generation (Coordinator).
+
+All candidate combinations are written here as data, so the matrix, the rejected list and the
+RQ landscape tables are regenerated from one source.
+
+Routes
+  literature : Round 2 proposals (outputs/discussion/proposals_index.csv) and Round 3 revisions
+               (outputs/discussion/round3_summary.md), Round 4 proposals (outputs/agents/*/round4.md)
+  random     : outputs/combinations/random_combos.csv (random_combos.py, seed 20261113)
+  strategy   : Question Generation Strategies A~H (reference/protocols.md P5)
+
+Checks (printed, and written to outputs/combinations/matrix_checks.md)
+  * every kept combo has axes from >= 3 different types (axis_encyclopedia.md 3절 유형표)
+  * every kept combo has >= 1 axis from I, J, K, L, R or a named external field (axes.md 3절)
+  * every evidence ID is a verified entry of outputs/literature/literature_db.csv
+  * every Round 2 proposal ID and every Round 4 proposal ID is mapped to some combo
+  * every random combo RND-01..30 has a verdict
+
+Outputs
+  outputs/combinations/matrix.csv, outputs/combinations/rejected.md,
+  outputs/combinations/rq_table.md (RQ tables by cluster, embedded in outputs/rq_landscape.md),
+  outputs/combinations/matrix_checks.md
+
+Usage: python3 -I outputs/combinations/build_matrix.py
+"""
+import collections
+import csv
+import os
+import re
+
+ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
+TYPE = {**{a: "Construct" for a in "ABCDVW"}, **{a: "Neural" for a in "EFO"},
+        **{a: "Model & Method" for a in "GHIJLMN"}, **{a: "Structure" for a in "KR"},
+        **{a: "Inference" for a in "PQSTU"}}
+OUTSIDE = set("IJKLR")
+
+H20, MC, EF, ST, NSD = "Horikawa 2020", "Mind captioning", "Emo-FilM", "Spacetop", "NSD"
+
+CLUSTERS = collections.OrderedDict([
+    ("K1", "정서 신경 공간의 구조와 그 기원"),
+    ("K2", "정서 신호와 지각, 의미 내용의 분리"),
+    ("K3", "라벨 출처와 관점"),
+    ("K4", "본인 경험, 개인차, 평정 불일치"),
+    ("K5", "시간 역학: 이월, 방향, 흐름, 놀람"),
+    ("K6", "행동 경향과 affordance (Axis V)"),
+    ("K7", "기억, 회상, 내성 (Axis W)"),
+    ("K8", "몸, 생리, 피질하 경로"),
+    ("K9", "In-silico 뇌와 AI 모델의 정서 충실도"),
+    ("K10", "소리, 언어, 서사"),
+])
+
+COMBOS = []
+
+
+def K(cid, route, src, axes, ext, cluster, rq, construct, imported, ai, neural, data, analysis,
+      contrib, ev, overlap, prior, novelty="", note=""):
+    """kept combination. rq=None means a broad direction that is not a separate RQ."""
+    COMBOS.append(dict(combo_id=cid, route=route, source=src, axes=axes, external_field=ext,
+                       cluster=cluster, rq=rq, scientific_construct=construct,
+                       imported_concept_or_method=imported, ai_model_or_representation=ai,
+                       neural_target=neural, dataset=data, measurable_prediction_or_analysis=analysis,
+                       scientific_contribution=contrib, evidence_ids=ev, status="kept",
+                       overlap=overlap, prior_work=prior, novelty_check=novelty, note=note))
+
+
+def X(cid, route, src, axes, ext, construct, reason, ev=""):
+    COMBOS.append(dict(combo_id=cid, route=route, source=src, axes=axes, external_field=ext,
+                       cluster="", rq=None, scientific_construct=construct,
+                       imported_concept_or_method="", ai_model_or_representation="", neural_target="",
+                       dataset="", measurable_prediction_or_analysis="", scientific_contribution="",
+                       evidence_ids=ev, status="rejected", overlap="", prior_work="",
+                       novelty_check="", note=reason))
+
+
+L, R_, S = "literature", "random", "strategy"
+NO = "없음"
+
+# ---------------------------------------------------------------- literature route (Round 2, 3)
+K("LIT-01", L, "GI-P1, ET-P1, ET-P4, SN-P7, VD-P2; Round 3 GI-P1 검토", "A+O+K+Q+T",
+  "Complex Systems (scale-free 공분산 스펙트럼)", "K1",
+  "Horikawa 2020의 '범주형 정서 표상' 결론은, 같은 2,180개 클립을 본 두 독립 코호트(Horikawa 2020 5명, Mind captioning 6명)에서 피험자 간에 재현되는 신뢰 rank 대역으로 한정해도 유지되는가, 아니면 Westlin 2025가 보고한 저차원 연속 구조로 수렴하는가?",
+  "정서 표상의 범주성 대 연속 차원, 신뢰 차원 수",
+  "rank 분해 공유 스펙트럼(cross-decomposition), 혼합 대 연속 잠재 모형 비교, 사전 등록 multiverse",
+  "없음(라벨은 규범 평정 34/14차원). 대조 feature로 시각, 의미 DNN",
+  "전뇌 parcel, transmodal 영역", f"{H20} + {MC}(같은 자극 11명, MC 반복으로 신뢰도)",
+  "site 안과 site 간 피험자 쌍의 공유 스펙트럼에서 재현되는 rank 대역을 추정하고, 그 대역 안에서 범주 혼합 모형과 연속 잠재 모형의 예측력을 비교한다. fMRI 기반 시선 추정 회귀, 노출 수 층화, 입력 경로 x 전역 신호 처리 multiverse를 둔다",
+  "정서 신경 공간의 차원 수와 범주성 논쟁을 같은 자극의 독립 코호트로 판정하고, 결론이 분석 선택에 얼마나 의존하는지 보고한다",
+  "10.1016/j.isci.2020.101060; arXiv:2507.00320; arXiv:2409.06843; arXiv:2505.12653; 10.1126/sciadv.adw1464",
+  "EmoViS: Horikawa 2020 정서 기하와 같은 데이터, 대상 / EmoBrain: 34차원 정서 profile 사용",
+  "partially: EmoMind(arXiv:2605.16739)가 두 코호트를 결합했으나 공유 스펙트럼 비교는 없음(Round 3 검토)",
+  "manifold 시각화가 아니라 경쟁 가설(범주 vs 연속)의 판정 규칙과 독립 코호트 재현을 둔다")
+K("LIT-02", L, "GI-P5, ET-P2, EF-P3, LS-P2, GC-P9; Round 3 GI-P5 검토", "A+O+H+U+Q+I", "", "K4",
+  "같은 영상을 본 약 100명에서, 자극으로 예측되는 '평균 반응'에서 벗어난 개인 뇌 잔차는 그 사람 본인 정서 평정이 peer 합의에서 벗어난 정도를 예측하는가, 그리고 그 결론은 평균 반응을 encoder, 집단 평균, MLLM 중 무엇으로 정의하느냐에 따라 달라지는가?",
+  "Introspective Access(본인 보고의 특권적 접근)",
+  "기준선 multiverse(자극 기대 반응 정의 3종), 영상 단위 IS-RSA, 사전 등록 관문",
+  "TRIBE v2 zero-shot 예측, leave-one-out 집단 평균, MLLM 평균 관찰자 예측",
+  "전뇌, insula, vmPFC", f"{ST} alignvideo(주), {EF} 사후 평정, {H20}+{MC}(보조)",
+  "관문 1: 개인 잔차의 반복 신뢰도. 관문 2: 본인 평정 편차의 신뢰도. 통과 후 잔차-편차 관계를 계층 모형으로 추정하고 engaged 평정, 시선, 전역 신호 제거판을 공변량과 민감도 분석으로 둔다",
+  "본인 보고가 관찰자 정보 밖의 본인 뇌 고유 분산을 반영하는지를 관찰 데이터로 검정한다",
+  "10.1126/sciadv.abf7129; arXiv:2605.04326; arXiv:2408.13718; 10.1073/pnas.1619316114; arXiv:2410.13787; 10.1016/j.neuroimage.2020.116851; 10.1016/j.neuroimage.2020.116828",
+  NO, "partially: Chen 2020(특성 선호 IS-RSA), Chang 2021, Finn 2020(Round 3 검토)",
+  "다섯 에이전트가 독립 수렴한 설계를 하나의 사전 등록 multiverse로 통합. 잔차 신뢰도 관문이 먼저")
+K("LIT-03", L, "LS-P1, VD-P3; Round 3 LS-P1 검토", "C+F+H+U+I", "", "K2",
+  "사람이 정서 단어 없이 쓴 장면 기술 20개의 의미를 측정 오차까지 보정해 통제한 뒤에도, 규범 정서 평정이 고유하게 설명하는 뇌 반응이 남는가, 남는다면 어느 영역인가?",
+  "기술(description)로 환원되지 않는 정서 분산",
+  "측정 오차 보정 잔차화(Westfall & Yarkoni 2016), 교차 적합, 역방향 분할",
+  "다중 text encoder(LLM embedding)", "전뇌", f"{MC}(정서 배제 인간 캡션 20개/클립, 주), {H20}(재현)",
+  "캡션 20개로 공변량 신뢰도를 추정해 보정한 잔차화와 역방향 분할(정서 먼저)을 함께 보고하고, 잔차 voxel의 rank별 공유 스펙트럼과 controversial 쌍을 본다. AI 재작성 캡션 단계는 주 결론에서 분리",
+  "'정서 표상'이 장면 기술 의미로 환원되는지를 측정 오차를 고려해 판정한다",
+  "10.1126/sciadv.adw1464; 10.1038/s42256-025-01072-0; arXiv:2509.24298; 10.1371/journal.pone.0152719; 10.1016/j.isci.2020.101060",
+  "EmoViS: 정서 기하의 sensory-semantic 기원 분석과 직접 겹침",
+  "partially: Horikawa 2020의 73개 의미 항목 비교, Du 2025(Round 3 검토)",
+  "단순 encoding 비교가 아니라 공변량 측정 오차와 과통제의 맞교환을 명시")
+K("LIT-04", L, "GC-P2, GC-P3, FA-P2; Round 3 GC-P2 검토", "C+L+P+F+U", "", "K2",
+  "통계 통제(기술 잔차)와 설계 통제(의미 고정 편집, 자연 클립 controversial 쌍)는 같은 voxel에서 같은 결론을 내는가, 불일치한다면 그 패턴이 어느 가정(공변량 완전성, 편집의 의미 누출)이 깨졌는지 알려 주는가?",
+  "정서 대 의미 내용", "삼각 검증(통계 통제, 설계 통제, 자연 자극 선택), controversial stimuli",
+  "의미 고정 편집 생성 모델, TRIBE v2 예측, VLM 내부 정서 vector", "LIT-03이 정한 voxel과 영역",
+  f"{H20}+{MC}(통계 쪽, 자연 쌍), 편집 자극은 encoder 예측만(R1)",
+  "사전 등록 일치표: 세 방법이 모두 양성일 때만 '정서 고유 신호'로 주장. 저수준 통계를 맞춘 편집과 비정서 지각 편집을 대조로 둔다. 결론 수준은 셋이 일치해도 R1(관찰 + in-silico)",
+  "서로 다른 가정에 기대는 방법의 불일치 패턴으로 어느 가정이 깨졌는지 진단한다",
+  "10.1371/journal.pone.0152719; 10.1073/pnas.1912334117; arXiv:2512.00557; 10.1038/s42256-025-01072-0; 10.1126/sciadv.adw1464",
+  "EmoViS: 정서 vs sensory-semantic 내용 분리 겹침",
+  "partially: Cao 2024(Kuleshov 효과 fMRI), Mobbs 2006",
+  "두 방법은 같은 관찰 데이터와 겹치는 feature 공간을 써 실패 방식이 완전히 독립이 아님(adversarial-reviewer 응답). 이견 기록")
+K("LIT-05", L, "EF-P1, GC-P1, VD-P1, GI-P4; Round 3 EF-P1 검토", "F+H+S+T+K", "", "K9",
+  "TRIBE v2 같은 in-silico 뇌는 같은 자극의 실측 fMRI에 비해 정서 구조를 시각 구조보다 더 많이 잃는가, 그 손실은 어느 parcel과 rank 대역에 몰리며 백본(V-JEPA 2) feature 자체의 한계로 설명되는가?",
+  "in-silico 뇌의 정서 충실도(관문 연구)",
+  "noise ceiling 정규화, Gromov-Wasserstein 정렬, 백본 대비 차이(trust = 뇌 투영 충실도 - 백본 충실도)",
+  "TRIBE v2, V-JEPA 2 backbone", "parcel별", f"{MC}(반복 ceiling, 주), {H20}, {EF}",
+  "parcel별 정서 RDM 충실도와 시각 RDM 충실도를 관찰 신뢰도로 정규화해 비교하고, leave-one-out 인간 기준선, rank별 충실도, 전역 신호 유무 두 판을 보고한다. 결과로 다른 in-silico 질문의 해석 가능 영역을 사전 결정",
+  "in-silico 정서 실험을 어느 영역에서 믿을 수 있는지 정하고, 모델 결함이 정서 특이적인지 밝힌다",
+  "arXiv:2605.04326; arXiv:2605.16739; 10.1126/sciadv.adw1464; arXiv:2302.06677; arXiv:2409.06843",
+  "Emo-FilM 연구: 사전학습 멀티모달 뇌 encoding 모델 사용 부분 겹침",
+  "partially: EmoMind RSA 0.635 -> 0.166 보고, NeurIPS 2026 TRIBE v2 평가(검색 색인만 확인)",
+  "감사만으로는 benchmark에 가깝다는 비판(geometry-info) 반영: 백본 대비 차이로 과학적 질문화")
+K("LIT-06", L, "BI-P1, GI-P2; Round 3 BI-P1 검토", "D+N+K+E+T",
+  "Reinforcement Learning (successor representation), Complex Systems (비가역성)", "K5",
+  "정서 지도는 방향을 갖는가: Emo-FilM 정서 전이 행렬 T의 successor representation이 그 전치 T'의 것보다 뇌 패턴 유사도를 더 잘 설명하는가(대칭 성분 직교화, 지연 sweep, 장면 내용 SR 경쟁 모형 통제 후)?",
+  "정서 지도의 방향성(예측적 전이 구조)",
+  "successor representation, 시간 역전 마르코프 사슬 비교, 엔트로피 생산(비가역성)",
+  "없음(평정 전이 행렬)", "해마, vmPFC, mPFC; 음성 대조 시각피질", f"{EF}(1 Hz 50항목 consensus, 30명)",
+  "0단계 반대칭 흐름과 비가역성 추정, 1단계 SR(T) 대 SR(T') 비교. 평정자 반응 지연과 HRF 지연 sweep, '뇌 패턴이 과거보다 미래 정서를 더 잘 예측하는가' 검정",
+  "Ma & Kragel 2026의 정적 정서 지도를 넘어 정서 지도가 미래를 향해 조직되는지 검정한다",
+  "10.1038/s41467-025-68240-z; 10.1038/nn.4650; 10.1073/pnas.1616056114; 10.1523/JNEUROSCI.1431-18.2018",
+  "Emo-FilM 연구: Emo-FilM 시간 정보 분석과 부분 겹침",
+  "partially: Li 2024(휴지기 SR), Ekman 2023(시각 순서 방향성 SR)(Round 3 검토)")
+K("LIT-07", L, "BI-P2, FA-P4, GC-P8; Round 3 BI-P2 검토", "V+A+I+E+P+R", "Embodied Cognition / Affordances", "K6",
+  "접근과 회피가 갈리는 영화 구간에서, 정서 범주 평정, 인간 행동 경향 평정, latent action model이 계산한 자극 affordance는 전운동, 두정, amygdala 반응을 각각 얼마나 고유하게 설명하는가?",
+  "정서 범주 대 행동 경향 대 자극 affordance",
+  "latent action model(LAPA), 경쟁 모형 variance partitioning, affordance 편집(R1 + R2 평정)",
+  "LAPA latent action, V-JEPA 2, 편집 생성 모델", "전운동, 두정, PPA/OPA, amygdala",
+  f"{EF}(Motivation 10항목, 주), {H20}",
+  "공선성 판정 규칙 사전 등록, 고유와 공유 분산 모두 보고, TRIBE v2 예측 먼저 통제, 화면 운동 nuisance. 정서는 고정하고 affordance만 바꾼 편집 단계는 R1",
+  "Axis V가 정서 범주와 구분되는 신경 구성개념인지 판정한다",
+  "arXiv:2410.11758; 10.1016/j.isci.2020.101060; 10.1073/pnas.2414005122; 10.1093/cercor/bhad093; 10.1037/emo0001619",
+  NO, "partially: Morgenroth 2026(평정 수준에서만)(Round 3 검토)",
+  "LIT-45(측정 타당성)를 선행 관문으로 둔다")
+K("LIT-08", L, "SN-P1, BI-P4, LS-P7, SN-P6; Round 3 SN-P1 검토", "A+E+H+Q+N",
+  "Reinforcement Learning / Computational Value (항상성 RL)", "K8",
+  "자극 구동 encoder가 limbic 영역에서 놓치는 분산은 잡음, 몸, 평가 중 무엇인가: 생리를 자극 예측 가능 성분과 개인 성분으로 나누고 감각 강도와 평정을 더한 4원 분할에서 각 성분의 몫은 얼마인가?",
+  "limbic 맹점의 정체(측정 한계, 몸 신호, 평가)",
+  "생리 반영 noise ceiling, 전역 자율신경 성분 분리(Bolt 2025), 항상성 편차 변수, 언어화 가능 정서 기준선",
+  "TRIBE v2(피질 예측), MLLM 50항목 예측", "amygdala, insula, 뇌간, vmPFC",
+  f"{EF}(참가자 PPG, 호흡, EDA, 주), {MC}(반복 ceiling 보정)",
+  "4원 분할(자극 예측 생리, 개인 생리, 감각 강도, 평정)과 사전 지정 추정량. 생리-BOLD 결합은 휴지 구간에서 추정해 매개와 교란을 구분",
+  "encoder의 limbic 실패를 측정 한계, 몸, 평가로 나눠 다음 모델과 측정의 방향을 정한다",
+  "10.1038/s41593-025-01945-y; arXiv:2605.04326; 10.1162/imag.a.1300; 10.1371/journal.pcbi.1012994; 10.1038/s41597-025-04803-5",
+  "Emo-FilM 연구: Emo-FilM과 사전학습 encoder 사용 겹침",
+  "partially: 전역 자율신경 결합(Bolt 2025)은 보고, limbic encoding 잔차 분해는 없음",
+  "생리를 매개로 볼지 교란으로 볼지 이견 기록(systems-neuro vs vision-decoding)")
+K("LIT-09", L, "FA-P3, EF-P5, MD-P5, BI-P5; Round 3 FA-P3 검토", "D+N+I+J+E", "Active Perception (active inference)", "K5",
+  "영화 속 정서적 놀람은 어느 수준의 예측 실패에 묶이는가: video world model의 예측오차와 예측 불확실성이 TRIBE v2 예측을 통제한 뒤에도 Suddenly(오차형)와 Predictable, Urgency(불확실성형) appraisal 및 amygdala, insula 반응을 서로 다르게 설명하는가?",
+  "정서적 놀람과 예측오차 위계", "world model surprise, 예측 불확실성, learning progress, arousal = 사후 신념 entropy",
+  "V-JEPA 2 predictor, TRIBE v2(기준선)", "amygdala, insula, vmPFC, 해마(사건 경계)",
+  f"{EF}(첫 시청, appraisal 1 Hz, 주), {ST}",
+  "같은 모델에서 세 신호를 뽑아 신호 종류 차이를 모델 차이와 분리. 지속 vs 재호출은 별도 질문으로 분리(Round 3 수정)하고 MLLM 상황 그래프를 경쟁 모형으로 둔다",
+  "정서 예측오차가 pixel, 물리, 서사 중 어느 수준의 예측 실패에 묶이는지 밝힌다",
+  "arXiv:2506.09985; arXiv:2502.11831; arXiv:2407.02474; 10.7554/eLife.107955; arXiv:2605.04326",
+  "Emo-FilM 연구: Emo-FilM 시간 정보와 사전학습 encoder 겹침 / EmoBrain: V-JEPA2 사용",
+  "partially: Tambini 2017(정서 상태 지속)(Round 3 검토)")
+K("LIT-10", L, "MD-P1, GI-P3, SN-P2; Round 3 MD-P1 검토", "D+K+E+P+Q", "Complex Systems (line attractor, Nair 2023)", "K5",
+  "정서 상태는 HRF로 설명되지 않는 관성을 갖는가: Mind captioning 테스트 run의 의사 무작위 순서를 실제 조작으로 쓸 때, 직전 클립의 정서는 현재 클립의 정서 부분공간 반응을 시각 부분공간보다 더 오래 바꾸는가?",
+  "정서 관성(이월)과 혈류역학 잔여의 분리",
+  "2성분 이완 모형, 부분공간별 감쇠 대조, line attractor 개념",
+  "TRIBE v2 '자극 설명 이월' 기준선", "amygdala, vmPFC, 정서/시각 정렬 부분공간",
+  f"{MC}(의사 무작위 순서, 주), {H20}(고정 순서), {EF}(washout)",
+  "HRF 잔여는 모든 부분공간에 같은 커널로 작용하므로 정서 부분공간의 더 느린 감쇠만 관성 증거로 본다. τ 식별 가능성 시뮬레이션, 반복 노출 수(최대 11회) 모형화",
+  "인간 fMRI에서 정서 상태 지속의 HRF와 구분되는 증거를 데이터셋 내부 무작위 순서로 얻는다(R3-internal 후보)",
+  "10.1016/j.cell.2022.11.027; 10.1038/s41586-024-07915-x; 10.1038/nn.4468; 10.1126/sciadv.adw1464; 10.1038/s41593-025-01945-y",
+  "Emo-FilM 연구: Emo-FilM washout 구간 사용 부분 겹침",
+  "partially: Pichon 2015, Tambini 2017(Round 3 검토)",
+  "1성분 vs 2성분 이완 모형 이견 기록(multimodal-dynamics vs geometry-info)")
+K("LIT-11", L, "EF-P7, MD-P3, GC-P4, MD-P4; Round 3 EF-P7 검토", "M+F+H+L+S", "", "K9",
+  "소리를 지운 in-silico 입력은 실제 무음 시청을 재현하는가: 같은 클립을 무음으로 본 두 코호트의 관찰 반응과 TRIBE v2의 무음, 유음 예측을 비교하면 정서 기하는 어느 예측에 가깝고, Emo-FilM에서 음악, 대사 stem 제거가 바꾸는 정서 항목은 관찰 분할의 고유 설명량과 일치하는가?",
+  "소리(음악, 대사)의 정서 기여와 in-silico 감각 박탈의 타당성",
+  "modality dropout(in-silico 감각 박탈), 3-stem 분리 counterfactual",
+  "TRIBE v2, 음원 분리 모델", "청각피질, STS, vmPFC, amygdala",
+  f"{H20}+{MC}(같은 자극 관찰 무음), {EF}(소리 있음)",
+  "같은 자극의 관찰 대 in-silico 비교를 1차로, 정서 기하는 의미를 제거한 뒤 정의. 화면 기술 텍스트 입력 조건 추가, 관찰-관찰 전이 대조",
+  "in-silico 감각 박탈이 관찰과 맞는지(모델 타당성)와 소리 의존 정서 항목을 함께 밝힌다",
+  "10.1126/sciadv.adk6840; arXiv:2605.04326; arXiv:2110.09958; 10.1016/j.isci.2020.101060",
+  "Emo-FilM 연구: 사전학습 멀티모달 encoder로 Emo-FilM의 양식 기여 분석과 겹침",
+  "partially: Lettieri 2024(같은 영화의 판본 비교)(Round 3 검토)",
+  note="Cowen & Keltner 원 클립의 오디오 보유 여부 미확인(유음 예측 조건의 전제). LIT-05 관문 통과 영역에서만 해석")
+K("LIT-12", L, "ET-P6, VD-P6, EF-P2, BI-P6, SN-P5(일부); Round 3 ET-P6 검토", "W+A+G+K+Q",
+  "Memory and Mental Imagery", "K7",
+  "Mind captioning 회상 시행에서 정서 부분공간의 재활성은 시각, 의미 부분공간의 재활성과 별개로 그 시행의 vividness 보고를 예측하는가(cue가 함축하는 정서 통제 후)?",
+  "회상 중 정서 재활성과 내성 보고", "순방향 banded ridge, 서수 혼합 모형, 부분공간 분해",
+  "지각 decoder(시각 DNN, CLIP, 규범 정서), TRIBE v2 성분 분해", "시각피질, amygdala, 해마, vmPFC",
+  f"{MC}(유일한 회상 데이터)",
+  "회상 시점 의미 해독과 cue 함축 정서를 통제한 서수 혼합 모형. vividness는 3~4점에 몰려 이진 분할 대신 서수 모형. 72개 클립 정서 분포 파일럿",
+  "회상된 정서의 신경 재활성과 그에 대한 내성 보고의 관계를 처음으로 시행 단위에서 본다",
+  "10.1126/sciadv.adw1464; 10.1093/cercor/bhv086; 10.3758/s13423-017-1313-9; 10.1523/JNEUROSCI.3022-16.2016; 10.1093/nc/nix007",
+  NO, "partially: Saarimäki 2016(지각에서 심상으로의 정서 decoding 일반화)(Round 3 검토)")
+K("LIT-13", L, "FA-P6, FA-P5(일부), GC-P9(일부); Round 3 FA-P6 검토", "R+U+C+F+Q", "", "K3",
+  "같은 공개 VLM에서 답하기 전 hidden state를 정서 방향에 투영한 값(내부 표상)과 모델이 내놓은 정서 평정(출력) 중 무엇이 사람 뇌의 정서 관련 분산을 더 고유하게 설명하는가?",
+  "AI 추정 정서 라벨의 두 측정(내부 표상 vs 출력 보고)",
+  "정서 vector 투영(Sofroniew 2026), HOT의 1차 대 보고 수준 구분",
+  "open VLM hidden state와 출력", "전뇌", f"{H20}+{MC}",
+  "같은 forward pass에서 읽기와 묻기, 차원과 신뢰도 맞추기, 같은 모델 안 matched-complexity null과 비정서 방향 null, 시각 feature 이중 통제, 회상 일반화 검정",
+  "AI 라벨을 신경 분석에 쓸 때 어느 측정 방식이 타당한지, 기계의 '1차 상태'와 '보고'가 뇌와 다르게 정렬되는지 밝힌다",
+  "arXiv:2604.07729; arXiv:2509.24298; arXiv:2609.34742; 10.1073/pnas.1619316114; arXiv:2408.13718",
+  NO, "partially: Du 2025(출력 기반 embedding과 뇌)")
+K("LIT-14", L, "ET-P3, ET-P7, LS-P4, FA-P5", "U+A+R+F+S", "", "K3",
+  "뇌의 정서 표상은 '누구의 정서인가'를 결속하는가: 같은 참가자의 자기 경험 과제에서 학습한 정서 축이 인물 정서 귀속 과제와 표정 지각 과제로 일반화되는 정도는 영역마다 다른가, 관점 무차별적인 LLM 정서 표상과 비교하면 어떤가?",
+  "관점 결속(portrayed / perceived / felt)", "모델 정서 vector의 관점 무차별성을 기준선으로 사용",
+  "LLM/VLM 관점 조건부 주석과 내부 정서 vector", "insula, TPJ, mPFC, amygdala",
+  f"{ST}(alignvideo 본인 경험, shortvideo 인물 귀속, faces 표정 지각; 같은 참가자)",
+  "과제 간 교차 decoding을 영역별로 계산하고, 관점 결속 영역(일반화 낮음)과 관점 무차별 영역(일반화 높음)을 구분. 양식과 자극 길이 차이는 별도 회귀",
+  "뇌가 정서 내용과 정서 주체를 함께 부호화하는지, LLM과 어디서 다른지 밝힌다",
+  "arXiv:2604.07729; 10.1162/imag_a_00517; 10.1523/JNEUROSCI.1676-14.2014; arXiv:2408.13718",
+  NO, "partially: Skerry & Saxe 2014(지각 vs 추론 정서 공통 부호)")
+K("LIT-15", L, "LS-P5", "U+Q+C+I+F", "Statistics of Surrogate Labels (alt-test)", "K3",
+  "MLLM을 '관찰자로서 상황 판단' 모드와 '시청자로서 느낄 정서 보고' 모드로 돌렸을 때, Emo-FilM 50개 항목 중 어느 항목에서 인간 평정자를 대체할 수 있고, 대체 불가 항목은 뇌 encoding 지도에서 어디서 인간 라벨과 갈라지는가?",
+  "MLLM 정서 평정자의 대체 가능성", "alternative annotator test, 관점 조작",
+  "MLLM 두 모드", "항목별 encoding 지도", f"{EF}(평정자별 1 Hz 원자료)",
+  "항목별 alt-test 결과와, AI 라벨로 학습한 encoder 지도와 인간 라벨 지도의 차이를 비교. 예측: appraisal 항목은 대체 가능, feeling 항목은 불가",
+  "AI 라벨을 신경 분석에 쓸 수 있는 항목과 없는 항목의 경계를 정한다",
+  "arXiv:2501.10970; arXiv:2408.13718; arXiv:2503.16883; 10.1038/s41598-025-14961-6",
+  NO, "partially: 행동 수준 MLLM 평정 타당도(Ruder 2025, Tak & Gratch 2024)")
+K("LIT-16", L, "SN-P3, VD-P5, BI-P3, GC-P5; Round 3 SN-P3 검토", "E+B+N+L+P", "", "K8",
+  "3T 자연 영상 fMRI에서 상구-pulvinar-amygdala 경로 신호는 분석 가능한가(내장 양성, 음성 대조 관문), 통과한다면 이 경로는 고수준 의미보다 저공간주파수 위협 feature와 looming을 더 싣는가?",
+  "피질하 시각 경로가 싣는 표상", "signal-feasibility 관문, region-additive latent decoding, 공간주파수 counterfactual, 전향 적용",
+  "VDVAE/CLIP latent, 얕은 CNN", "상구, pulvinar, amygdala; 대조 LGN-V1, MGN-A1",
+  f"{MC}(관문, 반복 신뢰도), {ST}(주), {H20}",
+  "관문: LGN-V1 양성, MGN-A1 음성(무음 자극) 대조. 통과 후 경로 패턴의 저수준 대 고수준 latent 해독, looming 대조, fMRI 기반 시선 회귀, 코호트 간 전향 적용",
+  "피질하 정서 경로 가설을 3T 자연 자극에서 검정할 수 있는지부터 정한다",
+  "10.1016/j.neuron.2021.06.001; 10.1523/JNEUROSCI.1436-24.2025; arXiv:2607.19327; 10.1126/sciadv.adw1464",
+  NO, "partially: Kragel 2021(3T에서 표적과 교차 연결 차이 0.055로 작음)(Round 3 검토)")
+K("LIT-17", L, "FA-P7, GI-P8, VD-P8", "O+K+R+S+I", "", "K9",
+  "정서와 무관한 저정서 클립만으로 학습한 피험자 간 정렬은 고정서 클립의 정서 기하까지 운반하는가, 운반되지 않는 정서 성분이 있다면 그것은 별도의 정렬 차원을 요구하는가?",
+  "정서 기하가 일반 지각 정렬의 부산물인가", "Platonic representation 수렴, hyperalignment/SRM, 저정서 클립 학습",
+  "VLM, MindEye2 shared latent", "전뇌", f"{H20}+{MC}(site 간 쌍), {NSD}(사전학습 출처)",
+  "저정서 클립 학습 정렬과 정서 클립 포함 정렬의 교차 피험자 정서 decoding, GW 매칭률 비교. site 간 쌍에서 반복",
+  "정서 기하가 별도 정렬 차원을 필요로 하는지 밝힌다",
+  "arXiv:2609.34742; arXiv:2405.07987; 10.7554/eLife.56601; arXiv:2403.11207; arXiv:2409.06843",
+  "EmoBrain: cross-subject 정렬과 정서 decoding 겹침", "partially: 모델 사이에서는 Xing 2026")
+K("LIT-18", L, "GI-P6, LS-P6", "K+A+C+U+O", "Information-theoretic Neuroscience (Information Bottleneck)", "K1",
+  "일본어 모국어 화자의 뇌 정서 공간 위에서, 일본어 정서 어휘의 범주 분할은 영어 분할보다 Information Bottleneck 효율 경계에 더 가까운가?",
+  "정서 범주 체계의 효율성과 언어 의존성", "IB 효율 분석(Zaslavsky 2018), 언어 간 정서 의미 변이(Jackson 2019)",
+  "일본어, 영어 text encoder", "공유 신경 정서 공간(LIT-01)", f"{MC}(일본어 화자 확인), {H20}(참가자 언어 미확인)",
+  "신경 공간을 의미 공간으로 두고 두 언어 범주 분할의 복잡도-정확도 평면 위치와 IB 최적 경계까지 거리를 비교. 무작위 분할 기준선",
+  "정서 범주 체계가 신경 공간 위의 효율적 압축인지, 그 효율이 화자 언어에 맞춰지는지 검정한다",
+  "10.1073/pnas.1800521115; 10.1126/science.aaw8160; 10.1126/sciadv.adw1464; 10.1038/s41598-025-14961-6",
+  NO, "미확인: Round 2 제안에서 직접 선행 없음으로 보고, Stage 4에서 재확인",
+  note="MC 6명이라 집단 수준 분석만 가능")
+K("LIT-19", L, "MD-P7, ET-P5; 무작위 RND-16 수렴", "A+Q+D+E+K", "Computational Psychiatry (정서를 계산으로 보는 관점)", "K4",
+  "Emo-FilM 평정자 불일치가 영화 시간에 고정되어 커지는 순간(자극 모호성)에 신경 패턴은 두 정서 패턴의 선형 중첩인가 별도의 혼합 상태인가, 원인 귀속(사람 탓 vs 우연)이 불확실한 순간에는 분노와 슬픔 패턴의 분리도가 줄어드는가?",
+  "혼합 정서, 평정 불일치, 정서 분화의 계산 조건",
+  "불일치의 시간 고정성 분해, 선형 중첩 대 창발 상태 모형, 원인 귀속 불확실성 가설(Emanuel & Eldar 2023)",
+  "없음", "insula, vmPFC, amygdala", f"{EF}(평정자별 원자료, Agent appraisal)",
+  "평정자 쌍 불일치의 시간 고정 성분과 비고정 성분을 나누고, 고정 성분이 큰 구간의 신경 패턴을 중첩 모형과 별도 상태 모형으로 비교. 귀속 불확실 구간의 anger/sad 분리도",
+  "혼합 정서의 신경 형식과 정서 분화가 일어나는 계산 조건을 검정한다",
+  "10.1093/cercor/bhae122; 10.1073/pnas.1702247114; 10.1016/j.neubiorev.2022.104977; 10.1038/s41597-025-04803-5",
+  NO, "partially: Vaccaro 2024(혼합 정서 fMRI)")
+K("LIT-20", L, "MD-P8", "D+A+N+U+O", "Reinforcement Learning / Computational Value (mood as momentum)", "K4",
+  "영화 한 편의 연속 정서 경험은 어떤 규칙으로 회고 평정에 압축되는가(정점, 끝, 평균, 끝 시점 momentum), 그리고 그 규칙은 영화 끝의 느린 뇌 상태로 더 잘 예측되는가?",
+  "연속 경험에서 회고 보고로의 압축", "peak-end rule, mood as momentum(Eldar 2016)",
+  "없음", "vmPFC, 느린 뇌 상태", f"{EF}(consensus + 참가자 사후 평정), {ST} alignvideo(본인 사후 평정)",
+  "회고 평정을 요약 규칙 후보로 예측하고, 같은 후보를 뇌의 느린 상태 시계열로 계산했을 때 예측력이 더 높은지 비교",
+  "회고 보고의 생성 규칙과 그 신경 기반을 연결한다",
+  "10.1037/0022-3514.65.1.45; 10.1016/j.tics.2015.07.010; 10.1126/sciadv.abf7129",
+  NO, "partially: 행동 수준 peak-end(Fredrickson & Kahneman 1993)")
+K("LIT-21", L, "MD-P2", "D+M+E+S+K", "Complex Systems (시간 척도 위계)", "K10", None,
+  "정서 정보의 시간 척도 위계와 양식 의존", "무음 블록 길이 변이와 소리 유무의 2요인 분리",
+  "", "transmodal 영역", f"{H20}, {MC}, {ST}, {EF}", "", "", "10.1126/sciadv.adk6840", "Emo-FilM 연구: 부분 겹침", "",
+  note="방향만 유지: 소리 유무와 자극 길이가 데이터셋 간에 함께 바뀌어 독립 RQ로 두기 어렵다. LIT-11, LIT-22의 하위 분석으로 흡수")
+K("LIT-22", L, "MD-P6", "C+D+U+I+F", "", "K5",
+  "단일 프레임으로는 정서가 맞지 않고 클립 전체를 봐야 맞는 클립(MLLM 단일 프레임 평정과 전체 클립 평정의 차이로 정의)에서, 정서 정보는 긴 시간 수용창 영역에서만 해독되는가?",
+  "정서 정보의 시간 통합", "단일 프레임 vs 전체 클립 평정 차이로 자극 분류",
+  "MLLM(단일 프레임, 전체 클립)", "시각피질 vs PMC, vmPFC", f"{H20}, {MC}",
+  "MLLM 두 조건과 규범 평정의 차이로 '시간 의존 클립'을 정의하고, 영역별 해독력을 클립 유형으로 나눠 비교. 클립 길이와 운동량 통제",
+  "정서가 시간 통합을 요구하는 경우의 신경 위치를 정한다",
+  "10.1038/s41598-025-14961-6; arXiv:2501.10970; 10.1016/j.isci.2020.101060",
+  NO, "partially: MLLM 단일 프레임 평정의 한계는 보고, 뇌 수준 검정은 없음",
+  note="라벨: 시간 의존 클립의 정의는 AI 추정(label-provenance 표기)")
+K("LIT-23", L, "LS-P3", "M+C+D+E+I", "", "K10",
+  "영화 대사가 운반하는 정서는 어휘 감성인가 인물의 정신 상태 추론인가: vmPFC 정서 decoding은 어휘 수준 대사 feature를 지워도 남고 추론된 정신 상태 의미를 지우면 사라지는가?",
+  "대사 의미의 두 층(어휘 vs 정신 상태 추론)", "ASR 전사 + LLM 2층 분해", "ASR [AI 생성 전사], LLM",
+  "vmPFC, TPJ, STS", f"{EF}(대사 있음, 전사 없음, 주), {ST} narratives",
+  "어휘 feature와 정신 상태 추론 feature를 순차 제거하며 정서 decoding 변화를 비교. 음악과 영상 feature는 공통 통제",
+  "영화 속 정서 이해에서 언어 채널의 역할을 어휘와 마음 이론으로 나눈다",
+  "10.1126/sciadv.adk6840; 10.1111/cogs.13343; 10.1016/j.neuron.2020.10.029",
+  "Emo-FilM 연구: Emo-FilM 양식 기여 분석과 부분 겹침", "partially: Lettieri 2024(양식별 기여)")
+K("LIT-24", L, "LS-P8", "N+C+D+I+E", "Reinforcement Learning (예측오차)", "K10",
+  "서사를 들을 때 문장 단위 단기 예측오차(LLM surprisal)와 이야기 초반에 형성된 장기 기대의 불일치는 서로 다른 영역과 본인 정서 평정을 설명하는가?",
+  "서사의 단기 예측오차 vs 장기 기대 불일치", "LLM 다음 사건 분포(엔트로피, surprisal), 장기 기대 모형",
+  "LLM", "언어망, vmPFC, 해마", f"{ST} narratives(텍스트 4편, 오디오 4편, 본인 기대 평정)",
+  "문장 단위 두 예측오차 시계열을 encoding 회귀자로 넣고 영역별 고유 설명량과 clip별 본인 평정 예측을 비교",
+  "서사 정서에서 예측의 시간 척도 위계를 분리한다",
+  "10.1162/neco_a_01341; arXiv:2407.02474; 10.1016/j.neuron.2020.10.029; 10.1111/cogs.13343",
+  NO, "partially: 서사 surprise와 사건 경계(Kumar 2023)")
+X("LIT-25", L, "SN-P5", "E+W+Q+A", "", "Mind captioning 반복에서 amygdala 반응의 반복 비정상성",
+  "유형 규칙은 충족(Construct, Neural, Inference)하나 외부 분야 Axis(I, J, K, L, R 또는 외부 분야)가 없다. 독립 질문보다는 LIT-10, LIT-12의 nuisance 모형(반복 번호 x 규범 arousal)으로 흡수",
+  "10.1038/s41467-024-49073-8")
+K("LIT-26", L, "SN-P4", "K+E+D+Q", "Complex Systems (TDA)", "K8", None,
+  "정서 상태 위상 구조의 전역 자율신경 성분 불변성", "homological scaffold", "", "전뇌 연결", f"{EF}", "", "",
+  "10.64898/2026.09.26.754452; 10.1038/s41593-025-01945-y", NO, "",
+  note="방향만 유지: LIT-08과 LIT-43(GI-R4-4) 결과의 강건성 점검")
+K("LIT-27", L, "GI-P7", "O+K+E+S+A", "", "K8",
+  "왜 arousal 판독은 영화와 데이터셋을 넘어 전이되고 valence는 전이되지 않는가: arousal 정보는 개인 간 가장 크게 공유되는 저rank 전역 모드(전역 자율신경 성분과 겹치는)에 실리고, valence 정보는 고rank 개인 특이 성분에 실리는가?",
+  "arousal과 valence의 전이 비대칭", "rank 분해 공유 스펙트럼, 전역 자율신경 성분",
+  "없음", "전뇌 dynamic FC, 전역 성분", f"{EF}(주, 생리 있음), {H20}+{MC}(보조)",
+  "개인 간 rank 분해에서 rank 대역별 arousal, valence 해독력과 생리 성분과의 겹침을 보고. 영화 교차 검증",
+  "기존 전이 결과(arousal 전이, valence 비전이)에 기하학적 설명을 준다",
+  "10.1371/journal.pcbi.1012994; 10.64898/2026.09.26.754452; 10.1038/s41593-025-01945-y; arXiv:2409.06843",
+  NO, "partially: Ke 2025, Zaffina 2026이 전이 비대칭만 보고")
+K("LIT-28", L, "VD-P7", "N+I+B+S+F", "", "K9",
+  "정서 전용 하위체계는 최적화에서 창발하는가: Cowen & Keltner와 독립인 EmoSet으로 정서를 학습한 모델에서 창발한 정서 unit은 저수준 속성과 의미 속성 중 무엇으로 설명되고, 비정서 학습 모델보다 정서 관련 영역 분산을 고유하게 설명하는가?",
+  "정서 하위체계의 계산적 기원", "과제 최적화 모델, 속성 주석으로 창발 unit 분해",
+  "EmoSet 학습 CNN/ViT, 대조 비정서 학습 모델", "amygdala, insula, vmPFC encoding",
+  f"학습 EmoSet, 평가 {H20}, {MC}, {NSD}",
+  "창발 unit을 EmoSet 속성(밝기, 채도, 장면, 물체, 표정)으로 회귀하고, 정서 영역 encoding의 고유 설명량을 비정서 모델과 비교",
+  "정서 전용 표상이 일반 시각 학습의 부산물인지 정서 목표의 산물인지 구분한다",
+  "arXiv:2307.07961; 10.1126/sciadv.aaw4358; 10.1523/JNEUROSCI.1436-24.2025",
+  NO, "partially: EmoNet(Kragel 2019)",
+  note="EmoNet은 Cowen & Keltner 프레임으로 학습되어 Horikawa, Mind captioning에 쓰면 leakage. EmoSet로 대체")
+K("LIT-29", L, "VD-P4; Round 3 VD-P4 검토", "L+G+P+T+B", "", "K9", None,
+  "생성 decoding의 정서 중립화(affect round-trip audit)", "생성기 prior 감사, null-edit 대조",
+  "SDXL unCLIP, Versatile Diffusion", "", f"{H20}(주), {MC}, {NSD}", "", "",
+  "arXiv:2403.11207; 10.1371/journal.pone.0152719", NO, "",
+  note="방향만 유지: Round 3에서 방법 인프라로 범위 축소(emotion-theory, brain-inspired). vision-decoding은 독립 질문이라고 봄(이견 기록)")
+K("LIT-30", L, "EF-P6, FA-P2", "A+F+H+R+P+S", "", "K2",
+  "Horikawa 2020 5명으로 학습한 정서 encoder가 '이 영역을 가장 강하게 구동할 것'으로 미리 고른 클립은, 선택을 기록한 뒤 Mind captioning 새 피험자 6명에서도 그 영역을 구동하는가, 시각-의미 encoder의 선택보다 더 잘 맞는가?",
+  "정서 encoder의 전향 예측 타당성", "controversial stimuli(Golan 2020), 구동/억제 선택(Tuckute 2024), 모델 내부 정서 vector로 자극 선택",
+  "정서 encoder, 시각-의미 encoder, TRIBE v2 zero-shot, VLM 내부 정서 vector", "amygdala, insula, vmPFC 등 사전 지정 영역",
+  f"{H20}(선택) -> {MC}(검증, 같은 클립 풀)",
+  "영역별 구동/억제 클립을 모델마다 사전 등록하고, MC 반응에서 선택 집합 간 차이와 모델 간 승패(controversial 쌍)를 검정",
+  "관찰 데이터 안에서 가능한 가장 강한 형태의 예측 검증(코호트 간 전향 선택)",
+  "10.1073/pnas.1912334117; 10.1038/s41562-023-01783-7; 10.1126/sciadv.adw1464; 10.1016/j.isci.2020.101060; arXiv:2604.07729",
+  "EmoViS: 정서 대 시각-의미 모델 비교 겹침", "partially: 언어망 구동/억제 선택(Tuckute 2024)",
+  "정확도가 아니라 사전 등록된 전향 선택의 성공률로 평가")
+K("LIT-31", L, "GC-P7; 무작위 RND-03 수렴", "L+G+E+H+B", "", "K2",
+  "정서 유발 영상으로 학습한 amygdala encoder가 가장 선호하는 합성 자극은 얼굴, 표정 같은 의미 범주로 환원되는가, 그리고 FFA, EBA, PPA 예측을 고정한 제약 아래에서도 amygdala 예측을 움직이는 편집이 남는가?",
+  "amygdala 선택성의 정서 대 범주 환원", "선호 자극 진화(NeuroVolve), 다중 영역 제약 생성",
+  "생성 모델 + Horikawa 학습 encoder, AI다움 통제", "amygdala, insula, vmPFC; 대조 FFA, EBA, PPA",
+  f"{H20}(encoder 학습), {NSD}(정지 이미지 encoder 비교)",
+  "1단계 제약 없는 합성 결과의 환원 분석, 2단계 범주 영역 예측 고정 하 amygdala 예측 변화량. 결론은 R1, 확증은 새 fMRI 필요",
+  "amygdala 정서 선택성이 범주 선택성의 부산물인지 in-silico로 판정하고 후속 실험 자극 후보를 만든다",
+  "arXiv:2512.00557; 10.1523/JNEUROSCI.1436-24.2025; 10.1038/s41562-023-01783-7",
+  NO, "partially: NeuroVolve에서 amygdala 최대화 = 표정 얼굴",
+  note="LIT-05 관문을 통과한 영역에서만 해석")
+K("LIT-32", L, "GC-P6", "C+L+I+E+P", "", "K2",
+  "자연 영상에서 공선적인 '상황'과 '정서'를 편집으로 떼어 놓으면(같은 상황 다른 정서, 다른 상황 같은 정서), 영역별 표상 유사도는 상황 유사도와 정서 유사도 중 어느 쪽을 따르는가?",
+  "정서 대 상황 표상", "판별 검정(Peiris 2026), 분위기와 표정 편집, 정서 기대 위반 쌍",
+  "영상 편집 모델, encoder 예측, MLLM 상황 기술", "amygdala, vmPFC, TPJ, 시각피질 ROI",
+  f"{H20}, {EF}(자연 쌍 R0), 편집 쌍은 encoder 예측(R1)",
+  "자연 쌍(드문 칸)과 편집 쌍에서 ROI별 RSA의 상황/정서 회귀 계수를 비교해 편집 고유 효과를 분리",
+  "정서 표상과 상황 의미 표상의 해리를 공선성 없이 검정한다",
+  "arXiv:2604.13466; 10.1093/scan/nsl014; 10.1371/journal.pone.0308295; arXiv:2512.00557",
+  "EmoViS: 정서 vs 의미 분리 겹침", "partially: 모델 쪽 판별 검정(Peiris 2026), Kuleshov fMRI(Mobbs 2006, Cao 2024)")
+K("LIT-33", L, "FA-P1", "R+H+F+S+T", "", "K9", None,
+  "in-silico 뇌가 잃는 개념", "안정 SAE(RA-SAE), 다모델 공유 사전(USAE)", "TRIBE v2, V-JEPA 2 feature", "전뇌", f"{MC}",
+  "", "", "arXiv:2502.12892; arXiv:2605.04326", NO, "",
+  note="방향만 유지: LIT-05의 해석 단계(무엇이 사라지는가)로 흡수")
+K("LIT-34", L, "EF-P4", "F+S+E+T+U+I", "", "K9", None,
+  "leakage 감사를 포함한 정서 encoding benchmark", "leave-one-film-out, HRF와 자기상관 간격", "Brain-JEPA 등 brain foundation model",
+  "피질하 포함", f"{ST}, {EF}", "", "", "arXiv:2510.13768; 10.1371/journal.pcbi.1012994", NO, "",
+  note="방향만 유지: Novelty Constraint상 benchmark 성격. 다른 질문의 검증 인프라(minimum-validation)로 사용")
+X("LIT-35", L, "FA-P8", "T+R+Q+S", "", "해석 도구(SAE, 정서 vector)의 검증 기준",
+  "유형 2개(Structure, Inference)뿐이라 조합 규칙 미충족. 질문이 아니라 검증 기준이므로 minimum-validation 태그와 adversarial-reviewer V1~V12에 반영",
+  "arXiv:2502.12892")
+
+# ---------------------------------------------------------------- literature route (Round 4)
+K("LIT-36", L, "GI-R4-1", "B+K+E+Q", "Complex Systems (power-law 스펙트럼 이론, Stringer 2019)", "K1",
+  "정서 신경 기하는 자극 집합의 구조를 반영하는가: 같은 2,180개 클립에서 시각 다양성과 정서 다양성을 따로 줄인 부분집합을 만들면, 영역별 공유 신경 스펙트럼의 감쇠 지수는 어느 쪽 다양성을 따라 바뀌는가?",
+  "정서 기하의 원인(자극 분포 vs 신경 부호)", "자극 앙상블 차원과 스펙트럼 감쇠 지수의 관계, 2x2 부분집합 설계",
+  "시각 DNN feature(시각 다양성), 규범 평정(정서 다양성)", "시각피질부터 transmodal까지 영역별",
+  f"{H20}+{MC}(주), {NSD}(정서 범위가 좁은 시각 대조, 정서는 AI 추정 표기)",
+  "클립 수를 맞춘 2x2 부분집합에서 영역별 공유 스펙트럼 지수를 추정하고 시각 조작과 정서 조작 중 어느 쪽에 민감한지 비교",
+  "정서 영역의 기하가 자극 통계의 반영인지 정서 고유 부호인지 구분하는 관찰 설계",
+  "10.1038/s41586-019-1346-5; arXiv:2409.06843; arXiv:2505.12653; 10.1126/sciadv.adw1464; 10.1016/j.isci.2020.101060",
+  "EmoViS: Horikawa 정서 기하의 sensory-semantic 기원과 직접 겹침", "no(geometry-info Round 4 검색, 2026-11-12)",
+  "같은 데이터의 부분집합 조작으로 기하의 원인을 시험하는 새 검증 논리")
+K("LIT-37", L, "GI-R4-2", "K+P+B+E", "계량경제학의 OT 인과 매칭", "K2",
+  "자연 클립 라이브러리에서 정서와 시각, 의미 내용은 어느 정서 쌍에서 분리 가능한가: unbalanced optimal transport로 내용이 맞는 클립만 짝지을 때 짝을 못 찾는 비율은 정서 쌍마다 얼마이고, 짝지은 쌍에서도 transmodal 영역의 정서 차이가 남는가?",
+  "정서와 내용의 공선성(관찰 데이터의 식별 한계)", "unbalanced OT 매칭, positivity(overlap) 진단",
+  "시각, 의미 embedding(매칭 공간)", "transmodal 영역, amygdala",
+  f"{H20}+{MC}(주), {EF}(장면 창, MLLM 캡션은 AI 생성 표기), {NSD}(AI 추정 정서 대조)",
+  "정서 범주 쌍마다 매칭률과 매칭된 쌍의 신경 차이를 보고. 매칭률이 낮은 쌍의 결론은 '이 데이터로 식별 불가'로 표시",
+  "어떤 정서 구분이 이 데이터로 원리상 검정 가능한지 지도를 만들어 다른 질문의 해석 범위를 정한다",
+  "arXiv:2112.04398; arXiv:2503.07811; 10.1371/journal.pone.0152719; 10.1073/pnas.1912334117",
+  "EmoViS: 정서 기하와 sensory-semantic 내용의 분리 문제 겹침", "no(geometry-info Round 4 검색)")
+K("LIT-38", L, "GI-R4-3", "V+K+E+A", "", "K6",
+  "동기 방향(맞서기 대 멈추기)은 valence와 독립된 추상 축인가: 같은 valence 안에서 학습한 동기 방향 decoder가 다른 valence로 일반화되는가(교차 조건 일반화)?",
+  "동기 방향과 valence의 독립성", "cross-condition generalization(CCGP, Bernardi 2020)",
+  "없음", "전운동, 두정, PFC, amygdala", f"{EF}(Motivation 평정)",
+  "0단계: Motivation 평정이 discrete 평정으로 거의 완전히 예측되면 중단. 통과 시 valence 층화 교차 decoding과 CCGP",
+  "Axis V를 독립 구성 개념으로 둔 판단을 신경 기하로 검정한다",
+  "10.1016/j.cell.2020.09.031; 10.1162/jocn.2009.21317; 10.1093/cercor/bhad093; 10.1037/emo0001619",
+  NO, "partially: 과제 기반 단변량 분리(Berkman & Lieberman 2010)")
+K("LIT-39", L, "GI-R4-4", "D+S+K+E", "Complex Systems (dynamical similarity analysis)", "K5",
+  "정서 상태의 좌표 배치는 영화마다 달라도 상태 사이의 흐름은 보존되는가: DSA로 본 영화 간 동역학 유사도가 좌표 사상(정렬) 유사도보다 높은가?",
+  "정서 동역학의 휴대성", "dynamical similarity analysis, 자극 구동 대리 궤적 대조",
+  "없음", "정서 잠재 공간(전뇌)", f"{EF}(영화 14편), washout 구간 대조",
+  "영화 쌍마다 DSA 거리와 Procrustes 거리를 비교하고, 자극 구동 대리 궤적과 washout 구간을 대조로 둔다",
+  "정서 표상의 보존 단위가 좌표가 아니라 흐름일 수 있다는 가설을 검정한다",
+  "arXiv:2306.10168; 10.1371/journal.pcbi.1012994; 10.64898/2026.09.26.754452",
+  "Emo-FilM 연구: Emo-FilM 시간 정보 분석과 부분 겹침", "partially: Zaffina 2026(상대 기하 보존)")
+K("LIT-40", L, "BI-R4-1", "K+V+E", "운동 신경과학의 output-null subspace(Kaufman 2014)", "K6",
+  "정서 영상을 가만히 볼 때 전운동, 두정 피질의 행동 준비 활동은 같은 사람이 실제로 움직일 때의 패턴과 직교하는 부분공간에 놓이는가?",
+  "행동 준비의 신경 형식", "output-null subspace", "없음", "전운동, 두정 피질",
+  f"{ST}(수동 시청 + 다른 과제의 trackball 응답 구간)",
+  "다른 과제 응답 구간으로 실행 부분공간을 추정하고, 정서 영상 시청 중 패턴의 실행 부분공간 투영과 직교 성분을 정서 강도별로 비교. 머리 움직임, 안구 운동 공변량",
+  "정서의 행동 준비 성분이 '움직이지 않는 준비'로 존재하는지 거시 수준 유비로 검정한다",
+  "10.1038/nn.3643; 10.1073/pnas.2414005122; 10.1016/j.isci.2020.101060",
+  NO, "partially: 정서 영상의 배측 경로 활성(Goldberg 2014)",
+  note="fMRI voxel 부분공간은 신경 집단 부분공간이 아니다. 이론적으로 가능하지만 관찰 데이터로 구분할 수 없는 설명 표시")
+K("LIT-41", L, "BI-R4-2", "M+V+E+I", "Aesthetics / Neuroaesthetics (음악 groove)", "K6",
+  "영화 사운드트랙의 groove 특성은 이산 정서 범주보다 행동 경향 평정과 SMA, 기저핵 반응을 더 잘 설명하는가?",
+  "소리가 운반하는 행동 경향", "groove 특성(Janata 2012), 음원 분리", "오디오 표상 모델",
+  "SMA, 기저핵", f"{EF}(주), {H20}(무음 대조)",
+  "groove feature, 이산 정서, 행동 경향 평정의 variance partitioning. 무음 Horikawa는 탐색적 대조",
+  "음악의 정서 효과 중 행동 경향 경로를 분리한다",
+  "10.1037/a0024208; 10.1126/sciadv.adk6840; 10.1037/emo0001619; 10.1038/s41597-025-04803-5",
+  "Emo-FilM 연구: Emo-FilM 소리의 정서 기여 분석과 부분 겹침", "no(brain-inspired Round 4 검색)")
+K("LIT-42", L, "BI-R4-3", "J+V+H+E+S", "", "K6",
+  "같은 V-JEPA 2 encoder에서 행동 조건 예측기(V-JEPA 2-AC)가 행동 없는 예측기보다 정서 영상의 행동 경향 관련 뇌 분산을 더 고유하게 설명하는가, 그 이득은 데이터셋을 넘어 유지되는가?",
+  "행동 추론 목표와 정서의 행동 성분", "encoder 고정, 예측 목표만 바꾼 통제 비교",
+  "V-JEPA 2, V-JEPA 2-AC, LAPA", "전운동, 두정, transmodal", f"{EF}, {H20}, {ST}",
+  "같은 encoder feature 위에서 두 예측기 출력의 고유 설명량을 영역별로 비교하고 데이터셋 교차 검증",
+  "행동 추론 학습이 정서 표상 설명에 기여하는지 목표 수준에서 검정한다",
+  "arXiv:2506.09985; arXiv:2410.11758; 10.1073/pnas.2414005122; arXiv:2605.19352",
+  "EmoBrain: V-JEPA2 사용 겹침", "partially: 게임 플레이 fMRI의 행동 모형 정렬(Oota 2026)")
+K("LIT-43", L, "BI-R4-4", "N+W+Q+E", "Reinforcement Learning (prioritized replay, Mattar & Daw 2018)", "K7",
+  "반복 회상에서 정서 클립의 재활성 강도는 각성 자체보다 우선순위 재생 이론의 이득(gain) 대리 변수(놀람, 가치 변화)를 따르는가?",
+  "정서 기억 재활성의 우선순위 규칙", "prioritized replay의 gain과 need", "지각 encoder/decoder",
+  "해마, 감각 피질", f"{MC}(회상), {H20}(지각 encoder 보강)",
+  "클립별, 회차별 지각-회상 유사도를 각성, 놀람, 가치 변화 대리 변수로 회귀하고 회차에 따른 변화를 비교",
+  "정서가 기억 재활성을 높이는 이유를 각성이 아닌 계산적 우선순위로 설명할 수 있는지 검정한다",
+  "10.1038/s41593-018-0232-z; 10.1126/sciadv.adw1464; 10.3758/s13423-017-1313-9",
+  NO, "no(brain-inspired Round 4 검색)")
+K("LIT-44", L, "ET-R4-1", "W+A+R+O+Q", "Artificial Consciousness and Metacognition (LLM self-prediction vs cross-prediction)", "K7",
+  "회상 vividness 보고는 그 시행의 개인 재활성을 읽은 내성 보고인가, 모두에게 기억하기 쉬운 클립이라는 기억성의 반영인가: 반복 회상으로 item 안 변동과 item 간 차이를 분리하면 어느 쪽이 vividness를 설명하는가?",
+  "내성 접근 대 기억성", "LLM self-prediction vs cross-prediction 설계 논리, 이미지 기억성 연구",
+  "없음(설계 논리 차용)", "시각피질, 해마, amygdala", f"{MC}(6명, 72클립 반복 회상, 시행별 vividness)",
+  "vividness를 item 간 성분(타인 vividness로 예측)과 item 안 성분(같은 클립 반복 간 변동)으로 나누고, 각 성분이 본인 재활성을 따르는지 비교. 각성의 경로(기억성 vs 개인 재활성) 분해",
+  "내성 보고가 특권적 정보를 담는지 회상 영역에서 검정한다",
+  "arXiv:2410.13787; 10.1038/s41598-018-26467-5; 10.1126/sciadv.adw1464; 10.3758/s13423-017-1313-9",
+  NO, "partially(emotion-theory Round 4 검색)")
+K("LIT-45", L, "ET-R4-2", "V+Q+I+F", "", "K6",
+  "Emo-FilM의 Motivation 10개 항목은 정서 범주, valence와 구분되는 구성개념을 재는가: 인간 평정, AI(latent action, MLLM 평정), 뇌 반응 세 방법의 multitrait-multimethod 행렬에서 수렴 타당도와 변별 타당도가 성립하는가?",
+  "Axis V의 측정 타당성(관문)", "multitrait-multimethod 행렬(Campbell & Fiske 1959)",
+  "LAPA latent action, MLLM 평정", "행동 경향 관련 뇌 반응", f"{EF}",
+  "특성(행동 경향, 범주, valence) x 방법(인간, AI, 뇌) 상관 행렬에서 수렴과 변별 타당도를 평가. 실패 시 Axis V 질문은 이 데이터로 답할 수 없다고 결론",
+  "Axis V 질문들의 측정 전제를 먼저 검증한다",
+  "10.1037/h0046016; arXiv:2410.11758; 10.1038/s41597-025-04803-5; 10.1037/emo0001619; 10.1093/cercor/bhad093",
+  NO, "no(emotion-theory Round 4 검색)")
+K("LIT-46", L, "ET-R4-3, FA-R4-3(두 에이전트 독립 수렴)", "U+J+A+F", "", "K3",
+  "평정자, 참가자 본인, MLLM(관찰자, 경험자) 같은 라벨 출처를 서로 다른 'view'로 두고 식별 가능한 multi-view 학습으로 출처 불변 정서 성분과 출처 고유 성분을 분리하면, 뇌 반응은 어느 성분을 따르고 출처 고유 성분은 어디에 지도화되는가?",
+  "라벨 출처 불변 성분과 출처 고유 성분", "content-style 식별 가능성 이론, multi-view contrastive 학습",
+  "식별 가능한 multi-view 모델, MLLM 두 모드", "전뇌(예측: 인간 고유 잔차는 insula, 체성감각; AI 고유 잔차는 고차 시각피질)",
+  f"{EF}(주), {ST}(본인 view), {H20}(축소판)",
+  "출처 공통 성분과 출처별 잔차를 추정하고 각 성분의 encoding 지도를 비교. 출처 수와 신뢰도 차이를 맞춘 null",
+  "라벨 출처 차이를 오차가 아니라 분리 가능한 신호로 다뤄 각 출처가 뇌의 무엇을 반영하는지 지도화한다",
+  "arXiv:2106.04619; arXiv:2303.09166; arXiv:2509.24298; 10.1162/imag.a.134; arXiv:2501.10970",
+  NO, "partially: Du 2025, Santavirta 2025가 인간과 AI 평정의 공유를 보고. 출처 고유 성분의 뇌 지도는 없음")
+K("LIT-47", L, "ET-R4-4, FA-R4-1(두 에이전트 독립 수렴)", "W+L+N+H+P+I", "Memory and Mental Imagery (기억의 생성 모델)", "K7",
+  "회상된 정서는 원 자극의 고유 흔적인가, 의미 요약이나 cue에서 생성적으로 재구성된 것인가: 회상 패턴은 원 클립 encoding 예측과 정서 배제 캡션(또는 cue만으로 생성한 영상) encoding 예측 중 어느 쪽에 가까우며, 정서 부분공간은 시각 세부보다 schema 쪽에 치우치는가?",
+  "기억의 생성적 재구성과 정서", "기억 구성의 생성 모델(Spens & Burgess 2024), schema 기준선",
+  "텍스트 조건 비디오 생성 모델(Wan), encoding 모델", "시각피질, 해마, vmPFC",
+  f"{MC}(회상, 주), {H20}(지각 encoder 보강)",
+  "회상 패턴을 원 클립 예측, 캡션 예측, cue 생성 영상 예측으로 분해하고 정서 부분공간과 시각 부분공간에서 비율을 비교. 생성 자극은 R1",
+  "LeDoux & Brown의 schema 설명과 NEVER(정서 기억 보존)를 회상 데이터로 맞대 본다",
+  "10.1038/s41562-023-01799-z; 10.1126/sciadv.adw1464; 10.1073/pnas.1619316114; 10.3758/s13423-017-1313-9; arXiv:2503.20314",
+  NO, "no(직접 검정), 이론과 구성 요소는 partially(emotion-theory, frontier-ai Round 4 검색)")
+K("LIT-48", L, "LS-R4-1", "J+U+O+C", "", "K3", None,
+  "학습 목표(base, SFT, 선호 최적화)가 기계 평정자의 관점을 정하는가", "모델 판본 비교", "같은 계열의 base, SFT, 선호 최적화 LLM",
+  "", f"{ST} narratives, {MC}, {EF}", "", "", "arXiv:2604.27345; arXiv:2303.17548; arXiv:2408.13718", NO, "",
+  note="방향만 유지: 행동 수준 AI 평정자 연구라 뇌 연결이 약함. LIT-15, LIT-46의 라벨 생성 단계로 흡수")
+K("LIT-49", L, "LS-R4-2", "R+W+C+I+U", "", "K7",
+  "MLLM 내부 정서 표상이 비디오에서 cue 캡션 텍스트로 넘어갈 때 보존되는 정도(기계 재현 지수)는 클립별로 뇌 회상의 정서 재현 정도를 예측하는가: 회상 정서는 언어 병목을 통과해 운반되는가?",
+  "회상 정서의 언어 병목", "모델 내부 정서 방향 투영, 기계 재현 지수",
+  "공개 비디오 MLLM hidden state", "회상 재활성(전뇌)", f"{MC}(주), {H20}",
+  "클립별 기계 재현 지수(정서 방향, 의미 방향 각각)와 뇌 회상 재현 지수의 상관. 의미 방향 지수를 대조로",
+  "회상된 정서가 언어로 전달 가능한 형식인지 모델과 뇌를 비교해 검정한다",
+  "arXiv:2604.07729; 10.1126/sciadv.adw1464; 10.1038/nn.4450; 10.1093/cercor/bhv086",
+  NO, "no(llm-semantics Round 4 검색)")
+K("LIT-50", L, "LS-R4-3", "I+W+C+F", "Social and Collective Behavior (문화 진화의 전달 사슬)", "K7",
+  "사람과 LLM의 전달 사슬에서 클립 기술의 정서 내용이 보존되는 정도(집단 편향)는, 개인 회상에서 정서 재현과 시각 재현의 비(개인 편향)를 클립별로 예측하는가?",
+  "집단 전달 편향과 개인 기억 편향", "serial reproduction, 내용 편향(Acerbi & Stubbersfield 2023)",
+  "LLM 전달 사슬", "회상 재활성", f"{MC}(주), {H20}",
+  "LLM과 인간 전달 사슬에서 정서 보존율을 클립별로 측정하고, 개인 회상의 정서/시각 재현 비와 상관",
+  "개인 기억의 정서 편향이 집단 전달 편향과 같은 자극 속성에서 오는지 검정한다",
+  "10.1073/pnas.2313790120; 10.1038/s41467-023-41648-1; 10.1126/sciadv.adw1464",
+  NO, "no(llm-semantics Round 4 검색)", note="인간 전달 사슬은 새 행동 데이터 필요(LLM 사슬만으로 시작 가능)")
+K("LIT-51", L, "LS-R4-4", "D+S+C+I+E", "", "K5",
+  "언어(LLM과 인간 mental model)에서 얻은 정서 전이 사전확률은, 그 영화를 쓰지 않고도 보류된 Emo-FilM 영화의 신경 정서 상태 전이를 예측하는가?",
+  "정서 전이 지식의 일반성", "mental model 전이 확률(Thornton & Tamir 2017)", "LLM",
+  "해마, mPFC, 전뇌 상태 전이", f"{EF}(보류 영화)",
+  "언어 사전확률, 같은 데이터 평정 전이, 무작위 전이를 경쟁 모형으로 보류 영화의 신경 전이 예측",
+  "영화와 무관한 정서 지식이 실제 신경 정서 흐름을 예측하는지 검정한다",
+  "10.1073/pnas.1616056114; 10.1523/JNEUROSCI.1431-18.2018; 10.1038/s41467-025-68240-z",
+  "Emo-FilM 연구: Emo-FilM 시간 정보 분석과 부분 겹침", "partially: Thornton 2019(통제 과제에서 같은 논리)")
+K("LIT-52", L, "FA-R4-2", "V+J+K+F", "Embodied Cognition (empowerment, 내재 동기)", "K6",
+  "latent action world model로 계산한 장면의 empowerment(행동이 미래에 미치는 통제력)는 Emo-FilM의 통제 가능성 appraisal, Motivation 평정, 관련 뇌 반응의 자극 계산 대리인가?",
+  "통제 가능성 appraisal의 자극 계산", "empowerment(channel capacity)", "LAPA latent action quantizer, V-JEPA 2",
+  "전운동, 두정, vmPFC", f"{EF}",
+  "장면별 empowerment를 계산해 Controlled appraisal, Motivation 평정, 뇌 반응의 고유 설명량을 운동량, 장면 복잡도 통제 후 추정",
+  "appraisal 이론의 '통제 가능성'을 자극에서 계산 가능한 양으로 바꿔 검정한다",
+  "arXiv:1310.1863; arXiv:2410.11758; 10.1080/02699930902928969; 10.1073/pnas.2414005122",
+  NO, "no(frontier-ai Round 4 검색)")
+K("LIT-53", L, "FA-R4-4", "B+D+K+E+I", "", "K5",
+  "모델 latent와 뇌의 표상 궤적이 곧게 펴지는 성질(straightening)이 깨지는 순간은 정서적 놀람과 amygdala 반응을 컷, 자기회귀 구조를 통제한 뒤에도 예측하는가?",
+  "모델과 무관한 예측 위반 지표로서 궤적 곡률", "perceptual straightening(Hénaff 2019)",
+  "video SSL latent(V-JEPA 2 등)", "amygdala, 시각피질 궤적", f"{ST}(TR 0.46 s), {EF}",
+  "모델 latent와 뇌 궤적의 국소 곡률을 계산해 정서적 놀람 평정과 amygdala 반응을 컷, AR 구조, 사건 경계 통제 후 예측",
+  "예측 모델 없이 계산하는 '놀람' 지표를 정서에 연결한다",
+  "10.1038/s41593-019-0377-4; 10.1038/s41467-021-25939-z; arXiv:2506.09985; 10.7554/eLife.107955",
+  NO, "no(정서 기준), straightening 자체는 수행(frontier-ai Round 4 검색)")
+
+# ---------------------------------------------------------------- random route (seed 20261113)
+K("RND-01", R_, "random_combos.csv", "B+E+N+K+S", "", "K8", None,
+  "얕은 경로 기하의 데이터셋 간 전이", "", "", "", "", "", "",
+  "10.1016/j.neuron.2021.06.001", NO, "",
+  note="질문이 됨: 상구-pulvinar-amygdala 패턴 기하가 얕은 저공간주파수 망과 맞고 데이터셋 간 전이되는가. LIT-16과 같은 질문으로 그 하위 분석으로 통합")
+K("RND-02", R_, "random_combos.csv", "W+E+J+K+U", "", "K7",
+  "회상 중 재활성된 패턴은 어떤 학습 목표로 만든 표상 공간에 더 가까워지는가: 지각 때 예측형 video 목표(V-JEPA 2) 공간에 가까운 영역이 회상 때는 언어 정렬 목표(CLIP, LLM) 공간 쪽으로 옮겨 가는가, 그 이동은 정서 관련 영역과 시각피질에서 다른가?",
+  "회상에 따른 표상 변형", "학습 목표별 표상 공간 비교(Learning Objectives)",
+  "V-JEPA 2, CLIP, LLM embedding", "시각피질, 정서 관련 영역", f"{MC}",
+  "지각과 회상 각각에서 목표별 encoding 정확도를 noise ceiling으로 정규화해 비교하고, 이동 크기를 본인 vividness(본인 보고)와 규범 정서 강도(별도 평정자) 중 무엇이 조절하는지 구분",
+  "기억이 정서를 어떤 형식(예측적 지각 vs 언어적 의미)으로 다시 쓰는지 밝힌다",
+  "10.1126/sciadv.adw1464; arXiv:2506.09985; 10.1038/s42256-025-01072-0; arXiv:2506.06898",
+  NO, "partially: NSD-Imagery의 심상 decoding 모델 비교(Kneeland 2025)")
+K("RND-03", R_, "random_combos.csv", "B+E+G+R+P", "", "K2", None,
+  "amygdala encoding의 해석 가능한 feature 귀속", "SAE feature 귀속과 in-silico 절제", "", "amygdala", "", "", "",
+  "arXiv:2502.12892; 10.1523/JNEUROSCI.1436-24.2025", NO, "",
+  note="질문이 됨: amygdala 예측을 만드는 sparse feature를 찾아 절제와 자연 자극 선택으로 검증. LIT-31과 같은 목표라 그 분석 단계로 통합")
+K("RND-04", R_, "random_combos.csv", "V+E+L+R+P", "", "K6", None,
+  "affordance 편집과 latent action 내부 표상", "", "", "", "", "", "", "arXiv:2410.11758", NO, "",
+  note="질문이 됨: LIT-07(BI-P2, GC-P8)의 편집 단계와 같아 통합")
+K("RND-05", R_, "random_combos.csv", "C+F+G+R+U", "", "K3", None,
+  "뇌에서 LLM 내부 정서 공간으로의 decoding", "", "", "", "", "", "", "arXiv:2604.07729", NO, "",
+  note="질문이 됨: decoding 방향만 다른 LIT-13과 같은 질문으로 통합")
+K("RND-06", R_, "random_combos.csv", "W+F+I+K+T", "", "K7", None,
+  "회상 기하를 가장 잘 설명하는 모델 계열", "", "", "", "", "", "", "arXiv:2506.06898", NO, "",
+  note="질문이 됨: RND-02의 모델 계열 판본. RND-02로 통합")
+K("RND-07", R_, "random_combos.csv", "D+F+M+R+Q", "", "K10",
+  "영화의 순간마다 encoder 예측에서 오디오와 영상 기여가 상충할 때 평정자 간 정서 불일치도 커지는가, 그 순간 정서 관련 영역의 반응은 어느 양식을 따르는가?",
+  "양식 상충과 정서 평정 불일치", "멀티모달 encoder의 시점별 양식 귀속(attribution)",
+  "TRIBE v2 양식별 기여", "정서 관련 영역, 청각/시각 피질", f"{EF}(평정자별 1 Hz 원자료)",
+  "시점별 오디오-영상 귀속 상충 지수와 평정자 불일치(LIT-19의 시간 고정 성분)의 상관, 상충 구간에서 영역 반응의 양식 의존도",
+  "평정 불일치의 한 원인을 자극의 양식 상충으로 설명할 수 있는지 검정한다",
+  "10.1126/sciadv.adk6840; arXiv:2605.04326; 10.1038/s41597-025-04803-5",
+  "Emo-FilM 연구: 사전학습 멀티모달 encoder로 Emo-FilM 양식 기여 분석 겹침", "미확인: Stage 4에서 확인")
+X("RND-08", R_, "random_combos.csv", "B+E+I+R+T", "", "모델 계열별 amygdala 설명력 비교",
+  "Novelty Constraint: 'Foundation Model로 정서 관련 반응을 예측'하는 수준. Jang & Kragel 2025가 AI 모델로 amygdala 기능을 이미 분석했고, 해석 단계는 RND-03(LIT-31)과 중복",
+  "10.1523/JNEUROSCI.1436-24.2025")
+K("RND-09", R_, "random_combos.csv", "C+F+I+K+U", "", "K3",
+  "뇌의 개인 간 공유 정서 스펙트럼에서 인간 규범 평정의 정서 기하와 AI 추정 평정의 정서 기하는 각각 어느 rank 대역과 맞는가: AI 기하는 상위 공유 대역에만 맞고 하위 대역에서 인간보다 먼저 무너지는가?",
+  "라벨 출처별 정서 기하의 신경 정렬 범위", "rank 대역별 RSA, 공유 스펙트럼",
+  "MLLM 추정 평정, 인간 규범 평정", "신뢰 공유 부분공간(LIT-01)", f"{H20}+{MC}",
+  "rank 대역마다 인간 규범 RDM과 AI RDM의 신경 RDM 상관을 계산하고, 대역에 따른 하락 곡선을 비교",
+  "AI 라벨이 인간 라벨을 대신할 수 있는 신경 해상도의 한계를 정량화한다",
+  "arXiv:2409.06843; arXiv:2509.24298; 10.1038/s41598-025-14961-6; arXiv:2408.13718",
+  NO, "미확인: Du 2025는 전체 RSA만 보고(Stage 4에서 확인)")
+K("RND-10", R_, "random_combos.csv", "D+O+M+R+S", "", "K4", None,
+  "개인별 양식 가중치의 영화 간 안정성", "", "", "", f"{EF}", "", "", "10.1126/sciadv.adk6840", "Emo-FilM 연구: 부분 겹침", "",
+  note="질문이 됨: 사람마다 음악, 영상 의존도가 다르고 영화 간 안정적인가. 30명, 개인별 귀속 신뢰도가 불확실해(signal-feasibility) LIT-02의 개인 잔차 관문 뒤 하위 질문으로 둔다")
+X("RND-11", R_, "random_combos.csv", "V+F+G+R+S", "", "행동 경향 decoding의 데이터셋 간 일반화",
+  "행동 경향 라벨이 Emo-FilM에만 있어 다른 데이터셋에서는 AI 생성 라벨로 평가해야 하므로 순환적이다(emotion-theory, frontier-ai Round 4의 S+V 기각과 같은 이유). latent action 자체의 decoding은 정서 질문이 아니다")
+X("RND-12", R_, "random_combos.csv", "A+E+M+K+Q", "", "다중양식 통합이 정서 기하를 날카롭게 하는가",
+  "관찰 데이터에서 소리 유무와 자극이 함께 바뀐다(Round 3 EF-P7 검토). 같은 자극 비교는 LIT-11이 이미 다룬다")
+X("RND-13", R_, "random_combos.csv", "W+O+N+K+P", "", "회상 재활성 충실도의 개인차",
+  "회상 데이터(Mind captioning)는 6명이라 개인차(O) 추론이 불가하고, 회상에 대한 개입(P)이 없다")
+K("RND-14", R_, "random_combos.csv; Round 4 FA-R4-4(LIT-53)와 독립 수렴", "D+F+H+K+T", "", "K5",
+  "정서 관련 영역은 자연 영화의 표상 궤적을 시각피질보다 더 곧게 펴는가, encoding 모델의 예측 궤적은 관찰된 곡률을 재현하는가?",
+  "정서 표상의 시간 기하", "perceptual straightening", "TRIBE v2 예측 궤적",
+  "정서 관련 영역 vs 시각피질", f"{ST}(짧은 TR), {EF}",
+  "영역별 관찰 궤적 곡률과 자극 feature 궤적, encoder 예측 궤적 곡률을 비교. HRF 평활과 잡음이 곡률을 낮추는 효과는 시뮬레이션으로 보정",
+  "정서 영역이 시간 정보를 예측 가능한 형식으로 재부호화하는지 검정하고 in-silico 모델의 시간 기하 충실도를 본다",
+  "10.1038/s41593-019-0377-4; arXiv:2605.04326; arXiv:2306.10168",
+  NO, "미확인: 인간 fMRI straightening 선행은 Stage 4에서 확인")
+X("RND-15", R_, "random_combos.csv", "C+O+H+K+T", "", "서사 해석 개인차와 공유/특이 기하",
+  "IS-RSA로 서사 해석 개인차와 뇌 유사성의 관계는 이미 연구되었다(Finn 2020, Chen 2020). 정서 쪽 개인차는 LIT-02가 다룬다",
+  "10.1016/j.neuroimage.2020.116828; 10.1016/j.neuroimage.2020.116851")
+K("RND-16", R_, "random_combos.csv", "C+E+N+K+U", "", "K4", None,
+  "원인 귀속 계산과 정서 패턴 분리도", "", "", "", f"{EF}", "", "", "10.1016/j.neubiorev.2022.104977", NO, "",
+  note="질문이 됨: ET-P5와 같은 질문으로 LIT-19에 통합(무작위 경로의 독립 수렴)")
+K("RND-17", R_, "random_combos.csv", "B+O+H+R+U", "", "K4", None,
+  "개인별 정서-시각 feature 가중치 지도", "", "", "", f"{ST}", "", "", "10.1126/sciadv.abf7129", NO, "",
+  note="질문이 됨: 사람마다 본인 정서를 움직이는 시각 feature가 다르고 뇌 encoding 가중치와 맞는가. 참가자당 영상 49편, 평정 약 51% 결측이라 개인별 가중치 추정이 불안정(signal-feasibility). LIT-02의 하위 질문")
+X("RND-18", R_, "random_combos.csv", "W+E+N+K+P", "", "회상 중 successor 재활성",
+  "회상 클립은 서로 독립인 짧은 클립이라 전이 구조가 없고, 회상에 대한 개입도 없다(brain-inspired Round 4의 N+W successor 기각과 같은 이유)")
+X("RND-19", R_, "random_combos.csv", "W+O+L+K+Q", "", "생성 재구성으로 본 회상 정서 충실도의 개인차",
+  "LIT-12, LIT-29와 중복이고 회상 데이터 6명으로 개인차 추론 불가")
+X("RND-20", R_, "random_combos.csv", "D+O+M+K+U", "", "개인별 양식 가중치의 시간 변화",
+  "RND-10과 같은 질문(이미 하위 질문으로 보류)")
+X("RND-21", R_, "random_combos.csv", "B+F+I+K+U", "", "지각 표상 기하와 라벨 출처",
+  "RND-09와 같은 질문(지각 feature가 아니라 정서 기하가 대상일 때만 의미)")
+X("RND-22", R_, "random_combos.csv", "C+E+M+K+T", "", "대사와 음악의 정서 기하 기여",
+  "LIT-23, LIT-11과 중복")
+X("RND-23", R_, "random_combos.csv", "C+O+I+K+U", "", "개인 정서 기하와 모국어 LLM 정렬",
+  "LIT-18과 중복. Horikawa 2020 참가자 언어가 확인되지 않았고 Mind captioning 6명으로 개인 수준 언어 효과 추론 불가")
+K("RND-24", R_, "random_combos.csv", "C+E+J+K+Q", "", "K9",
+  "구조와 학습 데이터를 고정하고 학습 목표만 바꾼 video 모델(예측형, 마스킹 재구성형, 언어 정렬형) 중 어느 목표가 정서 기술 잔차(LIT-03)로 정의한 신뢰 정서 부분공간을 가장 잘 설명하는가?",
+  "정서 표상을 만드는 학습 목표", "목표만 바꾼 통제 비교(Learning Objectives)",
+  "같은 ViT 계열의 V-JEPA 2, VideoMAE, CLIP 계열", "신뢰 정서 부분공간(LIT-03, LIT-01)", f"{H20}+{MC}",
+  "목표별 encoding 정확도를 정서 부분공간과 시각 부분공간에서 따로 noise ceiling 정규화해 비교. 공개 checkpoint의 구조, 데이터 일치 정도를 먼저 확인",
+  "정서 관련 구조가 어떤 학습 압력에서 나오는지(예측 vs 재구성 vs 언어) 밝힌다",
+  "arXiv:2506.09985; 10.1038/s42256-025-01072-0; arXiv:2302.06677; arXiv:2409.06843",
+  "EmoBrain: V-JEPA2 사용 부분 겹침", "미확인: Stage 4에서 확인",
+  "모델 비교이지만 목표만 바꾼 통제 비교와 정서 고유 부분공간을 대상으로 해 Novelty Constraint의 단순 예측 비교와 구분",
+  note="구조와 데이터가 정확히 같은 공개 checkpoint 조합이 없을 수 있다(확인 필요)")
+X("RND-25", R_, "random_combos.csv", "B+O+I+K+P", "", "지각 정렬의 개인차와 인과",
+  "LIT-17과 중복이고, 관찰 데이터만으로 인과(P) 경로가 없다")
+X("RND-26", R_, "random_combos.csv", "V+E+G+R+Q", "", "행동 경향 decoding의 신뢰도",
+  "RND-11과 같은 순환 라벨 문제. 측정 신뢰도는 LIT-45가 다룬다")
+X("RND-27", R_, "random_combos.csv", "V+E+L+R+Q", "", "affordance 편집의 신뢰도",
+  "LIT-07, RND-04와 중복")
+X("RND-28", R_, "random_combos.csv", "W+O+I+K+T", "", "회상 기하 모델 비교의 개인차",
+  "RND-06과 중복이고 회상 6명으로 개인차 추론 불가")
+X("RND-29", R_, "random_combos.csv", "B+E+I+K+U", "", "지각 feature 모델과 라벨 출처",
+  "Novelty Constraint(모델 예측 비교 수준)이고 RND-08, RND-09와 중복")
+K("RND-30", R_, "random_combos.csv", "B+F+M+R+T+L", "", "K10",
+  "무음 정서 클립을 볼 때 청각피질은 '암시된 소리'를 표상하는가: video-to-audio 생성 모델이 만든 그럴듯한 소리의 오디오 feature가 무음 시청의 청각피질 반응을 설명하는가, 그 암시된 소리는 정서 정보를 싣는가?",
+  "암시된 소리와 정서", "video-to-audio 생성, 양식 귀속(어떤 시각 요소가 소리 예측을 만드는가)",
+  "MMAudio 등 video-to-audio 모델, 오디오 encoder", "청각피질, STS", f"{H20}+{MC}(무음 시청)",
+  "생성 소리 feature를 시각 feature 위에 추가했을 때 청각피질 고유 설명량, 그 성분의 정서 해독력. 시각 feature만으로 설명되는 부분과 분리",
+  "무음 영상의 정서 처리에 다중감각 예측이 관여하는지 검정한다",
+  "10.1038/nn.2533; arXiv:2412.15322; 10.1016/j.isci.2020.101060; 10.1126/sciadv.adw1464",
+  NO, "partially: 소리를 암시하는 무음 영상이 청각피질 내용 특이 활동을 만든다(Meyer 2010). 정서와의 연결은 미확인",
+  note="무작위 조합(B+F+M+R+T)에 생성 방법 L을 더했다. 생성 소리는 AI 생성 feature(R1)")
+
+# ---------------------------------------------------------------- strategy route (A~H)
+K("STR-A1", S, "Strategy A(Technology Transfer): 통계학의 prediction-powered inference", "U+Q+I+F+A",
+  "Statistics of Surrogate Labels (PPI)", "K3",
+  "Spacetop 본인 평정 결측을 MLLM 평정으로 보충하고 prediction-powered inference로 보정하면, '본인 보고와 뇌 반응의 관계' 추정은 인간 라벨만 쓴 추정과 같은 결론을 더 좁은 신뢰구간으로 주는가, 아니면 AI 라벨의 관점 편향이 결론을 바꾸는가?",
+  "본인 보고와 뇌의 관계를 AI 라벨로 추정할 때의 타당성", "prediction-powered inference(Angelopoulos 2023)",
+  "MLLM 평정(관찰자, 경험자 모드)", "전뇌 encoding", f"{ST} alignvideo(본인 평정 약 51% 결측), {EF}",
+  "인간만, AI만, PPI 보정 세 추정의 점추정과 신뢰구간 비교. AI 라벨 모드(관찰자/경험자)에 따른 편향 방향",
+  "AI 라벨을 버리지도 맹신하지도 않고 신경 추론에 쓰는 방법과 그 한계를 정서 데이터에서 보인다",
+  "10.1126/science.adi6000; arXiv:2501.10970; arXiv:2408.13718",
+  NO, "미확인: 정서 fMRI에 PPI 적용한 선행은 Stage 4에서 확인")
+X("STR-A2", S, "Strategy A: 정서 분류 foundation model의 fMRI 정서 decoding 전이", "A+F+I+S", "",
+  "foundation model 전이로 정서 decoding 정확도 향상",
+  "Novelty Constraint: '새로운 모델로 emotion classification accuracy를 높인다'에 해당. 과학적 질문 없음")
+K("STR-B1", S, "Strategy B(Methodological Inversion): 라벨에서 뇌로 가는 decoding을 뇌에서 자극, 이름으로 뒤집기", "A+K+L+C+T", "", "K1",
+  "라벨 없이 뇌에서 찾은 신뢰 공유 성분을 먼저 정하고, 각 성분을 가장 강하게 구동하는 자연 클립(또는 생성 자극)을 사람과 MLLM에게 이름 붙이게 하면, 그 이름 체계는 Cowen & Keltner의 27/34 범주와 어떻게 다른가?",
+  "정서 분류 체계(라벨 우선 vs 뇌 우선)", "구동/억제 자극 선택(Tuckute 2024), 선호 자극 합성(NeuroVolve)",
+  "encoder 기반 자극 선택, 생성 모델(R1), MLLM 명명", "신뢰 공유 성분(LIT-01)",
+  f"{H20}+{MC}(선택), 명명은 새 평정",
+  "성분별 상위/하위 클립을 사람(새 평정)과 MLLM이 자유 기술하고, 기술의 의미 군집과 기존 범주의 대응(정보량, 일대다 대응)을 측정",
+  "기존 정서 어휘에 맞추지 않은 신경 기반 정서 분류 체계 후보를 제시한다",
+  "10.1038/s41562-023-01783-7; arXiv:2512.00557; arXiv:2409.06843; 10.1073/pnas.1702247114",
+  NO, "partially: 구동/억제 선택은 언어망에서 수행(Tuckute 2024), 정서 성분에는 미확인",
+  "라벨에서 출발하지 않는 역방향 분류")
+X("STR-B2", S, "Strategy B: 뇌에서 정서 영상 재구성", "A+G+L+F", "",
+  "decoding을 생성으로 뒤집어 정서 영상을 재구성",
+  "재구성 품질 개선은 Novelty Constraint 대상이고, 생성기 prior가 정서를 중립화하거나 주입하는 confound(VD-P4, LIT-29)가 해석을 막는다")
+K("STR-C1", S, "Strategy C(Representation Comparison): Shared vs Modality-specific", "A+E+M+K+S", "", "K1",
+  "같은 참가자가 텍스트로 읽은 이야기, 오디오로 들은 이야기, 영상에서 느낀 정서의 좋음-나쁨은 같은 추상 부호(교차 조건 일반화)를 쓰는가, 공유되는 영역과 양식 특이 영역은 어디인가?",
+  "양식 일반 정서 부호 vs 양식 특이 부호", "cross-condition generalization(CCGP, Bernardi 2020)",
+  "양식별 저수준 feature 통제용 DNN", "mPFC, STS, insula, amygdala",
+  f"{ST}(같은 참가자의 narratives 텍스트/오디오, alignvideo)",
+  "양식 A에서 학습한 valence decoder의 양식 B 일반화와 CCGP를 영역별로 계산. 저수준 feature 회귀 후 비교",
+  "개인 안에서 양식을 넘는 정서 추상화의 범위를 측정한다",
+  "10.1016/j.cell.2020.09.031; 10.1523/JNEUROSCI.1676-14.2014; 10.1162/imag_a_00517",
+  NO, "partially: 지각과 추론 정서의 공통 부호(Skerry & Saxe 2014)",
+  note="narratives 이야기와 양식 배정의 참가자 간 균형화 여부 확인 필요. alignvideo는 좋음-나쁨이 아니라 happy, sad 등 7차원이라 valence는 합성 지표")
+K("STR-D1", S, "Strategy D(Scale Bridging): 국소 활성에서 분산 시스템으로", "A+E+K+T",
+  "Information-theoretic Neuroscience (partial information decomposition)", "K1",
+  "정서 범주 정보는 amygdala와 피질 영역 사이에 중복으로 실리는가 시너지로만 나타나는가, 그 비율은 시각 범주 정보와 다른가?",
+  "국소 표상 vs 분산 표상", "부분 정보 분해(PID), synergistic core(Luppi 2022)",
+  "없음(가우시안 PID 추정기)", "amygdala, insula, vmPFC와 피질 parcel 쌍", f"{H20}+{MC}, {EF}(보조)",
+  "영역 쌍마다 정서 라벨과 시각 범주 라벨에 대한 redundancy, synergy, unique 정보를 추정해 비교. ROI는 독립 데이터로 정의(순환 추론 방지)",
+  "'정서는 분산 표상'이라는 주장을 시너지라는 측정 가능한 양으로 바꿔 검정한다",
+  "10.1038/s41593-022-01070-0; 10.1016/j.isci.2020.101060; 10.1126/sciadv.adw1464",
+  NO, "미확인: Stage 4에서 확인")
+K("STR-E1", S, "Strategy E(Dynamics and Geometry): 정서를 위치가 아니라 궤적으로", "D+A+E+K+Q", "", "K5",
+  "정서의 각성은 신경 상태 공간의 위치가 아니라 속도인가: HRF, 움직임, 전역 신호, 사건 경계를 통제한 뒤 신경 상태 변화 속도가 국소 평균 활성보다 arousal 평정과 EDA를 더 잘 추적하는가?",
+  "arousal의 동역학적 정의", "상태 공간 속도, 동역학 유사도",
+  "없음", "전뇌 상태 공간, 정서 관련 영역", f"{EF}(arousal 1 Hz consensus, 참가자 EDA), {ST}",
+  "TR 간 패턴 변화량(속도)과 영역 평균 활성을 경쟁 회귀자로 arousal과 EDA 예측. 사건 경계 회귀자(Nguyen 2026)와 전역 자율신경 성분 통제",
+  "arousal을 상태가 아닌 변화율로 보는 새 가설을 검정한다",
+  "10.1371/journal.pcbi.1012994; 10.1038/s41593-025-01945-y; arXiv:2306.10168; 10.7554/eLife.107955",
+  NO, "미확인: Stage 4에서 확인")
+K("STR-F1", S, "Strategy F(Cross-Dataset Discovery): 규범 라벨 공간에서 본인 보고 공간으로", "A+U+F+S+K", "", "K3",
+  "Horikawa 규범 평정으로 정의한 정서 축을 자극 기반 encoder를 다리로 삼아 Emo-FilM consensus와 Spacetop 본인 보고로 옮기면 어느 축이 살아남는가, 실패는 자극 차이보다 라벨 출처 차이로 더 잘 설명되는가?",
+  "데이터셋 간 정서 축의 보존과 라벨 출처", "공유 잠재 공간 정렬(CCA), 자극 기반 encoder 다리",
+  "TRIBE v2, 정서 encoder", "전뇌", f"{H20}(규범), {EF}(consensus), {ST}(본인)",
+  "축별 전이 성능을 자극 유사도와 라벨 출처 차이로 회귀해 실패 원인을 분해",
+  "데이터셋 간 정서 결과 불일치의 원인을 라벨 출처라는 측정 변수로 설명한다",
+  "10.1016/j.isci.2020.101060; arXiv:2605.04326; 10.1371/journal.pcbi.1012994; 10.1038/s41597-025-04803-5",
+  NO, "partially: Ke 2025(arousal 전이, valence 비전이)")
+K("STR-G1", S, "Strategy G(Counterfactual Neuroscience): 데이터셋 안의 실제 순서 변이를 반사실 조작으로", "C+P+D+E+L", "", "K5",
+  "같은 클립이 서로 다른 직전 클립 뒤에 제시된 Mind captioning 반복 노출에서, 직전 클립의 정서는 현재 클립의 정서 표상을 그쪽으로 끌어당기는가(동화) 밀어내는가(대비), 두 클립을 이어 넣은 in-silico 예측은 관찰된 맥락 효과를 재현하는가?",
+  "맥락에 따른 정서 해석(Kuleshov 효과의 자연 영상판)", "실제 순서 변이(R3-internal) + in-silico 연결 입력(R1) 비교",
+  "TRIBE v2", "amygdala, vmPFC, 정서 부분공간", f"{MC}(의사 무작위 순서, 최대 11회 노출)",
+  "현재 클립 반응의 정서 부분공간 투영을 직전 클립 정서로 회귀(동화/대비 부호). HRF 잔여는 시각 부분공간 대조로 분리(LIT-10과 공유)",
+  "통제된 얼굴-장면 설계를 넘어 자연 영상에서 맥락 효과를 관찰하고 in-silico 모델이 그것을 재현하는지 본다",
+  "10.1093/scan/nsl014; 10.1371/journal.pone.0308295; 10.1126/sciadv.adw1464; arXiv:2605.04326",
+  NO, "partially: Mobbs 2006, Cao 2024(통제된 얼굴-장면 설계)",
+  note="LIT-10과 같은 데이터와 HRF 통제를 공유. LIT-10은 지속(감쇠), STR-G1은 해석 이동(부호)과 in-silico 재현을 묻는다")
+K("STR-H1", S, "Strategy H(Reverse Inspiration, 뇌 -> AI): brain-tuning", "I+J+F+A+S", "", "K9",
+  "video 모델을 정서 관련 영역의 fMRI를 예측하도록 미세조정하면, 시각피질로 미세조정한 경우보다 보류된 자극에서 인간 정서 판단과의 정렬이 더 좋아지는가?",
+  "뇌 정서 표상의 기능적 정보 가치", "brain-tuning(Policzer 2025)",
+  "video encoder(V-JEPA 2 등)", "정서 관련 영역 vs 시각피질(대조)", f"{H20}+{MC}(학습), {EF}, {ST}(인간 판단 평가)",
+  "영역별 brain-tuning 판본의 보류 자극 정서 판단 정렬을 비교하고, 같은 양의 라벨 미세조정과도 비교",
+  "뇌 정서 표상이 라벨이 담지 못하는 정보를 갖는지 기능적으로 검정한다",
+  "arXiv:2511.07988; arXiv:2605.04326; arXiv:2408.13718; 10.1016/j.isci.2020.101060",
+  "EmoBrain: V-JEPA2와 teacher-student distillation으로 뇌 정서 정보 활용 겹침",
+  "partially: 사회 인지 brain-tuning(Policzer 2025)")
+K("STR-H2", S, "Strategy H(Reverse Inspiration, AI -> 뇌): mechanistic interpretability의 superposition", "A+K+R+Q+F", "", "K1",
+  "뇌의 정서 표상은 신뢰 차원 수보다 많은 정서 범주를 sparse superposition으로 담는가: 드물게 나타나는 정서 범주일수록 전용 차원 없이 중첩되고, 흔한 범주일수록 전용 차원을 갖는가?",
+  "정서 범주 수와 신경 차원 수의 관계", "superposition 가설(Elhage 2022), 안정 sparse dictionary(Fel 2025)",
+  "fMRI 패턴에 적용한 sparse dictionary", "신뢰 공유 부분공간(LIT-01)", f"{H20}+{MC}",
+  "신뢰 부분공간에서 학습한 사전의 원자 수가 신뢰 차원 수를 넘는지, 원자-범주 대응이 범주 빈도에 따라 달라지는지, 재학습 간 원자 일치율",
+  "Horikawa(많은 범주)와 Westlin(적은 차원)을 함께 설명할 수 있는 제3의 가설을 검정 가능한 형태로 만든다",
+  "arXiv:2209.10652; arXiv:2502.12892; 10.1016/j.isci.2020.101060; arXiv:2507.00320",
+  "EmoViS: Horikawa 정서 기하 대상 겹침(방법은 다름)", "미확인: Stage 4에서 확인",
+  "AI 해석 연구의 개념을 정서 차원 논쟁의 판정 가설로 옮김",
+  note="voxel 패턴의 superposition은 신경 단위 superposition의 거시 유비다")
+
+# ---------------------------------------------------------------- Round 4 pair-level rejections (rejected.md only)
+R4_REJECTED = [
+    ("K+L", "geometry-info, llm-semantics", "지금 가능한 것은 encoder 위 R1뿐이고 EF-P1(LIT-05) 관문을 통과하지 않았다. affective metamer와 같은 질문(geometry-info). 서사 8편 encoder로는 in-silico 예측을 믿기 어렵다(llm-semantics)"),
+    ("P+W", "geometry-info, frontier-ai, llm-semantics(흡수)", "회상은 cue 텍스트와 재제시 때문에 깨끗한 개입이 아니다. llm-semantics는 LS-R4-2(LIT-49)의 통제 조건으로 흡수"),
+    ("O+V", "geometry-info(보류), brain-inspired, emotion-theory, frontier-ai", "개인 수준 행동 경향 측정이 없다. Emo-FilM BIS/BAS는 30명으로 r 약 0.49 이상만 검출 가능(brain-inspired)"),
+    ("P+V", "brain-inspired, frontier-ai", "데이터 안의 실제 개입(Spacetop 기만 cue)에는 행동 경향 측정이 없고, 편집 기반 검정은 GC-P8(LIT-07)로 이미 논의"),
+    ("T+V", "brain-inspired, frontier-ai, llm-semantics", "minimum-validation 태그를 넘는 별도 질문이 없다"),
+    ("T+W", "emotion-theory, frontier-ai", "benchmark로 환원된다"),
+    ("S+V", "emotion-theory, frontier-ai", "행동 경향 라벨이 Emo-FilM에만 있어 데이터셋 간 검정은 AI 라벨에 기대 순환적이다"),
+    ("M+W", "emotion-theory, llm-semantics", "소리 있는 회상 데이터가 없고, cue가 두 언어로 동시에 제시되어 효과를 분리할 수 없다"),
+    ("J+W", "llm-semantics", "억지 연결(RND-02가 무작위 경로에서 W+J를 다른 형태로 채택)"),
+    ("Q+V", "llm-semantics, frontier-ai, brain-inspired(흡수)", "LS-P5, BI-P2에서 이미 다룸. 측정 타당성은 ET-R4-2(LIT-45)가 맡음"),
+]
+
+
+# ---------------------------------------------------------------- checks and outputs
+def load_db():
+    idx = {}
+    for r in csv.DictReader(open(os.path.join(ROOT, "outputs/literature/literature_db.csv"), encoding="utf-8")):
+        for k in (r["all_ids"] or r["id"]).split(";"):
+            k = k.strip().lower().replace("doi:", "")
+            if k:
+                idx[k] = r
+    return idx
+
+
+def ids_of(ev):
+    return [e.strip() for e in ev.split(";") if e.strip()]
+
+
+def main():
+    db = load_db()
+    problems, warn = [], []
+    seen = set()
+    for c in COMBOS:
+        assert c["combo_id"] not in seen, c["combo_id"]
+        seen.add(c["combo_id"])
+        ax = [a for a in c["axes"].split("+") if a]
+        c["n_types"] = len({TYPE[a] for a in ax}) if ax else 0
+        c["outside_ok"] = bool(set(ax) & OUTSIDE) or bool(c["external_field"])
+        if c["status"] == "kept":
+            if c["n_types"] < 3:
+                problems.append(f"{c['combo_id']}: 유형 {c['n_types']}개")
+            if not c["outside_ok"]:
+                problems.append(f"{c['combo_id']}: 외부 Axis 없음")
+        for e in ids_of(c["evidence_ids"]):
+            r = db.get(e.lower().replace("doi:", ""))
+            if not r:
+                problems.append(f"{c['combo_id']}: 근거 {e} DB에 없음")
+            elif r["verified"] != "True":
+                warn.append(f"{c['combo_id']}: 근거 {e} 미검증")
+    # coverage of Round 2 and Round 4 proposals
+    src_text = " ".join(c["source"] for c in COMBOS)
+    r2 = [r["proposal_id"] for r in csv.DictReader(open(os.path.join(ROOT, "outputs/discussion/proposals_index.csv"), encoding="utf-8"))]
+    r4 = []
+    for a in os.listdir(os.path.join(ROOT, "outputs/agents")):
+        p = os.path.join(ROOT, "outputs/agents", a, "round4.md")
+        if os.path.exists(p):
+            r4 += re.findall(r"(?m)^## ([A-Z]{2}-R4-\d)", open(p, encoding="utf-8").read())
+    miss = [p for p in r2 + r4 if not re.search(rf"\b{re.escape(p)}\b", src_text)]
+    if miss:
+        problems.append("매핑되지 않은 제안: " + " ".join(miss))
+    rnd_ids = [r["combo_id"] for r in csv.DictReader(open(os.path.join(ROOT, "outputs/combinations/random_combos.csv"), encoding="utf-8"))]
+    rnd_axes = {r["combo_id"]: r["axes"] for r in csv.DictReader(open(os.path.join(ROOT, "outputs/combinations/random_combos.csv"), encoding="utf-8"))}
+    for rid in rnd_ids:
+        c = next((x for x in COMBOS if x["combo_id"] == rid), None)
+        if not c:
+            problems.append(f"{rid}: 판정 없음")
+        elif not c["axes"].startswith(rnd_axes[rid]):
+            problems.append(f"{rid}: Axis가 무작위 조합({rnd_axes[rid]})과 다름")
+    strategies = {re.match(r"STR-([A-H])", c["combo_id"]).group(1) for c in COMBOS if c["route"] == S and c["status"] == "kept"}
+    if strategies != set("ABCDEFGH"):
+        problems.append("전략 미적용: " + "".join(sorted(set("ABCDEFGH") - strategies)))
+
+    # RQ numbering by cluster
+    n = 0
+    for k in CLUSTERS:
+        for c in COMBOS:
+            if c["status"] == "kept" and c["rq"] and c["cluster"] == k:
+                n += 1
+                c["rq_id"] = f"RQ-{n:02d}"
+    for c in COMBOS:
+        c.setdefault("rq_id", "")
+
+    cols = ["combo_id", "route", "axes", "scientific_construct", "imported_concept_or_method",
+            "ai_model_or_representation", "neural_target", "dataset", "measurable_prediction_or_analysis",
+            "scientific_contribution", "evidence_ids", "status", "overlap",
+            "source", "external_field", "cluster", "rq_id", "prior_work", "novelty_check", "note"]
+    with open(os.path.join(ROOT, "outputs/combinations/matrix.csv"), "w", newline="", encoding="utf-8") as fh:
+        w = csv.DictWriter(fh, fieldnames=cols, extrasaction="ignore")
+        w.writeheader()
+        for c in COMBOS:
+            row = dict(c)
+            row["overlap"] = c["overlap"] if c["status"] == "kept" else ""
+            w.writerow(row)
+
+    kept = [c for c in COMBOS if c["status"] == "kept"]
+    rej = [c for c in COMBOS if c["status"] == "rejected"]
+    rqs = [c for c in kept if c["rq"]]
+    by_route = collections.Counter((c["route"], c["status"]) for c in COMBOS)
+    rq_route = collections.Counter(c["route"] for c in rqs)
+
+    # rejected.md
+    Lr = ["# 기각한 조합과 사유", "",
+          "* 생성: `python3 -I outputs/combinations/build_matrix.py` (조합 원자료는 스크립트 안에 있다)",
+          f"* 기각 {len(rej)}개(문헌 경로 {by_route[(L, 'rejected')]}, 무작위 경로 {by_route[(R_, 'rejected')]}, 전략 경로 {by_route[(S, 'rejected')]}). 그 밖에 Round 4 에이전트가 기각한 미논의 Axis 쌍 {len(R4_REJECTED)}개를 3절에 옮겼다.",
+          "* 다른 조합으로 통합한 경우(질문은 되지만 같은 질문)는 기각이 아니라 kept(방향만 유지)로 matrix.csv의 note에 적었다.", ""]
+    for route, title in [(L, "1. 문헌 경로"), (R_, "2. 무작위 경로 (seed 20261113)"), (S, "3. 전략 경로")]:
+        Lr += [f"## {title}", "", "| 조합 | 출처 | Axis | 내용 | 기각 사유 |", "|---|---|---|---|---|"]
+        for c in rej:
+            if c["route"] == route:
+                Lr.append(f"| {c['combo_id']} | {c['source']} | {c['axes']} | {c['scientific_construct']} | {c['note']} |")
+        Lr.append("")
+    Lr += ["## 4. Round 4에서 에이전트가 기각한 미논의 Axis 쌍", "",
+           "`outputs/combinations/discussed_pairs.md`의 미논의 쌍 가운데 Round 4 에이전트가 검토 후 질문으로 만들지 않은 것이다. 근거는 각 `outputs/agents/<이름>/round4.md`의 기각 절.", "",
+           "| 쌍 | 기각한 에이전트 | 사유 |", "|---|---|---|"]
+    for p, who, why in R4_REJECTED:
+        Lr.append(f"| {p} | {who} | {why} |")
+    Lr += ["", "## 5. Novelty Constraint로 기각하거나 범위를 줄인 조합", ""]
+    for c in COMBOS:
+        if "Novelty Constraint" in (c["note"] + c["novelty_check"]):
+            Lr.append(f"* {c['combo_id']} ({c['status']}): {c['note'] or c['novelty_check']}")
+    open(os.path.join(ROOT, "outputs/combinations/rejected.md"), "w", encoding="utf-8").write("\n".join(Lr) + "\n")
+
+    # rq_table.md
+    T = []
+    for k, title in CLUSTERS.items():
+        members = [c for c in rqs if c["cluster"] == k]
+        dirs = [c for c in kept if c["cluster"] == k and not c["rq"]]
+        T += [f"### {k}. {title} (질문 {len(members)}개)", "",
+              "| RQ | 연구 질문 | Axis 조합 | 경로 (조합 ID, 출처) | 근거 논문 ID | 가능한 데이터셋 | 선행 판정 | overlap |",
+              "|---|---|---|---|---|---|---|---|"]
+        for c in members:
+            T.append("| {rq_id} | {rq} | {axes}{ext} | {route} ({cid}; {src}) | {ev} | {data} | {prior} | {ov} |".format(
+                rq_id=c["rq_id"], rq=c["rq"], axes=c["axes"],
+                ext=f" (+외부: {c['external_field']})" if c["external_field"] else "",
+                route=c["route"], cid=c["combo_id"], src=c["source"], ev=c["evidence_ids"],
+                data=c["dataset"], prior=c["prior_work"],
+                ov=("overlap: " + c["overlap"]) if c["overlap"] != NO else NO))
+        if dirs:
+            T += ["", "방향만 유지한 조합: " + "; ".join(f"{c['combo_id']}({c['scientific_construct']})" for c in dirs)]
+        T.append("")
+    open(os.path.join(ROOT, "outputs/combinations/rq_table.md"), "w", encoding="utf-8").write("\n".join(T) + "\n")
+
+    # checks
+    ov_c = collections.Counter()
+    for c in rqs:
+        for p in ("EmoBrain", "EmoViS", "Emo-FilM 연구"):
+            if p in c["overlap"]:
+                ov_c[p] += 1
+    C = ["# matrix 점검 결과", "", "* 생성: `python3 -I outputs/combinations/build_matrix.py`", "",
+         f"* 조합 {len(COMBOS)}개: kept {len(kept)}, rejected {len(rej)}",
+         f"* 경로별: " + ", ".join(f"{r} kept {by_route[(r, 'kept')]} / rejected {by_route[(r, 'rejected')]}" for r in (L, R_, S)),
+         f"* Broad Research Directions(kept 조합) {len(kept)}개, Distinct Research Questions {len(rqs)}개 (경로별 " + ", ".join(f"{r} {rq_route[r]}" for r in (L, R_, S)) + ")",
+         f"* 군집 {len(CLUSTERS)}개: " + ", ".join(f"{k} {sum(1 for c in rqs if c['cluster'] == k)}" for k in CLUSTERS),
+         f"* overlap 표시 질문 수: " + ", ".join(f"{p} {n}" for p, n in ov_c.items()),
+         f"* 전략 적용: {''.join(sorted(strategies))}",
+         f"* 근거 ID 수(중복 제거): {len({e for c in COMBOS for e in ids_of(c['evidence_ids'])})}", "",
+         "## 규칙 위반과 누락", ""] + ([f"* {p}" for p in problems] or ["* 없음"]) + ["", "## 경고", ""] + ([f"* {w}" for w in warn] or ["* 없음"])
+    open(os.path.join(ROOT, "outputs/combinations/matrix_checks.md"), "w", encoding="utf-8").write("\n".join(C) + "\n")
+    print("\n".join(C[3:]))
+
+
+if __name__ == "__main__":
+    main()

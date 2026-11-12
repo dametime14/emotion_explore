@@ -1,10 +1,10 @@
 # Literature Statistics (Deliverable C)
 
 * 생성: `python3 -I outputs/literature/merge.py` (자동 생성 파일, 직접 고치지 말 것)
-* 입력 레코드: 643개 (파싱 오류 0개), 입력 파일: `outputs/agents/*/literature*.jsonl`
-* 원자료 기준 verified 표기: 631개, 미검증(search_index 등): 12개
-* 중복 제거 후 고유 논문: **476편**
-* **verified 고유 논문: 471편** (식별자 경로 doi.org / crossref / pubmed / arxiv / openreview / publisher로 확인된 것만)
+* 입력 레코드: 646개 (파싱 오류 0개), 입력 파일: `outputs/agents/*/literature*.jsonl`
+* 원자료 기준 verified 표기: 634개, 미검증(search_index 등): 12개
+* 중복 제거 후 고유 논문: **479편**
+* **verified 고유 논문: 474편** (식별자 경로 doi.org / crossref / pubmed / arxiv / openreview / publisher로 확인된 것만)
 * 미검증 고유 논문: 5편 (verified 집계에서 제외, DB에는 `verified=False`로 남김)
 
 ## Axis별 verified 논문 수 (한 논문이 여러 Axis에 속할 수 있음)
@@ -12,28 +12,28 @@
 | Axis | verified | 전체(미검증 포함) |
 |---|---|---|
 | A | 162 | 163 |
-| B | 59 | 60 |
+| B | 60 | 61 |
 | C | 71 | 72 |
 | D | 105 | 105 |
 | E | 135 | 135 |
 | F | 68 | 69 |
 | G | 50 | 51 |
 | H | 77 | 81 |
-| I | 97 | 99 |
+| I | 98 | 100 |
 | J | 53 | 54 |
-| K | 94 | 95 |
-| L | 55 | 56 |
-| M | 58 | 58 |
+| K | 95 | 96 |
+| L | 56 | 57 |
+| M | 60 | 60 |
 | N | 112 | 113 |
 | O | 86 | 86 |
 | P | 47 | 48 |
 | Q | 89 | 89 |
-| R | 49 | 49 |
+| R | 50 | 50 |
 | S | 56 | 58 |
 | T | 70 | 71 |
 | U | 11 | 11 |
 | V | 15 | 15 |
-| W | 24 | 24 |
+| W | 25 | 25 |
 
 ## 연도 분포 (verified)
 
@@ -46,7 +46,7 @@
 | 2006 | 1 |
 | 2007 | 1 |
 | 2009 | 1 |
-| 2010 | 3 |
+| 2010 | 4 |
 | 2011 | 1 |
 | 2012 | 1 |
 | 2013 | 1 |
@@ -58,9 +58,9 @@
 | 2019 | 27 |
 | 2020 | 28 |
 | 2021 | 29 |
-| 2022 | 30 |
+| 2022 | 31 |
 | 2023 | 56 |
-| 2024 | 63 |
+| 2024 | 64 |
 | 2025 | 89 |
 | 2026 | 65 |
 
@@ -71,7 +71,7 @@
 | full_text | 226 |
 | abstract_only | 193 |
 | search_summary | 17 |
-| no | 35 |
+| no | 38 |
 
 ## 담당 에이전트별 verified 고유 논문 수 (중복 논문은 기여한 모든 에이전트에 집계)
 
@@ -89,6 +89,7 @@
 | systems-neuro | 48 |
 | adversarial-reviewer | 38 |
 | vision-decoding | 38 |
+| coordinator | 3 |
 
 ## 에이전트별 원 레코드 수 (중복 제거 전, 미검증 포함)
 
@@ -106,6 +107,7 @@
 | systems-neuro | 49 |
 | adversarial-reviewer | 38 |
 | vision-decoding | 38 |
+| coordinator | 3 |
 
 ## future_directions의 already_done 분포 (verified 논문)
 
