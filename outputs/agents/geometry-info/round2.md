@@ -3,7 +3,7 @@
 * 작성: geometry-info (Agent 7, Axis K, O 담당) / 기준일 2026-11-12 / 절차: `reference/protocols.md` P2 / 제안 ID 접두어 GI
 * 읽은 것: 다른 10개 에이전트의 `round1.md`(0, 1, 3, 4, 6절 전체와 필요한 5절), `outputs/axis_encyclopedia.md`(0절, 1절 K/Q/R/T, 2절), `outputs/STAGE_STATUS.md` 사용자 결정 기록(2026-11-12 두 차례), `outputs/literature/literature_db.csv`(필요한 ID만 조회)
 * 새로 확인한 원문: Horikawa et al. (2025) Mind captioning(doi:10.1126/sciadv.adw1464) Materials and Methods를 PMC12588295 전문으로 직접 읽었다. Thornton, Weaverdyck, Tamir (2019), Tan et al. (2022), Baez-Lugo et al. (2023), Lynn et al. (2021), Kringelbach et al. (2023), Chikazoe et al. (2014)는 PubMed 초록을 읽었다.
-* 문헌 갱신: `literature.jsonl`에 5편을 추가하고(총 50편, 모두 Crossref 확인) Gauthaman 2024의 출판본(PLOS Comput Biol 21:e1013714, doi:10.1371/journal.pcbi.1013714, Crossref 확인)을 기존 항목에 적었다.
+* 문헌 갱신: `literature.jsonl`에 6편을 추가하고(총 51편, 5편 Crossref, 1편 arxiv.org 초록 페이지로 확인) Gauthaman 2024의 출판본(PLOS Comput Biol 21:e1013714, doi:10.1371/journal.pcbi.1013714, Crossref 확인)을 기존 항목에 적었다.
 * 표기: [본문], [초록], [판단], [DB](다른 에이전트가 literature_db.csv에 verified로 올린 항목을 그 기록에 기대어 인용, 본 에이전트는 원문 미열람). label-provenance는 "대상 / 주체", evidence-level은 R0~R4(Deliverable B 0.2절).
 
 ---
@@ -150,10 +150,10 @@ Coordinator가 지적한 "no 판정의 25% 과대" 위험에 따라, Round 2 제
 * **제안 내용:** 너희 쪽 Chain 6(일본어로 기술한 정서와 영어로 기술한 정서 중 무엇이 Horikawa 뇌와 맞는가)을, 우리 쪽 Information Bottleneck 효율 분석(Round 1 C7)으로 확장할 수 있다. Mind captioning 참가자가 일본어 모국어 화자라는 사실이 본문으로 확인되어(0.2절) Chain 6의 선결 조건이 이 코호트에서 충족된다.
   1. 의미 공간: (a) Mind captioning 6명의 공유 신경 부분공간(GI-P1에서 캡션 성분을 뺀 정서 정렬 부분), (b) 34 + 14 규범 평정 공간.
   2. 명명 체계: Cowen & Keltner 영어 34범주, 27 군집, 기본 6범주, 일본어 정서 어휘 체계(MLLM이 일본어 어휘로 각 클립을 명명, AI 추정으로 표기), Jackson 2019의 colexification으로 병합한 범주.
-  3. 각 체계의 IB 복잡도와 정확도, IB 경계와의 거리를 (a)와 (b)에서 각각 계산한다. 질문: "일본어 화자의 뇌 공간에 대해 일본어 정서 범주 체계가 영어 체계보다 IB 경계에 가까운가?"
+  3. 각 체계의 IB 복잡도와 정확도, IB 경계와의 거리를 (a)와 (b)에서 각각 계산한다. 질문: "일본어 화자의 뇌 공간에 대해 일본어 정서 범주 체계가 영어 체계보다 IB 경계에 가까운가?" 같은 분석에서 각 범주가 신경 공간의 볼록 영역인지도 따로 잰다. 볼록성과 효율은 서로 함의하지 않으므로(arXiv:2602.08238 [초록]), Cowen & Keltner의 흐린 경계(gradient)가 "비볼록이지만 효율적인 체계"인지가 검정 가능한 질문이 된다.
   4. 이 결과로 Deliverable B 2.3절의 "Information-theoretic Efficiency" Sub-axis 위치를 Round 3에서 함께 판정하자고 제안한다(5절).
 * **관련 Axis:** K(IB Sub-axis), A, C, U, O
-* **근거 논문 ID:** doi:10.1073/pnas.1800521115, doi:10.1126/science.aaw8160, doi:10.1126/sciadv.adw1464, doi:10.1038/s41598-024-65604-1, arXiv:2509.24298
+* **근거 논문 ID:** doi:10.1073/pnas.1800521115, arXiv:2602.08238, doi:10.1126/science.aaw8160, doi:10.1126/sciadv.adw1464, doi:10.1038/s41598-024-65604-1, arXiv:2509.24298
 * **가능한 데이터셋:** Mind captioning(주, 일본어 화자), Horikawa 2020(참가자 언어 미확인이라 보조)
 * **예상되는 반론:** (a) MLLM의 일본어 명명은 일본어 화자의 어휘 사용과 같지 않다. 소규모 일본어 화자 명명 수집(R2 수준)으로 타당화해야 결론이 선다. (b) 자극 분포 p(m)은 큐레이션된 라이브러리다(A1의 표집 균등화 적용). (c) 신경 공간에 정서 밖 내용이 섞인다. (d) 6명이라 효과 크기 추정 중심.
 * **label-provenance:** 대상 perceived affective quality에 가까움(MLLM 명명) / 주체 AI 추정. 비교 기준은 대상 felt / 주체 별도 평정자 규범(영어).
@@ -253,8 +253,8 @@ Coordinator가 지적한 "no 판정의 25% 과대" 위험에 따라, Round 2 제
 | 정서 동역학의 비가역성 | WebSearch "entropy production broken detailed balance time irreversibility emotion fMRI naturalistic movie affective dynamics" | 정서 적용 없음. 영화 전체 비가역성(doi:10.1126/sciadv.ade6049), 방법(doi:10.1073/pnas.2109889118) |
 | 중립 자극 정렬의 정서 운반 | WebSearch "hyperalignment trained on neutral stimuli transfer to emotional stimuli ..." | 미발견. 가장 가까운 Chan 2020(정서 사진 → 예고편), dHA-HMM(doi:10.1007/s12021-022-09568-5) |
 | in-silico 기하의 GW 비교 | WebSearch "Gromov-Wasserstein in-silico encoding model predicted fMRI versus observed representational geometry comparison TRIBE" | 미발견 |
-| 정서 어휘 IB | WebSearch "information bottleneck emotion categories efficient communication emotion lexicon near-optimal compression 2025 2026" | 미발견. 색, 행동, 시제 영역만. 2026 preprint arXiv:2602.08238(볼록성과 효율의 구분)은 검색 색인으로만 봤고 arXiv API 확인에 실패했다(search_index, 인용하지 않음) |
+| 정서 어휘 IB | WebSearch "information bottleneck emotion categories efficient communication emotion lexicon near-optimal compression 2025 2026" | 미발견. 색, 행동, 시제 영역만. 관련 이론 preprint arXiv:2602.08238(볼록성과 효율의 구분)은 arxiv.org 초록 페이지로 확인해 jsonl에 추가 |
 | 영화 후 이완의 개인차 | WebSearch "emotional film offset recovery time constant fMRI individual differences ..." | 부분 선행 Baez-Lugo 2023 발견(C5 판정 수정) |
 | 정서 영화의 정렬 + 상태 | PubMed "dHA-HMM naturalistic stimuli evoked emotion changes brain state dynamics" | Tan 2022 발견(C4 판정 수정) |
 
-**미확인으로 남은 것:** Mind captioning 저장소의 실제 파일(캡션, 회상 vividness, events의 제시 순서), 두 코호트의 순서 동일 여부와 피험자 중복, 사용자 전처리 파이프라인의 전역 신호 처리, Thornton 2019 본문(대칭 유사도 통제 방식, PMC 전문이 빈 문자열로 반환), arXiv:2602.08238과 arXiv:2609.15685(API 응답 없음).
+**미확인으로 남은 것:** Mind captioning 저장소의 실제 파일(캡션, 회상 vividness, events의 제시 순서), 두 코호트의 순서 동일 여부와 피험자 중복, 사용자 전처리 파이프라인의 전역 신호 처리, Thornton 2019 본문(대칭 유사도 통제 방식, PMC 전문이 빈 문자열로 반환), arXiv:2609.15685(arXiv API 응답 없음, 인용하지 않음).
