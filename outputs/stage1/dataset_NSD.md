@@ -9,7 +9,7 @@
 
 | Gate | 판정 (공개 경로 기준) | 우리 환경 보유 여부 | 핵심 근거 |
 |---|---|---|---|
-| **G1** 원본 자극 접근 | **요청 필요.** NSD Data Access Agreement 양식을 제출해야 Data Manual과 배포본(AWS S3)에 접근하는 구조이며, 배포본에 제시 이미지 73,000장을 담은 `nsd_stimuli.hdf5`가 있다 [B]. 승인 방식(자동 또는 심사)과 소요 기간은 미확인. 별도 경로로 COCO 원본 이미지는 공개되어 있어 `cocoId`와 `cropBox` 메타데이터로 제시 영상을 재구성할 수 있다 [B]. 따라서 "불가"는 아니다. | **미확인** | AWS Registry 요약 [B], Algonauts 2023 포럼 [B], NSD 제시 이미지가 COCO의 정사각형 crop이라는 서술 (Doerig et al. 2025) [A] |
+| **G1** 원본 자극 접근 | **요청 필요.** NSD Data Access Agreement 양식을 제출해야 Data Manual과 배포본(AWS S3)에 접근하는 구조이며, 배포본에 제시 이미지 73,000장을 담은 `nsd_stimuli.hdf5`가 있다 [B]. 승인 방식(자동 또는 심사)과 소요 기간은 미확인. 별도 경로로 COCO 원본 이미지는 공개되어 있어 `cocoId`와 `cropBox` 메타데이터로 제시 영상을 재구성할 수 있을 것으로 보인다 [B] (`cropBox` 정의는 미확인, 메타데이터 파일 자체는 NSD 배포본에 있음). 따라서 "불가"는 아니다. | **미확인** | AWS Registry 요약 [B], Algonauts 2023 포럼 [B], NSD 제시 이미지가 COCO의 정사각형 crop이라는 서술 (Doerig et al. 2025) [A] |
 | **G2** fMRI 형식과 전처리 수준 | **고수준 전처리 완료.** 원시 데이터(BIDS)와 prepared data 제공 [B]. 전처리 시계열은 1.8 mm (1.333 s 재표집)와 1.0 mm 업샘플 (1.0 s) 두 종류 [A]. GLMsingle 계열 single-trial beta (version 3 = `betas_fithrf_GLMdenoise_RR`, 단위 % signal change)가 1.8 mm volume과 fsaverage surface로 제공 [A]. pRF/fLoc 기반 ROI 제공 [A]. | **미확인** | Gifford et al. 2026 [A], Doerig et al. 2025 [A], Prince et al. 2022 [A] |
 | **G3** 라벨과 평정 주체 | **정서 라벨은 기본 제공되지 않는다** (core 실험 기준). 유일한 공식 정서 관련 라벨은 `nsdmeadows`의 valence/arousal 평정으로, shared 이미지 100장 (+3장)에 대해 **NSD 참가자 본인이 스캔 종료 후 스캐너 밖에서** 1차원 drag-and-drop 배치로 평정했다 [A: 100장, 공식 배포, 참가자 평균 사용 / B: 평정 주체와 방식]. 그 밖의 라벨은 COCO captions (이미지당 5개, 크라우드 작업자 작성, NSD 참가자 아님) [A]와 COCO object category [A]. 73k 규모의 정서 라벨은 외부 모델 추정(AI) 또는 신규 인간 평정 수집이 필요하다. | **미확인** | Khosla et al. 2022 [A], Sadeghi et al. 2024 [A], Doerig et al. 2025 [A], NSD 원문 구절 [B] |
 
@@ -162,7 +162,7 @@
 * MNI 공간 판 제공 여부, beta version 1과 2의 파일명
 * 보류 세션의 현재 공개 상태 (공식 확인)
 * NSD 이미지와 BOLD5000, SentiCap 이미지의 COCO ID 중복
-* 이미지 픽셀 해상도
+* 이미지 픽셀 해상도, `cropBox` 정의와 좌표 규약
 
 ## 4. Potential Modeling Tasks
 
@@ -250,4 +250,4 @@ NSD의 G1은 "요청 필요"이고 대체 경로(COCO 공개 이미지)가 있�
 * NSD Data Manual, Terms & Conditions (접근 차단, 미열람): https://cvnlab.slite.page/
 * AWS Registry (접근 차단, WebSearch 요약만): https://registry.opendata.aws/nsd
 * COCO Terms of Use (2차 사본만 확인): https://cocodataset.org/#termsofuse
-* 문헌 기록: `outputs/agents/dataset-auditor/literature_NSD.jsonl`
+* 문헌 기록: `outputs/agents/dataset-auditor/literature_NSD.jsonl` (28편. PubMed로 직접 확인 17편, WebSearch 색인으로만 확인 10편(arXiv 7, bioRxiv 2, AAAI 1), 학회 초록 1편(VSS 2025, DOI 없음). 본문을 실제로 읽은 `full_text`는 PMC 전문 9편이며, NSD 원 논문은 `discussion_read: "no"`)
