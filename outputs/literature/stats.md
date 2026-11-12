@@ -1,39 +1,39 @@
 # Literature Statistics (Deliverable C)
 
 * 생성: `python3 -I outputs/literature/merge.py` (자동 생성 파일, 직접 고치지 말 것)
-* 입력 레코드: 723개 (파싱 오류 0개), 입력 파일: `outputs/agents/*/literature*.jsonl`
-* 원자료 기준 verified 표기: 711개, 미검증(search_index 등): 12개
-* 중복 제거 후 고유 논문: **529편**
-* **verified 고유 논문: 524편** (식별자 경로 doi.org / crossref / pubmed / arxiv / openreview / publisher로 확인된 것만)
+* 입력 레코드: 789개 (파싱 오류 0개), 입력 파일: `outputs/agents/*/literature*.jsonl`
+* 원자료 기준 verified 표기: 777개, 미검증(search_index 등): 12개
+* 중복 제거 후 고유 논문: **576편**
+* **verified 고유 논문: 571편** (식별자 경로 doi.org / crossref / pubmed / arxiv / openreview / publisher로 확인된 것만)
 * 미검증 고유 논문: 5편 (verified 집계에서 제외, DB에는 `verified=False`로 남김)
 
 ## Axis별 verified 논문 수 (한 논문이 여러 Axis에 속할 수 있음)
 
 | Axis | verified | 전체(미검증 포함) |
 |---|---|---|
-| A | 174 | 175 |
-| B | 71 | 72 |
-| C | 79 | 80 |
-| D | 115 | 115 |
-| E | 151 | 151 |
-| F | 77 | 78 |
-| G | 51 | 52 |
-| H | 83 | 87 |
-| I | 108 | 110 |
-| J | 53 | 54 |
-| K | 107 | 108 |
-| L | 56 | 57 |
-| M | 67 | 67 |
-| N | 117 | 118 |
-| O | 90 | 90 |
-| P | 48 | 49 |
-| Q | 106 | 106 |
-| R | 50 | 50 |
-| S | 57 | 59 |
-| T | 74 | 75 |
-| U | 13 | 13 |
+| A | 196 | 197 |
+| B | 82 | 83 |
+| C | 84 | 85 |
+| D | 118 | 118 |
+| E | 163 | 163 |
+| F | 86 | 87 |
+| G | 54 | 55 |
+| H | 90 | 94 |
+| I | 119 | 121 |
+| J | 63 | 64 |
+| K | 114 | 115 |
+| L | 60 | 61 |
+| M | 77 | 77 |
+| N | 126 | 127 |
+| O | 92 | 92 |
+| P | 50 | 51 |
+| Q | 109 | 109 |
+| R | 54 | 54 |
+| S | 61 | 63 |
+| T | 76 | 77 |
+| U | 17 | 17 |
 | V | 16 | 16 |
-| W | 30 | 30 |
+| W | 31 | 31 |
 
 ## 연도 분포 (verified)
 
@@ -42,81 +42,83 @@
 | 1959 | 1 |
 | 1993 | 1 |
 | 1995 | 1 |
-| 2003 | 1 |
+| 2000 | 1 |
+| 2003 | 2 |
 | 2004 | 1 |
-| 2005 | 4 |
+| 2005 | 5 |
 | 2006 | 3 |
 | 2007 | 1 |
 | 2008 | 1 |
 | 2009 | 1 |
-| 2010 | 4 |
-| 2011 | 1 |
+| 2010 | 5 |
+| 2011 | 3 |
 | 2012 | 3 |
-| 2013 | 1 |
-| 2014 | 13 |
-| 2015 | 11 |
+| 2013 | 4 |
+| 2014 | 14 |
+| 2015 | 13 |
 | 2016 | 15 |
-| 2017 | 27 |
-| 2018 | 16 |
-| 2019 | 29 |
-| 2020 | 30 |
-| 2021 | 34 |
-| 2022 | 33 |
-| 2023 | 61 |
-| 2024 | 67 |
-| 2025 | 98 |
-| 2026 | 66 |
+| 2017 | 29 |
+| 2018 | 17 |
+| 2019 | 33 |
+| 2020 | 32 |
+| 2021 | 36 |
+| 2022 | 37 |
+| 2023 | 67 |
+| 2024 | 73 |
+| 2025 | 105 |
+| 2026 | 67 |
 
 ## discussion_read 분포 (verified)
 
 | discussion_read | 편수 |
 |---|---|
-| full_text | 232 |
-| abstract_only | 230 |
-| search_summary | 19 |
-| no | 43 |
+| full_text | 238 |
+| abstract_only | 262 |
+| search_summary | 20 |
+| no | 51 |
 
 ## 담당 에이전트별 verified 고유 논문 수 (중복 논문은 기여한 모든 에이전트에 집계)
 
 | 에이전트 | 편수 |
 |---|---|
-| multimodal-dynamics | 76 |
-| brain-inspired | 72 |
+| multimodal-dynamics | 94 |
+| brain-inspired | 78 |
+| frontier-ai | 76 |
+| geometry-info | 73 |
 | adversarial-reviewer | 66 |
-| geometry-info | 65 |
-| frontier-ai | 63 |
+| encoding-foundation | 62 |
+| emotion-theory | 61 |
 | llm-semantics | 60 |
-| emotion-theory | 57 |
 | generative-counterfactual | 55 |
 | dataset-auditor | 54 |
 | systems-neuro | 52 |
-| encoding-foundation | 49 |
-| vision-decoding | 38 |
+| vision-decoding | 42 |
 | coordinator | 8 |
 
 ## 에이전트별 원 레코드 수 (중복 제거 전, 미검증 포함)
 
 | 에이전트 폴더 | 편수 |
 |---|---|
-| multimodal-dynamics | 76 |
-| brain-inspired | 73 |
+| multimodal-dynamics | 94 |
+| brain-inspired | 79 |
+| frontier-ai | 76 |
+| geometry-info | 74 |
 | adversarial-reviewer | 66 |
-| geometry-info | 66 |
-| frontier-ai | 63 |
+| encoding-foundation | 63 |
+| emotion-theory | 61 |
 | llm-semantics | 61 |
 | dataset-auditor | 57 |
-| emotion-theory | 57 |
 | generative-counterfactual | 55 |
 | systems-neuro | 53 |
-| encoding-foundation | 50 |
-| vision-decoding | 38 |
+| vision-decoding | 42 |
 | coordinator | 8 |
 
 ## future_directions의 already_done 분포 (verified 논문)
 
 | already_done | 편수 |
 |---|---|
-| no | 396 |
-| partially | 284 |
+| no | 402 |
+| partially | 287 |
 | yes | 11 |
 | 미확인(검색하지 | 2 |
+| 미확인(이번 | 1 |
