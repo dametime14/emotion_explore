@@ -43,9 +43,9 @@ P6의 9개 기준에 아래 두 개를 더한다.
    | encoding-foundation | RQ-51 | D1: in-silico 뇌 모델, brain foundation model |
    | brain-inspired | RQ-54, RQ-56 | **D1 주담당**: 뇌를 닮은 구조와 제약 |
    | frontier-ai | RQ-55, RQ-19 | D1, D2: 학습 목표, 표상 정렬 |
-   | geometry-info | RQ-04, RQ-05 | 비지도 구조, 공유 공간(D3 일부) |
+   | geometry-info | RQ-04 | 비지도 구조, decoder와 뇌 표상의 기하 비교 |
    | emotion-theory | RQ-22, RQ-12 | 이론 연결. 각 질문이 정서 이론에 무엇을 말하는지 비판 |
-   | multimodal-dynamics | | **D3**: 양식 간 전이, 공통 성분, 공유 공간. 한 달 안 가능성 판단 |
+   | multimodal-dynamics | RQ-05 | **D3**: 양식 간 전이, 공통 성분, 공유 공간. 한 달 안 가능성 판단 |
 
 2. **후보 정리(Coordinator).** `outputs/revision/candidates.md`
 3. **평가.** 11개 기준으로 Coordinator와 새 adversarial-reviewer가 따로 채점하고 대조한다. 상위 후보에는 선행연구 중복 감사를 한다.
