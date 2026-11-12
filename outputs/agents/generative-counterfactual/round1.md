@@ -4,7 +4,7 @@
 * 기준일: 2026-11-12
 * 따른 절차: `reference/protocols.md` P1
 * 읽은 파일: `CLAUDE.md`, `reference/protocols.md`(P1), `reference/axes.md`, `reference/starting_papers.md`, `reference/existing_projects.md`, `reference/datasets_and_resources.md`, `outputs/stage1/dataset_intelligence_report.md`, `outputs/stage1/environment_gaps.md`, `outputs/STAGE_STATUS.md`(사용자 결정 기록). 다른 에이전트 폴더는 읽지 않았다.
-* 문헌: `outputs/agents/generative-counterfactual/literature.jsonl` 43편. 모두 식별자 경로(Crossref API, arXiv API, PubMed)로 존재 확인. 2024~2026년 22편, Affective Neuroscience 밖 분야 20편. 본문(Discussion, Limitations, Conclusion) 직접 확인 28편, 초록만 14편, 서지만 1편.
+* 문헌: `outputs/agents/generative-counterfactual/literature.jsonl` 45편. 모두 식별자 경로(Crossref API, arXiv API, PubMed)로 존재 확인. 2024~2026년 24편, Affective Neuroscience 밖 분야 20편. 본문(Discussion, Limitations, Conclusion) 직접 확인 28편, 초록만 14편, 검색 요약만 1편, 서지만 2편.
 * 전제(Stage 1 확정): 4개 데이터셋 모두 원본 자극 보유(G1 = 보유). Horikawa 1순위, Emo-FilM 병행. Horikawa 원자료는 2020-04-24부터 OpenNeuro ds002425 공개. 자극 편집과 파생물 제작의 저작권 조건은 미확인이며 제약으로 기록한다(9절).
 * 표기: 문헌은 DOI 또는 arXiv ID로 단다. "본 에이전트 판단"은 문헌 주장이 아니라 내 해석이다.
 
@@ -287,7 +287,7 @@
 ## 10. 검증 상태와 미확인 사항
 
 **검증된 것.**
-* 43편 모두 식별자 경로로 존재 확인(Crossref API, arXiv API, PubMed 메타데이터).
+* 45편 모두 식별자 경로로 존재 확인(Crossref API, arXiv API, PubMed 메타데이터).
 * Discussion, Limitations, Conclusion 원문 확인 28편(PMC 전문, arXiv HTML/PDF, bioRxiv 전문). 각 사슬의 단락 위치는 내가 읽은 판본 기준이며, Tuckute 2024는 PMC 공개 preprint판(PMC10120732)으로 읽었다.
 * EmoNet 학습 자료가 Cowen & Keltner 2,185 비디오 프레임이라는 사실(Kragel 2019 Methods 원문).
 * TRIBE v2 학습/평가 데이터셋 목록에 Horikawa, Emo-FilM, Spacetop, NSD가 없다는 사실(arXiv:2605.04326 Table 1, 5.7절).
@@ -297,7 +297,7 @@
 * 모델 라이선스 다수(2절 표에 표시). TRIBE v2 라이선스는 검색 결과 수준.
 * Concept Sliders의 ECCV 2024, HT Demucs의 ICASSP 2023 게재는 기억 기반으로 학회 페이지 미확인(jsonl venue에 표시).
 * Chen et al. 2017(10.1093/biostatistics/kxx027)은 서지만 확인, 본문, 초록 미열람.
-* arXiv:2410.17300(영화 사운드트랙 특징과 정서), arXiv:2507.10861(diffusion 기반 reappraisal)은 존재만 확인, 본문 미열람. 사운드트랙 교체 행동 연구는 검색 결과로만 봄.
+* arXiv:2410.17300(영화 사운드트랙 특징과 정서, 검색 요약만 봄), arXiv:2507.10861(diffusion 기반 reappraisal, 서지만 확인)은 jsonl에 넣었지만 본문 미열람. 사운드트랙 교체 행동 연구는 검색 결과로만 봄.
 * 2절 표의 영상 편집 도구(LivePortrait, Wan)가 Horikawa 클립(짧고, 다양한 화질, 다수 인물)에 실제로 품질을 유지하는지는 시험하지 않았다.
 * 각 사슬의 '선행 수행' 판단은 2026-11-12 기준 WebSearch와 arXiv 확인 범위 안의 판단이다.
 
