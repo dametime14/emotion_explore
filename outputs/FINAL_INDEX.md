@@ -18,7 +18,7 @@
 |---|---|---|
 | A Dataset Intelligence Report | `outputs/stage1/dataset_intelligence_report.md` | 4개 데이터셋(Horikawa 2020, Emo-FilM, Spacetop, NSD)의 구조, 라벨 주체, 자극 접근성, 데이터셋 간 결합 가능성. Mind captioning은 Stage 2 이후 사용자 승인으로 추가되었다 |
 | B Research Axis Encyclopedia | `outputs/axis_encyclopedia.md` | Axis A~W 정리, 필수 태그 6종, 갱신된 유형표, 채택하지 않은 Axis와 이견. V 행에 Stage 3 정정 주석 |
-| C Verified Literature Database | `outputs/literature/literature_db.csv` | 에이전트별 literature.jsonl을 합친 통합 문헌 DB. 재생성은 `python3 -I outputs/literature/merge.py`. 고유 526편, verified 521편(최종 인용 검증 전 기준) |
+| C Verified Literature Database | `outputs/literature/literature_db.csv` | 에이전트별 literature.jsonl을 합친 통합 문헌 DB. 재생성은 `python3 -I outputs/literature/merge.py`. 고유 529편, verified 524편(최종 인용 검증 반영 후) |
 | D Discussion & Future-Direction Mining | `outputs/future_directions.md` | 논문 Discussion과 Limitations에서 뽑은 future direction, Discussion-to-Research chain 80개 |
 | E Cross-Disciplinary Opportunity Map | `outputs/opportunity_map.md` | 다른 분야에서 정서 신경과학으로 가져올 기술 82행과 역방향 11행. 5절이 Stage 3 갱신 |
 | F Agent Discussion Record | `outputs/discussion_record.md` | Round 2~4의 제안과 비판, 수정된 주장, 합의 6개, 남은 이견 14개, 과정에 대한 비판적 기록(반박 0, 선정 오류) |

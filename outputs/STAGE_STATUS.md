@@ -310,3 +310,90 @@ Stage 3는 10개 연구 에이전트의 Round 2(교차 교환), 제안 응답, R
 | 25(d) Spacetop 판본 | **공개판 ds005256과 같을 것(사용자 추정).** adversarial-reviewer의 결측 구조 계산을 보유본에도 적용 가능한 것으로 둔다. 판본 차이가 발견되면 다시 계산 |
 | 25(e) Horikawa 2020 참가자 모국어 | 사용자: "참가자는 일본인". 원문 재확인 결과(`outputs/stage1/horikawa_factcheck_stage4.md`): 열람 가능한 Horikawa 2020 본문과 같은 데이터를 쓴 Du 2023의 피험자 기술("Five healthy subjects ... ATR 윤리위원회 승인")에 국적이나 모국어 기재가 없다. Transparent Methods 보충자료는 PMC 웹 차단으로 열지 못했다. **사용자 확인을 따라 일본인으로 둔다(원문 미기재).** 결과: 두 코호트 모두 일본어 화자라 영어 화자 대조 코호트가 없다. 그래서 LIT-54(언어 특이 가설) 기각 사유가 확정된다 |
 | 질문 서술 형식(채팅 지시) | **"RQ는 누구나 읽고 바로 주제를 아는 한 줄 문장이어야 하고, 데이터(2,180개 클립 등), 방법, 지표는 그 아래 자세한 설명에 둔다. 번역투의 어려운 용어를 줄인다."** 반영: rq_landscape.md 4절을 '한 줄 질문 + 자세한 설명' 형식으로 바꾸고 용어 풀이를 추가했다(60개 모두). Stage 4 질문 카드도 같은 형식으로 쓴다(Core Research Question = 쉬운 한 줄 질문 + 검증 가능한 세부 질문) |
+
+---
+
+## Stage 4: Evaluation, Question Cards, Pilots, Final Synthesis
+
+* 상태: **완료** (2026-11-12). 이 프로젝트의 마지막 Stage다.
+* 산출물: Deliverable H, I, J와 전체 목차
+
+| 파일 | 내용 |
+|---|---|
+| `outputs/rq_cards/` | **Deliverable H.** 질문 카드 10장(P7 14개 항목, 검토 반영 기록, Safeguards 점검) |
+| `outputs/pilots.md` | **Deliverable I.** Pilot 3개(P1 RQ-08, P2 RQ-01+03, P3 RQ-15) |
+| `outputs/final_synthesis.md` | **Deliverable J.** 여섯 질문에 대한 답, 남은 이견, 미확인 사항 |
+| `outputs/FINAL_INDEX.md` | Deliverable A~J 경로와 한 줄 설명, 읽는 순서 |
+| `outputs/evaluation/scores_coordinator.csv`, `scores_reviewer.csv`, `scores_reconciled.md`, `scores_final.csv`, `adjustments.csv`, `gap_table.md` | P6 독립 평가 2종과 대조 |
+| `outputs/evaluation/reviewer_notes.md` | 평가자 노트(치명적 결함, 데이터에 없는 라벨, 새 데이터 사실) |
+| `outputs/evaluation/prior_overlap_audit.md` | Shortlist 10개 + 교체 후보 3개의 선행연구 중복 감사 |
+| `outputs/evaluation/selection.md` | Shortlist 10, High-priority 5, Pilot 3 선정 규칙과 과정, 선정 후 갱신 |
+| `outputs/evaluation/card_review_A.md`, `card_review_B.md` | 카드 검토(adversarial-reviewer 두 인스턴스) |
+| `outputs/evaluation/final_citation_check.md` | 최종 인용 검증과 Coordinator 반영 기록 |
+| `outputs/stage1/horikawa_factcheck_stage4.md` | 사용자 답변의 원문 재확인 |
+
+### 실행 방식 (사실 기록)
+* **독립 평가:**
+  * Coordinator와 새 adversarial-reviewer 인스턴스가 질문 60개를 9개 기준으로 따로 채점했다. 평가자는 Coordinator 점수를 보지 않았다.
+  * 540쌍 중 99%가 1점 안에서 일치했다. 2점 이상 차이 7쌍은 모두 조정했다.
+  * 높은 일치는 같은 산출물을 근거로 삼은 결과일 수 있어, 타당성 증거로 쓰지 않았다.
+* **선행연구 중복 감사:** 같은 평가자가 13개 질문을 직접 검색했다. 결과는 done 0, partially 9, not found 4다.
+* **카드:**
+  * 각 질문의 기원 에이전트 7개가 카드 10장을 썼다.
+  * adversarial-reviewer 두 인스턴스가 5장씩 검토했다(재구성 1, 수정 후 유지 9).
+  * 작성자가 필수 수정을 모두 반영했다. 반영하지 않은 지적은 카드 하단에 이유와 결론 범위 영향을 남겼다.
+* **최종 인용 검증:**
+  * 새 adversarial-reviewer가 논문 식별자 140개를 Crossref와 arXiv로 하나씩 해석했다. DB 서지와 140/140 일치했다.
+  * 식별자 없는 인용 13건에 식별자를 붙였다. 확인되지 않은 학회 초록 1건은 삭제했다. 원문과 맞지 않는 표현 6곳을 고쳤다.
+* **문헌 DB:** 고유 529편, verified 524편.
+
+### 결과
+* **Shortlist 10개:** RQ-08, 10, 15, 01, 03, 33, 60, 32, 44, 14.
+  * RQ-43은 감사에서 done에 가까워 RQ-14로 교체했다.
+* **High-priority 5개:**
+  1. RQ-08 장면을 말로 설명한 내용을 빼고 나도 뇌에 정서 신호가 남을까?
+  2. RQ-15 AI가 영상의 정서를 판단할 때, AI 속 상태를 읽은 값과 AI가 말한 답 중 어느 쪽이 사람 뇌 반응과 더 잘 맞을까?
+  3. RQ-01 뇌의 정서 반응은 범주로 나뉠까, 끊김 없이 이어질까, 그리고 그 답은 다른 그룹에서도 같을까?
+  4. RQ-03 뇌의 정서 지도는 영상의 정서가 다양해서 생길까, 겉모습이 다양해서 생길까?
+  5. RQ-14 '누가 누구에게 무엇을 했는가'라는 장면 구조가 정서 반응을 설명할까?
+* **Pilot 3개:** P1 RQ-08(+RQ-13), P2 RQ-01(+RQ-03), P3 RQ-15. 셋 다 Horikawa 2020 + Mind captioning이 주 데이터다.
+
+### Stage 4에서 바로잡은 주요 오류
+* **RQ-01, 07:** Westlin 2025 결과를 "저차원 연속 구조"로 잘못 적었다(실제: 개인별 군집 11~14개, 범주 NMI 0.014).
+* **RQ-26, 33:** "모든 부분공간에 같은 HRF", "대비는 HRF가 만들 수 없다"는 전제가 성립하지 않았다.
+* **Mind captioning 시험 클립 72개:** 학습 세션에도 나와 누수 위험이 있었다. 학습 자료는 2,108개로 고정했다.
+* **Mind captioning 캡션:** 정서를 배제한 것이 아니라 시각 내용 집중 지시였다(정서 표현 드묾). 사람이 쓰고 GPT-3.5로 교정했다.
+* **감사 이후 새로 나온 선행:**
+  * RQ-32: Wainstein 2025, Munn 2021
+  * RQ-14: Frankland & Greene 2015
+  * 그래서 not found 판정은 잠정적이다.
+
+### 남은 이견
+`outputs/final_synthesis.md` 7절에 있다. 주요 이견은 다음과 같다.
+* 관문 연구의 과학적 가치
+* RQ-33 대비 결과의 진단력
+* 생리를 교란으로 볼지 매개로 볼지
+* RQ-10의 증거 수준
+* Spacetop 개인 잔차 묶음의 우선순위
+* Round 2 합의의 성격
+
+## 사용자 확인 필요 (Stage 4 이후)
+
+### Pilot 시작 전에 필요한 것
+29. **계산 자원과 경로.**
+    * `reference/datasets_and_resources.md` 1절(GPU 종류와 수, 저장 공간, 데이터 파일 경로)을 채워 주세요.
+    * 지금 Pilot 계산량은 GPU 1~4장을 가정한 추정입니다.
+30. **Mind captioning 보유본의 전처리 형식.**
+    * 공간(native, MNI, surface)
+    * 블록 평균인지 연속 시계열인지
+    * 원 논문처럼 전역 신호 12개를 회귀했는지
+    * 시계열이 없으면 RQ-33, 44는 raw부터 다시 처리해야 합니다.
+31. **모델 가중치 라이선스.** VLM(Qwen3-VL, InternVL3.5), 문장 encoder, DeepMReye, V-JEPA 2, MMAudio, Wan의 가중치 라이선스를 연구 목적으로 쓸 수 있는지 확인이 필요합니다. 이 세션에서는 Hugging Face 접속이 막혀 확인하지 못했습니다.
+
+### RQ-10을 할 계획이라면
+32. 선택을 맡을 분석자가 Mind captioning의 영역별 뇌 반응을 이미 봤는지 알려 주세요. 답에 따라 진행 판(A/B/C)이 정해집니다(RQ-10 카드 0절). 이 확인과 선택 목록 봉인은 P1, P2가 MC 반응을 분석하기 전에 끝내야 합니다.
+
+### 있으면 좋은 것
+33. Mind captioning 촬영 범위에 눈알이 포함되는지 알려 주세요. DeepMReye 시선 추정이 가능한지가 여기에 달려 있습니다.
+34. Horikawa 2020 Transparent Methods(보충자료)의 피험자 기술을 확인해 주세요. 지금은 사용자 확인으로만 "일본인"을 두었습니다.
+35. Stage 2 이후 보류 항목 18~22는 그대로입니다.
