@@ -79,7 +79,7 @@ NO = "없음"
 # ---------------------------------------------------------------- literature route (Round 2, 3)
 K("LIT-01", L, "GI-P1, ET-P1, ET-P4, SN-P7, VD-P2; Round 3 GI-P1 검토; 상위 10개 검토(GI-P1, ET-P4)", "A+O+K+Q+T",
   "Complex Systems (scale-free 공분산 스펙트럼)", "K1",
-  "Horikawa 2020의 '범주형 정서 표상' 결론은, 같은 2,180개 클립을 본 두 독립 코호트(Horikawa 2020 5명, Mind captioning 6명)에서 피험자 간에 재현되는 신뢰 rank 대역으로 한정해도 유지되는가, 아니면 Westlin 2025가 보고한 저차원 연속 구조로 수렴하는가?",
+  "Horikawa 2020의 '범주형 정서 표상' 결론은, 같은 2,180개 클립을 본 두 독립 코호트(Horikawa 2020 5명, Mind captioning 6명)에서 여러 사람에게서 똑같이 재현되는 뇌 반응 성분(신뢰 rank 대역)만 남겨도 유지되는가, 아니면 Westlin 2025가 보고한 저차원 연속 구조로 수렴하는가?",
   "정서 표상의 범주성 대 연속 차원, 신뢰 차원 수",
   "rank 분해 공유 스펙트럼(cross-decomposition), 혼합 대 연속 잠재 모형 비교, 사전 등록 multiverse",
   "없음(라벨은 규범 평정 34/14차원). 대조 feature로 시각, 의미 DNN",
@@ -394,7 +394,7 @@ X("LIT-35", L, "FA-P8", "T+R+Q+S", "", "해석 도구(SAE, 정서 vector)의 검
 
 # ---------------------------------------------------------------- literature route (Round 4)
 K("LIT-36", L, "GI-R4-1", "B+K+E+Q", "Complex Systems (power-law 스펙트럼 이론, Stringer 2019)", "K1",
-  "정서 신경 기하는 자극 집합의 구조를 반영하는가: 같은 2,180개 클립에서 시각 다양성과 정서 다양성을 따로 줄인 부분집합을 만들면, 영역별 공유 신경 스펙트럼의 감쇠 지수는 어느 쪽 다양성을 따라 바뀌는가?",
+  "정서 신경 기하는 자극 집합의 구조를 반영하는가: 같은 2,180개 클립에서 시각 다양성과 정서 다양성을 따로 줄인 부분집합을 만들면, 여러 사람이 공유하는 뇌 반응 성분이 몇 개의 축으로 정리되는 정도(공유 스펙트럼의 기울기)는 영역마다 어느 쪽 다양성을 따라 바뀌는가?",
   "정서 기하의 원인(자극 분포 vs 신경 부호)", "자극 앙상블 차원과 스펙트럼 감쇠 지수의 관계, 2x2 부분집합 설계",
   "시각 DNN feature(시각 다양성), 규범 평정(정서 다양성)", "시각피질부터 transmodal까지 영역별",
   f"{H20}+{MC}(주), {NSD}(정서 범위가 좁은 시각 대조, 정서는 AI 추정 표기)",
@@ -578,7 +578,7 @@ X("RND-08", R_, "random_combos.csv", "B+E+I+R+T", "", "모델 계열별 amygdala
   "Novelty Constraint: 'Foundation Model로 정서 관련 반응을 예측'하는 수준. Jang & Kragel 2025가 AI 모델로 amygdala 기능을 이미 분석했고, 해석 단계는 RND-03(LIT-31)과 중복",
   "10.1523/JNEUROSCI.1436-24.2025")
 K("RND-09", R_, "random_combos.csv", "C+F+I+K+U", "", "K3",
-  "뇌의 개인 간 공유 정서 스펙트럼에서 인간 규범 평정의 정서 기하와 AI 추정 평정의 정서 기하는 각각 어느 rank 대역과 맞는가: AI 기하는 상위 공유 대역에만 맞고 하위 대역에서 인간보다 먼저 무너지는가?",
+  "여러 사람이 공유하는 뇌 정서 반응을 큰 성분부터 작은 성분까지 나눠 볼 때, 사람이 매긴 정서 구조와 AI가 매긴 정서 구조는 각각 어디까지 맞는가: AI 구조는 큰 성분에서만 맞고 세밀한 성분에서는 사람보다 먼저 어긋나는가?",
   "라벨 출처별 정서 기하의 신경 정렬 범위", "rank 대역별 RSA, 공유 스펙트럼",
   "MLLM 추정 평정, 인간 규범 평정", "신뢰 공유 부분공간(LIT-01)", f"{H20}+{MC}",
   "rank 대역마다 인간 규범 RDM과 AI RDM의 신경 RDM 상관을 계산하고, 대역에 따른 하락 곡선을 비교",
@@ -749,6 +749,80 @@ K("STR-H2", S, "Strategy H(Reverse Inspiration, AI -> 뇌): mechanistic interpre
   "AI 해석 연구의 개념을 정서 차원 논쟁의 판정 가설로 옮김",
   note="voxel 패턴의 superposition은 신경 단위 superposition의 거시 유비다")
 
+
+# ---------------------------------------------------------------- 한 줄 질문 (사용자 지시 2026-11-12: 누구나 바로 이해하는 문장)
+HEADLINE = {
+    "LIT-01": "정서는 뇌에서 뚜렷한 '종류'로 나뉠까, 연속적으로 이어질까?",
+    "LIT-18": "우리가 쓰는 정서 단어의 구분은 뇌 입장에서도 효율적인 구분일까?",
+    "LIT-36": "뇌의 정서 지도는 정서 때문에 생길까, 그냥 영상이 다양해서 생길까?",
+    "STR-B1": "정서 단어 없이 뇌에서 먼저 찾은 정서 축에 이름을 붙이면 어떤 분류가 나올까?",
+    "STR-C1": "글로 읽은 이야기, 귀로 들은 이야기, 영상에서 느낀 좋고 나쁨은 뇌에서 같은 신호일까?",
+    "STR-D1": "정서 정보는 한 영역에 들어 있을까, 여러 영역이 함께 있어야만 나타날까?",
+    "STR-H2": "뇌는 적은 수의 축에 많은 정서를 겹쳐서 담을까?",
+    "LIT-03": "장면을 말로 설명한 내용을 빼고 나도 뇌에 정서 신호가 남을까?",
+    "LIT-04": "정서와 장면 의미를 떼어 놓는 두 방법(통계 보정, 영상 편집)은 같은 답을 줄까?",
+    "LIT-30": "정서 모델이 '이 영상이 이 뇌 영역을 움직일 것'이라고 미리 고르면, 처음 보는 사람에게서도 맞을까?",
+    "LIT-31": "편도체가 좋아하는 영상은 정서 때문일까, 얼굴 같은 대상 때문일까?",
+    "LIT-32": "뇌는 '어떤 상황인가'와 '어떤 정서인가'를 따로 표현할까?",
+    "LIT-37": "이 영상 데이터로 정서와 장면 내용을 떼어 비교할 수 있는 정서는 어느 것이고, 불가능한 정서는 어느 것일까?",
+    "STR-A3": "'누가 누구에게 무엇을 했는가'라는 장면 구조가 정서 반응을 설명할까?",
+    "LIT-13": "AI의 정서를 잴 때, AI 속을 들여다보는 것과 AI에게 물어보는 것 중 무엇이 사람 뇌와 더 닮았을까?",
+    "LIT-14": "뇌는 '내가 느낀 정서'와 '남이 느끼는 정서'를 구분해서 표현할까?",
+    "LIT-15": "영화 정서 평정에서 AI가 사람을 대신할 수 있는 항목은 어디까지일까?",
+    "LIT-46": "평정자, 본인, AI가 매긴 정서 라벨의 공통 부분과 각자 고유한 부분은 뇌의 어디와 맞을까?",
+    "RND-09": "AI가 매긴 정서 구조는 뇌의 정서 구조를 어느 수준까지 따라갈까?",
+    "STR-F1": "한 데이터에서 찾은 정서 축이 다른 데이터에서 통하지 않는 건 영상이 달라서일까, 라벨을 매긴 사람이 달라서일까?",
+    "LIT-02": "같은 영상을 보고도 사람마다 다르게 느낀 정서가 그 사람의 뇌 반응에 드러날까?",
+    "LIT-19": "기쁘면서 슬픈 '섞인 정서'는 뇌에서 두 정서의 합일까, 새로운 상태일까?",
+    "LIT-20": "영화 한 편을 본 뒤의 '전체 느낌'은 어떤 순간들로 만들어질까?",
+    "LIT-06": "뇌 속 정서 지도에는 '다음 정서로 가는 방향'이 있을까?",
+    "LIT-09": "영화 속 놀람은 어떤 종류의 예측이 빗나갈 때 생길까?",
+    "LIT-10": "앞 영상의 정서는 다음 영상을 볼 때까지 뇌에 남아 있을까?",
+    "LIT-22": "한 장면만 봐서는 모르고 끝까지 봐야 아는 정서는 뇌의 어디서 처리될까?",
+    "LIT-39": "영화가 달라도 정서가 흘러가는 방식은 같을까?",
+    "LIT-51": "언어에 담긴 '정서가 바뀌는 순서'에 대한 지식이 실제 뇌의 정서 흐름을 예측할까?",
+    "LIT-53": "영상 흐름이 예상 밖으로 꺾이는 순간이 정서적으로 놀라는 순간일까?",
+    "RND-14": "정서 관련 뇌 영역은 시간의 흐름을 더 예측하기 쉬운 형태로 바꿔 표현할까?",
+    "STR-E1": "흥분(각성)은 뇌 상태의 '위치'일까, 뇌 상태가 바뀌는 '속도'일까?",
+    "STR-G1": "같은 장면도 앞에 무엇을 봤느냐에 따라 다르게 느껴질까(자연 영상판 쿨레쇼프 효과)?",
+    "LIT-07": "뇌는 정서를 '감정의 종류'로 표현할까, '하고 싶은 행동'으로 표현할까?",
+    "LIT-38": "'맞서고 싶다'와 '피하고 싶다'는 좋고 나쁨과 별개의 축일까?",
+    "LIT-40": "정서 영상을 가만히 볼 때 뇌는 몸을 움직이지 않는 '준비'만 하고 있을까?",
+    "LIT-41": "영화 음악의 리듬감은 감정보다 '움직이고 싶은 충동'을 전할까?",
+    "LIT-42": "행동을 예측하도록 학습한 AI가 정서의 행동 측면을 더 잘 설명할까?",
+    "LIT-45": "Emo-FilM의 '행동 경향' 평정은 정말 정서와 다른 것을 재고 있을까?",
+    "LIT-52": "'내가 이 상황을 통제할 수 있다'는 느낌을 영상만 보고 계산할 수 있을까?",
+    "LIT-12": "영상을 떠올릴 때 정서까지 되살아나고, 그것이 '생생하다'는 보고와 이어질까?",
+    "LIT-43": "어떤 정서 기억이 더 강하게 되살아나는지는 흥분 정도보다 '배울 거리'가 결정할까?",
+    "LIT-44": "'생생하게 떠올렸다'는 보고는 내 머릿속을 들여다본 것일까, 원래 기억하기 쉬운 영상이라서일까?",
+    "LIT-47": "떠올린 정서는 원래 장면의 흔적일까, 줄거리를 바탕으로 다시 만든 것일까?",
+    "LIT-49": "떠올린 정서는 말로 옮길 수 있는 만큼만 남을까?",
+    "LIT-50": "여러 사람을 거쳐 전해질 때 살아남는 정서가 한 사람의 기억에서도 살아남을까?",
+    "RND-02": "기억 속 영상은 '보는 방식'에서 '말하는 방식'으로 바뀌어 저장될까?",
+    "LIT-08": "AI 뇌 모델이 편도체 같은 정서 영역을 잘 맞히지 못하는 것은 몸 신호 때문일까?",
+    "LIT-16": "'빠른 공포 경로'(상구-시상베개-편도체)를 일반 fMRI로 볼 수 있을까?",
+    "LIT-27": "왜 흥분 정도는 사람과 영화를 넘어 잘 읽히고, 좋고 나쁨은 잘 안 읽힐까?",
+    "LIT-05": "AI 뇌 모델은 실제 뇌의 정서 구조를 어디까지 재현할까?",
+    "LIT-11": "영화 음악이나 대사를 지운 AI 예측은 실제 뇌 데이터가 보여 주는 소리의 역할과 맞을까?",
+    "LIT-17": "정서와 상관없는 영상으로 사람들의 뇌를 맞춰도 정서 구조까지 맞춰질까?",
+    "LIT-28": "정서를 배우게 한 AI 안에서 생긴 '정서 뉴런'은 뇌의 정서 반응을 설명할까?",
+    "RND-24": "어떤 방식으로 학습한 AI가 뇌의 정서 표현과 가장 닮을까?",
+    "STR-H1": "AI를 뇌의 정서 반응에 맞춰 학습시키면 사람의 정서 판단과 더 비슷해질까?",
+    "LIT-23": "영화 대사가 주는 정서는 단어 때문일까, 인물의 속마음을 읽어서일까?",
+    "LIT-24": "이야기의 정서는 '다음 문장'에 대한 예측과 '결말'에 대한 기대 중 무엇이 만들까?",
+    "RND-07": "소리와 영상이 서로 다른 정서를 말할 때 사람들의 평정도 갈릴까?",
+    "RND-30": "소리 없는 영상을 볼 때 뇌는 '들릴 법한 소리'를 떠올리고, 그 소리가 정서를 실을까?",
+}
+
+UNSUPERVISED = {"LIT-01": "혼합 잠재 모형과 연속 잠재 모형(군집 대 연속), 피험자 간 공유 성분 분해",
+                "STR-B1": "라벨 없이 뇌 반응에서 공유 성분 추출(비지도)",
+                "STR-H2": "sparse dictionary learning(비지도)",
+                "LIT-36": "피험자 간 공유 성분 분해(비지도)",
+                "LIT-46": "식별 가능한 multi-view 자기지도 학습",
+                "LIT-39": "동역학 유사도 분석(라벨 없는 궤적 비교)",
+                "STR-E1": "라벨 없는 상태 공간 속도",
+                "LIT-17": "hyperalignment, SRM(비지도 정렬)"}
+
 # ---------------------------------------------------------------- Round 4 pair-level rejections (rejected.md only)
 R4_REJECTED = [
     ("K+L", "geometry-info, llm-semantics", "지금 가능한 것은 encoder 위 R1뿐이고 EF-P1(LIT-05) 관문을 통과하지 않았다. affective metamer와 같은 질문(geometry-info). 서사 8편 encoder로는 in-silico 예측을 믿기 어렵다(llm-semantics)"),
@@ -833,10 +907,16 @@ def main():
     for c in COMBOS:
         c.setdefault("rq_id", "")
 
-    cols = ["combo_id", "route", "axes", "scientific_construct", "imported_concept_or_method",
+    for c in COMBOS:
+        c["headline"] = HEADLINE.get(c["combo_id"], "") if c.get("rq") else ""
+        c["unsupervised"] = UNSUPERVISED.get(c["combo_id"], "")
+    missing_h = [c["combo_id"] for c in COMBOS if c["status"] == "kept" and c["rq"] and not c["headline"]]
+    if missing_h:
+        problems.append("한 줄 질문 없음: " + " ".join(missing_h))
+    cols = ["combo_id", "headline", "route", "axes", "scientific_construct", "imported_concept_or_method",
             "ai_model_or_representation", "neural_target", "dataset", "measurable_prediction_or_analysis",
             "scientific_contribution", "evidence_ids", "status", "overlap",
-            "source", "external_field", "cluster", "rq_id", "prior_work", "novelty_check", "note"]
+            "source", "external_field", "cluster", "rq_id", "rq", "prior_work", "novelty_check", "unsupervised", "note"]
     with open(os.path.join(ROOT, "outputs/combinations/matrix.csv"), "w", newline="", encoding="utf-8") as fh:
         w = csv.DictWriter(fh, fieldnames=cols, extrasaction="ignore")
         w.writeheader()
@@ -873,24 +953,29 @@ def main():
             Lr.append(f"* {c['combo_id']} ({c['status']}): {c['note'] or c['novelty_check']}")
     open(os.path.join(ROOT, "outputs/combinations/rejected.md"), "w", encoding="utf-8").write("\n".join(Lr) + "\n")
 
-    # rq_table.md
-    T = []
+    # rq_table.md: 목록표 + 질문별 블록(한 줄 질문 -> 자세한 설명)
+    T = ["### 4.1 전체 목록 (한 줄 질문)", "", "| RQ | 한 줄 질문 | 군집 | 경로 |", "|---|---|---|---|"]
+    for c in sorted(rqs, key=lambda x: x["rq_id"]):
+        T.append(f"| {c['rq_id']} | {c['headline']} | {c['cluster']} | {c['route']} |")
+    T.append("")
     for k, title in CLUSTERS.items():
         members = [c for c in rqs if c["cluster"] == k]
         dirs = [c for c in kept if c["cluster"] == k and not c["rq"]]
-        T += [f"### {k}. {title} (질문 {len(members)}개)", "",
-              "| RQ | 연구 질문 | Axis 조합 | 경로 (조합 ID, 출처) | 근거 논문 ID | 가능한 데이터셋 | 선행 판정 | overlap |",
-              "|---|---|---|---|---|---|---|---|"]
+        T += [f"### {k}. {title} (질문 {len(members)}개)", ""]
         for c in members:
-            T.append("| {rq_id} | {rq} | {axes}{ext} | {route} ({cid}; {src}) | {ev} | {data} | {prior} | {ov} |".format(
-                rq_id=c["rq_id"], rq=c["rq"], axes=c["axes"],
-                ext=f" (+외부: {c['external_field']})" if c["external_field"] else "",
-                route=c["route"], cid=c["combo_id"], src=c["source"], ev=c["evidence_ids"],
-                data=c["dataset"], prior=c["prior_work"],
-                ov=("overlap: " + c["overlap"]) if c["overlap"] != NO else NO))
+            T += [f"#### {c['rq_id']}. {c['headline']}", "",
+                  f"* **자세한 질문:** {c['rq']}",
+                  f"* **방법:** {c['measurable_prediction_or_analysis']}",
+                  f"* **데이터:** {c['dataset']}",
+                  f"* **무엇을 새로 아는가:** {c['scientific_contribution']}",
+                  f"* **Axis 조합:** {c['axes']}" + (f" (+외부: {c['external_field']})" if c["external_field"] else "")
+                  + (f" / 비지도 요소: {c['unsupervised']}" if c["unsupervised"] else ""),
+                  f"* **경로:** {c['route']} ({c['combo_id']}; {c['source']})",
+                  f"* **근거 논문 ID:** {c['evidence_ids']}",
+                  f"* **선행 판정:** {c['prior_work']}",
+                  f"* **overlap:** {c['overlap'] if c['overlap'] != NO else NO}", ""]
         if dirs:
-            T += ["", "방향만 유지한 조합: " + "; ".join(f"{c['combo_id']}({c['scientific_construct']})" for c in dirs)]
-        T.append("")
+            T += ["방향만 유지한 조합: " + "; ".join(f"{c['combo_id']}({c['scientific_construct']})" for c in dirs), ""]
     open(os.path.join(ROOT, "outputs/combinations/rq_table.md"), "w", encoding="utf-8").write("\n".join(T) + "\n")
     # embed the tables into Deliverable G between markers (narrative parts are written by hand)
     land = os.path.join(ROOT, "outputs/rq_landscape.md")
