@@ -285,7 +285,7 @@ Stage 3는 10개 연구 에이전트의 Round 2(교차 교환), 제안 응답, R
 
 ### 꼭 필요한 것
 23. **Stage 4 진행 지시.** Stage 4는 질문 평가, Shortlist 10개, High-priority 5개, Pilot 3개를 만든다.
-24. **`reference/existing_projects.md` 확인(Stage 1의 13번, 보류 중).** Stage 3에서 질문 26개에 overlap을 표시했다(EmoViS 9, Emo-FilM 연구 11, EmoBrain 6). 프로젝트 요약이 현재와 다르면 overlap 표시가 틀린다. Stage 4 평가 전에 확인이 필요하다.
+24. **`reference/existing_projects.md` 확인(Stage 1의 13번, 보류 중).** Stage 3에서 질문 24개에 overlap을 표시했다(프로젝트별로 세면 EmoViS 9, Emo-FilM 연구 11, EmoBrain 6. 두 프로젝트와 겹치는 질문이 있어 합이 24보다 크다). 프로젝트 요약이 현재와 다르면 overlap 표시가 틀린다. Stage 4 평가 전에 확인이 필요하다.
 25. **데이터 보유 상태 확인.** 각 항목이 영향을 주는 질문을 괄호에 적었다.
     * (a) Mind captioning 보유본에 클립별 정서 배제 인간 캡션(20개)이 있는가(RQ-08, 09, 44, 45의 전제)
     * (b) Cowen & Keltner 원 클립의 오디오가 있는가(RQ-52)
