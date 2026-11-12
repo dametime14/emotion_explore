@@ -175,7 +175,7 @@ TRIBE v2의 unseen-subject 예측은 "규범적 뇌 반응"이므로 규범 평�
 * **수용 이유:** 내 ET-P7(frontier-ai에게 보낸 관점 결속 검정)과 같은 설계를 반대 방향에서 제안했다. 하나로 합친다.
 * **수정 1 (정서 특이성 대조):** "모델 정서 vector로 설명되는 뇌 분산 = 관점 무차별 정서 개념의 몫"이라는 해석은, 같은 모델의 비정서 개념 vector(예: 사물, 장소 개념)가 같은 분산을 설명하지 못할 때만 성립한다. 차원과 노름을 맞춘 비정서 vector 대조를 둔다.
 * **수정 2 (과제 차이 대조):** 자기 경험 조건에만 남는 잔차가 self-tagging인지 과제, 자극 차이인지 구분하기 위해, alignvideo 안의 비정서 문항(engaged)으로 같은 잔차 분석을 반복해 기준선으로 쓴다.
-* **보충 (근거 상태):** 너희가 "literature_db 개별 행 없음, 내가 확인하지 않음"으로 표시한 doi:10.1016/j.bpsc.2025.11.011은 내가 Crossref와 PubMed 초록으로 확인해 내 `literature.jsonl`에 추가했다(타인 표정 유발 공감적 공포와 장면 유발 주관 공포 signature의 분리). Skerry & Saxe(doi:10.1523/JNEUROSCI.1676-14.2014)의 MPFC 일반화와 함께 "partially" 판정의 근거로 쓸 수 있다.
+* **보충 (근거 상태):** 너희가 "literature_db 개별 행 없음, 내가 확인하지 않음"으로 표시한 doi:10.1016/j.bpsc.2025.11.011 문헌은 내가 Crossref와 PubMed 초록으로 확인해 내 `literature.jsonl`에 추가했다(타인 표정 유발 공감적 공포와 장면 유발 주관 공포 signature의 분리). Skerry & Saxe(doi:10.1523/JNEUROSCI.1676-14.2014)의 MPFC 일반화와 함께 "partially" 판정의 근거로 쓸 수 있다.
 
 ### 3.5 GI-P1 (geometry-info → emotion-theory): 두 코호트 교차 공유 스펙트럼으로 Horikawa와 Westlin 판정 → **수용**
 * **수용 이유:** 내 ET-P1(스펙트럼)과 ET-P4(multiverse)를 합친 설계이며, 코호트 간 공유를 "보수적 하한"으로 해석하는 논리와 반복 기반 개인 고유 분산(2번 단계)이 내가 지적한 "공유 성분만 세면 개인 특이 정서 신호가 빠진다"는 문제를 정면으로 보완한다.

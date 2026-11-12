@@ -111,7 +111,7 @@
 
 ### 3.1 이미 연구된 것은 아닌가
 * **검색:** WebSearch "fMRI image reconstruction emotional content preserved valence arousal evaluation diffusion decoding emotion fidelity 2024 2025 2026", 2026-11-12.
-* **결과:** fMRI 재구성 이미지의 정서(valence, arousal) 충실도를 평가한 연구는 찾지 못했다. 재구성 survey(arXiv:2502.16861, 식별자 미확인이라 근거로 쓰지 않음)도 정서 평가를 언급하지 않았다. vision-decoding Round 1도 MindEye2, Brain-IT, NSD-Imagery, MIRAGE 본문에 정서 평가가 없음을 확인했다(arXiv:2403.11207, arXiv:2605.17198). 정답 latent로 재생성한 이미지를 상한으로 쓰는 것은 재구성 연구의 관행이다(제안자 반론 (1)). 정서 쪽 가장 가까운 선행은 텍스트 출력의 EmoMind(arXiv:2605.16739)다.
+* **결과:** fMRI 재구성 이미지의 정서(valence, arousal) 충실도를 평가한 연구는 찾지 못했다. 재구성 survey(검색 요약만 봤고 식별자를 확인하지 않아 근거로 쓰지 않음)도 정서 평가를 언급하지 않았다. vision-decoding Round 1도 MindEye2, Brain-IT, NSD-Imagery, MIRAGE 본문에 정서 평가가 없음을 확인했다(arXiv:2403.11207, arXiv:2605.17198). 정답 latent로 재생성한 이미지를 상한으로 쓰는 것은 재구성 연구의 관행이다(제안자 반론 (1)). 정서 쪽 가장 가까운 선행은 텍스트 출력의 EmoMind(arXiv:2605.16739)다.
 * **판정:** partially (상한 비교 관행과 텍스트 정서 해독은 선행, 이미지 정서 축 audit는 미발견).
 
 ### 3.2 단순한 모델 적용에 불과한가
