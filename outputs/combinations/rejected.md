@@ -60,7 +60,7 @@
 
 ## 5. Novelty Constraint로 기각하거나 범위를 줄인 조합
 
-* LIT-34 (kept): 방향만 유지: Novelty Constraint상 benchmark 성격. 다른 질문의 검증 인프라(minimum-validation)로 사용
+* LIT-34 (kept): 방향만 유지: Novelty Constraint상 benchmark 성격(adversarial-reviewer 추가 검토: 재구성, 연구 질문에서 검증 인프라로). 인프라 통과 기준 V2, V3, V5, V7, V11. 첫 산출물은 Omni-fMRI의 무작위 블록 분할 결과를 재현한 뒤 영화 단위 분할로 바꿔 누수 크기를 보이는 것. 피질하 token 의존도는 같은 수의 피질 token masking 같은 matched null이 생기기 전까지 결과로 쓰지 않는다(시험 때만 지우면 입력 분포 이동과 정보 손실이 구분되지 않음). Brain-JEPA 입력 160시점은 Emo-FilM 208 s, Spacetop 74 s라 라벨 시간 해상도와 맞지 않음
 * RND-08 (rejected): Novelty Constraint: 'Foundation Model로 정서 관련 반응을 예측'하는 수준. Jang & Kragel 2025가 AI 모델로 amygdala 기능을 이미 분석했고, 해석 단계는 RND-03(LIT-31)과 중복
 * RND-24 (kept): 구조와 데이터가 정확히 같은 공개 checkpoint 조합이 없을 수 있다(확인 필요)
 * RND-29 (rejected): Novelty Constraint(모델 예측 비교 수준)이고 RND-08, RND-09와 중복

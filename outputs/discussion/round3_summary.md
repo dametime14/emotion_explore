@@ -128,6 +128,8 @@
   * `tally_responses.py`를 Round 2 파일만 세도록 고쳤다. 첫 실행은 `TALLY_INCLUDE_R3=1`로 재현할 수 있다.
   * 다시 계산한 상위 10개는 EF-P3, ET-P2, LS-P2, GI-P5, BI-P1, ET-P4, GI-P1, GI-P2, LS-P1, EF-P4다. 검토자의 계산과 같았다.
 * **추가 검토:** 빠졌던 ET-P4와 EF-P4는 같은 adversarial-reviewer에게 추가 검토를 맡겼다(`round3_top10_addendum.md`). 이미 검토한 GC-P2와 BI-P2의 결과는 그대로 유지한다.
+  * ET-P4: 수정. 이산 라벨 AMI 상한, 세션과 클립 묶음의 혼동(Mind captioning으로 판별), V11이 빠져 있다.
+  * EF-P4: 재구성(연구 질문에서 검증 인프라로). 피질하 token 의존도는 matched null 없이는 해석할 수 없다. 첫 산출물로는 Omni-fMRI 무작위 블록 분할을 재현한 뒤 영화 단위 분할로 누수 크기를 보이는 것이 가장 설득력 있다.
 * **검토자의 자기 정정:** 검토자는 자기 Round 2 요건표 V1(SR(T')를 방향성 null로 둔 문구)도 정정했다. V1 v3안은 다음 셋을 요구한다.
   * 결합 빈도 기반 순 흐름과 시간 역전 대리 null.
   * T̃ 기반 대조.
