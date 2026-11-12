@@ -36,6 +36,25 @@ Stage 3에서 SendMessage로 같은 에이전트를 재개할 때 쓰는 ID 목�
 |---|---|---|
 | adversarial-reviewer (상위 10개 독립 검토, 새 인스턴스. 선정 정정 후 ET-P4, EF-P4 추가 검토도 같은 인스턴스를 재개) | ad1b525711dd544aa | `outputs/agents/adversarial-reviewer/round3_top10_review.md`, `round3_top10_addendum.md` |
 
+## Stage 4 (2026-11-12)
+
+* 질문 카드 작성과 수정은 Stage 2의 같은 연구 에이전트 ID를 재개해 수행했다.
+  * geometry-info: RQ-01, 03
+  * llm-semantics: RQ-08, 14
+  * encoding-foundation: RQ-10
+  * frontier-ai: RQ-15
+  * multimodal-dynamics: RQ-33, 60
+  * systems-neuro: RQ-32
+  * emotion-theory: RQ-44
+* Horikawa 사실 확인은 Stage 1의 dataset-auditor(Horikawa, abd7d0ed9ea164848)를 재개했다.
+
+| 역할 | agent ID | 산출물 |
+|---|---|---|
+| adversarial-reviewer (독립 P6 채점, Coordinator 점수 미열람. 같은 인스턴스가 이어서 선행연구 중복 감사) | ae1b7a2f9497fc052 | `outputs/evaluation/scores_reviewer.csv`, `reviewer_notes.md`, `prior_overlap_audit.md` |
+| adversarial-reviewer (카드 검토 묶음 A) | ab40f5ef611bb5025 | `outputs/evaluation/card_review_A.md` |
+| adversarial-reviewer (카드 검토 묶음 B) | aa91a97af3b14b90e | `outputs/evaluation/card_review_B.md` |
+| adversarial-reviewer (최종 인용 검증, 새 인스턴스) | a0f758bf975ed612c | `outputs/evaluation/final_citation_check.md` |
+
 ## Stage 1 (참고, general-purpose 에이전트가 정의 파일을 읽고 수행)
 
 | 역할 | agent ID | 산출물 |
