@@ -1,10 +1,14 @@
-# R2. 떠올린 장면은 직접 본 장면보다 감정 쪽으로 더 기울까, 아니면 감정이 흐려질까?
+# R2. 떠올린 장면은 직접 본 장면보다 그 장면이 지닌 정서적 의미 쪽으로 더 기울까, 덜 기울까?
 
 * 작성: vision-decoding (D2 주담당). 기준일 2026-11-12
+* 수정: 2026-11-12. `outputs/revision/card_revision_orders.md` 0절과 2절을 반영했다. 근거로 `card_review.md` 2절[AR]과 `card_theory_review.md` 2절[ET] 원문을 읽었다. 무엇을 어떻게 고쳤는지는 끝의 '검토 반영 기록'에, 반영하지 않은 지적은 '반영하지 않은 지적' 절에 적었다.
 * 양식: `reference/protocols.md` P7 14개 항목 + 주장 범위 + RQ-44 흡수표 + Safeguards 점검
 * 합친 재료: C-02(정서 방향 이동, VD-RV-1), C-01(정서를 배우지 않은 decoder + emotion head를 측정 장치로, VD-RV-A), C-04(텍스트판, VD-RV-3), GI-RV-3(decoder 오차의 정서 방향, geometry-info), Stage 4 카드 RQ-44(`outputs/rq_cards/RQ44_recall_reconstruction.md`, 흔적 대 재구성)
-* 직접 읽은 자료: `outputs/revision/design_brief.md` 전체, `feedback_round2.md` 3.6절, `reviewer_notes.md` 3절과 7절, `prior_overlap_audit.md` 2.1절, RQ-44 카드 전체, `reference/protocols.md` P7, `outputs/agents/vision-decoding/revision_round.md`, `outputs/agents/geometry-info/revision_round.md` GI-RV-3절. MC 원자료의 events.tsv와 README, MC 원 저자 코드 저장소 README(2026-11-12, 공개 미러를 텍스트로만 읽음)
-* 표기: [본문] 원문 직접 확인, [초록], [Crossref] 서지만 확인, [DB] `outputs/literature/literature_db.csv`의 verified 기록, [events] MC 공개 events.tsv를 직접 집계. 라벨 출처는 axis_encyclopedia 0.2절 형식(대상 / 주체)
+* 직접 읽은 자료: `outputs/revision/design_brief.md` 전체, `feedback_round2.md` 3.6절, `reviewer_notes.md` 3절과 7절, `prior_overlap_audit.md` 2.1절, RQ-44 카드 전체, `reference/protocols.md` P7, `outputs/agents/vision-decoding/revision_round.md`, `outputs/agents/geometry-info/revision_round.md` GI-RV-3절, `card_revision_orders.md` 0절과 2절, `card_review.md` 0절과 2절, `card_theory_review.md` 0절과 2절. MC 원자료의 events.tsv와 README, MC 원 저자 코드 저장소 README와 캡션 파일(2026-11-12, 공개 미러를 텍스트로만 읽음)
+* 표기:
+  * 근거: [본문] 원문 직접 확인, [초록], [Crossref] 서지(초록이 있으면 초록 포함)만 확인, [arXiv] arXiv API 초록, [PubMed] PubMed 메타데이터와 초록, [DB] `outputs/literature/literature_db.csv`의 verified 기록
+  * 자료: [events] MC 공개 events.tsv를 직접 집계, [계산] events.tsv 시간 정보에 표준 HRF를 적용한 작성자 계산, [캡션] 원 저자 공개 캡션 파일의 단어 집계
+  * 라벨 출처: axis_encyclopedia 0.2절 형식(대상 / 주체)
 
 ### 이 카드에서 쓰는 말
 
@@ -15,33 +19,42 @@
 | 단서 캡션 | 회상할 클립을 알려 준 문장. 그 클립의 정서 배제 캡션 20개 중 하나이고 모든 시행과 참가자에서 같다(MC Methods) |
 | decoder | fMRI 패턴을 영상 특징 공간(이미지나 영상 모델의 embedding)으로 옮기는 선형 사상. **정서 라벨 없이** 학습 클립 2,108개의 지각 자료로만 학습한다 |
 | emotion head | 특징 공간에서 정서 점수를 읽는 고정된 선형 사상. 자극 쪽 특징으로 미리 학습하고, 지각과 회상의 해독 특징에 **똑같이** 적용한다. 측정 장치이지 예측 대상이 아니다 |
-| 규범 정서 방향 | 클립마다 별도 평정자가 고른 정서 34범주 비율(중심화)을 단위 벡터로 만든 것. "그 장면이 사람들에게 보통 일으키는 정서" |
-| 정서 표현량 | 해독 특징에 emotion head를 적용한 출력을 그 클립의 규범 정서 방향에 사영한 값. 클수록 그 장면이 보통 일으키는 정서를 더 많이 띤다 |
+| 규범 정서 방향 | **미국 MTurk 평정자들이 그 장면을 보고 보고한 정서**(C&K 34범주 비율)를 중심화해 단위 벡터로 만든 것. 참가자(일본어 화자) 본인의 정서가 아니다 |
+| 정서 표현량 | 해독 특징에 emotion head를 적용한 출력을 그 클립의 규범 정서 방향에 사영한 값. 클수록 해독 표상이 **그 장면의 규범 정서를 예측하는 내용 특징**을 더 많이 담는다 |
+| 묘사된 정서 방향 | 화면 속 인물의 표정과 몸짓이 나타내는 정서를 공개 표정 모델과 VLM으로 매긴 프로파일([AI-est])의 방향. 규범 정서(평정자가 보고한 정서)와 구분한다 |
+| 감각 세부 방향 | 밝기, 대비, 채도, 공간 주파수 에너지, 움직임 에너지 같은 저수준 자극 통계의 방향 |
+| 비정서 방향 | 정서와 무관한 속성(73개 의미 개념 인간 평정, 캡션에서 뽑은 사람 수, 실내/실외 같은 속성)을 읽는 head의 방향. 같은 계산으로 Δ를 구해 정서 특이성을 가른다 |
 | 이동량 S | 같은 클립, 같은 참가자에서 (회상 정서 표현량) - (지각 정서 표현량) |
 | 합성 회상 null | 지각 패턴을 회상 수준의 신호 대 잡음비(SNR)로 낮춘 "가짜 회상". "신호가 약해지기만 했다면 생길 이동량"을 준다 |
-| 초과 이동량 Δ | 실제 이동량 S - 합성 회상 null의 이동량. 주 지표 |
-| 비정서 방향 | 정서와 무관한 속성(73개 의미 개념 인간 평정, 캡션에서 뽑은 사람 수, 실내/실외 같은 속성)을 읽는 head의 방향. 같은 계산으로 Δ를 구해 정서 특이성을 가른다 |
+| 초과 이동량 Δ | 실제 이동량 S - 합성 회상 null의 이동량. Δ_emo(정서 방향), Δ_non(비정서), Δ_dep(묘사된 정서), Δ_low(감각 세부) |
+| 항목 충실도, 범주 원형 | 회상 해독 벡터를 두 성분으로 나눈 것. 항목 충실도: 그 클립 자신의 지각 해독 벡터 쪽 성분. 범주 원형: 같은 지배 정서 범주를 가진 다른 클립들의 평균 쪽 성분 |
+| LS-S | 시행 하나씩 회귀자를 따로 두고 나머지를 묶어 추정하는 GLM(Mumford 2012, doi:10.1016/j.neuroimage.2011.08.076 [DB]). 단서 읽기, 회상, 재시청, 평정 반응을 떼어 추정한다 |
 | vividness | 참가자가 회상 뒤 원 영상을 다시 보고 매긴 심상 생생함(5점). 정서 보고가 아니다 |
 
 ---
 
 ## 1. Core Research Question
 
-* **한 줄 질문:** 떠올린 장면은 직접 본 장면보다 감정 쪽으로 더 기울까, 아니면 감정이 흐려질까?
+* **한 줄 질문:** 떠올린 장면은 직접 본 장면보다 그 장면이 지닌 정서적 의미 쪽으로 더 기울까, 덜 기울까?
 * **자세한 질문:**
-  * MC 참가자 6명이 같은 클립 72개를 볼 때(5회)와 떠올릴 때(5회)의 뇌 패턴을, 정서를 배우지 않은 같은 decoder로 같은 특징 공간에 옮긴다. 거기에 같은 emotion head를 적용해 "그 장면의 규범 정서 방향"으로 얼마나 기울어 있는지 잰다.
-  * 떠올린 표상은 본 표상보다 그 방향으로 **더 기우는가(과장)**, **덜 기우는가(흐려짐)**? 판정은 신호가 약해진 것만으로 생기는 변화(합성 회상 null)를 뺀 뒤에 하고, 정서와 무관한 속성 방향에서 같은 계산을 한 값과 비교한다.
-  * 그 이동은 단서 문장(정서를 뺀 캡션)으로 끌려간 결과인가, 반복 회차와 vividness에 따라 달라지는가?
+  * MC 참가자 6명이 같은 클립 72개를 볼 때(5회)와 떠올릴 때(5회)의 뇌 패턴을 쓴다. 정서를 배우지 않은 같은 decoder로 둘을 같은 특징 공간에 옮기고, 같은 emotion head를 적용한다. 그래서 각 표상이 "미국 평정자들이 그 장면에서 보고한 정서(규범 정서) 방향"을 얼마나 담는지 잰다.
+  * 떠올린 표상은 본 표상보다 그 방향으로 **더 기우는가, 덜 기우는가**? 판정은 신호가 약해진 것만으로 생기는 변화(합성 회상 null)를 뺀 뒤에 한다. 같은 계산을 정서와 무관한 속성 방향에도 해서 비교한다.
+  * 더 기운다면, 그 장면 고유의 내용이 더 남아서인가(항목 충실도), 그 정서 범주의 전형적 내용 쪽으로 끌려서인가(범주 원형 이동)?
+  * 덜 기운다면, 정서가 빠진 단서 문장으로 장면을 다시 만든 결과인가(단서 기반 재구성)?
+  * 그 이동 중 얼마가 화면 속 인물의 표정과 몸짓(묘사된 정서)을 떠올린 몫인가?
 
 ## 2. Scientific Motivation
 
 * **이미 알려진 것.**
-  * 회상에도 정서 정보가 있다. 시청과 회상 사이 valence, arousal 표상이 공유되고(Park & Kim 2025 fNIRS preprint, doi:10.1101/2025.11.22.689961 [Crossref 초록]; Kim & Kim 2025, doi:10.1016/j.bandc.2025.106296 [DB]), 정서가 부호화-인출 재현의 충실도를 높인다(Kark & Kensinger 2019, doi:10.1523/JNEUROSCI.2834-18.2019 [본문 일부]; Cocquyt 2026, doi:10.1523/JNEUROSCI.0718-25.2025 [초록]).
-  * 회상은 지각의 복사가 아니라 체계적으로 바뀐다(Chen 2017, doi:10.1038/nn.4450 [DB]; Favila 2022, doi:10.1038/s41467-022-33161-8 [본문]). feature 수준별로 재현 정도도 다르다(Bone 2020, doi:10.1038/s41467-020-15763-2 [초록]).
-* **비어 있는 것.** 회상 표상이 장면의 정서적 의미 쪽으로 **어느 방향으로** 바뀌는지를 신경 수준에서 잰 연구가 없다(4절 검색). 이론은 서로 반대를 예측한다.
-  * **과장 쪽:** NEVER 모형은 부정 정서가 감각 세부를 더 남기고 인출 때 더 충실히 되살린다고 본다(Bowen 2018, doi:10.3758/s13423-017-1313-9 [본문]). affective realism은 정서가 지각 내용 자체를 기울인다고 본다(Siegel 2018, doi:10.1177/0956797617741718 [초록]). 정서 장면은 지각적으로도 기억에서도 더 생생하다(Todd 2013, doi:10.3389/fnbeh.2013.00040 [초록]).
-  * **흐려짐 쪽:** 행동 재구성 과제에서 기억 속 이미지는 부호화 때보다 덜 두드러지게(밝기, 채도) 재구성되었다. 부정 정서는 vividness를 높였지만 흐려짐을 줄이지는 않았다(Cooper 2019, doi:10.1177/0956797619836093 [초록]). 정서 회상의 정서가 정보는 지각 세부와 다른 하위망에 실리고 추상 표상과 묶인다는 보고도 있다(Curko 2026, doi:10.1523/ENEURO.0146-26.2026 [Crossref, RQ-44 카드의 본문 기록]).
-* **왜 지금 가능한가.** 같은 사람이 같은 클립을 보고 떠올린 fMRI(MC)가 공개되어 있고, 사용자가 보유한다. 정서 없이 학습한 decoder를 측정 장치로 쓰면, 지각과 회상을 같은 공간, 같은 자로 비교할 수 있다. 자극이 같으므로 "자극 모델이 놓친 정보" 문제(reviewer_notes C-01 치명 결함)가 대조 안에서 상쇄된다.
+  * 회상에도 정서 정보가 있다. 시청과 회상 사이 valence, arousal 표상이 공유된다(Park & Kim 2025 fNIRS preprint, doi:10.1101/2025.11.22.689961 [Crossref 초록]; Kim & Kim 2025, doi:10.1016/j.bandc.2025.106296 [DB]). 정서가 부호화와 인출 사이 재현의 충실도를 높인다(Kark & Kensinger 2019, doi:10.1523/JNEUROSCI.2834-18.2019 [본문 일부]; Cocquyt, Wilson, Palombo 2025, doi:10.1523/JNEUROSCI.0718-25.2025 [초록, Crossref 발행 2025-11-19]).
+  * 회상은 지각의 복사가 아니라 체계적으로 바뀐다(Chen 2017, doi:10.1038/nn.4450 [DB]; Favila 2022, doi:10.1038/s41467-022-33161-8 [본문]). feature 수준별로 재현 정도가 다르다(Bone 2020, doi:10.1038/s41467-020-15763-2 [초록]). 기억은 시간이 지나며 지각 세부보다 의미 gist 쪽으로 변형된다는 model-based fMRI 증거가 있다(Krenz et al. 2023, doi:10.1038/s41467-023-41648-1 [Crossref 초록]). 심상은 지각과 다른 공간이라 지각 decoder에 그대로 넣기보다 정렬이 필요하다는 보고도 있다(Spera et al. 2026, arXiv:2604.15374 [arXiv]; Koide-Majima, Nishimoto, Majima 2023, doi:10.1016/j.neunet.2023.11.024 [DB 초록]).
+* **비어 있는 것.** 회상 표상이 장면의 정서적 의미 쪽으로 **어느 방향으로**, **어떤 기제로** 바뀌는지를 신경 표상 수준에서 잰 연구가 없다(4절 검색).
+* **경쟁하는 기제(ET 2.2, 2.7 반영해 다시 씀).**
+  * **일반 감쇠.** 행동 재구성 과제에서 기억 속 이미지는 부호화 때보다 덜 두드러지게(밝기, 채도) 재구성되었다. 부정 정서는 주관적 vividness와 부호화 정밀도를 높였다(Cooper, Kensinger, Ritchey 2019, doi:10.1177/0956797619836093 [PubMed 초록]). 이 결과는 "흐려짐은 정서와 무관하게 일반적이다"로 읽는 것이 맞다. 그래서 정서 특이성에 대해서는 **H0 쪽**을 예측한다. 정서가 흐려짐 정도를 바꿨는지는 초록에 없고, PMC 전문을 이 세션 도구로 받지 못해 본문도 확인하지 못했다. 그래서 이 카드는 그 점에 대해 아무것도 주장하지 않는다.
+  * **선택적 감각 재현.** NEVER 모형은 부정 정서가 감각 세부의 부호화와 재현 충실도를 높인다고 본다(Bowen, Kark, Kensinger 2018, doi:10.3758/s13423-017-1313-9 [본문]). 직접 예측은 "부정 클립에서 감각 세부 방향 Δ와 항목 충실도가 크다"이다.
+  * **개념, schema 기반 재구성.** 회상은 schema와 개념 지식으로 다시 만들어진다(Spens & Burgess 2024, doi:10.1038/s41562-023-01799-z [DB]). 범주 조정 원리에 따르면 기억은 범주 원형 쪽으로 끌린다(Huttenlocher, Hedges, Duncan 1991, doi:10.1037/0033-295X.98.3.352 [DB]). 구성주의는 정서 지각과 기억에서 개념 기반 예측을 강조한다(Hoemann, Gendron, Barrett 2017, doi:10.1016/j.cobeha.2017.05.013 [DB]). 이 기제는 두 서명을 낸다. 단서로 정서적 의미를 추론할 수 있으면 범주 원형 쪽 이동을 낳고, 추론할 수 없으면 정서적 의미를 잃는다(단서 예측 가능성 κ와의 상호작용).
+  * **affective realism은 이 자료로 검정할 수 없다.** affective realism(Siegel et al. 2018, doi:10.1177/0956797617741718 [초록])은 지각자 **본인의 affect**가 중립 자극의 지각 내용을 바꾸는 현상이다. MC에는 참가자 affect 측정이 없고, 회상 대상도 중립 자극이 아니다. 이 카드의 출발점(C-02)이 된 영감으로만 남긴다.
+* **왜 지금 가능한가.** 같은 사람이 같은 클립을 보고 떠올린 fMRI(MC)가 공개되어 있고 사용자가 보유한다. 원자료(raw)도 CC0로 공개되어 있어 시험 run을 다시 처리해 단서 읽기와 재시청 반응을 뗄 수 있다. 정서 없이 학습한 decoder를 측정 장치로 쓰면 지각과 회상을 같은 공간, 같은 자로 비교할 수 있다. 자극이 같으므로 "자극 모델이 놓친 정보" 문제(reviewer_notes C-01 치명 결함)가 대조 안에서 상쇄된다.
 
 ## 3. Origin of the Idea
 
@@ -50,9 +63,9 @@
 
 | 재료 | 원래 핵심 | 이 카드에서의 처리 |
 |---|---|---|
-| C-01 (VD-RV-A) | 정서 무관 decoder 표상의 정서 head가 자극 표상 head를 넘어 규범 평정을 설명하는 몫 | **측정 장치로만 흡수.** reviewer_notes 7절에서 "자극 feature 부분상관으로도 같은 양을 계산할 수 있다"는 반증을 받았다. 그래서 자극 대 뇌 비교를 버리고, 같은 자극의 지각 대 회상 비교로 바꿨다. decoder의 역할은 "정서를 모르는 같은 자"다 |
-| C-02 (VD-RV-1) | 뇌 해독 표상이 자극보다 정서 쪽으로 기우는가(affective realism) | **주 질문의 뼈대.** 비교 상대를 자극에서 같은 클립의 지각으로 바꿨다. 합성 null은 reviewer_notes 7절의 지적대로 "SNR이 낮아진 지각"으로 다시 정의했다 |
-| C-04 (VD-RV-3) | 정서 라벨 없는 의미 decoder의 출력이 인간 캡션보다 정서적인가 | **보조 측정 공간으로 흡수.** 인간 캡션 기준선(인위적으로 중립, reviewer_notes 7절)은 버리고, 텍스트 특징 공간에서도 지각 대 회상 Δ를 같은 방식으로 계산한다 |
+| C-01 (VD-RV-A) | 정서 무관 decoder 표상의 정서 head가 자극 표상 head를 넘어 규범 평정을 설명하는 몫 | **측정 장치로만 흡수.** reviewer_notes 7절에서 "자극 feature 부분상관으로도 같은 양을 계산할 수 있다"는 반증을 받았다. 그래서 자극 대 뇌 비교를 버리고 같은 자극의 지각 대 회상 비교로 바꿨다. decoder의 역할은 "정서를 모르는 같은 자"다 |
+| C-02 (VD-RV-1) | 뇌 해독 표상이 자극보다 정서 쪽으로 기우는가(affective realism에서 착안) | **주 질문의 뼈대.** 비교 상대를 자극에서 같은 클립의 지각으로 바꿨다. 합성 null은 "SNR이 낮아진 지각"으로 다시 정의했다. affective realism은 이 자료로 검정 불가로 표시했다(ET 2.2) |
+| C-04 (VD-RV-3) | 정서 라벨 없는 의미 decoder의 출력이 인간 캡션보다 정서적인가 | **확장 분석으로 이동.** 인간 캡션 기준선(인위적으로 중립)은 버린다. 텍스트 특징 공간의 지각 대 회상 Δ는 4주 뒤 확장에서 계산한다(raw 재처리를 핵심 판에 넣어 일정을 비웠다) |
 | GI-RV-3 (geometry-info) | decoder 오차의 정서 방향, 비정서 속성 대비 정서 특이 지수 | **비정서 방향 대조를 흡수.** "정서 특이 지수 = 정서 방향 값 - 비정서 방향 값" 형식을 그대로 쓴다 |
 | C-03 (영역별 기울기) | 초기 시각 대 고차 대 transmodal | 핵심 판에서는 뺀다(reviewer_notes 3절 조건부 하향). 확장 분석으로 둔다 |
 
@@ -60,23 +73,23 @@
 
 | RQ-44 구성 요소 | 처리 | 이유 |
 |---|---|---|
-| 0a 자료 형식 확인, 연속 시계열 필요 판정 | **흡수**(관문 G0) | 같은 자료, 같은 문제 |
-| 0b 원 결과 재현(지각 decoder로 회상 클립 식별) | **흡수**(양성 대조) | 도구가 작동하는지의 최소 확인 |
-| 0c 회상 split-half 신뢰도 | **흡수**(관문 G2) | 합성 null의 SNR 추정에도 쓴다 |
-| 0e 단서 예측 가능성 κ(단서 문장으로 원 클립 특징을 얼마나 맞히는가) | **흡수**(단서 통제) | 정서 방향과 비정서 방향의 κ를 맞춰 비교하는 데 쓴다 |
-| 0f 회복 시뮬레이션(두 방향 편향을 심어 판정 불가 구역을 미리 정함) | **흡수** | 단서 읽기 혼입(중립 쪽 편향)과 재시청 혼입(지각 쪽 편향)을 같은 방식으로 다룬다 |
-| 0g DeepMReye 시선 추정 | **확장으로 이동** | raw 재처리가 필요하다 |
-| null 부분공간(κ, VIF, 지각 강도를 맞춘 무작위 34차원) | **흡수, 형태 변경** | 이 카드의 비정서 대조 방향들을 "지각 해독도와 κ를 맞춘 방향 집합"으로 만든다 |
-| 회귀 schema 예측 (c)(단서 문장에서 특징을 회귀로 추정) | **흡수**(단서 당김 분석) | 회상 표상이 단서 쪽으로 끌리는 정도를 재는 데 쓴다. 생성기가 필요 없어 가볍다 |
+| 0a 자료 형식 확인, 연속 시계열 필요 판정 | **흡수, 강화**(관문 G0 + 핵심 판의 raw 재처리) | 같은 자료, 같은 문제. [AR 2.1-1]에 따라 시험 지각 run과 회상 run의 raw 재처리와 LS-S를 핵심 작업으로 올렸다 |
+| 0b 원 결과 재현(지각 decoder로 회상 클립 식별) | **흡수**(G2) | 도구가 작동하는지의 최소 확인 |
+| 0c 회상 split-half 신뢰도 | **흡수**(G2) | 합성 null의 SNR 추정에도 쓴다 |
+| 0e 단서 예측 가능성 κ(단서 문장으로 원 클립 특징을 얼마나 맞히는가) | **흡수**(단서 통제, κ 상호작용) | 방향 집합 맞춤과 schema 재구성 서명(S4)에 쓴다 |
+| 0f 회복 시뮬레이션 | **흡수, 형태 변경** | 단서 읽기와 이전 시행 혼입은 LS-S로 실측한다. 시뮬레이션은 남은 HRF 오사양과 잡음에만 쓴다. 임의의 편향 범위는 두지 않는다 |
+| 0g DeepMReye 시선 추정 | **확장** | 시험 run의 raw를 다시 처리하므로 가능해졌다. 다만 4주 안에는 넣지 않는다 |
+| null 부분공간(κ, VIF, 지각 강도를 맞춘 무작위 34차원) | **흡수, 형태 변경** | 비정서 대조 방향을 "지각 해독도, κ, 표상 수준을 맞춘 방향 집합"으로 만든다 |
+| 회귀 schema 예측 (c)(단서 문장에서 특징을 회귀로 추정) | **흡수**(단서 당김 분석) | 생성기가 필요 없어 가볍다 |
 | 생성 영상 schema 예측 (b)(Wan으로 단서에서 영상 생성) | **남김**(RQ-44 확장) | 생성기 편향과 정서 중립화(VD-P4)를 먼저 감사해야 하고 4주 안에 넣기 무겁다 |
-| 일화 고유 지수 ES와 조건부 잔차 D(흔적 대 schema 분해) | **남김**(RQ-44 고유 질문) | 이 카드의 주 지표는 "방향 이동"이다. 출처(흔적 대 schema) 분해는 다른 질문이다. 두 결과가 맞물리는 방식은 10절에 적었다 |
-| NEVER 회귀(규범 부정 정서가에 따른 차이를 의미 부분공간과 대조) | **흡수**(보조 분석 A2) | 같은 대조 논리 |
-| vividness 누적 로짓 혼합모형, 회상 차수 효과 | **흡수**(A3, A4) | 같은 자료 |
+| 일화 고유 지수 ES와 조건부 잔차 D(흔적 대 schema 분해) | **남김**(RQ-44 고유 질문) | 이 카드의 항목 충실도 대 범주 원형 분해(S2)와 가깝지만, RQ-44는 encoding 예측원 비교이고 이 카드는 decoding 공간의 성분 분해다. 맞물리는 방식은 10절 |
+| NEVER 회귀(규범 부정 정서가에 따른 차이) | **흡수, 수정**(S3) | [ET 2.5-3]에 따라 정서 방향이 아니라 감각 세부 방향 Δ와 항목 충실도에 회귀한다 |
+| vividness 누적 로짓 혼합모형, 회상 차수 효과 | **흡수**(A3, A4, 탐색) | 같은 자료 |
 | 정서 허용 캡션 schema (c') | **남김** | AI 라벨 대체 가능성 판정(RQ-17)이 먼저다 |
 | 유병률 추론, 클립 bootstrap, 실효 자유도 경고 | **흡수** | 6명 표본에 같은 통계 원칙 |
 
 * **AI가 꼭 필요한 이유(`plan.md` 2절 기준):**
-  * **(b) 측정할 수 없던 변수를 계산한다.** "떠올린 장면이 본 장면보다 그 장면의 정서 방향으로 얼마나 더 기울었는가"는 두 뇌 상태를 같은 특징 공간과 같은 정서 자로 옮겨야 정의된다. 정서를 학습하지 않은 decoder와 고정된 emotion head가 그 자다. 관찰된 BOLD 패턴끼리의 상관(재현 충실도)으로는 방향을 말할 수 없다.
+  * **(b) 측정할 수 없던 변수를 계산한다.** "떠올린 장면이 본 장면보다 그 장면의 규범 정서 방향으로 얼마나 더 기울었는가", 그리고 그 기울기가 항목 충실도인지 범주 원형 이동인지는 두 뇌 상태를 같은 특징 공간과 같은 정서 자로 옮겨야 정의된다. 정서를 학습하지 않은 decoder와 고정된 head가 그 자다. 관찰된 BOLD 패턴끼리의 상관(재현 충실도)으로는 방향도 성분도 말할 수 없다.
   * **(a) 관찰로 얻을 수 없는 통제 대상을 준다.** "신호만 약해진 회상"은 실제로 측정할 수 없다. 지각 패턴을 회상 SNR로 낮춰 같은 decoder에 넣은 합성 회상이 그 반사실 비교 대상이다.
 
 ## 4. Prior Literature
@@ -86,20 +99,30 @@
 | # | 논문 | ID | 읽은 범위 | 이 질문에 주는 기여 |
 |---|---|---|---|---|
 | 1 | Horikawa 2025, Mind captioning, Sci Adv | doi:10.1126/sciadv.adw1464 | 본문(Methods 회상 실험, 전처리, Discussion 8~10째 단락) | 주 자료. 지각 학습 decoder가 회상 내용 기술로 일반화됨. 캡션이 정서를 배제해 생성 기술에 정서가 거의 없었다고 저자가 적음. 단서 읽기 반응의 HRF 혼입 가능성을 저자가 인정(Discussion 10째 단락) |
-| 2 | Cooper, Kensinger, Ritchey 2019, Memories fade, Psychol Sci | doi:10.1177/0956797619836093 | 초록(PubMed) | **흐려짐 예측의 근거.** 기억 속 시각 두드러짐이 부호화보다 낮게 재구성됨. 부정 정서는 vividness와 부호화 정밀도를 높였으나 흐려짐 정도는 바꾸지 않음 |
-| 3 | Bowen, Kark, Kensinger 2018, NEVER forget, Psychon Bull Rev | doi:10.3758/s13423-017-1313-9 | 본문(모델 기술, Future Directions) | **과장 예측의 근거.** 부정 정서가가 감각 세부의 부호화와 재현을 강화 |
-| 4 | Siegel, Wormwood, Quigley, Barrett 2018, Psychol Sci | doi:10.1177/0956797617741718 | 초록 | affective realism의 행동 증거. 신경 표상 수준 검정은 없음 |
-| 5 | Todd, Schmitz, Susskind, Anderson 2013, Front Behav Neurosci | doi:10.3389/fnbeh.2013.00040 | 초록 | 정서에 따른 지각 생생함(EEV)과 기억 생생함이 편도체, 시각피질 기반을 공유 |
-| 6 | Krenz et al. 2025, J Neurosci | doi:10.1523/JNEUROSCI.2406-23.2025 | 초록 | 반복 노출 시 정서 장면의 신피질 패턴이 더 안정적. 반복 회차 분석의 비교 기준 |
-| 7 | Bradley, Sambuco, Lang 2022, Neuropsychologia | doi:10.1016/j.neuropsychologia.2022.108203 | 초록 | 정서 자전 기억 반복 인출에서 반복 억제가 정서가와 무관. 반복 회차 분석의 반대 기준 |
-| 8 | Park & Kim 2025, bioRxiv preprint (fNIRS) | doi:10.1101/2025.11.22.689961 | Crossref 초록 | **가장 가까운 선행(설계).** 시청과 회상의 valence, arousal 공유 차원과 단계 고유 차원. 방향 이동과 SNR 보정은 없음 |
-| 9 | Kark & Kensinger 2019, J Neurosci; Cocquyt, Wilson, Palombo 2026, J Neurosci | doi:10.1523/JNEUROSCI.2834-18.2019; doi:10.1523/JNEUROSCI.0718-25.2025 | 본문 일부; 초록 | 부정 정서에서 시각 감각 재현이 강함. 재현 "충실도"이지 "방향"이 아님 |
-| 10 | Curko et al. 2026, eNeuro | doi:10.1523/ENEURO.0146-26.2026 | Crossref 서지, 내용은 RQ-44 카드의 본문 기록 | 정서 뉴스 영상의 중립 단서 회상에서 정서가는 배내측, 지각 세부는 내측두 하위망. 정서 정보가 추상 표상과 묶인다는 정황 |
-| 11 | Bone, Ahmad, Buchsbaum 2020, Nat Commun; St-Laurent, Abdi, Buchsbaum 2015, J Cogn Neurosci | doi:10.1038/s41467-020-15763-2; doi:10.1162/jocn_a_00839 | 초록; 서지 | feature 수준별 재현과 vividness의 관계, 영상 회상 재활성과 vividness. 정서 방향은 없음 |
-| 12 | Kneeland et al. 2025 NSD-Imagery, CVPR; Kneeland et al. 2026 MIRAGE, arXiv | arXiv:2506.06898; arXiv:2605.17198 | 본문 | 심상은 SNR이 매우 낮고 선형, 저차원 decoder가 잘 일반화된다. ridge판으로 시작하는 근거 |
-| 13 | EmoMind (Mohammed, Gu, Fang 2026) | arXiv:2605.16739 | 본문(3.1, 4.1절, 부록 A.4) | 같은 MC 자료에서 34차원 정서를 지도학습으로 해독해 캡션에 주입. 회상 조건 없음 |
-| 14 | Chen, Keil, Ding 2025, J Vis(VSS 초록) | doi:10.1167/jov.25.9.1989 | Crossref 서지, 내용 검색 요약 | 자극 구동 합성 반응 null 논리를 이미 썼다. null 방법 자체를 새로움으로 주장하지 않는 근거 |
-| 15 | Conwell et al. 2024, Nat Commun | doi:10.1038/s41467-024-53147-y | DB 기록 | 표준 선형 연결로는 모델이 달라도 예측 점수가 비슷하다. 주 결과를 예측력으로 두지 않는 근거 |
+| 2 | Cheng, Horikawa, Majima et al. 2023, Sci Adv | doi:10.1126/sciadv.adj3906 (PMID 37967184) | 본문(PMC, Discussion 전체) | **측정 논리에 가장 가까운 선행.** 자연 이미지로 학습한 decoder가 착시 자극에서 물리 자극에 없는 선과 색(주관적 내용)을 복원했다. 착시 유발 자극의 자극 특징이나 대조 이미지의 해독 특징으로는 그런 복원이 나오지 않았다(Discussion 1째 단락, 이 카드의 '같은 자로 잰 자극 고정 대조'와 같은 논리). 저자는 재구성 모델의 편향으로 인한 왜곡, 인과 추론 불가, 처리가 아닌 표상만 보인다는 한계를 적었다(Discussion 1, 5째 단락). 정서는 다루지 않음 |
+| 3 | Cooper, Kensinger, Ritchey 2019, Psychol Sci | doi:10.1177/0956797619836093 | 초록(PubMed). PMC 전문은 도구에서 비어 있음 | **일반 감쇠(H0 쪽)의 근거.** 기억 속 시각 두드러짐이 부호화보다 낮게 재구성됨. 부정 정서는 vividness와 부호화 정밀도를 높임. vividness는 정밀도와 편향을 함께 따름 |
+| 4 | Bowen, Kark, Kensinger 2018, NEVER forget, Psychon Bull Rev | doi:10.3758/s13423-017-1313-9 | 본문(모델 기술, Future Directions) | **선택적 감각 재현의 근거.** 부정 정서가가 감각 세부의 부호화와 재현을 강화 |
+| 5 | Spens & Burgess 2024, Nat Hum Behav | doi:10.1038/s41562-023-01799-z | DB 기록 | **schema 재구성의 근거.** 생성 모델로서의 기억 재구성 |
+| 6 | Huttenlocher, Hedges, Duncan 1991, Psychol Rev; Hoemann, Gendron, Barrett 2017, Curr Opin Behav Sci | doi:10.1037/0033-295X.98.3.352; doi:10.1016/j.cobeha.2017.05.013 | DB 기록(ET 검토의 서지, 본문) | 범주 원형 쪽 조정, 정서의 개념 기반 예측. 범주 원형 이동(H+b)의 이론 근거 |
+| 7 | Krenz, Alink, Sommer, Roozendaal, Schwabe 2023, Nat Commun | doi:10.1038/s41467-023-41648-1 | Crossref 초록 | 기억 변형이 지각이 아니라 의미 쪽이며, 후측 해마 재활성이 원 기억의 의미 gist와 관련됨. 성분 분해(S2)의 가까운 선행이다. 정서와 원형 이동은 다루지 않음 |
+| 8 | Wu & Li 2024, J Neurosci | doi:10.1523/JNEUROSCI.1175-23.2024 | PubMed 초록 | 장면 기억이 원형 시점 쪽으로 정규화되는 왜곡(행동, fMRI, MEG). 원형 쪽 기억 왜곡의 최근 예. 정서 아님 |
+| 9 | Siegel, Wormwood, Quigley, Barrett 2018, Psychol Sci | doi:10.1177/0956797617741718 | 초록 | affective realism. **이 자료로 검정 불가**(2절) |
+| 10 | Todd, Schmitz, Susskind, Anderson 2013, Front Behav Neurosci | doi:10.3389/fnbeh.2013.00040 | 초록 | 정서에 따른 지각 생생함(EEV)과 기억 생생함의 기반 공유. vividness 탐색 분석(A3)의 배경. 방향 예측의 근거로는 쓰지 않는다 |
+| 11 | Talarico & Rubin 2003, Psychol Sci | doi:10.1111/1467-9280.02453 | DB 기록(ET 검토의 초록) | 정서가 확신과 생생함은 올리고 일관성은 올리지 않음. vividness와 표상의 분리(A3)의 비교 기준 |
+| 12 | Krenz et al. 2025, J Neurosci | doi:10.1523/JNEUROSCI.2406-23.2025 | 초록 | 반복 노출 시 정서 장면의 신피질 패턴이 더 안정적. 반복 회차 분석의 비교 기준 |
+| 13 | Bradley, Sambuco, Lang 2022, Neuropsychologia | doi:10.1016/j.neuropsychologia.2022.108203 | 초록 | 정서 자전 기억 반복 인출에서 반복 억제가 정서가와 무관. 반복 회차 분석의 반대 기준 |
+| 14 | Park & Kim 2025, bioRxiv preprint (fNIRS) | doi:10.1101/2025.11.22.689961 | Crossref 초록 | **가장 가까운 선행(설계).** 시청과 회상의 valence, arousal 공유 차원과 단계 고유 차원. 방향 이동과 SNR 보정은 없음 |
+| 15 | Kark & Kensinger 2019, J Neurosci; Cocquyt, Wilson, Palombo 2025, J Neurosci | doi:10.1523/JNEUROSCI.2834-18.2019; doi:10.1523/JNEUROSCI.0718-25.2025 | 본문 일부; 초록 | 부정 정서에서 시각 감각 재현이 강함. 재현 "충실도"이지 "방향"이 아님 |
+| 16 | Curko et al. 2026, eNeuro | doi:10.1523/ENEURO.0146-26.2026 | Crossref 서지, 내용은 RQ-44 카드의 본문 기록 | 정서 뉴스 영상의 중립 단서 회상에서 정서가는 배내측, 지각 세부는 내측두 하위망. **H- 근거에서 뺐다**(ET 2.2: 정서가가 추상 표상과 묶인다는 해석은 오히려 정서적 의미의 상대적 보존 쪽이다). 확장 분석 A6의 영역 구분에만 쓴다 |
+| 17 | Spera, Boccato, Olak, Toschi, Ferrante 2026, arXiv | arXiv:2604.15374 | arXiv 초록 | 지각 decoder(DynaDiff)를 고정하고, 심상 반응을 그 decoder의 의미 조건 공간으로 옮기는 잠재 기능 정렬(LFA)을 더하자 NSD-Imagery의 고차 의미 재구성이 개선됨. **회상이 '약한 지각'이 아니라 체계적으로 다른 공간이라는 근거**(합성 null 사양, 7절) |
+| 18 | Koide-Majima, Nishimoto, Majima 2023, Neural Netw | doi:10.1016/j.neunet.2023.11.024 | DB 기록(초록) | 저수준 정보만 쓰는 방법은 심상에서 실패하고 의미 정보를 더하자 심상 식별이 됨. 대안 설명 5의 근거 |
+| 19 | Bone, Ahmad, Buchsbaum 2020, Nat Commun; St-Laurent, Abdi, Buchsbaum 2015, J Cogn Neurosci | doi:10.1038/s41467-020-15763-2; doi:10.1162/jocn_a_00839 | 초록; 서지 | feature 수준별 재현과 vividness의 관계, 영상 회상 재활성과 vividness. 정서 방향은 없음 |
+| 20 | Kneeland et al. 2025 NSD-Imagery, CVPR; Kneeland et al. 2026 MIRAGE, arXiv | arXiv:2506.06898; arXiv:2605.17198 | 본문 | 심상은 SNR이 매우 낮고 선형, 저차원 decoder가 잘 일반화된다. ridge판으로 시작하는 근거 |
+| 21 | EmoMind (Mohammed, Gu, Fang 2026) | arXiv:2605.16739 | 본문(3.1, 4.1절, 부록 A.4) | 같은 MC 자료에서 34차원 정서를 지도학습으로 해독해 캡션에 주입. 회상 조건 없음 |
+| 22 | Chen, Keil, Ding 2025, J Vis(VSS 초록) | doi:10.1167/jov.25.9.1989 | Crossref 서지, 내용 검색 요약 | 자극 구동 합성 반응 null 논리를 이미 썼다. null 방법 자체를 새로움으로 주장하지 않는 근거 |
+| 23 | Handwerker, Ollinger, D'Esposito 2004, NeuroImage | doi:10.1016/j.neuroimage.2003.11.029 | Crossref 서지 | HRF가 피험자와 영역에 따라 달라 분석에 영향을 줌. 표준 HRF를 가정하지 않고 피험자별 HRF를 맞추는 근거 |
+| 24 | Cheong et al. 2023, Py-Feat, Affective Science | doi:10.1007/s42761-023-00191-4 | Crossref 초록 | 공개 표정 분석 도구. 묘사된 정서 특징([AI-est])을 만드는 데 쓴다 |
+| 25 | Conwell et al. 2024, Nat Commun | doi:10.1038/s41467-024-53147-y | DB 기록 | 표준 선형 연결로는 모델이 달라도 예측 점수가 비슷하다. 주 결과를 예측력으로 두지 않는 근거 |
 
 ### 4.2 선행 검색 기록 (모두 2026-11-12, 새 구성 요소마다 질의 2개 이상, 2024~2026 포함)
 
@@ -107,46 +130,57 @@
 |---|---|---|
 | 1. 회상 표상의 정서 방향 이동(핵심) | PubMed `(recall OR retrieval OR remembered) AND (emotion* OR valence OR arousal) AND (decod* OR "pattern similarity" OR reinstatement) AND (exaggerat* OR distort* OR bias* OR "shift") AND fMRI`, 2018~ | 0건 |
 | | PubMed `(memory OR recall) AND emotion* AND (distortion OR exaggerat* OR "memory bias") AND (neural representation OR representational OR multivariate)`, 2020~ | 5건, 모두 무관(의미 처리, 청각 등) |
-| | WebSearch "recalled versus perceived video fMRI decoder emotional content shift memory representation more or less emotional than perception 2024 2025 2026" | Park & Kim 2025(fNIRS, 공유 여부), Curko 2026, Bainbridge & Baker 2022(doi:10.1038/s41467-022-34075-1 [Crossref], 일상 기억 영상의 내측 두정 지형, 정서 아님). 방향 이동 연구 없음 |
+| | WebSearch "recalled versus perceived video fMRI decoder emotional content shift memory representation more or less emotional than perception 2024 2025 2026" | Park & Kim 2025(fNIRS, 공유 여부), Curko 2026, Bainbridge & Baker 2022(doi:10.1038/s41467-022-34075-1 [Crossref], 일상 기억 영상의 내측 두정 지형. 초록에 정서가 기억 특징의 하나로 나오지만 **정서 방향 이동은 아님**). 방향 이동 연구 없음 |
 | | WebSearch "memories fade remembered visual salience emotional images reconstruction memory distortion vividness neural 2024 2025" | Cooper 2019(행동), Todd 2013. 신경 수준 방향 검정 없음 |
 | 2. 정서 없는 decoder + 고정 emotion head를 지각과 회상에 같이 적용 | WebSearch "MindEye2 OR Brain-IT pretrained fMRI decoder latent emotion probe valence Natural Scenes Dataset transfer to emotional videos 2025 2026"(재탐색 라운드) | 정서 probe 적용 연구 없음 |
 | | WebSearch "brain decoding text from recalled memory emotion sentiment of decoded descriptions mind captioning recall affect 2025 2026" | Mind captioning, EmoMind. 회상의 정서 함량 비교 없음 |
-| 3. SNR을 맞춘 합성 회상 null | WebSearch "mental imagery decoding lower signal-to-noise simulate degraded perception noise-matched control shrinkage decoded features imagery versus perception fMRI 2024 2025" | NSD-Imagery, MIRAGE, Spera et al. 2026(arXiv:2604.15374 [arXiv 서지], 심상 decoding의 피험자 간 정렬)이 낮은 SNR을 지적. 지각을 회상 SNR로 낮춘 null은 찾지 못함 |
+| | 검토[AR 2.2]가 찾은 선행 | Cheng 2023(decoder로 착시의 주관 내용 복원). **측정 논리는 선행이 있다**. 정서와 회상은 없음 |
+| 3. SNR을 맞춘 합성 회상 null | WebSearch "mental imagery decoding lower signal-to-noise simulate degraded perception noise-matched control shrinkage decoded features imagery versus perception fMRI 2024 2025" | NSD-Imagery, MIRAGE, Spera et al. 2026(arXiv:2604.15374 [arXiv], 심상 반응을 지각 decoder 조건 공간으로 옮기는 정렬). 지각을 회상 SNR로 낮춘 null은 찾지 못함 |
 | | prior_overlap_audit 2.1절의 Chen, Keil, Ding 2025 | 자극 구동 합성 반응 null은 이미 있음. **null 방법 자체는 새롭다고 주장하지 않는다** |
-| 4. 텍스트 공간의 회상 정서 함량 | PubMed `(brain-to-text OR "language decoding" OR "semantic decoding" OR captioning) AND (recall OR imagery OR imagined) AND (emotion* OR affective OR sentiment)`, 2020~ | 1건(EEG 음성 심상 BCI, 무관) |
+| 4. 텍스트 공간의 회상 정서 함량(확장) | PubMed `(brain-to-text OR "language decoding" OR "semantic decoding" OR captioning) AND (recall OR imagery OR imagined) AND (emotion* OR affective OR sentiment)`, 2020~ | 1건(EEG 음성 심상 BCI, 무관) |
 | | WebSearch(구성 요소 2의 두 번째 질의) | 같은 결과 |
 | 5. 반복 회차에 따른 정서 회상 표상 변화 | PubMed `(repeated retrieval OR repeated recall OR retrieval practice) AND (emotion* OR negative) AND (representation* OR reinstatement OR pattern*) AND fMRI`, 2019~ | 2건: Bradley 2022(정서가 무관 반복 억제), Liu, Kohn, Fernández 2020(doi:10.1016/j.neuroimage.2020.117213 [Crossref], 공고화 뒤 기억 표상 변화, 정서 없음) |
 | | prior_overlap_audit 2.1절 Krenz 2025 | 지각 반복에서 정서 장면 패턴 안정성 |
 | 6. vividness와 정서 재활성 | WebSearch "vividness ratings emotional memory recall neural reactivation strength emotion-specific fMRI trial-by-trial 2024 2025 2026" | St-Laurent 2015(비정서), Todd 2013. 2024~2026 정서 특이 시행 수준 연구 없음 |
 | | PubMed `vividness AND imagery AND (neural overlap OR perception) AND decoding AND fMRI`, 2015~ (Round 2) | Dijkstra 2017, Cabbai 2024, Koenig-Robert 2019. 모두 비정서 |
+| 7. 회상 표상의 항목 충실도 대 범주 원형 분해(이번 수정에서 추가) | PubMed `(memory OR recall OR retrieval) AND (prototype OR "category bias" OR schema OR gist) AND (neural representation OR reinstatement OR decoding) AND fMRI AND (shift OR distortion OR drift)`, 2018~ | 2건: Wu & Li 2024(원형 시점 정규화, 정서 아님), Hayes et al. 2010(PubMed 발행일 기준, doi:10.1016/j.jpsychires.2010.10.007, PTSD의 gist 의존, 표상 분해 아님) |
+| | WebSearch "fMRI recalled memory representation shifts toward category prototype versus item-specific reinstatement emotional scenes 2024 2025 2026" | Krenz et al. 2023(의미 gist 쪽 변형, model-based MRI). 정서 장면 회상의 원형 이동을 신경 수준에서 검정한 2024~2026 연구는 없음 |
+| 8. 묘사된 정서(인물 표정, 몸짓)를 따로 재서 통제(이번 수정에서 추가) | PubMed `(naturalistic OR movie OR video) AND fMRI AND emotion* AND ("facial expression" OR "facial expressions") AND (confound OR control OR covariate) AND (decoding OR encoding model OR multivariate) AND (experienced OR felt OR portrayed OR depicted OR perceived)`, 2019~ | 2건, 모두 무관(Furl et al. 2013 동적 표정과 편도체; Harrison et al. 2008 동공) |
+| | WebSearch "separating portrayed emotion of characters from felt emotion of viewers in video fMRI decoding facial expression features control Cowen Keltner clips 2024 2025 2026" | 웃음, 울음 해독(Nummenmaa 2023, 식별자 미확인)과 정적 표정 연구뿐. C&K 클립에서 묘사된 정서를 따로 통제한 연구는 찾지 못함 |
 
-**판정: 핵심 가설 not found. 구성 요소는 partially**(회상 정서 정보의 존재, 재현 충실도, 행동 수준 흐려짐, 합성 null 논리는 선행이 있다).
+**판정: 핵심 가설 not found. 구성 요소는 partially.** 선행이 있는 구성 요소는 다음과 같다: 회상 정서 정보의 존재, 재현 충실도, 행동 수준 흐려짐, 합성 null 논리, decoder를 주관 내용 계측기로 쓰는 논리(Cheng 2023), 기억의 의미 gist 쪽 변형(Krenz 2023).
 
 ## 5. Novelty
 
 * **가장 가까운 선행과의 차이**
-  * Park & Kim 2025(fNIRS): 지각과 회상의 정서 표상이 공유되는지 물었다. 이 카드는 같은 클립의 회상 표상이 장면 정서 방향으로 **얼마나 더 또는 덜** 가는지를 신호 감소 효과를 뺀 뒤 묻는다.
-  * Cooper 2019: 같은 "방향" 질문을 행동 재구성으로 저수준 두드러짐에서 물었다. 이 카드는 신경 표상에서, 그리고 저수준이 아닌 장면의 정서적 의미에서 묻는다.
-  * Kark 2019, Cocquyt 2026, Krenz 2025: 정서가 재현 **충실도**를 바꾼다. 충실도와 방향은 다르다. 충실도가 높아도 표상이 중립 쪽으로 이동할 수 있다.
+  * Cheng 2023: 지각 학습 decoder로 물리 자극에 없는 주관 내용을 복원했다. 이 카드는 같은 논리를 회상과 정서적 의미에 쓰고, 신호 감소를 뺀 방향과 성분을 잰다.
+  * Park & Kim 2025(fNIRS): 지각과 회상의 정서 표상이 공유되는지 물었다. 이 카드는 같은 클립의 회상 표상이 규범 정서 방향으로 **얼마나 더 또는 덜** 가는지를 신호 감소 효과를 뺀 뒤 묻는다.
+  * Cooper 2019: 행동 재구성으로 저수준 두드러짐의 흐려짐을 보였다. 이 카드는 같은 질문을 신경 표상에서, 저수준(Δ_low)과 장면의 정서적 의미(Δ_emo) 둘 다에서 묻는다.
+  * Krenz 2023: 기억 변형이 의미 쪽임을 model-based MRI로 보였다. 이 카드는 정서 범주 원형 쪽 이동을 의미 범주 원형 쪽 이동과 맞대어 본다.
+  * Kark 2019, Cocquyt 2025, Krenz 2025: 정서가 재현 **충실도**를 바꾼다. 충실도와 방향은 다르다. 충실도가 높아도 표상이 원형 쪽이나 중립 쪽으로 이동할 수 있다.
   * EmoMind: 정서를 지도학습으로 해독하고 회상은 다루지 않는다. 이 카드의 decoder는 정서를 모르고, 정서는 고정된 자로만 잰다.
-  * RQ-44: 회상 정서 정보의 **출처**(흔적 대 schema)를 encoding 예측으로 나눈다. 이 카드는 **방향**을 decoding 공간에서 잰다.
-* **새롭다고 주장하지 않는 것:** 회상에 정서 정보가 있다는 것, 지각 학습 decoder의 회상 일반화, 회상의 낮은 SNR, 합성 반응 null 논리, 정서와 재현 충실도의 관계.
+  * RQ-44: 회상 정서 정보의 **출처**(흔적 대 schema)를 encoding 예측으로 나눈다. 이 카드는 **방향과 성분**을 decoding 공간에서 잰다.
+* **새롭다고 주장하지 않는 것:** 회상에 정서 정보가 있다는 것, 지각 학습 decoder의 회상 일반화, decoder를 주관 내용 계측기로 쓰는 논리, 회상의 낮은 SNR, 합성 반응 null 논리, 정서와 재현 충실도의 관계, 기억의 gist 쪽 변형, LS-S.
 * **사용자 비판과의 거리:** Horikawa 2020 자료를 쓰지 않는다(회상이 없다). 범주 대 차원, 공변량 너머 정서 같은 Horikawa 2020의 질문을 다시 판정하지 않는다.
 
 ## 6. Proposed Dataset
 
 | 필요한 것 | 있는가 | 근거와 주의 |
 |---|---|---|
-| MC 지각 학습 2,108샘플(6명) | 있음(사용자 보유, 전처리 완료) | 학습 세션 마지막 두 run(시험 72클립 포함)은 버린다(plan.md 4절). 학습 순서는 4명 동일, 2명은 일부 run 순서만 다름[events] |
-| MC 지각 시험 72클립 x 5회 | 있음 | 원 저자 figshare 형식은 반복을 평균하지 않고 [72 x 5]로 저장한다(원 저자 저장소 README). **보유본이 같은 형식인지 미확인** |
-| MC 회상 72클립 x 5회(피험자당 360시행) | 있음 | 회상 회차는 6 run 묶음마다 72클립이 한 번씩. 원 저자 형식은 [72 x 5] |
+| MC 지각 학습 2,108샘플(6명) | 있음(사용자 보유, 전처리 완료) | decoder 학습에 보유본을 그대로 쓴다. 학습 세션 마지막 두 run(시험 72클립 포함)은 버린다(plan.md 4절). 학습 순서는 4명 동일, 2명은 일부 run 순서만 다름[events] |
+| **MC 시험 지각 run과 회상 run의 raw** | **있음(OpenNeuro ds005191, CC0)** | 피험자당 지각 시험 10 run(중앙값 672 s), 회상 30 run(중앙값 528 s). 6명 합계 240 run, BOLD 약 38시간[events]. 필드맵 있음. **핵심 판에서 다시 처리한다**(7절) |
+| MC 지각 시험 72클립 x 5회(보유본) | 있음 | 원 저자 figshare 형식은 반복을 평균하지 않고 [72 x 5]로 저장한다(원 저자 저장소 README). 보유본이 같은 형식인지 미확인. 재처리본과의 호환성 확인에 쓴다(G0) |
+| MC 회상 72클립 x 5회(피험자당 360시행) | 있음 | 회상 회차는 6 run 묶음마다 72클립이 한 번씩 |
+| 시행 순서 | 있음[events] | **회상 run 안의 시행 순서가 6명 모두 같다**(sub-04, sub-06은 run 순서만 다름). 지각 시험 run 순서도 6명이 같다. 그래서 클립마다 앞 시행 클립의 집합이 모든 피험자에서 같다(클립당 앞 시행 평균 4.6회, 서로 다른 클립 4.5개). 이전 시행 혼입은 피험자 사이에서 상쇄되지 않는 **클립 고유의 체계적 교란**이다 |
 | 시행별 vividness, accuracy | 있음[events] | 전체 분포: 1점 12, 2점 373, 3점 997, 4점 704, 5점 74. 피험자별로 치우침(sub-06은 360시행 중 282회가 3점) |
-| 회상 시행 시간 구조 | 있음[events] | 준비(단서 읽기, 스스로 끝냄) 중앙값 6 s(2~26 s; sub-05, sub-06은 30% 안팎이 3 s 이하) → 회상 12 s 이상 → 휴지 정확히 2 s → 같은 영상 재시청 10 s 이상 → 평정. 원 전처리(4 s shift 후 블록 평균)로는 회상 창 앞부분에 단서 읽기 반응이, 끝 2 s 안팎에 재시청 시작 반응이 걸칠 수 있다 |
-| **연속 시계열(블록 평균 이전)** | **미확인(관문 G0)** | 단서 읽기와 재시청을 떼어 내는 LS-S 회귀(Mumford 2012, doi:10.1016/j.neuroimage.2011.08.076 [DB])와 창 자르기에 필요하다. 없으면 raw(ds005191, CC0)에서 다시 처리하거나, 두 혼입을 "통제 불가"로 표시하고 회복 시뮬레이션 범위로만 다룬다 |
-| 단서 캡션 정체(클립별 20개 중 몇 번째) | **미확인(관문 G0)** | events.tsv에는 단서가 비디오 번호로만 있다. 원 저자 코드에서도 찾지 못했다. 저자 문의. 실패하면 20개 전체의 범위(최소, 최대)로 민감도 분석 |
+| 회상 시행 시간 구조 | 있음[events] | 준비(단서 읽기, 스스로 끝냄) 중앙값 6 s(2~26 s; sub-05, sub-06은 30% 안팎이 3 s 이하) → 회상 12 s → 휴지 2 s → 같은 영상 재시청 10 s → 휴지 2 s → 정확도와 vividness 평정 6 s → 휴지 2 s → 다음 시행 준비 |
+| 원 전처리(4 s 이동 블록 평균)에서의 혼입 크기 | [계산] 표준 HRF, 모든 사건 같은 진폭 가정 | 회상 창 예측 신호 중 같은 시행 단서 읽기 몫이 중앙값 11%(5~95백분위 6~12%), 이전 시행 재시청과 평정의 꼬리(undershoot)가 -5%(-8~0%), 같은 시행 재시청 몫은 0.1% 미만이다. 실제 몫은 사건 사이 진폭 비에 달려 있어 블록 평균만으로는 알 수 없다. 이것이 raw 재처리가 필요한 이유다 |
+| 단서 캡션 정체(클립별 20개 중 몇 번째) | **미확인(G0)** | events.tsv에는 단서가 비디오 번호로만 있다. 원 저자 코드에서도 찾지 못했다. 1주차 첫날 저자에게 문의한다. 실패하면 20개 전체의 범위(최소, 최대)로 민감도 분석 |
 | 정서 배제 캡션 43,920개 | 있음(원 저자 GitHub 공개 파일, LICENSE 파일 없음) | [Human 작성, AI 교정]. 간이 정서 단어 비율 약 5.5% |
-| 규범 정서 평정 34범주 + 14차원 | 있음 | felt / 별도 평정자 규범(C&K MTurk). 참가자 본인 보고 아님 |
+| 규범 정서 평정 34범주 + 14차원 | 있음 | 대상 felt / 주체 별도 평정자 규범(C&K 미국 MTurk). 참가자 본인 보고 아님 |
 | 73개 의미 개념 평정 | 있음(figshare features) | 비정서 대조 방향의 정의. 평정 주체와 방식 미확인 |
+| 묘사된 정서 특징 | **새로 만든다**([AI-est]) | Py-Feat(얼굴 수, 얼굴 면적, 기본 표정 확률, AU)와 VLM(Qwen2.5-VL, arXiv:2502.13923 [DB])의 인물 표정과 몸짓 평정. 이용 조건과 표정 모델 가중치 라이선스 미확인 |
+| 인물이 거의 없는 시험 클립 | 추정 24개/72[캡션] | 20개 캡션 중 사람 단어가 10% 이하인 클립 수. cueID와 캡션 video_id가 같은 번호 체계라는 가정 아래의 추정이다(미확인). 묘사된 정서가 거의 없는 부분집합으로 쓴다 |
 | C&K 원본 영상(무음) | 있음 | 특징 추출용. 재배포 불가로 취급 |
 | 본인 정서 보고, 생리, 시선 추적 | 없음 | 정서 경험 주장 불가(주장 범위 절) |
 | Horikawa 2020, Emo-FilM, Spacetop, NSD | 같은 클립 회상 과제 없음 | 핵심 분석에 쓰지 않는다. Horikawa는 특징 공간과 head의 하이퍼파라미터를 미리 고르는 독립 자료로만 쓸 수 있다 |
@@ -154,34 +188,68 @@
 ## 7. Proposed Computational Framework
 
 * **Pretrained model**(모두 고정, 특징 추출만)
-  * 이미지 특징: OpenCLIP ViT-bigG/14(MindEye2의 목표 공간, 선택적 공개 decoder와 head를 공유하려고). 프레임 여러 장 평균.
-  * 영상 특징: V-JEPA 2(arXiv:2506.09985 [DB], 저장소 MIT, 가중치 조건 미확인). 프레임 CLIP이 움직임 정서를 놓친다는 reviewer 지적에 대한 대조 공간.
-  * 텍스트 특징(보조): DeBERTa-large 층별 특징(MC 원 저자가 figshare에 계산값 공개). 원 저자 코드(LICENSE 없음)의 decoder를 재현한다.
-  * 선택지: MindEye2 다피험자 사전학습 모델(코드 MIT, checkpoint는 Hugging Face, 가중치 라이선스 미확인)의 피험자 입력층만 MC 학습 자료로 적응. 핵심 판에서는 쓰지 않는다.
-  * **쓰지 않는 모델:** EmoNet(같은 C&K 프레임으로 학습, 누수), 생성 MLLM(오염과 라벨 대체 문제), TRIBE v2(분포 밖, 연구실 팀원 작업과 겹침 회피).
+  * 이미지 특징: OpenCLIP ViT-bigG/14(MindEye2의 목표 공간). 프레임 여러 장 평균.
+  * 영상 특징: V-JEPA 2(arXiv:2506.09985 [DB], 저장소 MIT, 가중치 조건 미확인). 프레임 CLIP이 움직임 정서를 놓친다는 지적에 대한 대조 공간.
+  * 묘사된 정서: Py-Feat(doi:10.1007/s42761-023-00191-4 [Crossref])를 1 fps 프레임에 적용. VLM(Qwen2.5-VL)에는 "화면 속 인물의 표정과 몸짓이 나타내는 정서만" C&K 34범주와 '인물 없음'으로 매기게 한다.
+  * 선택지: MindEye2 다피험자 사전학습 모델(코드 MIT, 가중치 라이선스 미확인)의 피험자 입력층만 MC 학습 자료로 적응. 핵심 판에서는 쓰지 않는다.
+  * 확장: DeBERTa-large 텍스트 특징(MC 원 저자 계산값). C-04 흡수판.
+  * **쓰지 않는 모델:** EmoNet(같은 C&K 프레임으로 학습, 누수), 생성 MLLM의 정서 라벨(오염과 라벨 대체 문제. VLM은 묘사된 정서 측정에만 쓴다), TRIBE v2(분포 밖, 연구실 팀원 작업과 겹침 회피).
+* **뇌 자료 처리 [AR 2.1-1]**
+  * **raw 재처리(핵심 판):** 시험 지각 run과 회상 run만 ds005191 raw에서 원 논문 Methods의 전처리 절차로 다시 처리한다. 소프트웨어와 버전은 G0에서 Methods 원문으로 확인한다(이 카드 작성 시 재확인하지 않음). 학습 2,108샘플은 보유본을 쓴다.
+  * **호환성 확인:** 재처리본으로 원 방식(4 s 이동 블록 평균)의 지각 시험 블록을 다시 만들어 보유본과 비교한다(G0).
+  * **피험자별 HRF:** 지각 시험 run(블록 설계, 시간 구조 고정)에서 피험자와 voxel 묶음별 HRF를 맞춘다(표준 HRF + 시간, 분산 도함수). HRF가 피험자와 영역마다 다르기 때문이다(Handwerker 2004).
+  * **LS-S:** run마다 준비(단서 읽기), 회상, 재시청, 평정, 휴지를 따로 둔다. 목표 시행 하나를 따로 두고 나머지는 사건 종류별로 묶는다. 움직임과 잡음 성분 회귀, 시간 자기상관 보정을 넣는다. 지각 시험 블록도 같은 방식으로 추정한다. 그래서 **지각과 회상을 같은 형식(LS-S 시행 beta)으로 맞춘다.**
+  * **분리 가능성 [계산]:** MC 회상 run 2,160시행의 사건 시간에 표준 HRF를 적용하면, LS-S에서 목표 회상 회귀자의 VIF는 중앙값 1.16(5~95백분위 1.14~1.19)이다. 준비, 재시청, 평정 회귀자와 분리해 추정할 수 있다.
+* **voxel 선택 [AR 2.1-3]**
+  * **주판:** 학습 자료만으로 고른다. 2,108 학습샘플 안에서 run 단위 교차검증한 encoding 성능(OpenCLIP 특징 → voxel ridge) 상위 voxel을 쓴다. 개수는 학습 자료 안에서만 정하고 G1 전에 고정한다.
+  * **민감도:** 지각 시험 5회 중 2회로 고르고 나머지 3회로 잰다. 이 경우 회상 쪽 평균 횟수와 합성 null의 잡음도 3회 기준으로 맞춘다.
+  * 지각 시험이나 회상 결과로는 고르지 않는다.
 * **Input representation**
-  * 뇌: 피험자별 피질 voxel(원 저자 방식의 전처리, run 안 z-score). 핵심 판은 블록 평균 패턴. 연속 시계열이 있으면 LS-S 블록 추정치.
-  * 자극: 클립별 특징(10 s가 될 때까지 반복 재생한 실험 블록을 흉내 내 프레임 표본을 평균).
+  * 뇌: 피험자별 선택 voxel의 LS-S 시행 beta(run 안 z-score). 핵심 판은 클립별 5회 평균. 탐색 분석(A3, A4)은 시행 단위.
+  * 자극: 클립별 특징(10 s 블록을 흉내 내 프레임 표본을 평균), 저수준 통계 벡터(밝기, RMS 대비, 채도, 공간 주파수 대역 에너지, 움직임 에너지), 묘사된 정서 프로파일.
 * **Output / target representation**
-  * decoder 출력: 특징 공간의 해독 벡터(지각 시험, 회상, 합성 회상 각각).
-  * 측정값: emotion head 출력을 규범 정서 방향에 사영한 정서 표현량, 비정서 head 출력을 해당 속성 방향에 사영한 표현량.
+  * decoder 출력: 특징 공간의 해독 벡터(지각 시험, 회상, 합성 회상 각각). 감각 세부 decoder 출력(저수준 통계 벡터).
+  * 측정값: 정서 표현량(규범 정서 방향 사영), 비정서 표현량, 묘사된 정서 표현량, 감각 세부 표현량.
 * **Training or adaptation strategy**
-  * decoder: 피험자별 ridge(voxel → 특징). 학습은 지각 학습 2,108샘플만. 정서 라벨을 쓰지 않는다. 규제 강도는 학습 자료 안 교차검증(근접 중복 군집과 run 단위 fold).
-  * emotion head(자극 쪽에서 학습, 고정): (i) 학습 클립 2,108개의 자극 특징 → C&K 34범주 비율 ridge. (ii) 독립판: EmoSet(arXiv:2307.07961 [본문], 이용 조건 미확인) 이미지로 학습한 8범주 head(이미지 공간에서만). 두 head의 결론이 다르면 보고한다.
-  * 비정서 head(같은 방식): 73개 의미 개념 평정 → PCA 34차원, 캡션에서 규칙과 사전으로 뽑은 비정서 속성(사람 수, 실내/실외, 동물 유무, 탈것 유무).
-  * 단서 회귀 예측: 학습 클립 캡션의 문장 embedding에서 특징을 예측하는 ridge(시험 72클립 캡션 제외). 단서 문장 하나를 넣어 "단서만 아는 사람이 떠올릴 법한 특징"을 얻는다(RQ-44의 (c)).
-  * 합성 회상 null: 피험자, 클립마다 지각 시험 패턴 P를 회상 SNR로 낮춘 R* = a·P + e를 만든다. a는 voxel별 회상 대 지각 신호 감쇠(지각 반복 신뢰도와 회상 반복 신뢰도의 비로 추정), e는 회상 반복 간 잔차에서 표본화한 잡음이다. 모든 클립에 같은 규칙을 쓰므로 정서에 따른 차이를 만들지 않는다. 200회 반복 생성.
+  * **decoder:** 피험자별 ridge(voxel → 특징). 학습은 지각 학습 2,108샘플만 쓰고 정서 라벨을 쓰지 않는다. 규제 강도는 학습 자료 안 교차검증(근접 중복 군집과 run 단위 fold).
+  * **감각 세부 decoder:** 같은 방식으로 voxel → 저수준 통계 벡터를 학습한다. CLIP 최종 embedding은 저수준 정보를 적게 담기 때문에 따로 둔다.
+  * **emotion head(자극 쪽에서 학습, 고정):**
+    * (i) 학습 클립 2,108개의 자극 특징 → C&K 34범주 비율 ridge.
+    * (ii) 독립판: EmoSet(arXiv:2307.07961 [본문], 이용 조건 미확인) 이미지로 학습한 8범주 head(이미지 공간에서만).
+    * 두 head의 결론이 다르면 보고한다.
+  * **묘사된 정서 head:** 학습 클립 자극 특징 → 묘사된 정서 프로파일 ridge. [AI-est] 표시.
+  * **묘사된 정서의 오염 점검(0절 1번):**
+    * (1) 인물을 가린 프레임을 VLM에 넣으면 '인물 없음'이나 평평한 프로파일이 나와야 한다. 그래도 C&K와 닮은 프로파일이 나오면 VLM이 표정이 아니라 장면 내용을 읽는다는 뜻이다. 그런 클립은 Py-Feat만 쓴다.
+    * (2) Py-Feat와 VLM의 기본 표정 일치도를 보고한다.
+    * (3) C&K 클립은 웹에 공개되어 있어 VLM 사전학습에 들어갔을 수 있다. 배제할 수 없으므로 한계로 적는다.
+  * **비정서 head:** 같은 방식. 73개 의미 개념 평정 → PCA 34차원. 캡션에서 규칙과 사전으로 뽑은 비정서 속성(사람 수, 실내/실외, 동물 유무, 탈것 유무).
+  * **비정서 방향 맞춤 [AR 2.1-4(c)]:** 지각 해독도, κ에 더해 **표상 수준 지수**를 정서 방향과 맞춘다. 표상 수준 지수는 학습 클립에서 그 방향 점수를 저수준 통계가 설명하는 부분 R²와 캡션 문장 embedding이 설명하는 부분 R²의 비다. 맞춘 방향을 찾지 못하면 판정 불가로 둔다.
+  * **단서 회귀 예측:** 학습 클립 캡션의 문장 embedding에서 특징을 예측하는 ridge(시험 72클립 캡션 제외). 단서 문장 하나를 넣어 "단서만 아는 사람이 떠올릴 법한 특징"을 얻는다(RQ-44의 (c)).
+  * **합성 회상 null(사전 등록할 사양) [AR 2.1-4]:**
+    * 형태: 피험자, 클립마다 지각 시험 LS-S 평균 패턴 P̄에서 R* = a ⊙ P̄ + ē를 만든다.
+    * 감쇠 a: voxel별로 (회상 split-half 신뢰도) / (지각 split-half 신뢰도)를 쓴다. 0~1로 자른다. 지각 신뢰도가 사전 하한(학습 자료에서 정한 값) 아래인 voxel은 그 voxel 묶음의 중앙값을 쓴다. 그다음 공간 평활(FWHM은 학습 자료 신뢰도 지도에서 미리 정한다)을 한다. 이 정칙화는 2주차 끝에 고정한다.
+    * 잡음 ē: 다른 클립의 회상 시행 잔차(시행 beta - 그 클립 회상 평균)를 5개 뽑아 평균한다. 평균 횟수를 실제 회상(5회 평균)과 맞춘다. P̄ 자체의 잡음까지 합친 voxel별 클립 간 총분산이 실제 회상과 같아지도록 잡음 배율을 맞춘다.
+    * 반복: 200회 생성.
+    * 수준 인식 판(민감도): a를 초기 시각, 고차 시각, 나머지 묶음별로 따로 추정한다. 회상이 의미 정보를 더 남기는 경향(Spera 2026, Koide-Majima 2023)을 일부 흉내 낸다.
 * **Relevant brain regions / networks**
-  * 핵심 판: 지각 시험 반복 신뢰도로 고른 피질 voxel 전체(회상 결과로 고르지 않는다).
-  * 확장(C-03): 초기 시각 V1~V3, 고차 시각, DMN 배내측과 내측두 하위망(Curko 2026의 구분). 편도체는 signal-feasibility 관문 뒤 탐색만.
+  * 핵심 판: 학습 자료 encoding 성능으로 고른 피질 voxel 전체.
+  * 확장(C-03): 초기 시각 V1~V3, 고차 시각, DMN 배내측과 내측두 하위망. 편도체는 신호 가능성 관문 뒤 탐색만.
 * **Loss function or statistical objective**
   * decoder: ridge 제곱 오차.
-  * **주 통계량:** 클립 i, 피험자 s에서 S = E(회상) - E(지각), S* = E(합성 회상) - E(지각)의 200회 평균, **Δ_emo = S - S***. 같은 계산을 비정서 방향에 해서 Δ_non을 얻는다. **정서 특이 초과 이동 = Δ_emo - Δ_non**(비정서 방향은 지각 해독도와 단서 예측 가능성 κ가 정서 방향과 맞는 것으로 고른다).
-  * 단서 당김: 회상 해독 벡터가 단서 회귀 예측 쪽으로 얼마나 이동했는지(지각 대비)를 정서 방향과 비정서 방향에서 따로 잰다.
+  * **주 통계량:**
+    * 클립 i, 피험자 s에서 S = E(회상) - E(지각)이고, S* = E(합성 회상) - E(지각)의 200회 평균이다.
+    * **Δ_emo = S - S***. 같은 계산으로 Δ_non, Δ_dep, Δ_low를 얻는다.
+    * **정서 특이 초과 이동 = Δ_emo - Δ_non**(맞춘 비정서 방향 집합의 평균).
+  * **이전 시행 nuisance [AR 2.1-2]:** 이전 시행 클립의 지각 해독 벡터를 현재 클립의 규범 정서 방향에 사영한 값 n_i를 클립별로 평균한다. 클립별 Δ_emo 회귀에 공변량으로 넣는다. LS-S가 이전 시행의 재시청과 평정을 따로 추정하므로 남는 몫만 잡는다. 시행 순서가 6명 모두 같으므로 필수다(6절).
   * 통계: 피험자별 클립 bootstrap 95% 신뢰구간(합성 null까지 다시 생성), 6명 결과는 유병률 추론(doi:10.7554/eLife.62461 [DB]). voxel 수 기반 p값은 쓰지 않는다(해독 특징의 실효 자유도가 작다).
 * **Interpretability method**
-  * 핵심 그림: 클립별 (E(지각), E(회상)) 산점도에 합성 null의 기대선을 겹친다. 정서 방향과 비정서 방향을 나란히 둔다.
-  * 해독 벡터의 이동을 head의 범주별 성분으로 풀어 어떤 정서 범주가 기울기를 만드는지 본다.
+  * 핵심 그림: 클립별 (E(지각), E(회상)) 산점도에 합성 null의 기대선을 겹친다. 정서, 비정서, 묘사된 정서, 감각 세부 방향을 나란히 둔다.
+  * **성분 분해 [ET 2.5-2]:**
+    * 클립마다 회상 해독 벡터를 회귀한다: r - g = β_p (p - g) + β_c (c - g) + β_s (c_s - g).
+    * g는 학습 클립 해독 평균이다. p는 그 클립의 지각 해독 벡터(항목 충실도)다. c는 같은 지배 C&K 범주를 가진 학습 클립들의 교차검증 해독 평균(정서 범주 원형)이다. c_s는 같은 지배 의미 범주(73개 개념 중 최상위)를 가진 학습 클립들의 평균(의미 범주 원형)이다.
+    * 같은 회귀를 합성 회상에도 해서 Δβ_p, Δβ_c, Δβ_s를 얻는다.
+    * 회상 정서 프로파일(head 출력을 0 이상으로 자르고 정규화)의 엔트로피를 합성 회상과 비교한다.
+    * p와 c의 VIF가 5를 넘는 피험자는 분해를 판별 불가로 둔다. 민감도로 원형을 자극 특징 평균으로 만든 판을 둔다.
   * 선택: MindEye2 판에서 지각, 회상, 합성 회상의 재구성 이미지를 보이는 것은 시각화일 뿐 측정이 아니다(Shirakawa 2025, doi:10.1016/j.neunet.2025.107515 [DB]).
 
 ## 8. Proposed Analyses
@@ -190,141 +258,232 @@
 
 | 관문 | 내용 | 통과 기준 | 실패 시 |
 |---|---|---|---|
-| **G0 자료 형식** | 보유 MC 전처리본이 원 저자 figshare 형식(학습 2,108, 지각 [72 x 5], 회상 [72 x 5], 4 s shift 블록 평균, run z-score)과 같은지, 연속 시계열이 있는지, 단서 캡션 번호를 얻을 수 있는지 | 반복이 평균되지 않은 형식 확보 | 반복이 평균된 형식뿐이면 반복 회차 분석(A4)과 합성 null의 잡음 표본화가 불가능하다. raw 재처리로 가고, 4주 일정이 1~2주 밀린다 |
-| G1 양성 대조 | 지각 학습 decoder로 시험 지각 클립 식별(72개 중) | 6명 중 5명 이상에서 우연 이상 | 특징 공간이나 voxel 선택을 바꾼다 |
-| G2 회상 신호 | 회상 클립 식별(72개 중)과 회상 5회의 split-half 신뢰도 | 회상 클립 식별이 피험자 안 순열 null 대비 우연 이상이고 원 논문이 보고한 피험자별 경향(능숙한 피험자에서 더 높음)과 어긋나지 않음, 신뢰도 > 0. 원 논문의 수치는 이 카드에서 다시 확인하지 않았다 | 해당 피험자 제외(유병률 보고에 반영). 3명 미만 남으면 질문 보류 |
-| G3 정서 자 점검 | 자극 특징에 head를 적용했을 때 시험 72클립의 규범 정서 예측이 우연 이상, 지각 해독 벡터에서도 우연 이상 | 둘 다 통과 | head나 특징 공간 교체 |
-| G4 회복 시뮬레이션 | 실측 잡음 위에 알려진 Δ(+, 0, -)를 심고 두 방향 편향을 함께 넣어 Δ가 되찾아지는지 | 판정 가능한 최소 효과 크기 산출 | 판정 불가 구역을 넓혀 보고 |
+| **G0a 보유본 형식, 단서 번호** | 보유본이 원 저자 형식(학습 2,108, 지각 [72 x 5], 회상 [72 x 5])인지. 1주차 첫날 저자에게 단서 캡션 번호를 문의 | 형식 확인 | 학습 자료만 쓰므로 진행. 단서 번호를 못 얻으면 8.2절 3(c) 범위 분석 |
+| **G0b raw 재처리 호환성** | 재처리본으로 만든 지각 시험 블록(원 방식)과 보유본 블록의 voxel별 상관. 재처리 블록에서의 G1 식별 정확도 | voxel 평균 r ≥ 0.9이고, 재처리 블록의 G1 정확도가 보유본 정확도의 bootstrap 95% 구간 안 | 학습 run도 다시 처리하고 decoder를 다시 학습한다(1~2주 지연, 4주 핵심 판을 넘음). 그동안은 8.6절 대체 판만 보고 |
+| G0c 순서 점검 | 이전 시행 클립과 현재 클립의 규범 정서 상관(회상 run 순서) | 보고만 | 상관이 크면 이전 시행 nuisance의 비중을 높여 해석 |
+| G1 양성 대조 | 지각 학습 decoder로 시험 지각 클립 식별(72개 중, LS-S beta) | 6명 중 5명 이상에서 피험자 안 순열 null 1,000회의 95백분위 초과 | 특징 공간이나 voxel 수를 학습 자료 안에서 다시 정한다 |
+| G2 회상 신호 [AR 2.2] | 회상 클립 식별(72개 중, LS-S beta)과 회상 5회의 split-half 신뢰도 | 식별 정확도가 피험자 안 순열 null 1,000회의 95백분위 초과, 신뢰도 > 0 | 해당 피험자 제외(유병률 보고에 반영). 3명 미만 남으면 질문 보류 |
+| G3 자 점검 | 자극 특징에 각 head(정서, 비정서, 묘사된 정서)를 적용한 시험 72클립 예측, 지각 해독 벡터에서의 예측, 감각 세부 decoder의 지각 예측 | 모두 우연 이상 | 실패한 head는 그 분석에서 뺀다 |
+| G4 회복과 판정 불가 구역 | 아래 8.1절 | 판정 가능한 최소 효과 크기 산출 | 판정 불가 구역을 넓혀 보고 |
 
 G1~G3은 "도구가 작동하는가"만 본다. **decoder 정확도는 결과가 아니다.**
 
-### 8.1 사전 등록할 양방향 예측
+### 8.1 사전 등록할 예측: 기제와 서명 [ET 2.5-1, 2.7-1]
 
-| 가설 | 예측 | 이론 근거 |
-|---|---|---|
-| H+ 과장 | Δ_emo > 0이고 Δ_emo - Δ_non > 0. 규범 부정 정서가와 arousal이 큰 클립에서 더 큼 | NEVER(Bowen 2018), affective realism(Siegel 2018), EEV(Todd 2013) |
-| H- 흐려짐 | Δ_emo < 0이고 Δ_emo - Δ_non < 0. 단서 당김이 정서 방향에서 더 큼(중립 단서 쪽으로 끌림) | Cooper 2019의 기억 흐려짐, Curko 2026의 추상 표상 정황 |
-| H0 신호 감소만 | Δ_emo와 Δ_non이 사전 등록한 동등성 한계 안에서 0 | 회상은 정서에 무관하게 약해진 지각이다(weak vision에 가까운 상태) |
+| 가설 | 주 지표 예측 | 기제를 가르는 서명 | 이론 근거 | 반대를 예측하는 쪽 |
+|---|---|---|---|---|
+| **H+ 정서 방향 강화** | Δ_emo - Δ_non > 0 | 아래 두 하위형 중 하나로만 해석한다. 분해 없이 "과장"이라 부르지 않는다 | | |
+| H+a 항목 충실도 | (H+) | Δβ_p > 0이 규범 부정 정서가와 함께 커진다. 부정 클립에서 Δ_low가 0 쪽(덜 흐려짐) | NEVER(Bowen 2018) | 일반 감쇠(정서 무관), schema 재구성(원형 쪽) |
+| H+b 범주 원형 이동 | (H+) | Δβ_c > Δβ_s, 회상 정서 프로파일 엔트로피 < 합성 null, κ와 양의 상호작용 | schema 재구성(Spens & Burgess 2024), 범주 조정(Huttenlocher 1991), 개념 기반 예측(Hoemann et al. 2017) | NEVER(항목 고유 세부 보존) |
+| **H- 정서 방향 약화(단서 기반 재구성)** | Δ_emo - Δ_non < 0 | 단서 당김이 정서 방향에서 비정서 방향보다 크다. κ가 낮은 클립(단서로 정서적 의미를 맞히기 어려운 클립)에서 약화가 크다 | schema 재구성(Spens & Burgess 2024), RQ-44의 "schema 쪽" 가설. MC 단서가 정서 배제 캡션이라는 설계에 의존 | NEVER(부정 클립 보존) |
+| **H0 일반 감쇠** | Δ_emo - Δ_non이 동등성 한계 안 | Δ_low < 0(두드러짐 감소)이 규범 정서가와 무관 | Cooper 2019, 회상을 약한 지각으로 보는 견해 | NEVER의 정서적 의미 판본, schema 재구성의 정서 상실 |
+| (검정 불가) affective realism | | 참가자 본인 affect가 필요 | Siegel 2018 | 이 자료로 판정하지 않는다 |
 
-* 동등성 한계는 G4의 회복 시뮬레이션으로 정한 최소 판정 효과 크기를 쓴다.
-* 판정 불가 구역: G4에서 단서 읽기 혼입(중립 쪽 편향, 사전 범위 0~30%)과 재시청 혼입(지각 쪽 편향, 같은 범위)을 함께 심었을 때 Δ의 95% 구간. 실측 Δ의 신뢰구간이 이 구역과 겹치면 방향을 판정하지 않는다.
+* **판정 불가 구역(임의 범위 없이 자료에서 정한다) [AR 2.1-1]:**
+  * (i) LS-S Δ와 회상 창 앞 0/2/4 s, 끝 2 s를 잘라 낸 블록 Δ의 차이
+  * (ii) 표준 HRF와 피험자별 HRF로 추정한 LS-S Δ의 차이
+  * (iii) 회복 시뮬레이션. 실측 LS-S 잡음 위에 알려진 Δ(+, 0, -)를 심는다. 실측된 단서 읽기 패턴과 이전 시행 패턴을, 피험자별 HRF로 만든 자료를 표준 HRF로 맞출 때 생기는 누출 크기만큼 섞는다.
+  * 세 범위의 합집합을 판정 불가 구역으로 둔다. 실측 Δ의 신뢰구간이 이 구역과 겹치면 방향을 판정하지 않는다.
+* **동등성 한계:** (iii)에서 얻은 최소 판정 효과 크기를 쓴다.
+* 위 사양과 정칙화, 주 검정, 하위형 판정 규칙은 2주차 끝에 고정한다.
 
 ### 8.2 주 분석
 
-1. 이미지 공간(OpenCLIP) 핵심 판의 Δ_emo, Δ_non, 정서 특이 초과 이동. 사전 지정 주 검정은 이 하나다.
+1. 이미지 공간(OpenCLIP), LS-S beta, 이전 시행 nuisance를 넣은 정서 특이 초과 이동(Δ_emo - Δ_non). **사전 지정 주 검정은 이 하나다.**
 2. 같은 계산을 영상 공간(V-JEPA 2)에서 반복한다. 두 공간의 방향이 다르면 판정하지 않는다.
 3. 단서 통제:
-   * (a) 단서 당김 분석(위 7절).
-   * (b) 단서 문장 자체의 정서 표현량을 공변량으로 넣은 회귀(클립별 Δ_emo ~ 단서 정서 표현량 + κ + 지각 해독도).
+   * (a) 단서 당김 분석(회상 해독 벡터가 단서 회귀 예측 쪽으로 이동한 정도, 정서 방향과 비정서 방향에서 따로).
+   * (b) LS-S로 추정한 준비 구간(단서 읽기) 해독 벡터의 정서 표현량을 공변량으로 넣은 회귀. 회귀식은 클립별 Δ_emo ~ 단서 읽기 정서 표현량 + κ + 지각 해독도 + n_i다.
    * (c) 단서 번호를 얻지 못하면 20개 캡션 중 최소, 최대 정서 표현량을 단서로 가정한 두 판으로 범위를 보고한다.
 
-### 8.3 보조 분석 (결론과 분리)
+### 8.3 사전 등록 보조 분석 (결론의 표현을 정한다)
 
-* **A1 텍스트 공간(C-04 흡수):** 원 저자 방식의 DeBERTa decoder로 지각과 회상 해독 특징을 얻고, 학습 클립 캡션 특징 → C&K head와 GoEmotions(arXiv:2005.00547) 텍스트 정서 탐침으로 같은 Δ를 계산한다. 단서가 텍스트라 단서 당김이 이미지 공간보다 클 것으로 예상한다. 이미지 공간과 방향이 같을 때만 보강 증거로 쓴다.
-* **A2 NEVER 회귀:** 클립별 Δ_emo ~ 규범 부정 정서가 + 규범 arousal + κ + 지각 해독도. 같은 회귀를 Δ_non에도 돌려 정서 특이인지(기억성 같은 일반 효과가 아닌지) 본다.
-* **A3 vividness:** 시행 수준 누적 로짓 혼합모형 vividness ~ 시행 Δ_emo + 시행 Δ_non + 회상 회차 + (1|피험자) + (1|클립). 피험자 안 서열로만 해석한다. 분포가 거의 한 점인 피험자(sub-06)는 민감도 분석에서 뺀다. vividness는 재시청 뒤 비교 평정이다.
-* **A4 반복 회차:** 회상 1~5회차별 Δ_emo. 회상 r회차 뒤에는 재시청이 r번 있으므로, 회차 효과는 "재노출 누적"과 섞인다. 지각 시험 1~5회차의 정서 표현량 변화(Krenz 2025식 안정성 비교)를 같은 그림에 놓는다. Krenz 2025(정서 장면이 반복에서 안정)와 Bradley 2022(정서가 무관 반복 억제) 중 어느 쪽과 맞는지 기술한다.
-* **A5 HRF 겹침(연속 시계열이 있을 때):** 준비, 회상, 재시청 블록을 따로 넣은 LS-S, 회상 창 앞 0/2/4 s 자르기, 끝 2 s 자르기. 결과가 자르기 수준에 따라 방향을 바꾸면 판정 보류. 연속 시계열이 없으면 G4의 시뮬레이션 범위로만 다룬다.
-* **A6 영역별 확장(C-03):** 초기 시각, 고차 시각, DMN 하위망에서 Δ_emo를 따로 계산. 탐색으로만 보고한다.
-* **A7 선택적 공개 decoder:** MindEye2 적응판에서 같은 Δ. ridge판과 방향이 같은지만 본다.
+* **S1 묘사된 정서 [0절 1번, ET 2.4, 2.6-1]:**
+  * (a) Δ_dep를 따로 보고한다.
+  * (b) 묘사를 뺀 정서 방향을 만든다. 학습 클립에서 규범 정서 프로파일을 묘사된 정서 프로파일에 회귀하고, 그 잔차로 방향 u⊥를 정의한다. 그 방향의 Δ_emo⊥를 계산한다.
+  * (c) 인물이 거의 없는 클립(추정 24개)에서 Δ_emo를 기술한다.
+  * **표현 규칙:** Δ_emo⊥가 주 결과와 같은 방향이고 판정 불가 구역 밖이면 결론에 "묘사된 정서 몫을 뺀 뒤에도"를 쓴다. 아니면 결론에 **"묘사된 정서 지각 포함"**을 붙인다.
+* **S2 성분 분해 [ET 2.5-2]:** 7절의 Δβ_p, Δβ_c, Δβ_s와 엔트로피로 H+a와 H+b를 가른다. H+가 지지되어도 S2가 판별 불가면 "정서 방향 강화(기제 미판별)"로만 쓴다.
+* **S3 NEVER 검정 [ET 2.5-3]:**
+  * 클립별 Δ_low ~ 규범 부정 정서가 + 규범 arousal + κ_low + 지각 해독도 + n_i. 같은 회귀를 Δβ_p에도 돌린다.
+  * NEVER의 예측은 부정 클립에서 Δ_low가 0 쪽이고 Δβ_p가 크다는 것이다.
+  * Cooper 2019의 신경 수준 재현 여부(두드러짐 방향 Δ_low < 0이 정서와 무관)도 여기서 본다.
+* **S4 κ 상호작용 [ET 2.6-3]:** 클립별 Δ_emo ~ κ_emo + 지각 해독도 + n_i. schema 재구성은 양의 기울기를 예측한다(단서로 맞힐 수 있는 정서적 의미는 남고 못 맞히는 부분은 빠진다). RQ-44의 κ 계산을 그대로 쓴다.
 
-### 8.4 Ablation과 강건성
+### 8.4 탐색 분석 (결론과 분리)
 
-* 특징 공간(OpenCLIP 대 V-JEPA 2), head(C&K 대 EmoSet), 비정서 방향 집합(73개 의미 개념 대 캡션 속성), 합성 null의 잡음 모형(회상 잔차 표본화 대 등방 가우시안), 규제 강도, voxel 선택 기준.
+* **A3 vividness [AR 2.2, ET 2.6-2]:**
+  * 시행 수준 누적 로짓 혼합모형: vividness ~ 시행 Δ_emo + 시행 Δ_non + 규범 arousal + 규범 부정 정서가 + 회상 회차 + (1|피험자) + (1|클립).
+  * vividness가 규범 arousal을 따르고 Δ와 무관하면 Talarico & Rubin 2003식 분리와 맞는다. Δ를 따르면 Cooper 2019식 결합과 맞는다.
+  * vividness는 재시청 뒤 비교 평정이고 3~4점에 몰린다. **그래서 A3 결과는 주 결론에 넣지 않는다.** sub-06은 민감도 분석에서 뺀다.
+* **A4 반복 회차:**
+  * 회상 1~5회차별 Δ_emo를 본다. 회상 r회차 뒤에는 재시청이 r번 있으므로 회차 효과는 "재노출 누적"과 섞인다.
+  * 지각 시험 1~5회차의 정서 표현량 변화를 같은 그림에 놓는다.
+  * Krenz 2025(정서 장면이 반복에서 안정)와 Bradley 2022(정서가 무관 반복 억제) 중 어느 쪽과 맞는지 기술한다.
+* **A5 창 자르기와 HRF:** 8.1절 판정 불가 구역의 (i), (ii)를 결과 그림으로도 보고한다.
+* **A6 영역별 확장(C-03), A7 MindEye2:** 4주 뒤.
 
-### 8.5 반증 조건
+### 8.5 Ablation과 강건성
+
+* 특징 공간(OpenCLIP 대 V-JEPA 2), head(C&K 대 EmoSet), 비정서 방향 집합(73개 의미 개념 대 캡션 속성), 합성 null(균일 감쇠 대 수준 인식 판, 회상 잔차 표본화 대 등방 가우시안), voxel 선택(학습 자료 기준 대 지각 시험 2/3 분할), 규제 강도, 원형 정의(해독 평균 대 자극 특징 평균).
+
+### 8.6 raw 재처리가 실패했을 때의 대체 판
+
+* 보유본 블록 평균으로 같은 계산을 한다. 단서 읽기 혼입은 중립 쪽(H- 방향)으로 작용한다. 그래서 대체 판에서는 **H+만 보수적으로 판정**하고, H-와 H0은 판정하지 않는다.
+* [계산]의 사건 시간 가중치(단서 읽기 약 11%)는 혼입의 존재를 보이는 근거로만 쓴다. 진폭 비를 모르므로 판정 범위로 쓰지 않는다.
+
+### 8.7 반증 조건
 
 | 결과 | 해석 |
 |---|---|
-| G1, G2 실패 | 이 자료와 도구로는 회상의 장면 수준 표상을 잴 수 없다. 질문 보류 |
-| Δ_emo의 신뢰구간이 판정 불가 구역과 겹침 | 방향 판정 보류 |
-| H+ 불지지 | Δ_emo ≤ 0이거나, Δ_emo > 0이지만 Δ_non도 같은 크기(정서 특이가 아님) |
-| H- 불지지 | Δ_emo ≥ 0이거나, Δ_emo < 0이지만 Δ_non도 같은 크기 |
-| H0 불지지 | 동등성 검정 실패, 즉 Δ_emo가 한계 밖 |
+| G0b, G1, G2 실패 | 이 자료와 도구로는 회상의 장면 수준 표상을 잴 수 없다. 질문 보류 |
+| 신뢰구간이 판정 불가 구역과 겹침 | 방향 판정 보류 |
+| H+ 불지지 | Δ_emo - Δ_non ≤ 0이거나 판정 불가 구역 안 |
+| H+a 불지지 | H+이지만 Δβ_p가 부정 정서가와 무관하거나 부정 클립의 Δ_low가 다른 클립과 같다 |
+| H+b 불지지 | H+이지만 Δβ_c ≤ Δβ_s이고 엔트로피가 null과 같다 |
+| H- 불지지 | Δ_emo - Δ_non ≥ 0이거나, 음수여도 단서 당김이 정서와 비정서 방향에서 같다 |
+| H0 불지지 | 동등성 검정 실패 |
 | 공간 간 불일치 | 이미지 공간과 영상 공간에서 방향이 다르면 "특징 공간 의존"으로 보고하고 판정하지 않는다 |
 
 ## 9. Competing Explanations
 
 | 대안 설명 | 어느 쪽으로 기울이나 | 가르는 분석 |
 |---|---|---|
-| 1. 회상 SNR이 낮아 해독 벡터가 학습 평균 쪽으로 수축 | 흐려짐 쪽 | 합성 회상 null(Δ의 정의 자체), G4 |
-| 2. 수축이 정서 강도에 따라 다름(강한 정서 클립일수록 평균에서 멀어 더 많이 수축) | 흐려짐 쪽 | 합성 null은 같은 decoder에 통과시키므로 이 비선형 수축을 재현한다. 비정서 방향에서도 극단 클립이 같은 정도로 수축하는지 확인(Δ_non) |
-| 3. 단서 캡션(정서 배제)이 회상 표상을 중립 쪽으로 끌어감 | 흐려짐 쪽 | 단서 당김 분석, 단서 정서 공변량, 단서 번호 범위 민감도, A5 창 앞 자르기 |
-| 4. 재시청 반응이 창 끝에 섞임 | 지각 쪽(Δ가 0 쪽으로) | A5 창 끝 자르기와 LS-S. 연속 시계열이 없으면 G4 범위로 |
-| 5. 회상이 고차 의미를 저수준보다 잘 보존(Horikawa & Kamitani 2017, doi:10.1038/ncomms15037 [본문]; MIRAGE). 정서 방향이 고차 의미와 겹치면 정서가 "덜 흐려진" 것처럼 보임 | 과장 쪽 | 비정서 방향을 같은 표상 수준(73개 의미 개념)으로 두고 지각 해독도를 맞춤. 정서 특이 초과 이동만 해석 |
-| 6. 비선형 대 선형 수축의 차이로 합성 null이 회상을 잘못 흉내 냄(weak vision 가정이 틀림, Breedlove 2020, doi:10.1016/j.cub.2020.04.014 [DB]) | 양방향 | 정서 대 비정서의 차(Δ_emo - Δ_non)로 공통 오차를 상쇄. null 잡음 모형 두 가지 |
-| 7. 반복 노출(최대 11회)과 사전 연습으로 회상이 익힌 장면의 단서 심상이 됨 | 과장 쪽(흔적 강화) | A4 회차 분석, 주장 범위를 "익힌 클립의 단서 회상"으로 한정 |
-| 8. 회상 중 눈 감음, 각성 변화 같은 전역 상태 | 공통 | 조건 안 클립 간 중심화, 블록 길이 nuisance |
-| 9. emotion head가 정서와 상관된 자극 특징(어두움, 얼굴 크기)을 읽음 | 양방향 | 두 head(C&K, EmoSet) 일치 요구, 저수준 속성(밝기, 채도) 방향의 Δ를 따로 보고. 밝기와 채도 흐려짐은 Cooper 2019가 예측하는 별도 결과다 |
-| 10. 참가자가 회상 중 정서를 다시 느낌(재경험) 대 장면의 정서적 의미의 재표상 | 구분 불가 | 본인 정서 보고, 생리가 없어 **관찰 자료로 구분할 수 없다**. 주장 범위에서 제외 |
-| 11. 규범 평정자(미국 MTurk)와 참가자(일본어 모국어)의 문화 차이로 규범 방향이 참가자에게 덜 타당 | 효과 약화(H0 쪽) | 해석 범위 명시, valence와 arousal 같은 문화 보편성이 높은 축으로 나눈 보고 |
+| 1. 회상 SNR이 낮아 해독 벡터가 학습 평균 쪽으로 수축 | 약화 쪽 | 합성 회상 null(Δ의 정의 자체) |
+| 2. 수축이 정서 강도에 따라 다름(강한 정서 클립일수록 평균에서 멀어 더 많이 수축) | 약화 쪽 | 합성 null은 같은 decoder를 통과하므로 이 수축을 재현한다. 비정서 방향의 극단 클립도 같은 정도로 수축하는지 확인(Δ_non) |
+| 3. 단서 캡션(정서 배제) 읽기 반응이 회상 창에 섞임 | 약화 쪽 | LS-S로 준비 구간을 따로 추정. 단서 읽기 정서 표현량 공변량. 단서 번호 범위 |
+| 4. 단서 캡션의 내용이 회상 자체를 중립 쪽으로 끌어감(혼입이 아니라 기제) | 약화 쪽 | 이것은 교란이 아니라 H-의 기제다. 단서 당김과 κ 상호작용(S4)으로 잰다 |
+| 5. **이전 시행 재시청과 평정의 HRF 꼬리**가 다음 회상 창에 남음. 시행 순서가 6명 모두 같아 피험자 사이에서 상쇄되지 않음 | 양방향(앞 클립 정서에 따라) | LS-S, 이전 시행 nuisance n_i, G0c |
+| 6. 같은 시행 재시청 시작 반응이 창 끝에 섞임 | 지각 쪽 | [계산]상 표준 HRF에서는 0.1% 미만. 피험자별 HRF와 창 끝 자르기로 확인 |
+| 7. 회상이 고차 의미를 저수준보다 잘 보존(Horikawa & Kamitani 2017, doi:10.1038/ncomms15037 [본문]; Koide-Majima 2023; MIRAGE). 정서 방향이 고차 의미와 겹치면 정서가 "덜 약해진" 것처럼 보임 | 강화 쪽 | 비정서 방향을 표상 수준 지수로 맞춤. 수준 인식 null |
+| 8. 회상은 약한 지각이 아니라 다른 공간이라 합성 null이 회상을 잘못 흉내 냄(Breedlove 2020, doi:10.1016/j.cub.2020.04.014 [DB]; Spera 2026) | 양방향 | 정서 대 비정서의 차(Δ_emo - Δ_non)로 공통 오차를 상쇄. 수준 맞춤. null 두 판 |
+| 9. 반복 노출(최대 11회)과 사전 연습으로 회상이 익힌 장면의 단서 심상이 됨 | 강화 쪽(흔적 강화) | A4, 주장 범위를 "익힌 클립의 단서 회상"으로 한정 |
+| 10. 회상 중 눈 감음, 각성 변화 같은 전역 상태 | 공통 | 조건 안 클립 간 중심화, 블록 길이 nuisance |
+| 11. emotion head가 정서와 상관된 자극 특징(어두움, 얼굴 크기)을 읽음 | 양방향 | 두 head(C&K, EmoSet) 일치 요구, Δ_low 별도 보고 |
+| 12. **묘사된 정서**: Δ_emo가 인물 표정과 몸짓 단서가 회상에 남은 정도일 수 있다 | 양방향 | S1(Δ_dep, u⊥ 방향, 인물 없는 클립). 가르지 못하면 결론에 '묘사된 정서 지각 포함' |
+| 13. 범주 원형 쪽 이동이 정서가 아니라 의미 범주 원형 쪽 이동의 부산물 | 강화 쪽 | S2의 Δβ_c 대 Δβ_s |
+| 14. 참가자가 회상 중 정서를 다시 느낌(재경험) 대 장면의 정서적 의미의 재표상 | 구분 불가 | 본인 정서 보고, 생리가 없어 **관찰 자료로 구분할 수 없다**. 주장 범위에서 제외 |
+| 15. 규범 평정자(미국 MTurk)와 참가자(일본어 모국어)의 문화 차이로 규범 방향이 참가자에게 덜 타당 | 효과 약화(H0 쪽) | 해석 범위 명시. valence와 arousal 축이 범주보다 문화 간에 안정적이라는 것은 **가정**이다(근거 문헌 미확인). 그래서 축별 보고는 탐색으로만 둔다 |
 
 ## 10. Potential Findings
 
-| 결과 | 과학적 의미 |
-|---|---|
-| H+ 지지(정서 특이 초과 이동 > 0, 판정 구역 밖, 6명 중 다수) | 떠올린 표상은 신호 감소를 감안해도 그 장면이 보통 일으키는 정서 쪽으로 더 기운다. 장면의 정서적 의미가 회상에서 강조된다. NEVER와 affective realism의 표상 수준 예측과 맞는다. 정서 경험의 과장을 뜻하지는 않는다 |
-| H- 지지(정서 특이 초과 이동 < 0, 단서 당김이 정서 방향에서 큼) | 떠올린 표상에서 장면의 정서적 의미는 다른 내용보다 더 흐려지고, 정서 없는 단서 쪽으로 다시 만들어진다. Cooper 2019의 기억 흐려짐을 정서적 의미로 넓히고, RQ-44의 "schema 쪽" 결과와 맞물린다 |
-| H0 지지(동등성 통과) | 장면의 정서적 의미는 회상에서 다른 내용과 같은 비율로 약해질 뿐 특별하지 않다. NEVER와 흐려짐 모두 이 수준에서는 지지되지 않는다 |
-| 판정 불가 | SNR이나 단서 교란이 커서 이 자료로는 방향을 가를 수 없다. 단서를 내용 무관 기호로 바꾸고 회상과 재시청 사이 간격을 늘린 새 실험이 필요하다 |
-| 이미지 공간과 텍스트 공간이 엇갈림 | 시각 특징 수준과 언어화된 의미 수준에서 정서가 다르게 회상된다. 그 자체가 탐색 결과다 |
-| vividness가 높은 시행에서 Δ_emo가 큼 | 생생하게 떠올린 시행일수록 장면의 정서적 의미가 더 남는다. Cooper 2019의 "vividness는 정밀도와 편향을 함께 따른다"와 비교할 수 있다 |
+표기: "반대 예측"은 그 결과와 반대를 예측하는 이론이다. 반대 예측이 없으면 [양립]이다.
 
-**RQ-44와 맞물리는 방식:** RQ-44가 정서 정보를 "schema 쪽"으로 판정하고 이 카드가 H-(중립 단서 쪽 당김)를 보이면, 회상의 정서적 의미가 일화 흔적보다 단서 기반 재구성으로 만들어진다는 해석이 두 측면에서 맞는다. RQ-44가 "흔적 쪽"이고 이 카드가 H+면 NEVER 쪽 해석이 맞는다. 엇갈리면 두 지표가 다른 것을 잰다고 보고한다.
+| 결과 | 과학적 의미(규범 기준 정서적 의미 범위 안에서) | 반대 예측 | 표시 |
+|---|---|---|---|
+| H+a(정서 특이 초과 이동 > 0, Δβ_p가 부정 클립에서 큼, 부정 클립 Δ_low가 0 쪽) | 떠올린 표상에 그 장면 고유의, 정서 범주를 예측하는 내용 특징이 신호 감소를 감안해도 더 남는다. 부정 장면에서 감각 세부도 덜 약해진다. NEVER의 표상 수준 예측과 맞는다 | 일반 감쇠(Cooper 2019), schema 재구성 | 판별적 |
+| H+b(정서 특이 초과 이동 > 0, Δβ_c > Δβ_s, 엔트로피 감소) | 떠올린 표상이 그 정서 범주의 전형적 내용 쪽으로 끌린다. 의미 범주 원형 쪽 이동만으로는 설명되지 않는다. 범주 조정과 개념 기반 재구성 예측과 맞는다 | NEVER(항목 고유 세부 보존) | 판별적 |
+| H+이지만 분해 판별 불가 | 정서 범주를 예측하는 내용 특징이 더 남는다. 기제는 말할 수 없다 | 일반 감쇠 | 판별적(H0에 대해서만) |
+| H-(정서 특이 초과 이동 < 0, 정서 방향 단서 당김이 큼, κ 양의 상호작용) | 정서 없는 단서로 장면을 다시 만들 때 정서적 의미가 다른 내용보다 더 빠진다. RQ-44의 "schema 쪽" 결과와 맞물린다. 정서 배제 단서라는 MC 설계에 의존하므로 일반 정서 기억으로 넓히지 않는다 | NEVER | 설계 의존 |
+| H0(동등성 통과, Δ_low < 0이 정서와 무관) | 장면의 정서적 의미는 회상에서 다른 내용과 같은 비율로 약해진다. 정서와 무관한 일반 흐려짐(Cooper 2019)과 맞는다. 정서 특이 보존(NEVER의 정서적 의미 판본)은 지지되지 않는다 | NEVER의 정서적 의미 판본, schema 재구성의 정서 상실 | 판별적 |
+| 주 결과가 Δ_emo⊥에서 사라짐 | 위 결과는 인물 표정과 몸짓 같은 묘사된 정서 단서의 회상에 기댄다. 결론에 '묘사된 정서 지각 포함'을 붙인다 | 없음 | [양립] |
+| 판정 불가 | SNR이나 HRF 교란이 커서 이 자료로는 방향을 가를 수 없다. 최소 판정 효과 크기가 다음 실험(내용 무관 기호 단서, 회상과 재시청 사이 긴 간격, 무작위 시행 순서)의 근거가 된다 | 없음 | [양립] |
+| 이미지 공간과 영상 공간이 엇갈림 | 정지 장면 특징과 움직임 특징에서 정서적 의미가 다르게 회상된다. 탐색 결과다 | 없음 | [양립] |
+| vividness가 Δ_emo를 따름(A3, 탐색) | 생생하게 떠올린 시행일수록 정서적 의미가 더 남는다. Cooper 2019의 결합과 맞는다 | Talarico & Rubin 2003식 분리 | 판별적(탐색) |
+| vividness가 규범 arousal만 따르고 Δ와 무관(A3, 탐색) | 정서는 회상의 생생함을 올리지만 표상 내용의 정서적 의미는 그만큼 남기지 않는다 | Cooper 2019식 결합 | 판별적(탐색) |
+| 3대 정서 이론(BET, appraisal, 구성주의)에 대해 | 위 결과 어느 것도 BET와 appraisal을 가르지 않는다. 구성주의와는 H+b(개념 기반 원형 이동)를 통해서만 닿고, 그것도 일반 schema 이론과 구분되지 않는다 | 없음 | [양립] |
+
+**RQ-44와 맞물리는 방식:**
+* RQ-44가 정서 정보를 "schema 쪽"으로 판정하고 이 카드가 H- 또는 H+b를 보이면, 회상의 정서적 의미가 일화 흔적보다 단서와 개념 기반 재구성으로 만들어진다는 해석이 두 측면에서 맞는다.
+* RQ-44가 "흔적 쪽"이고 이 카드가 H+a면 NEVER 쪽 해석이 맞는다.
+* 엇갈리면 두 지표가 다른 것을 잰다고 보고한다.
 
 ## 11. Scientific Contribution
 
-* **정서와 기억 이론:** NEVER와 affective realism(과장), 기억 흐려짐(Cooper 2019) 사이의 방향 논쟁을 신경 표상 수준의 한 수치(정서 특이 초과 이동)로 바꾼다. 세 결과(H+, H-, H0)가 모두 해석 가능하도록 미리 적었다.
-* **측정:** "지각과 회상을 정서를 모르는 같은 자로 잰다"는 절차는 자극을 고정한 대조라서, 자극 모델이 놓친 정보와 뇌가 바꾼 정보가 섞이는 D2 공통 문제(reviewer_notes 8절 2번)를 피한다. SNR을 맞춘 합성 회상은 다른 심상, 회상 연구에도 그대로 쓸 수 있는 대조다.
+* **정서 기억 이론 [ET 2.7-1]:** "과장 대 흐려짐"이라는 방향 논쟁을 기제 판별로 바꾼다. 세 기제는 다음과 같다.
+  * 일반 감쇠(Cooper 2019): Δ_emo - Δ_non ≈ 0, 정서 무관 Δ_low < 0
+  * 선택적 감각 재현(NEVER): 부정 클립에서 Δ_low와 Δβ_p 증가
+  * 개념, schema 기반 재구성: Δβ_c 증가, 엔트로피 감소, κ 상호작용
+  * 결과마다 반대 예측을 하는 이론이 있다(10절).
+* **3대 정서 이론과의 관계를 낮춰 적는다 [ET 2.7-3]:** 이 질문은 BET와 appraisal을 가르지 않는다. 구성주의와는 개념 기반 재구성 예측(원형 이동)을 통해서만 닿는다. CPM의 성분 동기화나 다수준 appraisal도 이 자료로는 검정하지 않는다(참가자의 appraisal과 성분 측정이 없다).
+* **주관적 생생함과 표상의 관계 [ET 2.7-2, 부분 반영]:** MC는 시행별 vividness가 있는 유일한 보유 자료다. "정서가 생생함을 올리지만 표상 내용의 정서적 의미는 그만큼 남기지 않는가"를 처음으로 표상 수준에서 볼 수 있다. 다만 vividness가 재시청 뒤 비교 평정이고 3~4점에 몰려 탐색 기여로만 둔다.
+* **측정:**
+  * "지각과 회상을 정서를 모르는 같은 자로 잰다"는 절차는 자극을 고정한 대조다. 그래서 자극 모델이 놓친 정보와 뇌가 바꾼 정보가 섞이는 D2 공통 문제(reviewer_notes 8절 2번)를 피한다.
+  * 회상에 Cheng 2023의 계측 논리를 옮기고, 신호 감소와 묘사된 정서를 뺀 방향과 성분을 잰다.
+  * SNR을 맞춘 합성 회상과 LS-S 분리는 다른 심상, 회상 연구에도 쓸 수 있다.
 * **AI의 역할:** 예측 성능 경쟁이 아니다. decoder는 측정 장치이고, 합성 회상은 관찰로 얻을 수 없는 반사실 비교 대상이다(3절 (a), (b)).
-* **한정:** 증거 수준은 R0(관찰), 합성 null은 R1. 결론은 장면의 정서적 의미(규범 기준)에 관한 것이다.
+* **한정:** 증거 수준은 R0(관찰)이고 합성 null은 R1이다. 결론은 장면의 정서적 의미(규범 기준)에 관한 것이다.
 
 ## 주장 범위 (`feedback_round2.md` 3.6절 기준)
 
 | 주장할 수 있는 것 | 주장할 수 없는 것 |
 |---|---|
-| 떠올릴 때의 뇌 표상이 볼 때보다 **그 장면이 사람들에게 보통 일으키는 정서(규범 정서)의 방향**으로 더 또는 덜 이동한다(신호 감소 효과를 뺀 뒤) | 참가자가 떠올리면서 정서를 **다시 느꼈다** |
+| 떠올릴 때의 뇌 표상이 볼 때보다 **미국 평정자들이 그 장면을 보고 보고한 정서(규범 정서)의 방향**으로 더 또는 덜 이동한다(신호 감소 효과를 뺀 뒤) | 참가자가 떠올리면서 정서를 **다시 느꼈다** |
 | 그 이동이 정서와 무관한 내용보다 크거나 작다(정서 특이성) | 기억이 **느낀 정서**를 과장하거나 줄인다 |
+| 그 이동이 항목 충실도 쪽인지 범주 원형 쪽인지(S2가 판별할 때만) | S2 없이 "과장"이라고 부르기 |
+| 그 이동이 묘사된 정서를 뺀 뒤에도 남는다(S1이 통과할 때만). 아니면 "묘사된 정서 지각 포함" | 묘사된 정서와 규범 정서를 구분했다는 주장(S1이 실패한 경우) |
 | 그 이동이 정서 배제 단서 쪽으로의 당김과 관련된다 | 개인의 정서 경험이나 정서 성향에 대한 모든 주장 |
-| 그 이동이 회상 생생함(본인 보고, 심상의 질)과 함께 변한다 | vividness를 정서 보고로 읽는 주장 |
+| 그 이동이 회상 생생함(본인 보고, 심상의 질)과 함께 변한다(탐색) | vividness를 정서 보고로 읽는 주장 |
 | 이 결과는 "여러 번 보고 연습한 짧은 무음 클립을, 정서 없는 문장 단서로 즉시 떠올린 경우"에 대한 것이다 | 오래된 일화기억, 자전 기억, 자기 유도 심상으로의 일반화 |
 | decoder 특징 공간에 투영된 정보에 대한 것이다 | decoder 공간 밖 뇌 정보 전체, 편도체 등 특정 영역의 인과적 역할 |
+| 장면의 정서적 의미(정서적 gist)가 표상에 얼마나 남는가 [ET 2.6-4] | 정서 사건 기억의 강도나 정확도, 회상 때 다시 일어나는 affect에 관한 이론(예: 감정 퇴색 편향)과의 직접 비교 |
+| | affective realism의 검정(참가자 affect 측정이 없다) |
 
-용어: 산출물 전체에서 "정서 경험" 대신 "장면의 정서적 의미(규범 기준)"라고 쓴다.
+용어: 산출물 전체에서 "정서 경험" 대신 "장면의 정서적 의미(규범 기준)"라고 쓴다. "과장", "흐려짐"은 이론 이름을 인용할 때만 쓰고, 결과 이름은 "정서 방향 강화", "정서 방향 약화"로 쓴다.
 
 ## 12. Limitations & Risks
 
-* **자료:** 회상 자료는 MC 6명뿐이다. 다른 코호트로 재현할 수 없다. 보유본 형식, 연속 시계열, 단서 캡션 번호가 미확인이다(G0). 72클립은 최대 11회 노출과 사전 연습을 거쳤다. vividness는 재시청 뒤 비교 평정이고 3~4점에 몰린다. 본인 정서 보고, 생리, 시선 기록이 없다. 규범 평정자와 참가자의 언어, 문화가 다르다. 캡션은 GPT-3.5 교정을 거쳤다.
-* **모델:** 합성 회상은 "균일한 신호 감쇠 + 잡음"이라는 단순한 회상 모형이다. 실제 회상은 feature마다 다르게 약해진다(Bone 2020, Breedlove 2020). 정서 대 비정서 차이로 공통 오차를 줄이지만 없애지는 못한다. CLIP과 V-JEPA 2의 사전학습 오염 가능성이 있다. 지각과 회상에 같은 특징 공간을 쓰므로 비교에서는 상쇄되지만 head의 절대 성능 해석에는 남는다. EmoSet과 GoEmotions의 이용 조건, MC 원 저자 코드와 캡션의 LICENSE(파일 없음), MindEye2 가중치 라이선스가 미확인이다.
-* **통계:** 6명이라 모집단 평균 추론이 아니라 유병률로 보고한다. 클립 72개, 실효 자유도가 작아 효과 크기 추정 중심이다.
-* **해석:** 결과가 판정 불가로 끝날 위험이 크다. 이 경우에도 G4의 최소 판정 효과 크기가 다음 실험 설계(단서와 재시청 분리)의 표본 크기 근거가 된다.
+* **자료:**
+  * 회상 자료는 MC 6명뿐이라 다른 코호트로 재현할 수 없다.
+  * 보유본 형식, 원 전처리 소프트웨어 버전, 단서 캡션 번호가 미확인이다(G0).
+  * 시행 순서가 6명 모두 같아 순서 효과가 피험자 사이에서 상쇄되지 않는다.
+  * 72클립은 최대 11회 노출과 사전 연습을 거쳤다.
+  * vividness는 재시청 뒤 비교 평정이고 3~4점에 몰린다.
+  * 본인 정서 보고, 생리, 시선 기록이 없다.
+  * 규범 평정자와 참가자의 언어, 문화가 다르다. 캡션은 GPT-3.5 교정을 거쳤다.
+* **처리:**
+  * raw 재처리가 보유본과 호환되지 않으면 학습 run까지 다시 처리해야 해서 4주를 넘는다.
+  * LS-S도 HRF 모형에 기댄다. 피험자별 HRF와 창 자르기로 범위만 보일 수 있다.
+* **모델:**
+  * 합성 회상은 voxel별 감쇠 + 잡음이라는 단순한 회상 모형이다. 회상이 지각과 체계적으로 다른 공간이라는 증거(Spera 2026, Koide-Majima 2023, Breedlove 2020)를 수준 맞춤과 수준 인식 null로 일부만 반영한다.
+  * 묘사된 정서 특징은 [AI-est]이고 VLM 사전학습 오염을 배제할 수 없다.
+  * CLIP과 V-JEPA 2의 사전학습 오염 가능성이 있다. 지각과 회상이 같은 공간을 쓰므로 대조에서는 상쇄되지만 head의 절대 성능 해석에는 남는다.
+  * 이용 조건이 미확인인 것: EmoSet, Qwen2.5-VL, Py-Feat 모델 가중치, MC 원 저자 코드와 캡션(LICENSE 파일 없음), MindEye2 가중치.
+* **통계:** 6명이라 모집단 평균 추론이 아니라 유병률로 보고한다. 클립 72개로 실효 자유도가 작아 효과 크기 추정 중심이다. 인물 없는 클립 부분집합(추정 24개)은 기술만 한다.
+* **해석:** 결과가 판정 불가로 끝날 위험이 있다. 이 경우에도 최소 판정 효과 크기가 다음 실험 설계의 근거가 된다.
 
 ## 13. Pilot Experiment
 
-* **가장 싼 첫 분석(1주 안):** 보유본이 원 저자 형식이라는 가정 아래, MC 1명(능숙도가 높은 S1~S5 중 1명)에서 OpenCLIP 공간 ridge decoder와 C&K head만으로 지각 72클립과 회상 72클립의 정서 표현량을 계산하고, 합성 회상 null을 50회만 만들어 Δ_emo와 Δ_non의 부호와 크기를 본다.
-* **목적:** (1) G1~G3 통과 여부, (2) Δ의 잡음 수준과 G4에 필요한 반복 수, (3) 단서 당김이 측정 가능한 크기인지.
+* **가장 싼 첫 분석(1주 안, raw 재처리와 병행):** 보유본 블록 평균으로 MC 1명(능숙도가 높은 S1~S5 중 1명)에서 다음을 계산한다.
+  * 학습 자료 기준으로 고른 voxel, OpenCLIP 공간 ridge decoder, C&K head만 쓴다.
+  * 지각 72클립과 회상 72클립의 정서 표현량을 계산한다.
+  * 합성 회상 null을 50회만 만들어 Δ_emo와 Δ_non의 부호와 크기를 본다.
+  * 파일럿 결과는 주 검정이 아니다. 단서 읽기 혼입이 남아 있다.
+* **목적:** (1) G1~G3 통과 여부, (2) Δ의 잡음 수준과 G4에 필요한 반복 수, (3) 단서 당김이 측정 가능한 크기인지, (4) p와 c의 VIF.
 * **계속, 수정, 중단 기준:**
-  * 계속: G1, G2 통과, 합성 null의 Δ 분포 폭이 실측 클립 간 분산보다 작다.
+  * 계속: G1, G2 통과. 합성 null의 Δ 분포 폭이 실측 클립 간 분산보다 작다.
   * 수정: G2 통과는 하나 null 폭이 너무 크다 → 특징 공간을 저차원(PCA 64)으로 줄이거나 영상 공간으로 바꾼다.
   * 중단: G2 실패(회상 클립 식별이 우연 수준)가 3명 이상에서 반복된다.
 
 ## 14. Feasibility & Priority
 
 * **4주 핵심 판(core)**
-  * 1주: G0(보유본 형식, 연속 시계열, 단서 번호 문의), 특징 추출(OpenCLIP, V-JEPA 2, 2,180클립), head 학습(C&K, 비정서, 단서 회귀), 피험자별 ridge decoder, G1~G3, 파일럿.
-  * 2주: 회상 SNR 추정, 합성 회상 null 생성, G4 회복 시뮬레이션, 판정 불가 구역과 동등성 한계 확정. **분석 계획을 동결(사전 등록)한 뒤 3주차로 넘어간다.**
-  * 3주: 주 분석(Δ_emo, Δ_non, 정서 특이 초과 이동, 두 특징 공간), 단서 통제, A2 NEVER 회귀, A3 vividness, A4 반복 회차.
-  * 4주: A1 텍스트판, 강건성 분석, 결과 정리.
-* **4주 뒤 확장:** raw 재처리와 LS-S(A5, 연속 시계열이 없을 때), A6 영역별, A7 MindEye2, DeepMReye 시선, RQ-44의 생성 영상 schema 예측(b).
-* **자원:** 연구자 1명. GPU 1장(특징 추출 수 시간, 선택적 MindEye2 적응). decoder, head, null, 통계는 CPU. 새 데이터 수집과 대규모 학습이 없다.
+  * **1주:**
+    * 첫날 단서 캡션 번호를 문의한다. G0a.
+    * 시험 run raw 재처리를 시작한다(240 run, CPU 백그라운드. 계산 시간은 작업 환경에 따라 다르며 미확인).
+    * 특징을 추출한다: OpenCLIP, V-JEPA 2, 저수준 통계, Py-Feat와 VLM 묘사된 정서.
+    * head를 학습한다: 정서, 비정서, 묘사된 정서, 단서 회귀. 표상 수준 지수를 계산한다.
+    * 학습 자료 기준 voxel 선택, 피험자별 ridge decoder와 감각 세부 decoder, 보유본 블록에서 G1과 G3, 파일럿.
+  * **2주:**
+    * 재처리를 마치고 G0b 호환성을 확인한다.
+    * 피험자별 HRF, LS-S, G0c, G2.
+    * 합성 null 정칙화, 회복 시뮬레이션, 판정 불가 구역과 동등성 한계.
+    * **분석 계획을 동결(사전 등록)한 뒤 3주차로 넘어간다.**
+  * **3주:**
+    * 주 검정(이미지 공간), 영상 공간 반복
+    * 단서 통제, 이전 시행 nuisance
+    * S1 묘사된 정서, S2 성분 분해, S3 NEVER, S4 κ 상호작용
+  * **4주:** A3 vividness, A4 반복 회차, A5와 강건성 분석, 결과 정리.
+* **4주 뒤 확장:** 텍스트판(C-04 흡수), A6 영역별, A7 MindEye2, DeepMReye 시선(시험 run raw가 처리되어 있으므로 바로 가능), RQ-44의 생성 영상 schema 예측(b). G0b가 실패하면 학습 run 재처리와 decoder 재학습.
+* **자원:** 연구자 1명, GPU 1장(특징 추출과 VLM 평정 수 시간, 선택적 MindEye2 적응). 재처리는 CPU 다중 코어. decoder, head, null, 통계는 CPU. 새 데이터 수집과 대규모 학습이 없다.
+* **일정 위험:** raw 재처리를 핵심 판에 넣어 4주가 빠듯하다([AR 2.8]의 1-month Feasibility 3점에 동의). 재처리가 2주차 안에 끝나지 않으면 3주차 주 검정은 8.6절 대체 판으로만 보고하고, 판정은 재처리 뒤로 미룬다.
 * **평가(이 카드 작성자의 자체 추정, 채점은 Coordinator와 reviewer가 한다):**
-  * AI-enabled Contribution: (a) 반사실 합성 회상, (b) 측정할 수 없던 방향 변수. 단 합성 null 논리 자체는 선행이 있다(Chen, Keil, Ding 2025).
-  * 1-month Feasibility: G0 통과 시 높다. 반복이 평균된 형식뿐이면 1~2주 지연된다.
+  * AI-enabled Contribution: (a) 반사실 합성 회상, (b) 측정할 수 없던 방향과 성분 변수. 단 합성 null 논리(Chen, Keil, Ding 2025)와 계측 논리(Cheng 2023)는 선행이 있다.
+  * 1-month Feasibility: raw 재처리와 G0b에 달렸다.
   * Novelty: 핵심 가설 not found, 구성 요소 partially(4.2절).
-  * Neuroscientific Importance: 기억과 정서의 방향 논쟁에 수치를 준다. 다만 결론은 규범 수준이고 익힌 클립의 즉시 회상에 한정된다.
-* **overlap:**
-  * EmoBrain: 부분(뇌에서 정서 정보를 읽는 도구가 겹친다. 질문은 다르다).
-  * EmoViS: 없음(Horikawa 2020을 쓰지 않는다).
+  * Neuroscientific Importance: 정서 기억의 세 기제에 서로 반대인 서명을 준다. 결론은 규범 수준이고 익힌 클립의 즉시 회상에 한정된다.
+* **overlap [0절 4번, AR 2.6]:**
+  * EmoBrain(구 EmoViS 범위): 부분(뇌에서 정서 정보를 읽는 도구가 겹친다. 질문은 다르다).
   * Emo-FilM 연구: 없음.
   * 연구실 팀원 TRIBE 작업: 없음(TRIBE를 쓰지 않는다. 합성 null은 같은 피험자의 지각 패턴을 감쇠시킨 것이고, emotion head는 자극 특징 공간에 붙인다).
 
@@ -334,24 +493,73 @@ G1~G3은 "도구가 작동하는가"만 본다. **decoder 정확도는 결과가
 
 | 항목 | 이 카드의 처리 |
 |---|---|
-| 참가자 경험 대 자극에 그려진 정서 | 규범 정서 방향(별도 평정자의 felt 집계)만 쓴다. 참가자 경험 주장 없음(주장 범위 절) |
-| 인간 주석 대 모델 생성 주석 | 규범 평정은 인간. emotion head 출력은 "AI 추정, C&K 좌표에 맞춘 측정값"으로 표시. 텍스트 탐침은 GoEmotions 인간 라벨로 학습된 모델 출력 |
-| 본인 보고 대 규범 평정 | 본인 지표는 vividness뿐이고 정서 보고가 아니다 |
-| 정서 표상 대 시각, 의미 내용 표상 | 비정서 방향 대조(73개 의미 개념, 캡션 속성)와 정서 특이 초과 이동, 저수준 밝기와 채도 방향 별도 보고 |
+| 참가자 경험 대 자극에 그려진 정서 | 규범 정서 방향(별도 평정자의 felt 집계)만 쓴다. 묘사된 정서(인물 표정, 몸짓)는 별도 특징으로 재서 S1로 가르거나, 못 가르면 결론에 '묘사된 정서 지각 포함'을 붙인다. 참가자 경험 주장 없음 |
+| 인간 주석 대 모델 생성 주석 | 규범 평정은 인간. emotion head 출력은 "AI 추정, C&K 좌표에 맞춘 측정값". 묘사된 정서는 [AI-est](Py-Feat, VLM)이고 오염 점검을 붙인다 |
+| 본인 보고 대 규범 평정 | 본인 지표는 vividness뿐이고 정서 보고가 아니다. 규범은 미국 평정자, 참가자는 일본어 화자 |
+| 정서 표상 대 시각, 의미 내용 표상 | 비정서 방향(지각 해독도, κ, 표상 수준을 맞춤)과의 차이로만 해석. 감각 세부(Δ_low)와 의미 범주 원형(Δβ_s)을 따로 보고 |
 | encoding 정확도 대 설명적 적절성 | encoding, decoding 정확도는 관문으로만 쓰고 결과로 쓰지 않는다(design_brief 3절 3번, Conwell 2024) |
-| decodability 대 표상 대 인과 | 결론은 "decoder 공간에서 재는 정보의 방향". 인과 주장 없음 |
+| decodability 대 표상 대 인과 | 결론은 "decoder 공간에서 재는 정보의 방향과 성분". 인과 주장 없음 |
 | in-silico 대 관찰 | 합성 회상은 in-silico(R1), 지각과 회상은 관찰(R0). 결과 표기에 구분 |
-| 공유 표상 대 데이터셋 고유 교란 | 단일 데이터셋. 단서 = 캡션, 재시청, 반복 노출이라는 MC 고유 교란을 9절에 명시 |
-| 탐색 대 확증 | 주 검정 하나(이미지 공간 정서 특이 초과 이동)를 2주차 끝에 동결. 나머지는 탐색 |
-| HRF 지연과 시간 자기상관 | 회상 창 앞뒤 혼입을 A5와 G4로 다룸. 블록 평균 자료라 블록 간 자기상관은 run 단위 fold로 막음 |
-| 자극, 영상, 피험자 수준 누수 | decoder와 head는 학습 2,108클립으로만 학습. 시험 72클립의 학습 세션 노출 run은 버림. 근접 중복 군집 단위 fold |
+| 공유 표상 대 데이터셋 고유 교란 | 단일 데이터셋. MC 고유 교란을 9절에 명시했다: 단서 = 정서 배제 캡션, 재시청, 반복 노출, 6명 동일 시행 순서 |
+| 탐색 대 확증 | 주 검정 하나(이미지 공간 정서 특이 초과 이동)와 표현 규칙을 정하는 S1~S4를 2주차 끝에 동결. A3~A7은 탐색 |
+| HRF 지연과 시간 자기상관 | raw 재처리와 LS-S로 단서 읽기, 회상, 재시청, 평정을 분리. 피험자별 HRF. 이전 시행 nuisance. 시간 자기상관 보정. run 단위 fold |
+| 자극, 영상, 피험자 수준 누수 | decoder와 head는 학습 2,108클립으로만 학습. 시험 72클립의 학습 세션 노출 run은 버림. 근접 중복 군집 단위 fold. 범주 원형은 교차검증 해독 벡터로 만든다 |
 | 반복 자극 교란 | 72클립 최대 11회 노출을 A4와 주장 범위에 반영 |
 | 평정자 간 일치와 라벨 잡음 | C&K 범주 평정자 수가 비디오당 9~17명(2차 출처 수준). 규범 방향의 신뢰도가 낮은 클립(평정 엔트로피 상위)을 뺀 민감도 분석 |
-| 시각-의미-정서 공선성 | 정서 대 비정서 차이로만 해석. 공선성이 커서 맞춘 비정서 방향을 찾지 못하면 판정 불가로 둔다 |
-| 시간, 공간 해상도 한계 | 3T, TR 1 s, 블록 평균. 영역별 확장은 탐색 |
-| ROI 선택과 순환 추론 | voxel은 지각 시험 반복 신뢰도로만 고른다. 회상 결과로 고르지 않는다 |
-| 다중 비교 | 사전 지정 주 검정 하나. 보조 분석은 FDR과 탐색 표기 |
-| 데이터 접근, checkpoint, 라이선스 | MC CC0. OpenCLIP, V-JEPA 2 저장소 확인, 가중치 조건 일부 미확인. MC 원 저자 코드와 캡션 LICENSE 없음(저자 확인 필요). EmoNet 사용 안 함 |
-| 사전학습 오염 | CLIP 계열의 C&K 노출 가능성. 지각과 회상이 같은 공간을 쓰므로 대조에서 상쇄 |
+| 시각-의미-정서 공선성 | 정서 대 비정서 차이로만 해석. 맞춘 비정서 방향을 찾지 못하면 판정 불가. 성분 분해의 VIF가 5를 넘으면 판별 불가 |
+| 시간, 공간 해상도 한계 | 3T, TR 1 s. 영역별 확장은 탐색 |
+| ROI 선택과 순환 추론 | voxel은 학습 자료 encoding 성능으로만 고른다. 지각 시험과 회상 결과로는 고르지 않는다. 민감도로 지각 시험 2/3 분할 |
+| 다중 비교 | 사전 지정 주 검정 하나. S1~S4는 사전 등록하고 FDR. 탐색 분석은 탐색 표기 |
+| 데이터 접근, checkpoint, 라이선스 | MC CC0(raw 포함). OpenCLIP, V-JEPA 2 저장소 확인, 가중치 조건 일부 미확인. Py-Feat 모델과 Qwen2.5-VL 이용 조건 미확인. MC 원 저자 코드와 캡션 LICENSE 없음. EmoNet 사용 안 함 |
+| 사전학습 오염 | CLIP 계열과 VLM의 C&K 노출 가능성. 지각과 회상이 같은 공간을 쓰므로 주 대조에서는 상쇄. VLM 묘사된 정서는 인물 가림 점검 |
 | 데이터셋 간 주석 비호환 | 단일 데이터셋이라 해당 없음. EmoSet head(Mikels 8범주)와 C&K head(34범주)는 결론 일치 여부만 본다 |
-| minimum-validation(adversarial-reviewer 7.4절 7항목) | 경쟁 가설과 null: 합성 null, 비정서 방향, 단서 당김(충족). 상한 병기: 지각 반복 신뢰도(충족). 신뢰도 민감도: 규범 평정 엔트로피 민감도(충족). leakage 경로별 대응(충족). 일반화 수준: 피험자 유병률, 클립 bootstrap(충족). 라벨 출처 표시(충족). 반증 해석 사전 기술(8.5, 10절, 충족) |
+| minimum-validation(adversarial-reviewer 7.4절 7항목) | 모두 충족: (1) 경쟁 가설과 null(합성 null, 비정서 방향, 단서 당김, 묘사된 정서, 성분 분해), (2) 상한 병기(지각 반복 신뢰도), (3) 신뢰도 민감도(규범 평정 엔트로피), (4) leakage 경로별 대응, (5) 일반화 수준(피험자 유병률, 클립 bootstrap), (6) 라벨 출처 표시, (7) 반증 해석 사전 기술(8.7, 10절) |
+
+---
+
+## 반영하지 않은 지적
+
+| 지적 | 출처 | 반영하지 않은(또는 일부만 반영한) 부분 | 근거 |
+|---|---|---|---|
+| CPM의 다수준 appraisal 예측과 연결 | 0절 5번, [ET 공통 3] (고치면 좋은 것) | **연결하지 않았다.** 11절에 "CPM은 이 자료로 검정하지 않는다"는 한 줄만 두었다 | R2에는 참가자의 appraisal, 생리, 표현 측정이 없다. 감각 세부, 항목, 범주 원형 성분을 CPM의 감각 운동, 도식, 개념 수준 appraisal에 대응시키면 "규범 정서적 의미의 표상"을 "참가자의 appraisal"로 읽게 된다. 이는 라벨 상한(0절 3번)을 넘는다. ET 검토도 CPM 연결 대상으로 R1과 R3를 들었다 |
+| 회상이 약한 지각이 아니라는 증거를 합성 null에 반영 | [AR 2.1-4(c)] | **일부만 반영.** 비정서 방향의 표상 수준 맞춤과 수준 인식 null(묶음별 감쇠)은 넣었다. 그러나 Spera 2026식 학습된 정렬(회상 반응을 지각 decoder 공간으로 옮기는 사상)은 null로 쓰지 않았다 | 학습된 정렬은 회상 자료로 학습한다. 그래서 회상의 정서 방향 이동까지 흡수해 Δ를 0 쪽으로 끌어당긴다. null이 측정하려는 효과를 먹게 된다. 대신 "정서 대 비정서 차이로 공통 오차를 상쇄"하는 원래 논리를 유지하고, 이 한계를 12절에 적었다 |
+| 주관적 생생함과 표상의 분리를 기여로 명시 | [ET 2.7-2] | **일부만 반영.** 11절에 탐색 기여로 적었으나 주 기여로 두지 않았다 | [AR 2.2]가 vividness 결과를 주 결론에서 빼라고 했다. vividness는 재시청 뒤 비교 평정이고 3~4점에 몰린다(sub-06은 78%가 3점). 두 검토를 함께 따르면 탐색 기여가 맞다 |
+| 호환성 기준 "voxel 평균 r ≥ 0.9" | [AR 2.1-1] (예시) | **그대로 채택하고 하나를 더했다.** 재처리 블록에서의 G1 식별 정확도가 보유본의 bootstrap 구간 안에 들어야 한다 | 상관만으로는 decoder가 같은 정보를 읽는지 보장하지 못한다. 반대로 소프트웨어 버전 차이로 상관이 0.9에 조금 못 미쳐도 decoder 전이는 같을 수 있다. 그래서 두 기준을 모두 보고하되 판정은 둘 다 통과로 한다 |
+| 텍스트판(C-04)의 4주 안 수행 | design_brief 4절 R2(C-04 통합) | **4주 뒤 확장으로 옮겼다.** 3절 흡수표와 14절에 적었다 | [AR 2.1-1]에 따라 raw 재처리를 핵심 판에 넣으면서 4주 안 시간이 부족해졌다. 텍스트판은 단서가 텍스트라 단서 당김이 더 커서 보조 증거로서의 가치도 작다 |
+
+---
+
+## 검토 반영 기록
+
+출처: [AR] `card_review.md`(adversarial-reviewer), [ET] `card_theory_review.md`(emotion-theory), [CO] `card_revision_orders.md`(Coordinator 통합)
+
+| # | 지적 | 출처 | 처리 | 카드 위치 |
+|---|---|---|---|---|
+| 1 | 시험 지각 run과 회상 run을 raw에서 다시 처리하는 작업을 핵심 판에 넣고, LS-S로 준비, 회상, 재시청을 분리한다. 임의의 0~30% 범위를 쓰지 않는다 | [AR 2.1-1], [CO 2-1] | 반영. raw 재처리, 호환성 관문, 피험자별 HRF, LS-S를 핵심 판에 넣었다. 판정 불가 구역을 자료에서 정한 세 범위의 합집합으로 바꾸고 0~30%를 지웠다. [계산]으로 LS-S 분리 가능성(VIF 1.16)과 원 전처리의 혼입 몫을 보였다 | 6절, 7절 뇌 자료 처리, 8.0 G0b, 8.1, 8.6, 14절 |
+| 2 | 이전 시행 재시청과 평정의 HRF 꼬리 혼입을 추가하고 nuisance를 넣는다 | [AR 2.1-2], [CO 2-2] | 반영. LS-S에서 이전 시행 사건을 따로 추정하고 n_i를 공변량으로 넣었다. 시행 순서가 6명 모두 같다는 것을 events에서 확인해 이 교란이 피험자 사이에서 상쇄되지 않음을 적었다 | 6절 시행 순서, 7절 nuisance, 8.0 G0c, 9절 5번 |
+| 3 | voxel 선택과 측정을 분리한다 | [AR 2.1-3], [CO 2-3] | 반영. 주판은 학습 자료 encoding 성능으로 고르고, 민감도로 지각 시험 2/3 분할을 둔다 | 7절 voxel 선택, Safeguards ROI 행 |
+| 4 | 합성 null 사양: 감쇠 정칙화와 범위, 평균 횟수, 표상 수준 맞춤 | [AR 2.1-4], [CO 2-4] | 반영(학습된 정렬 null만 제외, '반영하지 않은 지적'). 0~1 자르기, 저신뢰 voxel 대체, 공간 평활, 5회 평균 잡음, 총분산 맞춤, 표상 수준 지수, 수준 인식 null | 7절 합성 null, 비정서 방향 맞춤, 9절 7, 8번 |
+| 5 | 이론 지도 재작성(affective realism 검정 불가, Cooper는 H0 쪽, Curko 제거, H-는 schema 재구성과 RQ-44, 초록에 없는 서술 삭제) | [ET 2.5-1], [ET 2.2], [CO 2-5] | 반영. Cooper 2019 초록을 PubMed에서 다시 읽고 "흐려짐을 줄이지 않았다"를 지웠다(PMC 전문은 도구에서 비어 있음). Curko는 A6 영역 구분에만 남겼다. Todd 2013도 방향 근거에서 빼고 A3 배경으로 옮겼다(작성자 판단, 같은 논리) | 2절, 3절 C-02 행, 4.1 3, 9, 10, 16행, 8.1, 10절, 11절, 주장 범위 |
+| 6 | H+를 항목 충실도 대 범주 원형 이동으로 분해한다. 분해 없이 "과장"이라 부르지 않는다 | [ET 2.5-2], [ET 2.1], [CO 2-6] | 반영. 해독 벡터 회귀 분해(Δβ_p, Δβ_c, Δβ_s), 엔트로피, VIF 판별 규칙을 넣었다. 의미 범주 원형(c_s)을 더해 정서 원형 이동과 의미 원형 이동을 가른다(작성자 추가). 새 구성 요소라 선행 검색 2건을 했다 | 7절 성분 분해, 8.1 H+a/H+b, 8.3 S2, 4.2 7번, 주장 범위 |
+| 7 | NEVER 검정을 감각 세부 방향으로 옮긴다 | [ET 2.5-3], [CO 2-7] | 반영. 감각 세부 decoder와 Δ_low를 추가하고 S3 회귀를 Δ_low와 Δβ_p에 돌린다. Cooper 2019의 신경 수준 재현도 여기서 본다 | 7절 감각 세부 decoder, 8.3 S3 |
+| 8 | 한 줄 질문에서 참가자 감정으로 읽히는 표현을 없애고 관련 문장을 고친다 | [AR 2.1-5], [ET 2.5-4], [ET 2.3], [CO 2-8] | 반영. 제목과 1절을 "그 장면이 지닌 정서적 의미 쪽으로 더 기울까, 덜 기울까"로 바꿨다. 결과 이름을 "정서 방향 강화/약화"로 바꿨다 | 제목, 1절, 주장 범위 용어 |
+| 9 | 인용 서술 수정(Spera LFA, Cocquyt 2025), Cheng 2023 검토 | [AR 2.1-6], [AR 0], [CO 2-9] | 반영. Spera는 arXiv 초록으로 다시 확인해 서술을 고쳤다. Cocquyt를 2025로 고쳤다. Cheng 2023은 PubMed와 PMC 본문 Discussion을 읽고 4.1, 4.2, 5절에 넣었다 | 2절, 4.1 2, 15, 17행, 4.2, 5절 |
+| 10 | 묘사된 정서를 별도 특징으로 만들어 통제하거나, 못 하면 '묘사된 정서 지각 포함'을 명시 | [ET 공통 1], [ET 2.4], [ET 2.6-1], [CO 0-1] | 반영. Py-Feat와 VLM [AI-est], 오염 점검 3단계, Δ_dep, 묘사를 뺀 방향 u⊥, 인물 없는 클립 부분집합(추정 24개)을 넣었다. 결론 표현 규칙을 사전 등록 | 6절, 7절, 8.3 S1, 9절 12번, 10절, 주장 범위, Safeguards 첫 행 |
+| 11 | Potential Findings 행마다 반대 예측 이론을 적고 없으면 [양립] | [ET 공통 2], [CO 0-2] | 반영. 10절 표에 "반대 예측"과 "표시" 열을 더했다 | 10절 |
+| 12 | 라벨 상한을 넘는 표현 수정("사람들에게 보통 일으키는 정서", "강조된다", "NEVER와 흐려짐 모두 지지되지 않는다") | [ET 2.3], [CO 0-3] | 반영. "미국 평정자들이 그 장면을 보고 보고한 정서(규범)"로 바꾸고, H+ 해석을 "정서 범주를 예측하는 내용 특징이 더 남는다"로, H0 해석을 Cooper 쪽으로 고쳤다 | 이 카드에서 쓰는 말, 1절, 10절, 주장 범위 |
+| 13 | "valence와 arousal은 문화 보편성이 높다"를 근거 없이 단정 | [ET 2.3] | 반영. "가정(근거 문헌 미확인)"으로 표시하고 축별 보고를 탐색으로 낮췄다 | 9절 15번 |
+| 14 | 겹침 표기 통일 | [AR 0], [AR 2.6], [CO 0-4] | 반영. "EmoBrain(구 EmoViS 범위): 부분"으로 통일하고 EmoViS 별도 행을 지웠다 | 14절 overlap |
+| 15 | CPM 연결 | [ET 공통 3], [CO 0-5] | 반영하지 않음('반영하지 않은 지적') | 11절 한 줄, '반영하지 않은 지적' |
+| 16 | G2 통과 기준을 숫자로 | [AR 2.2] | 반영. 피험자 안 순열 null 1,000회의 95백분위 초과. G1도 같은 기준으로 맞췄다 | 8.0 G1, G2 |
+| 17 | Koide-Majima 2023을 대안 5의 근거로 | [AR 2.2] | 반영(카드의 대안 7번으로 번호가 바뀌었다) | 4.1 18행, 9절 7번 |
+| 18 | A3 vividness를 주 결론에 넣지 않는다고 명시 | [AR 2.2] | 반영 | 8.4 A3 |
+| 19 | 단서 캡션 번호 문의를 1주차 첫날에 | [AR 2.2] | 반영 | 8.0 G0a, 14절 1주 |
+| 20 | A3에서 vividness를 Δ와 규범 arousal에 함께 회귀 | [ET 2.6-2] | 반영 | 8.4 A3, 10절 |
+| 21 | κ와 Δ_emo의 상호작용 사전 등록 | [ET 2.6-3] | 반영 | 8.3 S4, 8.1 H+b와 H- |
+| 22 | 주장 범위에 감정 퇴색 편향 등과 비교 불가 행 추가 | [ET 2.6-4] | 반영 | 주장 범위 |
+| 23 | 세 기제, 세 서명으로 11절 재작성 | [ET 2.7-1] | 반영 | 8.1, 11절 |
+| 24 | 생생함과 표상의 분리를 기여로 | [ET 2.7-2] | 일부 반영(탐색 기여) | 11절, '반영하지 않은 지적' |
+| 25 | 3대 정서 이론과의 관계를 낮춰 적기 | [ET 2.7-3] | 반영 | 10절 마지막 행, 11절 |
+| 26 | Bainbridge & Baker 2022의 '정서 아님'을 '정서 방향 이동은 아님'으로 | [AR 2.5] | 반영 | 4.2 1번 |
+| 27 | 같은 시행 재시청 혼입(이전 카드의 "끝 2 s 겹침") 재평가 | 작성자 점검(AR 2.1-1 대응 중) | 수정. [계산]상 표준 HRF에서 0.1% 미만이라 주 혼입은 단서 읽기와 이전 시행임을 적었다. 창 끝 자르기는 강건성으로 유지 | 6절, 9절 6번 |
+| 28 | 텍스트판의 위치 | 작성자 판단(1번 반영의 결과) | 4주 뒤 확장으로 이동 | 3절, 14절, '반영하지 않은 지적' |
