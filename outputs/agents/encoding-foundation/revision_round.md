@@ -103,7 +103,7 @@
   * 3주: CPM banded ridge, 생리 처리(EDA 분해, PPG 심박, RVT), 개인 잔차 분석.
   * 4주: Spacetop 반복, 강건성(전역 신호 유무, FD 검열, smoothing 맞춤), 정리.
 * **가장 가까운 선행과 차이:**
-  * 검색(2026-11-12): arXiv API `all:TRIBE AND all:emotion`(arXiv:2610.13558 하나, 관련 없음), `all:"in silico" AND all:emotion AND all:fMRI`(0건), `abs:fMRI AND abs:emotion AND abs:"encoding model" AND abs:naturalistic`(0건). WebSearch "emotion categories stimulus-computable perceptual encoding model residual brain response which emotions not explained by visual features fMRI Cowen Keltner videos"(관련은 Horikawa 2020뿐).
+  * 검색(2026-11-12): arXiv API `all:TRIBE AND all:emotion`(arXiv:2610.13558 하나: TRIBE 예측 반응으로 이미지 정서 편집을 안내하는 AI 쪽 연구, 잔차 분석 아님), `all:"in silico" AND all:emotion AND all:fMRI`(0건), `abs:fMRI AND abs:emotion AND abs:"encoding model" AND abs:naturalistic`(0건). WebSearch "emotion categories stimulus-computable perceptual encoding model residual brain response which emotions not explained by visual features fMRI Cowen Keltner videos"(관련은 Horikawa 2020뿐).
   * Horikawa et al. 2020 (doi:10.1016/j.isci.2020.101060): 정서 범주가 전이 영역에서 시각, 의미 공변량을 넘어 설명. 차이: 공변량이 선형 feature, 자료가 무음 짧은 클립과 규범 평정. 여기서는 뇌로 학습된 삼중 양식 null, 소리 있는 서사 영화, CPM 성분과 본인 생리로 분해한다.
   * EmoMind, Mohammed et al. 2026 (arXiv:2605.16739): TRIBE 합성 반응의 정서 RSA 손실. 차이: 모델 충실도 측정(옛 RQ-51 방향)이고 잔차를 정서 지식으로 쓰지 않는다.
   * Abdel-Ghaffar et al. 2024 (doi:10.1038/s41467-024-49073-8), Kragel et al. 2019 (doi:10.1126/sciadv.aaw4358): 시각 피질의 정서 관련 tuning. 차이: 정지 이미지, 시각 경로만.
@@ -165,6 +165,7 @@
   * Ratan Murty et al. 2021 (doi:10.1038/s41467-021-25409-6), Gifford et al. 2025 (doi:10.1038/s41562-025-02252-z): in-silico 선택성 탐색. 차이: 시각 범주.
   * Nasirzadeh Orang et al. 2026 (arXiv:2609.15685, abstract만): encoding 모델이 기존 fMRI 연구를 재현하는지. 차이: 재현이지 새 가설의 사전 등록 검증이 아니다.
   * Kirk et al. 2022 (doi:10.1016/j.neuropsychologia.2022.108194): 영화 fMRI에서 얼굴 의존 amygdala 연결의 불안 관련성이 재현되지 않음. 관찰 연구.
+  * Zhan et al. 2026 (arXiv:2610.13558): 이미지 정서 편집에서 TRIBE 예측 반응을 쓰며, 기존 편집기의 내부 상태가 정서 관련 영역보다 시각 영역의 예측 반응과 더 강하게 대응한다고 보고. 차이: 목표가 편집기 개선(AI 쪽)이고, 정지 이미지, 맥락 요인과 관찰 검증이 없다.
   * 판정: no(찾은 범위). 정서 영화에 대한 in-silico 요인 편집과 관찰 사전 등록 검증의 조합은 찾지 못했다.
   * overlap: Emo-FilM 연구(맥락 정보와 사전학습 encoding 모델). RQ-52(소리 stem 제거)와 같은 틀이지만 조작 요인(얼굴, 맥락)이 다르다. RQ-33(MC 앞 클립 맥락)과 주제가 닿는다.
 * **주요 위험:**
@@ -371,7 +372,7 @@
 | arXiv API | `"encoding model" AND emotion AND "in silico"` | 0 |
 | arXiv API | `amygdala AND "encoding model" AND video` | 0 |
 | arXiv API | `all:"in silico" AND all:emotion AND all:fMRI` | 0 |
-| arXiv API | `all:TRIBE AND all:emotion` | 2610.13558(관련 없음) 외 무관 1건 |
+| arXiv API | `all:TRIBE AND all:emotion` | 2610.13558(TRIBE 예측으로 정서 편집 안내, EF-RV-1 선행에 반영) 외 무관 1건 |
 | arXiv API | `all:"foundation model" AND all:fMRI AND all:"self-report"` | 0 |
 | arXiv API | `abs:fMRI AND abs:emotion AND abs:"context length"` | 0 |
 | arXiv API | `abs:fMRI AND abs:emotion AND abs:perturbation AND abs:video` | 0 |
