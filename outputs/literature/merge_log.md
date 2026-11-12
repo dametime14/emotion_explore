@@ -2,7 +2,7 @@
 
 * parse errors: 0
 
-* duplicate groups merged: 74
+* duplicate groups merged: 75
 
 * 10.1016/j.isci.2020.101060 (adversarial-reviewer) | doi:10.1016/j.isci.2020.101060 (brain-inspired) | 10.1016/j.isci.2020.101060 (dataset-auditor) | 10.1016/j.isci.2020.101060 (emotion-theory) | doi:10.1016/j.isci.2020.101060 (encoding-foundation) | 10.1016/j.isci.2020.101060 (generative-counterfactual) | doi:10.1016/j.isci.2020.101060 (geometry-info) | doi:10.1016/j.isci.2020.101060 (systems-neuro)
 * arXiv:2507.00320 (adversarial-reviewer) | arXiv:2507.00320 (dataset-auditor) | arXiv:2507.00320 (emotion-theory) | arXiv:2507.00320 (geometry-info) | arXiv:2507.00320 (llm-semantics) | arXiv:2507.00320 (systems-neuro) | arXiv:2507.00320 (vision-decoding)
@@ -25,6 +25,8 @@
 * doi:10.1016/j.neuron.2021.06.001 (brain-inspired) | doi:10.1016/j.neuron.2021.06.001 (systems-neuro)
 * doi:10.1073/pnas.1616056114 (brain-inspired) | doi:10.1073/pnas.1616056114 (geometry-info) | doi:10.1073/pnas.1616056114 (llm-semantics)
 * doi:10.1038/nn.4650 (brain-inspired) | doi:10.1038/nn.4650 (geometry-info)
+* doi:10.1037/emo0001619 (brain-inspired) | 10.1037/emo0001619 (dataset-auditor)
+* doi:10.1523/JNEUROSCI.1436-24.2025 (brain-inspired) | doi:10.1523/JNEUROSCI.1436-24.2025 (encoding-foundation) | 10.1523/JNEUROSCI.1436-24.2025 (generative-counterfactual) | doi:10.1523/JNEUROSCI.1436-24.2025 (vision-decoding)
 * 10.1371/journal.pbio.3003795 (dataset-auditor) | doi:10.1371/journal.pbio.3003795 (geometry-info)
 * 10.1002/hbm.70617 (dataset-auditor) | doi:10.1002/hbm.70617 (systems-neuro)
 * 10.1162/IMAG.a.1400 (dataset-auditor) | 10.1162/IMAG.a.1400 (multimodal-dynamics)
@@ -57,7 +59,6 @@
 * arXiv:2409.19407 (encoding-foundation) | arXiv:2409.19407 (systems-neuro)
 * arXiv:2501.00504 (encoding-foundation) | arXiv:2501.00504 (multimodal-dynamics)
 * doi:10.1038/s41562-025-02252-z (encoding-foundation) | 10.1038/s41562-025-02252-z (generative-counterfactual)
-* doi:10.1523/JNEUROSCI.1436-24.2025 (encoding-foundation) | 10.1523/JNEUROSCI.1436-24.2025 (generative-counterfactual) | doi:10.1523/JNEUROSCI.1436-24.2025 (vision-decoding)
 * doi:10.1126/sciadv.adk6840 (encoding-foundation) | 10.1126/sciadv.adk6840 (multimodal-dynamics)
 * doi:10.1038/s41467-021-25409-6 (encoding-foundation) | 10.1038/s41467-021-25409-6 (generative-counterfactual)
 * doi:10.7554/eLife.56601 (encoding-foundation) | doi:10.7554/eLife.56601 (geometry-info)

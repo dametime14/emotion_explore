@@ -116,7 +116,7 @@ Novelty는 Round 1 에이전트들의 자체 검색 범위 안에서만 유효�
 | # | Originating field | Imported technique | Target neuroscience problem | Potential dataset | Evidence for transfer | Novelty | Feasibility | 출처 |
 |---|---|---|---|---|---|---|---|---|
 | 55 | 강화학습 | distributional TD(채널별 비대칭 PE) | 통증 기대의 confirmation bias가 단일 채널 gain인가 다중 채널인가 | Spacetop social | doi:10.1038/s41586-019-1924-6, doi:10.1073/pnas.2513856123 | H | H | [BI I-1, Chain 4] |
-| 56 | 생태 심리, 체화 AI | affordance, action readiness | 정서 범주 표상 vs 행동 경향 표상 | Emo-FilM, Horikawa | doi:10.1073/pnas.2414005122 | H | H (Emo-FilM Motivation 항목), M (Horikawa 신규 주석) | [BI I-3, Chain 2] |
+| 56 | 생태 심리, 체화 AI | affordance, action readiness | 정서 범주 표상 vs 행동 경향 표상 | Emo-FilM, Horikawa | doi:10.1073/pnas.2414005122, doi:10.1093/cercor/bhad093, doi:10.1371/journal.pbio.3000900 | M (Stage 2 재점검: 정서 클립과 비디오게임 fMRI에서 approach/avoidance 등 component 네트워크 선행 연구 확인) | H (Emo-FilM Motivation 항목), M (Horikawa 신규 주석) | [BI I-3, Chain 2] |
 | 57 | active inference + world model | 관찰자 예측모형의 불확실성을 arousal로 정의 | Predictable, Suddenly, Alert 평정과 EDA, insula 반응 | Emo-FilM, Spacetop | arXiv:2407.02474, arXiv:2305.11772 | H | M | [BI I-4, Chain 5] |
 | 58 | 계산 인지신경과학 | 다중 과제 최적화와 특화 창발, lesion | 정서 전용 하위체계가 최적화에서 생기는가 | Horikawa | doi:10.1126/sciadv.abl8913, doi:10.1371/journal.pcbi.1011943 | H | M (C&K와 독립인 정서 학습 자료 필요) | [BI I-5, Chain 6] |
 | 59 | Connectomics | connectome-constrained 모형 | 개인 DWI 제약이 정서 경로 반응 예측을 개선하는가 | Spacetop (DWI) | doi:10.1038/s41586-024-07939-3 | H | M | [BI I-6] |
@@ -147,7 +147,13 @@ Novelty는 Round 1 에이전트들의 자체 검색 범위 안에서만 유효�
 ## 3. 관찰과 Stage 3로 넘길 점
 
 1. **가장 많이 겹친 수입 기술:** controversial selection(행 10, 12, 13), 피험자 간 공유 스펙트럼(행 9, 29), successor representation과 동역학 비교(행 16, 17, 41, 43), surrogate 라벨 통계(행 1, 2, 54). 여러 에이전트가 독립적으로 같은 기술을 제안했으므로 Stage 3 Round 2에서 한 질문으로 합치거나 역할을 나눌 후보다.
-2. **Novelty H이면서 Feasibility H로 시작하는 행이 73개 중 39개다.** 4개 데이터셋 원본을 모두 보유한다는 사용자 확인 덕분이다. 그러나 Novelty는 Round 1 검색 범위 기준이므로 Stage 4 선행연구 중복 감사가 반드시 필요하다.
+2. **Novelty H이면서 Feasibility H로 시작하는 행이 73개 중 38개다(Stage 2 재점검 후).** 4개 데이터셋 원본을 모두 보유한다는 사용자 확인 덕분이다. 그러나 Novelty는 Round 1 검색 범위 기준이므로 Stage 4 선행연구 중복 감사가 반드시 필요하다.
 3. **신규 수집이 필요한 행(Feasibility L)은 3개뿐이다**(행 12의 in vivo 검증, 행 36, R4). 대부분의 기회는 기존 데이터 재분석과 in-silico 모델 실험(R0~R1)이며, 인과 결론(R3 이상)으로 가려면 신규 fMRI가 필요하다는 점을 질문 단계에서 명시해야 한다(Deliverable B 0.2절 evidence-level).
 4. **누수 경고:** EmoNet(doi:10.1126/sciadv.aaw4358)을 Horikawa 분석의 feature나 평가기로 쓰는 행은 없도록 했다. 행 11, 58은 EmoNet과 독립인 정서 학습 자료가 필요하다.
 5. **라이선스:** TRIBE v2(CC BY-NC 4.0), jepa-intuitive-physics(CC-BY-NC) 등 비상업 조건이 있다. 연구 목적 사용은 가능하나 산출물 공개 조건을 확인해야 한다(Deliverable B, frontier-ai round1.md 2절).
+
+
+## 4. Stage 2 인용 검증과 재점검 반영
+
+* 인용 표본 검증(`outputs/literature/verification_sample.md`)에서 already_done "no" 판정 20개 중 5개(25%)가 실제로는 선행 수행된 것으로 드러났다. 이 표의 Novelty H도 같은 수준의 과대 판정 위험이 있다고 보고, Stage 3 Round 3와 Stage 4에서 행마다 다시 확인한다.
+* 재점검으로 판정이 바뀐 행: 56(H에서 M). emotion-theory chain C3(HOT 관찰 검정)도 doi:10.1093/cercor/bhad093 때문에 partially로 바뀌었다(`outputs/agents/emotion-theory/round1.md` 10.1절). brain-inspired Chain 1~3의 새로움 서술도 범위를 좁혔다(`outputs/agents/brain-inspired/round1.md`의 "(Stage 2 재점검 반영)" 메모).

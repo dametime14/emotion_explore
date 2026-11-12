@@ -21,6 +21,8 @@
 
 `already_done`에는 스키마의 no / partially / yes 외에 `unknown (미검색)`을 썼다. 이번 라운드에서 선행 수행 여부를 검색하지 못한 항목을 "no"로 적으면 사실과 달라지기 때문이다.
 
+(Stage 2 재점검 반영) `outputs/literature/verification_sample.md`의 지적에 따라 모든 future direction의 선행 수행 여부를 arXiv API, Crossref, PubMed MCP, WebSearch로 다시 검색했다(2026-11-12). `unknown`은 모두 없앴다: unknown 45개 중 15개는 no, 8개는 partially로 바꾸었고, 22개는 본문을 읽지 않은 논문의 '(본문 미열람)' 자리표시라 삭제했다. 기존 no 17개 중 6개를 partially로 바꾸었고(no→yes는 0개), partially 1개(Kragel 2021, 근거가 미검증 포스터)를 no로 바꾸었다. 판정이 no인 항목에는 `search_scope`, 판정을 바꾼 항목에는 `recheck_note`를 달았다. 재검색에서 근거로 찾은 논문 6편(Mohammadi 2023, Leitão 2020, Morgenroth 2026, Jang & Kragel 2025, Liu et al. 2025 bioRxiv, Thornton et al. 2019)을 jsonl에 추가해 총 56편(2024~2026년 21편, crossref 42, arxiv 9, pubmed 5)이 되었다. 아래 1절과 6절의 해당 항목 끝에 바뀐 내용을 적었다.
+
 ### 0.2 접근 제약 (사실 기록)
 
 * `pmc.ncbi.nlm.nih.gov`는 셸 curl 시 대부분 reCAPTCHA 페이지가 반환되어, PMC 전문은 PubMed MCP(`get_full_text_article`)로 읽었다.
@@ -37,6 +39,7 @@
   * HEmoN (Huang et al. 2024, arXiv:2408.00525): 위계 정서 영역을 정보 융합으로 찾는 모형. 초록과 본문 일부 확인.
   * AAAI의 dual-pathway(개념 경로 + 지각 경로) 얼굴 정서 인식 모형: WebSearch 결과에만 보였고 서지를 확인하지 못했다(search_index 수준, jsonl 미포함).
 * 권고: 사용자가 EmoPathway의 출처(저자, 학회, 링크)를 주면 재확인한다.
+* (Stage 2 재점검 반영) 같은 연구군(Ding, Keil, Fang)의 Liu et al. (2025, bioRxiv, doi:10.1101/2025.10.20.683439) Visual Cortex Amygdala(VCA) 모형도 후보에 추가한다. vision transformer와 편도체 모사 모듈을 feedforward로 연결하고 편도체 fMRI와 비교한다(초록 기준). EmoPathway라는 이름은 여기서도 보이지 않았다.
 
 ---
 
@@ -48,18 +51,21 @@
 * Thornton & Tamir (2017)는 정서 전이가 비대칭이고 유사도로 설명할 수 없다고 보고했다(Discussion 3번째 단락).
 * 저자들도 RL 기반 해마 모형과의 비교를 향후 과제로 남겼고(Discussion, Limitations 단락), graph형과 map형 표상의 관계도 열린 문제라고 적었다(Discussion 6번째 단락).
 * 근거: doi:10.1038/s41467-025-68240-z, doi:10.1073/pnas.1616056114, doi:10.1038/nn.4650, doi:10.1016/j.cell.2020.10.024
+* (Stage 2 재점검 반영) Thornton, Weaverdyck, Tamir (2019, doi:10.1523/JNEUROSCI.1431-18.2018)가 이미 현재 정신상태의 신경 패턴이 가능성 높은 미래 상태 패턴을 닮는다고 보고했다(사회 뇌, 특히 mPFC, 초록 기준). 따라서 "정신상태 표상에 전이 예측이 들어 있다"는 일반 주장은 신경 수준 선행이 있다. 남는 미해결 부분은 (a) 영화에서 경험된 정서 동역학, (b) 해마 SR/TEM 같은 특정 계산 모형 사이의 비교, (c) 대칭 유사도 성분을 통제한 방향성 검정이다.
 
 ### P-2. 정서 범주 표상은 '느낌'인가, 행동 affordance나 action readiness인가
 * Horikawa et al. (2020)은 수동 시청 중에도 이 시스템들이 "emotional experience (or affordances)"를 부호화한다고 쓰고, 정서를 반응 결정 전에 적응 행동을 준비시키는 시스템 전반의 적응으로 해석했다(Discussion 2번째 단락). 이 해석은 검증되지 않았다.
 * Bartnik et al. (2025)은 장면 affordance 표상이 물체, layout으로 환원되지 않으며 DNN feature가 affordance보다 물체 쪽에 정렬된다고 보고하고, 그 원인을 체화 결여로 보며 embodied AI와 vision-language-action 모형 비교를 제안했다(Discussion 7번째 단락과 마지막에서 둘째 단락).
 * Emo-FilM에는 행동 경향을 직접 묻는 Motivation 10항목(Stop, Undo, Repeat, Oppose, Tackle, Command, Support, Move, Care, Attention)의 1 Hz 별도 평정자 평정이 이미 있다(`dataset_EmoFilM.md` 항목표). 정서 범주와 행동 경향이 같은 뇌 분산을 설명하는지 직접 비교할 수 있는 드문 조건이다.
 * 근거: doi:10.1016/j.isci.2020.101060, doi:10.1073/pnas.2414005122, doi:10.1016/j.tics.2016.03.013, doi:10.1016/j.neubiorev.2022.104977
+* (Stage 2 재점검 반영) 위의 "검증되지 않았다"는 표현은 범위를 좁혀야 한다. component process model 기반 fMRI가 행동 경향 성분의 신경 네트워크를 이미 보고했다: Mohammadi et al. (2023, doi:10.1093/cercor/bhad093)은 정서 클립에서 approach/avoidance 경향을 포함한 component별 네트워크를 식별했고, Leitão et al. (2020, doi:10.1371/journal.pbio.3000900)은 상호작용 게임에서 motivation 등 component의 네트워크와 동기화를 보이며 체화되고 행동 지향적인 정서 해석을 지지했다(둘 다 초록 기준). 남는 미해결 부분은 Horikawa 34범주 표상과 행동 경향 모형의 **직접 경쟁**(어느 쪽 분산이 다른 쪽을 대체하는가)이다. 또 Morgenroth et al. (2026, doi:10.1037/emo0001619)은 Emo-FilM 평정에서 13개 이산 정서가 모두 component로 신뢰성 있게 예측된다고 보고해, 두 band의 공선성이 클 것임을 시사한다.
 
 ### P-3. 피질하 '빠른 경로'는 범주 특이 정보를 싣는가, 그 내용은 정말 '조잡한(coarse)' feature인가
 * Kragel et al. (2021)은 multivariate pathway identification(MPathI)으로 인간 상구-pulvinar-편도체 경로를 식별했고, 이 경로가 불쾌 이미지와 소리의 혐오성을 추적하지만 통증과 쾌 이미지에는 약하다고 보고했다. 편도체 연결은 low road, high road(시각피질), 개념적 top-down의 3개 성분으로 나뉘었다. 경로와 의식적 정서 경험의 관계는 추가 연구가 필요하다고 적었다.
 * Leem et al. (2026)의 DNN에서는 shortcut 경로가 조건화에 필요했다. 반면 McFadyen et al. (2017)은 pulvinar-편도체 연결이 공간주파수와 정서에 무관하다고 보고했다(WebSearch 요약 수준). 즉 "shortcut = 저공간주파수"라는 등식 자체가 불확실하다.
 * fMRI는 latency를 측정하지 못한다(Méndez-Bértolo 2016의 '빠른' 경로는 두개내 기록). 따라서 fMRI로 검정할 수 있는 것은 속도가 아니라 **경로가 싣는 표상 내용**뿐이다.
 * 근거: doi:10.1016/j.neuron.2021.06.001, arXiv:2607.19327, doi:10.1523/JNEUROSCI.3525-16.2017, doi:10.1038/nn.4324, doi:10.1126/sciadv.aaw4358
+* (Stage 2 재점검 반영) 편도체를 DNN feature로 encoding한 선행이 있다: Jang & Kragel (2025, doi:10.1523/JNEUROSCI.1436-24.2025)은 장편 영화 시청 fMRI로 편도체 하위영역 encoding 모형을 만들고 합성 자극으로 검증했고, Liu et al. (2025, bioRxiv, doi:10.1101/2025.10.20.683439)은 feedforward VCA 모형을 편도체 fMRI와 비교했다(둘 다 초록 기준). Badarnee et al. (2026, doi:10.7554/eLife.108043)은 위협 학습 중 pulvinar 분할 표상을 다뤘다. 남는 미해결 부분은 상구-pulvinar-편도체 **경로** 수준 표상 내용, 얕은 층 대 깊은 층 feature 비교, 34범주 비디오로의 확장, 그리고 recurrence다. 이전 판정에서 근거로 쓴 VSS 2026 포스터는 식별자로 확인하지 못해 근거에서 뺐다.
 
 ### P-4. 정서 계산 모형(active inference, RL agent)은 인간 데이터로 거의 검증되지 않았다
 * Hesp et al. (2021)은 valence를 행동모형 기대 precision의 갱신(affective charge)으로 정식화하고, 다음 단계로 신경영상과 행동 패러다임에 적합해 RL과 Bayesian model comparison을 하라고 명시했다(Future Empirical Directions 첫째, 둘째 단락).
@@ -67,6 +73,7 @@
 * Moerland et al. (2018)의 RL 정서 agent 서베이도 정서 동역학을 다루면 인간 경험 데이터와 비교해야 한다고 했다(Discussion, Testing and quality 단락).
 * PubMed(2021년 이후) 검색에서 affective inference 모형을 fMRI에 적합한 연구를 찾지 못했다.
 * 근거: doi:10.1162/neco_a_01341, arXiv:2407.02474, arXiv:2608.07480, doi:10.1007/s10994-017-5666-0
+* (Stage 2 재점검 반영) PubMed와 WebSearch로 다시 찾아도 affective inference 정서 모형을 인간 행동이나 fMRI에 적합한 연구는 찾지 못했다. 결론 유지. 다만 시간 맥락을 넣은 정식화(Hinrichs et al. 2025, arXiv:2506.08599, 시뮬레이션)는 이미 있다.
 
 ### P-5. 기대가 지각을 바꾸는 confirmation-biased learning은 뇌에서 어떻게 구현되는가
 * Yazdanpanah et al. (2026)은 통증, vicarious pain, 인지 노력에서 cue와 일치하는 PE에 learning rate가 더 큰 confirmation bias를 행동 수준에서 보였다. 저자들은 표준 Bayesian predictive coding이 이 비대칭을 포착하지 못한다고 하고, 기계적 설명으로 "양/음 강화에 서로 다른 뉴런 하위집단" 또는 metaplasticity를 제시했다(Discussion, predictive processing 단락).
@@ -74,6 +81,7 @@
 * Jepma et al. (2018)은 기대가 수정하는 통증 처리 단계의 특정, 그리고 기대, 기분, 정동 학습의 상호작용을 미해결로 남겼다(Discussion 후반).
 * Lin et al. (2025)이 보상 과제 7T에서 PPE/NPE 분리와 learning rate 편향의 신경 상관을 보였지만(초록 기준), cue 일치성에 따라 비대칭이 바뀌는 조건부 비대칭과 통증/사회 cue 맥락은 다루지 않았다.
 * 근거: doi:10.1073/pnas.2513856123, doi:10.1038/s41586-019-1924-6, doi:10.1038/s41562-018-0455-8, doi:10.1073/pnas.2500815122, doi:10.7554/eLife.24770
+* (Stage 2 재점검 반영) distributional 부호는 도파민 밖에서도 보고되었다: Muller et al. (2024, doi:10.1038/s41593-023-01535-w)은 macaque ACC, Sousa et al. (2025, doi:10.1038/s41586-025-09089-6)은 도파민 뉴런의 다차원 분포 지도를 보고했다(모두 단일 뉴런). 동적 precision 기반 통증 기대 학습(HGF) 모형도 있다(Drusko et al. 2023, doi:10.1038/s41598-023-29758-8). 위약 기대가 NPS(상향식 통각 신호)에는 매우 작게 작용한다는 메타분석(Zunhammer et al. 2018, doi:10.1001/jamaneurol.2018.2017)은 "기대가 어느 처리 단계를 바꾸는가"에 부분적으로 답한다. 인간 fMRI에서 cue 일치성에 따른 조건부 PE 비대칭을 검정한 연구는 여전히 찾지 못했다.
 
 ### P-6. 정서에 전용 처리 구조가 필요한가, 범용 시각 표상에서 창발하는가
 * Liu et al. (2024)은 물체 인식만 학습한 CNN에서 정서 선택 unit이 창발하고 lesion하면 정서 인식이 저하됨을 보였으나, 3범주(쾌/불쾌/중립)만 다뤘고 신경 기록과 비교하지 않아 신경적 관련성은 추측적이라고 적었다(Limitations).
@@ -133,6 +141,7 @@
 | I-6 | Connectomics: connectome-constrained 모형 | 세포 수준 인간 connectome은 없으므로, 개인 DWI tractography 연결 강도를 피질하-피질 정서 경로 RNN의 구조 제약으로 사용. 제약이 개인별 반응 예측을 개선하는지 검정 | Spacetop (ses-01에 DWI 있음, `dataset_Spacetop.md`) | doi:10.1038/s41586-024-07939-3, doi:10.1038/s42256-023-00748-9 |
 | I-7 | Computational ethology: 자동 행동 분할(ethogram) | 화면 속 행위자의 pose 기반 행동(접근, 회피, 얼어붙음, 돌봄)을 portrayed behavior feature로 만들어 evoked 정서와 분리. CLAUDE.md의 "자극에 묘사된 정서 vs 참가자 경험" 구분을 feature 수준에서 구현 | Horikawa, Emo-FilM, Spacetop (G1 필요) | doi:10.1016/j.neuron.2021.05.021, doi:10.7554/eLife.75027, arXiv:2204.12484 |
 | I-8 | Active perception: saliency/시선 모형 | Horikawa 원 저자가 남긴 시선 교란(Limitations 마지막 단락)을 예측 saliency로 통제하고, 정서별 시선 분포 차이가 transmodal 정서 패턴을 얼마나 설명하는지 추정. NSD 일부 세션 eye tracking으로 예측 saliency의 타당성 점검 가능성(품질 가변, Stage 1 보고서) | Horikawa, NSD | doi:10.1016/j.isci.2020.101060, arXiv:2105.12441 |
+| I-8 보완 | (Stage 2 재점검 반영) MR 기반 시선 추정 | eye tracker가 없는 Horikawa에서도 안구 MR 신호로 시선을 추정하는 DeepMReye(doi:10.1038/s41593-021-00947-w)와 영화 시청 fMRI 시선 예측(Gao et al. 2026, doi:10.1093/psyrad/kkag026)을 쓰면 예측 saliency보다 직접적인 시선 교란 변수를 만들 수 있다. 전제: Horikawa raw BIDS의 촬영 범위에 안구가 들어 있는지 확인 필요(미확인) | Horikawa, Emo-FilM | doi:10.1038/s41593-021-00947-w, doi:10.1093/psyrad/kkag026 |
 | I-9 | Homeostatic RL | 참가자 생리(심박, EDA)를 내부 상태로 삼아 "항상성 편차 변화"가 어떤 정서 항목과 뇌 반응을 설명하는지, 설명하지 못하는 정서(사회, 미적)는 무엇인지 분리 | Emo-FilM (G1 불필요) | doi:10.7554/eLife.04811, doi:10.1101/2024.06.03.597087, doi:10.1016/j.tins.2020.09.012 |
 
 ---
@@ -176,6 +185,7 @@
 * **핵심 검정 논리:** SR(T)와 SR(T')는 대칭 성분이 같고 방향만 다르다. 뇌가 SR(T)를 SR(T')보다 유의하게 더 잘 따르면 '예측 방향' 증거, 차이가 없으면 Ma & Kragel의 지도는 유사도 구조로 충분히 설명된다(반증 조건).
 * **주의:** 전이는 fMRI 참가자 것이 아니라 별도 평정자 consensus이며 평정자 내 z-score 값이다. 14편뿐이라 전이가 서사 특이적일 수 있다(영화 수준 confound). HRF 지연과 시계열 자기상관 보정 필요. Ma & Kragel의 효과 크기가 작아(r 약 0.04~0.10, Stage 1 보고서) 검정력이 걱정된다.
 * **G1:** 불필요. **overlap: Emo-FilM 연구** (같은 데이터셋에서 정서 맥락과 시간 정보의 기여를 다룸. 방법은 다름). Stage 1 보고서 5.2 #5가 이 방향을 "Ma & Kragel partially"로 이미 표시했다.
+* (Stage 2 재점검 반영) 가장 가까운 신경 선행은 Thornton, Weaverdyck, Tamir (2019, doi:10.1523/JNEUROSCI.1431-18.2018)다. 정신상태를 생각하는 과제에서 현재 상태의 패턴이 가능성 높은 미래 상태 패턴을 닮았다(mPFC 중심). Chain 1은 이 결과를 출발점으로 삼고, 새로움은 (a) 영화 정서 동역학에서 추정한 전이, (b) 해마 SR과 TEM의 비교, (c) SR(T) 대 SR(T')의 방향성 검정으로 한정한다. Thornton 2019가 대칭 유사도를 통제했는지는 초록으로 확인하지 못했으므로 Round 2 전에 본문을 확인해야 한다. 재검색(arXiv, Crossref, WebSearch)에서 SR이나 RL 모형으로 해마-vmPFC 정서 표상을 예측한 연구는 여전히 찾지 못했다.
 
 ### Chain 2. 정서 범주인가, 행동 경향인가 (Emo-FilM, Horikawa)
 
@@ -187,6 +197,7 @@
 * **결과 해석:** 행동 경향 band가 범주 band의 분산 대부분을 흡수하면 Horikawa의 '정서 경험' 해석보다 'affordance' 해석이 유리하다. 범주 고유 분산이 크게 남으면 범주가 행동 준비로 환원되지 않는다. 두 결과 모두 정서 이론(기능주의적 action readiness vs 범주적 느낌)에 정보를 준다.
 * **주의:** 같은 평정자 집단이 두 종류 항목을 평정하면 공선성이 크다(Emo-FilM은 항목별로 평정자 블록이 다른지 확인 필요). MLLM 주석은 AI 추정이다. Horikawa 라벨은 별도 평정자 규범 평정이다.
 * **G1:** Emo-FilM 분석은 불필요, Horikawa 신규 주석은 필요. **overlap: EmoViS** (affective geometry의 기원을 묻는다는 점에서 부분), **Emo-FilM 연구** (같은 데이터셋, 부분).
+* (Stage 2 재점검 반영) 선행 수행 판정을 no에서 partially로 바꾸었다. component 모형 fMRI(Mohammadi et al. 2023, doi:10.1093/cercor/bhad093; Leitão et al. 2020, doi:10.1371/journal.pbio.3000900)가 approach/avoidance 경향과 motivation 성분의 뇌 네트워크를 이미 보고했다. 따라서 Chain 2의 새로움은 "행동 경향의 신경 표상 발견"이 아니라 "34범주 또는 13개 이산 정서 band가 행동 경향 band로 얼마나 대체되는가"라는 경쟁 검정이다. Morgenroth et al. (2026, doi:10.1037/emo0001619)이 Emo-FilM 평정에서 이산 정서가 component로 잘 예측된다고 보고했으므로, 파일럿 첫 단계는 두 band의 평정 수준 공선성(예: 교차 예측 R²)부터 계산해 분산 분할이 가능한지 판단하는 것이다.
 
 ### Chain 3. 피질하 경로가 싣는 정서 정보의 내용 (Horikawa)
 
@@ -198,6 +209,7 @@
 * **반증 조건:** 경로 정보가 깊은 층 feature로 모두 설명되고 얕은 feature가 고유 분산을 더하지 못하면, '조잡한 shortcut' 가설은 표상 내용 수준에서 지지되지 않는다(latency 가설은 이 데이터로 판단 불가).
 * **주의:** 3T 2 mm에서 상구, pulvinar는 부분 용적 문제가 크다(Kragel 2021은 3T에서도 다변량 접근으로 식별 가능하다고 보고). Horikawa 전처리본은 피험자 native 공간이므로 ROI를 피험자별로 정의한다. EmoNet은 Horikawa와 같은 자극 원천으로 학습되었으므로 사용 금지 또는 누수 명시. Horikawa는 무음이다.
 * **G1:** 필요. **overlap: EmoViS** (sensory-semantic 기원과 부분).
+* (Stage 2 재점검 반영) Jang & Kragel (2025, doi:10.1523/JNEUROSCI.1436-24.2025)이 영화 시청 fMRI에서 편도체 하위영역의 DNN encoding 모형을 이미 만들었다. Chain 3은 이 모형을 baseline으로 쓰고, 새로움을 경로(MPathI) 수준과 얕은 층 대 깊은 층 feature 비교로 한정한다. 경로와 주관적 경험의 관계에 대한 Kragel 2021 future direction은 검증 가능한 후속을 찾지 못해 no로 바꾸었다.
 
 ### Chain 4. Confirmation-biased learning의 신경 구현 (Spacetop social)
 
@@ -210,6 +222,7 @@
 * **반증 조건:** voxel 비대칭 이질성이 신뢰할 만하지 않으면 (b)는 지지되지 않는다. 일치성 gain 효과도 없으면 행동 편향은 PE 부호화가 아니라 판단, 보고 단계에서 생긴다는 해석(Jepma 2018 Discussion이 언급한 후기 단계 효과)이 남는다.
 * **주의:** voxel은 뉴런이 아니므로 (b)가 지지되어도 distributional code를 확증하지는 못한다(이론적으로 가능하지만 fMRI로 구분할 수 없는 설명). cue는 기만 설계이고, 명시적 기대 평정 자체가 기대 지속을 만들 수 있다(Jepma 2018). 조건별 learning rate의 개인 수준 신뢰도가 낮다(Yazdanpanah Discussion 5번째 단락).
 * **G1:** 불필요(events.tsv + fMRI). **overlap: 없음.**
+* (Stage 2 재점검 반영) 비교 모형에 HGF 계열 동적 precision 모형(Drusko et al. 2023, doi:10.1038/s41598-023-29758-8)을 추가한다. Yazdanpanah 2026이 표준 predictive coding으로는 비대칭을 설명하지 못한다고 한 주장을 같은 데이터로 직접 검정하는 비교군이다. distributional 부호의 근거는 ACC(Muller et al. 2024)와 도파민 다차원 지도(Sousa et al. 2025)로 넓어졌지만 모두 단일 뉴런 기록이라, fMRI voxel 수준 해석의 한계는 그대로다.
 
 ### Chain 5. 정서 계산 이론의 인간 데이터 benchmark (Spacetop social, narratives; Emo-FilM)
 
@@ -232,6 +245,7 @@
 * **결과 해석:** 분리가 없거나 분리 unit이 시각피질만 예측하면, 정서 정보는 공유 시각 표상의 읽기 결과라는 '시각 내재' 견해(Kragel 2019, Liu 2024)가 유리하다. 분리 unit이 transmodal을 선택적으로 예측하면 전용 경로 가설이 유리하다. 단 망의 분리가 뇌의 필연성을 뜻하지는 않는다(Dobs의 음식 사례).
 * **주의:** Horikawa는 반복 제시가 없어 noise ceiling이 없다. 정확도 경쟁이 아니라 lesion에 따른 영역별 설명량 변화가 결과 지표다.
 * **G1:** 필요. **overlap: EmoBrain** (34차원 profile을 다루는 경우 부분), **EmoViS** (부분).
+* (Stage 2 재점검 반영) Liu 2024의 "신경 기록 비교 없음" 한계에는 후속이 있다: 같은 연구군의 VCA 모형(Liu et al. 2025, bioRxiv, doi:10.1101/2025.10.20.683439)이 편도체 fMRI와 비교되었고, Jang & Kragel 2025가 편도체 DNN encoding을 했다. 다만 둘 다 이중 과제에 따른 분리 여부나 lesion에 따른 영역별 설명량 변화는 다루지 않았다(초록 기준). Dobs 2022의 inductive bias 질문은 항법 RL agent에서 부분적으로 다뤄졌다(Zhang, Pitkow, Angelaki 2022, bioRxiv, doi:10.1101/2022.12.07.519515). 정서 과제 적용은 찾지 못했다.
 
 ### Chain 7. 영화 속 정서 momentum (Emo-FilM)
 
@@ -293,3 +307,5 @@
 7. Spacetop narratives 평정의 결측률과 clip 수(`dataset_Spacetop.md`에 구조만 있음).
 8. Yoshida 2024 Neural Networks 논문 본문(제목, 저자만 확인), Stachenfeld 2017, Whittington 2020 등 `discussion_read: "no"` 14편의 본문.
 9. Chain 1의 선행 수행 여부는 arXiv와 PubMed 검색 기준이며 bioRxiv 최신 preprint는 빈도 제한으로 충분히 검색하지 못했다.
+10. (Stage 2 재점검 반영) 재점검에서 근거로 추가한 6편은 초록만 확인했다. 특히 Thornton et al. 2019의 대칭 유사도 통제 여부, Mohammadi et al. 2023의 component별 네트워크가 정서 범주 모형과 비교되었는지, Jang & Kragel 2025의 편도체 하위영역 결과는 본문 확인이 필요하다.
+11. (Stage 2 재점검 반영) Onat & Büchel 2015(CS-US 패턴 유사성)는 WebSearch로 본 리뷰 요약에만 근거한 partially 판정이다. Horikawa raw BIDS 촬영 범위에 안구가 포함되는지(DeepMReye 적용 조건)도 미확인이다.
