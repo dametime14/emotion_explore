@@ -102,8 +102,8 @@
 
 | already_done | 편수 |
 |---|---|
-| no | 370 |
-| partially | 235 |
-| unknown | 45 |
-| 미확인 | 15 |
-| yes | 9 |
+| no | 366 |
+| partially | 239 |
+| unknown | 23 |
+| 미확인 | 14 |
+| yes | 10 |

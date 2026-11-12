@@ -42,6 +42,20 @@ def norm_text(s):
     return re.sub(r"\s+", " ", s).strip()
 
 
+PLACEHOLDER_RE = re.compile(r"^\(?\s*(본문\s*미열람|본문\s*미확인|미확인|없음|n/?a|-)\s*\)?$", re.I)
+
+
+def is_placeholder_fd(text):
+    return bool(PLACEHOLDER_RE.match(str(text or "").strip()))
+
+
+def already_done_rank(value):
+    v = str(value or "").strip().lower()
+    has_id = 1 if re.search(r"(10\.\d{4,9}/|arxiv[:\s]*\d{4}\.\d{4,5})", v) else 0
+    base = 2 if v.startswith("yes") else 1 if v.startswith("partially") else 0 if v.startswith("no") else -1
+    return (has_id, base)
+
+
 def is_verified(vb):
     v = str(vb or "").strip().lower()
     if not v or "search" in v or "unverified" in v or v.startswith("none"):
@@ -182,19 +196,30 @@ def merge_group(group):
     agents = sorted({str(r.get("added_by") or r["_agent_dir"]).strip() for r in group}
                     | {r["_agent_dir"] for r in group})
     out["added_by"] = "; ".join(agents)
-    fds, seen = [], set()
+    fds, seen = [], {}
     for r in group:
         for fd in (r.get("future_directions") or []):
             if isinstance(fd, str):
                 fd = {"text": fd, "section": "", "already_done": ""}
             if not isinstance(fd, dict):
                 continue
+            if is_placeholder_fd(fd.get("text")):
+                continue  # "(본문 미열람)" 같은 자리표시 항목은 future direction으로 세지 않음
             key = norm_text(fd.get("text"))[:200]
-            if key and key not in seen:
-                seen.add(key)
-                fd = dict(fd)
-                fd["from"] = r["_agent_dir"]
+            if not key:
+                continue
+            fd = dict(fd)
+            fd["from"] = r["_agent_dir"]
+            if key not in seen:
+                seen[key] = len(fds)
                 fds.append(fd)
+            else:
+                # 같은 future direction의 already_done이 기록마다 다르면 근거 ID가 있는 판정,
+                # 그다음 더 강한 판정(yes > partially > no)을 우선한다.
+                old = fds[seen[key]]
+                if already_done_rank(fd.get("already_done")) > already_done_rank(old.get("already_done")):
+                    fd["merged_from"] = old.get("from")
+                    fds[seen[key]] = fd
     out["future_directions"] = json.dumps(fds, ensure_ascii=False)
     out["n_future_directions"] = len(fds)
     for f in ("relevance", "novelty", "feasibility"):

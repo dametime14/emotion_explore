@@ -6,7 +6,7 @@
 
 ## 0. 요약과 선별 방법
 
-1. **전체 future direction:** 문헌 DB의 future_directions는 674개다(`outputs/literature/future_directions_all.csv`, 한 줄에 하나). 그중 verified 논문이고 본문(full_text)을 읽었으며 already_done이 no 또는 partially인 후보는 **604개**다. already_done = yes는 9개(제외), unknown이나 미확인은 60개, 본문을 읽지 않은 논문에서 나온 항목은 25개다. 본문을 읽지 않은 항목은 CLAUDE.md 5절에 따라 future direction으로 쓰지 않는다.
+1. **전체 future direction:** 문헌 DB의 future_directions는 652개다(`outputs/literature/future_directions_all.csv`, 한 줄에 하나). 그중 verified 논문이고 본문(full_text)을 읽었으며 already_done이 no 또는 partially인 후보는 **604개**다. already_done = yes는 10개(제외), unknown이나 미확인은 37개, 본문을 읽지 않은 논문에서 나온 항목은 3개다. 본문을 읽지 않은 항목은 CLAUDE.md 5절에 따라 future direction으로 쓰지 않는다.
 2. **선별:** 604개를 하나씩 재판단하는 대신, 11개 에이전트가 P1 6절에서 만든 **Discussion-to-Research chain 80개**를 선별 결과로 쓴다. chain은 "원 논문 Discussion의 미해결 문제 → 그 뒤의 기술 발전 → 보유 데이터셋 조합 → 새 질문" 형식이며 원문 위치를 달고 있어, 지침의 선별 기준(2026년 모델이나 보유 데이터셋으로 새로 해결 가능)과 같은 판단을 이미 거쳤다. Coordinator는 chain을 주제 9개로 묶고 "지금 가능해진 이유"를 한 줄로 요약했다.
 3. **선행 수행 여부:** chain의 already_done 판단은 각 에이전트의 검색 범위 안에서만 유효하다. Stage 3 Round 3와 Stage 4 선행연구 중복 감사에서 다시 확인한다.
 4. **데이터:** 사용자 확인으로 4개 데이터셋의 원본 자극을 모두 보유하므로 G1 필요 chain도 실행 가능하다. 단 VD-R2는 4개 보유 데이터셋 밖의 Horikawa 2025 Mind captioning 데이터(OpenNeuro ds005191)가 필요하다.
@@ -26,12 +26,12 @@ chain의 Original Finding(출발 논문)과 Unresolved Question(미해결 문제
 | Du C, Lu Y, Huang Z, Sun Y, Zhou Z, 외, 2025, Bridging the behavior-neu... (arxiv:2509.24298) | 3 | 3 |
 | Jang G, Kragel PA (2025). Understanding Human Amygdala Function with A... (doi:10.1523/jneurosci.1436-24.2025) | 3 | 3 |
 | Mohammed BA, Gu L, Fang R (2026). EmoMind: Decoding Affective Captions... (arxiv:2605.16739) | 1 | 5 |
-| Horikawa T, 2025, Mind captioning: Evolving descriptive text of mental... (doi:10.1126/sciadv.adw1464) | 3 | 2 |
 | Tak AN, Gratch J, 2024, GPT-4 Emulates Average-Human Emotional Cogniti... (arxiv:2408.13718) | 3 | 2 |
+| Horikawa T, 2025, Mind captioning: Evolving descriptive text of mental... (doi:10.1126/sciadv.adw1464) | 3 | 2 |
+| Abdel-Ghaffar SA, Huth AG, Lescroart MD, Stansbury D, Gallant JL, Bish... (doi:10.1038/s41467-024-49073-8) | 2 | 2 |
 | Tak AN, Banayeeanzade A, Bolourani A, Kian M, Jia R, Gratch J (2025). ... (arxiv:2502.05489) | 2 | 2 |
 | Doerig A, Kietzmann TC, Allen E, Wu Y, Naselaris T, Kay K, Charest I, ... (doi:10.1038/s42256-025-01072-0) | 2 | 2 |
-| Abdel-Ghaffar SA, Huth AG, Lescroart MD, Stansbury D, Gallant JL, Bish... (doi:10.1038/s41467-024-49073-8) | 2 | 2 |
-| Zaffina L, Diano M, Petruso F, Preti MG, Amico E, Morgenroth E, Petri ... (doi:10.64898/2026.09.26.754452) | 3 | 0 |
+| Isik AI, Vessel EA (2021). From visual perception to aesthetic appeal:... (doi:10.3389/fnhum.2021.676032) | 2 | 1 |
 
 Horikawa 2020(1순위 데이터셋 원 논문), Ma & Kragel 2026(Emo-FilM의 '이미 수행됨' 기준점), Cowen & Keltner 2017, Westlin 2025가 가장 많이 이어졌다. Kragel 2019(EmoNet)는 출발점보다 미해결 문제 근거로 더 많이 쓰였는데, 대부분 Horikawa와 같은 자극으로 학습된 누수 문제를 지적하는 맥락이다.
 
@@ -193,14 +193,12 @@ Horikawa 2020(1순위 데이터셋 원 논문), Ma & Kragel 2026(Emo-FilM의 '�
 
 | verified | discussion_read | already_done | 개수 |
 |---|---|---|---|
-| True | full_text | no | 369 |
-| True | full_text | partially | 235 |
+| True | full_text | no | 365 |
+| True | full_text | partially | 239 |
 | True | full_text | unknown | 21 |
-| True | full_text | 미확인 | 15 |
-| True | no | unknown | 13 |
-| True | abstract_only | unknown | 9 |
-| True | full_text | yes | 9 |
-| True | search_summary | unknown | 2 |
+| True | full_text | 미확인 | 14 |
+| True | full_text | yes | 10 |
+| True | abstract_only | unknown | 2 |
 | True | abstract_only | no | 1 |
 
 * unknown과 미확인으로 남은 항목은 선행 수행 검색을 하지 못한 것이다. Stage 3에서 해당 future direction을 쓰는 조합이 나오면 그때 검색한다.
