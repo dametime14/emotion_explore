@@ -2,7 +2,7 @@
 
 * 작성: Coordinator (Stage 2)
 * 기준일: 2026-11-12
-* 입력: `reference/axes.md`, 11개 에이전트의 `outputs/agents/<이름>/round1.md` (1절 미해결 문제, 2절 모델, 5절 Sub-axis, 7절 Axis 확장 제안), `outputs/literature/literature_db.csv` (verified 고유 365편)
+* 입력: `reference/axes.md`, 11개 에이전트의 `outputs/agents/<이름>/round1.md` (1절 미해결 문제, 2절 모델, 5절 Sub-axis, 7절 Axis 확장 제안), `outputs/literature/literature_db.csv` (작성 시점 verified 고유 365편, Stage 2 재점검 후 377편)
 * 표기: `[에이전트]`는 제안한 에이전트, 논문은 DOI 또는 arXiv ID. 대표 논문은 해당 Axis의 담당 에이전트가 추가한 verified 논문을 우선해 `literature_db.csv`에서 뽑았다. 미해결 문제와 Sub-axis 제안의 세부 근거는 각 에이전트 round1.md의 해당 절에 있다.
 * 이 문서는 Round 1(독립 탐색)의 결과다. 에이전트 간 교차 검토(Round 2~3)를 거치지 않았으므로 Sub-axis 제안은 후보이며, 겹치는 제안은 Coordinator가 묶었다.
 
@@ -296,4 +296,4 @@ Axis가 아니라 Stage 3 이후 모든 후보 질문에 붙이는 표기로 둔
 
 * Round 1은 독립 탐색이므로 Sub-axis 제안 간 중복과 충돌을 에이전트들이 서로 검토하지 않았다. 묶음과 채택 판정은 Coordinator 판단이며 Stage 3 Round 2~3에서 수정될 수 있다.
 * 대표 논문은 DB의 relevance 점수와 담당 에이전트 기준으로 자동 선별했다. relevance는 각 에이전트의 자기 평가 점수다.
-* 문헌 수치는 Round 1 시점 `literature_db.csv`(고유 377편, verified 365편) 기준이다. 인용 표본 검증 결과는 `outputs/literature/verification_sample.md`에 있다.
+* 대표 논문 선별은 Round 1 시점 `literature_db.csv`(고유 377편, verified 365편) 기준이다. Stage 2 재점검 후 DB는 고유 381편, verified 377편이다. 인용 표본 검증 결과는 `outputs/literature/verification_sample.md`에 있다.

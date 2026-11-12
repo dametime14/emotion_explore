@@ -18,6 +18,14 @@ Stage 3에서 SendMessage로 같은 에이전트를 재개할 때 쓰는 ID 목�
 | brain-inspired | a33e66f5a273664cb | N / RL, Embodied, Ecological, Active Perception, Computational Ethology | `outputs/agents/brain-inspired/` |
 | adversarial-reviewer (Round 1, Axis T 문헌) | a60f877c6ca18a5c0 | T | `outputs/agents/adversarial-reviewer/` |
 
+## Stage 2 추가 실행
+
+| 역할 | agent ID | 산출물 |
+|---|---|---|
+| adversarial-reviewer (인용 표본 검증 25편, 새 인스턴스) | ae6e9472df114224e | `outputs/literature/verification_sample.md` |
+
+재점검은 위 표의 brain-inspired, emotion-theory 인스턴스와 Stage 1의 dataset-auditor (NSD) 인스턴스를 SendMessage로 재개해 수행했다.
+
 ## Stage 1 (참고, general-purpose 에이전트가 정의 파일을 읽고 수행)
 
 | 역할 | agent ID | 산출물 |

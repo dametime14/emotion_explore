@@ -103,3 +103,65 @@
 | Emo-FilM | **보유** | 크레딧 절단본 여부는 미확인 (보유 파일이 연구 판본과 같은지 확인 필요) |
 | Spacetop | **보유** | |
 | NSD | **보유** | |
+
+---
+
+## Stage 2: Axis Discovery & Literature Review (Round 1)
+
+* 상태: **완료** (2026-11-12). Stage 3는 사용자 확인 전까지 시작하지 않는다.
+* 산출물: Deliverable B, C, D, E(초안)
+
+| 파일 | 내용 |
+|---|---|
+| `outputs/literature/literature_db.csv` | **Deliverable C.** 고유 381편, **verified 377편**. 생성 스크립트 `outputs/literature/merge.py` |
+| `outputs/literature/stats.md` | Axis별, 연도별, discussion_read, 에이전트별 통계 |
+| `outputs/literature/verification_sample.md` | 인용 표본 검증 25편 (시드 20261112) |
+| `outputs/axis_encyclopedia.md` | **Deliverable B.** Axis A~T 정리, 새 Axis U~Y, 필수 태그 6종, 갱신된 유형표, 이견 기록 |
+| `outputs/future_directions.md` | **Deliverable D.** Discussion-to-Research chain 80개를 9개 주제로 정리, 두 논문의 limitation 연결 질문 15개. 생성 스크립트 `outputs/literature/build_future_directions.py` |
+| `outputs/literature/future_directions_all.csv`, `chains_index.csv` | 전체 future direction 656개, chain 80개의 구조화 목록 |
+| `outputs/opportunity_map.md` | **Deliverable E 초안.** 다른 분야 → 정서 65행, 역방향 8행 |
+| `outputs/agents/<이름>/round1.md`, `literature.jsonl` | 11개 에이전트의 Round 1 결과 |
+| `outputs/agent_registry.md` | Stage 3 재개용 agent ID (이 세션 안에서만 유효) |
+
+### 실행 방식 (사실 기록)
+* 11개 에이전트를 커스텀 에이전트 타입으로 병렬 실행했다(emotion-theory, vision-decoding, encoding-foundation, multimodal-dynamics, frontier-ai, geometry-info, systems-neuro, generative-counterfactual, llm-semantics, brain-inspired, adversarial-reviewer). 에이전트당 약 25~29분, 36만~47만 토큰.
+* 네트워크: 사용자 승인으로 이 저장소 전용 환경 "emotion_explore"를 만들어 논문 사이트 20곳을 허용했다. 그래도 nature.com(봇 차단 403), PMC 웹(reCAPTCHA), Semantic Scholar와 bioRxiv(429), huggingface.co, GitHub 웹 일부, ojs.aaai.org, sas-space.sas.ac.uk 등은 열리지 않았다. PMC 전문은 PubMed 도구로 읽었다.
+* verified 고유 논문이 100편을 넘었으므로(377편) 추가 조사(2절 4번)는 하지 않았다.
+
+### 검증 결과
+* **인용 표본 25편:** 식별자 오류 0, verified_by 표기 오류 0, 본문을 읽지 않고 Discussion에서 가져온 것처럼 쓴 경우 0. 내용(한계 단락 위치) 오류 1건.
+* **already_done 오판:** "no"로 적힌 판정 20개를 재검색하니 5개(25%)가 실제로는 선행 수행되어 있었다.
+* **재점검 (지침 3절):** brain-inspired(already_done 전체 재검색, unknown 45개 해소, no → partially 6건, round1.md 과대 서술 15곳 범위 축소), emotion-theory(full_text 18편 점검, 판정 7건 변경, 한계 출처 7건 수정, chain C3 no → partially), dataset-auditor NSD(미확인 15개 해소, search_index 11편을 식별자 경로로 재확인). 나머지 5개 에이전트의 개별 판정 5건은 Coordinator가 수정했다. 이제 already_done 값은 no 377, partially 268, yes 11이며 비표준 값은 없다.
+* 재점검을 하지 않은 에이전트(adversarial-reviewer, encoding-foundation, frontier-ai, generative-counterfactual, geometry-info, llm-semantics, multimodal-dynamics, systems-neuro, vision-decoding)의 "no" 판정에도 같은 수준(약 25%)의 과대 판정 위험이 남아 있다. Stage 3 Round 3("이미 연구된 것은 아닌가")와 Stage 4 선행연구 중복 감사에서 실제로 쓰이는 항목마다 다시 확인한다.
+
+### Round 1의 주요 발견 (요약)
+1. **EmoNet 누수:** Kragel 2019 EmoNet은 Horikawa와 같은 Cowen & Keltner 비디오로 학습되었다(5개 에이전트가 원문 Methods로 각각 확인). Horikawa 분석의 feature나 평가기로 쓰면 안 된다.
+2. **사전학습 데이터 겹침 없음:** TRIBE v2, CortexMAE 등 fMRI foundation model의 사전학습 데이터에 우리 4개 데이터셋은 없다(NSD는 일부 평가에만 쓰였다). 같은 자극으로 실측과 in-silico 예측을 비교할 수 있다.
+3. **Westlin 2025 재분석의 해석:** 4개 에이전트가 독립적으로, 군집이 scan session과 run에 더 강하게 대응한다는 점(NMI 0.19, 0.17 vs 정서 평정 0.014)을 지적했다. "재현 실패"가 분석 가정과 잡음 구조 때문일 가능성이 있다(에이전트 해석, 검증 필요).
+4. **Horikawa 2020 결론의 약점:** 정서, 시각, 의미 모델을 따로 적합해 비교했으므로 의미 공변량의 측정 오차가 정서 고유 기여를 부풀릴 수 있다(doi:10.1371/journal.pone.0152719).
+5. **Ma & Kragel 2026의 빈칸:** TEM 환경이 대칭 유사도 위 무작위 보행이라 실제 정서 전이 방향이 모형에 없고, 효과 크기가 작으며(r 약 0.04~0.10), appraisal 항목과 참가자 생리를 쓰지 않았다.
+6. **생성 모델의 공백:** 정서를 조작하면 의미 내용도 함께 바뀐다(NeuroVolve 2025: amygdala 최대화가 얼굴, 최소화가 건물). 의미를 고정한 정서 편집이 비어 있다.
+
+### 미확인과 미해결 사항
+* chain에 인용되었지만 DB에 없는 식별자 2개(arXiv:2111.14232, arXiv:2204.00673)
+* 모델 checkpoint와 코드 라이선스 다수(huggingface.co, GitHub 차단으로 검색 수준)
+* Cowen & Keltner (2017) 외 일부 고전 논문의 SI(pnas.org SI 접근 실패), LeDoux & Brown (2017) SI Box 10
+* Stage 1의 미확인 항목(Deliverable A 7절)은 사용자의 데이터 보유 확인으로 G1 관련 항목이 대부분 해소되었고, 나머지는 그대로다
+
+---
+
+## 사용자 확인 필요 (Stage 3 시작 전)
+
+### 꼭 필요한 것
+16. **Horikawa 2025 Mind captioning 데이터(OpenNeuro ds005191) 사용 여부.** Horikawa 2020과 같은 Cowen & Keltner 비디오를 본 독립 코호트(6명)다. 72개 클립 5회 반복(noise ceiling 추정 가능), 같은 클립 회상 imagery와 vividness 평정, "정서를 쓰지 말라"는 지시로 받은 인간 캡션이 있다(논문 본문 기준, 저장소 내용 미확인). 4개 보유 데이터셋 밖이다. 사용하면 Axis W(Internally Generated Experience)와 chain VD-R2, LS-Chain1, VD-R6이 강해진다. 이미 갖고 계신지, 써도 되는지 알려 주세요.
+17. **새 Axis U~Y 채택 확인.** Coordinator가 U(Label Provenance & Perspective), V(Action Readiness & Affordance), W(Internally Generated Experience, 조건부), X(Machine Affect Representations), Y(Metacognition & Introspective Report)를 채택했고, Acquisition & Signal Physics 등은 태그나 Sub-axis로 두었다(근거와 이견은 Deliverable B 2절). Stage 3의 무작위 조합은 이 유형표를 쓰므로 바꾸실 것이 있으면 알려 주세요.
+
+### 있으면 좋은 것
+18. **EmoPathway 출처.** brain-inspired 에이전트 정의(`.claude/agents/brain-inspired.md`)가 지정한 "EmoPathway" 모델을 arXiv, Crossref, Semantic Scholar, 웹 검색에서 찾지 못했다. 논문명이나 링크를 알면 알려 주세요. 모르면 정의 파일에서 빼는 것을 권한다.
+19. **already_done 전체 재검색 여부.** 재점검하지 않은 9개 에이전트의 "no" 판정을 지금 일괄 재검색할지(에이전트 9개 추가 실행, 토큰 많이 듦), Stage 3~4에서 쓰이는 항목만 확인할지. Coordinator 권고는 후자다.
+20. **추가 네트워크 허용.** huggingface.co(모델 카드, 라이선스), aclanthology.org(NLP 논문) 등을 더 허용할지. 허용하면 Stage 3 시작 때 환경 변경을 제안한다.
+21. **Emo-FilM 보유 파일 판본.** 보유한 영화 파일이 연구에 쓴 크레딧 절단 판본과 같은지.
+22. Stage 1에서 보류한 항목(1, 3~6 환경 정보, 11 Spacetop 생리, 12 reference 정정, 13 existing_projects 확인)은 그대로 보류 중이다.
+
+### Stage 3 비용 참고
+Stage 3는 10개 연구 에이전트의 Round 2(교차 교환), 제안 응답, Round 3(교차 비판, 제안 3개씩), adversarial-reviewer 상위 10개 검토, Round 4(5개 이상 에이전트), 조합 생성으로 이어진다. 같은 세션에서 에이전트를 재개하면 각 에이전트의 이전 맥락을 이어 쓸 수 있다.
