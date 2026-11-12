@@ -825,6 +825,24 @@ UNSUPERVISED = {"LIT-01": "혼합 잠재 모형과 연속 잠재 모형(군집 �
                 "STR-E1": "라벨 없는 상태 공간 속도",
                 "LIT-17": "hyperalignment, SRM(비지도 정렬)"}
 
+
+# ---------------------------------------------------------------- Stage 4 선행연구 중복 감사 결과 (outputs/evaluation/prior_overlap_audit.md)
+PRIOR_AUDIT = {
+    "LIT-03": "partially(Stage 4 감사): Du 2023(doi:10.1016/j.isci.2023.107571, 같은 Horikawa 자료에 정서, motion energy, 73개 의미 평정을 banded ridge로 함께 적합), Abdel-Ghaffar 2024, Horikawa 2020. 남는 부분: 정서 배제 인간 캡션 20개로 만든 기술 공변량, 측정 오차 보정, 두 코호트 재현. Du 2023을 V11 재현 목표에 추가",
+    "LIT-30": "partially(Stage 4 감사, 남는 부분이 작음): Tuckute 2024, Ratan Murty 2021이 같은 논리를 새 fMRI로 검증. 남는 부분: 정서 encoder 대 시각-의미 encoder의 controversial 선택을 정서 영역에서 코호트 간으로 시험",
+    "LIT-13": "not found(Stage 4 감사): Du 2025는 출력 기반 표상만, arXiv:2510.04064는 뇌 없이 probe 대 prompting. 같은 모델, 같은 forward pass의 내부 표상 대 출력을 뇌 설명력으로 비교한 연구는 이 검색 범위에서 없음",
+    "LIT-01": "partially(Stage 4 감사): Horikawa 2020(범주), Du 2023(같은 자료, 연속 gradient), Westlin 2025(개인 특이 군집), Koide-Majima 2020(다른 자료), EmoMind(두 코호트 결합). 남는 부분: 독립 두 코호트의 신뢰 rank 대역 안에서 범주, 연속, 개인 특이 세 설명의 held-out 비교. '차원 수' 주장은 뺀다",
+    "LIT-36": "not found(Stage 4 감사): Stringer 2019(마우스 이론과 실험), Gauthaman 2024(인간 fMRI 스펙트럼)가 가장 가깝다",
+    "STR-G1": "partially(Stage 4 감사): 행동 serial dependence(Van der Burg 2021, Ortega 2023), 신경 맥락 효과(Mobbs 2006, Cao 2024, Pichon 2015). 선행이 예측하는 동화 방향이 HRF 잔여의 가짜 효과 방향과 같으므로, 영역별 HRF로 예측한 동화를 넘는 초과분을 주 검정으로 둔다",
+    "RND-30": "partially(Stage 4 감사): Meyer 2010이 소리를 암시하는 무음 영상의 청각피질 내용 특이 활동을 이미 보였다. 남는 부분: V2A 생성 모델의 암시 소리 표상이 시각 조건 embedding 이상으로 청각피질을 설명하는지, 그 성분이 정서를 싣는지",
+    "STR-E1": "not found(Stage 4 감사): Ke 2025(동적 FC로 arousal 예측), van der Meer 2020(뇌 상태 동역학과 생리), Nguyen 2026(사건 경계 패턴 이동)이 가깝다. Ke 2025 모형을 경쟁 기준선으로",
+    "LIT-44": "partially, done에 가까움(Stage 4 감사): St-Laurent 2015(짧은 영상 회상의 재활성이 vividness 예측), Barker 2022, Bainbridge & Rissman 2018(자극 기억성 대 주관 기억의 신경 해리)",
+    "LIT-47": "partially(Stage 4 감사): Chen 2017(회상 패턴의 체계적 재구성), Favila 2022(기억 반응의 다른 공간 튜닝), Spens & Burgess 2024(이론). 남는 부분: cue 생성 영상 encoding 예측을 재구성 가설의 계산 대리로 쓰고 정서와 시각 부분공간을 비교",
+    "STR-A3": "not found(Stage 4 감사): Marras 2025(행동 feature 중 Agent & Object, 영화 fMRI encoding), Thornton & Tamir 2024, Mohammadi 2023이 가깝다",
+    "LIT-09": "partially(Stage 4 감사): Nguyen 2026이 영화 fMRI에서 오차형 대 불확실성형 사건 경계의 해리를 보고, Mohammadi 2023, Garrido 2025",
+    "LIT-10": "partially(Stage 4 감사): Pichon 2015, Gaviria 2021(정서 영화 뒤 휴지기 상태 이월), Qiao-Tasserit 2017. 남는 부분: 수 초 단위 클립 간 이월을 무작위 연쇄에서 영역별 HRF 보정 후 정서 대 시각 부분공간으로",
+}
+
 # ---------------------------------------------------------------- Round 4 pair-level rejections (rejected.md only)
 R4_REJECTED = [
     ("K+L", "geometry-info, llm-semantics", "지금 가능한 것은 encoder 위 R1뿐이고 EF-P1(LIT-05) 관문을 통과하지 않았다. affective metamer와 같은 질문(geometry-info). 서사 8편 encoder로는 in-silico 예측을 믿기 어렵다(llm-semantics)"),
@@ -910,6 +928,8 @@ def main():
         c.setdefault("rq_id", "")
 
     for c in COMBOS:
+        if c["combo_id"] in PRIOR_AUDIT:
+            c["prior_work"] = PRIOR_AUDIT[c["combo_id"]]
         c["headline"] = HEADLINE.get(c["combo_id"], "") if c.get("rq") else ""
         c["unsupervised"] = UNSUPERVISED.get(c["combo_id"], "")
     missing_h = [c["combo_id"] for c in COMBOS if c["status"] == "kept" and c["rq"] and not c["headline"]]

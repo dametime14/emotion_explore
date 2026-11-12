@@ -46,24 +46,70 @@
 | 16 | RQ-41 | 31.0 | 17.5 | K7 | 제외 | RQ-43과 같은 vividness 파이프라인이고 K7에 이미 2개 |
 | 16 | RQ-50 | 31.0 | 17.5 | K8 | 제외 | 동점 중 과학 5에서 밀림 |
 
-## 3. Shortlist 10개 (중복 감사 전 초안)
+## 3. 선행연구 중복 감사와 그에 따른 변경
 
-| # | RQ | 한 줄 질문 | 주 데이터 | 붙는 관문 |
+* 감사: `outputs/evaluation/prior_overlap_audit.md`. 같은 adversarial-reviewer 인스턴스가 13개 질문(Shortlist 10 + 교체 후보 3)을 직접 검색했다.
+* 결과: done 0, partially 9, not found 4. not found는 RQ-03, 15, 32, 14다.
+* **RQ-43 제외.**
+  * 판정은 "partially, done에 가까움"이다. St-Laurent 2015(짧은 영상 회상의 재활성이 vividness를 예측)와 Bainbridge & Rissman 2018(자극 기억성 대 주관 기억의 신경 해리)이 핵심을 이미 다뤘다.
+  * done은 아니지만 남는 새 부분이 가장 작아 교체한다. 평가자 권고(구속력 없음)를 받아들였다.
+  * item 간/item 안 분해 아이디어는 RQ-41(방향)에 남긴다.
+* **RQ-14로 대체.**
+  * 남은 실질 질문 중 최종 점수가 가장 높고(32.5), 감사 판정이 not found다.
+  * K2가 3개(RQ-08, 10, 14)가 되어 규칙 4(군집당 최대 2개)의 예외가 된다.
+  * 예외 이유: K7의 다음 후보 RQ-41은 같은 St-Laurent 2015에 핵심이 겹치고, K5 후보(RQ-26, 25)는 이미 K5에 2개가 있다. 다음 실질 후보 중 RQ-14만 선행이 발견되지 않았다. 다양성 규칙보다 새로움을 우선했다.
+  * RQ-14는 Emo-FilM이 주 데이터라 데이터셋 다양성도 늘어난다.
+* **좁혀서 유지:** RQ-10, 01, 33, 60, 44. 남는 새 부분만 질문으로 남긴다. 좁히는 방법은 감사 파일 2절에 있고, 질문 카드에 반영한다.
+  * RQ-10은 남는 새 부분이 작다는 판정이다. done이 아니고 점수가 2위라 유지하지만, 상위 5개에서는 뺐다(5절).
+
+## 4. Shortlist 10개 (최종)
+
+| # | RQ | 한 줄 질문 | 주 데이터 | 감사 판정 | 붙는 관문 | 카드 담당(기원) |
+|---|---|---|---|---|---|---|
+| 1 | RQ-08 | 장면을 말로 설명한 내용을 빼고 나도 뇌에 정서 신호가 남을까? | Mind captioning + Horikawa 2020 | partially | RQ-13 | llm-semantics (LS-P1, 공동 VD-P3) |
+| 2 | RQ-10 | 정서 모델이 '이 영상이 이 뇌 영역을 움직일 것'이라고 미리 고르면, 처음 보는 사람에게서도 맞을까? | Horikawa 2020 -> Mind captioning | partially(작음) | RQ-51 | encoding-foundation (EF-P6, 공동 FA-P2) |
+| 3 | RQ-15 | AI의 정서를 잴 때, 속을 들여다보는 것과 물어보는 것 중 무엇이 사람 뇌와 더 닮았을까? | Horikawa 2020 + Mind captioning | not found | RQ-17 참고 | frontier-ai (FA-P6) |
+| 4 | RQ-01 | 뇌의 정서 '범주' 구조는 다른 사람, 다른 그룹에서도 다시 나타날까? | Horikawa 2020 + Mind captioning | partially | V11 재현 | geometry-info (GI-P1) |
+| 5 | RQ-03 | 뇌의 정서 지도는 정서 때문에 생길까, 그냥 영상이 다양해서 생길까? | Horikawa 2020 + Mind captioning | not found | RQ-13, RQ-01 0단계 | geometry-info (GI-R4-1) |
+| 6 | RQ-33 | 같은 장면도 앞에 무엇을 봤느냐에 따라 다르게 느껴질까? | Mind captioning | partially | RQ-26 HRF 단계, RQ-51 | multimodal-dynamics (전략 G. 가장 가까운 문헌 기원 MD-P1) |
+| 7 | RQ-60 | 소리 없는 영상을 볼 때 뇌는 '들릴 법한 소리'를 떠올리고, 그 소리가 정서를 실을까? | Horikawa 2020 + Mind captioning | partially | | multimodal-dynamics (무작위 경로, 멀티모달 담당) |
+| 8 | RQ-32 | 흥분(각성)은 뇌 상태의 '위치'일까, 뇌 상태가 바뀌는 '속도'일까? | Emo-FilM | not found | | systems-neuro (전략 E, arousal과 자율신경 담당) |
+| 9 | RQ-44 | 떠올린 정서는 원래 장면의 흔적일까, 줄거리를 바탕으로 다시 만든 것일까? | Mind captioning | partially | RQ-08(캡션 encoding 공유) | emotion-theory (ET-R4-4, 공동 FA-R4-1) |
+| 10 | RQ-14 | '누가 누구에게 무엇을 했는가'라는 장면 구조가 정서 반응을 설명할까? | Emo-FilM | not found | | llm-semantics (전략 A, 외부 분야 Situation Recognition 제안 에이전트) |
+
+* 전략 경로와 무작위 경로에서 나온 질문(RQ-33, 60, 32, 14)은 Coordinator가 조합한 것이다. 카드는 해당 Axis를 담당하는 에이전트에게 맡겼다.
+* **데이터 구성:**
+  * Horikawa 2020 + Mind captioning: 8개.
+  * Emo-FilM: 2개(RQ-32, RQ-14).
+  * Spacetop과 NSD는 주 데이터가 아니다. 재현이나 대조로만 쓴다.
+
+## 5. High-priority Candidates 5개
+
+**규칙:**
+* Shortlist 안에서 최종 점수 순으로 고른다.
+* 감사에서 "남는 새 부분이 작다"고 판정된 질문(RQ-10)은 제외한다.
+* 32.5점 동점(RQ-03, 14, 33, 60)은 감사 판정 not found를 우선한다.
+
+| 순위 | RQ | 최종 | 감사 | 이유 |
 |---|---|---|---|---|
-| 1 | RQ-08 | 장면을 말로 설명한 내용을 빼고 나도 뇌에 정서 신호가 남을까? | Mind captioning + Horikawa 2020 | RQ-13 |
-| 2 | RQ-10 | 정서 모델이 '이 영상이 이 뇌 영역을 움직일 것'이라고 미리 고르면, 처음 보는 사람에게서도 맞을까? | Horikawa 2020 -> Mind captioning | RQ-51(TRIBE zero-shot 선택 팔) |
-| 3 | RQ-15 | AI의 정서를 잴 때, 속을 들여다보는 것과 물어보는 것 중 무엇이 사람 뇌와 더 닮았을까? | Horikawa 2020 + Mind captioning | RQ-17(항목 수준 참고) |
-| 4 | RQ-01 | 뇌의 정서 '범주' 구조는 다른 사람, 다른 그룹에서도 다시 나타날까? | Horikawa 2020 + Mind captioning | 원 결과 재현(V11) |
-| 5 | RQ-03 | 뇌의 정서 지도는 정서 때문에 생길까, 그냥 영상이 다양해서 생길까? | Horikawa 2020 + Mind captioning | RQ-13, RQ-01 0단계 |
-| 6 | RQ-33 | 같은 장면도 앞에 무엇을 봤느냐에 따라 다르게 느껴질까? | Mind captioning | RQ-26 HRF 단계, RQ-51 |
-| 7 | RQ-60 | 소리 없는 영상을 볼 때 뇌는 '들릴 법한 소리'를 떠올리고, 그 소리가 정서를 실을까? | Horikawa 2020 + Mind captioning | |
-| 8 | RQ-32 | 흥분(각성)은 뇌 상태의 '위치'일까, 뇌 상태가 바뀌는 '속도'일까? | Emo-FilM | |
-| 9 | RQ-43 | '생생하게 떠올렸다'는 보고는 내 머릿속을 들여다본 것일까, 원래 기억하기 쉬운 영상이라서일까? | Mind captioning | |
-| 10 | RQ-44 | 떠올린 정서는 원래 장면의 흔적일까, 줄거리를 바탕으로 다시 만든 것일까? | Mind captioning | RQ-08(캡션 encoding 공유) |
+| 1 | RQ-08 | 37.0 | partially | 두 채점자 모두 1위. Horikawa 결론의 가장 약한 고리를 측정 오차까지 고려해 직접 다룬다 |
+| 2 | RQ-15 | 33.5 | not found | AI 정서 측정 방식 자체를 뇌로 검증. 모델이 도구를 넘어 연구 대상 |
+| 3 | RQ-01 | 33.0 | partially | 기본정서 대 구성주의 논쟁의 핵심 데이터를 독립 코호트로 재검토 |
+| 4 | RQ-03 | 32.5 | not found | 정서 기하가 자극 분포의 산물인지 같은 데이터 안에서 시험 |
+| 5 | RQ-14 | 32.5 | not found | appraisal 이론의 핵심 변수를 Computer Vision 기술로 계산. Emo-FilM으로 데이터셋 확장 |
 
-**데이터 구성:**
-* Horikawa 2020 + Mind captioning으로 시작할 수 있는 질문이 9개다. 나머지 1개(RQ-32)는 Emo-FilM이다.
-* Spacetop을 주 데이터로 쓰는 질문은 없다. Spacetop 질문 중 가장 높은 RQ-21은 30.0점이었다.
-* NSD는 RQ-03의 대조로만 쓴다.
+## 6. Recommended Pilot Studies 3개
 
-**선행연구 중복 감사 결과:** `prior_overlap_audit.md`가 나오면 4절에 반영한다.
+**규칙:**
+* 상위 5개 안에서 고른다.
+* (1) 가장 적은 비용으로 핵심 전제를 먼저 검증하고, (2) 다른 질문의 관문이나 공통 기반이 되는 것을 우선한다.
+
+| Pilot | 질문 | 이유 |
+|---|---|---|
+| P1 | RQ-08 (+ RQ-13 관문) | 1위. Du 2023과 Horikawa 2020 재현(V11)부터 시작하고, 캡션 기반 잔차와 positivity 지도를 함께 만든다. RQ-44, RQ-09의 공통 기반 |
+| P2 | RQ-01 (+ RQ-03 확장) | 두 코호트 재전처리와 공유 스펙트럼은 RQ-03, 02, 07, 19의 공통 기반. 평가자도 Round 3에서 1순위로 권했다 |
+| P3 | RQ-15 | 새 fMRI 분석 없이 공개 VLM의 내부 표상과 출력만 추출해 기존 encoding 파이프라인에 넣으면 된다. 선행이 발견되지 않았다 |
+
+* 셋 다 Horikawa 2020 + Mind captioning이 주 데이터다. "Horikawa 1순위" 사용자 결정과 일치한다.
+* Emo-FilM 쪽 다음 후보는 RQ-14와 RQ-32다. RQ-32는 모델이 필요 없어 비용이 가장 낮다.
+* 상세 계획은 `outputs/pilots.md`에 있다.

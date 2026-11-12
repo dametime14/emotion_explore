@@ -386,7 +386,7 @@
 * **Axis 조합:** A+O+K+Q+T (+외부: Complex Systems (scale-free 공분산 스펙트럼)) / 비지도 요소: 혼합 잠재 모형과 연속 잠재 모형(군집 대 연속), 피험자 간 공유 성분 분해
 * **경로:** literature (LIT-01; GI-P1, ET-P1, ET-P4, SN-P7, VD-P2; Round 3 GI-P1 검토; 상위 10개 검토(GI-P1, ET-P4))
 * **근거 논문 ID:** 10.1016/j.isci.2020.101060; arXiv:2507.00320; arXiv:2409.06843; arXiv:2505.12653; 10.1126/sciadv.adw1464
-* **선행 판정:** partially: EmoMind(arXiv:2605.16739)가 두 코호트를 결합했으나 공유 스펙트럼 비교는 없음(Round 3 검토, adversarial-reviewer 상위 10개 검토)
+* **선행 판정:** partially(Stage 4 감사): Horikawa 2020(범주), Du 2023(같은 자료, 연속 gradient), Westlin 2025(개인 특이 군집), Koide-Majima 2020(다른 자료), EmoMind(두 코호트 결합). 남는 부분: 독립 두 코호트의 신뢰 rank 대역 안에서 범주, 연속, 개인 특이 세 설명의 held-out 비교. '차원 수' 주장은 뺀다
 * **overlap:** EmoBrain(구 EmoViS 범위 포함): Horikawa 2020 정서 기하와 같은 데이터, 대상, 34차원 정서 profile 사용
 
 #### RQ-02. 우리가 쓰는 정서 단어의 구분은 뇌 입장에서도 효율적인 구분일까?
@@ -410,7 +410,7 @@
 * **Axis 조합:** B+K+E+Q (+외부: Complex Systems (power-law 스펙트럼 이론, Stringer 2019)) / 비지도 요소: 피험자 간 공유 성분 분해(비지도)
 * **경로:** literature (LIT-36; GI-R4-1)
 * **근거 논문 ID:** 10.1038/s41586-019-1346-5; arXiv:2409.06843; arXiv:2505.12653; 10.1126/sciadv.adw1464; 10.1016/j.isci.2020.101060
-* **선행 판정:** no(geometry-info Round 4 검색, 2026-11-12)
+* **선행 판정:** not found(Stage 4 감사): Stringer 2019(마우스 이론과 실험), Gauthaman 2024(인간 fMRI 스펙트럼)가 가장 가깝다
 * **overlap:** EmoBrain(구 EmoViS 범위): Horikawa 정서 기하의 sensory-semantic 기원과 직접 겹침
 
 #### RQ-04. 정서 단어 없이 뇌에서 먼저 찾은 정서 축에 이름을 붙이면 어떤 분류가 나올까?
@@ -472,7 +472,7 @@
 * **Axis 조합:** C+F+H+U+I
 * **경로:** literature (LIT-03; LS-P1, VD-P3; Round 3 LS-P1 검토)
 * **근거 논문 ID:** 10.1126/sciadv.adw1464; 10.1038/s42256-025-01072-0; arXiv:2509.24298; 10.1371/journal.pone.0152719; 10.1016/j.isci.2020.101060; 10.1038/s41467-024-49073-8
-* **선행 판정:** partially: Horikawa 2020의 73개 의미 항목 비교, Abdel-Ghaffar 2024(의미-정서 공동 tuning, 상위 10개 검토가 찾음), Du 2025
+* **선행 판정:** partially(Stage 4 감사): Du 2023(doi:10.1016/j.isci.2023.107571, 같은 Horikawa 자료에 정서, motion energy, 73개 의미 평정을 banded ridge로 함께 적합), Abdel-Ghaffar 2024, Horikawa 2020. 남는 부분: 정서 배제 인간 캡션 20개로 만든 기술 공변량, 측정 오차 보정, 두 코호트 재현. Du 2023을 V11 재현 목표에 추가
 * **overlap:** EmoBrain(구 EmoViS 범위): 정서 기하의 sensory-semantic 기원 분석과 직접 겹침
 
 #### RQ-09. 정서와 장면 의미를 떼어 놓는 두 방법(통계 보정, 영상 편집)은 같은 답을 줄까?
@@ -496,7 +496,7 @@
 * **Axis 조합:** A+F+H+R+P+S
 * **경로:** literature (LIT-30; EF-P6, FA-P2)
 * **근거 논문 ID:** 10.1073/pnas.1912334117; 10.1038/s41562-023-01783-7; 10.1126/sciadv.adw1464; 10.1016/j.isci.2020.101060; arXiv:2604.07729
-* **선행 판정:** partially: 언어망 구동/억제 선택(Tuckute 2024)
+* **선행 판정:** partially(Stage 4 감사, 남는 부분이 작음): Tuckute 2024, Ratan Murty 2021이 같은 논리를 새 fMRI로 검증. 남는 부분: 정서 encoder 대 시각-의미 encoder의 controversial 선택을 정서 영역에서 코호트 간으로 시험
 * **overlap:** EmoBrain(구 EmoViS 범위): 정서 대 시각-의미 모델 비교 겹침
 
 #### RQ-11. 편도체가 좋아하는 영상은 정서 때문일까, 얼굴 같은 대상 때문일까?
@@ -544,7 +544,7 @@
 * **Axis 조합:** C+A+I+E+P (+외부: Situation Recognition in Computer Vision)
 * **경로:** strategy (STR-A3; Strategy A(Technology Transfer): Computer Vision의 situation recognition(visual semantic role labeling))
 * **근거 논문 ID:** 10.1109/cvpr.2016.597; 10.1109/cvpr46437.2021.00554; 10.1038/s41467-024-44870-7; 10.1016/j.neubiorev.2022.104977; 10.1038/s41597-025-04803-5
-* **선행 판정:** 미확인: Stage 4에서 확인
+* **선행 판정:** not found(Stage 4 감사): Marras 2025(행동 feature 중 Agent & Object, 영화 fMRI encoding), Thornton & Tamir 2024, Mohammadi 2023이 가깝다
 * **overlap:** EmoBrain(구 EmoViS 범위): 정서 대 의미 내용 분리 겹침
 
 방향만 유지한 조합: RND-03(amygdala encoding의 해석 가능한 feature 귀속)
@@ -560,7 +560,7 @@
 * **Axis 조합:** R+U+C+F+Q
 * **경로:** literature (LIT-13; FA-P6, FA-P5(일부), GC-P9(일부); Round 3 FA-P6 검토)
 * **근거 논문 ID:** arXiv:2604.07729; arXiv:2509.24298; arXiv:2609.34742; 10.1073/pnas.1619316114; arXiv:2408.13718
-* **선행 판정:** partially: Du 2025(출력 기반 embedding과 뇌)
+* **선행 판정:** not found(Stage 4 감사): Du 2025는 출력 기반 표상만, arXiv:2510.04064는 뇌 없이 probe 대 prompting. 같은 모델, 같은 forward pass의 내부 표상 대 출력을 뇌 설명력으로 비교한 연구는 이 검색 범위에서 없음
 * **overlap:** 없음
 
 #### RQ-16. 뇌는 '내가 느낀 정서'와 '남이 느끼는 정서'를 구분해서 표현할까?
@@ -688,7 +688,7 @@
 * **Axis 조합:** D+N+I+J+E (+외부: Active Perception (active inference))
 * **경로:** literature (LIT-09; FA-P3, EF-P5, MD-P5, BI-P5; Round 3 FA-P3 검토)
 * **근거 논문 ID:** arXiv:2506.09985; arXiv:2502.11831; arXiv:2407.02474; 10.7554/eLife.107955; arXiv:2605.04326
-* **선행 판정:** partially: Tambini 2017(정서 상태 지속)(Round 3 검토)
+* **선행 판정:** partially(Stage 4 감사): Nguyen 2026이 영화 fMRI에서 오차형 대 불확실성형 사건 경계의 해리를 보고, Mohammadi 2023, Garrido 2025
 * **overlap:** Emo-FilM 연구: Emo-FilM 시간 정보와 사전학습 encoder 겹침 / EmoBrain: V-JEPA2 사용
 
 #### RQ-26. 앞 영상의 정서는 다음 영상을 볼 때까지 뇌에 남아 있을까?
@@ -700,7 +700,7 @@
 * **Axis 조합:** D+K+E+P+Q (+외부: Complex Systems (line attractor, Nair 2023))
 * **경로:** literature (LIT-10; MD-P1, GI-P3, SN-P2; Round 3 MD-P1 검토)
 * **근거 논문 ID:** 10.1016/j.cell.2022.11.027; 10.1038/s41586-024-07915-x; 10.1038/nn.4468; 10.1126/sciadv.adw1464; 10.1038/s41593-025-01945-y
-* **선행 판정:** partially: Pichon 2015, Tambini 2017(Round 3 검토)
+* **선행 판정:** partially(Stage 4 감사): Pichon 2015, Gaviria 2021(정서 영화 뒤 휴지기 상태 이월), Qiao-Tasserit 2017. 남는 부분: 수 초 단위 클립 간 이월을 무작위 연쇄에서 영역별 HRF 보정 후 정서 대 시각 부분공간으로
 * **overlap:** Emo-FilM 연구: Emo-FilM washout 구간 사용 부분 겹침
 
 #### RQ-27. 한 장면만 봐서는 모르고 끝까지 봐야 아는 정서는 뇌의 어디서 처리될까?
@@ -772,7 +772,7 @@
 * **Axis 조합:** D+A+E+K+Q / 비지도 요소: 라벨 없는 상태 공간 속도
 * **경로:** strategy (STR-E1; Strategy E(Dynamics and Geometry): 정서를 위치가 아니라 궤적으로)
 * **근거 논문 ID:** 10.1371/journal.pcbi.1012994; 10.1038/s41593-025-01945-y; arXiv:2306.10168; 10.7554/eLife.107955
-* **선행 판정:** 미확인: Stage 4에서 확인
+* **선행 판정:** not found(Stage 4 감사): Ke 2025(동적 FC로 arousal 예측), van der Meer 2020(뇌 상태 동역학과 생리), Nguyen 2026(사건 경계 패턴 이동)이 가깝다. Ke 2025 모형을 경쟁 기준선으로
 * **overlap:** 없음
 
 #### RQ-33. 같은 장면도 앞에 무엇을 봤느냐에 따라 다르게 느껴질까(자연 영상판 쿨레쇼프 효과)?
@@ -784,7 +784,7 @@
 * **Axis 조합:** C+P+D+E+L
 * **경로:** strategy (STR-G1; Strategy G(Counterfactual Neuroscience): 데이터셋 안의 실제 순서 변이를 반사실 조작으로)
 * **근거 논문 ID:** 10.1093/scan/nsl014; 10.1371/journal.pone.0308295; 10.1126/sciadv.adw1464; arXiv:2605.04326
-* **선행 판정:** partially: Mobbs 2006, Cao 2024(통제된 얼굴-장면 설계)
+* **선행 판정:** partially(Stage 4 감사): 행동 serial dependence(Van der Burg 2021, Ortega 2023), 신경 맥락 효과(Mobbs 2006, Cao 2024, Pichon 2015). 선행이 예측하는 동화 방향이 HRF 잔여의 가짜 효과 방향과 같으므로, 영역별 HRF로 예측한 동화를 넘는 초과분을 주 검정으로 둔다
 * **overlap:** 없음
 
 ### K6. 행동 경향과 affordance (Axis V) (질문 7개)
@@ -910,7 +910,7 @@
 * **Axis 조합:** W+A+R+O+Q (+외부: Artificial Consciousness and Metacognition (LLM self-prediction vs cross-prediction))
 * **경로:** literature (LIT-44; ET-R4-1)
 * **근거 논문 ID:** arXiv:2410.13787; 10.1038/s41598-018-26467-5; 10.1126/sciadv.adw1464; 10.3758/s13423-017-1313-9
-* **선행 판정:** partially(emotion-theory Round 4 검색)
+* **선행 판정:** partially, done에 가까움(Stage 4 감사): St-Laurent 2015(짧은 영상 회상의 재활성이 vividness 예측), Barker 2022, Bainbridge & Rissman 2018(자극 기억성 대 주관 기억의 신경 해리)
 * **overlap:** 없음
 
 #### RQ-44. 떠올린 정서는 원래 장면의 흔적일까, 줄거리를 바탕으로 다시 만든 것일까?
@@ -922,7 +922,7 @@
 * **Axis 조합:** W+L+N+H+P+I (+외부: Memory and Mental Imagery (기억의 생성 모델))
 * **경로:** literature (LIT-47; ET-R4-4, FA-R4-1(두 에이전트 독립 수렴))
 * **근거 논문 ID:** 10.1038/s41562-023-01799-z; 10.1126/sciadv.adw1464; 10.1073/pnas.1619316114; 10.3758/s13423-017-1313-9; arXiv:2503.20314
-* **선행 판정:** no(직접 검정), 이론과 구성 요소는 partially(emotion-theory, frontier-ai Round 4 검색)
+* **선행 판정:** partially(Stage 4 감사): Chen 2017(회상 패턴의 체계적 재구성), Favila 2022(기억 반응의 다른 공간 튜닝), Spens & Burgess 2024(이론). 남는 부분: cue 생성 영상 encoding 예측을 재구성 가설의 계산 대리로 쓰고 정서와 시각 부분공간을 비교
 * **overlap:** 없음
 
 #### RQ-45. 떠올린 정서는 말로 옮길 수 있는 만큼만 남을까?
@@ -1126,7 +1126,7 @@
 * **Axis 조합:** B+F+M+R+T+L
 * **경로:** random (RND-30; random_combos.csv)
 * **근거 논문 ID:** 10.1038/nn.2533; arXiv:2412.15322; 10.1016/j.isci.2020.101060; 10.1126/sciadv.adw1464
-* **선행 판정:** partially: 소리를 암시하는 무음 영상이 청각피질 내용 특이 활동을 만든다(Meyer 2010). 정서와의 연결은 미확인
+* **선행 판정:** partially(Stage 4 감사): Meyer 2010이 소리를 암시하는 무음 영상의 청각피질 내용 특이 활동을 이미 보였다. 남는 부분: V2A 생성 모델의 암시 소리 표상이 시각 조건 embedding 이상으로 청각피질을 설명하는지, 그 성분이 정서를 싣는지
 * **overlap:** 없음
 
 방향만 유지한 조합: LIT-21(정서 정보의 시간 척도 위계와 양식 의존)
