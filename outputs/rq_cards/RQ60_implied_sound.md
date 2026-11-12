@@ -107,7 +107,7 @@
 
 | 항목 | 내용 |
 |---|---|
-| **Pretrained model** | 새 모델을 훈련하지 않는다. (1) **V2A 생성:** MMAudio(arXiv:2412.15322, CVPR 2025). 시각 조건은 CLIP 1024차원(8 fps)과 Synchformer 시각 feature(24 fps, 768차원). 생성 방식은 **flow matching**(무작위 잡음에서 출발해, 학습된 '이동 방향'을 따라 조금씩 실제 소리 쪽으로 옮겨 가며 샘플을 만드는 방식)이다. 기본 모델은 16 kHz 소리를 **VAE 잠재**(소리를 압축한 숫자 벡터 열. 초당 31.25개, 각 20개 숫자)로 만든 뒤 소리로 복원한다. **라이선스 미확인**(코드와 가중치 모두). 내부 hidden state를 꺼낼 수 있는지(코드 구조)도 미확인. (2) **생성 소리 표현:** 스펙트로-시간 변조 필터(Chi 2005), Tuckute 2023이 비교한 공개 오디오 DNN 중 청각피질 예측이 좋은 계열(초기, 중간, 깊은 층. checkpoint는 0단계에서 선택), LAION-CLAP 오디오 encoder(arXiv:2211.06687, 라이선스 미확인). (3) **시각 대조:** MMAudio 자신의 CLIP, Synchformer 조건 feature와 시각 줄기 hidden state, 독립 시각 모델 V-JEPA 2(arXiv:2506.09985). (4) **의미 대조:** Mind captioning 캡션의 DeBERTa-large 문장 feature(원 논문 파이프라인). (5) 선택적 in-silico 팔: TRIBE v2(CC BY-NC 4.0, encoding-foundation 기록, 직접 미확인) |
+| **Pretrained model** | 새 모델을 훈련하지 않는다. (1) **V2A 생성:** MMAudio(arXiv:2412.15322, CVPR 2025). 시각 조건은 CLIP 1024차원(8 fps)과 Synchformer 시각 feature(24 fps, 768차원). 생성 방식은 **flow matching**(무작위 잡음에서 출발해, 학습된 '이동 방향'을 따라 조금씩 실제 소리 쪽으로 옮겨 가며 샘플을 만드는 방식)이다. 기본 모델은 16 kHz 소리를 **VAE 잠재**(소리를 압축한 숫자 벡터 열. 초당 31.25개, 각 20개 숫자)로 만든 뒤 소리로 복원한다. **라이선스: 코드 MIT, checkpoint CC BY-NC 4.0**(재탐색 라운드 multimodal-dynamics 확인, `outputs/revision/candidates.md`). 비영리 연구 사용은 가능하다. 내부 hidden state를 꺼낼 수 있는지(코드 구조)도 미확인. (2) **생성 소리 표현:** 스펙트로-시간 변조 필터(Chi 2005), Tuckute 2023이 비교한 공개 오디오 DNN 중 청각피질 예측이 좋은 계열(초기, 중간, 깊은 층. checkpoint는 0단계에서 선택), LAION-CLAP 오디오 encoder(arXiv:2211.06687, 라이선스 미확인). (3) **시각 대조:** MMAudio 자신의 CLIP, Synchformer 조건 feature와 시각 줄기 hidden state, 독립 시각 모델 V-JEPA 2(arXiv:2506.09985). (4) **의미 대조:** Mind captioning 캡션의 DeBERTa-large 문장 feature(원 논문 파이프라인). (5) 선택적 in-silico 팔: TRIBE v2(CC BY-NC 4.0, encoding-foundation 기록, 직접 미확인) |
 | **Input representation** | 클립마다 다음 feature 묶음(band)을 만든다. 10 s 미만 클립은 제시와 같게 반복 재생 길이로 맞춘다. 생성 소리 관련 묶음은 seed 5개 이상의 평균. **B0 기본 묶음:** MMAudio 시각 조건 feature(CLIP, Synchformer의 시간 평균과 시간 통계), V-JEPA 2, 캡션 문장 feature, 움직임 에너지와 컷 수. **Ba 용량 맞춘 비청각 비선형 대조(필수 2a):** MMAudio 다중모달 블록 4개의 **시각 줄기 hidden state**(448차원 토큰, 소리 복원 이전 단계)를 시간 풀링. 차원은 PCA로 생성 소리 묶음과 같게 맞춘다. **Bb 소리 의미 범주(필수 2b):** 생성 소리의 CLAP zero-shot 소리 범주 확률(AudioSet 온톨로지 상위 범주 이름을 프롬프트로, AI 추정), 캡션에서 고정 단어 목록 규칙으로 센 '소리 나는 사건' 범주 벡터(인간 캡션 기반). **Bc 저수준 음향(필수 2c):** 생성 소리의 스펙트로-시간 변조 feature와 오디오 DNN 초기 층. **Bd 고수준 생성 소리 표현:** CLAP 오디오 embedding, 오디오 DNN 중간과 깊은 층. **Be 텍스트 전용 생성 소리(필수 2e):** 캡션 20개 각각을 MMAudio 텍스트 조건으로만 넣어 만든 소리(영상 없음)의 Bc, Bd 표현을 20개 평균. 캡션 20개를 모두 써서 영상 조건과의 정보량 차이를 줄인다 |
 | **Output / target representation** | H1: 블록 단위 voxel 반응(초기 청각, 시각 대조 ROI). H2: 청각 연합과 STS ROI의 블록 반응에서 B0 예측분(또는 B0 + 생성 소리 예측분)을 뺀 **관찰 잔차**와, 그 잔차에서 읽은 규범 정서. 주 정서 목표는 14 차원(연속값), 34 범주는 2차 |
 | **Training or adaptation strategy** | 사전학습 모델은 동결. 피험자별 banded ridge encoding(feature 묶음마다 다른 정규화 강도). **Mind captioning:** 학습 2,108개 안에서 클립 묶음 단위 교차검증(같은 원본에서 나온 클립과 내용 중복 쌍은 같은 fold), 시험 72개(5회 평균)는 학습에 넣지 않고 확인 평가와 noise ceiling에만. **Horikawa 2020:** 2,181개에서 같은 방식의 교차검증. **H2의 nested CV:** 바깥 fold(클립 묶음)마다, 안쪽 교차검증으로 encoding 정규화를 고르고 학습 클립의 잔차를 **교차 적합**(학습 클립 잔차도 그 클립을 빼고 학습한 encoding으로 계산)으로 만든다. 정서 decoder(ridge)는 이 학습 잔차로 학습하고, 바깥 시험 클립의 잔차(바깥 학습 클립 전체로 학습한 encoding으로 계산)에서 평가한다. encoding과 decoding이 같은 클립을 보지 않는다 |
@@ -202,7 +202,7 @@
 
 * **데이터:** 원래 소리가 없어 생성 소리가 맞는 소리인지 확인할 수 없다. 참가자에게 소리 심상을 묻지 않았다. 청각 localizer가 없다. 라벨은 규범 평정. Horikawa 2020은 반복이 없어 noise ceiling 정규화를 할 수 없다.
 * **신호:** 무음 시청의 청각피질 반응은 약할 가능성이 크다. 연속 EPI 촬영 소음이 무음 시청 내내 청각피질을 자극한다(Peelle 2014). 모든 조건에 공통이라 편향은 아니지만 감도를 떨어뜨린다. 두 코호트의 촬영 시퀀스가 달라(TR 1 s 대 2 s) 소음 양상도 다를 수 있다(미확인). 0단계 신뢰도 관문이 이를 판정한다. 3T, TR 2 s(Horikawa 2020)는 약한 감각 간 신호에 불리하다.
-* **모델:** MMAudio는 VGGSound 같은 일상 소리 위주로 학습되어 정서 장면(울음, 비명, 음악적 분위기)에서 품질이 낮을 수 있다. 말소리는 웅얼거림을 낸다(4.4 Limitations). 라이선스와 hidden state 접근 미확인. Ba의 hidden state는 joint attention으로 오디오 토큰 정보를 일부 받으므로 소리 형식 분산을 일부 흡수할 수 있다(H1에 보수적인 방향). 생성은 확률적이라 seed 평균이 필요하다. 사전학습 데이터에 Cowen & Keltner 클립이 들어 있는지 미확인.
+* **모델:** MMAudio는 VGGSound 같은 일상 소리 위주로 학습되어 정서 장면(울음, 비명, 음악적 분위기)에서 품질이 낮을 수 있다. 말소리는 웅얼거림을 낸다(4.4 Limitations). 라이선스는 checkpoint CC BY-NC 4.0(비영리 연구 가능)으로 확인했고 hidden state 접근은 미확인이다. Ba의 hidden state는 joint attention으로 오디오 토큰 정보를 일부 받으므로 소리 형식 분산을 일부 흡수할 수 있다(H1에 보수적인 방향). 생성은 확률적이라 seed 평균이 필요하다. 사전학습 데이터에 Cowen & Keltner 클립이 들어 있는지 미확인.
 * **해석:** 생성 소리는 영상의 함수라 '새 정보'를 줄 수 없다. 결과는 표현 형식과 겹침에 관한 것이다. H1, H2가 지지되어도 '참가자가 소리를 떠올렸다'는 직접 증거는 아니다(관찰 상관, R0). 잔차 decoding의 감소는 decodability의 변화이지 정서 경험의 판독이 아니다.
 * **통계:** feature 묶음들이 강하게 공선적이라 고유 설명량이 작게 나올 수 있다. 주입 시뮬레이션으로 검출 한계를 먼저 계산한다.
 
@@ -234,7 +234,7 @@
 | 권고 | Shortlist 유지. High-priority 5개에는 들지 않음(감사 partially). Horikawa 2020 + Mind captioning으로 바로 시작 가능하고 0단계에서 빠르게 진행 여부를 판정할 수 있어 비용 대비 정보가 크다 |
 | 관문 | 없음(주 분석). 5단계 in-silico 팔만 RQ-51 |
 | 계산 자원 | 미확인. GPU 1~4장 가정 |
-| checkpoint 라이선스 | **MMAudio 미확인**(연구 사용이 막히면 다른 공개 V2A 모델로 교체 필요, Feasibility 하락), CLAP 미확인, 오디오 DNN은 0단계 선택 후 확인, V-JEPA 2 Apache(TRIBE 논문 부록 기재, 직접 미확인), TRIBE v2 CC BY-NC 4.0(encoding-foundation 기록, 직접 미확인) |
+| checkpoint 라이선스 | **MMAudio: 코드 MIT, checkpoint CC BY-NC 4.0**(비영리 연구 가능, 재탐색 라운드 확인), CLAP 미확인, 오디오 DNN은 0단계 선택 후 확인, V-JEPA 2 Apache(TRIBE 논문 부록 기재, 직접 미확인), TRIBE v2 CC BY-NC 4.0(encoding-foundation 기록, 직접 미확인) |
 | overlap | **EmoBrain(구 EmoViS 범위 포함):** 직접 겹침 없음. Horikawa 2020 데이터와 V-JEPA 2 feature를 공유하지만 질문(청각피질의 암시 소리)이 다르다. **Emo-FilM 연구:** 겹침 없음 |
 
 ---
@@ -269,7 +269,7 @@
 | 시간, 공간 해상도 | 블록 단위라 클립 안 시간 동기화의 세밀한 검정은 제한. 시간 섞은 영상 대조로 보완 |
 | ROI 선택과 순환 추론 | 아틀라스 ROI와 독립 localizer(LOC, MT+). 같은 데이터로 ROI를 고르지 않음 |
 | 다중 비교 | 주 가설 두 개에 Holm. H1 안의 두 조건은 둘 다 성립해야 하는 결합 판정이라 추가 보정 없음. 2차 분석 Holm |
-| 데이터 접근, checkpoint, 라이선스 | 데이터 보유. MMAudio 라이선스와 hidden state 접근 미확인(14절) |
+| 데이터 접근, checkpoint, 라이선스 | 데이터 보유. MMAudio checkpoint CC BY-NC 4.0(비영리 연구 가능). hidden state 접근 미확인(14절) |
 | 사전학습 데이터 오염 | MMAudio, CLAP, V-JEPA 2 학습 데이터에 Cowen & Keltner 클립 포함 여부 미확인. 영향은 생성 품질 쪽 |
 | 데이터셋 간 라벨 비호환 | 두 코호트 모두 같은 Cowen & Keltner 라벨 |
 | **label-provenance** | 정서 라벨: 대상 felt(평정자 자기 경험 보고, 무음 시청) / 주체 별도 평정자 규범. 캡션: [Human 작성, AI 교정]. 생성 소리 정서 방향과 소리 범주 확률: AI 추정 |
