@@ -1,21 +1,21 @@
 # Literature Statistics (Deliverable C)
 
 * 생성: `python3 -I outputs/literature/merge.py` (자동 생성 파일, 직접 고치지 말 것)
-* 입력 레코드: 704개 (파싱 오류 0개), 입력 파일: `outputs/agents/*/literature*.jsonl`
-* 원자료 기준 verified 표기: 692개, 미검증(search_index 등): 12개
-* 중복 제거 후 고유 논문: **515편**
-* **verified 고유 논문: 510편** (식별자 경로 doi.org / crossref / pubmed / arxiv / openreview / publisher로 확인된 것만)
+* 입력 레코드: 705개 (파싱 오류 0개), 입력 파일: `outputs/agents/*/literature*.jsonl`
+* 원자료 기준 verified 표기: 693개, 미검증(search_index 등): 12개
+* 중복 제거 후 고유 논문: **516편**
+* **verified 고유 논문: 511편** (식별자 경로 doi.org / crossref / pubmed / arxiv / openreview / publisher로 확인된 것만)
 * 미검증 고유 논문: 5편 (verified 집계에서 제외, DB에는 `verified=False`로 남김)
 
 ## Axis별 verified 논문 수 (한 논문이 여러 Axis에 속할 수 있음)
 
 | Axis | verified | 전체(미검증 포함) |
 |---|---|---|
-| A | 171 | 172 |
+| A | 172 | 173 |
 | B | 68 | 69 |
-| C | 78 | 79 |
+| C | 79 | 80 |
 | D | 115 | 115 |
-| E | 149 | 149 |
+| E | 150 | 150 |
 | F | 73 | 74 |
 | G | 50 | 51 |
 | H | 82 | 86 |
@@ -52,7 +52,7 @@
 | 2012 | 2 |
 | 2013 | 1 |
 | 2014 | 11 |
-| 2015 | 10 |
+| 2015 | 11 |
 | 2016 | 15 |
 | 2017 | 27 |
 | 2018 | 16 |
@@ -70,7 +70,7 @@
 | discussion_read | 편수 |
 |---|---|
 | full_text | 231 |
-| abstract_only | 220 |
+| abstract_only | 221 |
 | search_summary | 17 |
 | no | 42 |
 
@@ -90,7 +90,7 @@
 | systems-neuro | 52 |
 | encoding-foundation | 49 |
 | vision-decoding | 38 |
-| coordinator | 7 |
+| coordinator | 8 |
 
 ## 에이전트별 원 레코드 수 (중복 제거 전, 미검증 포함)
 
@@ -108,7 +108,7 @@
 | systems-neuro | 53 |
 | encoding-foundation | 50 |
 | vision-decoding | 38 |
-| coordinator | 7 |
+| coordinator | 8 |
 
 ## future_directions의 already_done 분포 (verified 논문)
 
