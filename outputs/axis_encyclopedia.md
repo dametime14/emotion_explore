@@ -233,13 +233,15 @@ Axis가 아니라 Stage 3 이후 모든 후보 질문에 붙이는 표기로 둔
 
 ### 2.2 채택한 새 Axis
 
+> **사용자 결정 반영 (2026-11-12, Stage 3 시작 전):** 사용자가 "일단 진행해"라고 답해 선택지를 고르지 않았으므로 Coordinator 권장안을 적용했다. **U, V, W는 독립 Axis로 채택**하고, **X는 Axis R의 Sub-axis "Model-internal Emotion Representations"로, Y는 Axis A의 Sub-axis "Introspective Access and Emotion Report"로 조정**했다. 이유: 4개를 모두 Construct 유형에 넣으면 무작위 조합이 새 Axis로 쏠리고, Y는 데이터에 직접 측정이 없으며, X는 대상이 뇌가 아니라 AI라 하위 항목으로도 내용이 보존된다. W의 데이터 조건은 사용자가 Horikawa 2025 Mind captioning 데이터(ds005191, 전처리 완료)를 쓸 수 있다고 확인해 충족되었다. 사용자가 다른 안을 고르면 다시 고친다.
+
 | Axis | 이름 | 유형 | 제안 | 판정 근거 | 대표 근거 |
 |---|---|---|---|---|---|
 | **U** | **Label Provenance & Perspective** (라벨 출처와 관점: 본인 경험, peer 합의, 별도 평정자 규범, 타인 지각 판단, AI 추정; 대상 portrayed / perceived / felt) | Inference & Measurement | adversarial-reviewer(독립 Axis 후보), llm-semantics(S4 Machine Raters & Annotation Provenance), emotion-theory(S2 격자, 필수 태그로 제안), generative-counterfactual(S6) | 4개 에이전트가 독립적으로 제안. A, C, Q, T에 흩어져 있고 Stage 1의 데이터셋 결합 판정(3절)도 이 변수로 결정된다. NSD 정서 분석은 거의 전적으로 AI 추정 라벨에 의존. **동시에 0.2절의 필수 태그로도 유지한다**(emotion-theory 의견 반영) | arXiv:2501.10970, doi:10.1126/science.adi6000, doi:10.1162/imag.a.134, doi:10.1162/imag_a_00517, arXiv:2408.13718 |
 | **V** | **Action Readiness & Affordance** (행동 경향, 방어 계산, 장면 affordance) | Construct | brain-inspired(S-6), frontier-ai(U8 정서의 동기 성분, Latent Action) | 정서 범주(A)와 경쟁하는 구성 개념이며 지각(B)도 계산(N)도 아니다. Horikawa 원 저자가 결과를 "emotional experience (or affordances)"로 표현했고, Emo-FilM에 Motivation 10개 항목이 있다 | doi:10.1073/pnas.2414005122, arXiv:2410.11758, doi:10.1016/j.isci.2020.101060 |
 | **W** | **Internally Generated Experience** (Memory, Imagery, Recall) | Construct | vision-decoding(조건부 제안) | 외부 분야 Memory and Mental Imagery가 조합 규칙에서 Axis로 쓰이게 한다. **조건부:** 정서 imagery 전용 데이터가 없고, 가장 적합한 데이터(Horikawa 2025 mind captioning의 회상 과제)는 4개 보유 데이터셋 밖이다. NSD-Imagery, NSD recognition 판단, Spacetop shortvideo 재노출로 부분적으로 가능 | doi:10.1126/sciadv.adw1464, arXiv:2506.06898 |
-| **X** | **Machine Affect Representations** (AI 내부 정서 표상: 정서 vector 기하, 국소성 vs 지속성, 관점 결속, appraisal 회로, 행동 인과성) | Construct | frontier-ai(독립 Axis 제안), llm-semantics(LLM 내부 appraisal 방향 chain) | 2025~2026년 AI 연구가 모델 내부 정서 표상을 측정 대상으로 다루기 시작했다. I(모델 종류)나 R(해석 방법)에 두면 "AI 정서 표상과 뇌 정서 표상이 어디서 같고 다른가"라는 비교 대상이 사라진다. **정의에 "모델 내부 표상을 주관 경험으로 해석하지 않는다"는 단서를 포함**(arXiv:2604.07729 저자들의 단서) | arXiv:2604.07729, arXiv:2609.34742, arXiv:2502.05489, arXiv:2310.01405 |
-| **Y** | **Metacognition & Introspective Report** (정서 보고의 privileged access, 보고 확신도, 정서 schema와 언어, 보고 행위의 영향) | Construct | emotion-theory(S3) | 외부 분야 Artificial Consciousness and Metacognition의 핵심이며 A, N, R에 걸친다. **데이터 제약:** 4개 데이터셋에 보고 확신도나 재평정 일관성 측정이 없다. 대신 Spacetop의 본인 보고 vs peer 합의 비교, Emo-FilM의 consensus vs 참가자 사후 평정 비교로 "본인 보고의 고유 설명력"(privileged access의 약한 검정)을 다룰 수 있다 | doi:10.1073/pnas.1619316114, doi:10.1016/j.tics.2019.06.009 |
+| **X (R의 Sub-axis로 조정)** | **Machine Affect Representations** (AI 내부 정서 표상: 정서 vector 기하, 국소성 vs 지속성, 관점 결속, appraisal 회로, 행동 인과성) | Construct | frontier-ai(독립 Axis 제안), llm-semantics(LLM 내부 appraisal 방향 chain) | 2025~2026년 AI 연구가 모델 내부 정서 표상을 측정 대상으로 다루기 시작했다. I(모델 종류)나 R(해석 방법)에 두면 "AI 정서 표상과 뇌 정서 표상이 어디서 같고 다른가"라는 비교 대상이 사라진다. **정의에 "모델 내부 표상을 주관 경험으로 해석하지 않는다"는 단서를 포함**(arXiv:2604.07729 저자들의 단서) | arXiv:2604.07729, arXiv:2609.34742, arXiv:2502.05489, arXiv:2310.01405 |
+| **Y (A의 Sub-axis로 조정)** | **Metacognition & Introspective Report** (정서 보고의 privileged access, 보고 확신도, 정서 schema와 언어, 보고 행위의 영향) | Construct | emotion-theory(S3) | 외부 분야 Artificial Consciousness and Metacognition의 핵심이며 A, N, R에 걸친다. **데이터 제약:** 4개 데이터셋에 보고 확신도나 재평정 일관성 측정이 없다. 대신 Spacetop의 본인 보고 vs peer 합의 비교, Emo-FilM의 consensus vs 참가자 사후 평정 비교로 "본인 보고의 고유 설명력"(privileged access의 약한 검정)을 다룰 수 있다 | doi:10.1073/pnas.1619316114, doi:10.1016/j.tics.2019.06.009 |
 
 ### 2.3 독립 Axis로 채택하지 않은 제안 (이견 기록)
 
@@ -256,7 +258,7 @@ Axis가 아니라 Stage 3 이후 모든 후보 질문에 붙이는 표기로 둔
 
 ## 3. 갱신된 Axis 유형표 (`reference/axes.md` 1절 갱신본)
 
-조합 단계(P5)의 무작위 경로는 이 표를 쓴다. `reference/axes.md` 원본은 사용자 지침 파일이라 고치지 않았다.
+조합 단계(P5)의 무작위 경로는 이 표를 쓴다. X(Machine Affect Representations)는 R의 Sub-axis, Y(Metacognition & Introspective Report)는 A의 Sub-axis로 두었다(2.2절 사용자 결정 반영). `reference/axes.md` 원본은 사용자 지침 파일이라 고치지 않았다.
 
 | 유형 | Axis | 주 담당 에이전트 |
 |---|---|---|
@@ -265,9 +267,7 @@ Axis가 아니라 Stage 3 이후 모든 후보 질문에 붙이는 표기로 둔
 | | C Context, Meaning & Narrative | llm-semantics |
 | | D Temporal Dynamics | multimodal-dynamics |
 | | **V Action Readiness & Affordance** (신규) | brain-inspired |
-| | **W Internally Generated Experience** (신규, 조건부) | vision-decoding |
-| | **X Machine Affect Representations** (신규) | frontier-ai |
-| | **Y Metacognition & Introspective Report** (신규) | emotion-theory |
+| | **W Internally Generated Experience** (신규, 데이터 조건 충족: Mind captioning) | vision-decoding |
 | Neural (뇌의 어디, 어떤 형식) | E Neural Targets | systems-neuro |
 | | F Brain Representation | encoding-foundation |
 | | O Individual & Population Variation | geometry-info |

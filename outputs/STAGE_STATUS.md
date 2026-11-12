@@ -171,4 +171,4 @@ Stage 3는 10개 연구 에이전트의 Round 2(교차 교환), 제안 응답, R
 | 항목 | 결정 |
 |---|---|
 | 16 Horikawa 2025 Mind captioning (OpenNeuro ds005191) | **사용 가능. 사용자가 이미 보유하고 전처리까지 완료.** 사용 가능 데이터셋은 5개(Horikawa 2020, Emo-FilM, Spacetop, NSD, Mind captioning)로 늘어남. 이에 따라 chain VD-R2(회상 정서 재활성), LS-Chain1, VD-R6(정서 배제 캡션)과 Axis W의 데이터 조건이 충족됨. 저장소에 실제로 들어 있는 파일(반복 클립, 회상 과제, vividness, 캡션)의 세부는 미확인 |
-| 17 새 Axis U~Y | 사용자가 설명을 요청함. 결정 대기 |
+| 17 새 Axis U~Y | 설명 후 사용자 답변 "일단 진행해"(선택지 미지정). Coordinator 권장안 적용: **U, V, W 독립 Axis 채택, X는 R의 Sub-axis, Y는 A의 Sub-axis**. 사용자가 다른 안을 고르면 수정. Stage 3 시작 지시로 봄 |
