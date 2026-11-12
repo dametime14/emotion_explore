@@ -3,7 +3,7 @@
 ## 1. 우리 환경 (사용자가 채워 넣을 것)
 
 * 데이터 위치: [채워 넣기: 예) Horikawa = /path/to/horikawa, Emo-FilM = ..., Spacetop = ..., NSD = ...]
-* 원본 자극 파일 보유 여부: [채워 넣기: 데이터셋별로 비디오/이미지/오디오 원본을 갖고 있는지]
+* 원본 자극 파일 보유 여부: 4개 데이터셋(Horikawa, Emo-FilM, Spacetop, NSD) 모두 보유 (사용자 확인, 2026-11-12. 경로는 미기재)
 * 이미 추출해 둔 feature나 embedding: [채워 넣기: 예) V-JEPA2 feature, CLIP feature 등]
 * 계산 자원: [채워 넣기: 예) Perlmutter GPU 노드 종류와 할당 시간, 로컬 GPU]
 * 사용 가능한 pretrained checkpoint: [채워 넣기]
