@@ -156,7 +156,57 @@ Round 1 0.5절 판정에 Mind captioning을 더한다. 직접 tSNR을 계산하�
 
 ## 3. 받은 제안에 대한 응답
 
-(Coordinator가 전달한 뒤 추가)
+작성일 2026-11-12(Round 3과 함께). 각 제안의 원문은 보낸 에이전트의 round2.md 2절에서 읽었다. 요약: 수용 5(ET-P4, EF-P4, MD-P2, GI-P7, LS-P7), 수정 3(VD-P5, GC-P5, BI-P3), 반박 0.
+
+**이 응답 전체에 쓰는 새 사실(원문 확인):** Mind captioning 전처리는 run별로 상수, 선형 추세, 머리 움직임 24개와 함께 **CSF, WM, GM 평균 신호와 그 미분, 제곱(12개 전역 신호)을 회귀**한 뒤 4 s shift와 despike를 적용했다(doi:10.1126/sciadv.adw1464 Methods, PubMed MCP 전문). 즉 Mind captioning 공개 전처리본에서는 전역 자율신경 성분이 대부분 제거되어 있다. Horikawa 2020 공개 전처리본의 nuisance 회귀 항목은 아직 원문이나 코드로 확인하지 못했다(Stage 1은 "nuisance regression"으로만 기록). 두 코호트를 비교하는 모든 제안에서 이 차이를 요인으로 기록해야 한다.
+
+### ET-P4 (emotion-theory → systems-neuro): Horikawa multiverse 격자 통합 → **수용**
+* 이유: 내 SN-P7과 같은 통합 제안이며, AMI와 순열 기준(요인 D), 피험자 내 session 분할 재현성, "측정 타당성"으로 서술하는 해석 규칙은 모두 내 Round 1 chain 2의 약점을 메운다(NMI 편향은 adversarial-reviewer U2 지적).
+* 덧붙일 조건 두 가지: (1) 요인 E '코호트'를 두되, Mind captioning은 전역 신호 회귀본이므로 Horikawa 2020 쪽도 같은 회귀를 한 판과 하지 않은 판을 모두 만들어 '코호트 차이'와 '파이프라인 차이'를 분리한다. (2) network별 tSNR(특히 TE 43 ms의 vmPFC, OFC)을 공변량으로 기록한다.
+* 근거: arXiv:2507.00320, doi:10.1126/sciadv.adw1464, doi:10.1038/s41593-025-01945-y, doi:10.1016/j.isci.2020.101060
+
+### VD-P5 (vision-decoding → systems-neuro): 경로 ROI의 region-additive latent decoding → **수정**
+* 받아들이는 부분: '해독 가능한 정보의 수준 비율'로 경로 내용을 묻는 틀은 brain-inspired P-3의 '속도가 아니라 내용' 기준과 맞는다.
+* 문제: (1) MPathI 경로는 다변량 패턴이고 Kragel 2021 Expt2(3T, 2.7 mm 획득 후 2 mm로 재표집)에서 SC 마스크는 41 voxel, pulvinar 208, amygdala 240 voxel이었으므로(Methods) voxel 기반 latent decoding은 거의 0일 가능성이 크다(제안자도 반론 1로 인정). (2) "시각피질 해독에 voxel을 더했을 때의 증분"은 voxel 수 증가 자체의 효과와 섞인다. (3) 저수준 latent는 일반적으로 해독되는 분산이 커서 '저수준 증분 > 고수준 증분'이 shortcut이 아니라 SNR 차이로 생길 수 있다. (4) Bo 2021식 재진입(effective connectivity)은 블록 평균 데이터로 검정할 수 없다.
+* 수정안: (a) decoding 원천을 ROI voxel이 아니라 **MPathI 경로 latent 점수(경로당 1차원)**로 바꾼다. (b) 증분 검정에 같은 크기의 무작위 피질하 또는 백질 voxel 집합을 null로 둔다. (c) 저수준, 고수준 latent의 해독 가능 상한(시각피질 기준)으로 증분을 정규화한다. (d) SN-P3 게이트(LGN-V1 양성, 무음 자극의 MGN-A1 음성 대조, SC tSNR) 통과 뒤에만 실행하고 순서는 Spacetop, Mind captioning(TE 30 ms), Horikawa(TE 43 ms) 순으로 한다. (e) 재진입 질문은 Spacetop 연속 시계열(TR 0.46 s)로 한정한다.
+* 근거: doi:10.1016/j.neuron.2021.06.001, doi:10.1016/j.neuroimage.2021.118617, arXiv:2607.19327
+
+### EF-P4 (encoding-foundation → systems-neuro): brain foundation model 정서 latent 공동 benchmark → **수용**
+* 이유: 내 Round 1 chain 7보다 엄밀하다(buffer를 둔 분할, coverage 대조, 라벨 head 분리, 영화 내 변동 probe). Brain-JEPA 라이선스 미확인이면 CortexMAE와 NeuroSTORM으로 시작한다는 데 동의한다.
+* 덧붙일 조건: (1) 모든 probe를 **생리 회귀 전후(Emo-FilM), 전역 신호 회귀 전후(Spacetop, Horikawa)**로 반복한다. 휴지기 사전학습 latent가 가장 쉽게 담는 것은 전역 자율신경 성분일 수 있다(doi:10.1038/s41593-025-01945-y). (2) Mind captioning을 쓰면 이미 전역 신호가 회귀된 판이라는 점을 표기한다. (3) Tian 피질하 token masking의 해석은 해당 token의 tSNR이 기준을 넘는 피험자에서만 한다.
+* 근거: arXiv:2409.19407, arXiv:2510.13768, doi:10.1371/journal.pcbi.1012994, doi:10.1038/s41597-026-07065-x
+
+### MD-P2 (multimodal-dynamics → systems-neuro): 시간 척도와 소리를 떼는 2요인 설계 → **수용**
+* 이유: 내 Round 1 chain 6이 스스로 인정한 교락(자극 길이와 소리 유무)을 데이터셋 안 기울기로 푸는 설계라 개선이다.
+* 덧붙일 조건: (1) Horikawa, Mind captioning의 블록 길이 변이(10~94 s)는 비디오 정체와 내용에 묶여 있으므로 긴 블록의 기울기는 내용 공변량(중립 캡션 embedding, 시각 feature)을 넣고 추정한다. 공개본은 블록 평균이라 블록 내 시간 척도는 raw 연속 시계열로만 볼 수 있다. (2) 자기상관 기반 시간 척도는 TR(2, 1, 1.3, 0.46 s)과 HRF에 의존하므로 초 단위로 환산하고 HRF를 deconvolution한 값으로 비교한다. (3) 자율신경 회복과 전역 성분은 모든 영역의 시간 척도를 늘리므로 Emo-FilM에서는 생리 회귀 전후를 모두 보고한다(SN-P2와 같은 진단).
+* 근거: doi:10.1093/scan/nsab112, doi:10.1093/scan/nsad063, doi:10.1038/s41593-025-01945-y, doi:10.1093/cercor/bhx290
+
+### GI-P7 (geometry-info → systems-neuro): 휴대 가능한 arousal = 저rank 전역 자율신경 모드 → **수용**
+* 이유: 내 Round 1 chain 1의 가설을 rank 대역이라는 검정 가능한 형태로 날카롭게 만든다. 영상 시청 중 심박이 자극에 동기화된다는 결과(doi:10.1093/pnasnexus/pgac020)는 '개인 간 가장 크게 공유되는 저rank 모드에 자율신경 성분이 실린다'는 예측을 뒷받침한다.
+* 정정과 조건: 제안문은 Mind captioning을 'GM 전역 신호 회귀'로 적었는데, 원문으로 확인하니 GM뿐 아니라 CSF, WM 평균과 미분, 제곱까지 12개를 회귀했다(위 '새 사실'). Horikawa 2020의 회귀 항목을 먼저 확인해야 두 코호트가 '자연 대조'가 된다. Bhattacharyya 2026(preprint, 초록)이 정서, 자율, 각성도 arousal의 공유를 보였으므로 already_done은 partially로 둔다. 이 제안을 내 chain 1의 rank 분석 가지로 합친다.
+* 근거: doi:10.1038/s41593-025-01945-y, doi:10.1371/journal.pcbi.1012994, doi:10.64898/2026.06.08.730730, arXiv:2409.06843
+
+### GC-P5 (generative-counterfactual → systems-neuro): 공간주파수 counterfactual과 AI다움 보정 곡선 → **수정**
+* 받아들이는 부분: (1) 생성 모델 없는 고전 필터라 AI다움 confound가 없다는 장점, (3) signal-feasibility 판정이 '부적합'인 영역은 encoder를 학습하지 않는다는 규칙.
+* 문제: (1) 저역/고역 통과 영상은 encoder 학습 분포 밖이라 예측 변화가 encoder 외삽 특성을 반영할 수 있다. 피질하 encoder는 예측력이 낮아(제안자 반론 a) 이 문제가 더 크다. (2) 경로 수준 질문을 영역 encoder로 근사하면 McFadyen 2017이 보고한 '공간주파수와 무관한 pulvinar-amygdala 연결'(brain-inspired가 인용, WebSearch 요약 수준)과 비교할 수 없다. (3) NSD 반복 감쇠를 '신기성 1단위'로 쓰는 것은 old/new 기억 판단과 친숙도가 섞여 구성 개념이 다르다.
+* 수정안: (a) 필터 counterfactual은 high road 대조(복측 시각피질 ROI)와 같은 encoder 계열에 함께 적용해 '피질하만의 공간주파수 민감도'를 상대 비교로 본다. (b) 필터 강도를 단계적으로 두어 원본 근처(분포 안)에서의 기울기만 해석한다. (c) 신기성 보정 곡선은 NSD 대신 **Mind captioning 72클립 5회 반복**(정서 비디오, 기억 판단 과제 없음)의 amygdala 감쇠 기울기로 정의한다(SN-P5와 같은 데이터). NSD는 보조 상한으로만 둔다.
+* 근거: doi:10.1016/j.neuron.2021.06.001, doi:10.1038/nn1057, doi:10.1038/s41467-024-49073-8, doi:10.1126/sciadv.adw1464
+
+### LS-P7 (llm-semantics → systems-neuro): "언어화 가능한 정서" 기준선 → **수용**
+* 이유: 내 SN-P6, 가져온 아이디어 G5와 같은 방향이다. 인간-MLLM 잔차를 평정자 split 잔차(라벨 잡음 귀무분포)와 비교하는 검증 논리가 명확하다.
+* 덧붙일 조건: 잔차 → insula, 뇌간 BOLD 예측은 raw BOLD와 생리 회귀 BOLD 둘 다에서 보고한다(전역 자율신경 경로로 생긴 상관인지 구분). 뇌간은 signal-feasibility가 불리하므로(Tyszka 2026 Usage Notes) 결과를 insula와 분리해 낮은 확신으로 표시한다. 1 Hz MLLM 타당도가 확인된 항목만 쓴다는 제안자 조건에 동의한다.
+* 근거: doi:10.1162/imag.a.1300, doi:10.1038/s41593-025-01945-y, doi:10.1038/s41597-026-07065-x
+
+### BI-P3 (brain-inspired → systems-neuro): 피질하 경로 내용과 선택성의 Horikawa x Spacetop 교차 설계 → **수정**
+* 받아들이는 부분: 한 데이터셋에서 추정한 경로를 다른 데이터셋에 고정 적용해 순환 추론을 피하는 구조, shortcut을 얕은 층 feature와 저공간주파수 에너지 두 band로 나누는 정의.
+* 문제: 경로 패턴(voxel 가중치)을 스캐너, 해상도, 공간이 다른 데이터셋으로 그대로 옮기기 어렵다. Horikawa 공개본은 native volume 2 mm, Spacetop은 MNI 2.7 mm, MB와 TE도 다르다. 전향 적용 실패가 '일반화 한계'인지 '정합 실패'인지 구분되지 않는다.
+* 수정안: (a) 전향 적용의 1차 쌍은 **Horikawa 2020 → Mind captioning**(같은 자극, 같은 연구실 프로토콜 계열, 둘 다 2 mm)으로 하고, Spacetop으로의 전이는 패턴 가중치가 아니라 경로 latent가 담는 내용(feature band 회귀 계수)의 비교로 한다. (b) 모든 데이터셋에서 SN-P3 게이트를 먼저 통과시킨다. (c) Mind captioning 72클립 반복으로 경로 latent의 split-half 신뢰도를 보고한다(제안자의 signal-feasibility 요구와 같음).
+* 근거: doi:10.1016/j.neuron.2021.06.001, arXiv:2607.19327, doi:10.1523/JNEUROSCI.1436-24.2025, doi:10.1126/sciadv.adw1464
+
+### 참조로 언급된 제안 (짧게)
+* **GI-P1 (geometry-info → emotion-theory, 참조 systems-neuro):** 지지한다. 코호트 간 공유를 '보수적 하한'으로 보는 논리에 동의하며, 코호트 차이에 **Mind captioning의 12개 전역 신호 회귀**가 들어 있다는 사실(원문 확인)을 반론 (a)의 목록에 추가할 것을 권한다.
+* **GI-P3 (geometry-info → multimodal-dynamics, 참조 systems-neuro):** 지지하되 한 가지 논리 보완이 필요하다. "HRF 잔여는 모든 부분공간에 같은 시간 커널로 작용한다"는 전제는 HRF에는 맞지만 **전신 자율신경 성분에는 맞지 않는다.** Bolt 2025는 전역 성분이 감각운동 피질에서 먼저 나타나는 공간 구조를 가진다고 보였다(Discussion 11째 단락). 그러면 시각 정렬 부분공간과 정서 정렬 부분공간에 서로 다르게 투사되어 부분공간별 감쇠 차이를 만들 수 있다. Emo-FilM washout에서는 생리 회귀 전후를 모두 적합해야 한다(SN-P2).
+* **BI-P4 (brain-inspired → encoding-foundation, 참조 systems-neuro U2):** 조건부 지지. 영화 시청 중 심박 변화의 상당 부분은 자극 시점에 묶인 정향 반응(감속)과 자극 구동 동기화일 수 있으므로(doi:10.1093/pnasnexus/pgac020), '항상성 편차'로 해석하려면 자극 구동 성분(참가자 간 평균 생리 반응)을 먼저 빼고 남는 개인 편차만 drive 대리로 써야 한다.
 
 ---
 

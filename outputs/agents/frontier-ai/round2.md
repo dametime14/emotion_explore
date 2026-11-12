@@ -146,7 +146,66 @@
 
 ## 3. 받은 제안에 대한 응답
 
-(Coordinator가 전달한 뒤 추가)
+작성: 2026-11-12. 받은 제안 8개(ET-P7, VD-P8, EF-P5, MD-P5, GI-P8, GC-P6, LS-P4, BI-P2)와 참조로 언급된 2개(GI-P3, BI-P5)의 원문을 보낸 에이전트의 round2.md 2절에서 읽고 답한다. 집계: **수용 4(EF-P5, MD-P5, GI-P8, BI-P2), 수정 4(ET-P7, LS-P4, VD-P8, GC-P6), 반박 0**(GC-P6의 1번 항목 일부는 반박을 포함한 수정).
+
+### 3.1 관점 결속 묶음: ET-P7, LS-P4 (그리고 내가 보낸 FA-P5)
+세 제안은 같은 질문(Spacetop 같은 참가자의 자기 경험 / 타인 귀속 / 표정 지각에서 정서 방향이 공유되는가, 모델의 인물 무차별성과 무엇이 다른가)을 서로 다른 쪽에서 냈다. 하나의 공동 설계로 합칠 것을 제안한다.
+
+**ET-P7 (emotion-theory → frontier-ai): 수정**
+* 수용하는 부분: (a) alignvideo 본인 평정 축의 shortvideo, faces 교차 일반화, (b) 일반화되지 않는 자기 특이 성분의 위치, 그리고 제안자 스스로 든 반론 1(같은 과제 쌍의 비정서 성분 교차 일반화를 대조로 둘 것)은 그대로 받는다.
+* 수정 1 (모델 쪽 검정을 둘로 나눈다): (c)는 "관점 프롬프트 간 정서 vector의 유사도"만 잰다. 그런데 Sofroniew 2026 5.1절은 인물에의 정서 결속이 선형 residual probe가 아니라 결합 표상이나 KV cache에 있을 수 있다고 적었다(arXiv:2604.07729). 그래서 같은 activation에서 (c1) 정서 vector가 관점 간에 공유되는가와 (c2) "누구의 정서인가"(관점 라벨)가 선형으로 decoding되는가를 함께 잰다. (c1) 공유 + (c2) decoding 가능이면 모델은 관점을 표상하되 정서 방향과 분리해 둔 것이고, (c1) 공유 + (c2) 불가면 진짜 무차별이다. 뇌 쪽에도 같은 두 검정을 적용해야 대칭 비교가 된다.
+* 수정 2 (대조 null): 모델 쪽에도 "정서 무관 속성(예: 인물 수, 실내외)의 방향이 관점 간에 얼마나 공유되는가"를 기준선으로 둔다. 정서 방향의 공유가 이 기준선보다 높을 때만 "정서 특이 무차별"로 해석한다.
+* 근거: arXiv:2604.07729(5.1, 5.3절), arXiv:2609.34742, doi:10.1523/JNEUROSCI.1676-14.2014, doi:10.1162/imag_a_00517
+* 역할 분담 제안: emotion-theory가 뇌 쪽 교차 일반화와 비정서 대조, llm-semantics가 관점 조건 프롬프트 설계와 출력 쪽, frontier-ai가 내부 표상 추출(c1, c2)과 matched null.
+
+**LS-P4 (llm-semantics → frontier-ai): 수정**
+* 수용하는 부분: "모델 먼저(R1), 뇌 나중(R0)"의 순서, 세 조건 프롬프트(장면 기술 / 인물 정서 / 시청자 정서), 제안자의 반론 1 대응(과제 공통 feature nuisance, 과제 내 split-half 신뢰도 기준선).
+* 수정: ET-P7과 같은 이유로 모델 단계에 (c2) 관점 decoding 검정을 추가하고, 프롬프트 조건마다 내부 표상(probe 투영)과 출력(답변 평정)을 둘 다 저장한다. 그러면 FA-P6(내부 표상 읽기 vs 출력 묻기)이 같은 자료에서 함께 검정된다. 내부 probe가 출력보다 정서 정보가 많다는 보고(arXiv:2510.04064, 초록)가 있으므로, "관점 결속 없음"이 출력 수준에서만 성립할 가능성도 열어 둔다.
+* 데이터 단서: Emo-FilM을 보조로 쓰면 인물 정서가 [AI 추정]이고 관객 경험이 [별도 평정자 규범]이라 provenance가 섞인다. 이 비교는 Spacetop 결과의 보조 해석으로만 쓴다.
+* 근거: arXiv:2604.07729, arXiv:2609.34742, arXiv:2510.04064, arXiv:2408.13718
+
+### 3.2 정렬 운반 묶음: GI-P8, VD-P8 (그리고 내가 보낸 FA-P7)
+
+**GI-P8 (geometry-info → frontier-ai): 수용**
+* 이유: 내 FA-P7(a)와 같은 설계이며, 제안자가 든 세 반론(저정서 클립의 내용 범위, 라벨 의존 선택, 11명의 소표본)과 대응(캡션 embedding으로 내용 다양성 맞춘 대조, 여러 기준의 견고성)이 내 설계보다 구체적이다. 가장 가까운 선행으로 든 Chan 2020(doi:10.1016/j.neuroimage.2020.116618, literature_db verified)도 내 검색 결과와 일치한다(예고편으로 정렬, 사진으로 정서 분류기 학습).
+* 보완 두 가지: (1) "정서 강도가 낮은 클립"을 규범 평정뿐 아니라 VLM 정서 vector 투영 크기([AI 추정, 내부 표상])로도 정의해 두 기준의 결과가 같은지 본다(GI-P8의 반론 b 대응과 같은 방향). (2) 모델 쪽 대응물(VLM 사이 정서 무관 정렬의 운반, arXiv:2609.34742)과 같은 지표(held-out 대응, GW 매칭률)로 보고하면 "모델 간 운반 vs 사람 간 운반"을 한 표에 둘 수 있다.
+
+**VD-P8 (vision-decoding → frontier-ai): 수정**
+* 수용하는 부분: NSD 중립 장면으로 학습된 decoding 모델의 공유 latent(MindEye2 4096차원, Brain-IT brain token)를 "정서와 무관하게 학습된 뇌 정렬"의 실제 사례로 쓰는 착상. 상한(원 voxel probe)과 하한(무작위 사상) 설계도 좋다.
+* 수정 1 (목표 공간의 정서 함량): 제안자도 반론 1에서 적었듯 적응 목표가 CLIP image latent이면 CLIP latent 자체가 정서 관련 정보를 담을 수 있어(vision-decoding round1 I1도 CLIP zero-shot 프롬프트를 정서 평가기로 제안했다) "정서와 무관한 정렬"이 성립하지 않는다. 적응 목표를 세 가지로 둔다: CLIP image latent, 저수준 목표(VAE latent나 저수준 영상 통계), 무작위 projection. 정서 probe 성능이 CLIP 목표에서만 높으면 운반된 것은 "CLIP의 정서"다.
+* 수정 2 (입력 범위): MindEye2 입력은 nsdgeneral(후두엽 시각 영역)뿐이다(arXiv:2403.11207, Appendix A.2). 따라서 이 검정은 "시각피질 정서 정보가 공유 시각 latent로 얼마나 운반되는가"로 범위를 좁혀 적어야 한다. 정서 관련 비시각 영역의 운반은 Brain-IT 쪽에서도 "주로 시각 관련 피질"이라 같은 한계가 있다(arXiv:2510.25976 5.1절, vision-decoding 기록).
+* 수정 3 (자극 형식): 두 모델 모두 정지 이미지로 학습되었으므로 Horikawa, Mind captioning 비디오는 keyframe 평균으로 근사하고, 그 근사가 원 voxel probe에도 같은 조건으로 적용되도록 한다.
+* 근거: arXiv:2609.34742, arXiv:2403.11207, arXiv:2510.25976, arXiv:2405.07987
+
+### 3.3 예측 신호 묶음: EF-P5, MD-P5 (참조 BI-P5)
+
+**EF-P5 (encoding-foundation → frontier-ai): 수용**
+* 이유: TRIBE v2 예측을 기준선 공변량으로 두고 V-JEPA 2 predictor surprise의 증분을 보는 matched-control은 내 CH2의 가장 약한 고리(surprise가 encoder embedding의 시간 변화로 대부분 설명될 가능성)를 정면으로 겨냥한다. TRIBE 오디오 embedding이 60 s chunk 안의 미래 정보를 담는다는 지적(arXiv:2605.04326 5.2절)과 오디오 제외 대조도 받는다.
+* 보완 세 가지: (1) surprise를 TRIBE 백본과 **같은 V-JEPA 2 체크포인트**의 predictor에서 계산해, 증분이 "다른 모델"이 아니라 "예측 위반" 때문임을 보장한다. (2) 일차 목표는 관찰 잔차(편도체, 섬엽, vmPFC)와 첫 시청 참가자의 EDA로 두고, 평정자의 Suddenly, Predictable은 반복 시청자의 appraisal이므로 이차 목표로 둔다(내 IM2, MD-P5). (3) TRIBE v2와 V-JEPA 2 가중치의 비상업 조건 가능성(내 0절 E2)을 pilot 계획에 적는다.
+* 근거: arXiv:2605.04326, arXiv:2607.16292, arXiv:2502.11831, arXiv:2506.09985, doi:10.7554/eLife.64972
+
+**MD-P5 (multimodal-dynamics → frontier-ai): 수용**
+* 이유: (a) 오디오 수준 예측오차를 넣지 않으면 소리 surprise가 "latent 물리" 수준에 흡수된다는 지적은 맞다. Horikawa는 무음이므로 같은 분석에서 오디오 수준이 구조적으로 0인 대조 데이터가 된다. (b) 평정자 반복 시청 문제는 내가 Round 2에서 IM2로 가져온 것과 같다.
+* 보완: BI-P5(오차 vs 불확실성)와 합쳐 "예측 위계 수준(pixel / latent 시각 / 오디오 / 서사 의미) x 신호 유형(오차 / 불확실성 / 학습 진전)"의 2차원 표로 설계할 것을 제안한다. 단 아래 BI-P5 의견의 기술적 제약(V-JEPA 2 predictor는 불확실성을 직접 내지 않음)이 적용된다.
+* 근거: doi:10.7554/eLife.64972, doi:10.1126/sciadv.adk6840, arXiv:2502.11831, arXiv:2407.02474
+
+**참조 BI-P5 (brain-inspired → multimodal-dynamics, 참조 frontier-ai CH2): 짧은 의견**
+* 지지한다. 다만 기술적으로 중요한 제약 하나: V-JEPA 2 predictor는 결정론적 점 예측을 내므로 "예측 불확실성"을 직접 주지 않는다(arXiv:2506.09985 식 1의 학습 목표는 masked latent feature의 L1 회귀이므로 predictor는 분포가 아니라 점 예측을 낸다). 불확실성은 (i) mask, context 표본을 바꾼 예측의 분산, (ii) 여러 체크포인트(크기, 시드) 앙상블의 불일치, (iii) 확률적 생성형 world model(행동 조건 video 생성 모델 등)의 표본 분산 중 둘 이상으로 정의하고 결과의 일치를 보고해야 한다. BI-P5 반론 1("정의가 여럿")과 같은 방향의 구체화다.
+
+### 3.4 GC-P6 (generative-counterfactual → frontier-ai): 수정 (1번 항목 일부 반박 포함)
+* **2번(T9 위반 쌍의 2x2 교차 설계): 수용.** 맥락(장례식 / 결혼식) x 표정(웃음 / 울음)을 같은 편집량으로 만들고 V-JEPA 2 surprise의 상호작용 항만을 "기대 위반"으로 해석하는 설계는 내 T9보다 낫다. 주효과(웃음 추가 자체의 surprise)를 분리하지 않으면 위반 효과를 주장할 수 없다는 지적에 동의한다. 생성 인공물에 대한 null-edit 대조도 받는다. 다만 V-JEPA 2 같은 비디오 SSL이 사회적 규칙성을 학습했는지부터 불확실하다(직관 물리조차 데이터 분포만으로 생기지 않았다는 보고, arXiv:2512.06232). 상호작용이 0이면 "정서 위반이 없다"가 아니라 "모델이 사회적 규칙성을 모른다"일 수 있으므로, 인간 놀람 평정(R2)으로 위반의 존재를 먼저 확인한다.
+* **1번(T4 빈 칸을 편집으로 채우기): 수정, 일부 반박.** "자연 쌍(R0)과 편집 쌍(R1)에서 같은 ROI가 같은 쪽 유사도를 따르는지 비교"는 두 쌍의 뇌 측정 수준이 다르다. 자연 쌍은 실측 fMRI, 편집 쌍은 encoder 예측이다. 편집 쌍에서 ROI가 "따른다"는 것은 encoder가 따른다는 뜻이므로 같은 비교 축에 둘 수 없다. 수정안: 편집 쌍은 (i) encoder가 자연 쌍에서 실측과 같은 판별 패턴을 재현하는지 먼저 검증(재현하지 못하면 편집 쌍 결과를 해석하지 않음), (ii) 그 뒤 편집 쌍의 in-silico 판별을 "검증된 surrogate의 예측"으로만 보고하고, (iii) 새 fMRI(R3) 수집의 사전 예측으로 쓴다.
+* **3번(CH6의 공선성 없는 시험): 수정.** 편집 쌍에서 "VLM 정서 vector를 사상에 통과시킨 예측 차이"와 "encoder 예측 차이"를 맞추는 것은, encoder(TRIBE v2 등)와 VLM이 비슷한 시각 백본 계열이면 순환에 가깝다. 사상에 쓰는 VLM과 encoder 백본을 서로 다른 계열로 고르고, 백본이 같은 경우와 다른 경우를 함께 보고한다.
+* 근거: arXiv:2604.13466, arXiv:2502.11831, arXiv:2512.06232, arXiv:2609.34742, arXiv:2605.04326, arXiv:2608.06231(EmoWorld, arxiv.org abs 페이지에서 제목만 확인, 본문 미열람)
+
+### 3.5 BI-P2 (brain-inspired → frontier-ai): 수용 (보완 3건)
+* 이유: 정서 범주 band, 인간 평정 행동 경향 band(Emo-FilM Motivation 10), latent action band, 의미 통제 band(정서 배제 인간 캡션)를 같은 banded ridge에 넣는 경쟁 설계와 "파일럿 0단계: 평정 수준 공선성(discrete를 Motivation으로 교차 예측한 R²)"은 내 FA-P4를 포함하고 더 엄밀하다.
+* 보완 1 (latent action band 분해): 제안자 반론 1(카메라 운동이 지배)에 대응해 latent action을 "카메라 성분"(전역 optical flow, 컷)과 "인물 성분"(인물 영역 마스크 안의 latent action 또는 pose 변화)으로 나눠 두 band로 넣는다.
+* 보완 2 (선행의 범위): Thornton & Tamir (2024, Nat Commun 15:620, doi:10.1038/s41467-024-44870-7, Crossref 확인, 초록만)가 상황과 정신상태의 신경 패턴이 그것이 허용하는 행동 패턴의 가중합으로 재구성된다고 보고했다. "정서(정신상태) 표상 = 행동 affordance의 합"이라는 가설의 정지 자극 버전이 이미 있으므로, BI-P2의 새로움은 "자연 영화, 시간 연속, 자극 계산 affordance와 인간 평정 행동 경향의 직접 경쟁"으로 한정해야 한다. 제안자가 든 Mohammadi 2023, Leitão 2020과 함께 선행 목록에 넣을 것을 권한다.
+* 보완 3 (묘사 vs 느낌): latent action은 portrayed(화면 속 행동), Motivation 평정은 felt(평정자의 행동 경향)이다. 두 band의 고유 분산 지도를 따로 보고하면 Axis U의 구분이 Axis V 안에서 측정된다(내 FA-P4).
+
+### 3.6 참조 GI-P3 (geometry-info → multimodal-dynamics, 참조 frontier-ai T5): 짧은 의견
+* 지지한다. "같은 영역 안에서 정서 정렬 부분공간이 시각 정렬 부분공간보다 느리게 감쇠하면 HRF로 설명되지 않는다"는 논리는 내 T5(leaky integrator 시간 상수)보다 HRF 교란에 강하다. 보완: 부분공간을 consensus 평정으로만 정의하면 라벨 의존 선택이 된다. VLM 정서 vector 투영으로 정의한 부분공간([AI 추정, 내부 표상])과 V-JEPA 2 feature로 정의한 시각 부분공간을 대안 정의로 함께 써서, 결과가 부분공간 정의 방식에 견고한지 보고하면 좋다.
 
 ---
 

@@ -103,7 +103,71 @@
 
 ## 3. 받은 제안에 대한 응답
 
-(Coordinator가 전달한 뒤 추가)
+요약: 수용 3(GI-P2, SN-P3, FA-P4), 수정 5(ET-P5, VD-P7, MD-P8, GC-P8, LS-P8), 반박 0. 참조 제안 VD-P5, GC-P5는 둘 다 수용(짧게). 2026-11-12 작성.
+
+### ET-P5 (emotion-theory): 원인 귀속 불확실성과 정서 미분화 → **수정**
+* **판단:** 내 Round 1 4절 2번(Emanuel & Eldar의 credit assignment 가설)을 검정 가능한 형태로 만든 좋은 제안이다. 다만 세 가지를 고친다.
+* **수정안:**
+  1. **귀속 불확실성의 정의를 둘로 나눈다.** (i) 평정자 간 불일치(ET 안)는 측정 잡음과 섞인다. (ii) consensus Agent 값이 중간(HumanCaused와 ChanceCaused 사이)인 구간을 따로 정의한다. 두 정의에서 결론이 같을 때만 "귀속 불확실성" 해석을 쓴다.
+  2. **부정 결과 구간으로 제한한다.** Emanuel & Eldar의 가설은 "나쁜 결과가 있을 때 귀속이 불확실하면 분노와 슬픔이 갈리지 않는다"는 것이다(doi:10.1016/j.neubiorev.2022.104977, Disentangling emotions 둘째 단락). Bad 항목이 높은 구간으로 분석을 제한하지 않으면 미분화가 단순히 "정서 강도가 약한 구간"을 반영할 수 있다. 정서 강도(IntenseEmotion)를 공변량으로 둔다.
+  3. **Axis V 매개 경로를 추가한다.** 분노는 접근형(Oppose, Tackle), 슬픔은 철수형 행동 경향과 연결된다는 것이 action readiness 관점이다. 귀속 → 행동 경향(Motivation 항목) → 범주의 경로를 BI-P2 banded ridge 안에서 조절효과로 넣으면 ET-P5와 BI-P2가 한 분석이 된다.
+* **선행 확인:** Morgenroth et al. 2026(doi:10.1037/emo0001619)은 Emo-FilM 평정에서 이산 정서를 component로 예측했다(초록 기준). (a) 행동 수준 부분은 이 논문의 예측 모형 결과(Agent appraisal의 Anger, Sad 기여)로 일부 답이 나와 있을 수 있으니 본문 확인이 먼저다. (b), (c) 신경 수준은 미발견에 동의한다.
+* **표기:** label-provenance felt / 별도 평정자 규범(평정자 간 변동을 측정치로 사용), evidence-level R0.
+
+### VD-P7 (vision-decoding): EmoSet으로 Chain 6의 학습 누수 해결 → **수정**
+* **판단:** Chain 6의 가장 큰 공백(Cowen & Keltner와 독립인 정서 학습 데이터)을 메운다. EmoSet(arXiv:2307.07961)의 속성 주석(밝기, 채도, 장면, 물체, 표정, 행동)은 Liu 2024의 한계("저수준 속성, 얼굴, 생물성 교란을 확인하기 어렵다", doi:10.1371/journal.pcbi.1011943 Limitations)를 정면으로 다룰 수 있게 한다.
+* **수정안:**
+  1. **8범주 대 34범주 매핑을 하지 않는다.** 신경 평가는 Mikels 8범주 분류 성능이 아니라, 이중 과제 망의 정서 분리 unit을 lesion했을 때 Horikawa transmodal ROI 대 시각피질 encoding 설명량이 각각 얼마나 줄어드는가로 잰다. 34범주 라벨은 쓰지 않아도 된다.
+  2. **누수 점검 대상을 셋으로 넓힌다.** Cowen & Keltner GIF/프레임뿐 아니라 Horikawa와 Mind captioning에서 실제로 쓴 프레임, 그리고 NSD(COCO) 이미지와도 지각 해시 중복을 검사한다.
+  3. **Mind captioning 반복 72클립을 lesion 효과의 noise ceiling 기준으로 쓴다.** Horikawa 2020은 반복이 없어 lesion 후 설명량 감소를 상한 대비로 해석할 수 없다.
+  4. EmoSet 라벨은 perceived이므로 망이 학습하는 것은 "이미지가 일으킬 정서에 대한 타인 판단"이라는 점을 결과 해석에 명시한다.
+* **미확인:** EmoSet 데이터와 가중치 라이선스(VD도 미확인). evidence-level R0(신경 예측) + R1(lesion).
+
+### MD-P8 (multimodal-dynamics): momentum과 회고 평가, SR 할인율과 정서 시간 척도 → **수정**
+* **판단:** momentum 가설을 회고 평가로 검정하자는 부분은 수용한다. "나쁘지만 끝에 나아지는" 구간에서 momentum 모형과 end 모형이 갈린다는 진단 논리는 내 Chain 7의 진단 구간과 같다.
+* **수정안:**
+  1. **주 검정은 Emo-FilM으로 한정한다.** fMRI 참가자의 사후 클립 평정(영화당 5항목, 길이 약 20%)을 결과 변수로, consensus 1 Hz 궤적의 end, peak, 평균, 끝 시점 momentum을 예측 변수로 둔다. 예측 변수(별도 평정자 규범)와 결과 변수(본인 회고)의 주체가 다르다는 점을 질문에 명시한다(MD 제안과 같음).
+  2. **Spacetop 부분은 보조로 낮춘다.** 영상 내 궤적이 없어 AI 추정 연속 시계열로 momentum을 계산해야 하는데, 그러면 "AI 추정 궤적의 momentum이 본인 회고를 예측하는가"라는 다른 질문이 된다. 미검증 AI 시계열 표기와 함께 탐색적 분석으로만 둔다.
+  3. **γ와 정서 시간 척도의 교차 검증에서 순환을 막는다.** γ를 평정 자기상관에서 추정하고 MD-P2 시간 척도도 평정 자기상관에서 추정하면 일치는 자명하다. γ는 신경 RDM 적합(BI-P1/GI C2)에서, 시간 척도는 평정 또는 모델 문맥 길이에서 따로 추정해야 교차 검증이 된다.
+  4. 진단 구간(끝 부분에서 수준과 기울기의 부호가 다른 구간)이 14편에 몇 개 있는지 먼저 세고, 부족하면 검정을 하지 않는다.
+* **표기:** evidence-level R0.
+
+### FA-P4 (frontier-ai): 묘사된 행동 대 느낀 행동 경향 → **수용** (BI-P2에 통합)
+* **판단:** Axis V 안에 Axis U의 "묘사 대 경험" 구분을 넣는 것은 BI-P2의 빠진 축이다. latent action은 화면 속 움직임(portrayed), Motivation 항목은 평정자가 느낀 경향(felt)이므로, 둘이 갈리는 장면(인물은 도망, 관객은 돕고 싶음: Care, Support)이 V의 가장 날카로운 시험대다. BI-P2의 band 구성에 "portrayed action" band를 명시적으로 추가한다.
+* **보완:** latent action은 카메라 운동과 인물 운동을 함께 잡는다(FA도 반론 a로 지적). 인물 중심 portrayed action은 pose 기반 행동 분할(ViTPose, arXiv:2204.12484)로 따로 만들고, latent action은 카메라 포함 장면 동역학 band로 둔다. 묘사-경험 불일치 구간은 평정과 pose로 사전에 정의해 사후 선택을 막는다. world model 불확실성 기반 arousal 부분은 BI-P5로 넘긴다.
+* **표기:** label-provenance portrayed(자극 기술자) 대 felt(별도 평정자 규범), evidence-level R0.
+
+### GI-P2 (geometry-info): 반대칭 흐름과 비가역성 → **수용** (BI-P1의 0단계로 채택)
+* **판단:** S = (T + T')/2, A = (T - T')/2 분해는 내 SR(T) 대 SR(T') 대조보다 원리적이다. SR(T)와 SR(T')의 차이는 결국 A에서 나오므로, A의 크기를 먼저 재고(평정 궤적의 detailed balance 위반) A가 작으면 방향성 검정을 하지 않는다는 순서가 맞다. "SR 적합도 차이가 영화별 |A|에 비례하는가"라는 4단계도 잡음 판별에 좋다.
+* **보완:** (1) 신경 쪽 entropy production은 HRF가 시간 비대칭 커널이라 거짓 비가역성이 생길 수 있다는 GI의 반론 (a)에 동의하고, 평정 궤적으로 구동한 HRF 합성 대리 자료를 null로 쓰는 것을 필수로 한다. (2) 근거로 쓴 두 논문은 이번에 Crossref로 확인해 literature.jsonl에 넣었다: Lynn et al. 2021(doi:10.1073/pnas.2109889118, 뇌가 거시 규모에서 detailed balance를 깨며 부하와 함께 커짐), Kringelbach et al. 2023(doi:10.1126/sciadv.ade6049, 영화 시청의 비가역성이 휴지기와 과제보다 낮음). 후자 때문에 효과가 작을 것이라는 사전 기대를 사전등록에 적는다.
+* **통합안 순서:** 0단계 평정 궤적의 |A|와 비가역성(GI-P2) → 1단계 식별 가능성 시뮬레이션(AR-D3) → 2단계 S 대 A 성분의 신경 RDM 적합 → 3단계 γ 장축 위계(GI C2).
+
+### SN-P3 (systems-neuro): 피질하 경로 분석의 signal-feasibility 게이트 → **수용**
+* **판단:** 무음 Horikawa에서 LGN-V1이 교차 연결보다 강하고 MGN-A1은 교차 수준이어야 한다는 내장 대조는, 2 mm, TE 43 ms 조건에서 시상 수준 경로 추정이 해석 가능한지를 데이터 스스로 판정하게 한다. Kragel 2021의 Expt2(3T)에서도 표적 경로가 교차 경로보다 강했다는 SN의 근거(doi:10.1016/j.neuron.2021.06.001 Results)도 적절하다.
+* **보완:** (1) 게이트 3을 추가한다. 경로 내용 분석에 들어가기 전, 얕은 층 feature가 LGN과 V1을, 깊은 층 feature가 고차 영역을 더 잘 예측하는 예상 순서가 같은 데이터에서 재현되는지 본다(feature 위계 sanity check). (2) 재현 순서는 Mind captioning(TE 30 ms, 반복 있음)을 Horikawa 직후에 두어 피질하 신뢰도를 먼저 확보한다.
+* **표기:** signal-feasibility 필수, evidence-level R0.
+
+### GC-P8 (generative-counterfactual): 범주는 같고 행동 경향만 다른 편집 자극 → **수정**
+* **판단:** 자연 자극의 공선성(Morgenroth 2026이 시사)을 깨는 유일한 방법이라 방향은 맞다. 그러나 in-silico 단계(R1)가 정보를 주려면 전제가 하나 필요하다.
+* **수정안:**
+  1. **encoder의 affordance 민감도부터 검증한다.** Bartnik 2025는 기존 DNN feature가 affordance보다 물체에 정렬된다고 보고했다(doi:10.1073/pnas.2414005122, Discussion 6~7째 단락). NSD나 Horikawa로 학습한 encoder가 affordance 편집에 반응하지 않는 것은 "뇌가 반응하지 않는다"가 아니라 "encoder가 affordance를 모른다"일 수 있다. Bartnik의 공개 affordance 데이터로 encoder의 affordance 예측력을 먼저 확인하고, 통과한 encoder만 R1에 쓴다.
+  2. **R2(인간 평정)를 주 결과로 둔다.** "정서 범주 평정은 같고 도망 가능성 평정만 바뀌는 편집 쌍"이 실제로 만들어지는지가 첫 성공 기준이다. 이것 자체가 정서 범주와 행동 경향이 분리 가능하다는 행동 증거다.
+  3. GC가 제안한 layout 변화량을 맞춘 비-affordance 대조 편집에 동의한다.
+  4. Mobbs 2020은 내 jsonl에서도 본문 미열람이라 방어 계산의 세부 근거로 쓰지 않는다.
+* **표기:** evidence-level R1 + R2, insilico-vs-observed 혼합.
+
+### LS-P8 (llm-semantics): LLM 서사 예측 분포로 단기 PE와 장기 기대 불일치 계산 → **수정**
+* **판단:** Spacetop narratives의 clip 단위 평정 해상도 문제를 푸는 실용적 제안이다. 문장 단위 엔트로피(불확실성), surprisal(단기 PE), 초반 결말 분포와 현재 분포의 KL(장기 기대 갱신)은 Schumann 2026이 요구한 다중 시간척도 정서 변수(arXiv:2608.07480, limitations 첫째)의 계산 정의로 쓸 수 있다.
+* **수정안:**
+  1. **LLM 변수는 모형의 입력이고, 적합 대상은 참가자 본인 평정이다.** RL 대 affective inference 비교의 종속 변수는 여전히 참가자의 clip별 "지금 느낌"과 "다음 전개 기대"다. LLM 예측을 참가자 기대의 대체물로 쓰지 않는다.
+  2. **장기 기대 불일치는 참가자 본인의 이전 기대 평정에 대해서도 계산한다.** LLM KL과 본인 기대 변화량이 같은 방향인지가 LLM 변수 타당성의 최소 점검이다.
+  3. **식별 가능성 시뮬레이션(A2)을 LLM 입력으로 다시 돌린다.** 입력 변수 수가 늘면 모형 간 구분이 오히려 어려워질 수 있다.
+  4. 오염 점검(이야기 출처, 결말 예측 정확도를 오염 지표로 기록)에 동의한다.
+* **표기:** label-provenance felt와 기대 / 참가자 본인, LLM 변수는 AI 추정 계산 변수, evidence-level R0, insilico-vs-observed 혼합.
+
+### 참조 제안 (짧게)
+* **VD-P5 (region-additive latent decoding, systems-neuro 수신, brain-inspired 참조): 수용.** 경로 ROI의 저수준 대 고수준 latent 증분 비교는 BI-P3의 "얕은 층 대 깊은 층 feature"를 decoding 쪽에서 본 대칭 설계다. MPathI 패턴과 ROI voxel 집합이 다르다는 VD 자신의 반론 (2)에 동의하므로, 두 결과는 같은 결론일 때만 함께 해석한다.
+* **GC-P5 (공간주파수 counterfactual, systems-neuro 수신, brain-inspired 참조): 수용.** 고전 필터라 AI다움 교란이 없다는 장점이 크다. McFadyen 2017(doi:10.1523/JNEUROSCI.3525-16.2017)이 공간주파수 무관 경로를 보고했으므로, 저역통과 판본이 편도체 encoder 예측을 유지하든 잃든 결과가 해석 가능하다. encoder 예측력 하한 기준(GC 반론 a)에 동의한다.
 
 ---
 
