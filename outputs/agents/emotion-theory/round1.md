@@ -131,7 +131,7 @@ Emo-FilM은 영화 14편이라 영화 수준 confound와 정서가 공선적일 
 Cowen & Keltner 8째 단락의 보고 3요소 구분과 HOT-2(신호 출처 monitoring)를 MLLM 평가 기준으로 쓴다. 같은 비디오에 "인물이 느끼는 정서", "보통 사람이 느낄 정서", "이 장면이 문화적으로 일으켜야 할 정서"를 따로 묻고, 세 답의 차이가 인간 felt/perceived 차이(10.1162/imag_a_00517의 공유 분산 36%)와 같은 구조인지 본다. AI 추정 라벨을 쓰는 모든 질문의 전처리 검증 단계로도 쓸 수 있다. 여기에 LLM 자기 확신도 보정(arXiv:2207.05221)을 더해, AI 라벨의 확신도가 인간 평정자 불일치(라벨 불확실성)와 대응하는지 점검한다. 대응하지 않으면 AI 라벨의 확신은 정서 모호성 정보가 아니다.
 
 **T8. LLM 내부 appraisal 방향 → appraisal 연속 평정과 뇌 (LLM interpretability → Affective).**
-LLM 중간층에서 appraisal 개념 방향을 찾아 조작하면 출력 정서가 예측 가능하게 바뀐다 (arXiv:2502.05489, 9~10절) [본문]. 같은 방향을 Emo-FilM 대사 전사본에 적용해 얻은 시계열을 Emo-FilM appraisal 평정(Predictable, Controlled, Urgency 등)과 뇌 반응에 정렬할 수 있다. 단 LLM은 서술에서 정서를 추론하는 "인식" 모델이므로 결과는 경험 질문이 아니라 appraisal 인식 질문으로만 해석한다. G1 필요(보유, 전사본 생성 필요).
+LLM 중간층에서 appraisal 개념 방향을 찾아 조작하면 출력 정서가 예측 가능하게 바뀐다 (arXiv:2502.05489, 10 Discussion 1째 단락) [본문]. 같은 방향을 Emo-FilM 대사 전사본에 적용해 얻은 시계열을 Emo-FilM appraisal 평정(Predictable, Controlled, Urgency 등)과 뇌 반응에 정렬할 수 있다. 단 LLM은 서술에서 정서를 추론하는 "인식" 모델이므로 결과는 경험 질문이 아니라 appraisal 인식 질문으로만 해석한다. G1 필요(보유, 전사본 생성 필요).
 
 ---
 
