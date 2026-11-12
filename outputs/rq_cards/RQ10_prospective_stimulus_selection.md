@@ -73,7 +73,7 @@
 
 | # | 논문 | ID | 읽은 수준 | 이 질문에 대한 기여 |
 |---|---|---|---|---|
-| 1 | Tuckute et al. (2024) Driving and suppressing the human language network using large language models | doi:10.1038/s41562-023-01783-7 | [본문-직접] bioRxiv 판(PMC10120732)의 Results와 Discussion 첫 단락 | **가장 가까운 선행.** 5명 x 1,000문장으로 학습한 GPT2-XL encoder가 고른 구동/억제 문장이 새 문장, 새 참가자 3명에서 실제로 언어망 반응을 높이고 낮췄다. 같은 논리를 새 fMRI로 검증했다 |
+| 1 | Tuckute et al. (2024) Driving and suppressing the human language network using large language models | doi:10.1038/s41562-023-01783-7 | [본문-직접] bioRxiv 판(PMC10120732)의 Results와 Discussion 첫 단락(최종 인용 검증: encoding-foundation literature.jsonl에 이 읽은 수준 기록이 없음) | **가장 가까운 선행.** 5명 x 1,000문장으로 학습한 GPT2-XL encoder가 고른 구동/억제 문장이 새 문장, 새 참가자 3명에서 실제로 언어망 반응을 높이고 낮췄다. 같은 논리를 새 fMRI로 검증했다 |
 | 2 | Ratan Murty et al. (2021) Computational models of category-selective brain regions enable high-throughput tests of selectivity | doi:10.1038/s41467-021-25409-6 | [본문-직접] | **가장 가까운 선행.** FFA, PPA, EBA 모델로 수백만 이미지를 걸러 고반응 예측 이미지가 모두 선호 범주인지 시험했다. 맥락으로 정의되는 자극에서는 예측이 약하다고 한계를 적었다 |
 | 3 | Chen et al. (2025) NeuroVolve | arXiv:2512.00557 | [DB-본문] | amygdala 최대화 생성 이미지를 새 참가자 fMRI로 검증했다. 생성 High는 Natural Zero보다 높았지만 Natural High보다 높지 않았고, 최대화 이미지는 표정이 강한 얼굴이었다(정서와 의미 범주가 분리되지 않음) |
 | 4 | Golan, Raju, Kriegeskorte (2020) Controversial stimuli | doi:10.1073/pnas.1912334117 | [DB-본문] | 두 모델이 다르게 예측하는 자극에서는 적어도 하나가 틀린다. 이 카드의 주 판정 논리 |

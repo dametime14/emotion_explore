@@ -1,0 +1,21 @@
+final_synthesis population (first line, id): 25
+  FS (40, 'arxiv:2604.07729')
+  FS (41, 'arxiv:2408.13718')
+  FS (49, 'arxiv:2209.10652')
+  FS (67, 'doi:10.1073/pnas.1702247114')
+  FS (110, 'doi:10.1371/journal.pone.0152719')
+RQ01 population 18
+   RQ01 (84, 'doi:10.1073/pnas.1702247114')
+   RQ01 (88, 'doi:10.1371/journal.pcbi.1013714')
+RQ03 population 13
+   RQ03 (77, 'doi:10.1101/214262')
+   RQ03 (76, 'doi:10.1016/j.tics.2020.11.004')
+RQ08 population 13
+   RQ08 (62, 'doi:10.1038/s41467-024-49073-8')
+   RQ08 (67, 'doi:10.1038/s41593-021-00947-w')
+RQ14 population 14
+   RQ14 (69, 'doi:10.1109/cvpr.2016.597')
+   RQ14 (64, 'doi:10.1093/cercor/bhad093')
+RQ15 population 15
+   RQ15 (61, 'arxiv:2604.07729')
+   RQ15 (65, 'doi:10.1162/imag.a.134')

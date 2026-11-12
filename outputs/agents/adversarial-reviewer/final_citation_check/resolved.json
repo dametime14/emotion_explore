@@ -1,0 +1,1198 @@
+{
+ "doi:10.1002/hbm.25277": {
+  "ok": true,
+  "src": "crossref",
+  "title": "Brain functional connectivity dynamics at rest in the aftermath of affective and cognitive challenges",
+  "year": 2020,
+  "container": "Human Brain Mapping",
+  "first_author": "Gaviria",
+  "type": "journal-article"
+ },
+ "doi:10.1007/11776420_4": {
+  "ok": true,
+  "src": "crossref",
+  "title": "A Sober Look at Clustering Stability",
+  "year": 2006,
+  "container": "Lecture Notes in Computer Science",
+  "first_author": "Ben-David",
+  "type": "book-chapter"
+ },
+ "doi:10.1016/j.bandc.2025.106296": {
+  "ok": true,
+  "src": "crossref",
+  "title": "Consistent neural representation of valence in encoding and recall",
+  "year": 2025,
+  "container": "Brain and Cognition",
+  "first_author": "Kim",
+  "type": "journal-article"
+ },
+ "doi:10.1016/j.cub.2014.04.020": {
+  "ok": true,
+  "src": "crossref",
+  "title": "Decoding Sound and Imagery Content in Early Visual Cortex",
+  "year": 2014,
+  "container": "Current Biology",
+  "first_author": "Vetter",
+  "type": "journal-article"
+ },
+ "doi:10.1016/j.cub.2014.09.025": {
+  "ok": true,
+  "src": "crossref",
+  "title": "Serial Dependence in the Perception of Faces",
+  "year": 2014,
+  "container": "Current Biology",
+  "first_author": "Liberman",
+  "type": "journal-article"
+ },
+ "doi:10.1016/j.cub.2015.06.009": {
+  "ok": true,
+  "src": "crossref",
+  "title": "Neural Representations of Emotion Are Organized around Abstract Event Features",
+  "year": 2015,
+  "container": "Current Biology",
+  "first_author": "Skerry",
+  "type": "journal-article"
+ },
+ "doi:10.1016/j.cub.2020.04.014": {
+  "ok": true,
+  "src": "crossref",
+  "title": "Generative Feedback Explains Distinct Brain Activity Codes for Seen and Mental Images",
+  "year": 2020,
+  "container": "Current Biology",
+  "first_author": "Breedlove",
+  "type": "journal-article"
+ },
+ "doi:10.1016/j.cub.2023.10.015": {
+  "ok": true,
+  "src": "crossref",
+  "title": "Hierarchical organization of social action features along the lateral visual pathway",
+  "year": 2023,
+  "container": "Current Biology",
+  "first_author": "McMahon",
+  "type": "journal-article"
+ },
+ "doi:10.1016/j.isci.2020.101060": {
+  "ok": true,
+  "src": "crossref",
+  "title": "The Neural Representation of Visually Evoked Emotion Is High-Dimensional, Categorical, and Distributed across Transmodal Brain Regions",
+  "year": 2020,
+  "container": "iScience",
+  "first_author": "Horikawa",
+  "type": "journal-article"
+ },
+ "doi:10.1016/j.isci.2023.107571": {
+  "ok": true,
+  "src": "crossref",
+  "title": "Topographic representation of visually evoked emotional experiences in the human cerebral cortex",
+  "year": 2023,
+  "container": "iScience",
+  "first_author": "Du",
+  "type": "journal-article"
+ },
+ "doi:10.1016/j.neubiorev.2022.104977": {
+  "ok": true,
+  "src": "crossref",
+  "title": "Emotions as computations",
+  "year": 2023,
+  "container": "Neuroscience &amp; Biobehavioral Reviews",
+  "first_author": "Emanuel",
+  "type": "journal-article"
+ },
+ "doi:10.1016/j.neunet.2025.107515": {
+  "ok": true,
+  "src": "crossref",
+  "title": "Spurious reconstruction from brain activity",
+  "year": 2025,
+  "container": "Neural Networks",
+  "first_author": "Shirakawa",
+  "type": "journal-article"
+ },
+ "doi:10.1016/j.neuroimage.2003.11.029": {
+  "ok": true,
+  "src": "crossref",
+  "title": "Variation of BOLD hemodynamic responses across subjects and brain regions and their effects on statistical analyses",
+  "year": 2004,
+  "container": "NeuroImage",
+  "first_author": "Handwerker",
+  "type": "journal-article"
+ },
+ "doi:10.1016/j.neuroimage.2011.08.076": {
+  "ok": true,
+  "src": "crossref",
+  "title": "Deconvolving BOLD activation in event-related designs for multivoxel pattern classification analyses",
+  "year": 2012,
+  "container": "NeuroImage",
+  "first_author": "Mumford",
+  "type": "journal-article"
+ },
+ "doi:10.1016/j.neuroimage.2020.117258": {
+  "ok": true,
+  "src": "crossref",
+  "title": "Distinct dimensions of emotion in the human brain and their representation on the cortical surface",
+  "year": 2020,
+  "container": "NeuroImage",
+  "first_author": "Koide-Majima",
+  "type": "journal-article"
+ },
+ "doi:10.1016/j.neuroimage.2022.119364": {
+  "ok": true,
+  "src": "crossref",
+  "title": "Arousal impacts distributed hubs modulating the integration of brain functional connectivity",
+  "year": 2022,
+  "container": "NeuroImage",
+  "first_author": "Lee",
+  "type": "journal-article"
+ },
+ "doi:10.1016/j.neuroimage.2022.119728": {
+  "ok": true,
+  "src": "crossref",
+  "title": "Feature-space selection with banded ridge regression",
+  "year": 2022,
+  "container": "NeuroImage",
+  "first_author": "Dupré la Tour",
+  "type": "journal-article"
+ },
+ "doi:10.1016/j.neuroimage.2025.121439": {
+  "ok": true,
+  "src": "crossref",
+  "title": "Neural representation of action features across sensory modalities: A multimodal fMRI study",
+  "year": 2025,
+  "container": "NeuroImage",
+  "first_author": "Marras",
+  "type": "journal-article"
+ },
+ "doi:10.1016/j.neuropsychologia.2024.108823": {
+  "ok": true,
+  "src": "crossref",
+  "title": "A shared neural code for perceiving and remembering social interactions in the human superior temporal sulcus",
+  "year": 2024,
+  "container": "Neuropsychologia",
+  "first_author": "Lee Masson",
+  "type": "journal-article"
+ },
+ "doi:10.1016/j.patter.2023.100804": {
+  "ok": true,
+  "src": "crossref",
+  "title": "Leakage and the reproducibility crisis in machine-learning-based science",
+  "year": 2023,
+  "container": "Patterns",
+  "first_author": "Kapoor",
+  "type": "journal-article"
+ },
+ "doi:10.1016/j.tics.2005.11.006": {
+  "ok": true,
+  "src": "crossref",
+  "title": "Repetition and the brain: neural models of stimulus-specific effects",
+  "year": 2006,
+  "container": "Trends in Cognitive Sciences",
+  "first_author": "Grill-Spector",
+  "type": "journal-article"
+ },
+ "doi:10.1016/j.tics.2020.11.004": {
+  "ok": true,
+  "src": "crossref",
+  "title": "Semantic Space Theory: A Computational Approach to Emotion",
+  "year": 2021,
+  "container": "Trends in Cognitive Sciences",
+  "first_author": "Cowen",
+  "type": "journal-article"
+ },
+ "doi:10.1037/1082-989x.10.1.21": {
+  "ok": true,
+  "src": "crossref",
+  "title": "Investigating population heterogeneity with factor mixture models.",
+  "year": 2005,
+  "container": "Psychological Methods",
+  "first_author": "Lubke",
+  "type": "journal-article"
+ },
+ "doi:10.1037/a0038822": {
+  "ok": true,
+  "src": "crossref",
+  "title": "The relation between short-term emotion dynamics and psychological well-being: A meta-analysis.",
+  "year": 2015,
+  "container": "Psychological Bulletin",
+  "first_author": "Houben",
+  "type": "journal-article"
+ },
+ "doi:10.1037/emo0001619": {
+  "ok": true,
+  "src": "crossref",
+  "title": "Dissecting appraisal and multicomponential features of emotion: Evidence from multilevel annotation during naturalistic stimulation.",
+  "year": 2026,
+  "container": "Emotion",
+  "first_author": "Morgenroth",
+  "type": "journal-article"
+ },
+ "doi:10.1038/nn.2533": {
+  "ok": true,
+  "src": "crossref",
+  "title": "Predicting visual stimuli on the basis of activity in auditory cortices",
+  "year": 2010,
+  "container": "Nature Neuroscience",
+  "first_author": "Meyer",
+  "type": "journal-article"
+ },
+ "doi:10.1038/nn.3689": {
+  "ok": true,
+  "src": "crossref",
+  "title": "Serial dependence in visual perception",
+  "year": 2014,
+  "container": "Nature Neuroscience",
+  "first_author": "Fischer",
+  "type": "journal-article"
+ },
+ "doi:10.1038/nn.4450": {
+  "ok": true,
+  "src": "crossref",
+  "title": "Shared memories reveal shared structure in neural activity across individuals",
+  "year": 2016,
+  "container": "Nature Neuroscience",
+  "first_author": "Chen",
+  "type": "journal-article"
+ },
+ "doi:10.1038/nn.4468": {
+  "ok": true,
+  "src": "crossref",
+  "title": "Emotional brain states carry over and enhance future memory formation",
+  "year": 2016,
+  "container": "Nature Neuroscience",
+  "first_author": "Tambini",
+  "type": "journal-article"
+ },
+ "doi:10.1038/s41467-020-15763-2": {
+  "ok": true,
+  "src": "crossref",
+  "title": "Feature-specific neural reactivation during episodic memory",
+  "year": 2020,
+  "container": "Nature Communications",
+  "first_author": "Bone",
+  "type": "journal-article"
+ },
+ "doi:10.1038/s41467-020-18717-w": {
+  "ok": true,
+  "src": "crossref",
+  "title": "Movie viewing elicits rich and reliable brain state dynamics",
+  "year": 2020,
+  "container": "Nature Communications",
+  "first_author": "Meer",
+  "type": "journal-article"
+ },
+ "doi:10.1038/s41467-021-25409-6": {
+  "ok": true,
+  "src": "crossref",
+  "title": "Computational models of category-selective brain regions enable high-throughput tests of selectivity",
+  "year": 2021,
+  "container": "Nature Communications",
+  "first_author": "Ratan Murty",
+  "type": "journal-article"
+ },
+ "doi:10.1038/s41467-021-26268-x": {
+  "ok": true,
+  "src": "crossref",
+  "title": "The ascending arousal system shapes neural dynamics to mediate awareness of cognitive states",
+  "year": 2021,
+  "container": "Nature Communications",
+  "first_author": "Munn",
+  "type": "journal-article"
+ },
+ "doi:10.1038/s41467-022-33161-8": {
+  "ok": true,
+  "src": "crossref",
+  "title": "Perception and memory have distinct spatial tuning properties in human visual cortex",
+  "year": 2022,
+  "container": "Nature Communications",
+  "first_author": "Favila",
+  "type": "journal-article"
+ },
+ "doi:10.1038/s41467-024-44870-7": {
+  "ok": true,
+  "src": "crossref",
+  "title": "Neural representations of situations and mental states are composed of sums of representations of the actions they afford",
+  "year": 2024,
+  "container": "Nature Communications",
+  "first_author": "Thornton",
+  "type": "journal-article"
+ },
+ "doi:10.1038/s41467-024-49073-8": {
+  "ok": true,
+  "src": "crossref",
+  "title": "Occipital-temporal cortical tuning to semantic and affective features of natural images predicts associated behavioral responses",
+  "year": 2024,
+  "container": "Nature Communications",
+  "first_author": "Abdel-Ghaffar",
+  "type": "journal-article"
+ },
+ "doi:10.1038/s41467-024-53147-y": {
+  "ok": true,
+  "src": "crossref",
+  "title": "A large-scale examination of inductive biases shaping high-level visual representation in brains and machines",
+  "year": 2024,
+  "container": "Nature Communications",
+  "first_author": "Conwell",
+  "type": "journal-article"
+ },
+ "doi:10.1038/s41467-025-68240-z": {
+  "ok": true,
+  "src": "crossref",
+  "title": "Map-like representations of emotion knowledge in hippocampal-prefrontal systems",
+  "year": 2026,
+  "container": "Nature Communications",
+  "first_author": "Ma",
+  "type": "journal-article"
+ },
+ "doi:10.1038/s41562-020-0912-z": {
+  "ok": true,
+  "src": "crossref",
+  "title": "Specification curve analysis",
+  "year": 2020,
+  "container": "Nature Human Behaviour",
+  "first_author": "Simonsohn",
+  "type": "journal-article"
+ },
+ "doi:10.1038/s41562-023-01783-7": {
+  "ok": true,
+  "src": "crossref",
+  "title": "Driving and suppressing the human language network using large language models",
+  "year": 2024,
+  "container": "Nature Human Behaviour",
+  "first_author": "Tuckute",
+  "type": "journal-article"
+ },
+ "doi:10.1038/s41562-023-01799-z": {
+  "ok": true,
+  "src": "crossref",
+  "title": "A generative model of memory construction and consolidation",
+  "year": 2024,
+  "container": "Nature Human Behaviour",
+  "first_author": "Spens",
+  "type": "journal-article"
+ },
+ "doi:10.1038/s41562-025-02252-z": {
+  "ok": true,
+  "src": "crossref",
+  "title": "In silico discovery of representational relationships across visual cortex",
+  "year": 2025,
+  "container": "Nature Human Behaviour",
+  "first_author": "Gifford",
+  "type": "journal-article"
+ },
+ "doi:10.1038/s41586-019-1346-5": {
+  "ok": true,
+  "src": "crossref",
+  "title": "High-dimensional geometry of population responses in visual cortex",
+  "year": 2019,
+  "container": "Nature",
+  "first_author": "Stringer",
+  "type": "journal-article"
+ },
+ "doi:10.1038/s41586-020-2314-9": {
+  "ok": true,
+  "src": "crossref",
+  "title": "Variability in the analysis of a single neuroimaging dataset by many teams",
+  "year": 2020,
+  "container": "Nature",
+  "first_author": "Botvinik-Nezer",
+  "type": "journal-article"
+ },
+ "doi:10.1038/s41593-020-00711-6": {
+  "ok": true,
+  "src": "crossref",
+  "title": "Topographic organization of the human subcortex unveiled with functional connectivity gradients",
+  "year": 2020,
+  "container": "Nature Neuroscience",
+  "first_author": "Tian",
+  "type": "journal-article"
+ },
+ "doi:10.1038/s41593-021-00947-w": {
+  "ok": true,
+  "src": "crossref",
+  "title": "Magnetic resonance-based eye tracking using deep neural networks",
+  "year": 2021,
+  "container": "Nature Neuroscience",
+  "first_author": "Frey",
+  "type": "journal-article"
+ },
+ "doi:10.1038/s41593-025-01945-y": {
+  "ok": true,
+  "src": "crossref",
+  "title": "Autonomic physiological coupling of the global fMRI signal",
+  "year": 2025,
+  "container": "Nature Neuroscience",
+  "first_author": "Bolt",
+  "type": "journal-article"
+ },
+ "doi:10.1038/s41597-025-04803-5": {
+  "ok": true,
+  "src": "crossref",
+  "title": "Emo-FilM: A multimodal dataset for affective neuroscience using naturalistic stimuli",
+  "year": 2025,
+  "container": "Scientific Data",
+  "first_author": "Morgenroth",
+  "type": "journal-article"
+ },
+ "doi:10.1038/s41598-018-37786-y": {
+  "ok": true,
+  "src": "crossref",
+  "title": "How context influences the interpretation of facial expressions: a source localization high-density EEG study on the “Kuleshov effect”",
+  "year": 2019,
+  "container": "Scientific Reports",
+  "first_author": "Calbi",
+  "type": "journal-article"
+ },
+ "doi:10.1038/s41598-020-77117-8": {
+  "ok": true,
+  "src": "crossref",
+  "title": "Comparing supervised and unsupervised approaches to emotion categorization in the human brain, body, and subjective experience",
+  "year": 2020,
+  "container": "Scientific Reports",
+  "first_author": "Azari",
+  "type": "journal-article"
+ },
+ "doi:10.1038/s41598-025-14961-6": {
+  "ok": true,
+  "src": "crossref",
+  "title": "Correspondence of high dimensional emotion structures elicited from video clips between humans and multimodal LLMs",
+  "year": 2025,
+  "container": "Scientific Reports",
+  "first_author": "Asanuma",
+  "type": "journal-article"
+ },
+ "doi:10.1038/s42003-023-05440-7": {
+  "ok": true,
+  "src": "crossref",
+  "title": "Human brain responses are modulated when exposed to optimized natural images or synthetically generated images",
+  "year": 2023,
+  "container": "Communications Biology",
+  "first_author": "Gu",
+  "type": "journal-article"
+ },
+ "doi:10.1038/s42256-025-01072-0": {
+  "ok": true,
+  "src": "crossref",
+  "title": "High-level visual representations in the human brain are aligned with large language models",
+  "year": 2025,
+  "container": "Nature Machine Intelligence",
+  "first_author": "Doerig",
+  "type": "journal-article"
+ },
+ "doi:10.1073/pnas.1421236112": {
+  "ok": true,
+  "src": "crossref",
+  "title": "An architecture for encoding sentence meaning in left mid-superior temporal cortex",
+  "year": 2015,
+  "container": "Proceedings of the National Academy of Sciences",
+  "first_author": "Frankland",
+  "type": "journal-article"
+ },
+ "doi:10.1073/pnas.1619316114": {
+  "ok": true,
+  "src": "crossref",
+  "title": "A higher-order theory of emotional consciousness",
+  "year": 2017,
+  "container": "Proceedings of the National Academy of Sciences",
+  "first_author": "LeDoux",
+  "type": "journal-article"
+ },
+ "doi:10.1073/pnas.1702247114": {
+  "ok": true,
+  "src": "crossref",
+  "title": "Self-report captures 27 distinct categories of emotion bridged by continuous gradients",
+  "year": 2017,
+  "container": "Proceedings of the National Academy of Sciences",
+  "first_author": "Cowen",
+  "type": "journal-article"
+ },
+ "doi:10.1073/pnas.1912334117": {
+  "ok": true,
+  "src": "crossref",
+  "title": "Controversial stimuli: Pitting neural networks against each other as models of human cognition",
+  "year": 2020,
+  "container": "Proceedings of the National Academy of Sciences",
+  "first_author": "Golan",
+  "type": "journal-article"
+ },
+ "doi:10.1073/pnas.2506535122": {
+  "ok": true,
+  "src": "crossref",
+  "title": "Revisiting the high-dimensional geometry of population responses in the visual cortex",
+  "year": 2025,
+  "container": "Proceedings of the National Academy of Sciences",
+  "first_author": "Pospisil",
+  "type": "journal-article"
+ },
+ "doi:10.1080/02699939508408966": {
+  "ok": true,
+  "src": "crossref",
+  "title": "Emotion elicitation using films",
+  "year": 1995,
+  "container": "Cognition &amp; Emotion",
+  "first_author": "Gross",
+  "type": "journal-article"
+ },
+ "doi:10.1093/cercor/bhad093": {
+  "ok": true,
+  "src": "crossref",
+  "title": "Brain networks subserving functional core processes of emotions identified with componential modeling",
+  "year": 2023,
+  "container": "Cerebral Cortex",
+  "first_author": "Mohammadi",
+  "type": "journal-article"
+ },
+ "doi:10.1093/cercor/bhm011": {
+  "ok": true,
+  "src": "crossref",
+  "title": "Feeling the Real World: Limbic Response to Music Depends on Related Content",
+  "year": 2007,
+  "container": "Cerebral Cortex",
+  "first_author": "Eldar",
+  "type": "journal-article"
+ },
+ "doi:10.1093/cercor/bhv086": {
+  "ok": true,
+  "src": "crossref",
+  "title": "Discrete Neural Signatures of Basic Emotions",
+  "year": 2015,
+  "container": "Cerebral Cortex",
+  "first_author": "Saarimäki",
+  "type": "journal-article"
+ },
+ "doi:10.1093/pnasnexus/pgac020": {
+  "ok": true,
+  "src": "crossref",
+  "title": "Cognitive processing of a common stimulus synchronizes brains, hearts, and eyes",
+  "year": 2022,
+  "container": "PNAS Nexus",
+  "first_author": "Madsen",
+  "type": "journal-article"
+ },
+ "doi:10.1093/scan/nsl014": {
+  "ok": true,
+  "src": "crossref",
+  "title": "The Kuleshov Effect: the influence of contextual framing on emotional attributions",
+  "year": 2006,
+  "container": "Social Cognitive and Affective Neuroscience",
+  "first_author": "Mobbs",
+  "type": "journal-article"
+ },
+ "doi:10.1093/scan/nsu044": {
+  "ok": true,
+  "src": "crossref",
+  "title": "Cumulative activation during positive and negative events and state anxiety predicts subsequent inertia of amygdala reactivity",
+  "year": 2014,
+  "container": "Social Cognitive and Affective Neuroscience",
+  "first_author": "Pichon",
+  "type": "journal-article"
+ },
+ "doi:10.1098/rsta.2022.0047": {
+  "ok": true,
+  "src": "crossref",
+  "title": "Emotion prediction as computation over a generative theory of mind",
+  "year": 2023,
+  "container": "Philosophical Transactions of the Royal Society A: Mathematical, Physical and Engineering Sciences",
+  "first_author": "Houlihan",
+  "type": "journal-article"
+ },
+ "doi:10.1101/214262": {
+  "ok": true,
+  "src": "crossref",
+  "title": "A theory of multineuronal dimensionality, dynamics and measurement",
+  "year": 2017,
+  "container": "",
+  "first_author": "Gao",
+  "type": "posted-content"
+ },
+ "doi:10.1109/cvpr.2016.597": {
+  "ok": true,
+  "src": "crossref",
+  "title": "Situation Recognition: Visual Semantic Role Labeling for Image Understanding",
+  "year": 2016,
+  "container": "2016 IEEE Conference on Computer Vision and Pattern Recognition (CVPR)",
+  "first_author": "Yatskar",
+  "type": "proceedings-article"
+ },
+ "doi:10.1109/cvpr46437.2021.00554": {
+  "ok": true,
+  "src": "crossref",
+  "title": "Visual Semantic Role Labeling for Video Understanding",
+  "year": 2021,
+  "container": "2021 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)",
+  "first_author": "Sadhu",
+  "type": "proceedings-article"
+ },
+ "doi:10.1121/1.1945807": {
+  "ok": true,
+  "src": "crossref",
+  "title": "Multiresolution spectrotemporal analysis of complex sounds",
+  "year": 2005,
+  "container": "The Journal of the Acoustical Society of America",
+  "first_author": "Chi",
+  "type": "journal-article"
+ },
+ "doi:10.1126/sciadv.aaw4358": {
+  "ok": true,
+  "src": "crossref",
+  "title": "Emotion schemas are embedded in the human visual system",
+  "year": 2019,
+  "container": "Science Advances",
+  "first_author": "Kragel",
+  "type": "journal-article"
+ },
+ "doi:10.1126/sciadv.abf7129": {
+  "ok": true,
+  "src": "crossref",
+  "title": "Endogenous variation in ventromedial prefrontal cortex state dynamics during naturalistic viewing reflects affective experience",
+  "year": 2021,
+  "container": "Science Advances",
+  "first_author": "Chang",
+  "type": "journal-article"
+ },
+ "doi:10.1126/sciadv.adk6840": {
+  "ok": true,
+  "src": "crossref",
+  "title": "Dissecting abstract, modality-specific and experience-dependent coding of affect in the human brain",
+  "year": 2024,
+  "container": "Science Advances",
+  "first_author": "Lettieri",
+  "type": "journal-article"
+ },
+ "doi:10.1126/sciadv.adw1464": {
+  "ok": true,
+  "src": "crossref",
+  "title": "Mind captioning: Evolving descriptive text of mental content from human brain activity",
+  "year": 2025,
+  "container": "Science Advances",
+  "first_author": "Horikawa",
+  "type": "journal-article"
+ },
+ "doi:10.1126/science.adi6000": {
+  "ok": true,
+  "src": "crossref",
+  "title": "Prediction-powered inference",
+  "year": 2023,
+  "container": "Science",
+  "first_author": "Angelopoulos",
+  "type": "journal-article"
+ },
+ "doi:10.1162/imag.a.134": {
+  "ok": true,
+  "src": "crossref",
+  "title": "GPT-4V shows human-like social perceptual capabilities at phenomenological and neural levels",
+  "year": 2025,
+  "container": "Imaging Neuroscience",
+  "first_author": "Santavirta",
+  "type": "journal-article"
+ },
+ "doi:10.1162/imag_a_00517": {
+  "ok": true,
+  "src": "crossref",
+  "title": "Cerebral topographies of perceived and felt emotions",
+  "year": 2025,
+  "container": "Imaging Neuroscience",
+  "first_author": "Saarimäki",
+  "type": "journal-article"
+ },
+ "doi:10.1162/jocn_a_00839": {
+  "ok": true,
+  "src": "crossref",
+  "title": "Distributed Patterns of Reactivation Predict Vividness of Recollection",
+  "year": 2015,
+  "container": "Journal of Cognitive Neuroscience",
+  "first_author": "St-Laurent",
+  "type": "journal-article"
+ },
+ "doi:10.1162/neco_a_00648": {
+  "ok": true,
+  "src": "crossref",
+  "title": "Dimensionality of Object Representations in Monkey Inferotemporal Cortex",
+  "year": 2014,
+  "container": "Neural Computation",
+  "first_author": "Lehky",
+  "type": "journal-article"
+ },
+ "doi:10.1163/22134808-bja10064": {
+  "ok": true,
+  "src": "crossref",
+  "title": "Serial Dependence of Emotion Within and Between Stimulus Sensory Modalities",
+  "year": 2021,
+  "container": "Multisensory Research",
+  "first_author": "Van der Burg",
+  "type": "journal-article"
+ },
+ "doi:10.1167/jov.23.3.12": {
+  "ok": true,
+  "src": "crossref",
+  "title": "Serial dependence in emotion perception mirrors the autocorrelations in natural emotion statistics",
+  "year": 2023,
+  "container": "Journal of Vision",
+  "first_author": "Ortega",
+  "type": "journal-article"
+ },
+ "doi:10.1198/016214508000000454": {
+  "ok": true,
+  "src": "crossref",
+  "title": "Statistical Significance of Clustering for High-Dimension, Low–Sample Size Data",
+  "year": 2008,
+  "container": "Journal of the American Statistical Association",
+  "first_author": "Liu",
+  "type": "journal-article"
+ },
+ "doi:10.1198/106186005x59243": {
+  "ok": true,
+  "src": "crossref",
+  "title": "Cluster Validation by Prediction Strength",
+  "year": 2005,
+  "container": "Journal of Computational and Graphical Statistics",
+  "first_author": "Tibshirani",
+  "type": "journal-article"
+ },
+ "doi:10.1371/journal.pbio.3002366": {
+  "ok": true,
+  "src": "crossref",
+  "title": "Many but not all deep neural network audio models capture brain responses and exhibit correspondence between model stages and brain regions",
+  "year": 2023,
+  "container": "PLOS Biology",
+  "first_author": "Tuckute",
+  "type": "journal-article"
+ },
+ "doi:10.1371/journal.pcbi.1003412": {
+  "ok": true,
+  "src": "crossref",
+  "title": "Encoding of Natural Sounds at Multiple Spectral and Temporal Resolutions in the Human Auditory Cortex",
+  "year": 2014,
+  "container": "PLoS Computational Biology",
+  "first_author": "Santoro",
+  "type": "journal-article"
+ },
+ "doi:10.1371/journal.pcbi.1006397": {
+  "ok": true,
+  "src": "crossref",
+  "title": "Methods for computing the maximum performance of computational models of fMRI responses",
+  "year": 2019,
+  "container": "PLOS Computational Biology",
+  "first_author": "Lage-Castellanos",
+  "type": "journal-article"
+ },
+ "doi:10.1371/journal.pcbi.1012994": {
+  "ok": true,
+  "src": "crossref",
+  "title": "Dynamic brain connectivity predicts emotional arousal during naturalistic movie-watching",
+  "year": 2025,
+  "container": "PLOS Computational Biology",
+  "first_author": "Ke",
+  "type": "journal-article"
+ },
+ "doi:10.1371/journal.pcbi.1013714": {
+  "ok": true,
+  "src": "crossref",
+  "title": "Universal scale-free representations in human visual cortex",
+  "year": 2025,
+  "container": "PLOS Computational Biology",
+  "first_author": "Gauthaman",
+  "type": "journal-article"
+ },
+ "doi:10.1371/journal.pone.0152719": {
+  "ok": true,
+  "src": "crossref",
+  "title": "Statistically Controlling for Confounding Constructs Is Harder than You Think",
+  "year": 2016,
+  "container": "PLOS ONE",
+  "first_author": "Westfall",
+  "type": "journal-article"
+ },
+ "doi:10.1371/journal.pone.0171375": {
+  "ok": true,
+  "src": "crossref",
+  "title": "Transient emotional events and individual affective traits affect emotion recognition in a perceptual decision-making task",
+  "year": 2017,
+  "container": "PLOS ONE",
+  "first_author": "Qiao-Tasserit",
+  "type": "journal-article"
+ },
+ "doi:10.1371/journal.pone.0308295": {
+  "ok": true,
+  "src": "crossref",
+  "title": "Reexamining the Kuleshov effect: Behavioral and neural evidence from authentic film experiments",
+  "year": 2024,
+  "container": "PLOS ONE",
+  "first_author": "Cao",
+  "type": "journal-article"
+ },
+ "doi:10.1523/eneuro.0146-26.2026": {
+  "ok": true,
+  "src": "crossref",
+  "title": "Remembered Event Features Shape Default Mode Network Engagement during Emotional Memory Recall",
+  "year": 2026,
+  "container": "eneuro",
+  "first_author": "Curko",
+  "type": "journal-article"
+ },
+ "doi:10.1523/jneurosci.1436-24.2025": {
+  "ok": true,
+  "src": "crossref",
+  "title": "Understanding Human Amygdala Function with Artificial Neural Networks",
+  "year": 2025,
+  "container": "The Journal of Neuroscience",
+  "first_author": "Jang",
+  "type": "journal-article"
+ },
+ "doi:10.1523/jneurosci.1759-16.2016": {
+  "ok": true,
+  "src": "crossref",
+  "title": "Dynamic Shifts in Large-Scale Brain Network Balance As a Function of Arousal",
+  "year": 2016,
+  "container": "The Journal of Neuroscience",
+  "first_author": "Young",
+  "type": "journal-article"
+ },
+ "doi:10.1523/jneurosci.2342-12.2012": {
+  "ok": true,
+  "src": "crossref",
+  "title": "Sight and Sound Converge to Form Modality-Invariant Representations in Temporoparietal Cortex",
+  "year": 2012,
+  "container": "The Journal of Neuroscience",
+  "first_author": "Man",
+  "type": "journal-article"
+ },
+ "doi:10.3389/fnins.2014.00253": {
+  "ok": true,
+  "src": "crossref",
+  "title": "Methodological challenges and solutions in auditory functional magnetic resonance imaging",
+  "year": 2014,
+  "container": "Frontiers in Neuroscience",
+  "first_author": "Peelle",
+  "type": "journal-article"
+ },
+ "doi:10.3758/s13423-017-1313-9": {
+  "ok": true,
+  "src": "crossref",
+  "title": "NEVER forget: negative emotional valence enhances recapitulation",
+  "year": 2017,
+  "container": "Psychonomic Bulletin &amp; Review",
+  "first_author": "Bowen",
+  "type": "journal-article"
+ },
+ "doi:10.6084/m9.figshare.11988351": {
+  "ok": true,
+  "src": "doi.org handle",
+  "title": "",
+  "note": "not in crossref"
+ },
+ "doi:10.64898/2026.06.08.730730": {
+  "ok": true,
+  "src": "crossref",
+  "title": "A common connectome-based neural reference space across affective, autonomic, and wakefulness arousal",
+  "year": 2026,
+  "container": "",
+  "first_author": "Bhattacharyya",
+  "type": "posted-content"
+ },
+ "doi:10.7554/elife.107955": {
+  "ok": true,
+  "src": "crossref",
+  "title": "Multiple event segmentation mechanisms in the human brain",
+  "year": 2026,
+  "container": "eLife",
+  "first_author": "Nguyen",
+  "type": "journal-article"
+ },
+ "doi:10.7554/elife.110294": {
+  "ok": true,
+  "src": "crossref",
+  "title": "Arousal modulates functional connectivity through structured and hemispherically asymmetric community architecture during wakefulness",
+  "year": 2026,
+  "container": "eLife",
+  "first_author": "Kong",
+  "type": "journal-article"
+ },
+ "doi:10.7554/elife.62461": {
+  "ok": true,
+  "src": "crossref",
+  "title": "Bayesian inference of population prevalence",
+  "year": 2021,
+  "container": "eLife",
+  "first_author": "Ince",
+  "type": "journal-article"
+ },
+ "doi:10.7554/elife.64972": {
+  "ok": true,
+  "src": "crossref",
+  "title": "Anticipation of temporally structured events in the brain",
+  "year": 2021,
+  "container": "eLife",
+  "first_author": "Lee",
+  "type": "journal-article"
+ },
+ "doi:10.7554/elife.77599": {
+  "ok": true,
+  "src": "crossref",
+  "title": "Improving the accuracy of single-trial fMRI response estimates using GLMsingle",
+  "year": 2022,
+  "container": "eLife",
+  "first_author": "Prince",
+  "type": "journal-article"
+ },
+ "doi:10.7554/elife.82566": {
+  "ok": true,
+  "src": "crossref",
+  "title": "Statistical inference on representational geometries",
+  "year": 2023,
+  "container": "eLife",
+  "first_author": "Schütt",
+  "type": "journal-article"
+ },
+ "doi:10.7554/elife.93191": {
+  "ok": true,
+  "src": "crossref",
+  "title": "Evidence from pupillometry, fMRI, and RNN modelling shows that gain neuromodulation mediates task-relevant perceptual switches",
+  "year": 2025,
+  "container": "eLife",
+  "first_author": "Wainstein",
+  "type": "journal-article"
+ },
+ "arxiv:2307.07961": {
+  "ok": true,
+  "src": "arxiv",
+  "title": "EmoSet: A Large-scale Visual Emotion Dataset with Rich Attributes",
+  "year": "2023",
+  "first_author": "Jingyuan Yang"
+ },
+ "arxiv:2303.09166": {
+  "ok": true,
+  "src": "arxiv",
+  "title": "Identifiability Results for Multimodal Contrastive Learning",
+  "year": "2023",
+  "first_author": "Imant Daunhawer"
+ },
+ "arxiv:2209.10652": {
+  "ok": true,
+  "src": "arxiv",
+  "title": "Toy Models of Superposition",
+  "year": "2022",
+  "first_author": "Nelson Elhage"
+ },
+ "arxiv:2104.00990": {
+  "ok": true,
+  "src": "arxiv",
+  "title": "Visual Semantic Role Labeling for Video Understanding",
+  "year": "2021",
+  "first_author": "Arka Sadhu"
+ },
+ "arxiv:2103.00020": {
+  "ok": true,
+  "src": "arxiv",
+  "title": "Learning Transferable Visual Models From Natural Language Supervision",
+  "year": "2021",
+  "first_author": "Alec Radford"
+ },
+ "arxiv:2503.16883": {
+  "ok": true,
+  "src": "arxiv",
+  "title": "Assessing the Reliability and Validity of GPT-4 in Annotating Emotion Appraisal Ratings",
+  "year": "2025",
+  "first_author": "Deniss Ruder"
+ },
+ "arxiv:2310.01405": {
+  "ok": true,
+  "src": "arxiv",
+  "title": "Representation Engineering: A Top-Down Approach to AI Transparency",
+  "year": "2023",
+  "first_author": "Andy Zou"
+ },
+ "arxiv:2302.06677": {
+  "ok": true,
+  "src": "arxiv",
+  "title": "System identification of neural systems: If we got it right, would we know?",
+  "year": "2023",
+  "first_author": "Yena Han"
+ },
+ "arxiv:2510.04064": {
+  "ok": true,
+  "src": "arxiv",
+  "title": "Decoding Emotion in the Deep: A Systematic Study of How LLMs Represent, Retain, and Express Emotion",
+  "year": "2025",
+  "first_author": "Jingxiang Zhang"
+ },
+ "arxiv:2412.15322": {
+  "ok": true,
+  "src": "arxiv",
+  "title": "MMAudio: Taming Multimodal Joint Training for High-Quality Video-to-Audio Synthesis",
+  "year": "2024",
+  "first_author": "Ho Kei Cheng"
+ },
+ "arxiv:2507.00320": {
+  "ok": true,
+  "src": "arxiv",
+  "title": "Exploring Theory-Laden Observations in the Brain Basis of Emotional Experience",
+  "year": "2025",
+  "first_author": "Christiana Westlin"
+ },
+ "arxiv:2609.34742": {
+  "ok": true,
+  "src": "arxiv",
+  "title": "Do Emotion Concepts Generalize Across Sources, Modalities, and Architectures in Vision-Language Models?",
+  "year": "2026",
+  "first_author": "Bohao Xing"
+ },
+ "arxiv:2405.12661": {
+  "ok": true,
+  "src": "arxiv",
+  "title": "EmoEdit: Evoking Emotions through Image Manipulation",
+  "year": "2024",
+  "first_author": "Jingyuan Yang"
+ },
+ "arxiv:2509.24298": {
+  "ok": true,
+  "src": "arxiv",
+  "title": "Bridging the behavior-neural gap: A multimodal AI reveals the brain's geometry of emotion more accurately than human self-reports",
+  "year": "2025",
+  "first_author": "Changde Du"
+ },
+ "arxiv:2605.29850": {
+  "ok": true,
+  "src": "arxiv",
+  "title": "MIRAGE: Adaptive Multimodal Gating for Whole-Brain fMRI Encoding",
+  "year": "2026",
+  "first_author": "Abdulkadir Gokce"
+ },
+ "arxiv:2508.05880": {
+  "ok": true,
+  "src": "arxiv",
+  "title": "Too Categorical to be Human: Emotion Concepts in LLMs and Humans",
+  "year": "2025",
+  "first_author": "Sree Bhattacharyya"
+ },
+ "arxiv:2408.03326": {
+  "ok": true,
+  "src": "arxiv",
+  "title": "LLaVA-OneVision: Easy Visual Task Transfer",
+  "year": "2024",
+  "first_author": "Bo Li"
+ },
+ "arxiv:2508.18265": {
+  "ok": true,
+  "src": "arxiv",
+  "title": "InternVL3.5: Advancing Open-Source Multimodal Models in Versatility, Reasoning, and Efficiency",
+  "year": "2025",
+  "first_author": "Weiyun Wang"
+ },
+ "arxiv:2506.06898": {
+  "ok": true,
+  "src": "arxiv",
+  "title": "NSD-Imagery: A benchmark dataset for extending fMRI vision decoding methods to mental imagery",
+  "year": "2025",
+  "first_author": "Reese Kneeland"
+ },
+ "arxiv:2509.26560": {
+  "ok": true,
+  "src": "arxiv",
+  "title": "Estimating Dimensionality of Neural Representations from Finite Samples",
+  "year": "2025",
+  "first_author": "Chanwoo Chun"
+ },
+ "arxiv:2605.16739": {
+  "ok": true,
+  "src": "arxiv",
+  "title": "EmoMind: Decoding Affective Captions from Human Brain fMRI",
+  "year": "2026",
+  "first_author": "Bilal A. Mohammed"
+ },
+ "arxiv:2511.21631": {
+  "ok": true,
+  "src": "arxiv",
+  "title": "Qwen3-VL Technical Report",
+  "year": "2025",
+  "first_author": "Shuai Bai"
+ },
+ "arxiv:2310.16789": {
+  "ok": true,
+  "src": "arxiv",
+  "title": "Detecting Pretraining Data from Large Language Models",
+  "year": "2023",
+  "first_author": "Weijia Shi"
+ },
+ "arxiv:2408.13718": {
+  "ok": true,
+  "src": "arxiv",
+  "title": "GPT-4 Emulates Average-Human Emotional Cognition from a Third-Person Perspective",
+  "year": "2024",
+  "first_author": "Ala N. Tak"
+ },
+ "arxiv:2502.13923": {
+  "ok": true,
+  "src": "arxiv",
+  "title": "Qwen2.5-VL Technical Report",
+  "year": "2025",
+  "first_author": "Shuai Bai"
+ },
+ "arxiv:2506.09985": {
+  "ok": true,
+  "src": "arxiv",
+  "title": "V-JEPA 2: Self-Supervised Video Models Enable Understanding, Prediction and Planning",
+  "year": "2025",
+  "first_author": "Mido Assran"
+ },
+ "arxiv:2505.12653": {
+  "ok": true,
+  "src": "arxiv",
+  "title": "High-dimensional structure underlying individual differences in naturalistic visual experience",
+  "year": "2025",
+  "first_author": "Chihye Han"
+ },
+ "arxiv:2211.06687": {
+  "ok": true,
+  "src": "arxiv",
+  "title": "Large-scale Contrastive Language-Audio Pretraining with Feature Fusion and Keyword-to-Caption Augmentation",
+  "year": "2022",
+  "first_author": "Yusong Wu"
+ },
+ "arxiv:2512.00557": {
+  "ok": true,
+  "src": "arxiv",
+  "title": "NeuroVolve: Evolving personalized visual stimuli toward user-defined brain response targets",
+  "year": "2025",
+  "first_author": "Haomiao Chen"
+ },
+ "arxiv:2509.13459": {
+  "ok": true,
+  "src": "arxiv",
+  "title": "Why all roads don't lead to Rome: Representation geometry varies across the human visual cortical hierarchy",
+  "year": "2025",
+  "first_author": "Arna Ghosh"
+ },
+ "arxiv:2604.07729": {
+  "ok": true,
+  "src": "arxiv",
+  "title": "Emotion Concepts and their Function in a Large Language Model",
+  "year": "2026",
+  "first_author": "Nicholas Sofroniew"
+ },
+ "arxiv:2503.20314": {
+  "ok": true,
+  "src": "arxiv",
+  "title": "Wan: Open and Advanced Large-Scale Video Generative Models",
+  "year": "2025",
+  "first_author": "Team Wan"
+ },
+ "arxiv:2409.06843": {
+  "ok": true,
+  "src": "arxiv",
+  "title": "Universal scale-free representations in human visual cortex",
+  "year": "2024",
+  "first_author": "Raj Magesh Gauthaman"
+ },
+ "arxiv:2605.04326": {
+  "ok": true,
+  "src": "arxiv",
+  "title": "A foundation model of vision, audition, and language for in-silico neuroscience",
+  "year": "2026",
+  "first_author": "Stéphane d'Ascoli"
+ },
+ "arxiv:2610.22706": {
+  "ok": true,
+  "src": "arxiv",
+  "title": "Brain-Aligned Multimodal LLMs for Social and Emotional Understanding of Cartoon Movies",
+  "year": "2026",
+  "first_author": "Yiran Huang"
+ }
+}

@@ -1,10 +1,10 @@
 # Literature Statistics (Deliverable C)
 
 * 생성: `python3 -I outputs/literature/merge.py` (자동 생성 파일, 직접 고치지 말 것)
-* 입력 레코드: 720개 (파싱 오류 0개), 입력 파일: `outputs/agents/*/literature*.jsonl`
-* 원자료 기준 verified 표기: 708개, 미검증(search_index 등): 12개
-* 중복 제거 후 고유 논문: **526편**
-* **verified 고유 논문: 521편** (식별자 경로 doi.org / crossref / pubmed / arxiv / openreview / publisher로 확인된 것만)
+* 입력 레코드: 723개 (파싱 오류 0개), 입력 파일: `outputs/agents/*/literature*.jsonl`
+* 원자료 기준 verified 표기: 711개, 미검증(search_index 등): 12개
+* 중복 제거 후 고유 논문: **529편**
+* **verified 고유 논문: 524편** (식별자 경로 doi.org / crossref / pubmed / arxiv / openreview / publisher로 확인된 것만)
 * 미검증 고유 논문: 5편 (verified 집계에서 제외, DB에는 `verified=False`로 남김)
 
 ## Axis별 verified 논문 수 (한 논문이 여러 Axis에 속할 수 있음)
@@ -16,21 +16,21 @@
 | C | 79 | 80 |
 | D | 115 | 115 |
 | E | 151 | 151 |
-| F | 76 | 77 |
+| F | 77 | 78 |
 | G | 51 | 52 |
 | H | 83 | 87 |
 | I | 108 | 110 |
 | J | 53 | 54 |
 | K | 107 | 108 |
 | L | 56 | 57 |
-| M | 66 | 66 |
+| M | 67 | 67 |
 | N | 117 | 118 |
 | O | 90 | 90 |
 | P | 48 | 49 |
 | Q | 106 | 106 |
 | R | 50 | 50 |
 | S | 57 | 59 |
-| T | 73 | 74 |
+| T | 74 | 75 |
 | U | 13 | 13 |
 | V | 16 | 16 |
 | W | 30 | 30 |
@@ -58,12 +58,12 @@
 | 2016 | 15 |
 | 2017 | 27 |
 | 2018 | 16 |
-| 2019 | 28 |
+| 2019 | 29 |
 | 2020 | 30 |
 | 2021 | 34 |
 | 2022 | 33 |
-| 2023 | 60 |
-| 2024 | 66 |
+| 2023 | 61 |
+| 2024 | 67 |
 | 2025 | 98 |
 | 2026 | 66 |
 
@@ -72,7 +72,7 @@
 | discussion_read | 편수 |
 |---|---|
 | full_text | 232 |
-| abstract_only | 227 |
+| abstract_only | 230 |
 | search_summary | 19 |
 | no | 43 |
 
@@ -82,8 +82,8 @@
 |---|---|
 | multimodal-dynamics | 76 |
 | brain-inspired | 72 |
+| adversarial-reviewer | 66 |
 | geometry-info | 65 |
-| adversarial-reviewer | 63 |
 | frontier-ai | 63 |
 | llm-semantics | 60 |
 | emotion-theory | 57 |
@@ -100,8 +100,8 @@
 |---|---|
 | multimodal-dynamics | 76 |
 | brain-inspired | 73 |
+| adversarial-reviewer | 66 |
 | geometry-info | 66 |
-| adversarial-reviewer | 63 |
 | frontier-ai | 63 |
 | llm-semantics | 61 |
 | dataset-auditor | 57 |

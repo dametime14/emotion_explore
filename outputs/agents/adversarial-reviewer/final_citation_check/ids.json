@@ -1,0 +1,1910 @@
+{
+ "RQ01_emotion_category_replication.md": [
+  {
+   "id": "arxiv:2409.06843",
+   "lines": [
+    88
+   ],
+   "status": "db_verified",
+   "cit": "Gauthaman RM, Ménard B, Bonner MF (2024 arXiv; 2025 출판). Universal scale-free representati"
+  },
+  {
+   "id": "arxiv:2505.12653",
+   "lines": [
+    89
+   ],
+   "status": "db_verified",
+   "cit": "Han C, Bonner MF (2025). High-dimensional structure underlying individual differences in n"
+  },
+  {
+   "id": "arxiv:2507.00320",
+   "lines": [
+    7,
+    48,
+    55,
+    83
+   ],
+   "status": "db_verified",
+   "cit": "Westlin C, Singh A, Erdogmus D, Stratis G, Barrett LF, 2025, Exploring Theory-Laden Observ"
+  },
+  {
+   "id": "arxiv:2605.16739",
+   "lines": [
+    86
+   ],
+   "status": "db_verified",
+   "cit": "Mohammed BA, Gu L, Fang R, 2026, EmoMind: Decoding Affective Captions from Human Brain fMR"
+  },
+  {
+   "id": "doi:10.1007/11776420_4",
+   "lines": [
+    93
+   ],
+   "status": "db_verified",
+   "cit": "Ben-David S, von Luxburg U, Pál D, 2006, A sober look at clustering stability"
+  },
+  {
+   "id": "doi:10.1016/j.isci.2020.101060",
+   "lines": [
+    46,
+    81
+   ],
+   "status": "db_verified",
+   "cit": "Horikawa T, Cowen AS, Keltner D, Kamitani Y, 2020, The Neural Representation of Visually E"
+  },
+  {
+   "id": "doi:10.1016/j.isci.2023.107571",
+   "lines": [
+    47,
+    82
+   ],
+   "status": "db_verified",
+   "cit": "Du C, Fu K, Wen B, He H, 2023, Topographic representation of visually evoked emotional exp"
+  },
+  {
+   "id": "doi:10.1016/j.neunet.2025.107515",
+   "lines": [
+    276
+   ],
+   "status": "db_verified",
+   "cit": "Shirakawa K, Nagano Y, Tanaka M, Aoki SC, Muraki Y, Majima K, Kamitani Y, 2025, Spurious r"
+  },
+  {
+   "id": "doi:10.1016/j.neuroimage.2020.117258",
+   "lines": [
+    85
+   ],
+   "status": "db_verified",
+   "cit": "Koide-Majima N, Nakai T, Nishimoto S (2020). Distinct dimensions of emotion in the human b"
+  },
+  {
+   "id": "doi:10.1037/1082-989x.10.1.21",
+   "lines": [
+    91
+   ],
+   "status": "db_verified",
+   "cit": "Lubke GH, Muthén B, 2005, Investigating population heterogeneity with factor mixture model"
+  },
+  {
+   "id": "doi:10.1038/s41467-025-68240-z",
+   "lines": [
+    90
+   ],
+   "status": "db_verified",
+   "cit": "Ma Y, Kragel PA, 2026, Map-like representations of emotion knowledge in hippocampal-prefro"
+  },
+  {
+   "id": "doi:10.1038/s41562-020-0912-z",
+   "lines": [
+    98
+   ],
+   "status": "db_verified",
+   "cit": "Simonsohn U, Simmons JP, Nelson LD, 2020, Specification curve analysis"
+  },
+  {
+   "id": "doi:10.1038/s41593-021-00947-w",
+   "lines": [
+    96,
+    141
+   ],
+   "status": "db_verified",
+   "cit": "Frey M, Nau M, Doeller CF, 2021, Magnetic resonance-based eye tracking using deep neural n"
+  },
+  {
+   "id": "doi:10.1038/s41593-025-01945-y",
+   "lines": [
+    97
+   ],
+   "status": "db_verified",
+   "cit": "Bolt T, Wang S, Nomi JS et al., 2025, Autonomic physiological coupling of the global fMRI "
+  },
+  {
+   "id": "doi:10.1038/s41598-020-77117-8",
+   "lines": [
+    87
+   ],
+   "status": "db_verified",
+   "cit": "Azari B, Westlin C, Satpute AB, Hutchinson JB, Kragel PA, Hoemann K, Khan Z, Wormwood JB, "
+  },
+  {
+   "id": "doi:10.1073/pnas.1702247114",
+   "lines": [
+    49,
+    84
+   ],
+   "status": "db_verified",
+   "cit": "Cowen AS, Keltner D (2017). Self-report captures 27 distinct categories of emotion bridged"
+  },
+  {
+   "id": "doi:10.1126/sciadv.adw1464",
+   "lines": [
+    54
+   ],
+   "status": "db_verified",
+   "cit": "Horikawa T (2025). Mind captioning: Evolving descriptive text of mental content from human"
+  },
+  {
+   "id": "doi:10.1198/016214508000000454",
+   "lines": [
+    94
+   ],
+   "status": "db_verified",
+   "cit": "Liu Y, Hayes DN, Nobel A, Marron JS, 2008, Statistical significance of clustering for high"
+  },
+  {
+   "id": "doi:10.1198/106186005x59243",
+   "lines": [
+    92
+   ],
+   "status": "db_verified",
+   "cit": "Tibshirani R, Walther G, 2005, Cluster validation by prediction strength"
+  },
+  {
+   "id": "doi:10.1371/journal.pcbi.1013714",
+   "lines": [
+    88
+   ],
+   "status": "db_verified",
+   "cit": "Gauthaman RM, Ménard B, Bonner MF (2024 arXiv; 2025 출판). Universal scale-free representati"
+  },
+  {
+   "id": "doi:10.7554/elife.62461",
+   "lines": [
+    95
+   ],
+   "status": "db_verified",
+   "cit": "Ince RAA, Paton AT, Kay JW, Schyns PG, 2021, Bayesian inference of population prevalence"
+  }
+ ],
+ "RQ03_stimulus_ensemble_geometry.md": [
+  {
+   "id": "arxiv:2409.06843",
+   "lines": [
+    72
+   ],
+   "status": "db_verified",
+   "cit": "Gauthaman RM, Ménard B, Bonner MF (2024 arXiv; 2025 출판). Universal scale-free representati"
+  },
+  {
+   "id": "arxiv:2505.12653",
+   "lines": [
+    83
+   ],
+   "status": "db_verified",
+   "cit": "Han C, Bonner MF (2025). High-dimensional structure underlying individual differences in n"
+  },
+  {
+   "id": "arxiv:2509.13459",
+   "lines": [
+    50,
+    75
+   ],
+   "status": "db_verified",
+   "cit": "Ghosh A, Chorghay Z, Bakhtiari S, Richards BA, 2025, Why all roads don't lead to Rome: Rep"
+  },
+  {
+   "id": "arxiv:2509.26560",
+   "lines": [
+    74
+   ],
+   "status": "db_verified",
+   "cit": "Chun C, Canatar A, Chung S, Lee D, 2025, Estimating dimensionality of neural representatio"
+  },
+  {
+   "id": "doi:10.1016/j.isci.2020.101060",
+   "lines": [
+    45,
+    80
+   ],
+   "status": "db_verified",
+   "cit": "Horikawa T, Cowen AS, Keltner D, Kamitani Y, 2020, The Neural Representation of Visually E"
+  },
+  {
+   "id": "doi:10.1016/j.neunet.2025.107515",
+   "lines": [
+    45,
+    79
+   ],
+   "status": "db_verified",
+   "cit": "Shirakawa K, Nagano Y, Tanaka M, Aoki SC, Muraki Y, Majima K, Kamitani Y, 2025, Spurious r"
+  },
+  {
+   "id": "doi:10.1016/j.tics.2020.11.004",
+   "lines": [
+    47,
+    76
+   ],
+   "status": "db_verified",
+   "cit": "Cowen AS, Keltner D, 2021, Semantic Space Theory: A computational approach to emotion"
+  },
+  {
+   "id": "doi:10.1038/s41467-024-49073-8",
+   "lines": [
+    82
+   ],
+   "status": "db_verified",
+   "cit": "Abdel-Ghaffar SA, Huth AG, Lescroart MD, Stansbury D, Gallant JL, Bishop SJ, 2024, Occipit"
+  },
+  {
+   "id": "doi:10.1038/s41586-019-1346-5",
+   "lines": [
+    48,
+    71
+   ],
+   "status": "db_verified",
+   "cit": "Stringer C, Pachitariu M, Steinmetz N, Carandini M, Harris KD (2019). High-dimensional geo"
+  },
+  {
+   "id": "doi:10.1073/pnas.1702247114",
+   "lines": [
+    45,
+    81
+   ],
+   "status": "db_verified",
+   "cit": "Cowen AS, Keltner D (2017). Self-report captures 27 distinct categories of emotion bridged"
+  },
+  {
+   "id": "doi:10.1073/pnas.2506535122",
+   "lines": [
+    73
+   ],
+   "status": "db_verified",
+   "cit": "Pospisil DA, Pillow JW, 2025, Revisiting the high-dimensional geometry of population respo"
+  },
+  {
+   "id": "doi:10.1101/214262",
+   "lines": [
+    48,
+    77
+   ],
+   "status": "db_verified",
+   "cit": "Gao P, Trautmann E, Yu B, Santhanam G, Ryu S, Shenoy K, Ganguli S, 2017, A theory of multi"
+  },
+  {
+   "id": "doi:10.1162/neco_a_00648",
+   "lines": [
+    78
+   ],
+   "status": "db_verified",
+   "cit": "Lehky SR, Kiani R, Esteky H, Tanaka K, 2014, Dimensionality of object representations in m"
+  },
+  {
+   "id": "doi:10.1371/journal.pcbi.1013714",
+   "lines": [
+    50,
+    72
+   ],
+   "status": "db_verified",
+   "cit": "Gauthaman RM, Ménard B, Bonner MF (2024 arXiv; 2025 출판). Universal scale-free representati"
+  }
+ ],
+ "RQ08_beyond_scene_description.md": [
+  {
+   "id": "arxiv:2409.06843",
+   "lines": [
+    69,
+    133
+   ],
+   "status": "db_verified",
+   "cit": "Gauthaman RM, Ménard B, Bonner MF (2024 arXiv; 2025 출판). Universal scale-free representati"
+  },
+  {
+   "id": "arxiv:2509.24298",
+   "lines": [
+    68
+   ],
+   "status": "db_verified",
+   "cit": "Du C, Lu Y, Huang Z, Sun Y, Zhou Z, 외, 2025, Bridging the behavior-neural gap: A multimoda"
+  },
+  {
+   "id": "arxiv:2605.16739",
+   "lines": [
+    72
+   ],
+   "status": "db_verified",
+   "cit": "Mohammed BA, Gu L, Fang R, 2026, EmoMind: Decoding Affective Captions from Human Brain fMR"
+  },
+  {
+   "id": "doi:10.1016/j.isci.2020.101060",
+   "lines": [
+    34,
+    61
+   ],
+   "status": "db_verified",
+   "cit": "Horikawa T, Cowen AS, Keltner D, Kamitani Y, 2020, The Neural Representation of Visually E"
+  },
+  {
+   "id": "doi:10.1016/j.isci.2023.107571",
+   "lines": [
+    35,
+    60
+   ],
+   "status": "db_verified",
+   "cit": "Du C, Fu K, Wen B, He H, 2023, Topographic representation of visually evoked emotional exp"
+  },
+  {
+   "id": "doi:10.1016/j.neuroimage.2022.119728",
+   "lines": [
+    66
+   ],
+   "status": "db_verified",
+   "cit": "Dupré la Tour T, Eickenberg M, Nunez-Elizalde AO, Gallant JL, 2022, Feature-space selectio"
+  },
+  {
+   "id": "doi:10.1038/s41467-024-49073-8",
+   "lines": [
+    62
+   ],
+   "status": "db_verified",
+   "cit": "Abdel-Ghaffar SA, Huth AG, Lescroart MD, Stansbury D, Gallant JL, Bishop SJ, 2024, Occipit"
+  },
+  {
+   "id": "doi:10.1038/s41593-021-00947-w",
+   "lines": [
+    67,
+    116
+   ],
+   "status": "db_verified",
+   "cit": "Frey M, Nau M, Doeller CF, 2021, Magnetic resonance-based eye tracking using deep neural n"
+  },
+  {
+   "id": "doi:10.1038/s42256-025-01072-0",
+   "lines": [
+    37,
+    64
+   ],
+   "status": "db_verified",
+   "cit": "Doerig A, Kietzmann TC, Allen E, Wu Y, Naselaris T, Kay K, Charest I, 2025, High-level vis"
+  },
+  {
+   "id": "doi:10.1073/pnas.1912334117",
+   "lines": [
+    70,
+    133
+   ],
+   "status": "db_verified",
+   "cit": "Golan T, Raju PC, Kriegeskorte N, 2020, Controversial stimuli: Pitting neural networks aga"
+  },
+  {
+   "id": "doi:10.1126/sciadv.aaw4358",
+   "lines": [
+    71,
+    117
+   ],
+   "status": "db_verified",
+   "cit": "Kragel PA, Reddan MC, LaBar KS, Wager TD, 2019, Emotion schemas are embedded in the human "
+  },
+  {
+   "id": "doi:10.1126/sciadv.adw1464",
+   "lines": [
+    38,
+    63
+   ],
+   "status": "db_verified",
+   "cit": "Horikawa T (2025). Mind captioning: Evolving descriptive text of mental content from human"
+  },
+  {
+   "id": "doi:10.1371/journal.pone.0152719",
+   "lines": [
+    36,
+    65,
+    250
+   ],
+   "status": "db_verified",
+   "cit": "Westfall J, Yarkoni T, 2016, Statistically Controlling for Confounding Constructs Is Harde"
+  }
+ ],
+ "RQ10_prospective_stimulus_selection.md": [
+  {
+   "id": "arxiv:2302.06677",
+   "lines": [
+    46
+   ],
+   "status": "db_verified",
+   "cit": "Han Y, Poggio T, Cheung B, 2023, System identification of neural systems: If we got it rig"
+  },
+  {
+   "id": "arxiv:2506.09985",
+   "lines": [
+    155
+   ],
+   "status": "db_verified",
+   "cit": "Assran M, Bardes A, Fan D, Garrido Q, et al., 2025, V-JEPA 2: Self-Supervised Video Models"
+  },
+  {
+   "id": "arxiv:2507.00320",
+   "lines": [
+    344
+   ],
+   "status": "db_verified",
+   "cit": "Westlin C, Singh A, Erdogmus D, Stratis G, Barrett LF, 2025, Exploring Theory-Laden Observ"
+  },
+  {
+   "id": "arxiv:2512.00557",
+   "lines": [
+    78
+   ],
+   "status": "db_verified",
+   "cit": "Chen H, et al. (2025). NeuroVolve: Evolving personalized visual stimuli toward user-define"
+  },
+  {
+   "id": "arxiv:2605.04326",
+   "lines": [
+    89,
+    157,
+    487
+   ],
+   "status": "db_verified",
+   "cit": "d'Ascoli S, Rapin J, Benchetrit Y, Brooks T, Begany K, Raugel J, Banville H, King J-R (202"
+  },
+  {
+   "id": "arxiv:2605.16739",
+   "lines": [
+    84,
+    272
+   ],
+   "status": "db_verified",
+   "cit": "Mohammed BA, Gu L, Fang R, 2026, EmoMind: Decoding Affective Captions from Human Brain fMR"
+  },
+  {
+   "id": "arxiv:2605.29850",
+   "lines": [
+    155
+   ],
+   "status": "db_verified",
+   "cit": "Gokce A, AlKhamissi B, Schrimpf M (2026). MIRAGE: Adaptive Multimodal Gating for Whole-Bra"
+  },
+  {
+   "id": "doi:10.1016/j.isci.2020.101060",
+   "lines": [
+    44,
+    82,
+    355
+   ],
+   "status": "db_verified",
+   "cit": "Horikawa T, Cowen AS, Keltner D, Kamitani Y, 2020, The Neural Representation of Visually E"
+  },
+  {
+   "id": "doi:10.1016/j.neunet.2025.107515",
+   "lines": [
+    226
+   ],
+   "status": "db_verified",
+   "cit": "Shirakawa K, Nagano Y, Tanaka M, Aoki SC, Muraki Y, Majima K, Kamitani Y, 2025, Spurious r"
+  },
+  {
+   "id": "doi:10.1016/j.patter.2023.100804",
+   "lines": [
+    88
+   ],
+   "status": "db_verified",
+   "cit": "Kapoor S, Narayanan A, 2023, Leakage and the reproducibility crisis in machine-learning-ba"
+  },
+  {
+   "id": "doi:10.1038/s41467-021-25409-6",
+   "lines": [
+    77
+   ],
+   "status": "db_verified",
+   "cit": "Ratan Murty NA, Bashivan P, Abate A, DiCarlo JJ, Kanwisher N (2021). Computational models "
+  },
+  {
+   "id": "doi:10.1038/s41467-024-53147-y",
+   "lines": [
+    46,
+    80
+   ],
+   "status": "db_verified",
+   "cit": "Conwell C, Prince JS, Kay KN, Alvarez GA, Konkle T, 2024, A large-scale examination of ind"
+  },
+  {
+   "id": "doi:10.1038/s41562-020-0912-z",
+   "lines": [
+    65
+   ],
+   "status": "db_verified",
+   "cit": "Simonsohn U, Simmons JP, Nelson LD, 2020, Specification curve analysis"
+  },
+  {
+   "id": "doi:10.1038/s41562-023-01783-7",
+   "lines": [
+    76
+   ],
+   "status": "db_verified",
+   "cit": "Tuckute G, Sathe A, Srikant S, Taliaferro M, Wang M, Schrimpf M, 외, 2024, Driving and supp"
+  },
+  {
+   "id": "doi:10.1038/s41562-025-02252-z",
+   "lines": [
+    81
+   ],
+   "status": "db_verified",
+   "cit": "Gifford AT, Jastrzębowska MA, Singer JJD, Cichy RM (2025). In silico discovery of represen"
+  },
+  {
+   "id": "doi:10.1038/s41586-020-2314-9",
+   "lines": [
+    65,
+    88
+   ],
+   "status": "db_verified",
+   "cit": "Botvinik-Nezer R, Holzmeister F, Camerer CF, Dreber A, Huber J, Johannesson M, 외, 2020, Va"
+  },
+  {
+   "id": "doi:10.1038/s42003-023-05440-7",
+   "lines": [
+    86
+   ],
+   "status": "db_verified",
+   "cit": "Gu Z, Jamison K, Sabuncu MR, Kuceyeski A (2023). Human brain responses are modulated when "
+  },
+  {
+   "id": "doi:10.1073/pnas.1912334117",
+   "lines": [
+    49,
+    79
+   ],
+   "status": "db_verified",
+   "cit": "Golan T, Raju PC, Kriegeskorte N, 2020, Controversial stimuli: Pitting neural networks aga"
+  },
+  {
+   "id": "doi:10.1126/sciadv.aaw4358",
+   "lines": [
+    90,
+    159
+   ],
+   "status": "db_verified",
+   "cit": "Kragel PA, Reddan MC, LaBar KS, Wager TD, 2019, Emotion schemas are embedded in the human "
+  },
+  {
+   "id": "doi:10.1126/sciadv.adw1464",
+   "lines": [
+    83
+   ],
+   "status": "db_verified",
+   "cit": "Horikawa T (2025). Mind captioning: Evolving descriptive text of mental content from human"
+  },
+  {
+   "id": "doi:10.1371/journal.pone.0152719",
+   "lines": [
+    45,
+    355
+   ],
+   "status": "db_verified",
+   "cit": "Westfall J, Yarkoni T, 2016, Statistically Controlling for Confounding Constructs Is Harde"
+  },
+  {
+   "id": "doi:10.1523/jneurosci.1436-24.2025",
+   "lines": [
+    85
+   ],
+   "status": "db_verified",
+   "cit": "Jang G, Kragel PA (2025). Understanding Human Amygdala Function with Artificial Neural Net"
+  },
+  {
+   "id": "doi:10.7554/elife.62461",
+   "lines": [
+    87,
+    218
+   ],
+   "status": "db_verified",
+   "cit": "Ince RAA, Paton AT, Kay JW, Schyns PG, 2021, Bayesian inference of population prevalence"
+  },
+  {
+   "id": "doi:10.7554/elife.82566",
+   "lines": [
+    87,
+    219
+   ],
+   "status": "db_verified",
+   "cit": "Schütt HH, Kipnis AD, Diedrichsen J, Kriegeskorte N, 2023, Statistical inference on repres"
+  }
+ ],
+ "RQ14_who_did_what_to_whom.md": [
+  {
+   "id": "arxiv:2104.00990",
+   "lines": [
+    68
+   ],
+   "status": "db_verified",
+   "cit": "Sadhu A, Gupta T, Yatskar M, Nevatia R, Kembhavi A, 2021, Visual Semantic Role Labeling fo"
+  },
+  {
+   "id": "arxiv:2503.16883",
+   "lines": [
+    72,
+    214
+   ],
+   "status": "db_verified",
+   "cit": "Ruder D, Uusberg A, Sirts K, 2025, Assessing the Reliability and Validity of GPT-4 in Anno"
+  },
+  {
+   "id": "doi:10.1016/j.cub.2015.06.009",
+   "lines": [
+    40,
+    66
+   ],
+   "status": "db_verified",
+   "cit": "Skerry AE, Saxe R, 2015, Neural Representations of Emotion Are Organized around Abstract E"
+  },
+  {
+   "id": "doi:10.1016/j.cub.2023.10.015",
+   "lines": [
+    65
+   ],
+   "status": "db_verified",
+   "cit": "McMahon E, Bonner MF, Isik L, 2023, Hierarchical organization of social action features al"
+  },
+  {
+   "id": "doi:10.1016/j.neubiorev.2022.104977",
+   "lines": [
+    39,
+    67,
+    144
+   ],
+   "status": "db_verified",
+   "cit": "Emanuel A, Eldar E, 2023, Emotions as computations"
+  },
+  {
+   "id": "doi:10.1016/j.neuroimage.2022.119728",
+   "lines": [
+    25
+   ],
+   "status": "db_verified",
+   "cit": "Dupré la Tour T, Eickenberg M, Nunez-Elizalde AO, Gallant JL, 2022, Feature-space selectio"
+  },
+  {
+   "id": "doi:10.1016/j.neuroimage.2025.121439",
+   "lines": [
+    62
+   ],
+   "status": "db_verified",
+   "cit": "Marras L, Teresi L, Simonelli F, Setti F, Ingenito A, Handjaras G, Ricciardi E, 2025, Neur"
+  },
+  {
+   "id": "doi:10.1037/emo0001619",
+   "lines": [
+    71
+   ],
+   "status": "db_verified",
+   "cit": "Morgenroth E, Somarathna R, Van De Ville D, Mohammadi G, Vuilleumier P, 2026, Dissecting a"
+  },
+  {
+   "id": "doi:10.1038/s41467-024-44870-7",
+   "lines": [
+    63
+   ],
+   "status": "db_verified",
+   "cit": "Thornton MA, Tamir DI, 2024, Neural representations of situations and mental states are co"
+  },
+  {
+   "id": "doi:10.1038/s41597-025-04803-5",
+   "lines": [
+    70
+   ],
+   "status": "db_verified",
+   "cit": "Morgenroth E, Moia S, Vilaclara L, Fournier R, Muszynski M, Ploumitsakou M, Almato-Bellavi"
+  },
+  {
+   "id": "doi:10.1038/s42256-025-01072-0",
+   "lines": [
+    73
+   ],
+   "status": "db_verified",
+   "cit": "Doerig A, Kietzmann TC, Allen E, Wu Y, Naselaris T, Kay K, Charest I, 2025, High-level vis"
+  },
+  {
+   "id": "doi:10.1073/pnas.1421236112",
+   "lines": [
+    41,
+    61
+   ],
+   "status": "db_verified",
+   "cit": "Frankland SM, Greene JD, 2015, An architecture for encoding sentence meaning in left mid-s"
+  },
+  {
+   "id": "doi:10.1093/cercor/bhad093",
+   "lines": [
+    64
+   ],
+   "status": "db_verified",
+   "cit": "Mohammadi G, Van De Ville D, Vuilleumier P, 2023, Brain networks subserving functional cor"
+  },
+  {
+   "id": "doi:10.1098/rsta.2022.0047",
+   "lines": [
+    74
+   ],
+   "status": "db_verified",
+   "cit": "Houlihan SD, Kleiman-Weiner M, Hewitt LB, Tenenbaum JB, Saxe R, 2023, Emotion prediction a"
+  },
+  {
+   "id": "doi:10.1109/cvpr.2016.597",
+   "lines": [
+    69
+   ],
+   "status": "db_verified",
+   "cit": "Yatskar M, Zettlemoyer L, Farhadi A, 2016, Situation Recognition: Visual Semantic Role Lab"
+  },
+  {
+   "id": "doi:10.1109/cvpr46437.2021.00554",
+   "lines": [
+    68
+   ],
+   "status": "db_verified",
+   "cit": "Sadhu A, Gupta T, Yatskar M 외, 2021, Visual Semantic Role Labeling for Video Understanding"
+  }
+ ],
+ "RQ15_read_vs_ask_AI_emotion.md": [
+  {
+   "id": "arxiv:2307.07961",
+   "lines": [
+    100
+   ],
+   "status": "db_verified",
+   "cit": "Yang J, Huang Q, Ding T, Lischinski D, Cohen-Or D, Huang H, 2023, EmoSet: A Large-scale Vi"
+  },
+  {
+   "id": "arxiv:2310.01405",
+   "lines": [
+    71,
+    132
+   ],
+   "status": "db_verified",
+   "cit": "Zou A, Phan L, Chen S, Campbell J, et al., 2023, Representation Engineering: A Top-Down Ap"
+  },
+  {
+   "id": "arxiv:2310.16789",
+   "lines": [
+    70,
+    179
+   ],
+   "status": "db_verified",
+   "cit": "Shi W, Ajith A, Xia M, et al., 2023, Detecting Pretraining Data from Large Language Models"
+  },
+  {
+   "id": "arxiv:2405.12661",
+   "lines": [
+    268
+   ],
+   "status": "db_verified",
+   "cit": "Yang J, et al. (2024). EmoEdit: Evoking Emotions through Image Manipulation. arXiv:2405.12"
+  },
+  {
+   "id": "arxiv:2408.03326",
+   "lines": [
+    110
+   ],
+   "status": "db_verified",
+   "cit": "Li B, Zhang Y, Guo D, et al., 2024, LLaVA-OneVision: Easy Visual Task Transfer"
+  },
+  {
+   "id": "arxiv:2408.13718",
+   "lines": [
+    66
+   ],
+   "status": "db_verified",
+   "cit": "Tak AN, Gratch J, 2024, GPT-4 Emulates Average-Human Emotional Cognition from a Third-Pers"
+  },
+  {
+   "id": "arxiv:2502.13923",
+   "lines": [
+    110
+   ],
+   "status": "db_verified",
+   "cit": "Bai S, Chen K, Liu X, et al., 2025, Qwen2.5-VL Technical Report"
+  },
+  {
+   "id": "arxiv:2503.20314",
+   "lines": [
+    178
+   ],
+   "status": "db_verified",
+   "cit": "Team Wan (2025). Wan: Open and Advanced Large-Scale Video Generative Models. arXiv:2503.20"
+  },
+  {
+   "id": "arxiv:2506.09985",
+   "lines": [
+    112
+   ],
+   "status": "db_verified",
+   "cit": "Assran M, Bardes A, Fan D, Garrido Q, et al., 2025, V-JEPA 2: Self-Supervised Video Models"
+  },
+  {
+   "id": "arxiv:2507.00320",
+   "lines": [
+    220
+   ],
+   "status": "db_verified",
+   "cit": "Westlin C, Singh A, Erdogmus D, Stratis G, Barrett LF, 2025, Exploring Theory-Laden Observ"
+  },
+  {
+   "id": "arxiv:2508.05880",
+   "lines": [
+    63
+   ],
+   "status": "db_verified",
+   "cit": "Bhattacharyya S, Kuriabov E, Craig L, Dilliraj T, et al., 2025, Too Categorical to be Huma"
+  },
+  {
+   "id": "arxiv:2508.18265",
+   "lines": [
+    109
+   ],
+   "status": "db_verified",
+   "cit": "Wang W, Gao Z, Gu L, et al., 2025, InternVL3.5: Advancing Open-Source Multimodal Models in"
+  },
+  {
+   "id": "arxiv:2509.24298",
+   "lines": [
+    58
+   ],
+   "status": "db_verified",
+   "cit": "Du C, Lu Y, Huang Z, Sun Y, Zhou Z, 외, 2025, Bridging the behavior-neural gap: A multimoda"
+  },
+  {
+   "id": "arxiv:2510.04064",
+   "lines": [
+    60
+   ],
+   "status": "db_verified",
+   "cit": "Zhang J, Zhong L, et al., 2025, Decoding Emotion in the Deep: A Systematic Study of How LL"
+  },
+  {
+   "id": "arxiv:2511.21631",
+   "lines": [
+    108
+   ],
+   "status": "db_verified",
+   "cit": "Bai S, Cai Y, Chen R, et al., 2025, Qwen3-VL Technical Report"
+  },
+  {
+   "id": "arxiv:2512.00557",
+   "lines": [
+    268
+   ],
+   "status": "db_verified",
+   "cit": "Chen H, et al. (2025). NeuroVolve: Evolving personalized visual stimuli toward user-define"
+  },
+  {
+   "id": "arxiv:2604.07729",
+   "lines": [
+    61
+   ],
+   "status": "db_verified",
+   "cit": "Sofroniew N, Kauvar I, Saunders W, Chen R, et al., 2026, Emotion Concepts and their Functi"
+  },
+  {
+   "id": "arxiv:2609.34742",
+   "lines": [
+    62
+   ],
+   "status": "db_verified",
+   "cit": "Xing B, Liu X, Yuan K, Li D, et al., 2026, Do Emotion Concepts Generalize Across Sources, "
+  },
+  {
+   "id": "arxiv:2610.22706",
+   "lines": [
+    59
+   ],
+   "status": "db_verified",
+   "cit": "Huang Y, Zhang Z, Biswal B, 2026, Brain-Aligned Multimodal LLMs for Social and Emotional U"
+  },
+  {
+   "id": "doi:10.1016/j.isci.2020.101060",
+   "lines": [
+    68
+   ],
+   "status": "db_verified",
+   "cit": "Horikawa T, Cowen AS, Keltner D, Kamitani Y, 2020, The Neural Representation of Visually E"
+  },
+  {
+   "id": "doi:10.1038/s41598-025-14961-6",
+   "lines": [
+    64
+   ],
+   "status": "db_verified",
+   "cit": "Asanuma H, Koide-Majima N, Nakamura K, Horii T, Nishimoto S, Oizumi M, 2025, Correspondenc"
+  },
+  {
+   "id": "doi:10.1073/pnas.1619316114",
+   "lines": [
+    67
+   ],
+   "status": "db_verified",
+   "cit": "LeDoux JE, Brown R (2017). A higher-order theory of emotional consciousness. PNAS 114(10):"
+  },
+  {
+   "id": "doi:10.1073/pnas.1702247114",
+   "lines": [
+    69
+   ],
+   "status": "db_verified",
+   "cit": "Cowen AS, Keltner D (2017). Self-report captures 27 distinct categories of emotion bridged"
+  },
+  {
+   "id": "doi:10.1080/02699939508408966",
+   "lines": [
+    72
+   ],
+   "status": "db_verified",
+   "cit": "Gross JJ, Levenson RW, 1995, Emotion elicitation using films"
+  },
+  {
+   "id": "doi:10.1126/sciadv.adw1464",
+   "lines": [
+    68
+   ],
+   "status": "db_verified",
+   "cit": "Horikawa T (2025). Mind captioning: Evolving descriptive text of mental content from human"
+  },
+  {
+   "id": "doi:10.1162/imag.a.134",
+   "lines": [
+    65
+   ],
+   "status": "db_verified",
+   "cit": "Santavirta S, Wu Y, Suominen L, Nummenmaa L, 2025, GPT-4V shows human-like social perceptu"
+  },
+  {
+   "id": "doi:10.7554/elife.62461",
+   "lines": [
+    144
+   ],
+   "status": "db_verified",
+   "cit": "Ince RAA, Paton AT, Kay JW, Schyns PG, 2021, Bayesian inference of population prevalence"
+  }
+ ],
+ "RQ32_arousal_as_speed.md": [
+  {
+   "id": "doi:10.1016/j.neuroimage.2022.119364",
+   "lines": [
+    64
+   ],
+   "status": "db_verified",
+   "cit": "Lee K, Horien C, O'Connor D et al., 2022, Arousal impacts distributed hubs modulating the "
+  },
+  {
+   "id": "doi:10.1037/a0038822",
+   "lines": [
+    30
+   ],
+   "status": "db_verified",
+   "cit": "Houben M, Van Den Noortgate W, Kuppens P, 2015, The relation between short-term emotion dy"
+  },
+  {
+   "id": "doi:10.1038/s41467-020-18717-w",
+   "lines": [
+    53
+   ],
+   "status": "db_verified",
+   "cit": "van der Meer JN, Breakspear M, Chang LJ, Sonkusare S, Cocchi L, 2020, Movie viewing elicit"
+  },
+  {
+   "id": "doi:10.1038/s41467-021-26268-x",
+   "lines": [
+    23,
+    56
+   ],
+   "status": "db_verified",
+   "cit": "Munn BR, Müller EJ, Wainstein G, Shine JM, 2021, The ascending arousal system shapes neura"
+  },
+  {
+   "id": "doi:10.1038/s41467-025-68240-z",
+   "lines": [
+    60
+   ],
+   "status": "db_verified",
+   "cit": "Ma Y, Kragel PA, 2026, Map-like representations of emotion knowledge in hippocampal-prefro"
+  },
+  {
+   "id": "doi:10.1038/s41593-020-00711-6",
+   "lines": [
+    66
+   ],
+   "status": "db_verified",
+   "cit": "Tian Y, Margulies DS, Breakspear M et al., 2020, Topographic organization of the human sub"
+  },
+  {
+   "id": "doi:10.1038/s41593-025-01945-y",
+   "lines": [
+    29,
+    57
+   ],
+   "status": "db_verified",
+   "cit": "Bolt T, Wang S, Nomi JS et al., 2025, Autonomic physiological coupling of the global fMRI "
+  },
+  {
+   "id": "doi:10.1038/s41597-025-04803-5",
+   "lines": [
+    61
+   ],
+   "status": "db_verified",
+   "cit": "Morgenroth E, Moia S, Vilaclara L, Fournier R, Muszynski M, Ploumitsakou M, Almato-Bellavi"
+  },
+  {
+   "id": "doi:10.1093/pnasnexus/pgac020",
+   "lines": [
+    63
+   ],
+   "status": "db_verified",
+   "cit": "Madsen J, Parra LC (2022). Cognitive processing of a common stimulus synchronizes brains, "
+  },
+  {
+   "id": "doi:10.1126/sciadv.abf7129",
+   "lines": [
+    65,
+    345
+   ],
+   "status": "db_verified",
+   "cit": "Chang LJ, Jolly E, Cheong JH, Rapuano KM, Greenstein N, Chen PHA, Manning JR (2021). Endog"
+  },
+  {
+   "id": "doi:10.1371/journal.pcbi.1012994",
+   "lines": [
+    28,
+    52
+   ],
+   "status": "db_verified",
+   "cit": "Ke J, Song H, Bai Z, Rosenberg MD, Leong YC, 2025, Dynamic brain connectivity predicts emo"
+  },
+  {
+   "id": "doi:10.1523/jneurosci.1759-16.2016",
+   "lines": [
+    62
+   ],
+   "status": "db_verified",
+   "cit": "Young CB, Raz G, Everaerd D et al., 2017, Dynamic Shifts in Large-Scale Brain Network Bala"
+  },
+  {
+   "id": "doi:10.64898/2026.06.08.730730",
+   "lines": [
+    58
+   ],
+   "status": "db_verified",
+   "cit": "Bhattacharyya K, Huberman-Shlaes J, Tong Y et al., 2026, A common connectome-based neural "
+  },
+  {
+   "id": "doi:10.7554/elife.107955",
+   "lines": [
+    54
+   ],
+   "status": "db_verified",
+   "cit": "Nguyen TT, Etzel JA, Bezdek MA, Zacks JM (2026). Multiple event segmentation mechanisms in"
+  },
+  {
+   "id": "doi:10.7554/elife.110294",
+   "lines": [
+    59
+   ],
+   "status": "db_verified",
+   "cit": "Kong X, Li S, Gong G, 2026, Arousal modulates functional connectivity through structured a"
+  },
+  {
+   "id": "doi:10.7554/elife.93191",
+   "lines": [
+    23,
+    55
+   ],
+   "status": "db_verified",
+   "cit": "Wainstein G, Whyte CJ, Ehgoetz Martens KA et al., 2025, Evidence from pupillometry, fMRI, "
+  }
+ ],
+ "RQ33_natural_kuleshov.md": [
+  {
+   "id": "arxiv:2103.00020",
+   "lines": [
+    116
+   ],
+   "status": "db_verified",
+   "cit": "Radford A, Kim JW, Hallacy C, Ramesh A, Goh G, Agarwal S, Sastry G, Askell A, Mishkin P, C"
+  },
+  {
+   "id": "arxiv:2506.09985",
+   "lines": [
+    116
+   ],
+   "status": "db_verified",
+   "cit": "Assran M, Bardes A, Fan D, Garrido Q, et al., 2025, V-JEPA 2: Self-Supervised Video Models"
+  },
+  {
+   "id": "arxiv:2605.04326",
+   "lines": [
+    68
+   ],
+   "status": "db_verified",
+   "cit": "d'Ascoli S, Rapin J, Benchetrit Y, Brooks T, Begany K, Raugel J, Banville H, King J-R (202"
+  },
+  {
+   "id": "doi:10.1002/hbm.25277",
+   "lines": [
+    26,
+    59
+   ],
+   "status": "db_verified",
+   "cit": "Gaviria J, Rey G, Bolton T, Delgado J, Van De Ville D, Vuilleumier P, 2021, Brain function"
+  },
+  {
+   "id": "doi:10.1016/j.cub.2014.09.025",
+   "lines": [
+    57
+   ],
+   "status": "db_verified",
+   "cit": "Liberman A, Fischer J, Whitney D (2014). Serial dependence in the perception of faces"
+  },
+  {
+   "id": "doi:10.1016/j.neuroimage.2003.11.029",
+   "lines": [
+    65
+   ],
+   "status": "db_verified",
+   "cit": "Handwerker DA, Ollinger JM, D'Esposito M (2004). Variation of BOLD hemodynamic responses a"
+  },
+  {
+   "id": "doi:10.1016/j.neuroimage.2011.08.076",
+   "lines": [
+    64
+   ],
+   "status": "db_verified",
+   "cit": "Mumford JA, Turner BO, Ashby FG, Poldrack RA (2012). Deconvolving BOLD activation in event"
+  },
+  {
+   "id": "doi:10.1016/j.tics.2005.11.006",
+   "lines": [
+    67
+   ],
+   "status": "db_verified",
+   "cit": "Grill-Spector K, Henson R, Martin A (2006). Repetition and the brain: neural models of sti"
+  },
+  {
+   "id": "doi:10.1038/nn.3689",
+   "lines": [
+    56
+   ],
+   "status": "db_verified",
+   "cit": "Fischer J, Whitney D (2014). Serial dependence in visual perception"
+  },
+  {
+   "id": "doi:10.1038/nn.4468",
+   "lines": [
+    60
+   ],
+   "status": "db_verified",
+   "cit": "Tambini A, Rimmele U, Phelps EA, Davachi L (2017). Emotional brain states carry over and e"
+  },
+  {
+   "id": "doi:10.1038/s41598-018-37786-y",
+   "lines": [
+    55
+   ],
+   "status": "db_verified",
+   "cit": "Calbi M, Siri F, Heimann K, Barratt D, Gallese V, Kolesnikov A, Umiltà MA (2019). How cont"
+  },
+  {
+   "id": "doi:10.1093/scan/nsl014",
+   "lines": [
+    53
+   ],
+   "status": "db_verified",
+   "cit": "Mobbs D, Weiskopf N, Lau HC, Featherstone E, Dolan RJ, Frith CD, 2006, The Kuleshov Effect"
+  },
+  {
+   "id": "doi:10.1093/scan/nsu044",
+   "lines": [
+    26,
+    58
+   ],
+   "status": "db_verified",
+   "cit": "Pichon S, Miendlarzewska EA, Eryilmaz H, Vuilleumier P, 2015, Cumulative activation during"
+  },
+  {
+   "id": "doi:10.1126/sciadv.adw1464",
+   "lines": [
+    62
+   ],
+   "status": "db_verified",
+   "cit": "Horikawa T (2025). Mind captioning: Evolving descriptive text of mental content from human"
+  },
+  {
+   "id": "doi:10.1162/imag_a_00517",
+   "lines": [
+    61
+   ],
+   "status": "db_verified",
+   "cit": "Saarimäki H, Nummenmaa L, Volynets S, Santavirta S, Aksiuto A, Sams M, Jääskeläinen IP, La"
+  },
+  {
+   "id": "doi:10.1163/22134808-bja10064",
+   "lines": [
+    51
+   ],
+   "status": "db_verified",
+   "cit": "Van der Burg E, Toet A, Brouwer AM, Van Erp JBF, 2021, Serial Dependence of Emotion Within"
+  },
+  {
+   "id": "doi:10.1167/jov.23.3.12",
+   "lines": [
+    52
+   ],
+   "status": "db_verified",
+   "cit": "Ortega J, Chen Z, Whitney D, 2023, Serial dependence in emotion perception mirrors the aut"
+  },
+  {
+   "id": "doi:10.1371/journal.pone.0171375",
+   "lines": [
+    26
+   ],
+   "status": "db_verified",
+   "cit": "Qiao-Tasserit E, Garcia Quesada M, Antico L, Bavelier D, Vuilleumier P, Pichon S, 2017, Tr"
+  },
+  {
+   "id": "doi:10.1371/journal.pone.0308295",
+   "lines": [
+    54
+   ],
+   "status": "db_verified",
+   "cit": "Cao Z, Wang Y, Wu L, Xie Y, Shi Z, Zhong Y, Wang Y (2024). Reexamining the Kuleshov effect"
+  },
+  {
+   "id": "doi:10.7554/elife.62461",
+   "lines": [
+    121
+   ],
+   "status": "db_verified",
+   "cit": "Ince RAA, Paton AT, Kay JW, Schyns PG, 2021, Bayesian inference of population prevalence"
+  },
+  {
+   "id": "doi:10.7554/elife.64972",
+   "lines": [
+    63
+   ],
+   "status": "db_verified",
+   "cit": "Lee CS, Aly M, Baldassano C (2021). Anticipation of temporally structured events in the br"
+  },
+  {
+   "id": "doi:10.7554/elife.77599",
+   "lines": [
+    66,
+    116
+   ],
+   "status": "db_verified",
+   "cit": "Prince JS, Charest I, Kurzawski JW, Pyles JA, Tarr MJ, Kay KN, 2022, Improving the accurac"
+  }
+ ],
+ "RQ44_recall_reconstruction.md": [
+  {
+   "id": "arxiv:2503.20314",
+   "lines": [
+    59,
+    93
+   ],
+   "status": "db_verified",
+   "cit": "Team Wan (2025). Wan: Open and Advanced Large-Scale Video Generative Models. arXiv:2503.20"
+  },
+  {
+   "id": "arxiv:2506.06898",
+   "lines": [
+    144
+   ],
+   "status": "db_verified",
+   "cit": "Kneeland R, Scotti PS, St-Yves G, Breedlove J, Kay K, Naselaris T, 2025, NSD-Imagery: A be"
+  },
+  {
+   "id": "arxiv:2506.09985",
+   "lines": [
+    149
+   ],
+   "status": "db_verified",
+   "cit": "Assran M, Bardes A, Fan D, Garrido Q, et al., 2025, V-JEPA 2: Self-Supervised Video Models"
+  },
+  {
+   "id": "doi:10.1016/j.bandc.2025.106296",
+   "lines": [
+    92
+   ],
+   "status": "db_verified",
+   "cit": "Kim, Kim, 2025, Consistent neural representation of valence in encoding and recall"
+  },
+  {
+   "id": "doi:10.1016/j.cub.2020.04.014",
+   "lines": [
+    85
+   ],
+   "status": "db_verified",
+   "cit": "Breedlove JL, St-Yves G, Olman CA, Naselaris T (2020). Generative Feedback Explains Distin"
+  },
+  {
+   "id": "doi:10.1016/j.isci.2023.107571",
+   "lines": [
+    150
+   ],
+   "status": "db_verified",
+   "cit": "Du C, Fu K, Wen B, He H, 2023, Topographic representation of visually evoked emotional exp"
+  },
+  {
+   "id": "doi:10.1016/j.neunet.2025.107515",
+   "lines": [
+    94
+   ],
+   "status": "db_verified",
+   "cit": "Shirakawa K, Nagano Y, Tanaka M, Aoki SC, Muraki Y, Majima K, Kamitani Y, 2025, Spurious r"
+  },
+  {
+   "id": "doi:10.1016/j.neuroimage.2011.08.076",
+   "lines": [
+    96
+   ],
+   "status": "db_verified",
+   "cit": "Mumford JA, Turner BO, Ashby FG, Poldrack RA (2012). Deconvolving BOLD activation in event"
+  },
+  {
+   "id": "doi:10.1016/j.neuroimage.2022.119728",
+   "lines": [
+    196
+   ],
+   "status": "db_verified",
+   "cit": "Dupré la Tour T, Eickenberg M, Nunez-Elizalde AO, Gallant JL, 2022, Feature-space selectio"
+  },
+  {
+   "id": "doi:10.1016/j.neuropsychologia.2024.108823",
+   "lines": [
+    86
+   ],
+   "status": "db_verified",
+   "cit": "Lee Masson H, Chen J, Isik L (2024). A shared neural code for perceiving and remembering s"
+  },
+  {
+   "id": "doi:10.1038/nn.4450",
+   "lines": [
+    82
+   ],
+   "status": "db_verified",
+   "cit": "Chen J, Leong YC, Honey CJ, Yong CH, Norman KA, Hasson U, 2017, Shared memories reveal sha"
+  },
+  {
+   "id": "doi:10.1038/s41467-020-15763-2",
+   "lines": [
+    91
+   ],
+   "status": "db_verified",
+   "cit": "Bone MB, Ahmad F, Buchsbaum BR, 2020, Feature-specific neural reactivation during episodic"
+  },
+  {
+   "id": "doi:10.1038/s41467-022-33161-8",
+   "lines": [
+    83
+   ],
+   "status": "db_verified",
+   "cit": "Favila SE, Kuhl BA, Winawer J, 2022, Perception and memory have distinct spatial tuning pr"
+  },
+  {
+   "id": "doi:10.1038/s41562-023-01799-z",
+   "lines": [
+    84
+   ],
+   "status": "db_verified",
+   "cit": "Spens E, Burgess N (2024). A generative model of memory construction and consolidation. Na"
+  },
+  {
+   "id": "doi:10.1038/s41593-021-00947-w",
+   "lines": [
+    97,
+    153,
+    392
+   ],
+   "status": "db_verified",
+   "cit": "Frey M, Nau M, Doeller CF, 2021, Magnetic resonance-based eye tracking using deep neural n"
+  },
+  {
+   "id": "doi:10.1073/pnas.1619316114",
+   "lines": [
+    90
+   ],
+   "status": "db_verified",
+   "cit": "LeDoux JE, Brown R (2017). A higher-order theory of emotional consciousness. PNAS 114(10):"
+  },
+  {
+   "id": "doi:10.1093/cercor/bhv086",
+   "lines": [
+    108
+   ],
+   "status": "db_verified",
+   "cit": "Saarimäki H, Gotsopoulos A, Jääskeläinen IP, Lampinen J, Vuilleumier P, Hari R, Sams M, Nu"
+  },
+  {
+   "id": "doi:10.1126/sciadv.aaw4358",
+   "lines": [
+    95
+   ],
+   "status": "db_verified",
+   "cit": "Kragel PA, Reddan MC, LaBar KS, Wager TD, 2019, Emotion schemas are embedded in the human "
+  },
+  {
+   "id": "doi:10.1126/sciadv.adw1464",
+   "lines": [
+    87
+   ],
+   "status": "db_verified",
+   "cit": "Horikawa T (2025). Mind captioning: Evolving descriptive text of mental content from human"
+  },
+  {
+   "id": "doi:10.1162/jocn_a_00839",
+   "lines": [
+    91
+   ],
+   "status": "db_verified",
+   "cit": "St-Laurent M, Abdi H, Buchsbaum BR, 2015, Distributed Patterns of Reactivation Predict Viv"
+  },
+  {
+   "id": "doi:10.1523/eneuro.0146-26.2026",
+   "lines": [
+    88
+   ],
+   "status": "db_verified",
+   "cit": "Curko N, Samide R, Krenz V, Kensinger EA, Ritchey M (2026). Remembered Event Features Shap"
+  },
+  {
+   "id": "doi:10.3758/s13423-017-1313-9",
+   "lines": [
+    89
+   ],
+   "status": "db_verified",
+   "cit": "Bowen HJ, Kark SM, Kensinger EA, 2018, NEVER forget: negative emotional valence enhances r"
+  },
+  {
+   "id": "doi:10.7554/elife.62461",
+   "lines": [
+    218
+   ],
+   "status": "db_verified",
+   "cit": "Ince RAA, Paton AT, Kay JW, Schyns PG, 2021, Bayesian inference of population prevalence"
+  }
+ ],
+ "RQ60_implied_sound.md": [
+  {
+   "id": "arxiv:2211.06687",
+   "lines": [
+    64,
+    110
+   ],
+   "status": "db_verified",
+   "cit": "Wu Y, Chen K, Zhang T, Hui Y, Nezhurina M, Berg-Kirkpatrick T, Dubnov S (2023). Large-scal"
+  },
+  {
+   "id": "arxiv:2412.15322",
+   "lines": [
+    54,
+    110
+   ],
+   "status": "db_verified",
+   "cit": "Cheng HK, Ishii M, Hayakawa A, Shibuya T, Schwing A, Mitsufuji Y (2025). MMAudio: Taming M"
+  },
+  {
+   "id": "arxiv:2506.09985",
+   "lines": [
+    110
+   ],
+   "status": "db_verified",
+   "cit": "Assran M, Bardes A, Fan D, Garrido Q, et al., 2025, V-JEPA 2: Self-Supervised Video Models"
+  },
+  {
+   "id": "arxiv:2509.24298",
+   "lines": [
+    62
+   ],
+   "status": "db_verified",
+   "cit": "Du C, Lu Y, Huang Z, Sun Y, Zhou Z, 외, 2025, Bridging the behavior-neural gap: A multimoda"
+  },
+  {
+   "id": "doi:10.1016/j.cub.2014.04.020",
+   "lines": [
+    53
+   ],
+   "status": "db_verified",
+   "cit": "Vetter P, Smith FW, Muckli L (2014). Decoding sound and imagery content in early visual co"
+  },
+  {
+   "id": "doi:10.1016/j.isci.2020.101060",
+   "lines": [
+    60
+   ],
+   "status": "db_verified",
+   "cit": "Horikawa T, Cowen AS, Keltner D, Kamitani Y, 2020, The Neural Representation of Visually E"
+  },
+  {
+   "id": "doi:10.1016/j.neuroimage.2022.119728",
+   "lines": [
+    65
+   ],
+   "status": "db_verified",
+   "cit": "Dupré la Tour T, Eickenberg M, Nunez-Elizalde AO, Gallant JL, 2022, Feature-space selectio"
+  },
+  {
+   "id": "doi:10.1038/nn.2533",
+   "lines": [
+    50
+   ],
+   "status": "db_verified",
+   "cit": "Meyer K, Kaplan JT, Essex R, Webber C, Damasio H, Damasio A, 2010, Predicting visual stimu"
+  },
+  {
+   "id": "doi:10.1038/s41598-025-14961-6",
+   "lines": [
+    66
+   ],
+   "status": "db_verified",
+   "cit": "Asanuma H, Koide-Majima N, Nakamura K, Horii T, Nishimoto S, Oizumi M, 2025, Correspondenc"
+  },
+  {
+   "id": "doi:10.1093/cercor/bhm011",
+   "lines": [
+    63
+   ],
+   "status": "db_verified",
+   "cit": "Eldar E, Ganor O, Admon R, Bleich A, Hendler T (2007). Feeling the real world: limbic resp"
+  },
+  {
+   "id": "doi:10.1121/1.1945807",
+   "lines": [
+    55
+   ],
+   "status": "db_verified",
+   "cit": "Chi T, Ru P, Shamma SA (2005). Multiresolution spectrotemporal analysis of complex sounds"
+  },
+  {
+   "id": "doi:10.1126/sciadv.adk6840",
+   "lines": [
+    51
+   ],
+   "status": "db_verified",
+   "cit": "Lettieri G, Handjaras G, Cappello EM, et al. (2024). Dissecting abstract, modality-specifi"
+  },
+  {
+   "id": "doi:10.1126/sciadv.adw1464",
+   "lines": [
+    61
+   ],
+   "status": "db_verified",
+   "cit": "Horikawa T (2025). Mind captioning: Evolving descriptive text of mental content from human"
+  },
+  {
+   "id": "doi:10.1371/journal.pbio.3002366",
+   "lines": [
+    57
+   ],
+   "status": "db_verified",
+   "cit": "Tuckute G, Feather J, Boebinger D, McDermott JH (2023). Many but not all deep neural netwo"
+  },
+  {
+   "id": "doi:10.1371/journal.pcbi.1003412",
+   "lines": [
+    56
+   ],
+   "status": "db_verified",
+   "cit": "Santoro R, Moerel M, De Martino F, Goebel R, Ugurbil K, Yacoub E, Formisano E (2014). Enco"
+  },
+  {
+   "id": "doi:10.1371/journal.pcbi.1006397",
+   "lines": [
+    58
+   ],
+   "status": "db_verified",
+   "cit": "Lage-Castellanos A, Valente G, Formisano E, De Martino F, 2019, Methods for computing the "
+  },
+  {
+   "id": "doi:10.1523/jneurosci.2342-12.2012",
+   "lines": [
+    52
+   ],
+   "status": "db_verified",
+   "cit": "Man K, Kaplan JT, Damasio A, Meyer K, 2012, Sight and sound converge to form modality-inva"
+  },
+  {
+   "id": "doi:10.3389/fnins.2014.00253",
+   "lines": [
+    59
+   ],
+   "status": "db_verified",
+   "cit": "Peelle JE (2014). Methodological challenges and solutions in auditory functional magnetic "
+  },
+  {
+   "id": "doi:10.7554/elife.62461",
+   "lines": [
+    115
+   ],
+   "status": "db_verified",
+   "cit": "Ince RAA, Paton AT, Kay JW, Schyns PG, 2021, Bayesian inference of population prevalence"
+  }
+ ],
+ "final_synthesis.md": [
+  {
+   "id": "arxiv:2209.10652",
+   "lines": [
+    49
+   ],
+   "status": "db_verified",
+   "cit": "Elhage N, Hume T 외, 2022, Toy Models of Superposition"
+  },
+  {
+   "id": "arxiv:2303.09166",
+   "lines": [
+    48
+   ],
+   "status": "db_verified",
+   "cit": "Daunhawer I, Bizeul A, Palumbo E, Marx A, Vogt JE, 2023, Identifiability Results for Multi"
+  },
+  {
+   "id": "arxiv:2408.13718",
+   "lines": [
+    41
+   ],
+   "status": "db_verified",
+   "cit": "Tak AN, Gratch J, 2024, GPT-4 Emulates Average-Human Emotional Cognition from a Third-Pers"
+  },
+  {
+   "id": "arxiv:2506.09985",
+   "lines": [
+    87
+   ],
+   "status": "db_verified",
+   "cit": "Assran M, Bardes A, Fan D, Garrido Q, et al., 2025, V-JEPA 2: Self-Supervised Video Models"
+  },
+  {
+   "id": "arxiv:2507.00320",
+   "lines": [
+    19,
+    65
+   ],
+   "status": "db_verified",
+   "cit": "Westlin C, Singh A, Erdogmus D, Stratis G, Barrett LF, 2025, Exploring Theory-Laden Observ"
+  },
+  {
+   "id": "arxiv:2509.24298",
+   "lines": [
+    41
+   ],
+   "status": "db_verified",
+   "cit": "Du C, Lu Y, Huang Z, Sun Y, Zhou Z, 외, 2025, Bridging the behavior-neural gap: A multimoda"
+  },
+  {
+   "id": "arxiv:2604.07729",
+   "lines": [
+    40
+   ],
+   "status": "db_verified",
+   "cit": "Sofroniew N, Kauvar I, Saunders W, Chen R, et al., 2026, Emotion Concepts and their Functi"
+  },
+  {
+   "id": "arxiv:2605.04326",
+   "lines": [
+    84
+   ],
+   "status": "db_verified",
+   "cit": "d'Ascoli S, Rapin J, Benchetrit Y, Brooks T, Begany K, Raugel J, Banville H, King J-R (202"
+  },
+  {
+   "id": "arxiv:2605.16739",
+   "lines": [
+    57
+   ],
+   "status": "db_verified",
+   "cit": "Mohammed BA, Gu L, Fang R, 2026, EmoMind: Decoding Affective Captions from Human Brain fMR"
+  },
+  {
+   "id": "doi:10.1016/j.isci.2020.101060",
+   "lines": [
+    18
+   ],
+   "status": "db_verified",
+   "cit": "Horikawa T, Cowen AS, Keltner D, Kamitani Y, 2020, The Neural Representation of Visually E"
+  },
+  {
+   "id": "doi:10.1016/j.isci.2023.107571",
+   "lines": [
+    20
+   ],
+   "status": "db_verified",
+   "cit": "Du C, Fu K, Wen B, He H, 2023, Topographic representation of visually evoked emotional exp"
+  },
+  {
+   "id": "doi:10.1038/nn.2533",
+   "lines": [
+    88
+   ],
+   "status": "db_verified",
+   "cit": "Meyer K, Kaplan JT, Essex R, Webber C, Damasio H, Damasio A, 2010, Predicting visual stimu"
+  },
+  {
+   "id": "doi:10.1038/s41467-024-49073-8",
+   "lines": [
+    111
+   ],
+   "status": "db_verified",
+   "cit": "Abdel-Ghaffar SA, Huth AG, Lescroart MD, Stansbury D, Gallant JL, Bishop SJ, 2024, Occipit"
+  },
+  {
+   "id": "doi:10.1038/s41562-023-01783-7",
+   "lines": [
+    44
+   ],
+   "status": "db_verified",
+   "cit": "Tuckute G, Sathe A, Srikant S, Taliaferro M, Wang M, Schrimpf M, 외, 2024, Driving and supp"
+  },
+  {
+   "id": "doi:10.1038/s41562-023-01799-z",
+   "lines": [
+    94
+   ],
+   "status": "db_verified",
+   "cit": "Spens E, Burgess N (2024). A generative model of memory construction and consolidation. Na"
+  },
+  {
+   "id": "doi:10.1073/pnas.1421236112",
+   "lines": [
+    33
+   ],
+   "status": "db_verified",
+   "cit": "Frankland SM, Greene JD, 2015, An architecture for encoding sentence meaning in left mid-s"
+  },
+  {
+   "id": "doi:10.1073/pnas.1619316114",
+   "lines": [
+    96
+   ],
+   "status": "db_verified",
+   "cit": "LeDoux JE, Brown R (2017). A higher-order theory of emotional consciousness. PNAS 114(10):"
+  },
+  {
+   "id": "doi:10.1073/pnas.1702247114",
+   "lines": [
+    67
+   ],
+   "status": "db_verified",
+   "cit": "Cowen AS, Keltner D (2017). Self-report captures 27 distinct categories of emotion bridged"
+  },
+  {
+   "id": "doi:10.1073/pnas.1912334117",
+   "lines": [
+    44
+   ],
+   "status": "db_verified",
+   "cit": "Golan T, Raju PC, Kriegeskorte N, 2020, Controversial stimuli: Pitting neural networks aga"
+  },
+  {
+   "id": "doi:10.1126/sciadv.aaw4358",
+   "lines": [
+    53
+   ],
+   "status": "db_verified",
+   "cit": "Kragel PA, Reddan MC, LaBar KS, Wager TD, 2019, Emotion schemas are embedded in the human "
+  },
+  {
+   "id": "doi:10.1126/sciadv.adw1464",
+   "lines": [
+    22,
+    61,
+    64
+   ],
+   "status": "db_verified",
+   "cit": "Horikawa T (2025). Mind captioning: Evolving descriptive text of mental content from human"
+  },
+  {
+   "id": "doi:10.1126/science.adi6000",
+   "lines": [
+    52
+   ],
+   "status": "db_verified",
+   "cit": "Angelopoulos AN, Bates S, Fannjiang C, Jordan MI, Zrnic T, 2023, Prediction-powered infere"
+  },
+  {
+   "id": "doi:10.1371/journal.pone.0152719",
+   "lines": [
+    110
+   ],
+   "status": "db_verified",
+   "cit": "Westfall J, Yarkoni T, 2016, Statistically Controlling for Confounding Constructs Is Harde"
+  },
+  {
+   "id": "doi:10.3758/s13423-017-1313-9",
+   "lines": [
+    96
+   ],
+   "status": "db_verified",
+   "cit": "Bowen HJ, Kark SM, Kensinger EA, 2018, NEVER forget: negative emotional valence enhances r"
+  },
+  {
+   "id": "doi:10.7554/elife.93191",
+   "lines": [
+    33
+   ],
+   "status": "db_verified",
+   "cit": "Wainstein G, Whyte CJ, Ehgoetz Martens KA et al., 2025, Evidence from pupillometry, fMRI, "
+  }
+ ],
+ "pilots.md": [
+  {
+   "id": "arxiv:2307.07961",
+   "lines": [
+    92
+   ],
+   "status": "db_verified",
+   "cit": "Yang J, Huang Q, Ding T, Lischinski D, Cohen-Or D, Huang H, 2023, EmoSet: A Large-scale Vi"
+  },
+  {
+   "id": "arxiv:2502.13923",
+   "lines": [
+    93
+   ],
+   "status": "db_verified",
+   "cit": "Bai S, Chen K, Liu X, et al., 2025, Qwen2.5-VL Technical Report"
+  },
+  {
+   "id": "arxiv:2506.09985",
+   "lines": [
+    93
+   ],
+   "status": "db_verified",
+   "cit": "Assran M, Bardes A, Fan D, Garrido Q, et al., 2025, V-JEPA 2: Self-Supervised Video Models"
+  },
+  {
+   "id": "arxiv:2508.18265",
+   "lines": [
+    93
+   ],
+   "status": "db_verified",
+   "cit": "Wang W, Gao Z, Gu L, et al., 2025, InternVL3.5: Advancing Open-Source Multimodal Models in"
+  },
+  {
+   "id": "arxiv:2511.21631",
+   "lines": [
+    93
+   ],
+   "status": "db_verified",
+   "cit": "Bai S, Cai Y, Chen R, et al., 2025, Qwen3-VL Technical Report"
+  },
+  {
+   "id": "doi:10.1016/j.isci.2023.107571",
+   "lines": [
+    46
+   ],
+   "status": "db_verified",
+   "cit": "Du C, Fu K, Wen B, He H, 2023, Topographic representation of visually evoked emotional exp"
+  },
+  {
+   "id": "doi:10.1038/s41593-021-00947-w",
+   "lines": [
+    65
+   ],
+   "status": "db_verified",
+   "cit": "Frey M, Nau M, Doeller CF, 2021, Magnetic resonance-based eye tracking using deep neural n"
+  },
+  {
+   "id": "doi:10.6084/m9.figshare.11988351",
+   "lines": [
+    15
+   ],
+   "status": "repo:figshare",
+   "cit": ""
+  }
+ ]
+}

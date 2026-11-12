@@ -66,7 +66,7 @@
   * adversarial-reviewer 상위 10개 검토: V11, 피험자 쌍 의존성, 자극 구동 시선. 추가 검토(ET-P4): 이산 라벨 AMI 상한, 세션과 클립 묶음 혼동의 MC 판별, prediction strength.
   * Stage 4 카드 검토 A(adversarial-reviewer): 주장 A, B의 분리, SigClust null과 같은 사람 안의 덩어리 대 연속 비교, MFA 특수형 비교, 반증 기준 숫자화, Horikawa 세션 내용 사전 점검.
 * **다른 분야에서 가져온 것:**
-  * Complex Systems와 시각 신경과학: scale-free 공분산 스펙트럼과 cross-decomposition(Gauthaman 2024/2025, Stringer 2019).
+  * Complex Systems와 시각 신경과학: scale-free 공분산 스펙트럼과 cross-decomposition(Gauthaman 2024/2025, Stringer 2019(doi:10.1038/s41586-019-1346-5)).
   * 심리측정: 잠재 계층(덩어리)과 공통 요인(연속)을 한 틀에서 비교하는 factor mixture 모형(Lubke & Muthén 2005).
   * 군집 통계: prediction strength(Tibshirani & Walther 2005), 군집 안정성의 한계(Ben-David et al. 2006), 고차원 소표본 군집 유의성 SigClust(Liu et al. 2008).
   * 메타과학: specification curve(Simonsohn 2020), 소표본 유병률 추론(Ince 2021).

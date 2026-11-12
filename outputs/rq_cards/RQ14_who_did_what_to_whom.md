@@ -104,7 +104,7 @@
 | 장면 캡션 | 없음(Emo-FilM) | MLLM으로 정서 배제 지시 캡션 생성 [AI 생성] |
 | 사회 primitive(사람 수, 얼굴 유무, 마주봄) | 없음 | 검출기 또는 MLLM으로 생성 [AI 생성] |
 | 생리 신호(PPG, 호흡, EDA, 참가자) | 있음 | 각성 교란 점검(민감도 분석)에만 |
-| 보조 재현: Horikawa 2020 + Mind captioning | 있음 | Agent와 정서 문항(분노, 슬픔 등)은 C&K 34범주에 Anger, Sadness 등이 있어 목표로 쓸 수 있다. 사건 구조는 정서 배제 캡션 20개/클립 **[Human 작성, AI 교정]** 에서 텍스트 의미역으로 뽑는다. Mind captioning 학습 자료는 58 run(2,108클립)으로 고정하고 72 시험 클립은 평가에만 쓴다(시험 클립이 학습 마지막 두 run에도 제시됨, 원문 Methods). Mind captioning 원 논문 전처리는 상수, 추세, 머리 움직임 24개, 전역 신호 12개 회귀, 4 s shift, despike, 블록 안 평균, run 안 z-score이고 보유본은 미확인 |
+| 보조 재현: Horikawa 2020(doi:10.1016/j.isci.2020.101060) + Mind captioning | 있음 | Agent와 정서 문항(분노, 슬픔 등)은 C&K 34범주에 Anger, Sadness 등이 있어 목표로 쓸 수 있다. 사건 구조는 정서 배제 캡션 20개/클립 **[Human 작성, AI 교정]** 에서 텍스트 의미역으로 뽑는다. Mind captioning 학습 자료는 58 run(2,108클립)으로 고정하고 72 시험 클립은 평가에만 쓴다(시험 클립이 학습 마지막 두 run에도 제시됨, 원문 Methods). Mind captioning 원 논문 전처리는 상수, 추세, 머리 움직임 24개, 전역 신호 12개 회귀, 4 s shift, despike, 블록 안 평균, run 안 z-score이고 보유본은 미확인 |
 
 ## 7. Proposed Computational Framework
 

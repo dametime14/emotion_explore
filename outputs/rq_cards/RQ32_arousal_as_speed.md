@@ -72,7 +72,7 @@
 * **선행 판정: partially.** 감사(`prior_overlap_audit.md`)는 not found였다. 카드 작성 중 Wainstein 2025와 Munn 2021을 찾았고, 검토 B가 두 논문의 주장이 원문과 맞음을 확인해 partially로 고쳤다(`card_review_B.md` 0, 2.2절). arousal을 TR 사이 패턴 변화 속도로 정의하고 위치와 경쟁시키는 정서 연구는 여전히 찾지 못했다.
 * **카드 작성 중 추가 검색(2026-11-12):**
   * PubMed: `(arousal OR pupil OR "heart rate") AND fMRI AND ("state transition" OR "speed" OR "velocity" OR "rate of change" OR "temporal derivative") AND ("brain state" OR "neural trajectory" OR "dynamic functional connectivity")`, 2015~, 15건. 관련: Wainstein 2025, Lee 2022.
-  * WebSearch: `arousal speed of brain state transitions fMRI pupil "dynamic functional connectivity speed" OR "state transition rate" arousal naturalistic`. 관련: Kong 2026(eLife), 동공 고각성 집단의 빠른 상태 전이를 보고한 ISMRM 2025 학회 초록(식별자 확인 못 함, 근거로 쓰지 않음).
+  * WebSearch: `arousal speed of brain state transitions fMRI pupil "dynamic functional connectivity speed" OR "state transition rate" arousal naturalistic`. 관련: Kong 2026(eLife). (ISMRM 2025 학회 초록 1건은 식별자와 proceedings URL을 확인하지 못해 최종 인용 검증에서 삭제했다.)
   * **판정: partially(개념 선행).** '신경조절 각성과 뇌 상태 속도의 결합'은 과제와 휴지기에서 이미 제안되고 일부 검증되었다(Wainstein 2025, Munn 2021). 정서 장면에서의 vmPFC 상태 전이는 Chang 2021이 다뤘다.
 * **남는 새 부분(이것만 새로움으로 주장한다):**
   1. 대상이 **정서 각성**(영화에 대한 각성 평정)이다. 기존은 동공으로 잰 신경조절 각성이었다.
@@ -109,7 +109,7 @@
 | 데이터셋 | 할 수 있는 것 | 한계 |
 |---|---|---|
 | **Spacetop** (alignvideo 49편, TR 0.46 s, MB8, 2.7 mm) | 짧은 TR로 속도 곡선을 더 촘촘히 표집한다. 영상 단위 평균 속도가 그 사람의 사후 평정(afraid, engaged 등)과 같이 움직이는지 사람 안에서 본다. 같은 참가자 열 통증(social 과제)에서 '정서 없는 각성'의 속도를 대조로 본다 | arousal 문항이 없다. 평정은 영상 끝 1회이고 약 51% 결측이라 시간 단위 검증이 불가능하다. 생리는 공개본에 없다(사용자 보유 여부 미확인). MB8은 뇌 중심부 잡음을 키운다. 짧은 TR도 HRF(혈류 반응 함수: 신경 활동이 혈류 신호로 4~6초 늦게, 넓게 퍼져 나타나는 현상)의 평활은 줄이지 못한다 |
-| **Horikawa 2020** (TR 2 s, 비디오 블록) | 비디오별 규범 Arousal 차원(14개 차원 중 하나)이 있다. 10 s보다 긴 블록 안의 속도를 비디오 Arousal과 비교하는 탐색만 가능하다. **판정 불가 가능성이 높은 탐색**으로 표시한다(검토 B 선택 9) | Stage 1 기준 공개 전처리본은 4 s shift 후 블록 평균이라 블록 안 속도를 볼 수 없다. 사용자 보유본의 형식은 미확인이다. 연속 시계열이 필요하므로 raw(ds002425)에서 다시 처리해야 한다. TR 2 s에서 10 s 넘는 블록 안 속도는 5 TR 안팎이고 앞 블록의 HRF가 섞인다. 블록이 바뀔 때마다 비디오가 바뀌므로 블록 사이 변화는 자극 교체 그 자체다. 생리 기록이 없다. 무음 |
+| **Horikawa 2020(doi:10.1016/j.isci.2020.101060)** (TR 2 s, 비디오 블록) | 비디오별 규범 Arousal 차원(14개 차원 중 하나)이 있다. 10 s보다 긴 블록 안의 속도를 비디오 Arousal과 비교하는 탐색만 가능하다. **판정 불가 가능성이 높은 탐색**으로 표시한다(검토 B 선택 9) | Stage 1 기준 공개 전처리본은 4 s shift 후 블록 평균이라 블록 안 속도를 볼 수 없다. 사용자 보유본의 형식은 미확인이다. 연속 시계열이 필요하므로 raw(ds002425)에서 다시 처리해야 한다. TR 2 s에서 10 s 넘는 블록 안 속도는 5 TR 안팎이고 앞 블록의 HRF가 섞인다. 블록이 바뀔 때마다 비디오가 바뀌므로 블록 사이 변화는 자극 교체 그 자체다. 생리 기록이 없다. 무음 |
 | Mind captioning | (이 질문에서는 쓰지 않음) | 원 논문 전처리는 상수, 추세, 머리 움직임 24개, 전역 신호 12개(CSF, WM, GM 평균과 도함수, 제곱) 회귀, 4 s shift, despike, 블록 안 평균, run 안 z-score다(원문 Methods). 사용자 보유본이 이 파이프라인을 따랐는지는 **미확인**이다. 이 질문은 블록 평균 이전의 연속 시계열이 필요하므로, 쓴다면 raw(ds005191)에서 다시 처리해야 한다. 원 논문에 생리 기록 언급은 없다 |
 
 ---

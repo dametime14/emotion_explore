@@ -11,7 +11,7 @@
 
 ## 0. 세 Pilot의 공통 기반과 실행 순서
 
-* **같은 데이터:** 세 Pilot 모두 Horikawa 2020과 Mind captioning(MC)을 쓴다.
+* **같은 데이터:** 세 Pilot 모두 Horikawa 2020(doi:10.1016/j.isci.2020.101060)과 Mind captioning(MC)을 쓴다.
   * Horikawa 2020: 공개 전처리본 figshare doi:10.6084/m9.figshare.11988351, raw OpenNeuro ds002425.
   * Mind captioning: 사용자 전처리본, raw OpenNeuro ds005191.
   * 두 데이터는 같은 C&K 클립 2,180개를 썼고, 클립은 모두 무음이다(사용자 확인).
@@ -60,7 +60,7 @@
 
 | 항목 | 내용 |
 |---|---|
-| 목적 | Horikawa 2020(범주가 가장 잘 설명)과 Westlin 2025(라벨 없이 찾은 군집은 사람마다 11~14개, 범주보다 스캔 세션과 맞음)가 갈린 지점을 두 독립 코호트에서 다시 본다. 먼저 원 수치를 재현하고 판정 가능성을 시뮬레이션으로 확인한다 |
+| 목적 | Horikawa 2020(범주가 가장 잘 설명)과 Westlin 2025(arXiv:2507.00320)(라벨 없이 찾은 군집은 사람마다 11~14개, 범주보다 스캔 세션과 맞음)가 갈린 지점을 두 독립 코호트에서 다시 본다. 먼저 원 수치를 재현하고 판정 가능성을 시뮬레이션으로 확인한다 |
 | 첫 분석에 필요한 데이터와 파일 | (1) Horikawa figshare 전처리본과 세션 정보. (2) MC 사용자 전처리본과 세션 정보. (3) 34범주 규범 평정. 첫 세 분석은 raw 재전처리 없이 가능하다. 본 분석은 두 코호트 raw를 같은 파이프라인으로 재전처리한다(Horikawa 5명 x 약 61 run, MC 6명 x 약 60 run) |
 | Pretrained model, checkpoint, 라이선스 | 핵심 분석에는 모델이 없다. 시선 추정 DeepMReye(doi:10.1038/s41593-021-00947-w, 코드 LGPLv3, pretrained 가중치 라이선스 미확인, 촬영 범위에 눈알이 들어 있는지 미확인). 시각 교란 feature는 C&K 정서 라벨로 학습하지 않은 이미지 모델(CLIP 계열, DINOv2, 가중치 라이선스 미확인). 분석 도구 fMRIPrep(Apache-2.0), nilearn(BSD-3), brainiak SRM(Apache-2.0) |
 | Evaluation metric | (1) Westlin 재현: 사람별 최적 군집 수, 범주와 세션에 대한 NMI. (2) 코호트 간 피험자 쌍(30쌍)의 공유 성분 중 null을 넘어 재현되는 범위(신뢰 rank 대역). (3) 그 범위 안에서 범주 혼합, 연속 잠재, 개인 특이 군집 모형의 held-out 우도. (4) AMI는 보조 지표 |
