@@ -27,14 +27,18 @@ def main():
         text = open(path, encoding="utf-8").read()
         m = re.search(r"(?ms)^## \d*\.?\s*받은 제안에 대한 응답.*?(?=^## |\Z)", text)
         sec = m.group(0) if m else ""
-        for hm in re.finditer(r"(?m)^#{3,4}\s+.*?\b([A-Z]{2}-P\d+)\b(.*)$", sec):
-            pid, rest = hm.group(1), hm.group(2)
-            v = re.search(r"\*\*\s*(수용|수정|반박)", rest) or re.search(r"(수용|수정|반박)", rest)
-            if not v:
-                start = hm.end()
-                body = sec[start:start + 600]
-                v = re.search(r"(?:판정|응답)\s*[:：]?\s*\**\s*(수용|수정|반박)", body) or re.search(r"\*\*(수용|수정|반박)\*\*", body)
-            if v and pid in props:
+        seen = set()
+        for line in sec.splitlines():
+            s = line.strip()
+            if not (s.startswith("#") or s.startswith("|") or s.startswith("**")):
+                continue
+            idm = re.search(r"\b([A-Z]{2}-P\d+)\b", s)
+            v = re.search(r"(수용|수정|반박)", s)
+            if not idm or not v or s.startswith("|---"):
+                continue
+            pid = idm.group(1)
+            if pid in props and props[pid]["from"] != agent and (pid, agent) not in seen:
+                seen.add((pid, agent))
                 verdicts[pid].append((agent, VERDICT[v.group(1)]))
     mentions = collections.defaultdict(set)
     files = glob.glob(os.path.join(ROOT, "outputs/agents/*/round2.md")) + glob.glob(os.path.join(ROOT, "outputs/agents/*/round3_reviews.md"))

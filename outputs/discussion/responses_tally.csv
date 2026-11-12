@@ -1,77 +1,77 @@
 proposal_id,from,to,title,accept,modify,rebut,responders,mention_files,score
+EF-P3,encoding-foundation,emotion-theory,"""기대 반응""의 네 가지 정의와 그 잔차가 본인 보고 편차를 예측하는가 (공동 설계)",3,0,0,vision-decoding:accept; generative-counterfactual:accept; emotion-theory:accept,5,5.5
+ET-P2,emotion-theory,encoding-foundation,,2,1,0,vision-decoding:accept; encoding-foundation:modify; generative-counterfactual:accept,5,5.0
+GI-P5,geometry-info,vision-decoding,"Spacetop ""잔차 대 본인 보고 편차"" 제안 여섯 개를 기준선 multiverse 하나로",1,1,0,vision-decoding:modify; generative-counterfactual:accept,7,5.0
+LS-P1,llm-semantics,vision-decoding,,2,0,0,vision-decoding:accept; generative-counterfactual:accept,6,5.0
+BI-P1,brain-inspired,geometry-info,정서 지도의 방향성 검정: successor geometry 통합안,2,0,0,geometry-info:accept; adversarial-reviewer:accept,5,4.5
+GI-P1,geometry-info,emotion-theory,두 코호트 교차 공유 스펙트럼으로 Horikawa 범주 결론과 Westlin 재현 실패를 판정하기,1,1,0,adversarial-reviewer:modify; emotion-theory:accept,6,4.5
+LS-P2,llm-semantics,encoding-foundation,,2,1,0,vision-decoding:modify; encoding-foundation:accept; generative-counterfactual:accept,4,4.5
+GC-P2,generative-counterfactual,llm-semantics,기술 잔차(통계 통제)와 의미 고정 편집(설계 통제)을 같은 voxel에서 맞대기,2,0,0,vision-decoding:accept; llm-semantics:accept,4,4.0
+GI-P2,geometry-info,brain-inspired,정서 전이의 방향성 성분: SR(T) 대 SR(T')를 넘어 반대칭 흐름과 비가역성으로,2,0,0,brain-inspired:accept; adversarial-reviewer:accept,4,4.0
+BI-P2,brain-inspired,frontier-ai,Axis V 경쟁 검정: 정서 범주 대 행동 경향 대 자극 계산 affordance,1,0,0,frontier-ai:accept,5,3.5
+EF-P1,encoding-foundation,generative-counterfactual,같은 자극에서의 surrogate 충실도 감사를 모든 in-silico 정서 결과의 관문(gate)으로,1,1,0,vision-decoding:accept; generative-counterfactual:modify,4,3.5
+EF-P7,encoding-foundation,multimodal-dynamics,In-silico 감각 박탈과 관찰된 무음 조건의 대조,1,1,0,multimodal-dynamics:modify; generative-counterfactual:accept,4,3.5
+ET-P1,emotion-theory,geometry-info,,2,0,0,geometry-info:accept; vision-decoding:accept,3,3.5
+ET-P4,emotion-theory,systems-neuro,,2,0,0,systems-neuro:accept; adversarial-reviewer:accept,3,3.5
+EF-P4,encoding-foundation,systems-neuro,뇌 입력 foundation model의 정서 latent: 누수 통제와 coverage 대조를 갖춘 공동 benchmark,2,0,0,systems-neuro:accept; adversarial-reviewer:accept,2,3.0
 GI-P3,geometry-info,multimodal-dynamics,입력이 꺼진 구간의 흐름: washout 이완으로 HRF 잔여와 정서 관성을 가르기,1,0,0,multimodal-dynamics:accept,4,3.0
-BI-P1,brain-inspired,geometry-info,정서 지도의 방향성 검정: successor geometry 통합안,1,0,0,geometry-info:accept,3,2.5
-BI-P2,brain-inspired,frontier-ai,Axis V 경쟁 검정: 정서 범주 대 행동 경향 대 자극 계산 affordance,1,0,0,frontier-ai:accept,3,2.5
-EF-P3,encoding-foundation,emotion-theory,"""기대 반응""의 네 가지 정의와 그 잔차가 본인 보고 편차를 예측하는가 (공동 설계)",1,0,0,emotion-theory:accept,3,2.5
-GI-P1,geometry-info,emotion-theory,두 코호트 교차 공유 스펙트럼으로 Horikawa 범주 결론과 Westlin 재현 실패를 판정하기,1,0,0,emotion-theory:accept,3,2.5
-GI-P2,geometry-info,brain-inspired,정서 전이의 방향성 성분: SR(T) 대 SR(T')를 넘어 반대칭 흐름과 비가역성으로,1,0,0,brain-inspired:accept,3,2.5
-ET-P4,emotion-theory,systems-neuro,,1,0,0,systems-neuro:accept,2,2.0
-GC-P2,generative-counterfactual,llm-semantics,기술 잔차(통계 통제)와 의미 고정 편집(설계 통제)을 같은 voxel에서 맞대기,1,0,0,llm-semantics:accept,2,2.0
-GI-P5,geometry-info,vision-decoding,"Spacetop ""잔차 대 본인 보고 편차"" 제안 여섯 개를 기준선 multiverse 하나로",0,0,0,,4,2.0
+GI-P4,geometry-info,encoding-foundation,"TRIBE v2를 ""12번째 피험자""로: rank별 in-silico 충실도와 GW 수준별 대응",2,0,0,encoding-foundation:accept; generative-counterfactual:accept,2,3.0
+VD-P1,vision-decoding,encoding-foundation,,2,0,0,encoding-foundation:accept; generative-counterfactual:accept,2,3.0
+ET-P6,emotion-theory,vision-decoding,,0,1,0,vision-decoding:modify,4,2.5
+FA-P3,frontier-ai,multimodal-dynamics,"세 가지 예측 신호와 ""지속 상태 vs 재호출""",0,1,0,multimodal-dynamics:modify,4,2.5
+SN-P1,systems-neuro,encoding-foundation,,1,0,0,encoding-foundation:accept,3,2.5
+SN-P3,systems-neuro,brain-inspired,,1,0,0,brain-inspired:accept,3,2.5
+SN-P7,systems-neuro,emotion-theory; adversarial-reviewer,[통합 제안],1,1,0,adversarial-reviewer:modify; emotion-theory:accept,2,2.5
+FA-P6,frontier-ai,llm-semantics,내부 표상 읽기 vs 출력 묻기 (L2 층의 두 측정),0,1,0,llm-semantics:modify,3,2.0
+FA-P7,frontier-ai,geometry-info,"정서와 무관한 정렬이 정서 기하를 운반하는가 (사람 사이, 모델-뇌 사이)",1,0,0,geometry-info:accept,2,2.0
 GI-P7,geometry-info,systems-neuro,휴대 가능한 arousal은 저rank 전역 자율신경 모드인가,1,0,0,systems-neuro:accept,2,2.0
+LS-P7,llm-semantics,systems-neuro,,1,0,0,systems-neuro:accept,2,2.0
+MD-P1,multimodal-dynamics,geometry-info,클립 사이 이월과 washout 이완을 하나의 이완 모형으로,0,1,0,geometry-info:modify,3,2.0
 MD-P2,multimodal-dynamics,systems-neuro,transmodal 위치와 시간 척도의 교락에서 '소리'를 떼어 내는 2요인 설계,1,0,0,systems-neuro:accept,2,2.0
 SN-P2,systems-neuro,multimodal-dynamics,,1,0,0,multimodal-dynamics:accept,2,2.0
-SN-P3,systems-neuro,brain-inspired,,1,0,0,brain-inspired:accept,2,2.0
 VD-P2,vision-decoding,geometry-info,,1,0,0,geometry-info:accept,2,2.0
+VD-P4,vision-decoding,generative-counterfactual,,0,1,0,generative-counterfactual:modify,3,2.0
 VD-P5,vision-decoding,systems-neuro,,0,1,0,systems-neuro:modify,3,2.0
+BI-P4,brain-inspired,encoding-foundation,Limbic 맹점을 '관찰자 = agent' 변수로 분해,0,1,0,encoding-foundation:modify,2,1.5
 BI-P5,brain-inspired,multimodal-dynamics,Arousal은 예측 불확실성인가 예측오차인가,0,1,0,multimodal-dynamics:modify,2,1.5
-EF-P4,encoding-foundation,systems-neuro,뇌 입력 foundation model의 정서 latent: 누수 통제와 coverage 대조를 갖춘 공동 benchmark,1,0,0,systems-neuro:accept,1,1.5
-EF-P7,encoding-foundation,multimodal-dynamics,In-silico 감각 박탈과 관찰된 무음 조건의 대조,0,1,0,multimodal-dynamics:modify,2,1.5
-ET-P1,emotion-theory,geometry-info,,1,0,0,geometry-info:accept,1,1.5
-FA-P3,frontier-ai,multimodal-dynamics,"세 가지 예측 신호와 ""지속 상태 vs 재호출""",0,1,0,multimodal-dynamics:modify,2,1.5
+EF-P2,encoding-foundation,vision-decoding,"회상에서 재활성되는 것은 자극으로 계산 가능한 성분인가, 잔차 성분인가",1,0,0,vision-decoding:accept,1,1.5
+EF-P5,encoding-foundation,frontier-ai,Surprise가 surrogate 너머를 설명하는가: V-JEPA 2 예측오차의 matched-control 검정,1,0,0,frontier-ai:accept,1,1.5
+FA-P2,frontier-ai,generative-counterfactual,"생성 대신 선택, 의미 고정 정서 대비 쌍",1,0,0,generative-counterfactual:accept,1,1.5
 FA-P4,frontier-ai,brain-inspired,묘사된 행동 vs 느낀 행동 경향 (Axis V),1,0,0,brain-inspired:accept,1,1.5
-FA-P7,frontier-ai,geometry-info,"정서와 무관한 정렬이 정서 기하를 운반하는가 (사람 사이, 모델-뇌 사이)",1,0,0,geometry-info:accept,1,1.5
+FA-P8,frontier-ai,adversarial-reviewer,"개념 수준, 모델 내부 기반 주장의 최소 검증 요건 추가",1,0,0,adversarial-reviewer:accept,1,1.5
+GC-P1,generative-counterfactual,encoding-foundation,"""in silico 정서 기하 충실도""를 하나의 관문 연구로 합치고, 편집 자극을 분포 밖 시험 세트로 제공",1,0,0,encoding-foundation:accept,1,1.5
 GC-P5,generative-counterfactual,systems-neuro,자연 영상의 공간주파수 counterfactual과 AI다움 보정 곡선,0,1,0,systems-neuro:modify,2,1.5
+GC-P7,generative-counterfactual,vision-decoding,"정서 영역 선호 자극 합성(R4)과 범주 고정 amygdala 제어(내 CH2)를 합치고, prior-vs-evidence 분해를 생성 쪽에도 ",1,0,0,vision-decoding:accept,1,1.5
 GI-P6,geometry-info,llm-semantics,정서 어휘의 정보 병목 효율: 일본어 화자 뇌 공간에서 일본어 범주와 영어 범주 비교,0,1,0,llm-semantics:modify,2,1.5
+GI-P8,geometry-info,frontier-ai,정서와 무관한 정렬이 사람 사이의 정서 기하를 운반하는가,1,0,0,frontier-ai:accept,1,1.5
 LS-P3,llm-semantics,multimodal-dynamics,,1,0,0,multimodal-dynamics:accept,1,1.5
-LS-P7,llm-semantics,systems-neuro,,1,0,0,systems-neuro:accept,1,1.5
+LS-P5,llm-semantics,adversarial-reviewer,,0,1,0,adversarial-reviewer:modify,2,1.5
+MD-P3,multimodal-dynamics,encoding-foundation,in-silico 감각 박탈을 관찰 데이터의 '자연 모달리티 변이'로 보정하기,0,1,0,encoding-foundation:modify,2,1.5
+MD-P5,multimodal-dynamics,frontier-ai,정서적 놀람의 예측오차 수준에 '오디오 수준'과 '평정자 반복 시청' 문제를 더하기,1,0,0,frontier-ai:accept,1,1.5
 SN-P6,systems-neuro,llm-semantics,,1,0,0,llm-semantics:accept,1,1.5
-SN-P7,systems-neuro,emotion-theory; adversarial-reviewer,[통합 제안],1,0,0,emotion-theory:accept,1,1.5
+VD-P3,vision-decoding,llm-semantics,,0,1,0,llm-semantics:modify,2,1.5
 BI-P3,brain-inspired,systems-neuro,피질하 경로의 정보 내용과 선택성: Horikawa와 Spacetop 교차 설계,0,1,0,systems-neuro:modify,1,1.0
-EF-P1,encoding-foundation,generative-counterfactual,같은 자극에서의 surrogate 충실도 감사를 모든 in-silico 정서 결과의 관문(gate)으로,0,0,0,,2,1.0
-ET-P2,emotion-theory,encoding-foundation,,0,0,0,,2,1.0
+BI-P6,brain-inspired,vision-decoding,회상에서 행동 준비 성분이 재활성되는가 (Axis V x W),0,1,0,vision-decoding:modify,1,1.0
+EF-P6,encoding-foundation,adversarial-reviewer,독립 코호트를 쓴 의사 전향적 검증과 공동 provenance 등록부,0,1,0,adversarial-reviewer:modify,1,1.0
 ET-P3,emotion-theory,llm-semantics,,0,1,0,llm-semantics:modify,1,1.0
 ET-P5,emotion-theory,brain-inspired,,0,1,0,brain-inspired:modify,1,1.0
+ET-P7,emotion-theory,frontier-ai,,0,1,0,frontier-ai:modify,1,1.0
+FA-P1,frontier-ai,encoding-foundation,개념 수준 simulator-to-real gap,0,1,0,encoding-foundation:modify,1,1.0
 FA-P5,frontier-ai,emotion-theory,관점 무차별 모델을 기준선으로 한 인식 vs 경험 분리,0,1,0,emotion-theory:modify,1,1.0
-FA-P6,frontier-ai,llm-semantics,내부 표상 읽기 vs 출력 묻기 (L2 층의 두 측정),0,1,0,llm-semantics:modify,1,1.0
+GC-P3,generative-counterfactual,adversarial-reviewer,"통계 통제와 설계 통제의 사전 등록 삼각 검증, affective metamer 통합, PPI 기반 manipulation check",0,1,0,adversarial-reviewer:modify,1,1.0
 GC-P4,generative-counterfactual,multimodal-dynamics,소리 분해의 관찰 분할(R0)을 stem counterfactual(R1)로 확장하고 실제 판본 조작으로 surrogate를 검증,0,1,0,multimodal-dynamics:modify,1,1.0
 GC-P6,generative-counterfactual,frontier-ai,"정서 대 상황 판별 검정의 빈 칸을 편집으로 채우고, 정서 기대 위반 쌍을 생성",0,1,0,frontier-ai:modify,1,1.0
 GC-P8,generative-counterfactual,brain-inspired,정서 범주는 같고 행동 경향만 다른 자극을 편집으로 만들어 Axis V 경쟁 검정,0,1,0,brain-inspired:modify,1,1.0
 GC-P9,generative-counterfactual,emotion-theory,"privileged access 검정(C4)과 내 CH5를 통합하고, HOT 관찰 검정(C3)의 전제를 편집으로 먼저 확인",0,1,0,emotion-theory:modify,1,1.0
+LS-P4,llm-semantics,frontier-ai,,0,1,0,frontier-ai:modify,1,1.0
 LS-P6,llm-semantics,geometry-info,,0,1,0,geometry-info:modify,1,1.0
 LS-P8,llm-semantics,brain-inspired,,0,1,0,brain-inspired:modify,1,1.0
-MD-P1,multimodal-dynamics,geometry-info,클립 사이 이월과 washout 이완을 하나의 이완 모형으로,0,1,0,geometry-info:modify,1,1.0
+MD-P4,multimodal-dynamics,generative-counterfactual,음악 stem counterfactual에 '알려진 실험 결과의 in-silico 재현' 관문 두기,0,1,0,generative-counterfactual:modify,1,1.0
 MD-P6,multimodal-dynamics,llm-semantics,MLLM 정서 추정의 '시간 맥락 의존도'를 클립과 항목 단위 변수로 만들기,0,1,0,llm-semantics:modify,1,1.0
 MD-P7,multimodal-dynamics,emotion-theory,평정자 불일치와 혼합 정서를 '시간 구조'로 분해하기,0,1,0,emotion-theory:modify,1,1.0
 MD-P8,multimodal-dynamics,brain-inspired,"momentum과 회고 평가, SR 할인율과 정서 시간 척도",0,1,0,brain-inspired:modify,1,1.0
 SN-P4,systems-neuro,geometry-info,,0,1,0,geometry-info:modify,1,1.0
-VD-P3,vision-decoding,llm-semantics,,0,1,0,llm-semantics:modify,1,1.0
+SN-P5,systems-neuro,vision-decoding,,0,1,0,vision-decoding:modify,1,1.0
 VD-P6,vision-decoding,emotion-theory,,0,1,0,emotion-theory:modify,1,1.0
 VD-P7,vision-decoding,brain-inspired,,0,1,0,brain-inspired:modify,1,1.0
-BI-P4,brain-inspired,encoding-foundation,Limbic 맹점을 '관찰자 = agent' 변수로 분해,0,0,0,,1,0.5
-EF-P5,encoding-foundation,frontier-ai,Surprise가 surrogate 너머를 설명하는가: V-JEPA 2 예측오차의 matched-control 검정,0,0,0,,1,0.5
-ET-P7,emotion-theory,frontier-ai,,0,0,0,,1,0.5
-GI-P8,geometry-info,frontier-ai,정서와 무관한 정렬이 사람 사이의 정서 기하를 운반하는가,0,0,0,,1,0.5
-LS-P1,llm-semantics,vision-decoding,,0,0,0,,1,0.5
-LS-P2,llm-semantics,encoding-foundation,,0,0,0,,1,0.5
-LS-P4,llm-semantics,frontier-ai,,0,0,0,,1,0.5
-LS-P5,llm-semantics,adversarial-reviewer,,0,0,0,,1,0.5
-MD-P5,multimodal-dynamics,frontier-ai,정서적 놀람의 예측오차 수준에 '오디오 수준'과 '평정자 반복 시청' 문제를 더하기,0,0,0,,1,0.5
-SN-P1,systems-neuro,encoding-foundation,,0,0,0,,1,0.5
-VD-P4,vision-decoding,generative-counterfactual,,0,0,0,,1,0.5
-VD-P8,vision-decoding,frontier-ai,,0,0,0,,1,0.5
-BI-P6,brain-inspired,vision-decoding,회상에서 행동 준비 성분이 재활성되는가 (Axis V x W),0,0,0,,0,0.0
-EF-P2,encoding-foundation,vision-decoding,"회상에서 재활성되는 것은 자극으로 계산 가능한 성분인가, 잔차 성분인가",0,0,0,,0,0.0
-EF-P6,encoding-foundation,adversarial-reviewer,독립 코호트를 쓴 의사 전향적 검증과 공동 provenance 등록부,0,0,0,,0,0.0
-ET-P6,emotion-theory,vision-decoding,,0,0,0,,0,0.0
-FA-P1,frontier-ai,encoding-foundation,개념 수준 simulator-to-real gap,0,0,0,,0,0.0
-FA-P2,frontier-ai,generative-counterfactual,"생성 대신 선택, 의미 고정 정서 대비 쌍",0,0,0,,0,0.0
-FA-P8,frontier-ai,adversarial-reviewer,"개념 수준, 모델 내부 기반 주장의 최소 검증 요건 추가",0,0,0,,0,0.0
-GC-P1,generative-counterfactual,encoding-foundation,"""in silico 정서 기하 충실도""를 하나의 관문 연구로 합치고, 편집 자극을 분포 밖 시험 세트로 제공",0,0,0,,0,0.0
-GC-P3,generative-counterfactual,adversarial-reviewer,"통계 통제와 설계 통제의 사전 등록 삼각 검증, affective metamer 통합, PPI 기반 manipulation check",0,0,0,,0,0.0
-GC-P7,generative-counterfactual,vision-decoding,"정서 영역 선호 자극 합성(R4)과 범주 고정 amygdala 제어(내 CH2)를 합치고, prior-vs-evidence 분해를 생성 쪽에도 ",0,0,0,,0,0.0
-GI-P4,geometry-info,encoding-foundation,"TRIBE v2를 ""12번째 피험자""로: rank별 in-silico 충실도와 GW 수준별 대응",0,0,0,,0,0.0
-MD-P3,multimodal-dynamics,encoding-foundation,in-silico 감각 박탈을 관찰 데이터의 '자연 모달리티 변이'로 보정하기,0,0,0,,0,0.0
-MD-P4,multimodal-dynamics,generative-counterfactual,음악 stem counterfactual에 '알려진 실험 결과의 in-silico 재현' 관문 두기,0,0,0,,0,0.0
-SN-P5,systems-neuro,vision-decoding,,0,0,0,,0,0.0
-VD-P1,vision-decoding,encoding-foundation,,0,0,0,,0,0.0
+VD-P8,vision-decoding,frontier-ai,,0,1,0,frontier-ai:modify,1,1.0
