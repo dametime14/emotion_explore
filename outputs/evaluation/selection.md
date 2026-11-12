@@ -67,14 +67,14 @@
 | # | RQ | 한 줄 질문 | 주 데이터 | 감사 판정 | 붙는 관문 | 카드 담당(기원) |
 |---|---|---|---|---|---|---|
 | 1 | RQ-08 | 장면을 말로 설명한 내용을 빼고 나도 뇌에 정서 신호가 남을까? | Mind captioning + Horikawa 2020 | partially | RQ-13 | llm-semantics (LS-P1, 공동 VD-P3) |
-| 2 | RQ-10 | 정서 모델이 '이 영상이 이 뇌 영역을 움직일 것'이라고 미리 고르면, 처음 보는 사람에게서도 맞을까? | Horikawa 2020 -> Mind captioning | partially(작음) | RQ-51 | encoding-foundation (EF-P6, 공동 FA-P2) |
-| 3 | RQ-15 | AI의 정서를 잴 때, 속을 들여다보는 것과 물어보는 것 중 무엇이 사람 뇌와 더 닮았을까? | Horikawa 2020 + Mind captioning | not found | RQ-17 참고 | frontier-ai (FA-P6) |
-| 4 | RQ-01 | 뇌의 정서 '범주' 구조는 다른 사람, 다른 그룹에서도 다시 나타날까? | Horikawa 2020 + Mind captioning | partially | V11 재현 | geometry-info (GI-P1) |
-| 5 | RQ-03 | 뇌의 정서 지도는 정서 때문에 생길까, 그냥 영상이 다양해서 생길까? | Horikawa 2020 + Mind captioning | not found | RQ-13, RQ-01 0단계 | geometry-info (GI-R4-1) |
+| 2 | RQ-10 | 정서를 기준으로 고른 영상과 장면 내용을 기준으로 고른 영상 중 어느 쪽이 처음 보는 사람의 정서 관련 뇌 영역을 더 잘 움직일까? | Horikawa 2020 -> Mind captioning | partially(작음) | RQ-51 | encoding-foundation (EF-P6, 공동 FA-P2) |
+| 3 | RQ-15 | AI가 영상의 정서를 판단할 때, AI 속 상태를 읽은 값과 AI가 말한 답 중 어느 쪽이 사람 뇌 반응과 더 잘 맞을까? | Horikawa 2020 + Mind captioning | not found | RQ-17 참고 | frontier-ai (FA-P6) |
+| 4 | RQ-01 | 뇌의 정서 반응은 범주로 나뉠까, 끊김 없이 이어질까, 그리고 그 답은 다른 그룹에서도 같을까? | Horikawa 2020 + Mind captioning | partially | V11 재현 | geometry-info (GI-P1) |
+| 5 | RQ-03 | 뇌의 정서 지도는 영상의 정서가 다양해서 생길까, 겉모습이 다양해서 생길까? | Horikawa 2020 + Mind captioning | not found | RQ-13, RQ-01 0단계 | geometry-info (GI-R4-1) |
 | 6 | RQ-33 | 같은 장면도 앞에 무엇을 봤느냐에 따라 뇌가 그 장면의 정서를 다르게 표현할까? | Mind captioning | partially | RQ-26 HRF 단계, RQ-51 | multimodal-dynamics (전략 G. 가장 가까운 문헌 기원 MD-P1) |
-| 7 | RQ-60 | 소리 없는 영상을 볼 때 뇌는 '들릴 법한 소리'를 떠올리고, 그 소리가 정서를 실을까? | Horikawa 2020 + Mind captioning | partially | | multimodal-dynamics (무작위 경로, 멀티모달 담당) |
-| 8 | RQ-32 | 흥분(각성)은 뇌 상태의 '위치'일까, 뇌 상태가 바뀌는 '속도'일까? | Emo-FilM | not found | | systems-neuro (전략 E, arousal과 자율신경 담당) |
-| 9 | RQ-44 | 떠올린 정서는 원래 장면의 흔적일까, 줄거리를 바탕으로 다시 만든 것일까? | Mind captioning | partially | RQ-08(캡션 encoding 공유) | emotion-theory (ET-R4-4, 공동 FA-R4-1) |
+| 7 | RQ-60 | 소리 없는 영상을 볼 때 뇌는 '들릴 법한 소리'를 표현하고, 그 소리가 정서를 실을까? | Horikawa 2020 + Mind captioning | partially | | multimodal-dynamics (무작위 경로, 멀티모달 담당) |
+| 8 | RQ-32 | 흥분(각성)은 뇌 활동의 '세기'로 나타날까, 뇌 활동 패턴이 바뀌는 '빠르기'로 나타날까? | Emo-FilM | not found | | systems-neuro (전략 E, arousal과 자율신경 담당) |
+| 9 | RQ-44 | 장면을 떠올릴 때 뇌에 다시 나타나는 정서 정보는 원래 장면의 흔적일까, 장면 설명을 바탕으로 다시 만든 것일까? | Mind captioning | partially | RQ-08(캡션 encoding 공유) | emotion-theory (ET-R4-4, 공동 FA-R4-1) |
 | 10 | RQ-14 | '누가 누구에게 무엇을 했는가'라는 장면 구조가 정서 반응을 설명할까? | Emo-FilM | not found | | llm-semantics (전략 A, 외부 분야 Situation Recognition 제안 에이전트) |
 
 * 전략 경로와 무작위 경로에서 나온 질문(RQ-33, 60, 32, 14)은 Coordinator가 조합한 것이다. 카드는 해당 Axis를 담당하는 에이전트에게 맡겼다.

@@ -117,7 +117,7 @@
 | **Input representation** | 블록마다 (a) 단일 시행 반응: 연속 시계열에서 voxel별 HRF를 고른 GLM으로 추정한 블록 반응. 학습 세션과 시험 세션에 같은 설정을 쓴다. (b) 직전 클립 변수: 규범 정서 벡터(34 + 14차원), 시각 feature(V-JEPA 2, CLIP의 상위 주성분), 저수준 feature(휘도, 움직임 에너지, 컷 수), 직전 블록이 평가 블록인지 여부, 직전 클립의 노출 횟수. (c) 현재 블록 변수: 클립 정체성, 노출 횟수, 블록 안 반복 재생 횟수, 블록 길이, 현재 클립의 **모호성**(규범 범주 선택 비율의 엔트로피, valence의 중립 정도) |
 | **Output / target representation** | (a) **정서 이동 지수:** 현재 시행의 뇌 반응을 정서 decoder에 넣어 정서 벡터를 얻는다. 같은 클립의 **나머지 회차 평균(현재 시행을 뺀 평균)**을 뺀다. 그 차이를 (직전 클립 정서 - 현재 클립 정서) 방향에 투영한다. 양수 = 동화, 음수 = 대비. (b) **시각 이동 지수:** 같은 계산을 시각 feature decoder로. (c) **파이프라인 null 이동 지수:** 8절 3단계의 시뮬레이션 자료를 같은 과정에 통과시켜 얻은 분포 |
 | **Training or adaptation strategy** | 정서 decoder와 시각 decoder는 학습 세션 2,108개 클립으로 피험자별 ridge 회귀를 학습한다. 정서 decoder의 목표는 '정서 라벨에서 시각, 캡션 feature로 설명되는 부분을 회귀로 뺀 나머지'다. 이렇게 하면 정서 부분공간과 시각 부분공간의 겹침이 줄어든다. 직교화 전후를 모두 보고한다. 학습 세션은 순서가 고정이라 decoder가 앞 클립 정보를 배울 수 있으므로, 직전 클립 라벨을 공변량으로 넣어 학습한 판본도 만든다. 사전학습 모델은 동결(fine-tuning 없음) |
-| **Relevant brain regions / networks** | **주 검정용 사전 등록 ROI 묶음:** vmPFC, OFC, ACC, 앞쪽 insula, TPJ와 STS, PCC와 precuneus를 합친 하나의 voxel 집합(Horikawa 2020이 정서 정보를 보고한 transmodal 영역). 2차 분석: 위 영역 개별, 편도체(signal-feasibility 점검 후), 대조 영역 초기 시각(V1~V3), hMT+, 얼굴과 장면 선택 영역(Mind captioning의 retinotopy, fLoc, MT+ localizer로 개인별 정의). 아틀라스는 HCP-MMP(HCP360) |
+| **Relevant brain regions / networks** | **주 검정용 사전 등록 ROI 묶음:** vmPFC, OFC, ACC, 앞쪽 insula, TPJ와 STS, PCC와 precuneus를 합친 하나의 voxel 집합(Horikawa 2020이 정서 정보를 보고한 transmodal 영역). 2차 분석: 위 영역 개별, 편도체(signal-feasibility 점검 후), 대조 영역 초기 시각(V1~V3), hMT+, 얼굴과 장면 선택 영역(Mind captioning의 retinotopy, 시각 범주 localizer, MT+ localizer로 개인별 정의). 아틀라스는 HCP-MMP(HCP360) |
 | **Loss function or statistical objective** | decoder: L2 정규화 회귀(ridge). **주 통계량 T(사전 등록, 하나):** T = [β_정서,관찰 - median(β_정서,null)] - [β_시각,관찰 - median(β_시각,null)]. β는 혼합효과 회귀 `이동 지수 = β × (직전-현재 정서 차이) + nuisance + (피험자, 클립 무작위 효과)`의 기울기다. null은 파이프라인 시뮬레이션 분포. 판정은 양측. 2차 분석은 Holm 보정. 모양 비교: 선형, 단조 포화(tanh, 차이가 커질수록 기울기가 줄지만 방향은 유지되는 곡선), DoG(Difference of Gaussians의 1차 도함수 모양: 차이가 작을 때 끌리고 클 때 약해지거나 반대로 가는 비단조 곡선)를 교차검증 우도로 비교. 추론 보조: run 안 선행 클립 배정을 의사 무작위 제약을 지켜 섞는 순열 검정, 6명에 대한 Bayesian prevalence(모집단에서 효과를 가진 사람 비율 추정, 10.7554/eLife.62461) |
 | **Interpretability method** | 정서 범주별 이동 부호표. 이동이 큰 클립 쌍을 캡션과 함께 확인. decoder 가중치 지도. 영역별 HRF 모양(undershoot 깊이 포함)과 null 범위의 관계 그림. in-silico 예측 이동과 관찰 이동의 영역별 산점도 |
 
@@ -131,7 +131,7 @@
 3. **선행 정서 범위 점검:** 클립마다 5번의 선행 클립 정서 벡터가 얼마나 다른지 계산한다. 지표는 클립 안 선행 정서 분산과 전체 클립 정서 분산의 비율, 그리고 (직전-현재 정서 차이)의 분포. 선행 클립이 같은 run 절반(36개 안팎)에서만 나오므로 범위가 좁을 수 있다.
 4. 노출 횟수 계산(11회 이상, 연습 시청은 "최소 노출"로 표시)과 Mind captioning-Horikawa 2020 ID 대응표.
 5. 반복 기반 신뢰도: 시험 5회 반복으로 영역별 신뢰도를 구한다.
-6. **주 분석 데이터의 사전 결정 규칙(결과를 보기 전에 정함):** 3번에서 범위가 충분하고 9단계 검정력 시뮬레이션(아래 3단계 (d))에서 그럴듯한 효과 크기에 대한 검정력이 0.8 이상이면, 주 검정을 Mind captioning 시험 세트로 한다. 둘 중 하나라도 미달이면 주 검정을 6단계의 첫 노출 코호트 간 자료로 바꾼다. 이 규칙과 판정 결과를 분석 전에 등록한다.
+6. **주 분석 데이터의 사전 결정 규칙(결과를 보기 전에 정함):** 3번에서 범위가 충분하고 검정력 시뮬레이션(아래 3단계 (d))에서 그럴듯한 효과 크기에 대한 검정력이 0.8 이상이면, 주 검정을 Mind captioning 시험 세트로 한다. 둘 중 하나라도 미달이면 주 검정을 6단계의 첫 노출 코호트 간 자료로 바꾼다. 이 규칙과 판정 결과를 분석 전에 등록한다.
 
 **1단계: 연속 시계열의 HRF 추정 (RQ-26과 공유)**
 * 학습 세션 run(블록 길이가 다양함)과 시험 run으로 voxel별 HRF를 고르고(GLMsingle의 HRF 묶음에서 선택), 영역별 HRF 지연, 하강 꼬리, **undershoot(혈류 반응 뒤에 기저선 아래로 내려가는 구간)** 깊이와 시점을 보고한다.
