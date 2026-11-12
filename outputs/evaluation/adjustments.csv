@@ -1,0 +1,8 @@
+rq_id,criterion,final_score,who_moved,reason
+RQ-18,Dataset Feasibility,2,Coordinator,"Reviewer 근거 수용: 같은 자극에 여러 출처 view가 동시에 있는 곳은 Emo-FilM뿐이고 그 본인 view(사후 평정)는 영화 길이의 약 20%다. Coordinator가 든 Spacetop 본인 보고에는 같은 자극의 다른 출처 view가 없다"
+RQ-19,Methodological Rigor,2,Coordinator,"Reviewer 근거 수용: C&K 클립과 범주 라벨이 공개 웹 지도에 있어 MLLM이 평정을 기억했을 가능성(사전학습 오염)이 높고, 하위 rank 대역은 신뢰도가 낮아 인간과 AI 기하가 함께 무너지므로 대역별 비교의 판별력이 약하다"
+RQ-26,Methodological Rigor,3,both,"Reviewer 지적(영역별 HRF 차이, 휴지 2 s)은 원 전제를 깨뜨린다. 다만 원 설계(GI-P3)는 같은 영역 안의 부분공간 대조였고, Stage 4에서 영역별 HRF 추정 단계를 추가했으므로 2와 4 사이로 조정"
+RQ-28,Generalizability,3,both,"검정은 Emo-FilM 14편 안에서만 가능하다(Reviewer). DSA는 라벨 없는 신경 궤적에도 적용되어 다른 데이터셋으로 방법을 옮길 수는 있으나(Coordinator), 정서 상태 정의가 필요한 주 질문은 Emo-FilM에 묶인다"
+RQ-29,Generalizability,3,both,"언어 사전확률 자체는 일반적이지만(Coordinator) 신경 전이 검정은 Emo-FilM 보류 영화 안에서만 가능하다(Reviewer)"
+RQ-38,AI / Modeling Contribution,3,Coordinator,"Reviewer 근거 수용: V-JEPA 2-AC는 로봇 팔 end-effector 행동을 입력으로 받아 영화에는 넣을 행동이 없다. '행동 조건 대 행동 없음' 비교가 정의되지 않으므로 목표 통제 비교라는 기여가 성립하지 않는다"
+RQ-38,Falsifiability,2,Coordinator,"Reviewer 근거 수용: 행동 입력을 어떻게 정의하느냐에 따라 결과가 바뀌어 반증 기준이 불안정하다"

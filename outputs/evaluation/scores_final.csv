@@ -1,0 +1,541 @@
+rq_id,criterion,coordinator,reviewer,diff,final,status
+RQ-01,Novelty,3.0,3.0,0.0,3.0,mean
+RQ-01,Neuroscientific Importance,5.0,5.0,0.0,5.0,mean
+RQ-01,AI / Modeling Contribution,2.0,2.0,0.0,2.0,mean
+RQ-01,Dataset Feasibility,5.0,5.0,0.0,5.0,mean
+RQ-01,Methodological Rigor,4.0,4.0,0.0,4.0,mean
+RQ-01,Falsifiability,4.0,4.0,0.0,4.0,mean
+RQ-01,Interpretability,3.0,3.0,0.0,3.0,mean
+RQ-01,Generalizability,3.0,3.0,0.0,3.0,mean
+RQ-01,Feasibility,4.0,4.0,0.0,4.0,mean
+RQ-02,Novelty,3.0,4.0,1.0,3.5,mean
+RQ-02,Neuroscientific Importance,3.0,2.0,-1.0,2.5,mean
+RQ-02,AI / Modeling Contribution,2.0,3.0,1.0,2.5,mean
+RQ-02,Dataset Feasibility,4.0,5.0,1.0,4.5,mean
+RQ-02,Methodological Rigor,2.0,2.0,0.0,2.0,mean
+RQ-02,Falsifiability,3.0,3.0,0.0,3.0,mean
+RQ-02,Interpretability,2.0,2.0,0.0,2.0,mean
+RQ-02,Generalizability,2.0,2.0,0.0,2.0,mean
+RQ-02,Feasibility,4.0,5.0,1.0,4.5,mean
+RQ-03,Novelty,4.0,4.0,0.0,4.0,mean
+RQ-03,Neuroscientific Importance,4.0,4.0,0.0,4.0,mean
+RQ-03,AI / Modeling Contribution,2.0,2.0,0.0,2.0,mean
+RQ-03,Dataset Feasibility,4.0,5.0,1.0,4.5,mean
+RQ-03,Methodological Rigor,3.0,3.0,0.0,3.0,mean
+RQ-03,Falsifiability,4.0,4.0,0.0,4.0,mean
+RQ-03,Interpretability,4.0,3.0,-1.0,3.5,mean
+RQ-03,Generalizability,3.0,3.0,0.0,3.0,mean
+RQ-03,Feasibility,4.0,5.0,1.0,4.5,mean
+RQ-04,Novelty,4.0,3.0,-1.0,3.5,mean
+RQ-04,Neuroscientific Importance,4.0,3.0,-1.0,3.5,mean
+RQ-04,AI / Modeling Contribution,3.0,3.0,0.0,3.0,mean
+RQ-04,Dataset Feasibility,3.0,3.0,0.0,3.0,mean
+RQ-04,Methodological Rigor,3.0,2.0,-1.0,2.5,mean
+RQ-04,Falsifiability,2.0,2.0,0.0,2.0,mean
+RQ-04,Interpretability,3.0,3.0,0.0,3.0,mean
+RQ-04,Generalizability,3.0,2.0,-1.0,2.5,mean
+RQ-04,Feasibility,3.0,3.0,0.0,3.0,mean
+RQ-05,Novelty,3.0,3.0,0.0,3.0,mean
+RQ-05,Neuroscientific Importance,4.0,4.0,0.0,4.0,mean
+RQ-05,AI / Modeling Contribution,1.0,2.0,1.0,1.5,mean
+RQ-05,Dataset Feasibility,3.0,3.0,0.0,3.0,mean
+RQ-05,Methodological Rigor,3.0,3.0,0.0,3.0,mean
+RQ-05,Falsifiability,4.0,4.0,0.0,4.0,mean
+RQ-05,Interpretability,4.0,3.0,-1.0,3.5,mean
+RQ-05,Generalizability,3.0,3.0,0.0,3.0,mean
+RQ-05,Feasibility,4.0,5.0,1.0,4.5,mean
+RQ-06,Novelty,4.0,3.0,-1.0,3.5,mean
+RQ-06,Neuroscientific Importance,3.0,3.0,0.0,3.0,mean
+RQ-06,AI / Modeling Contribution,2.0,2.0,0.0,2.0,mean
+RQ-06,Dataset Feasibility,4.0,4.0,0.0,4.0,mean
+RQ-06,Methodological Rigor,2.0,2.0,0.0,2.0,mean
+RQ-06,Falsifiability,3.0,3.0,0.0,3.0,mean
+RQ-06,Interpretability,2.0,2.0,0.0,2.0,mean
+RQ-06,Generalizability,3.0,3.0,0.0,3.0,mean
+RQ-06,Feasibility,4.0,5.0,1.0,4.5,mean
+RQ-07,Novelty,4.0,4.0,0.0,4.0,mean
+RQ-07,Neuroscientific Importance,4.0,3.0,-1.0,3.5,mean
+RQ-07,AI / Modeling Contribution,4.0,4.0,0.0,4.0,mean
+RQ-07,Dataset Feasibility,4.0,5.0,1.0,4.5,mean
+RQ-07,Methodological Rigor,2.0,2.0,0.0,2.0,mean
+RQ-07,Falsifiability,3.0,2.0,-1.0,2.5,mean
+RQ-07,Interpretability,2.0,2.0,0.0,2.0,mean
+RQ-07,Generalizability,3.0,2.0,-1.0,2.5,mean
+RQ-07,Feasibility,4.0,5.0,1.0,4.5,mean
+RQ-08,Novelty,3.0,3.0,0.0,3.0,mean
+RQ-08,Neuroscientific Importance,5.0,5.0,0.0,5.0,mean
+RQ-08,AI / Modeling Contribution,3.0,3.0,0.0,3.0,mean
+RQ-08,Dataset Feasibility,5.0,5.0,0.0,5.0,mean
+RQ-08,Methodological Rigor,5.0,4.0,-1.0,4.5,mean
+RQ-08,Falsifiability,4.0,4.0,0.0,4.0,mean
+RQ-08,Interpretability,4.0,4.0,0.0,4.0,mean
+RQ-08,Generalizability,3.0,4.0,1.0,3.5,mean
+RQ-08,Feasibility,5.0,5.0,0.0,5.0,mean
+RQ-09,Novelty,3.0,3.0,0.0,3.0,mean
+RQ-09,Neuroscientific Importance,4.0,4.0,0.0,4.0,mean
+RQ-09,AI / Modeling Contribution,4.0,4.0,0.0,4.0,mean
+RQ-09,Dataset Feasibility,3.0,3.0,0.0,3.0,mean
+RQ-09,Methodological Rigor,4.0,3.0,-1.0,3.5,mean
+RQ-09,Falsifiability,4.0,4.0,0.0,4.0,mean
+RQ-09,Interpretability,3.0,3.0,0.0,3.0,mean
+RQ-09,Generalizability,3.0,3.0,0.0,3.0,mean
+RQ-09,Feasibility,2.0,2.0,0.0,2.0,mean
+RQ-10,Novelty,4.0,3.0,-1.0,3.5,mean
+RQ-10,Neuroscientific Importance,4.0,3.0,-1.0,3.5,mean
+RQ-10,AI / Modeling Contribution,3.0,3.0,0.0,3.0,mean
+RQ-10,Dataset Feasibility,5.0,5.0,0.0,5.0,mean
+RQ-10,Methodological Rigor,4.0,3.0,-1.0,3.5,mean
+RQ-10,Falsifiability,5.0,4.0,-1.0,4.5,mean
+RQ-10,Interpretability,4.0,3.0,-1.0,3.5,mean
+RQ-10,Generalizability,3.0,3.0,0.0,3.0,mean
+RQ-10,Feasibility,4.0,5.0,1.0,4.5,mean
+RQ-11,Novelty,3.0,2.0,-1.0,2.5,mean
+RQ-11,Neuroscientific Importance,3.0,3.0,0.0,3.0,mean
+RQ-11,AI / Modeling Contribution,4.0,4.0,0.0,4.0,mean
+RQ-11,Dataset Feasibility,3.0,3.0,0.0,3.0,mean
+RQ-11,Methodological Rigor,3.0,3.0,0.0,3.0,mean
+RQ-11,Falsifiability,3.0,3.0,0.0,3.0,mean
+RQ-11,Interpretability,3.0,2.0,-1.0,2.5,mean
+RQ-11,Generalizability,2.0,3.0,1.0,2.5,mean
+RQ-11,Feasibility,3.0,3.0,0.0,3.0,mean
+RQ-12,Novelty,3.0,3.0,0.0,3.0,mean
+RQ-12,Neuroscientific Importance,4.0,4.0,0.0,4.0,mean
+RQ-12,AI / Modeling Contribution,4.0,4.0,0.0,4.0,mean
+RQ-12,Dataset Feasibility,3.0,3.0,0.0,3.0,mean
+RQ-12,Methodological Rigor,3.0,3.0,0.0,3.0,mean
+RQ-12,Falsifiability,3.0,3.0,0.0,3.0,mean
+RQ-12,Interpretability,3.0,3.0,0.0,3.0,mean
+RQ-12,Generalizability,3.0,3.0,0.0,3.0,mean
+RQ-12,Feasibility,2.0,2.0,0.0,2.0,mean
+RQ-13,Novelty,4.0,4.0,0.0,4.0,mean
+RQ-13,Neuroscientific Importance,3.0,3.0,0.0,3.0,mean
+RQ-13,AI / Modeling Contribution,2.0,3.0,1.0,2.5,mean
+RQ-13,Dataset Feasibility,5.0,5.0,0.0,5.0,mean
+RQ-13,Methodological Rigor,4.0,3.0,-1.0,3.5,mean
+RQ-13,Falsifiability,3.0,4.0,1.0,3.5,mean
+RQ-13,Interpretability,4.0,3.0,-1.0,3.5,mean
+RQ-13,Generalizability,4.0,3.0,-1.0,3.5,mean
+RQ-13,Feasibility,5.0,5.0,0.0,5.0,mean
+RQ-14,Novelty,4.0,4.0,0.0,4.0,mean
+RQ-14,Neuroscientific Importance,4.0,4.0,0.0,4.0,mean
+RQ-14,AI / Modeling Contribution,4.0,4.0,0.0,4.0,mean
+RQ-14,Dataset Feasibility,3.0,4.0,1.0,3.5,mean
+RQ-14,Methodological Rigor,3.0,3.0,0.0,3.0,mean
+RQ-14,Falsifiability,4.0,4.0,0.0,4.0,mean
+RQ-14,Interpretability,4.0,3.0,-1.0,3.5,mean
+RQ-14,Generalizability,3.0,3.0,0.0,3.0,mean
+RQ-14,Feasibility,3.0,4.0,1.0,3.5,mean
+RQ-15,Novelty,3.0,3.0,0.0,3.0,mean
+RQ-15,Neuroscientific Importance,3.0,3.0,0.0,3.0,mean
+RQ-15,AI / Modeling Contribution,5.0,4.0,-1.0,4.5,mean
+RQ-15,Dataset Feasibility,4.0,5.0,1.0,4.5,mean
+RQ-15,Methodological Rigor,4.0,3.0,-1.0,3.5,mean
+RQ-15,Falsifiability,4.0,4.0,0.0,4.0,mean
+RQ-15,Interpretability,3.0,3.0,0.0,3.0,mean
+RQ-15,Generalizability,4.0,4.0,0.0,4.0,mean
+RQ-15,Feasibility,4.0,4.0,0.0,4.0,mean
+RQ-16,Novelty,3.0,3.0,0.0,3.0,mean
+RQ-16,Neuroscientific Importance,4.0,4.0,0.0,4.0,mean
+RQ-16,AI / Modeling Contribution,3.0,2.0,-1.0,2.5,mean
+RQ-16,Dataset Feasibility,3.0,2.0,-1.0,2.5,mean
+RQ-16,Methodological Rigor,3.0,2.0,-1.0,2.5,mean
+RQ-16,Falsifiability,4.0,3.0,-1.0,3.5,mean
+RQ-16,Interpretability,3.0,2.0,-1.0,2.5,mean
+RQ-16,Generalizability,3.0,2.0,-1.0,2.5,mean
+RQ-16,Feasibility,4.0,4.0,0.0,4.0,mean
+RQ-17,Novelty,3.0,2.0,-1.0,2.5,mean
+RQ-17,Neuroscientific Importance,3.0,2.0,-1.0,2.5,mean
+RQ-17,AI / Modeling Contribution,4.0,3.0,-1.0,3.5,mean
+RQ-17,Dataset Feasibility,5.0,4.0,-1.0,4.5,mean
+RQ-17,Methodological Rigor,4.0,3.0,-1.0,3.5,mean
+RQ-17,Falsifiability,4.0,4.0,0.0,4.0,mean
+RQ-17,Interpretability,4.0,3.0,-1.0,3.5,mean
+RQ-17,Generalizability,4.0,3.0,-1.0,3.5,mean
+RQ-17,Feasibility,3.0,4.0,1.0,3.5,mean
+RQ-18,Novelty,4.0,3.0,-1.0,3.5,mean
+RQ-18,Neuroscientific Importance,4.0,3.0,-1.0,3.5,mean
+RQ-18,AI / Modeling Contribution,4.0,4.0,0.0,4.0,mean
+RQ-18,Dataset Feasibility,4.0,2.0,-2.0,2.0,adjusted
+RQ-18,Methodological Rigor,3.0,2.0,-1.0,2.5,mean
+RQ-18,Falsifiability,3.0,3.0,0.0,3.0,mean
+RQ-18,Interpretability,3.0,2.0,-1.0,2.5,mean
+RQ-18,Generalizability,3.0,2.0,-1.0,2.5,mean
+RQ-18,Feasibility,4.0,3.0,-1.0,3.5,mean
+RQ-19,Novelty,3.0,2.0,-1.0,2.5,mean
+RQ-19,Neuroscientific Importance,3.0,3.0,0.0,3.0,mean
+RQ-19,AI / Modeling Contribution,3.0,3.0,0.0,3.0,mean
+RQ-19,Dataset Feasibility,5.0,4.0,-1.0,4.5,mean
+RQ-19,Methodological Rigor,4.0,2.0,-2.0,2.0,adjusted
+RQ-19,Falsifiability,4.0,3.0,-1.0,3.5,mean
+RQ-19,Interpretability,4.0,3.0,-1.0,3.5,mean
+RQ-19,Generalizability,3.0,3.0,0.0,3.0,mean
+RQ-19,Feasibility,5.0,5.0,0.0,5.0,mean
+RQ-20,Novelty,3.0,3.0,0.0,3.0,mean
+RQ-20,Neuroscientific Importance,4.0,4.0,0.0,4.0,mean
+RQ-20,AI / Modeling Contribution,3.0,3.0,0.0,3.0,mean
+RQ-20,Dataset Feasibility,3.0,3.0,0.0,3.0,mean
+RQ-20,Methodological Rigor,2.0,2.0,0.0,2.0,mean
+RQ-20,Falsifiability,3.0,2.0,-1.0,2.5,mean
+RQ-20,Interpretability,2.0,2.0,0.0,2.0,mean
+RQ-20,Generalizability,4.0,4.0,0.0,4.0,mean
+RQ-20,Feasibility,3.0,4.0,1.0,3.5,mean
+RQ-21,Novelty,3.0,3.0,0.0,3.0,mean
+RQ-21,Neuroscientific Importance,5.0,4.0,-1.0,4.5,mean
+RQ-21,AI / Modeling Contribution,2.0,1.0,-1.0,1.5,mean
+RQ-21,Dataset Feasibility,3.0,3.0,0.0,3.0,mean
+RQ-21,Methodological Rigor,4.0,4.0,0.0,4.0,mean
+RQ-21,Falsifiability,4.0,4.0,0.0,4.0,mean
+RQ-21,Interpretability,3.0,3.0,0.0,3.0,mean
+RQ-21,Generalizability,3.0,3.0,0.0,3.0,mean
+RQ-21,Feasibility,4.0,4.0,0.0,4.0,mean
+RQ-22,Novelty,3.0,3.0,0.0,3.0,mean
+RQ-22,Neuroscientific Importance,4.0,4.0,0.0,4.0,mean
+RQ-22,AI / Modeling Contribution,1.0,1.0,0.0,1.0,mean
+RQ-22,Dataset Feasibility,4.0,3.0,-1.0,3.5,mean
+RQ-22,Methodological Rigor,3.0,2.0,-1.0,2.5,mean
+RQ-22,Falsifiability,3.0,3.0,0.0,3.0,mean
+RQ-22,Interpretability,3.0,3.0,0.0,3.0,mean
+RQ-22,Generalizability,2.0,2.0,0.0,2.0,mean
+RQ-22,Feasibility,4.0,5.0,1.0,4.5,mean
+RQ-23,Novelty,3.0,3.0,0.0,3.0,mean
+RQ-23,Neuroscientific Importance,3.0,3.0,0.0,3.0,mean
+RQ-23,AI / Modeling Contribution,1.0,1.0,0.0,1.0,mean
+RQ-23,Dataset Feasibility,3.0,2.0,-1.0,2.5,mean
+RQ-23,Methodological Rigor,2.0,2.0,0.0,2.0,mean
+RQ-23,Falsifiability,3.0,2.0,-1.0,2.5,mean
+RQ-23,Interpretability,3.0,2.0,-1.0,2.5,mean
+RQ-23,Generalizability,3.0,2.0,-1.0,2.5,mean
+RQ-23,Feasibility,4.0,5.0,1.0,4.5,mean
+RQ-24,Novelty,3.0,4.0,1.0,3.5,mean
+RQ-24,Neuroscientific Importance,4.0,4.0,0.0,4.0,mean
+RQ-24,AI / Modeling Contribution,2.0,3.0,1.0,2.5,mean
+RQ-24,Dataset Feasibility,3.0,3.0,0.0,3.0,mean
+RQ-24,Methodological Rigor,4.0,3.0,-1.0,3.5,mean
+RQ-24,Falsifiability,4.0,5.0,1.0,4.5,mean
+RQ-24,Interpretability,3.0,3.0,0.0,3.0,mean
+RQ-24,Generalizability,2.0,2.0,0.0,2.0,mean
+RQ-24,Feasibility,4.0,5.0,1.0,4.5,mean
+RQ-25,Novelty,3.0,3.0,0.0,3.0,mean
+RQ-25,Neuroscientific Importance,4.0,4.0,0.0,4.0,mean
+RQ-25,AI / Modeling Contribution,5.0,4.0,-1.0,4.5,mean
+RQ-25,Dataset Feasibility,4.0,4.0,0.0,4.0,mean
+RQ-25,Methodological Rigor,3.0,3.0,0.0,3.0,mean
+RQ-25,Falsifiability,4.0,4.0,0.0,4.0,mean
+RQ-25,Interpretability,3.0,3.0,0.0,3.0,mean
+RQ-25,Generalizability,3.0,3.0,0.0,3.0,mean
+RQ-25,Feasibility,3.0,4.0,1.0,3.5,mean
+RQ-26,Novelty,3.0,3.0,0.0,3.0,mean
+RQ-26,Neuroscientific Importance,4.0,4.0,0.0,4.0,mean
+RQ-26,AI / Modeling Contribution,2.0,2.0,0.0,2.0,mean
+RQ-26,Dataset Feasibility,5.0,5.0,0.0,5.0,mean
+RQ-26,Methodological Rigor,4.0,2.0,-2.0,3.0,adjusted
+RQ-26,Falsifiability,4.0,4.0,0.0,4.0,mean
+RQ-26,Interpretability,4.0,3.0,-1.0,3.5,mean
+RQ-26,Generalizability,3.0,3.0,0.0,3.0,mean
+RQ-26,Feasibility,5.0,5.0,0.0,5.0,mean
+RQ-27,Novelty,3.0,3.0,0.0,3.0,mean
+RQ-27,Neuroscientific Importance,3.0,3.0,0.0,3.0,mean
+RQ-27,AI / Modeling Contribution,3.0,3.0,0.0,3.0,mean
+RQ-27,Dataset Feasibility,4.0,4.0,0.0,4.0,mean
+RQ-27,Methodological Rigor,3.0,2.0,-1.0,2.5,mean
+RQ-27,Falsifiability,3.0,3.0,0.0,3.0,mean
+RQ-27,Interpretability,3.0,3.0,0.0,3.0,mean
+RQ-27,Generalizability,3.0,3.0,0.0,3.0,mean
+RQ-27,Feasibility,4.0,4.0,0.0,4.0,mean
+RQ-28,Novelty,4.0,3.0,-1.0,3.5,mean
+RQ-28,Neuroscientific Importance,3.0,3.0,0.0,3.0,mean
+RQ-28,AI / Modeling Contribution,2.0,3.0,1.0,2.5,mean
+RQ-28,Dataset Feasibility,3.0,3.0,0.0,3.0,mean
+RQ-28,Methodological Rigor,3.0,2.0,-1.0,2.5,mean
+RQ-28,Falsifiability,3.0,3.0,0.0,3.0,mean
+RQ-28,Interpretability,3.0,2.0,-1.0,2.5,mean
+RQ-28,Generalizability,4.0,2.0,-2.0,3.0,adjusted
+RQ-28,Feasibility,4.0,4.0,0.0,4.0,mean
+RQ-29,Novelty,3.0,3.0,0.0,3.0,mean
+RQ-29,Neuroscientific Importance,3.0,3.0,0.0,3.0,mean
+RQ-29,AI / Modeling Contribution,3.0,3.0,0.0,3.0,mean
+RQ-29,Dataset Feasibility,3.0,3.0,0.0,3.0,mean
+RQ-29,Methodological Rigor,3.0,2.0,-1.0,2.5,mean
+RQ-29,Falsifiability,4.0,3.0,-1.0,3.5,mean
+RQ-29,Interpretability,3.0,3.0,0.0,3.0,mean
+RQ-29,Generalizability,4.0,2.0,-2.0,3.0,adjusted
+RQ-29,Feasibility,4.0,5.0,1.0,4.5,mean
+RQ-30,Novelty,4.0,4.0,0.0,4.0,mean
+RQ-30,Neuroscientific Importance,3.0,3.0,0.0,3.0,mean
+RQ-30,AI / Modeling Contribution,4.0,4.0,0.0,4.0,mean
+RQ-30,Dataset Feasibility,3.0,3.0,0.0,3.0,mean
+RQ-30,Methodological Rigor,3.0,2.0,-1.0,2.5,mean
+RQ-30,Falsifiability,3.0,3.0,0.0,3.0,mean
+RQ-30,Interpretability,3.0,2.0,-1.0,2.5,mean
+RQ-30,Generalizability,3.0,3.0,0.0,3.0,mean
+RQ-30,Feasibility,4.0,4.0,0.0,4.0,mean
+RQ-31,Novelty,4.0,4.0,0.0,4.0,mean
+RQ-31,Neuroscientific Importance,3.0,3.0,0.0,3.0,mean
+RQ-31,AI / Modeling Contribution,3.0,3.0,0.0,3.0,mean
+RQ-31,Dataset Feasibility,3.0,4.0,1.0,3.5,mean
+RQ-31,Methodological Rigor,2.0,2.0,0.0,2.0,mean
+RQ-31,Falsifiability,3.0,2.0,-1.0,2.5,mean
+RQ-31,Interpretability,3.0,2.0,-1.0,2.5,mean
+RQ-31,Generalizability,3.0,3.0,0.0,3.0,mean
+RQ-31,Feasibility,4.0,4.0,0.0,4.0,mean
+RQ-32,Novelty,4.0,4.0,0.0,4.0,mean
+RQ-32,Neuroscientific Importance,4.0,4.0,0.0,4.0,mean
+RQ-32,AI / Modeling Contribution,1.0,1.0,0.0,1.0,mean
+RQ-32,Dataset Feasibility,4.0,4.0,0.0,4.0,mean
+RQ-32,Methodological Rigor,3.0,3.0,0.0,3.0,mean
+RQ-32,Falsifiability,4.0,4.0,0.0,4.0,mean
+RQ-32,Interpretability,4.0,3.0,-1.0,3.5,mean
+RQ-32,Generalizability,4.0,3.0,-1.0,3.5,mean
+RQ-32,Feasibility,5.0,5.0,0.0,5.0,mean
+RQ-33,Novelty,4.0,3.0,-1.0,3.5,mean
+RQ-33,Neuroscientific Importance,4.0,4.0,0.0,4.0,mean
+RQ-33,AI / Modeling Contribution,3.0,3.0,0.0,3.0,mean
+RQ-33,Dataset Feasibility,4.0,5.0,1.0,4.5,mean
+RQ-33,Methodological Rigor,3.0,3.0,0.0,3.0,mean
+RQ-33,Falsifiability,4.0,4.0,0.0,4.0,mean
+RQ-33,Interpretability,4.0,3.0,-1.0,3.5,mean
+RQ-33,Generalizability,2.0,3.0,1.0,2.5,mean
+RQ-33,Feasibility,4.0,5.0,1.0,4.5,mean
+RQ-34,Novelty,3.0,3.0,0.0,3.0,mean
+RQ-34,Neuroscientific Importance,4.0,4.0,0.0,4.0,mean
+RQ-34,AI / Modeling Contribution,3.0,3.0,0.0,3.0,mean
+RQ-34,Dataset Feasibility,3.0,3.0,0.0,3.0,mean
+RQ-34,Methodological Rigor,3.0,3.0,0.0,3.0,mean
+RQ-34,Falsifiability,3.0,4.0,1.0,3.5,mean
+RQ-34,Interpretability,3.0,3.0,0.0,3.0,mean
+RQ-34,Generalizability,2.0,2.0,0.0,2.0,mean
+RQ-34,Feasibility,4.0,4.0,0.0,4.0,mean
+RQ-35,Novelty,3.0,3.0,0.0,3.0,mean
+RQ-35,Neuroscientific Importance,4.0,4.0,0.0,4.0,mean
+RQ-35,AI / Modeling Contribution,1.0,1.0,0.0,1.0,mean
+RQ-35,Dataset Feasibility,3.0,3.0,0.0,3.0,mean
+RQ-35,Methodological Rigor,3.0,2.0,-1.0,2.5,mean
+RQ-35,Falsifiability,4.0,4.0,0.0,4.0,mean
+RQ-35,Interpretability,4.0,3.0,-1.0,3.5,mean
+RQ-35,Generalizability,2.0,2.0,0.0,2.0,mean
+RQ-35,Feasibility,5.0,5.0,0.0,5.0,mean
+RQ-36,Novelty,4.0,3.0,-1.0,3.5,mean
+RQ-36,Neuroscientific Importance,3.0,2.0,-1.0,2.5,mean
+RQ-36,AI / Modeling Contribution,1.0,1.0,0.0,1.0,mean
+RQ-36,Dataset Feasibility,2.0,2.0,0.0,2.0,mean
+RQ-36,Methodological Rigor,2.0,1.0,-1.0,1.5,mean
+RQ-36,Falsifiability,3.0,2.0,-1.0,2.5,mean
+RQ-36,Interpretability,2.0,1.0,-1.0,1.5,mean
+RQ-36,Generalizability,2.0,2.0,0.0,2.0,mean
+RQ-36,Feasibility,4.0,4.0,0.0,4.0,mean
+RQ-37,Novelty,4.0,3.0,-1.0,3.5,mean
+RQ-37,Neuroscientific Importance,3.0,2.0,-1.0,2.5,mean
+RQ-37,AI / Modeling Contribution,3.0,2.0,-1.0,2.5,mean
+RQ-37,Dataset Feasibility,3.0,2.0,-1.0,2.5,mean
+RQ-37,Methodological Rigor,3.0,2.0,-1.0,2.5,mean
+RQ-37,Falsifiability,4.0,3.0,-1.0,3.5,mean
+RQ-37,Interpretability,3.0,2.0,-1.0,2.5,mean
+RQ-37,Generalizability,2.0,2.0,0.0,2.0,mean
+RQ-37,Feasibility,4.0,4.0,0.0,4.0,mean
+RQ-38,Novelty,3.0,3.0,0.0,3.0,mean
+RQ-38,Neuroscientific Importance,3.0,2.0,-1.0,2.5,mean
+RQ-38,AI / Modeling Contribution,5.0,3.0,-2.0,3.0,adjusted
+RQ-38,Dataset Feasibility,3.0,2.0,-1.0,2.5,mean
+RQ-38,Methodological Rigor,3.0,2.0,-1.0,2.5,mean
+RQ-38,Falsifiability,4.0,2.0,-2.0,2.0,adjusted
+RQ-38,Interpretability,3.0,2.0,-1.0,2.5,mean
+RQ-38,Generalizability,3.0,3.0,0.0,3.0,mean
+RQ-38,Feasibility,3.0,3.0,0.0,3.0,mean
+RQ-39,Novelty,4.0,3.0,-1.0,3.5,mean
+RQ-39,Neuroscientific Importance,3.0,3.0,0.0,3.0,mean
+RQ-39,AI / Modeling Contribution,3.0,2.0,-1.0,2.5,mean
+RQ-39,Dataset Feasibility,5.0,4.0,-1.0,4.5,mean
+RQ-39,Methodological Rigor,4.0,4.0,0.0,4.0,mean
+RQ-39,Falsifiability,5.0,5.0,0.0,5.0,mean
+RQ-39,Interpretability,4.0,4.0,0.0,4.0,mean
+RQ-39,Generalizability,2.0,2.0,0.0,2.0,mean
+RQ-39,Feasibility,5.0,5.0,0.0,5.0,mean
+RQ-40,Novelty,4.0,4.0,0.0,4.0,mean
+RQ-40,Neuroscientific Importance,3.0,3.0,0.0,3.0,mean
+RQ-40,AI / Modeling Contribution,5.0,4.0,-1.0,4.5,mean
+RQ-40,Dataset Feasibility,3.0,3.0,0.0,3.0,mean
+RQ-40,Methodological Rigor,2.0,2.0,0.0,2.0,mean
+RQ-40,Falsifiability,3.0,2.0,-1.0,2.5,mean
+RQ-40,Interpretability,3.0,2.0,-1.0,2.5,mean
+RQ-40,Generalizability,2.0,2.0,0.0,2.0,mean
+RQ-40,Feasibility,2.0,2.0,0.0,2.0,mean
+RQ-41,Novelty,3.0,3.0,0.0,3.0,mean
+RQ-41,Neuroscientific Importance,4.0,4.0,0.0,4.0,mean
+RQ-41,AI / Modeling Contribution,3.0,3.0,0.0,3.0,mean
+RQ-41,Dataset Feasibility,4.0,4.0,0.0,4.0,mean
+RQ-41,Methodological Rigor,4.0,3.0,-1.0,3.5,mean
+RQ-41,Falsifiability,4.0,3.0,-1.0,3.5,mean
+RQ-41,Interpretability,4.0,3.0,-1.0,3.5,mean
+RQ-41,Generalizability,2.0,2.0,0.0,2.0,mean
+RQ-41,Feasibility,4.0,5.0,1.0,4.5,mean
+RQ-42,Novelty,4.0,3.0,-1.0,3.5,mean
+RQ-42,Neuroscientific Importance,3.0,2.0,-1.0,2.5,mean
+RQ-42,AI / Modeling Contribution,2.0,3.0,1.0,2.5,mean
+RQ-42,Dataset Feasibility,3.0,3.0,0.0,3.0,mean
+RQ-42,Methodological Rigor,2.0,2.0,0.0,2.0,mean
+RQ-42,Falsifiability,3.0,2.0,-1.0,2.5,mean
+RQ-42,Interpretability,3.0,2.0,-1.0,2.5,mean
+RQ-42,Generalizability,2.0,2.0,0.0,2.0,mean
+RQ-42,Feasibility,4.0,5.0,1.0,4.5,mean
+RQ-43,Novelty,4.0,3.0,-1.0,3.5,mean
+RQ-43,Neuroscientific Importance,4.0,4.0,0.0,4.0,mean
+RQ-43,AI / Modeling Contribution,2.0,2.0,0.0,2.0,mean
+RQ-43,Dataset Feasibility,4.0,3.0,-1.0,3.5,mean
+RQ-43,Methodological Rigor,4.0,3.0,-1.0,3.5,mean
+RQ-43,Falsifiability,4.0,4.0,0.0,4.0,mean
+RQ-43,Interpretability,4.0,4.0,0.0,4.0,mean
+RQ-43,Generalizability,2.0,2.0,0.0,2.0,mean
+RQ-43,Feasibility,5.0,5.0,0.0,5.0,mean
+RQ-44,Novelty,4.0,4.0,0.0,4.0,mean
+RQ-44,Neuroscientific Importance,5.0,4.0,-1.0,4.5,mean
+RQ-44,AI / Modeling Contribution,4.0,4.0,0.0,4.0,mean
+RQ-44,Dataset Feasibility,4.0,4.0,0.0,4.0,mean
+RQ-44,Methodological Rigor,3.0,2.0,-1.0,2.5,mean
+RQ-44,Falsifiability,4.0,3.0,-1.0,3.5,mean
+RQ-44,Interpretability,4.0,3.0,-1.0,3.5,mean
+RQ-44,Generalizability,2.0,2.0,0.0,2.0,mean
+RQ-44,Feasibility,3.0,3.0,0.0,3.0,mean
+RQ-45,Novelty,4.0,3.0,-1.0,3.5,mean
+RQ-45,Neuroscientific Importance,3.0,3.0,0.0,3.0,mean
+RQ-45,AI / Modeling Contribution,4.0,3.0,-1.0,3.5,mean
+RQ-45,Dataset Feasibility,4.0,4.0,0.0,4.0,mean
+RQ-45,Methodological Rigor,3.0,2.0,-1.0,2.5,mean
+RQ-45,Falsifiability,3.0,2.0,-1.0,2.5,mean
+RQ-45,Interpretability,3.0,2.0,-1.0,2.5,mean
+RQ-45,Generalizability,2.0,2.0,0.0,2.0,mean
+RQ-45,Feasibility,4.0,5.0,1.0,4.5,mean
+RQ-46,Novelty,4.0,3.0,-1.0,3.5,mean
+RQ-46,Neuroscientific Importance,3.0,2.0,-1.0,2.5,mean
+RQ-46,AI / Modeling Contribution,3.0,3.0,0.0,3.0,mean
+RQ-46,Dataset Feasibility,3.0,2.0,-1.0,2.5,mean
+RQ-46,Methodological Rigor,2.0,2.0,0.0,2.0,mean
+RQ-46,Falsifiability,3.0,3.0,0.0,3.0,mean
+RQ-46,Interpretability,2.0,2.0,0.0,2.0,mean
+RQ-46,Generalizability,2.0,2.0,0.0,2.0,mean
+RQ-46,Feasibility,3.0,3.0,0.0,3.0,mean
+RQ-47,Novelty,3.0,3.0,0.0,3.0,mean
+RQ-47,Neuroscientific Importance,3.0,3.0,0.0,3.0,mean
+RQ-47,AI / Modeling Contribution,4.0,4.0,0.0,4.0,mean
+RQ-47,Dataset Feasibility,4.0,4.0,0.0,4.0,mean
+RQ-47,Methodological Rigor,3.0,2.0,-1.0,2.5,mean
+RQ-47,Falsifiability,3.0,3.0,0.0,3.0,mean
+RQ-47,Interpretability,3.0,3.0,0.0,3.0,mean
+RQ-47,Generalizability,2.0,2.0,0.0,2.0,mean
+RQ-47,Feasibility,4.0,4.0,0.0,4.0,mean
+RQ-48,Novelty,3.0,3.0,0.0,3.0,mean
+RQ-48,Neuroscientific Importance,4.0,4.0,0.0,4.0,mean
+RQ-48,AI / Modeling Contribution,3.0,3.0,0.0,3.0,mean
+RQ-48,Dataset Feasibility,4.0,4.0,0.0,4.0,mean
+RQ-48,Methodological Rigor,3.0,3.0,0.0,3.0,mean
+RQ-48,Falsifiability,3.0,3.0,0.0,3.0,mean
+RQ-48,Interpretability,3.0,3.0,0.0,3.0,mean
+RQ-48,Generalizability,3.0,2.0,-1.0,2.5,mean
+RQ-48,Feasibility,3.0,4.0,1.0,3.5,mean
+RQ-49,Novelty,2.0,2.0,0.0,2.0,mean
+RQ-49,Neuroscientific Importance,4.0,4.0,0.0,4.0,mean
+RQ-49,AI / Modeling Contribution,2.0,2.0,0.0,2.0,mean
+RQ-49,Dataset Feasibility,2.0,2.0,0.0,2.0,mean
+RQ-49,Methodological Rigor,4.0,4.0,0.0,4.0,mean
+RQ-49,Falsifiability,4.0,4.0,0.0,4.0,mean
+RQ-49,Interpretability,3.0,3.0,0.0,3.0,mean
+RQ-49,Generalizability,3.0,3.0,0.0,3.0,mean
+RQ-49,Feasibility,4.0,4.0,0.0,4.0,mean
+RQ-50,Novelty,3.0,3.0,0.0,3.0,mean
+RQ-50,Neuroscientific Importance,4.0,4.0,0.0,4.0,mean
+RQ-50,AI / Modeling Contribution,1.0,1.0,0.0,1.0,mean
+RQ-50,Dataset Feasibility,4.0,4.0,0.0,4.0,mean
+RQ-50,Methodological Rigor,3.0,3.0,0.0,3.0,mean
+RQ-50,Falsifiability,4.0,4.0,0.0,4.0,mean
+RQ-50,Interpretability,4.0,3.0,-1.0,3.5,mean
+RQ-50,Generalizability,4.0,3.0,-1.0,3.5,mean
+RQ-50,Feasibility,5.0,5.0,0.0,5.0,mean
+RQ-51,Novelty,3.0,2.0,-1.0,2.5,mean
+RQ-51,Neuroscientific Importance,3.0,2.0,-1.0,2.5,mean
+RQ-51,AI / Modeling Contribution,4.0,4.0,0.0,4.0,mean
+RQ-51,Dataset Feasibility,5.0,5.0,0.0,5.0,mean
+RQ-51,Methodological Rigor,4.0,3.0,-1.0,3.5,mean
+RQ-51,Falsifiability,4.0,3.0,-1.0,3.5,mean
+RQ-51,Interpretability,4.0,3.0,-1.0,3.5,mean
+RQ-51,Generalizability,4.0,4.0,0.0,4.0,mean
+RQ-51,Feasibility,4.0,4.0,0.0,4.0,mean
+RQ-52,Novelty,2.0,3.0,1.0,2.5,mean
+RQ-52,Neuroscientific Importance,3.0,3.0,0.0,3.0,mean
+RQ-52,AI / Modeling Contribution,3.0,3.0,0.0,3.0,mean
+RQ-52,Dataset Feasibility,4.0,4.0,0.0,4.0,mean
+RQ-52,Methodological Rigor,3.0,3.0,0.0,3.0,mean
+RQ-52,Falsifiability,3.0,3.0,0.0,3.0,mean
+RQ-52,Interpretability,3.0,3.0,0.0,3.0,mean
+RQ-52,Generalizability,2.0,3.0,1.0,2.5,mean
+RQ-52,Feasibility,3.0,4.0,1.0,3.5,mean
+RQ-53,Novelty,3.0,3.0,0.0,3.0,mean
+RQ-53,Neuroscientific Importance,3.0,4.0,1.0,3.5,mean
+RQ-53,AI / Modeling Contribution,3.0,3.0,0.0,3.0,mean
+RQ-53,Dataset Feasibility,4.0,4.0,0.0,4.0,mean
+RQ-53,Methodological Rigor,3.0,2.0,-1.0,2.5,mean
+RQ-53,Falsifiability,4.0,3.0,-1.0,3.5,mean
+RQ-53,Interpretability,3.0,3.0,0.0,3.0,mean
+RQ-53,Generalizability,3.0,3.0,0.0,3.0,mean
+RQ-53,Feasibility,4.0,4.0,0.0,4.0,mean
+RQ-54,Novelty,3.0,2.0,-1.0,2.5,mean
+RQ-54,Neuroscientific Importance,4.0,3.0,-1.0,3.5,mean
+RQ-54,AI / Modeling Contribution,4.0,3.0,-1.0,3.5,mean
+RQ-54,Dataset Feasibility,4.0,4.0,0.0,4.0,mean
+RQ-54,Methodological Rigor,3.0,3.0,0.0,3.0,mean
+RQ-54,Falsifiability,3.0,3.0,0.0,3.0,mean
+RQ-54,Interpretability,3.0,3.0,0.0,3.0,mean
+RQ-54,Generalizability,4.0,4.0,0.0,4.0,mean
+RQ-54,Feasibility,3.0,4.0,1.0,3.5,mean
+RQ-55,Novelty,3.0,3.0,0.0,3.0,mean
+RQ-55,Neuroscientific Importance,3.0,3.0,0.0,3.0,mean
+RQ-55,AI / Modeling Contribution,4.0,4.0,0.0,4.0,mean
+RQ-55,Dataset Feasibility,3.0,4.0,1.0,3.5,mean
+RQ-55,Methodological Rigor,3.0,2.0,-1.0,2.5,mean
+RQ-55,Falsifiability,3.0,3.0,0.0,3.0,mean
+RQ-55,Interpretability,3.0,3.0,0.0,3.0,mean
+RQ-55,Generalizability,3.0,3.0,0.0,3.0,mean
+RQ-55,Feasibility,3.0,2.0,-1.0,2.5,mean
+RQ-56,Novelty,3.0,3.0,0.0,3.0,mean
+RQ-56,Neuroscientific Importance,3.0,3.0,0.0,3.0,mean
+RQ-56,AI / Modeling Contribution,5.0,5.0,0.0,5.0,mean
+RQ-56,Dataset Feasibility,3.0,4.0,1.0,3.5,mean
+RQ-56,Methodological Rigor,3.0,3.0,0.0,3.0,mean
+RQ-56,Falsifiability,4.0,4.0,0.0,4.0,mean
+RQ-56,Interpretability,3.0,3.0,0.0,3.0,mean
+RQ-56,Generalizability,3.0,4.0,1.0,3.5,mean
+RQ-56,Feasibility,2.0,3.0,1.0,2.5,mean
+RQ-57,Novelty,3.0,3.0,0.0,3.0,mean
+RQ-57,Neuroscientific Importance,3.0,4.0,1.0,3.5,mean
+RQ-57,AI / Modeling Contribution,3.0,3.0,0.0,3.0,mean
+RQ-57,Dataset Feasibility,3.0,3.0,0.0,3.0,mean
+RQ-57,Methodological Rigor,3.0,3.0,0.0,3.0,mean
+RQ-57,Falsifiability,3.0,3.0,0.0,3.0,mean
+RQ-57,Interpretability,3.0,3.0,0.0,3.0,mean
+RQ-57,Generalizability,2.0,3.0,1.0,2.5,mean
+RQ-57,Feasibility,4.0,4.0,0.0,4.0,mean
+RQ-58,Novelty,3.0,3.0,0.0,3.0,mean
+RQ-58,Neuroscientific Importance,3.0,4.0,1.0,3.5,mean
+RQ-58,AI / Modeling Contribution,4.0,3.0,-1.0,3.5,mean
+RQ-58,Dataset Feasibility,3.0,4.0,1.0,3.5,mean
+RQ-58,Methodological Rigor,3.0,3.0,0.0,3.0,mean
+RQ-58,Falsifiability,3.0,4.0,1.0,3.5,mean
+RQ-58,Interpretability,3.0,4.0,1.0,3.5,mean
+RQ-58,Generalizability,2.0,3.0,1.0,2.5,mean
+RQ-58,Feasibility,4.0,5.0,1.0,4.5,mean
+RQ-59,Novelty,4.0,3.0,-1.0,3.5,mean
+RQ-59,Neuroscientific Importance,3.0,3.0,0.0,3.0,mean
+RQ-59,AI / Modeling Contribution,3.0,3.0,0.0,3.0,mean
+RQ-59,Dataset Feasibility,4.0,4.0,0.0,4.0,mean
+RQ-59,Methodological Rigor,2.0,2.0,0.0,2.0,mean
+RQ-59,Falsifiability,3.0,3.0,0.0,3.0,mean
+RQ-59,Interpretability,2.0,2.0,0.0,2.0,mean
+RQ-59,Generalizability,2.0,3.0,1.0,2.5,mean
+RQ-59,Feasibility,4.0,4.0,0.0,4.0,mean
+RQ-60,Novelty,3.0,4.0,1.0,3.5,mean
+RQ-60,Neuroscientific Importance,3.0,4.0,1.0,3.5,mean
+RQ-60,AI / Modeling Contribution,4.0,4.0,0.0,4.0,mean
+RQ-60,Dataset Feasibility,5.0,5.0,0.0,5.0,mean
+RQ-60,Methodological Rigor,3.0,3.0,0.0,3.0,mean
+RQ-60,Falsifiability,4.0,4.0,0.0,4.0,mean
+RQ-60,Interpretability,3.0,3.0,0.0,3.0,mean
+RQ-60,Generalizability,2.0,3.0,1.0,2.5,mean
+RQ-60,Feasibility,4.0,4.0,0.0,4.0,mean
