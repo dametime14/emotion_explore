@@ -1,10 +1,10 @@
 # Literature Statistics (Deliverable C)
 
 * 생성: `python3 -I outputs/literature/merge.py` (자동 생성 파일, 직접 고치지 말 것)
-* 입력 레코드: 710개 (파싱 오류 0개), 입력 파일: `outputs/agents/*/literature*.jsonl`
-* 원자료 기준 verified 표기: 698개, 미검증(search_index 등): 12개
-* 중복 제거 후 고유 논문: **518편**
-* **verified 고유 논문: 513편** (식별자 경로 doi.org / crossref / pubmed / arxiv / openreview / publisher로 확인된 것만)
+* 입력 레코드: 714개 (파싱 오류 0개), 입력 파일: `outputs/agents/*/literature*.jsonl`
+* 원자료 기준 verified 표기: 702개, 미검증(search_index 등): 12개
+* 중복 제거 후 고유 논문: **521편**
+* **verified 고유 논문: 516편** (식별자 경로 doi.org / crossref / pubmed / arxiv / openreview / publisher로 확인된 것만)
 * 미검증 고유 논문: 5편 (verified 집계에서 제외, DB에는 `verified=False`로 남김)
 
 ## Axis별 verified 논문 수 (한 논문이 여러 Axis에 속할 수 있음)
@@ -12,22 +12,22 @@
 | Axis | verified | 전체(미검증 포함) |
 |---|---|---|
 | A | 173 | 174 |
-| B | 69 | 70 |
+| B | 71 | 72 |
 | C | 79 | 80 |
 | D | 115 | 115 |
 | E | 150 | 150 |
-| F | 75 | 76 |
+| F | 76 | 77 |
 | G | 51 | 52 |
 | H | 83 | 87 |
 | I | 108 | 110 |
 | J | 53 | 54 |
 | K | 104 | 105 |
 | L | 56 | 57 |
-| M | 63 | 63 |
+| M | 66 | 66 |
 | N | 117 | 118 |
 | O | 90 | 90 |
 | P | 48 | 49 |
-| Q | 102 | 102 |
+| Q | 103 | 103 |
 | R | 50 | 50 |
 | S | 57 | 59 |
 | T | 73 | 74 |
@@ -44,7 +44,7 @@
 | 1995 | 1 |
 | 2003 | 1 |
 | 2004 | 1 |
-| 2005 | 3 |
+| 2005 | 4 |
 | 2006 | 2 |
 | 2007 | 1 |
 | 2009 | 1 |
@@ -52,7 +52,7 @@
 | 2011 | 1 |
 | 2012 | 3 |
 | 2013 | 1 |
-| 2014 | 11 |
+| 2014 | 13 |
 | 2015 | 11 |
 | 2016 | 15 |
 | 2017 | 27 |
@@ -71,7 +71,7 @@
 | discussion_read | 편수 |
 |---|---|
 | full_text | 232 |
-| abstract_only | 221 |
+| abstract_only | 224 |
 | search_summary | 17 |
 | no | 43 |
 
@@ -79,8 +79,8 @@
 
 | 에이전트 | 편수 |
 |---|---|
+| multimodal-dynamics | 76 |
 | brain-inspired | 72 |
-| multimodal-dynamics | 72 |
 | adversarial-reviewer | 63 |
 | frontier-ai | 63 |
 | geometry-info | 60 |
@@ -97,8 +97,8 @@
 
 | 에이전트 폴더 | 편수 |
 |---|---|
+| multimodal-dynamics | 76 |
 | brain-inspired | 73 |
-| multimodal-dynamics | 72 |
 | adversarial-reviewer | 63 |
 | frontier-ai | 63 |
 | llm-semantics | 61 |

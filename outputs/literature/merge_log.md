@@ -11,7 +11,7 @@
 * 10.1126/sciadv.aaw4358 (adversarial-reviewer) | doi:10.1126/sciadv.aaw4358 (brain-inspired) | 10.1126/sciadv.aaw4358 (dataset-auditor) | 10.1126/sciadv.aaw4358 (emotion-theory) | doi:10.1126/sciadv.aaw4358 (encoding-foundation) | doi:10.1126/sciadv.aaw4358 (frontier-ai) | 10.1126/sciadv.aaw4358 (generative-counterfactual) | doi:10.1126/sciadv.aaw4358 (vision-decoding)
 * 10.1162/IMAG.a.134 (adversarial-reviewer) | 10.1162/IMAG.a.134 (dataset-auditor) | doi:10.1162/imag.a.134 (llm-semantics) | 10.1162/IMAG.a.134 (multimodal-dynamics)
 * arXiv:2408.13718 (adversarial-reviewer) | arXiv:2408.13718 (llm-semantics)
-* 10.1371/journal.pcbi.1006397 (adversarial-reviewer) | 10.1371/journal.pcbi.1006397 (emotion-theory)
+* 10.1371/journal.pcbi.1006397 (adversarial-reviewer) | 10.1371/journal.pcbi.1006397 (emotion-theory) | 10.1371/journal.pcbi.1006397 (multimodal-dynamics)
 * 10.7554/eLife.82566 (adversarial-reviewer) | 10.7554/eLife.82566 (emotion-theory)
 * 10.1016/j.conb.2019.04.002 (adversarial-reviewer) | 10.1016/j.conb.2019.04.002 (generative-counterfactual)
 * 10.1038/s41467-024-53147-y (adversarial-reviewer) | doi:10.1038/s41467-024-53147-y (encoding-foundation)
