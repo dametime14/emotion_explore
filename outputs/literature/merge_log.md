@@ -2,7 +2,7 @@
 
 * parse errors: 0
 
-* duplicate groups merged: 166
+* duplicate groups merged: 170
 
 * 10.1016/j.isci.2020.101060 (adversarial-reviewer) | doi:10.1016/j.isci.2020.101060 (brain-inspired) | 10.1016/j.isci.2020.101060 (dataset-auditor) | 10.1016/j.isci.2020.101060 (emotion-theory) | doi:10.1016/j.isci.2020.101060 (encoding-foundation) | 10.1016/j.isci.2020.101060 (generative-counterfactual) | doi:10.1016/j.isci.2020.101060 (geometry-info) | doi:10.1016/j.isci.2020.101060 (systems-neuro)
 * arXiv:2507.00320 (adversarial-reviewer) | arXiv:2507.00320 (dataset-auditor) | arXiv:2507.00320 (emotion-theory) | arXiv:2507.00320 (geometry-info) | arXiv:2507.00320 (llm-semantics) | arXiv:2507.00320 (systems-neuro) | arXiv:2507.00320 (vision-decoding)
@@ -18,7 +18,7 @@
 * arXiv:2302.06677 (adversarial-reviewer) | arXiv:2302.06677 (encoding-foundation)
 * 10.1038/s41593-023-01442-0 (adversarial-reviewer) | 10.1038/s41593-023-01442-0 (generative-counterfactual)
 * 10.1073/pnas.1912334117 (adversarial-reviewer) | 10.1073/pnas.1912334117 (generative-counterfactual)
-* 10.1038/s41562-023-01783-7 (adversarial-reviewer) | 10.1038/s41562-023-01783-7 (generative-counterfactual)
+* 10.1038/s41562-023-01783-7 (adversarial-reviewer) | 10.1038/s41562-023-01783-7 (coordinator) | 10.1038/s41562-023-01783-7 (generative-counterfactual)
 * 10.1371/journal.pone.0152719 (adversarial-reviewer) | doi:10.1371/journal.pone.0152719 (brain-inspired)
 * 10.1093/scan/nsz037 (adversarial-reviewer) | 10.1093/scan/nsz037 (emotion-theory) | doi:10.1093/scan/nsz037 (systems-neuro)
 * 10.1016/j.isci.2023.107571 (adversarial-reviewer) | 10.1016/j.isci.2023.107571 (dataset-auditor) | doi:10.1016/j.isci.2023.107571 (geometry-info) | doi:10.1016/j.isci.2023.107571 (llm-semantics) | doi:10.1016/j.isci.2023.107571 (systems-neuro)
@@ -97,6 +97,10 @@
 * 10.1073/pnas.1421236112 (coordinator) | doi:10.1073/pnas.1421236112 (llm-semantics)
 * 10.1016/j.neuron.2012.10.014 (coordinator) | doi:10.1016/j.neuron.2012.10.014 (geometry-info)
 * arXiv:2305.09863 (coordinator) | arXiv:2305.09863 (geometry-info)
+* arXiv:2604.07729 (coordinator) | arXiv:2604.07729 (frontier-ai)
+* arXiv:2510.22042 (coordinator) | arXiv:2510.22042 (frontier-ai)
+* arXiv:2606.06857 (coordinator) | arXiv:2606.06857 (frontier-ai)
+* arXiv:2605.23035 (coordinator) | arXiv:2605.23035 (frontier-ai)
 * 10.1038/s41597-025-04803-5 (dataset-auditor) | doi:10.1038/s41597-025-04803-5 (encoding-foundation)
 * 10.1371/journal.pbio.3003795 (dataset-auditor) | doi:10.1371/journal.pbio.3003795 (geometry-info)
 * 10.1162/IMAG.a.1400 (dataset-auditor) | 10.1162/IMAG.a.1400 (multimodal-dynamics)

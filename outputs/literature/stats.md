@@ -1,10 +1,10 @@
 # Literature Statistics (Deliverable C)
 
 * 생성: `python3 -I outputs/literature/merge.py` (자동 생성 파일, 직접 고치지 말 것)
-* 입력 레코드: 898개 (파싱 오류 0개), 입력 파일: `outputs/agents/*/literature*.jsonl`
-* 원자료 기준 verified 표기: 884개, 미검증(search_index 등): 14개
-* 중복 제거 후 고유 논문: **626편**
-* **verified 고유 논문: 621편** (식별자 경로 doi.org / crossref / pubmed / arxiv / openreview / publisher로 확인된 것만)
+* 입력 레코드: 908개 (파싱 오류 0개), 입력 파일: `outputs/agents/*/literature*.jsonl`
+* 원자료 기준 verified 표기: 894개, 미검증(search_index 등): 14개
+* 중복 제거 후 고유 논문: **631편**
+* **verified 고유 논문: 626편** (식별자 경로 doi.org / crossref / pubmed / arxiv / openreview / publisher로 확인된 것만)
 * 미검증 고유 논문: 5편 (verified 집계에서 제외, DB에는 `verified=False`로 남김)
 
 ## Axis별 verified 논문 수 (한 논문이 여러 Axis에 속할 수 있음)
@@ -13,7 +13,7 @@
 |---|---|---|
 | A | 207 | 207 |
 | B | 96 | 97 |
-| C | 88 | 89 |
+| C | 96 | 97 |
 | D | 127 | 127 |
 | E | 170 | 170 |
 | F | 101 | 101 |
@@ -28,7 +28,7 @@
 | O | 92 | 92 |
 | P | 51 | 52 |
 | Q | 109 | 109 |
-| R | 55 | 55 |
+| R | 61 | 61 |
 | S | 77 | 78 |
 | T | 90 | 91 |
 | U | 17 | 17 |
@@ -63,18 +63,18 @@
 | 2019 | 35 |
 | 2020 | 34 |
 | 2021 | 39 |
-| 2022 | 42 |
-| 2023 | 74 |
+| 2022 | 43 |
+| 2023 | 75 |
 | 2024 | 77 |
-| 2025 | 110 |
-| 2026 | 79 |
+| 2025 | 111 |
+| 2026 | 81 |
 
 ## discussion_read 분포 (verified)
 
 | discussion_read | 편수 |
 |---|---|
 | full_text | 239 |
-| abstract_only | 302 |
+| abstract_only | 307 |
 | search_summary | 21 |
 | no | 59 |
 
@@ -94,7 +94,7 @@
 | vision-decoding | 55 |
 | dataset-auditor | 54 |
 | systems-neuro | 52 |
-| coordinator | 16 |
+| coordinator | 26 |
 
 ## 에이전트별 원 레코드 수 (중복 제거 전, 미검증 포함)
 
@@ -112,7 +112,7 @@
 | generative-counterfactual | 55 |
 | vision-decoding | 55 |
 | systems-neuro | 53 |
-| coordinator | 16 |
+| coordinator | 26 |
 
 ## future_directions의 already_done 분포 (verified 논문)
 
